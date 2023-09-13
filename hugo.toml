@@ -19,7 +19,7 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with submodule 
 [markup]
   defaultMarkdownHandler = "goldmark"
     [markup.tableOfContents]
-      endLevel = 3
+      endLevel = 6
       startLevel = 1
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -43,7 +43,7 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with submodule 
         version   = true # include git commit info in footer
 
     [params.social]
-        github = "RapidAI/LabelConvert" # github.com/YOUR_GITHUB_ID
+        github = "RapidAI/RapidOCR" # github.com/YOUR_GITHUB_ID
         twitter = "_SWHL"            # twitter.com/YOUR_TWITTER_ID
         # instagram = "colinwilson"      # instagram.com/YOUR_INSTAGRAM_ID
         # rss = true                     # show rss icon with link

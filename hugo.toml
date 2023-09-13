@@ -49,7 +49,7 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with submodule 
         # rss = true                     # show rss icon with link
 
     [params.docs] # Parameters for the /docs 'template'
-        title           = "Label Convert Documentation"                        # default html title for documentation pages/sections
+        title           = "RapidOCR Documentation"                        # default html title for documentation pages/sections
 
         # pathName        = "docs"                            # path for documentation site | default "docs"
 

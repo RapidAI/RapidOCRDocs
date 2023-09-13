@@ -1,6 +1,6 @@
-baseURL = 'https://rapidai.github.io/LabelConvert/'
+baseURL = 'https://rapidai.github.io/RapidOCRDocs/'
 languageCode = 'en-us'
-title = 'Label Convert Documentation'
+title = 'RapidOCR Documentation'
 enableEmoji = true
 enableGitInfo = true # N.B. .GitInfo does not currently function with submodule content directories
 # googleAnalytics = "G-VXQVVP7V8K" # (or set via env variable HUGO_GOOGLEANALYTICS)
@@ -60,7 +60,7 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with submodule 
         prism           = true                                # enable syntax highlighting via Prism
 
         # gitinfo
-        repoURL         = "https://github.com/RapidAI/LabelConvert"  # Git repository URL for your site [support for GitHub, GitLab, and BitBucket]
+        repoURL         = "https://github.com/RapidAI/RapidOCR"  # Git repository URL for your site [support for GitHub, GitLab, and BitBucket]
         repoBranch      = "main"                              # Name of your Git repository branch
         editPage        = true                                # enable 'Edit this page' feature - default false
         lastMod         = true                                # enable 'Last modified' date on pages - default false
@@ -144,6 +144,6 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with submodule 
 
 [[menu.primary]]
     name  = "Community"
-    url = "https://github.com/RapidAI/LabelConvert/discussions"
+    url = "https://github.com/RapidAI/RapidOCR/discussions"
     identifier = "community"
     weight = 30

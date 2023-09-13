@@ -5,7 +5,7 @@ draft: false
 author: "SWHL"
 title: "快速开始"
 icon: "rocket_launch"
-description: "A guide to getting up and running with RapidOCR."
+description: "只需3步，即可安装使用。"
 publishdate: "2023-09-13"
 tags:
 categories:

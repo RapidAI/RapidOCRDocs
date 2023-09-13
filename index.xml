@@ -17,12 +17,49 @@
     </item>
     
     <item>
+      <title>rapidocr_onnxruntime</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr/rapidocr_onnxruntime/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr/rapidocr_onnxruntime/</guid>
+      <description>RapidOCR Python link 简介 link 该部分为python版的OCR推理，包括基于ONNXRuntime和OpenVINO两个推理引擎的包。 因为模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 说明 link rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，默认都是在CPU上运行。 按语义版本号来讲，两个包其主版本号和次版本号同步更新，修订号可能会有区别。也就是说x.y.z中x和y是一样的，z可能不同。 各个版本的对应关系： 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 推荐使用PaddleOCRModelConveter在线转换，现用现转。推理代码都是同一个，只需更换模型即可。已转好ONNX模型下载地址：百度网盘 | Google Drive，大家可自行搭配使用。 所有常用的参数配置都在config.yaml下，其中每个独立的模块下均有独立的config.yaml配置文件，可以单独使用。 关于选择哪个版本的包（rapidocr_onnxruntime 或者 rapidocr_openvino）? 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ ⚠️ openvino存在内存不释放的问题，参见wiki pip安装快速使用（推荐） link 安装环境
+包名 版本 安装命令 rapidocr_onnxruntime pip install rapidocr-onnxruntime rapidocr_openvino pip install rapidocr-openvino python脚本使用
+⚠️注意：初始化RapidOCR可不提供config.yaml，默认使用安装目录下的config.yaml。如有自定义需求：
+一是可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 二是复制config.yaml，自行更改，然后初始化给出。e.g. engine = RapidOCR(config_path=&amp;quot;custom.yaml&amp;quot;) 输入：Union[str, np.ndarray, bytes, Path]
+输出：
+有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，e.</description>
+    </item>
+    
+    <item>
+      <title>rapidocr_openvino</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr/rapidocr_openvino/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr/rapidocr_openvino/</guid>
+      <description>RapidOCR Python link 简介 link 该部分为python版的OCR推理，包括基于ONNXRuntime和OpenVINO两个推理引擎的包。 因为模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 说明 link rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，默认都是在CPU上运行。 按语义版本号来讲，两个包其主版本号和次版本号同步更新，修订号可能会有区别。也就是说x.y.z中x和y是一样的，z可能不同。 各个版本的对应关系： 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 推荐使用PaddleOCRModelConveter在线转换，现用现转。推理代码都是同一个，只需更换模型即可。已转好ONNX模型下载地址：百度网盘 | Google Drive，大家可自行搭配使用。 所有常用的参数配置都在config.yaml下，其中每个独立的模块下均有独立的config.yaml配置文件，可以单独使用。 关于选择哪个版本的包（rapidocr_onnxruntime 或者 rapidocr_openvino）? 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ ⚠️ openvino存在内存不释放的问题，参见wiki pip安装快速使用（推荐） link 安装环境
+包名 版本 安装命令 rapidocr_onnxruntime pip install rapidocr-onnxruntime rapidocr_openvino pip install rapidocr-openvino python脚本使用
+⚠️注意：初始化RapidOCR可不提供config.yaml，默认使用安装目录下的config.yaml。如有自定义需求：
+一是可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 二是复制config.yaml，自行更改，然后初始化给出。e.g. engine = RapidOCR(config_path=&amp;quot;custom.yaml&amp;quot;) 输入：Union[str, np.ndarray, bytes, Path]
+输出：
+有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，e.</description>
+    </item>
+    
+    <item>
       <title>rapidocr_web</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/</guid>
       <description>❤2023-05-20 ocrweb update: link 增加桌面版RapidOCRWeb，详情可参见RapidOCRWeb桌面版使用教程 对仓库文档做了整理，大部分文档放到了Wiki 🌹2023-05-14 ocrweb v0.1.5 update: link 增加界面版返回坐标框的返回值(issue #85) API模式增加base64格式传入 详情参见：link 🏸2023-04-16 ocrweb v0.1.1 update: link API部署改为FastAPI库支持 将API模式与Web解耦合，可通过pip install rapidocr_web[api]来选择性安装 详情参见：link </description>
+    </item>
+    
+    <item>
+      <title>rapidocr_api</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/</link>
+      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/</guid>
+      <description>采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 使用步骤 link 安装rapidocr_api $ pip install rapidocr_api # 源码安装 $ python setup.py bdist_wheel v0.0.1 $ cd dist $ pip install rapidocr_*.whl 运行 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 示例: $ rapidocr_api -ip 0.0.0.0 -p 9003 使用 ⚠️：本质就是发送一个POST请求，其他语言同理 curl调用 $ curl -F image_file=@1.</description>
     </item>
     
     <item>
@@ -41,8 +78,7 @@
       <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/quickstart/</guid>
-      <description>Requirements link git Go ≥ v1.19 Hugo ≥ v0.100.0 (Extended Version) Install Hugo linkInstall the Hugo CLI, using the specific instructions for your operating system below:
-Linux Homebrew (macOS) Windows (Chocolatey) Windows (Scoop) Your Linux distro’s package manager may include Hugo. If this is the case, install it directly using your distro’s package manager – for instance, in Ubuntu, run the following command. This will install the extended edition of Hugo:</description>
+      <description>1. 安装 link pip install rapidocr_onnxruntime 2. 终端使用 link rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg 3. 脚本使用 link from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() result, elapse = engine(img_path) print(result) 3. 查看效果 link [[[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], &amp;#39;正品促销&amp;#39;, &amp;#39;0.7986101984977723&amp;#39;], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], &amp;#39;大桶装更划算&amp;#39;, &amp;#39;0.7368737288883754&amp;#39;], [[[69.0, 144.0], [255.0, 144.0], [255.0, 164.0], [69.0, 164.0]], &amp;#39;强力去污符合国标&amp;#39;, &amp;#39;0.8172478278477987&amp;#39;], [[[107.0, 170.0], [219.0, 170.0], [219.0, 182.0], [107.0, 182.0]], &amp;#39;-40深度防冻不结冰&amp;#39;, &amp;#39;0.8655969283797524&amp;#39;], [[[35.</description>
     </item>
     
     <item>
@@ -52,213 +88,6 @@ Linux Homebrew (macOS) Windows (Chocolatey) Windows (Scoop) Your Linux distro’
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/</guid>
       <description>🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&amp;gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 </description>
-    </item>
-    
-    <item>
-      <title>Installation</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/installation/</link>
-      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/installation/</guid>
-      <description>1. Clone the whole repo into local directory. link git clone https://github.com/RapidAI/Knowledge-QA-LLM.git 2. Install the requirements. link cd Knowledge-QA-LLM pip install -r requirements.txt 3. Download models. linkDownload the moka-ai/m3e-small model and put it in the assets/models/m3e-small directory. This model is used to vectorize text content.
-4. Configure the LLM API. linkSeparately configure the interface of chatglm2-6b, interface startup reference: ChatGLM2-6B API. The specific usage method Reference: knowledge_qa_llm/llm/chatglm2_6b.py
-5. Change the config.</description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/syntax-highlighting/</link>
-      <pubDate>Fri, 16 Dec 2022 01:07:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/syntax-highlighting/</guid>
-      <description>Code Highlighters linkLotus Docs supports syntax highlighting by Prism (enabled by default via param.docs.prism in hugo.toml) or Hugo&amp;rsquo;s built-in code highlighter Chroma.
-Fenced code blocks (code enclosed by triple backticks above and below) that specify a code language (declared right of the opening fence), will automatically highlight the code content as HTML e.g. ```html:
-```html &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Buy cool new product&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!-- Use action=&amp;#34;/create-checkout-session.php&amp;#34; if your server is PHP based.</description>
-    </item>
-    
-    <item>
-      <title>Plausible Analytics</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/plausible-analytics/</link>
-      <pubDate>Thu, 29 Dec 2022 16:28:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/plausible-analytics/</guid>
-      <description>Plausible Analytics is a simple, open source, lightweight (&amp;lt; 1 KB), privacy-focused alternative to Google Analytics. Plausible is completely independent, self-funded and bootstrapped. Read more about Plausible Analytics.
-Why use Plausible Analytics? linkAs previously mentioned, Plausible is an open source, privacy-focused Google Analytics alternative. So what are the benefits of this?
-Privacy by design - Plausible, by design complies with strict privacy policies. Including: GDPR, CCPA, and PECR. You own your data - Plausible does not sell or share your data, or abuse your visitor&amp;rsquo;s privacy.</description>
-    </item>
-    
-    <item>
-      <title>Google Analytics v4</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/google-analytics/</link>
-      <pubDate>Wed, 05 Jul 2023 23:48:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/google-analytics/</guid>
-      <description>Lotus Docs utilises Hugo&amp;rsquo;s internal Google Analytics v4 template1.
-info Starting July 1, 2023, Universal Analytics (UA) was deprecated and is no longer processed by Google. Lotus Docs does not include support for UA. Enabling Google Analytics linkTo enable Google Analytics v4, simply provide your tracking ID in your configuration file:
-hugo.toml hugo.yaml hugo.json googleAnalytics = &amp;#39;G-MEASUREMENT_ID&amp;#39; googleAnalytics: G-MEASUREMENT_ID { &amp;#34;googleAnalytics&amp;#34;: &amp;#34;G-MEASUREMENT_ID&amp;#34; } Hugo Google Analytics v4 Internal Template - gohugo.</description>
-    </item>
-    
-    <item>
-      <title>Feedback Widget</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/feedback-widget/</link>
-      <pubDate>Tue, 08 Aug 2023 23:33:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/feedback-widget/</guid>
-      <description>The Lotus Docs feedback plugin integrates with Google or Plausible Analytics to allow you to collect visitor feedback on your sites&amp;rsquo; content.
-Why use web analytics to collect feedback? linkShort answer? Because it&amp;rsquo;s FREE! Other benefits include:
-No need to sign up to yet another service just to collect basic visitor feedback. Easy to configure. Once Google or Plausible Analytics (or both) are configured in hugo.toml, the Feedback Widget it ready to go.</description>
-    </item>
-    
-    <item>
-      <title>FlexSearch</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/flexsearch/</link>
-      <pubDate>Tue, 20 Jun 2023 15:30:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/flexsearch/</guid>
-      <description>warning Caution - This documentation is in progress What is FlexSearch? linkFlexSearch is a Static Search plugin that provides a fast and simple search experience for your Lotus Docs site. Static Search provides instant, dynamic results for any search terms, and includes a wealth of options and settings to fine-tune the functionality to best suit the needs of your site visitors.
-How does FlexSearch work? linkFlexSearch works via a mechanism known as Contextual Search (invented by Thomas Wilkerling).</description>
-    </item>
-    
-    <item>
-      <title>DocSearch</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/docsearch/</link>
-      <pubDate>Sat, 01 Jul 2023 14:09:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/docsearch/</guid>
-      <description>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; What is DocSearch? linkDocSearch is a unique, free search plugin, specifically designed for technical documentation for open-source projects or technical blogs. Providing fast, accurate search options, DocSearch empowers visitors to find the information they need as quickly as possible. With the DocSearch plugin enabled, integrating search into your Lotus Docs site takes just a few moments.
-How does DocSearch work? linkMuch like other search engines, DocSearch uses a scraper to index your site content; in simple terms, the scraper scans your website and stores the data, which it can then collate to make a custom search that is effective for your site.</description>
-    </item>
-    
-    <item>
-      <title>KaTex</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/katex/</link>
-      <pubDate>Sat, 26 Aug 2023 20:43:23 +0100</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/katex/</guid>
-      <description>$$ f\relax{x} = \int_{-\infty}^\infty \hat f(\xi)\ e^{2 \pi i \xi x} \ d\xi $$
-How to use KaTex with Lotus Docs linkKaTex support is controlled by the katex parameter in your front matter (line 10 below). Add and set it to true in your front matter to enable KaTex support for that page. This means KaTex support and resources are active only for pages that require it.
---- weight: 530 title: &amp;#34;KaTex&amp;#34; description: &amp;#34;Fast Tex math rendering for your Lotus Docs site&amp;#34; icon: &amp;#34;function&amp;#34; date: &amp;#34;2023-08-26T20:43:23&amp;#43;01:00&amp;#34; lastmod: &amp;#34;2023-08-26T20:43:23&amp;#43;01:00&amp;#34; draft: true toc: true katex: true --- Writing LaTex in Markdown linkEquations can be displayed either in block level or inline.</description>
-    </item>
-    
-    <item>
-      <title>Breadcrumb Navigation</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/theme-options/breadcrumbs/</link>
-      <pubDate>Sun, 27 Nov 2022 07:08:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/theme-options/breadcrumbs/</guid>
-      <description>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;/ Guides / Theme Options / Breadcrumbs Enable Breadcrumbs linkBreadcrumb navigation is enabled by default1 and appears in the top right-hand corner of content pages above the page title. The Lotus Docs breadcrumb implementation functions with both multilingual and single-language sites.
-Structured Data linkThe breadcrumb navigation also auto-generates structured data for rich results to help enable search results that are more engaging to users. Here are the Breadcrumb Rich Results test results for this very page.</description>
-    </item>
-    
-    <item>
-      <title>Mermaid</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/mermaid/</link>
-      <pubDate>Fri, 08 Sep 2023 06:05:19 +0100</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/mermaid/</guid>
-      <description>What is Mermaid? linkMermaid is a JavaScript-based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. The main purpose of Mermaid is to help documentation catch up with development.
-How to use Mermaid with Lotus Docs linkMermaid is enabled whenever content containing Mermaid diagram syntax is present in a page&amp;rsquo;s content. You can insert Mermaid diagrams by using the mermaid language identifier with triple backtick codeblocks:</description>
-    </item>
-    
-    <item>
-      <title>Alerts</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/alerts/</link>
-      <pubDate>Tue, 22 Nov 2022 13:42:31 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/alerts/</guid>
-      <description>Adding a Page Alert linkPage alerts can be added to your markdown using the following shortcode:
-{{&amp;lt; alert text=&amp;#34;This is the default alert. It consists of a default theme colour and icon.&amp;#34; /&amp;gt;}} The above code results in the following alert:
-notifications This is the default alert. It consists of a default theme colour and icon. Alert with Context linkAdd context to an alert via the context parameter:
-{{&amp;lt; alert context=&amp;#34;info&amp;#34; text=&amp;#34;This is an alert with an &amp;lt;strong&amp;gt;info&amp;lt;/strong&amp;gt; context.</description>
-    </item>
-    
-    <item>
-      <title>Tables</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/tables/</link>
-      <pubDate>Sat, 05 Nov 2022 04:41:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/tables/</guid>
-      <description>The table shortcode enables Lotus Docs to take advantage of Bootstrap&amp;rsquo;s opt-in table styling.
-Regular Tables linkBy default Lotus Docs renders regular Markdown tables with some very basic styling:
-| Tables | Are | Cool | |----------|:-------------:|------:| | col 1 is | left-aligned | $1600 | | col 2 is | centered | $12 | | col 3 is | right-aligned | $1 | Result:
-Tables Are Cool col 1 is left-aligned $1600 col 2 is centered $12 col 3 is right-aligned $1 Shortcode Tables linkThe the table shortcode allows you to implement a number of Bootstrap&amp;rsquo;s table styling classes.</description>
-    </item>
-    
-    <item>
-      <title>Tabs</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/tabs/</link>
-      <pubDate>Tue, 25 Apr 2023 03:51:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/tabs/</guid>
-      <description>The tabs shortcode leverages Bootstrap&amp;rsquo;s Tabs styling to easily add Tabs to your markdown content. The shortcode is actually a combination of two separate shortcodes (tab and tabs) working together.
-You need a minimum of one tab shortcode nested inside a tabs shortcode for the component to function:
-{{&amp;lt; tabs tabTotal=&amp;#34;1&amp;#34;&amp;gt;}} {{% tab tabName=&amp;#34;Tab 1&amp;#34; %}} **Tab 1 Content** {{% /tab %}} {{&amp;lt; /tabs &amp;gt;}} Basic Tabs linkThe following example demonstrates how to create a basic multi tab navigation component using the tabs and tab shortcodes.</description>
-    </item>
-    
-    <item>
-      <title>Prism</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/prism/</link>
-      <pubDate>Mon, 28 Nov 2022 04:05:31 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/prism/</guid>
-      <description>Prism Shortcode linkWhen Prism is enabled in hugo.toml syntax highlighting can also be achieved using a paired Prism shortcode. The code language is declared using the lang parameter:
-{{&amp;lt; prism lang=&amp;#34;html&amp;#34; &amp;gt;}} &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Buy cool new product&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!-- Use action=&amp;#34;/create-checkout-session.php&amp;#34; if your server is PHP based. --&amp;gt; &amp;lt;form action=&amp;#34;/create-checkout-session&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt; &amp;lt;button type=&amp;#34;submit&amp;#34;&amp;gt;Checkout&amp;lt;/button&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; {{&amp;lt; /prism &amp;gt;}} All code blocks highlighted by Prism feature the Copy to Clipboard Button plugin.</description>
-    </item>
-    
-    <item>
-      <title>Markdownify</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/markdownify/</link>
-      <pubDate>Fri, 28 Apr 2023 16:35:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/markdownify/</guid>
-      <description>This shortcode parses its content as markdown.
-Usage linkThe following:
-{{&amp;lt; markdownify &amp;gt;}} **Bold Text**: Above a code block. ```html &amp;lt;!-- An example HTML code block --&amp;gt; &amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt; {{&amp;lt; /markdownify &amp;gt;}} Renders:
-Bold Text: Above a code block.
-&amp;lt;!-- An example HTML code block --&amp;gt; &amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt; Nested Shortcodes linkThe markdownify shortcode is especially useful in cases where you require portions of content nested inside another shortcode be parsed as Markdown.</description>
-    </item>
-    
-    <item>
-      <title>KaTex</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/katex/</link>
-      <pubDate>Sun, 27 Aug 2023 04:13:11 +0100</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/katex/</guid>
-      <description>Lotus Docs has built-in support for KaTex. However, there are certain equation syntaxes which do not render well if at all without a lot of character escaping1 or alterations. The KaTex shortcode is suited to handle such cases.
-For example:
-{{&amp;lt; katex &amp;gt;}} $$ \begin{array} {lcl} L(p,w_i) &amp;amp;=&amp;amp; \dfrac{1}{N}\Sigma_{i=1}^N(\underbrace{f_r(x_2 \rightarrow x_1 \rightarrow x_0)G(x_1 \longleftrightarrow x_2)f_r(x_3 \rightarrow x_2 \rightarrow x_1)}_{sample\, radiance\, evaluation\, in\, stage2} \\\\\\ &amp;amp;=&amp;amp; \prod_{i=3}^{k-1}(\underbrace{\dfrac{f_r(x_{i&amp;#43;1} \rightarrow x_i \rightarrow x_{i-1})G(x_i \longleftrightarrow x_{i-1})}{p_a(x_{i-1})}}_{stored\,in\,vertex\, during\,light\, path\, tracing\, in\, stage1})\dfrac{G(x_k \longleftrightarrow x_{k-1})L_e(x_k \rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)}) \end{array} $$ {{&amp;lt; /katex &amp;gt;}} renders as:</description>
-    </item>
-    
-    <item>
-      <title>How to Contribute</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/contributing/how-to-contribute/</link>
-      <pubDate>Wed, 19 Oct 2022 21:49:38 +0100</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/contributing/how-to-contribute/</guid>
-      <description>Contribute to code linkCreate a Pull Request link Follow the GitHub flow. Follow the Conventional Commits Specification Improve documentation link Follow the GitHub flow. Follow the Conventional Commits Specification Create an issue link Bug report Feature request Help others linkLotus Docs Discussions is the place to get help and help others with Lotus Docs.
-Submit to showcase linkShare what you’ve built with us.
-Contribute financially linkHelp support the team developing Lotus Docs by becoming a financial contributor.</description>
-    </item>
-    
-    <item>
-      <title>Financial Contributions</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/contributing/financial-contributions/</link>
-      <pubDate>Wed, 19 Oct 2022 07:07:38 +0100</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/contributing/financial-contributions/</guid>
-      <description>We use Open Collective to receive contributions, share our budget, and manage expenses. Visit the Lotus Labs Open Collective page.
-Become a Sponsor linkBecome a sponsor starting at $50.00 per month. Your logo — with a link to your website — will show up on the Lotus Docs website, the Lotus Docs repository, and the Lotus Labs Open Collective page.
-Become a Backer linkBecome a backer starting at $5.00 per month.</description>
-    </item>
-    
-    <item>
-      <title>Code of Conduct</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/contributing/code-of-conduct/</link>
-      <pubDate>Sat, 15 Oct 2022 02:21:15 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/contributing/code-of-conduct/</guid>
-      <description>Our Pledge linkWe as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.</description>
     </item>
     
   </channel>

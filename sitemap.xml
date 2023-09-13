@@ -5,98 +5,41 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr/</loc>
     <lastmod>2023-09-13T10:00:48+08:00</lastmod>
   </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr/rapidocr_onnxruntime/</loc>
+    <lastmod>2023-09-13T17:24:52+08:00</lastmod>
+  </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr/rapidocr_openvino/</loc>
+    <lastmod>2023-09-13T17:24:52+08:00</lastmod>
+  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/</loc>
     <lastmod>2023-09-13T10:00:48+08:00</lastmod>
+  </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/</loc>
+    <lastmod>2023-09-13T17:24:52+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/overview/</loc>
     <lastmod>2023-09-13T10:03:45+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/quickstart/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
+    <lastmod>2023-09-13T17:24:52+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/</loc>
     <lastmod>2023-09-13T10:00:48+08:00</lastmod>
   </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/installation/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/</loc>
     <lastmod>2023-09-13T09:40:26+08:00</lastmod>
+  </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/</loc>
+    <lastmod>2023-09-13T17:24:52+08:00</lastmod>
+  </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr/</loc>
+    <lastmod>2023-09-13T17:24:52+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/</loc>
     <lastmod>2023-09-13T10:03:45+08:00</lastmod>
   </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/syntax-highlighting/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/plausible-analytics/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/google-analytics/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/feedback-widget/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/flexsearch/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/docsearch/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/katex/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/theme-options/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/theme-options/breadcrumbs/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/features/mermaid/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/alerts/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/tables/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/tabs/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/prism/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/markdownify/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/shortcodes/katex/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/contributing/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/contributing/how-to-contribute/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/contributing/financial-contributions/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/contributing/code-of-conduct/</loc>
-    <lastmod>2023-09-13T09:40:26+08:00</lastmod>
-  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/</loc>
-    <lastmod>2023-09-13T10:03:45+08:00</lastmod>
+    <lastmod>2023-09-13T17:24:52+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/categories/</loc>
   </url><url>

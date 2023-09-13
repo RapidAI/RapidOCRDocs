@@ -23,19 +23,7 @@
       <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/quickstart/</guid>
-      <description>Requirements link git Go ≥ v1.19 Hugo ≥ v0.100.0 (Extended Version) Install Hugo linkInstall the Hugo CLI, using the specific instructions for your operating system below:
-Linux Homebrew (macOS) Windows (Chocolatey) Windows (Scoop) Your Linux distro’s package manager may include Hugo. If this is the case, install it directly using your distro’s package manager – for instance, in Ubuntu, run the following command. This will install the extended edition of Hugo:</description>
-    </item>
-    
-    <item>
-      <title>Installation</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/installation/</link>
-      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/installation/</guid>
-      <description>1. Clone the whole repo into local directory. link git clone https://github.com/RapidAI/Knowledge-QA-LLM.git 2. Install the requirements. link cd Knowledge-QA-LLM pip install -r requirements.txt 3. Download models. linkDownload the moka-ai/m3e-small model and put it in the assets/models/m3e-small directory. This model is used to vectorize text content.
-4. Configure the LLM API. linkSeparately configure the interface of chatglm2-6b, interface startup reference: ChatGLM2-6B API. The specific usage method Reference: knowledge_qa_llm/llm/chatglm2_6b.py
-5. Change the config.</description>
+      <description>1. 安装 link pip install rapidocr_onnxruntime 2. 终端使用 link rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg 3. 脚本使用 link from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() result, elapse = engine(img_path) print(result) 3. 查看效果 link [[[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], &amp;#39;正品促销&amp;#39;, &amp;#39;0.7986101984977723&amp;#39;], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], &amp;#39;大桶装更划算&amp;#39;, &amp;#39;0.7368737288883754&amp;#39;], [[[69.0, 144.0], [255.0, 144.0], [255.0, 164.0], [69.0, 164.0]], &amp;#39;强力去污符合国标&amp;#39;, &amp;#39;0.8172478278477987&amp;#39;], [[[107.0, 170.0], [219.0, 170.0], [219.0, 182.0], [107.0, 182.0]], &amp;#39;-40深度防冻不结冰&amp;#39;, &amp;#39;0.8655969283797524&amp;#39;], [[[35.</description>
     </item>
     
   </channel>

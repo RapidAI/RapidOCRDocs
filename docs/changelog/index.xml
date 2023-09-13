@@ -7,5 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Nov 2022 12:36:15 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/changelog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rapidocr</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr/</guid>
+      <description>😉2023-07-12 v1.2.12 update: link 在rapidocr_onnxruntime初始化时，添加det_use_cuda、cls_use_cuda、rec_use_cuda参数 兼容配置文件方式传入RapidOCR类中 🎮2023-03-11 v1.2.2 update: link 修复实例化python中RapidOCR类传入参数错误 🧢2023-03-07 v1.2.1 update: link rapidocr系列包更新到v1.2.0 优化python下rapidocr系列包的接口传入参数，支持实例化类时，动态给定各个参数，更加灵活。 如果不指定，则用config.yaml下的默认参数。 具体可参见：传入参数 ⛸2023-02-16 update: link 优化ocrweb部分代码，可直接pip安装，快速使用，详情参见README。 优化python中各个部分的推理代码，更加紧凑，同时易于维护。 🎉2023-01-21 update: link [python] 添加含有文字的图像方向分类模块，具体参见Rapid Orientation ⚽2022-12-19 update: link [python] 添加表格结构还原模块，具体参见Rapid Table 🤖2022-12-14 update: link [python] 将配置参数和模型移到模块里面，同时将模型打到whl包内，可以直接pip安装使用，更加方便快捷。 详情参见：README 🧻2022-11-20 update: link [python] 添加版面分析部分,支持中文、英文和表格三种版面的检测分析。详情参见:Rapid Structure部分。 🎃2022-11-01 update: link 添加Hugging Face Demo, 增加可以调节超参数的功能，详情可访问Hugging Face Demo 🚩2022-10-01 udpate: link 修复python部分下一些较小bugs merge来自AutumnSun1996的OCRWeb实现的多语言部署demo，详情参见：ocrweb_mutli-README 添加onnxruntime-gpu推理速度较慢于CPU的问题说明，详情参见：onnxruntime-gpu版相关说明 🛴2022-09-01 update: link 由于openvino发布了2022.2.0.dev20220829版本，该版本解决了cls部分模型推理的问题。至此，基于openvino的rapidocr完成了统一，全部由openvino推理引擎完成。 详细使用方法参见：python/README 🧸2022-08-17 update: link python/ocrweb部分 v1.</description>
+    </item>
+    
+    <item>
+      <title>rapidocr_web</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/</guid>
+      <description>❤2023-05-20 ocrweb update: link 增加桌面版RapidOCRWeb，详情可参见RapidOCRWeb桌面版使用教程 对仓库文档做了整理，大部分文档放到了Wiki 🌹2023-05-14 ocrweb v0.1.5 update: link 增加界面版返回坐标框的返回值(issue #85) API模式增加base64格式传入 详情参见：link 🏸2023-04-16 ocrweb v0.1.1 update: link API部署改为FastAPI库支持 将API模式与Web解耦合，可通过pip install rapidocr_web[api]来选择性安装 详情参见：link </description>
+    </item>
+    
+    <item>
+      <title>rapidocr_api</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/</guid>
+      <description>🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&amp;gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 </description>
+    </item>
+    
   </channel>
 </rss>

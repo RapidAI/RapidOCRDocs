@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation on Label Convert Documentation</title>
+    <link>https://rapidai.github.io/LabelConvert/docs/</link>
+    <description>Recent content in Documentation on Label Convert Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Oct 2022 02:21:15 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/LabelConvert/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Overview</title>
+      <link>https://rapidai.github.io/LabelConvert/docs/overview/</link>
+      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/LabelConvert/docs/overview/</guid>
+      <description>捷智OCR link信创级开源OCR - 为世界内容安全贡献力量
+商业支持 link 🎉🎉🎉 推出知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 生态框架 linkflowchart LR subgraph Step direction TB C(Text Det) --&amp;gt; D(Text Cls) --&amp;gt; E(Text Rec) end A[/OurSelf Dataset/] --&amp;gt; B(PaddleOCR) --Train--&amp;gt; Step --&amp;gt; F(PaddleOCRModelConverter) F --ONNX--&amp;gt; G{RapidOCR Deploy\n&amp;lt;b&amp;gt;Python/C&amp;#43;&amp;#43;/Java/C#&amp;lt;/b&amp;gt;} G --&amp;gt; H(Windows x86/x64) &amp;amp; I(Linux) &amp;amp; J(Android) &amp;amp; K(Web) &amp;amp; L(Raspberry Pi) click B &amp;#34;https://github.</description>
+    </item>
+    
+    <item>
+      <title>快速开始</title>
+      <link>https://rapidai.github.io/LabelConvert/docs/quickstart/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/LabelConvert/docs/quickstart/</guid>
+      <description>Requirements link git Go ≥ v1.19 Hugo ≥ v0.100.0 (Extended Version) Install Hugo linkInstall the Hugo CLI, using the specific instructions for your operating system below:
+Linux Homebrew (macOS) Windows (Chocolatey) Windows (Scoop) Your Linux distro’s package manager may include Hugo. If this is the case, install it directly using your distro’s package manager – for instance, in Ubuntu, run the following command. This will install the extended edition of Hugo:</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>https://rapidai.github.io/LabelConvert/docs/installation/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/LabelConvert/docs/installation/</guid>
+      <description>1. Clone the whole repo into local directory. link git clone https://github.com/RapidAI/Knowledge-QA-LLM.git 2. Install the requirements. link cd Knowledge-QA-LLM pip install -r requirements.txt 3. Download models. linkDownload the moka-ai/m3e-small model and put it in the assets/models/m3e-small directory. This model is used to vectorize text content.
+4. Configure the LLM API. linkSeparately configure the interface of chatglm2-6b, interface startup reference: ChatGLM2-6B API. The specific usage method Reference: knowledge_qa_llm/llm/chatglm2_6b.py
+5. Change the config.</description>
+    </item>
+    
+    <item>
+      <title>Changelog</title>
+      <link>https://rapidai.github.io/LabelConvert/docs/changelog/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/LabelConvert/docs/changelog/</guid>
+      <description>2023-09-07 v0.0.9 update: link Add tips when database is empty. 2023-08-29 v0.0.8 update: link Fixed missing embedding_extract Fixed default parameters of LLM 2023-08-11 v0.0.7 update: link Optimize layout, remove the plugin option, and put the extract vector model option on the home page. The tips are translated into English for easy communication. Add project logo:🧐 Update CLI module code. 2023-08-05 v0.0.6 update: link Adapt more llm_api, include online llm api, such ad ERNIE-Bot-Turbo.</description>
+    </item>
+    
+  </channel>
+</rss>

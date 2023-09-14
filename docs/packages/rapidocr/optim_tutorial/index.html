@@ -18,7 +18,7 @@
 
 <html lang="en-us"><head>
     <meta charset="utf-8" />
-    <title>概览 | RapidOCR Documentation</title>
+    <title>RapidOCR调优尝试教程 | RapidOCR Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A Modern Documentation Theme for Hugo" />
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
@@ -80,7 +80,7 @@
                 
                     
                         
-                        <li class="current">
+                        <li class="">
                             <a class="sidebar-root-link" href="https://rapidai.github.io/RapidOCRDocs/docs/overview/">
                                 <i class="material-icons me-2">circle</i>
                                 
@@ -102,22 +102,22 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  ">
+                        <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">package</i>
                                 Packages
                             </button>
-                            <div class="sidebar-submenu ">
+                            <div class="sidebar-submenu d-block">
                                 <ul>
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  ">
+                                            <li class="sidebar-dropdown nested  current active">
                                                 <button class="btn">
                                                     
                                                     rapidcor
                                                 </button>
-                                                <div class="sidebar-submenu ">
+                                                <div class="sidebar-submenu d-block">
                                                     <ul>
                                                         
                                                             
@@ -127,7 +127,7 @@
                                                             <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr/rapidocr_openvino/">rapidocr_openvino</a></li>
                                                         
                                                             
-                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr/optim_tutorial/">RapidOCR调优尝试教程</a></li>
+                                                            <li class="current "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr/optim_tutorial/">RapidOCR调优尝试教程</a></li>
                                                         
                                                             
                                                             <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr/config_parameter/">config.yaml参数解释</a></li>
@@ -378,10 +378,26 @@
                     <meta itemprop="position" content='1' />
                 </li>
             
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/RapidOCRDocs/docs/packages/">
+                        <span itemprop="name">Packages</span>
+                    </a>
+                    <meta itemprop="position" content='2' />
+                </li>
+            
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/RapidOCRDocs/docs/packages/rapidocr/">
+                        <span itemprop="name">rapidcor</span>
+                    </a>
+                    <meta itemprop="position" content='3' />
+                </li>
+            
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">概览</span>
-                <meta itemprop="position" content='2' />
+                <span itemprop="name">RapidOCR调优尝试教程</span>
+                <meta itemprop="position" content='4' />
             </li>
         
     </ul>
@@ -393,11 +409,21 @@
     <div class="fw-bold text-uppercase mb-2">On this page</div>
     <nav id="toc">
   <ul>
-    <li><a href="#捷智ocr">捷智OCR</a>
+    <li>
       <ul>
-        <li><a href="#商业支持">商业支持</a></li>
-        <li><a href="#简介">简介</a></li>
-        <li><a href="#生态框架">生态框架</a></li>
+        <li>
+          <ul>
+            <li><a href="#引言">引言</a></li>
+            <li><a href="#常见错例种类">常见错例种类</a></li>
+            <li><a href="#个别字丢失调优篇">个别字丢失调优篇</a></li>
+            <li><a href="#个别字识别错误调优篇">个别字识别错误调优篇</a>
+              <ul>
+                <li><a href="#情况一轻量中英文模型识别对个别汉字识别错误">情况一：轻量中英文模型识别对个别汉字识别错误</a></li>
+                <li><a href="#情况二轻量中英文模型对个别英文或数字识别错误">情况二：轻量中英文模型对个别英文或数字识别错误</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -411,11 +437,21 @@
                                         </button>
 <nav id="toc-mobile">
   <ul class="dropdown-menu">
-    <li><a href="#捷智ocr">捷智OCR</a>
+    <li>
       <ul>
-        <li><a href="#商业支持">商业支持</a></li>
-        <li><a href="#简介">简介</a></li>
-        <li><a href="#生态框架">生态框架</a></li>
+        <li>
+          <ul>
+            <li><a href="#引言">引言</a></li>
+            <li><a href="#常见错例种类">常见错例种类</a></li>
+            <li><a href="#个别字丢失调优篇">个别字丢失调优篇</a></li>
+            <li><a href="#个别字识别错误调优篇">个别字识别错误调优篇</a>
+              <ul>
+                <li><a href="#情况一轻量中英文模型识别对个别汉字识别错误">情况一：轻量中英文模型识别对个别汉字识别错误</a></li>
+                <li><a href="#情况二轻量中英文模型对个别英文或数字识别错误">情况二：轻量中英文模型对个别英文或数字识别错误</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -425,7 +461,7 @@
                                             
                                             <h1 class="content-title mb-0">
                                                 <span class="title-text">
-                                                    概览
+                                                    RapidOCR调优尝试教程
                                                 </span>
                                                 
                                             </h1>
@@ -437,58 +473,145 @@
                                             
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <div align="center">
-  <img src="https://raw.githubusercontent.com/RapidAI/RapidOCR/main/assets/RapidOCR_LOGO.png" width="65%" height="65%"/>
-</div>
-<h1 id="捷智ocr">捷智OCR <a href="#%e6%8d%b7%e6%99%baocr" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><p><em>信创级开源OCR - 为世界内容安全贡献力量</em></p>
-<p align="left">
-    <a href="https://huggingface.co/spaces/SWHL/RapidOCRDemo" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo-blue"></a>
-    <a href="https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo-blue"></a>
-    <a href="https://colab.research.google.com/github/RapidAI/RapidOCR/blob/main/assets/RapidOCRDemo.ipynb" target="_blank"><img src="https://raw.githubusercontent.com/RapidAI/RapidOCR/main/assets/colab-badge.svg" alt="Open in Colab"></a>
-    <a href="https://aistudio.baidu.com/aistudio/projectdetail/4444785?sUid=57084&shared=1&ts=1660896122332" target="_blank"><img src="https://img.shields.io/badge/PP-Open in AI Studio-blue.svg"></a><br/>
-    <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.12-aff.svg"></a>
-    <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
-    <a href="https://github.com/RapidAI/RapidOCR/graphs/contributors"><img src="https://img.shields.io/github/contributors/RapidAI/RapidOCR?color=9ea"></a>
-    <a href="https://pepy.tech/project/rapidocr_onnxruntime"><img src="https://static.pepy.tech/personalized-badge/rapidocr_onnxruntime?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Ort"></a>
-    <a href="https://pypi.org/project/rapidocr-onnxruntime/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-onnxruntime"></a>
-    <a href="https://github.com/RapidAI/RapidOCR/stargazers"><img src="https://img.shields.io/github/stars/RapidAI/RapidOCR?color=ccf"></a>
-    <a href='https://rapidocr.readthedocs.io/en/latest/?badge=latest'>
-        <img src='https://readthedocs.org/projects/rapidocr/badge/?version=latest' alt='Documentation Status' />
-    </a>
-    <a href="https://semver.org/"><img alt="SemVer2.0" src="https://img.shields.io/badge/SemVer-2.0-brightgreen"></a>
-    <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-</p>
-<h2 id="商业支持">商业支持 <a href="#%e5%95%86%e4%b8%9a%e6%94%af%e6%8c%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>🎉🎉🎉 推出知识星球<a href="https://t.zsxq.com/0duLBZczw">RapidAI私享群</a>，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。</li>
-<li>提供信创平台多架构，包括<strong>Arm/X86/mips(龙芯)/RISC-V</strong>等信创CPU支持，同时兼容<strong>ONNXRuntime/OpenVINO/NCNN</strong>。有意者邮件联系: <a href="mailto:znsoft@163.com">znsoft@163.com</a>, 请先邮件咨询服务项目，即时回复联系方式。</li>
-<li>提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ <a href="mailto:liekkaskono@163.com">liekkaskono@163.com</a>。</li>
+        <h3 id="引言">引言 <a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。</li>
+<li>基本的原则是尽量不去动模型内部，降低使用成本。</li>
+<li>本篇文章就来说说在识别效果不好时，如何去调优。</li>
+<li>因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。</li>
+<li>✨<strong>以下尝试情况，均已经在<a href="https://huggingface.co/spaces/SWHL/RapidOCRDemo">在线demo</a>中实现，看完之后，可移步那里去尝试。</strong></li>
 </ul>
-<h2 id="简介">简介 <a href="#%e7%ae%80%e4%bb%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>💖目前已知<strong>运行速度最快、支持最广</strong>，完全开源免费并支持离线快速部署的多平台多语言OCR。</li>
-<li><strong>支持的语言</strong>: 默认是中英文，其他语言识别需要自助转换。具体参考<a href="https://github.com/RapidAI/RapidOCR/wiki/support_language">这里</a></li>
-<li><strong>缘起</strong>：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用<code>Python/C++/Java/Swift/C#</code> 将它移植到各个平台。</li>
-<li><strong>名称来源</strong>： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。</li>
-<li><strong>使用</strong>：
+<h3 id="常见错例种类">常见错例种类 <a href="#%e5%b8%b8%e8%a7%81%e9%94%99%e4%be%8b%e7%a7%8d%e7%b1%bb" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>本地使用过程中，识别结果：</p>
 <ul>
-<li>如果仓库下已有模型满足要求 → RapidOCR部署使用即可。</li>
-<li>不满足要求 → 基于<a href="https://github.com/PaddlePaddle/PaddleOCR">PaddleOCR</a>在自己数据上微调 → RapidOCR部署。</li>
+<li>个别字丢失</li>
+<li>个别字识别错误</li>
+</ul>
+<h3 id="个别字丢失调优篇">个别字丢失调优篇 <a href="#%e4%b8%aa%e5%88%ab%e5%ad%97%e4%b8%a2%e5%a4%b1%e8%b0%83%e4%bc%98%e7%af%87" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
+<li>
+<p>查看图像是否<code>shape</code>太小，导致文本检测丢失。</p>
+<ul>
+<li>对于长度较长，高度较小的图像，可尝试对该图像高度做上下补充，来减小文字在原始图像中比例，利于文本检测。类似下图这种，左侧一条为原始图像，右侧为上下补边的图像。
+
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/RapidOCRDocs/230757239-3aad8686-4fbd-4f1a-abff-f7e1cb90f3aa_16230609240436445218.png" alt="Snipaste_2023-04-09_14-01-45" width="1299" height="270" loading="lazy">
+    
+  
+</li>
+<li>padding代码参考：</li>
+</ul>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="a8a1f4c" class="language-python ">
+  <code>from typing import Tuple
+
+import cv2
+import numpy as np
+
+
+def padding_img(img: np.ndarray,
+                padding_value: Tuple[int, int, int, int],
+                padding_color: Tuple = (0, 0, 0)) -&gt; np.ndarray:
+    padded_img = cv2.copyMakeBorder(img,
+                                    padding_value[0],
+                                    padding_value[1],
+                                    padding_value[2],
+                                    padding_value[3],
+                                    cv2.BORDER_CONSTANT,
+                                    value=padding_color)
+    return padded_img
+
+img = cv2.imread(&#39;xxx.jpg&#39;)
+
+# padding_value: (top, bottom, left, right)
+# 对该图像上下各补充10像素的白边
+padded_img = padding_img(img, (10, 10, 0, 0), (255, 255, 255))</code>
+  </pre>
+  </div>
+<ul>
+<li>将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。</li>
 </ul>
 </li>
-<li>如果该仓库有帮助到你，还请点个小星星⭐呗！</li>
+<li>
+<p>将该图像上传到<a href="https://huggingface.co/spaces/SWHL/RapidOCRDemo">在线demo</a>中，查看能否复现问题？</p>
+<ul>
+<li>如不能复现，着重比对环境是否与在线demo中相关包使用版本不一致情况？</li>
+<li>在线demo所用的各个包版本情况：
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="27c11da" class="language-text ">
+  <code>Python: 3.8
+onnxruntime: 1.14.1
+rapidocr_onnxruntime: 1.2.5</code>
+  </pre>
+  </div>
+</li>
 </ul>
-<h2 id="生态框架">生态框架 <a href="#%e7%94%9f%e6%80%81%e6%a1%86%e6%9e%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><pre class="mermaid">flowchart LR
-    subgraph Step
-    direction TB
-    C(Text Det) --&gt; D(Text Cls) --&gt; E(Text Rec)
-    end
-
-    A[/OurSelf Dataset/] --&gt; B(PaddleOCR) --Train--&gt; Step --&gt; F(PaddleOCRModelConverter)
-    F --ONNX--&gt; G{RapidOCR Deploy\n&lt;b&gt;Python/C&#43;&#43;/Java/C#&lt;/b&gt;}
-    G --&gt; H(Windows x86/x64) &amp; I(Linux) &amp; J(Android) &amp; K(Web) &amp; L(Raspberry Pi)
-
-    click B &#34;https://github.com/PaddlePaddle/PaddleOCR&#34; _blank
-    click F &#34;https://github.com/RapidAI/PaddleOCRModelConverter&#34; _blank
-</pre>
+</li>
+<li>
+<p>如能复现，尝试调节在线demo中的三个参数，注意控制变量调节参数</p>
+<ol>
+<li>首先调节<code>box_thresh</code>参数，该参数用来控制文本检测部分检测所得框是文本的概率。个别字丢失，一般是单独的字丢失，很大可能是文本检测模型没有检测到该独立的文字。尝试调低<code>box_thresh</code>值，查看是否可以检出丢失的文字。（没有找到合适的例子）</li>
+<li>固定<code>box_thresh</code>，调节<code>text_score</code>参数。该参数是控制识别文本结果正确的概率。尝试调低<code>text_score</code>值，查看是否可以识别出丢失的文字。</li>
+<li>固定<code>box_thresh</code>和<code>text_score</code>两个参数，调节<code>unclip_ratio</code>参数。该参数用来控制文本检测所得文本框的大小。尝试调大<code>unclip_ratio</code>值，查看是否可以识别出丢失的文字。</li>
+</ol>
+</li>
+<li>
+<p>如果调节三个参数也不能解决问题，只能尝试<code>server</code>版的文本检测和文本识别模型了。</p>
+<ol>
+<li>首先更换<code>server</code>版的文本检测模型，查看是否解决问题</li>
+<li>在第1步基础上，更换<code>server</code>版的文本识别模型，查看是否解决问题</li>
+</ol>
+</li>
+<li>
+<p>尝试更换不同版本模型，来查看效果。具体可在<a href="https://huggingface.co/spaces/SWHL/RapidOCRDemo">在线demo</a>中尝试</p>
+</li>
+</ol>
+<h3 id="个别字识别错误调优篇">个别字识别错误调优篇 <a href="#%e4%b8%aa%e5%88%ab%e5%ad%97%e8%af%86%e5%88%ab%e9%94%99%e8%af%af%e8%b0%83%e4%bc%98%e7%af%87" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>个别字错误的情况，例如：<strong>成</strong>识别为<strong>戍</strong>，这种一般是文本识别模型的问题。</li>
+</ul>
+<h4 id="情况一轻量中英文模型识别对个别汉字识别错误">情况一：轻量中英文模型识别对个别汉字识别错误 <a href="#%e6%83%85%e5%86%b5%e4%b8%80%e8%bd%bb%e9%87%8f%e4%b8%ad%e8%8b%b1%e6%96%87%e6%a8%a1%e5%9e%8b%e8%af%86%e5%88%ab%e5%af%b9%e4%b8%aa%e5%88%ab%e6%b1%89%e5%ad%97%e8%af%86%e5%88%ab%e9%94%99%e8%af%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ol>
+<li>尝试padding图像，再重新识别</li>
+<li>更换不同版本的识别模型，包括<code>v2</code>、<code>v3</code>和<code>server</code>版尝试</li>
+</ol>
+<h4 id="情况二轻量中英文模型对个别英文或数字识别错误">情况二：轻量中英文模型对个别英文或数字识别错误 <a href="#%e6%83%85%e5%86%b5%e4%ba%8c%e8%bd%bb%e9%87%8f%e4%b8%ad%e8%8b%b1%e6%96%87%e6%a8%a1%e5%9e%8b%e5%af%b9%e4%b8%aa%e5%88%ab%e8%8b%b1%e6%96%87%e6%88%96%e6%95%b0%e5%ad%97%e8%af%86%e5%88%ab%e9%94%99%e8%af%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ol>
+<li>更换不同版本的识别模型，包括<code>v2</code>、<code>v3</code>和<code>server</code>版尝试</li>
+<li>如果是只识别英文单词和数字，可以更换英文和数字专有模型（<code>en_PP-OCRv3_rec_infer.onnx</code>和<code>en_number_mobile_v2.0_rec_infer.onnx</code>）</li>
+</ol>
 
     </div>
 
@@ -508,7 +631,7 @@
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
     <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/RapidAI/RapidOCR/blob/main/content/docs/overview.md" alt="概览" rel="noopener noreferrer" target="_blank">
+        <a href="https://github.com/RapidAI/RapidOCR/blob/main/content/docs/packages/rapidocr/optim_tutorial.md" alt="RapidOCR调优尝试教程" rel="noopener noreferrer" target="_blank">
             
             <span class="me-1 align-text-bottom">
                 
@@ -526,26 +649,15 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-13T10:03:45&#43;0800"
-            title="13 Sep 2023, 10:03 &#43;0800">
-            13 Sep 2023, 10:03 &#43;0800
+            data-authdate="2023-09-14T22:24:52&#43;0800"
+            title="14 Sep 2023, 22:24 &#43;0800">
+            14 Sep 2023, 22:24 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
     
 </div>
 
-    
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-        const config = {
-            startOnLoad:true,
-            logLevel: "error",
-            align: "center",
-            theme:"null"
-        };
-        mermaid.initialize(config);
-    </script>
     
 
     
@@ -555,10 +667,10 @@
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/RapidOCRDocs/docs/packages/rapidocr_web/rapidocr_web/">
+		<a href="/RapidOCRDocs/docs/changelog/rapidocr_api/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> rapidocr_web使用教程</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> rapidocr_api</p>
 					<p class="card-text ms-2"></p>
 					
 				</div>
@@ -566,11 +678,11 @@
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/RapidOCRDocs/docs/quickstart/">
+		<a class="ms-auto" href="/RapidOCRDocs/docs/packages/rapidocr_web/rapidocr_web_desktop/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">快速开始 <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2">只需3步，即可安装使用。</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">RapidOCRWeb桌面版使用教程 <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2"></p>
 					
 				</div>
 			</div>

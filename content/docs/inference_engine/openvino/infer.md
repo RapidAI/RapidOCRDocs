@@ -1,5 +1,5 @@
 ---
-weight: 403
+weight: 6
 title: "OpenVINO推理"
 description:
 icon: menu_book

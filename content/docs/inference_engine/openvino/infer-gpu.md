@@ -1,5 +1,5 @@
 ---
-weight: 403
+weight: 7
 title: "OpenVINO GPU推理"
 description:
 icon: menu_book

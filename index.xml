@@ -125,6 +125,18 @@ cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --no
     </item>
     
     <item>
+      <title>OpenVINO推理</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</guid>
+      <description>⚠️ 基于目前openvino==2022.3.0版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见issue11939 安装 link $ pip install openvino # 里面含有mo $ pip install openvino-dev 模型问题 link 因为OpenVINO可以直接推理ONNX模型，故这里暂时不作转换，直接推理之前ONNX模型即可 这里仍然给出转换的代码，用作参考: mo --input_model models/ch_PP-OCRv2_det_infer.onnx --output_dir models/IR/ mo --input_model models/ch_PP-OCRv2_det_infer.onnx \ --output_dir models/IR/static \ --input_shape &amp;#34;[1,3,12128,800]&amp;#34; 关于OpenVINO link OpenVINO可以直接推理IR、ONNX和PaddlePaddle模型，具体如下(图来源:link)：
+和ONNXRuntime同时推理同一个ONNX模型，OpenVINO推理速度更快
+但是从对比来看，OpenVINO占用内存更大，其原因是拿空间换的时间
+当指定input_shape在一个区间范围时，推理时内存占用会减少一些 示例命令: mo --input_model models/ch_PP-OCRv2_det_infer.onnx \ --output_dir models/IR/static \ --input_shape &amp;#34;[1,3,960:1200,800]&amp;#34; OpenVINO与ONNXRuntime性能对比 link 推理设备：Windows 64位 Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz 2.59 GHz 测试图像宽高: 12119x810 测试模型 推理框架 占用内存(3次平均) 推理时间(3次平均) ch_PP-OCRv2_det_infer.onnx ONNXRuntime=1.10.0 0.8G 5.</description>
+    </item>
+    
+    <item>
       <title>rapidocr_api</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/</link>
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
@@ -135,6 +147,15 @@ cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --no
 $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动:
 $ rapidocr_api -ip 0.0.0.0 -p 9003 curl调用
 $ curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用</description>
+    </item>
+    
+    <item>
+      <title>OpenVINO GPU推理</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</guid>
+      <description> 官方参考文档：docs 考虑到openvino只能使用自家显卡推理，通用性不高，这里暂不作相关配置说明。 </description>
     </item>
     
     <item>
@@ -158,27 +179,6 @@ Python: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</guid>
       <description>onnxruntime-gpu版相关说明 link 目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见onnxruntime issue#13198 有关onnxruntime-gpu推理慢的相关帖子 link Pre-allocating dynamic shaped tensor memory for ONNX runtime inference? 快速查看比较版本 link 国外小伙伴可以基于Google Colab，国内的小伙伴可以基于百度的AI Studio来查看效果 自己折腾版 link onnxruntime-gpu需要严格按照与CUDA、cuDNN版本对应来安装，具体参考文档，这一步关乎后面是否可以成功调用GPU。
 以下是安装示例： 所用机器环境情况： nvcc-smi显示CUDA Driver API版本：11.7 nccc -V显示CUDA Runtime API版本：11.6 以上两个版本的对应关系，可参考博客 具体安装命令如下： conda install cudatoolkit=11.6.0 conda install cudnn=8.3.2.44 pip install onnxruntime-gpu==1.12.0 验证是否可以onnxruntime-gpu正常调用GPU 验证get_device()是否可返回GPU import onnxruntime as ort print(ort.get_device()) # GPU 如果第一步满足了，继续验证onnxruntime-gpu加载模型时是否可以调用GPU import onnxruntime as ort providers = [ (&amp;#39;CUDAExecutionProvider&amp;#39;, { &amp;#39;device_id&amp;#39;: 0, &amp;#39;arena_extend_strategy&amp;#39;: &amp;#39;kNextPowerOfTwo&amp;#39;, &amp;#39;gpu_mem_limit&amp;#39;: 2 * 1024 * 1024 * 1024, &amp;#39;cudnn_conv_algo_search&amp;#39;: &amp;#39;EXHAUSTIVE&amp;#39;, &amp;#39;do_copy_in_default_stream&amp;#39;: True, }), &amp;#39;CPUExecutionProvider&amp;#39;, ] # download link: https://github.</description>
-    </item>
-    
-    <item>
-      <title>OpenVINO GPU推理</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</link>
-      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</guid>
-      <description> 官方参考文档：docs 考虑到openvino只能使用自家显卡推理，通用性不高，这里暂不作相关配置说明。 </description>
-    </item>
-    
-    <item>
-      <title>OpenVINO推理</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</link>
-      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</guid>
-      <description>⚠️ 基于目前openvino==2022.3.0版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见issue11939 安装 link $ pip install openvino # 里面含有mo $ pip install openvino-dev 模型问题 link 因为OpenVINO可以直接推理ONNX模型，故这里暂时不作转换，直接推理之前ONNX模型即可 这里仍然给出转换的代码，用作参考: mo --input_model models/ch_PP-OCRv2_det_infer.onnx --output_dir models/IR/ mo --input_model models/ch_PP-OCRv2_det_infer.onnx \ --output_dir models/IR/static \ --input_shape &amp;#34;[1,3,12128,800]&amp;#34; 关于OpenVINO link OpenVINO可以直接推理IR、ONNX和PaddlePaddle模型，具体如下(图来源:link)：
-和ONNXRuntime同时推理同一个ONNX模型，OpenVINO推理速度更快
-但是从对比来看，OpenVINO占用内存更大，其原因是拿空间换的时间
-当指定input_shape在一个区间范围时，推理时内存占用会减少一些 示例命令: mo --input_model models/ch_PP-OCRv2_det_infer.onnx \ --output_dir models/IR/static \ --input_shape &amp;#34;[1,3,960:1200,800]&amp;#34; OpenVINO与ONNXRuntime性能对比 link 推理设备：Windows 64位 Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz 2.59 GHz 测试图像宽高: 12119x810 测试模型 推理框架 占用内存(3次平均) 推理时间(3次平均) ch_PP-OCRv2_det_infer.onnx ONNXRuntime=1.10.0 0.8G 5.</description>
     </item>
     
     <item>

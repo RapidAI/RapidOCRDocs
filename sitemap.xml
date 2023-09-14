@@ -35,11 +35,23 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_desktop/</loc>
     <lastmod>2023-09-14T22:08:28+08:00</lastmod>
   </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/</loc>
+    <lastmod>2023-09-14T22:11:20+08:00</lastmod>
+  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_nuitka/</loc>
     <lastmod>2023-09-14T22:08:28+08:00</lastmod>
   </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/</loc>
+    <lastmod>2023-09-14T22:11:20+08:00</lastmod>
+  </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</loc>
+    <lastmod>2023-09-14T22:11:20+08:00</lastmod>
+  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/</loc>
     <lastmod>2023-09-14T21:58:48+08:00</lastmod>
+  </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</loc>
+    <lastmod>2023-09-14T22:11:20+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/</loc>
     <lastmod>2023-09-13T09:40:26+08:00</lastmod>
@@ -50,22 +62,10 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/</loc>
     <lastmod>2023-09-14T22:08:28+08:00</lastmod>
   </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/</loc>
-    <lastmod>2023-09-14T22:08:28+08:00</lastmod>
-  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/</loc>
     <lastmod>2023-09-14T22:08:28+08:00</lastmod>
   </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/</loc>
-    <lastmod>2023-09-14T22:08:28+08:00</lastmod>
-  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</loc>
-    <lastmod>2023-09-14T22:08:28+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</loc>
-    <lastmod>2023-09-14T22:08:28+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</loc>
     <lastmod>2023-09-14T22:08:28+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/</loc>
@@ -75,7 +75,7 @@
     <lastmod>2023-09-14T21:58:48+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/</loc>
-    <lastmod>2023-09-14T22:08:28+08:00</lastmod>
+    <lastmod>2023-09-14T22:11:20+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/categories/</loc>
   </url><url>

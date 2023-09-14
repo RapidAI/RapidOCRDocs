@@ -18,7 +18,7 @@
 
 <html lang="en-us"><head>
     <meta charset="utf-8" />
-    <title>快速开始 | RapidOCR Documentation</title>
+    <title>推理引擎相关 | RapidOCR Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A Modern Documentation Theme for Hugo" />
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
@@ -91,7 +91,7 @@
                 
                     
                         
-                        <li class="current">
+                        <li class="">
                             <a class="sidebar-root-link" href="https://rapidai.github.io/RapidOCRDocs/docs/quickstart/">
                                 <i class="material-icons me-2">rocket_launch</i>
                                 
@@ -167,12 +167,12 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  ">
+                        <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">menu_book</i>
                                 推理引擎相关
                             </button>
-                            <div class="sidebar-submenu ">
+                            <div class="sidebar-submenu d-block">
                                 <ul>
                                     
                                         
@@ -219,7 +219,7 @@
                                     
                                         
                                         
-                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/inference_summary/">推理引擎相关</a></li>
+                                            <li class="current "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/inference_summary/">推理引擎相关</a></li>
                                         
                                     
                                 </ul>
@@ -372,10 +372,18 @@
                     <meta itemprop="position" content='1' />
                 </li>
             
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/RapidOCRDocs/docs/inference_engine/">
+                        <span itemprop="name">推理引擎相关</span>
+                    </a>
+                    <meta itemprop="position" content='2' />
+                </li>
+            
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">快速开始</span>
-                <meta itemprop="position" content='2' />
+                <span itemprop="name">推理引擎相关</span>
+                <meta itemprop="position" content='3' />
             </li>
         
     </ul>
@@ -391,10 +399,19 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1-安装">1. 安装</a></li>
-            <li><a href="#2-终端使用">2. 终端使用</a></li>
-            <li><a href="#3-脚本使用">3. 脚本使用</a></li>
-            <li><a href="#3-查看效果">3. 查看效果</a></li>
+            <li>
+              <ul>
+                <li><a href="#引言">引言</a></li>
+                <li><a href="#目前已知推理引擎">目前已知推理引擎</a></li>
+                <li><a href="#onnxruntime微软">ONNXRuntime（微软）</a></li>
+                <li><a href="#openvino英特尔">OpenVINO（英特尔）</a></li>
+                <li><a href="#mnn阿里">MNN（阿里）</a></li>
+                <li><a href="#tensorrt英伟达">TensorRT（英伟达）</a></li>
+                <li><a href="#paddle-inference百度">Paddle Inference（百度）</a></li>
+                <li><a href="#ncnn腾讯">NCNN（腾讯）</a></li>
+                <li><a href="#fastdeploy百度httpsgithubcompaddlepaddlefastdeploy"><a href="https://github.com/PaddlePaddle/FastDeploy">FastDeploy（百度）</a></a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -414,10 +431,19 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1-安装">1. 安装</a></li>
-            <li><a href="#2-终端使用">2. 终端使用</a></li>
-            <li><a href="#3-脚本使用">3. 脚本使用</a></li>
-            <li><a href="#3-查看效果">3. 查看效果</a></li>
+            <li>
+              <ul>
+                <li><a href="#引言">引言</a></li>
+                <li><a href="#目前已知推理引擎">目前已知推理引擎</a></li>
+                <li><a href="#onnxruntime微软">ONNXRuntime（微软）</a></li>
+                <li><a href="#openvino英特尔">OpenVINO（英特尔）</a></li>
+                <li><a href="#mnn阿里">MNN（阿里）</a></li>
+                <li><a href="#tensorrt英伟达">TensorRT（英伟达）</a></li>
+                <li><a href="#paddle-inference百度">Paddle Inference（百度）</a></li>
+                <li><a href="#ncnn腾讯">NCNN（腾讯）</a></li>
+                <li><a href="#fastdeploy百度httpsgithubcompaddlepaddlefastdeploy"><a href="https://github.com/PaddlePaddle/FastDeploy">FastDeploy（百度）</a></a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -429,98 +455,57 @@
                                             
                                             <h1 class="content-title mb-0">
                                                 <span class="title-text">
-                                                    快速开始
+                                                    推理引擎相关
                                                 </span>
                                                 
                                             </h1>
                                         </div>
                                         
-                                            <p class="lead mb-3">只需3步，即可安装使用。</p>
+                                            <p class="lead mb-3"></p>
                                         
                                         <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                             
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h3 id="1-安装">1. 安装 <a href="#1-%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="4e573e8" class="language-bash ">
-  <code>pip install rapidocr_onnxruntime</code>
-  </pre>
-  </div>
-<h3 id="2-终端使用">2. 终端使用 <a href="#2-%e7%bb%88%e7%ab%af%e4%bd%bf%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="2ce9f71" class="language-bash ">
-  <code>rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg</code>
-  </pre>
-  </div>
-<h3 id="3-脚本使用">3. 脚本使用 <a href="#3-%e8%84%9a%e6%9c%ac%e4%bd%bf%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="52e27b9" class="language-python ">
-  <code>from rapidocr_onnxruntime import RapidOCR
-
-engine = RapidOCR()
-result, elapse = engine(img_path)
-print(result)</code>
-  </pre>
-  </div>
-<h3 id="3-查看效果">3. 查看效果 <a href="#3-%e6%9f%a5%e7%9c%8b%e6%95%88%e6%9e%9c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="68e00fc" class="language-python ">
-  <code>[[[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], &#39;正品促销&#39;, &#39;0.7986101984977723&#39;], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], &#39;大桶装更划算&#39;, &#39;0.7368737288883754&#39;], [[[69.0, 144.0], [255.0, 144.0], [255.0, 164.0], [69.0, 164.0]], &#39;强力去污符合国标&#39;, &#39;0.8172478278477987&#39;], [[[107.0, 170.0], [219.0, 170.0], [219.0, 182.0], [107.0, 182.0]], &#39;-40深度防冻不结冰&#39;, &#39;0.8655969283797524&#39;], [[[35.0, 227.0], [63.0, 227.0], [63.0, 236.0], [35.0, 236.0]], &#39;日常价?&#39;, &#39;0.6502826035022735&#39;], [[[141.0, 223.0], [187.0, 225.0], [185.0, 249.0], [139.0, 247.0]], &#39;直击&#39;, &#39;0.596031109491984&#39;], [[[34.0, 234.0], [81.0, 236.0], [80.0, 254.0], [33.0, 252.0]], &#39;10.0起&#39;, &#39;0.8231529593467712&#39;], [[[257.0, 234.0], [304.0, 236.0], [303.0, 253.0], [256.0, 251.0]], &#39;10.0起&#39;, &#39;0.8304102122783661&#39;], [[[258.0, 227.0], [287.0, 226.0], [287.0, 236.0], [258.0, 237.0]], &#39;日常价?&#39;, &#39;0.5725070595741272&#39;], [[[140.0, 245.0], [186.0, 246.0], [186.0, 272.0], [139.0, 271.0]], &#39;底价&#39;, &#39;0.5142453710238138&#39;], [[[129.0, 290.0], [207.0, 292.0], [206.0, 339.0], [128.0, 337.0]], &#39;5.8&#39;, &#39;0.6341951936483383&#39;], [[[98.0, 320.0], [129.0, 320.0], [129.0, 331.0], [98.0, 331.0]], &#39;券后价?&#39;, &#39;0.6209247708320618&#39;], [[[114.0, 343.0], [210.0, 343.0], [210.0, 355.0], [114.0, 355.0]], &#39;惊喜福利不容错过&#39;, &#39;0.8640043867958916&#39;], [[[69.0, 363.0], [151.0, 363.0], [151.0, 383.0], [69.0, 383.0]], &#39;极速发货&#39;, &#39;0.7552512288093567&#39;], [[[201.0, 363.0], [285.0, 363.0], [285.0, 383.0], [201.0, 383.0]], &#39;冰点标准&#39;, &#39;0.7194759607315063&#39;], [[[68.0, 392.0], [151.0, 392.0], [151.0, 412.0], [68.0, 412.0]], &#39;破损就赔&#39;, &#39;0.7711991906166077&#39;], [[[202.0, 391.0], [285.0, 391.0], [285.0, 413.0], [202.0, 413.0]], &#39;假一赔十&#39;, &#39;0.6546663284301758&#39;]]</code>
-  </pre>
-  </div>
+        <h4 id="引言">引言 <a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>关于模型的推理框架有很多，包括PC/移动端等等。之前在<a href="https://ai.oldpan.me/t/topic/24">老潘的个人博客</a>里看到过相关介绍</li>
+<li>我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。</li>
+</ul>
+<h4 id="目前已知推理引擎">目前已知推理引擎 <a href="#%e7%9b%ae%e5%89%8d%e5%b7%b2%e7%9f%a5%e6%8e%a8%e7%90%86%e5%bc%95%e6%93%8e" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>CPU端：ONNXruntime、OpenVINO、libtorch、Caffe、PaddleInference</li>
+<li>GPU端：TensorRT、OpenPPL、AITemplate</li>
+<li>移动端：NCNN，MNN, Paddle-Lite</li>
+<li>通吃：TVM、OpenPPL</li>
+</ul>
+<hr>
+<h4 id="onnxruntime微软">ONNXRuntime（微软） <a href="#onnxruntime%e5%be%ae%e8%bd%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>目前仓库中已经在使用的推理引擎，CPU端最好用的轻量推理引擎。支持动态输入。</li>
+<li>目前在GPU端，动态输入的情况下，速度比CPU上还要慢一些，暂时尚未解决。</li>
+<li>ONNXRuntime + TensorRT结合 → 尝试但未跑通</li>
+</ul>
+<h4 id="openvino英特尔">OpenVINO（英特尔） <a href="#openvino%e8%8b%b1%e7%89%b9%e5%b0%94" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>CPU端推理速度更快，支持动态输入。但是占用内存较大，拿空间换了时间。</li>
+<li>当自己资源不吃紧时，但要求更快地推理速度时，可以考虑用这个。</li>
+<li>GPU端仅支持自家显卡，暂时用不到。</li>
+</ul>
+<h4 id="mnn阿里">MNN（阿里） <a href="#mnn%e9%98%bf%e9%87%8c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>GPU端没有找到容易的使用方式，需要自行编译，门槛太高。理想情况是像<code>onnxruntime-gpu</code>这种，可以快速安装使用。</li>
+<li>说是支持动态输入，但是尚未找到有效验证方法。</li>
+</ul>
+<h4 id="tensorrt英伟达">TensorRT（英伟达） <a href="#tensorrt%e8%8b%b1%e4%bc%9f%e8%be%be" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>GPU端快速推理，占坑</li>
+<li>据说存在内存泄漏的bug，暂时没有尝试。</li>
+</ul>
+<h4 id="paddle-inference百度">Paddle Inference（百度） <a href="#paddle-inference%e7%99%be%e5%ba%a6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>依赖Paddle框架，有些重，但是不失为GPU上推理模型的一个选择。</li>
+<li>暂时不考虑这个，因为paddlepaddle-gpu版有大约500M左右，太太了。</li>
+</ul>
+<h4 id="ncnn腾讯">NCNN（腾讯） <a href="#ncnn%e8%85%be%e8%ae%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>移动端比较好用的</li>
+</ul>
+<h4 id="fastdeploy百度httpsgithubcompaddlepaddlefastdeploy"><a href="https://github.com/PaddlePaddle/FastDeploy">FastDeploy（百度）</a> <a href="#fastdeploy%e7%99%be%e5%ba%a6httpsgithubcompaddlepaddlefastdeploy" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>TODO</li>
+</ul>
 
     </div>
 
@@ -540,7 +525,7 @@ print(result)</code>
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
     <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/RapidAI/RapidOCR/blob/main/content/docs/quickstart.md" alt="快速开始" rel="noopener noreferrer" target="_blank">
+        <a href="https://github.com/RapidAI/RapidOCR/blob/main/content/docs/inference_engine/inference_summary.md" alt="推理引擎相关" rel="noopener noreferrer" target="_blank">
             
             <span class="me-1 align-text-bottom">
                 
@@ -558,9 +543,9 @@ print(result)</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-13T18:07:23&#43;0800"
-            title="13 Sep 2023, 18:07 &#43;0800">
-            13 Sep 2023, 18:07 &#43;0800
+            data-authdate="2023-09-14T22:13:18&#43;0800"
+            title="14 Sep 2023, 22:13 &#43;0800">
+            14 Sep 2023, 22:13 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -576,10 +561,10 @@ print(result)</code>
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/RapidOCRDocs/docs/overview/">
+		<a href="/RapidOCRDocs/docs/inference_engine/openvino/infer/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 概览</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> OpenVINO推理</p>
 					<p class="card-text ms-2"></p>
 					
 				</div>
@@ -587,7 +572,7 @@ print(result)</code>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/RapidOCRDocs/docs/changelog/rapidocr_api/">
+		<a class="ms-auto" href="/RapidOCRDocs/docs/packages/rapidocr_api/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
                     <p class="card-title fs-5 fw-semibold lh-base mb-0">rapidocr_api <i class="material-icons align-middle">navigate_next</i></p>

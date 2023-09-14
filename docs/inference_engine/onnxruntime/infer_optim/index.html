@@ -18,7 +18,7 @@
 
 <html lang="en-us"><head>
     <meta charset="utf-8" />
-    <title>rapidocr_web | RapidOCR Documentation</title>
+    <title>ONNXRuntime | RapidOCR Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A Modern Documentation Theme for Hugo" />
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
@@ -167,26 +167,26 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  ">
+                        <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">menu_book</i>
                                 推理引擎相关
                             </button>
-                            <div class="sidebar-submenu ">
+                            <div class="sidebar-submenu d-block">
                                 <ul>
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  ">
+                                            <li class="sidebar-dropdown nested  current active">
                                                 <button class="btn">
                                                     
                                                     ONNXRuntime
                                                 </button>
-                                                <div class="sidebar-submenu ">
+                                                <div class="sidebar-submenu d-block">
                                                     <ul>
                                                         
                                                             
-                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/">ONNXRuntime</a></li>
+                                                            <li class="current "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/">ONNXRuntime</a></li>
                                                         
                                                             
                                                             <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/">ONNXRuntime GPU版推理</a></li>
@@ -224,12 +224,12 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  current active">
+                        <li class="sidebar-dropdown  ">
                             <button class="btn">
                                 <i class="material-icons me-2">update</i>
                                 Changelog
                             </button>
-                            <div class="sidebar-submenu d-block">
+                            <div class="sidebar-submenu ">
                                 <ul>
                                     
                                         
@@ -239,7 +239,7 @@
                                     
                                         
                                         
-                                            <li class="current "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/">rapidocr_web</a></li>
+                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/">rapidocr_web</a></li>
                                         
                                     
                                         
@@ -358,16 +358,24 @@
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/RapidOCRDocs/docs/changelog/">
-                        <span itemprop="name">Changelog</span>
+                    <a itemprop="item" href="/RapidOCRDocs/docs/inference_engine/">
+                        <span itemprop="name">推理引擎相关</span>
                     </a>
                     <meta itemprop="position" content='2' />
                 </li>
             
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/RapidOCRDocs/docs/inference_engine/onnxruntime/">
+                        <span itemprop="name">ONNXRuntime</span>
+                    </a>
+                    <meta itemprop="position" content='3' />
+                </li>
+            
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">rapidocr_web</span>
-                <meta itemprop="position" content='3' />
+                <span itemprop="name">ONNXRuntime</span>
+                <meta itemprop="position" content='4' />
             </li>
         
     </ul>
@@ -385,9 +393,20 @@
           <ul>
             <li>
               <ul>
-                <li><a href="#2023-05-20-ocrweb-update">❤2023-05-20 ocrweb update:</a></li>
-                <li><a href="#2023-05-14-ocrweb-v015-update">🌹2023-05-14 ocrweb v0.1.5 update:</a></li>
-                <li><a href="#2023-04-16-ocrweb-v011-update">🏸2023-04-16 ocrweb v0.1.1 update:</a></li>
+                <li><a href="#引言">引言</a></li>
+                <li><a href="#推荐常用设置">推荐常用设置</a></li>
+                <li><a href="#enable_cpu_mem_arenahttpsonnxruntimeaidocsapipythonapi_summaryhtmlonnxruntimesessionoptionsenable_cpu_mem_arena"><a href="https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.enable_cpu_mem_arena"><code>enable_cpu_mem_arena</code></a></a></li>
+                <li><a href="#enable_profiling"><code>enable_profiling</code></a></li>
+                <li><a href="#execution_mode"><code>execution_mode</code></a></li>
+                <li><a href="#inter_op_num_threads"><code>inter_op_num_threads</code></a></li>
+                <li><a href="#intra_op_num_threads"><code>intra_op_num_threads</code></a></li>
+                <li><a href="#graph_optimization_levelhttpsgithubcommicrosoftonnxruntime-openenclaveblobopenenclave-publicdocsonnx_runtime_graph_optimizationsmd"><a href="https://github.com/microsoft/onnxruntime-openenclave/blob/openenclave-public/docs/ONNX_Runtime_Graph_Optimizations.md"><code>graph_optimization_level</code></a></a></li>
+                <li><a href="#faq">FAQ</a>
+                  <ul>
+                    <li><a href="#为什么我的模型在gpu上比在cpu上还要慢">为什么我的模型在GPU上比在CPU上还要慢？</a></li>
+                  </ul>
+                </li>
+                <li><a href="#参考资料">参考资料</a></li>
               </ul>
             </li>
           </ul>
@@ -411,9 +430,20 @@
           <ul>
             <li>
               <ul>
-                <li><a href="#2023-05-20-ocrweb-update">❤2023-05-20 ocrweb update:</a></li>
-                <li><a href="#2023-05-14-ocrweb-v015-update">🌹2023-05-14 ocrweb v0.1.5 update:</a></li>
-                <li><a href="#2023-04-16-ocrweb-v011-update">🏸2023-04-16 ocrweb v0.1.1 update:</a></li>
+                <li><a href="#引言">引言</a></li>
+                <li><a href="#推荐常用设置">推荐常用设置</a></li>
+                <li><a href="#enable_cpu_mem_arenahttpsonnxruntimeaidocsapipythonapi_summaryhtmlonnxruntimesessionoptionsenable_cpu_mem_arena"><a href="https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.enable_cpu_mem_arena"><code>enable_cpu_mem_arena</code></a></a></li>
+                <li><a href="#enable_profiling"><code>enable_profiling</code></a></li>
+                <li><a href="#execution_mode"><code>execution_mode</code></a></li>
+                <li><a href="#inter_op_num_threads"><code>inter_op_num_threads</code></a></li>
+                <li><a href="#intra_op_num_threads"><code>intra_op_num_threads</code></a></li>
+                <li><a href="#graph_optimization_levelhttpsgithubcommicrosoftonnxruntime-openenclaveblobopenenclave-publicdocsonnx_runtime_graph_optimizationsmd"><a href="https://github.com/microsoft/onnxruntime-openenclave/blob/openenclave-public/docs/ONNX_Runtime_Graph_Optimizations.md"><code>graph_optimization_level</code></a></a></li>
+                <li><a href="#faq">FAQ</a>
+                  <ul>
+                    <li><a href="#为什么我的模型在gpu上比在cpu上还要慢">为什么我的模型在GPU上比在CPU上还要慢？</a></li>
+                  </ul>
+                </li>
+                <li><a href="#参考资料">参考资料</a></li>
               </ul>
             </li>
           </ul>
@@ -427,7 +457,7 @@
                                             
                                             <h1 class="content-title mb-0">
                                                 <span class="title-text">
-                                                    rapidocr_web
+                                                    ONNXRuntime
                                                 </span>
                                                 
                                             </h1>
@@ -439,19 +469,297 @@
                                             
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h4 id="2023-05-20-ocrweb-update">❤2023-05-20 ocrweb update: <a href="#2023-05-20-ocrweb-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>增加桌面版RapidOCRWeb，详情可参见<a href="https://github.com/RapidAI/RapidOCR/wiki/%5BRapidOCRWeb%5D-%E6%A1%8C%E9%9D%A2%E7%89%88%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">RapidOCRWeb桌面版使用教程</a></li>
-<li>对仓库文档做了整理，大部分文档放到了<a href="https://github.com/RapidAI/RapidOCR/wiki">Wiki</a></li>
+        <h4 id="引言">引言 <a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。</li>
+<li>因此，决定在这一篇文章中来梳理一下相关的设置。</li>
+<li>以下参数都是来自<code>SessionOptions</code>中</li>
+<li>相关测试代码可以前往<a href="https://aistudio.baidu.com/aistudio/projectdetail/6109918?sUid=57084&amp;shared=1&amp;ts=1683438418669">AI Studio</a>查看</li>
+<li>欢迎补充和指出不足之处。</li>
 </ul>
-<h4 id="2023-05-14-ocrweb-v015-update">🌹2023-05-14 ocrweb v0.1.5 update: <a href="#2023-05-14-ocrweb-v015-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>增加界面版返回坐标框的返回值(<a href="https://github.com/RapidAI/RapidOCR/issues/85">issue #85</a>)</li>
-<li>API模式增加base64格式传入</li>
-<li>详情参见：<a href="https://github.com/RapidAI/RapidOCR/blob/main/ocrweb/README.md">link</a></li>
+<h4 id="推荐常用设置">推荐常用设置 <a href="#%e6%8e%a8%e8%8d%90%e5%b8%b8%e7%94%a8%e8%ae%be%e7%bd%ae" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="9af60a5" class="language-python ">
+  <code>import onnxruntime as rt
+
+sess_options = rt.SessionOptions()
+sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL
+sess_options.log_severity_level = 4
+sess_options.enable_cpu_mem_arena = False
+
+# 其他参数，采用默认即可</code>
+  </pre>
+  </div>
+<h4 id="enable_cpu_mem_arenahttpsonnxruntimeaidocsapipythonapi_summaryhtmlonnxruntimesessionoptionsenable_cpu_mem_arena"><a href="https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.enable_cpu_mem_arena"><code>enable_cpu_mem_arena</code></a> <a href="#enable_cpu_mem_arenahttpsonnxruntimeaidocsapipythonapi_summaryhtmlonnxruntimesessionoptionsenable_cpu_mem_arena" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>
+<p>作用：启用CPU上的<strong>memory arena</strong>。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为<code>enable_cpu_mem_area=False</code>，默认是<code>True</code></p>
+</li>
+<li>
+<p>结论：建议关闭</p>
+<ul>
+<li>开启之后，占用内存会剧增（5618.3M &raquo; 5.3M），且持续占用，不释放；推理时间只有大约13%提升</li>
 </ul>
-<h4 id="2023-04-16-ocrweb-v011-update">🏸2023-04-16 ocrweb v0.1.1 update: <a href="#2023-04-16-ocrweb-v011-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>API部署改为FastAPI库支持</li>
-<li>将API模式与Web解耦合，可通过<code>pip install rapidocr_web[api]</code>来选择性安装</li>
-<li>详情参见：<a href="https://github.com/RapidAI/RapidOCR/blob/main/ocrweb/README.md">link</a></li>
+</li>
+<li>
+<p>测试环境：</p>
+<ul>
+<li>Python: 3.7.13</li>
+<li>ONNXRuntime: 1.14.1</li>
+</ul>
+</li>
+<li>
+<p>测试代码（来自<a href="https://github.com/microsoft/onnxruntime/issues/11627">issue 11627</a>，<a href="https://github.com/microsoft/onnxruntime/files/8772315/enable_cpu_memory_area_example.zip">enable_cpu_memory_area_example.zip</a>）</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="5bb3e6a" class="language-python ">
+  <code># pip install onnxruntime==1.14.1
+# pip install memory_profiler
+
+import numpy as np
+import onnxruntime as ort
+from memory_profiler import profile
+
+
+@profile
+def onnx_prediction(model_path, input_data):
+    ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
+    preds = ort_sess.run(output_names=[&#34;predictions&#34;],
+                         input_feed={&#34;input_1&#34;: input_data})[0]
+    return preds
+
+
+sess_options = ort.SessionOptions()
+sess_options.enable_cpu_mem_arena = False
+
+input_data = np.load(&#39;enable_cpu_memory_area_example/input.npy&#39;)
+print(f&#39;input_data shape: {input_data.shape}&#39;)
+model_path = &#39;enable_cpu_memory_area_example/model.onnx&#39;
+
+onnx_prediction(model_path, input_data)</code>
+  </pre>
+  </div>
+</li>
+<li>
+<p>Windows端 | Mac端 | Linux端 测试情况都大致相同</p>
+  <details>
+<ul>
+<li><code>enable_cpu_mem_arena=True</code>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="5f6835a" class="language-bash ">
+  <code>(demo) PS G:&gt; python .\test_enable_cpu_mem_arena.py
+enable_cpu_mem_arena: True
+input_data shape: (32, 200, 200, 1)
+Filename: .\test_enable_cpu_mem_arena.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    7     69.1 MiB     69.1 MiB           1   @profile
+    8                                         def onnx_prediction(model_path, input_data):
+    9     77.2 MiB      8.1 MiB           1       ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
+    10     77.2 MiB      0.0 MiB           1       preds = ort_sess.run(output_names=[&#34;predictions&#34;],
+    11   5695.5 MiB   5618.3 MiB           1                            input_feed={&#34;input_1&#34;: input_data})[0]
+    12   5695.5 MiB      0.0 MiB           1       return preds</code>
+  </pre>
+  </div>
+</li>
+<li><code>enable_cpu_mem_arena=False</code>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="d2ae266" class="language-bash ">
+  <code>(demo) PS G:&gt; python .\test_enable_cpu_mem_arena.py
+enable_cpu_mem_arena: False
+input_data shape: (32, 200, 200, 1)
+Filename: .\test_enable_cpu_mem_arena.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    7     69.1 MiB     69.1 MiB           1   @profile
+    8                                         def onnx_prediction(model_path, input_data):
+    9     76.9 MiB      7.8 MiB           1       ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
+    10     76.9 MiB      0.0 MiB           1       preds = ort_sess.run(output_names=[&#34;predictions&#34;],
+    11     82.1 MiB      5.3 MiB           1                            input_feed={&#34;input_1&#34;: input_data})[0]
+    12     82.1 MiB      0.0 MiB           1       return preds</code>
+  </pre>
+  </div>
+</li>
+</ul>
+  </details>
+</li>
+</ul>
+<h4 id="enable_profiling"><code>enable_profiling</code> <a href="#enable_profiling" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>开启这个参数，在推理时，会生成一个类似<code>onnxruntime_profile__2023-05-07_09-02-15.json</code>的日志文件，包含详细的性能数据（线程、每个运算符的延迟等）。</li>
+<li>建议开启</li>
+<li>示例代码：
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="674f313" class="language-python ">
+  <code>import onnxruntime as rt
+
+sess_options = rt.SessionOptions()
+sess_options.enable_profiling = True</code>
+  </pre>
+  </div>
+</li>
+</ul>
+<h4 id="execution_mode"><code>execution_mode</code> <a href="#execution_mode" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>设置运行模型的模式，包括<code>rt.ExecutionMode.ORT_SEQUENTIAL</code>和<code>rt.ExecutionMode.ORT_PARALLEL</code>。一个序列执行，一个并行。默认是序列执行</li>
+<li><strong>通常来说，当一个模型中有许多分支时，可以设置该参数为<code>ORT_PARALLEL</code>来达到更好的表现</strong></li>
+<li>当设置<code>sess_options.execution_mode = rt.ExecutionMode.ORT_PARALLEL</code>时，可以设置<code>sess_options.inter_op_num_threads</code>来控制使用线程的数量，来并行化执行（模型中各个节点之间）</li>
+</ul>
+<h4 id="inter_op_num_threads"><code>inter_op_num_threads</code> <a href="#inter_op_num_threads" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>设置并行化执行图（跨节点）时，使用的线程数。默认是0，交由onnxruntime自行决定。</li>
+<li>示例代码：
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="77c2265" class="language-python ">
+  <code>import onnxruntime as rt
+
+sess_options = rt.SessionOptions()
+sess_options.inter_op_num_threads = 2</code>
+  </pre>
+  </div>
+</li>
+</ul>
+<h4 id="intra_op_num_threads"><code>intra_op_num_threads</code> <a href="#intra_op_num_threads" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>设置并行化执行图（内部节点）时，使用的线程数。默认是0，交由onnxruntime自行决定，一般会选择使用设备上所有的核。</li>
+<li>⚠️ 这个值并不是越大越好，具体参考<a href="https://aistudio.baidu.com/aistudio/projectdetail/6109918?sUid=57084&amp;shared=1&amp;ts=1683438418669">AI Studio</a>中的消融实验。</li>
+<li>示例代码：
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="992c0be" class="language-python ">
+  <code>import onnxruntime as rt
+
+sess_options = rt.SessionOptions()
+sess_options.intra_op_num_threads = 2</code>
+  </pre>
+  </div>
+</li>
+</ul>
+<h4 id="graph_optimization_levelhttpsgithubcommicrosoftonnxruntime-openenclaveblobopenenclave-publicdocsonnx_runtime_graph_optimizationsmd"><a href="https://github.com/microsoft/onnxruntime-openenclave/blob/openenclave-public/docs/ONNX_Runtime_Graph_Optimizations.md"><code>graph_optimization_level</code></a> <a href="#graph_optimization_levelhttpsgithubcommicrosoftonnxruntime-openenclaveblobopenenclave-publicdocsonnx_runtime_graph_optimizationsmd" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>运行图时，对图中算子的优化水平。默认是开启全部算子的优化。建议采用默认值即可。</li>
+<li>可选的枚举值有：<code>ORT_DISABLE_ALL | ORT_ENABLE_BASIC | ORT_ENABLE_EXTENDED | ORT_ENABLE_ALL</code></li>
+<li>示例代码：
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="38d24f8" class="language-python ">
+  <code>import onnxruntime as rt
+
+sess_options = rt.SessionOptions()
+sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL</code>
+  </pre>
+  </div>
+</li>
+</ul>
+<h4 id="faq">FAQ <a href="#faq" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><h5 id="为什么我的模型在gpu上比在cpu上还要慢">为什么我的模型在GPU上比在CPU上还要慢？ <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e7%9a%84%e6%a8%a1%e5%9e%8b%e5%9c%a8gpu%e4%b8%8a%e6%af%94%e5%9c%a8cpu%e4%b8%8a%e8%bf%98%e8%a6%81%e6%85%a2" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h5><ul>
+<li>取决于所使用的执行提供者，它可能没有完全支持模型中的所有操作。回落到CPU操作可能会导致性能速度的下降。此外，即使一个操作是由CUDA execution provider实现的，由于性能的原因，它也不一定会把操作分配/放置到CUDA EP上。要想看到ORT决定的位置，请打开verbose日志并查看控制台的输出。</li>
+</ul>
+<h4 id="参考资料">参考资料 <a href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li><a href="https://github.com/microsoft/onnxruntime-openenclave/blob/openenclave-public/docs/ONNX_Runtime_Perf_Tuning.md">ONNX Runtime Performance Tuning</a></li>
+<li><a href="https://onnxruntime.ai/docs/api/python/api_summary.html">Python API</a></li>
 </ul>
 
     </div>
@@ -472,7 +780,7 @@
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
     <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/RapidAI/RapidOCR/blob/main/content/docs/changelog/rapidocr_web.md" alt="rapidocr_web" rel="noopener noreferrer" target="_blank">
+        <a href="https://github.com/RapidAI/RapidOCR/blob/main/content/docs/inference_engine/onnxruntime/infer_optim.md" alt="ONNXRuntime" rel="noopener noreferrer" target="_blank">
             
             <span class="me-1 align-text-bottom">
                 
@@ -490,9 +798,9 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-13T10:00:48&#43;0800"
-            title="13 Sep 2023, 10:00 &#43;0800">
-            13 Sep 2023, 10:00 &#43;0800
+            data-authdate="2023-09-14T22:08:28&#43;0800"
+            title="14 Sep 2023, 22:08 &#43;0800">
+            14 Sep 2023, 22:08 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -508,10 +816,10 @@
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/RapidOCRDocs/docs/guides/rapidocr/rapidocr_openvino/">
+		<a href="/RapidOCRDocs/docs/guides/rapidocr_api/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> rapidocr_openvino</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> rapidocr_api</p>
 					<p class="card-text ms-2"></p>
 					
 				</div>
@@ -519,10 +827,10 @@
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web/">
+		<a class="ms-auto" href="/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">rapidocr_web使用教程 <i class="material-icons align-middle">navigate_next</i></p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">ONNXRuntime GPU版推理 <i class="material-icons align-middle">navigate_next</i></p>
 					<p class="card-text me-2"></p>
 					
 				</div>

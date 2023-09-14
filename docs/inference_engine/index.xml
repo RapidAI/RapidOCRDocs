@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>推理引擎相关 on RapidOCR Documentation</title>
+    <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/</link>
+    <description>Recent content in 推理引擎相关 on RapidOCR Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -101,7 +101,9 @@ ch_PP-OCRv3_det &amp;#43; ch_ppocr_mobile_v2.0_cls &amp;#43; ch_PP-OCRv3_rec 网
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_desktop/</guid>
       <description>引言 link 说明：桌面版指的是可以直接解压，双击即可运行的版本。 通俗来说，对rapidocr_web做了打包，将相关依赖全部放到一个zip包中，不需要本地有额外的环境，降低使用门槛。 下面会以Windows版为例，作简要说明。 使用步骤 link 下载对应的zip包
-目前已有的zip包如下： 下载方式: Github | 百度网盘 | QQ群共享（群号：755960114） 解压目录如下示例
+目前已有的zip包如下：
+下载方式: Github | 百度网盘 | QQ群共享（群号：755960114）
+解压目录如下示例
 . ├── api-ms-win-core-console-l1-1-0.dll ├── api-ms-win-core-datetime-l1-1-0.dll ├── api-ms-win-core-debug-l1-1-0.dll ├── api-ms-win-core-errorhandling-l1-1-0.dll ├── api-ms-win-core-file-l1-1-0.dll ├── api-ms-win-core-file-l1-2-0.dll ├── api-ms-win-core-file-l2-1-0.dll ├── api-ms-win-core-handle-l1-1-0.dll ├── api-ms-win-core-heap-l1-1-0.dll ├── api-ms-win-core-interlocked-l1-1-0.dll ├── api-ms-win-core-libraryloader-l1-1-0.dll ├── api-ms-win-core-localization-l1-2-0.dll ├── api-ms-win-core-memory-l1-1-0.dll ├── api-ms-win-core-namedpipe-l1-1-0.dll ├── api-ms-win-core-processenvironment-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-1.dll ├── api-ms-win-core-profile-l1-1-0.dll ├── api-ms-win-core-rtlsupport-l1-1-0.dll ├── api-ms-win-core-string-l1-1-0.dll ├── api-ms-win-core-synch-l1-1-0.dll ├── api-ms-win-core-synch-l1-2-0.dll ├── api-ms-win-core-sysinfo-l1-1-0.dll ├── api-ms-win-core-timezone-l1-1-0.dll ├── api-ms-win-core-util-l1-1-0.dll ├── api-ms-win-crt-conio-l1-1-0.dll ├── api-ms-win-crt-convert-l1-1-0.</description>
     </item>
     
@@ -112,7 +114,14 @@ ch_PP-OCRv3_det &amp;#43; ch_ppocr_mobile_v2.0_cls &amp;#43; ch_PP-OCRv3_rec 网
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_nuitka/</guid>
       <description>&amp;ndash;by DeadWood8
-打包环境 link OS: Windows11 Python: 3.8.10 rapidocr_onnxruntime: 1.2.0 nuitka: 1.5.3 onnxruntime: 1.14.0 打包步骤 link 安装Nuitka pip install nuitka 注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。 修改rapidocr-onnxruntime源码（修改后可以将所有依赖打包进文件） ⚠️ rapidocr_onnxruntime&amp;gt;=1.2.8以后不用再手动修改下面代码，已经做了修改。可以跳过该步。 进入rapidocr-onnxruntime安装位置，一般在Lib\site-packages\rapidocr_onnxruntime或者你设置的虚拟环境下。 用编辑器打开rapid_ocr_api.py，对39-52行进行修改，如下图： nuitka打包 cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --output-dir=out ocrweb.py 如下图所示： 拷贝静态文件 打包后的文件位于当前位置的out\ocrweb.dist目录下，需要将web项目和rapidocr-onnxruntime相关文件拷贝到此目录。 拷贝rapidocr_web目录static和templates两个文件夹全部拷贝到out\ocrweb.dist下 在out\ocrweb.dist创建rapidocr_onnxruntime文件夹，将Lib\site-packages\rapidocr_onnxruntime目录下的config.yaml和models文件夹拷贝到out\ocrweb.dist\rapidocr_onnxruntime文件夹内 运行程序 进入out\ocrweb.dist，直接双击ocrweb.exe运行。 打包好的exe下载：百度网盘 | Google Drive | Gitee 补充 link 如果不想运行程序后有黑框，可以在打包命令中加入以下参数 --windows-disable-console 完整命令为： nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --windows-disable-console --output-dir=out ocrweb.py </description>
+打包环境 link OS: Windows11 Python: 3.8.10 rapidocr_onnxruntime: 1.2.0 nuitka: 1.5.3 onnxruntime: 1.14.0 打包步骤 link 安装Nuitka
+pip install nuitka 注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。
+修改rapidocr-onnxruntime源码（修改后可以将所有依赖打包进文件）
+⚠️ rapidocr_onnxruntime&amp;gt;=1.2.8以后不用再手动修改下面代码，已经做了修改。可以跳过该步。 进入rapidocr-onnxruntime安装位置，一般在Lib\site-packages\rapidocr_onnxruntime或者你设置的虚拟环境下。 用编辑器打开rapid_ocr_api.py，对39-52行进行修改，如下图： nuitka打包
+cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --output-dir=out ocrweb.py 如下图所示： 拷贝静态文件
+打包后的文件位于当前位置的out\ocrweb.dist目录下，需要将web项目和rapidocr-onnxruntime相关文件拷贝到此目录。 拷贝rapidocr_web目录static和templates两个文件夹全部拷贝到out\ocrweb.dist下 在out\ocrweb.dist创建rapidocr_onnxruntime文件夹，将Lib\site-packages\rapidocr_onnxruntime目录下的config.yaml和models文件夹拷贝到out\ocrweb.dist\rapidocr_onnxruntime文件夹内 运行程序
+进入out\ocrweb.dist，直接双击ocrweb.exe运行。 打包好的exe下载：百度网盘 | Google Drive | Gitee
+补充 link 如果不想运行程序后有黑框，可以在打包命令中加入以下参数 --windows-disable-console 完整命令为： nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --windows-disable-console --output-dir=out ocrweb.py </description>
     </item>
     
     <item>
@@ -126,6 +135,50 @@ ch_PP-OCRv3_det &amp;#43; ch_ppocr_mobile_v2.0_cls &amp;#43; ch_PP-OCRv3_rec 网
 $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动:
 $ rapidocr_api -ip 0.0.0.0 -p 9003 curl调用
 $ curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用</description>
+    </item>
+    
+    <item>
+      <title>ONNXRuntime</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/</guid>
+      <description>引言 link 平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。 因此，决定在这一篇文章中来梳理一下相关的设置。 以下参数都是来自SessionOptions中 相关测试代码可以前往AI Studio查看 欢迎补充和指出不足之处。 推荐常用设置 link import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL sess_options.log_severity_level = 4 sess_options.enable_cpu_mem_arena = False # 其他参数，采用默认即可 enable_cpu_mem_arena link 作用：启用CPU上的memory arena。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为enable_cpu_mem_area=False，默认是True
+结论：建议关闭
+开启之后，占用内存会剧增（5618.3M &amp;raquo; 5.3M），且持续占用，不释放；推理时间只有大约13%提升 测试环境：
+Python: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu_memory_area_example.zip）
+# pip install onnxruntime==1.14.1 # pip install memory_profiler import numpy as np import onnxruntime as ort from memory_profiler import profile @profile def onnx_prediction(model_path, input_data): ort_sess = ort.InferenceSession(model_path, sess_options=sess_options) preds = ort_sess.</description>
+    </item>
+    
+    <item>
+      <title>ONNXRuntime GPU版推理</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</guid>
+      <description>onnxruntime-gpu版相关说明 link 目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见onnxruntime issue#13198 有关onnxruntime-gpu推理慢的相关帖子 link Pre-allocating dynamic shaped tensor memory for ONNX runtime inference? 快速查看比较版本 link 国外小伙伴可以基于Google Colab，国内的小伙伴可以基于百度的AI Studio来查看效果 自己折腾版 link onnxruntime-gpu需要严格按照与CUDA、cuDNN版本对应来安装，具体参考文档，这一步关乎后面是否可以成功调用GPU。
+以下是安装示例： 所用机器环境情况： nvcc-smi显示CUDA Driver API版本：11.7 nccc -V显示CUDA Runtime API版本：11.6 以上两个版本的对应关系，可参考博客 具体安装命令如下： conda install cudatoolkit=11.6.0 conda install cudnn=8.3.2.44 pip install onnxruntime-gpu==1.12.0 验证是否可以onnxruntime-gpu正常调用GPU 验证get_device()是否可返回GPU import onnxruntime as ort print(ort.get_device()) # GPU 如果第一步满足了，继续验证onnxruntime-gpu加载模型时是否可以调用GPU import onnxruntime as ort providers = [ (&amp;#39;CUDAExecutionProvider&amp;#39;, { &amp;#39;device_id&amp;#39;: 0, &amp;#39;arena_extend_strategy&amp;#39;: &amp;#39;kNextPowerOfTwo&amp;#39;, &amp;#39;gpu_mem_limit&amp;#39;: 2 * 1024 * 1024 * 1024, &amp;#39;cudnn_conv_algo_search&amp;#39;: &amp;#39;EXHAUSTIVE&amp;#39;, &amp;#39;do_copy_in_default_stream&amp;#39;: True, }), &amp;#39;CPUExecutionProvider&amp;#39;, ] # download link: https://github.</description>
+    </item>
+    
+    <item>
+      <title>OpenVINO GPU推理</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</guid>
+      <description> 官方参考文档：docs 考虑到openvino只能使用自家显卡推理，通用性不高，这里暂不作相关配置说明。 </description>
+    </item>
+    
+    <item>
+      <title>OpenVINO推理</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</guid>
+      <description>⚠️ 基于目前openvino==2022.3.0版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见issue11939 安装 link $ pip install openvino # 里面含有mo $ pip install openvino-dev 模型问题 link 因为OpenVINO可以直接推理ONNX模型，故这里暂时不作转换，直接推理之前ONNX模型即可 这里仍然给出转换的代码，用作参考: mo --input_model models/ch_PP-OCRv2_det_infer.onnx --output_dir models/IR/ mo --input_model models/ch_PP-OCRv2_det_infer.onnx \ --output_dir models/IR/static \ --input_shape &amp;#34;[1,3,12128,800]&amp;#34; 关于OpenVINO link OpenVINO可以直接推理IR、ONNX和PaddlePaddle模型，具体如下(图来源:link)：
+和ONNXRuntime同时推理同一个ONNX模型，OpenVINO推理速度更快
+但是从对比来看，OpenVINO占用内存更大，其原因是拿空间换的时间
+当指定input_shape在一个区间范围时，推理时内存占用会减少一些 示例命令: mo --input_model models/ch_PP-OCRv2_det_infer.onnx \ --output_dir models/IR/static \ --input_shape &amp;#34;[1,3,960:1200,800]&amp;#34; OpenVINO与ONNXRuntime性能对比 link 推理设备：Windows 64位 Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz 2.59 GHz 测试图像宽高: 12119x810 测试模型 推理框架 占用内存(3次平均) 推理时间(3次平均) ch_PP-OCRv2_det_infer.onnx ONNXRuntime=1.10.0 0.8G 5.</description>
     </item>
     
     <item>

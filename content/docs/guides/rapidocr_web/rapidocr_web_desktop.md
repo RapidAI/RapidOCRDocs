@@ -20,6 +20,7 @@ categories:
 #### 使用步骤
 1. 下载对应的zip包
     - 目前已有的zip包如下：
+
          ![image](https://github.com/RapidAI/RapidOCR/assets/28639377/e60a6411-7d3d-4063-9e0a-6d85df78de7a)
     - 下载方式: [Github](https://github.com/RapidAI/RapidOCR/releases/tag/v0.1.5) | [百度网盘](https://pan.baidu.com/s/1Kfk-56I4GoKw8xMZlqUUEw?pwd=rfen) | QQ群共享（群号：755960114）
 2. 解压目录如下示例

@@ -12,10 +12,22 @@ tags:
 categories:
 ---
 
+#### 🧸2023-09-06 v1.3.2 update:
+- 修复issue [#116](https://github.com/RapidAI/RapidOCR/issues/116)
+#### ⭐2023-08-29 v1.3.1 update:
+- 修复issue [#115](https://github.com/RapidAI/RapidOCR/issues/115)
+#### 🎉2023-08-26 v1.3.0 update:
+- 将PaddleOCR v4版对应的文本检测和文本识别轻量模型转换为onnx，并打包到whl中。
+- 接口与`v1.2.x`一致，直接使用即可。
+---
+#### ⚠️注意：
+- `v1.3.x`系列集成的是PaddleOCR v4系列模型
+- `rapidocr_onnxruntime==1.2.x`和`rapidocr_openvino==1.2.x`系列集成的是PaddleOCR v3模型
 
 #### 😉2023-07-12 v1.2.12 update:
 - 在`rapidocr_onnxruntime`初始化时，添加`det_use_cuda`、`cls_use_cuda`、`rec_use_cuda`参数
 - 兼容配置文件方式传入`RapidOCR`类中
+- `rapidocr_openvino`同理
 
 #### 🎮2023-03-11 v1.2.2 update:
 - 修复实例化python中RapidOCR类传入参数错误

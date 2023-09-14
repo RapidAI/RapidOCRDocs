@@ -1,5 +1,5 @@
 ---
-weight: 400
+weight: 2
 title: "rapidcor"
 description: "rapidocr"
 icon: menu_book

@@ -3,7 +3,7 @@ weight: 2
 date: "2023-09-08"
 draft: false
 author: "SWHL"
-title: "rapidocr_web"
+title: "rapidocr_web使用教程"
 icon: "code"
 toc: true
 description: ""

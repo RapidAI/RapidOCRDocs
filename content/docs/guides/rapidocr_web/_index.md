@@ -1,5 +1,5 @@
 ---
-weight: 401
+weight: 3
 title: "rapidocr_web"
 description:
 icon: menu_book

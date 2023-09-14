@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>rapidocr_web</title>
+      <title>rapidocr_web使用教程</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web/</link>
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
       
@@ -18,6 +18,27 @@
 所用模型组合（最优组合）为：
 ch_PP-OCRv3_det &amp;#43; ch_ppocr_mobile_v2.0_cls &amp;#43; ch_PP-OCRv3_rec 网页上显示的推理时间具体解释如下：
 桌面版使用教程 link界面版使用步骤 link 安装rapidocr_web $ pip install rapidocr_web 运行 用法: $ rapidocr_web -h usage: rapidocr_web [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 示例: $ rapidocr_web -ip 0.0.0.0 -p 9003 使用 浏览器打开http://localhost:9003/，enjoy it. </description>
+    </item>
+    
+    <item>
+      <title>RapidOCRWeb桌面版使用教程</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_desktop/</link>
+      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_desktop/</guid>
+      <description>引言 link 说明：桌面版指的是可以直接解压，双击即可运行的版本。 通俗来说，对rapidocr_web做了打包，将相关依赖全部放到一个zip包中，不需要本地有额外的环境，降低使用门槛。 下面会以Windows版为例，作简要说明。 使用步骤 link 下载对应的zip包
+目前已有的zip包如下： 下载方式: Github | 百度网盘 | QQ群共享（群号：755960114） 解压目录如下示例
+. ├── api-ms-win-core-console-l1-1-0.dll ├── api-ms-win-core-datetime-l1-1-0.dll ├── api-ms-win-core-debug-l1-1-0.dll ├── api-ms-win-core-errorhandling-l1-1-0.dll ├── api-ms-win-core-file-l1-1-0.dll ├── api-ms-win-core-file-l1-2-0.dll ├── api-ms-win-core-file-l2-1-0.dll ├── api-ms-win-core-handle-l1-1-0.dll ├── api-ms-win-core-heap-l1-1-0.dll ├── api-ms-win-core-interlocked-l1-1-0.dll ├── api-ms-win-core-libraryloader-l1-1-0.dll ├── api-ms-win-core-localization-l1-2-0.dll ├── api-ms-win-core-memory-l1-1-0.dll ├── api-ms-win-core-namedpipe-l1-1-0.dll ├── api-ms-win-core-processenvironment-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-1.dll ├── api-ms-win-core-profile-l1-1-0.dll ├── api-ms-win-core-rtlsupport-l1-1-0.dll ├── api-ms-win-core-string-l1-1-0.dll ├── api-ms-win-core-synch-l1-1-0.dll ├── api-ms-win-core-synch-l1-2-0.dll ├── api-ms-win-core-sysinfo-l1-1-0.dll ├── api-ms-win-core-timezone-l1-1-0.dll ├── api-ms-win-core-util-l1-1-0.dll ├── api-ms-win-crt-conio-l1-1-0.dll ├── api-ms-win-crt-convert-l1-1-0.</description>
+    </item>
+    
+    <item>
+      <title>Nuitka打包rapidocr_web操作文档</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_nuitka/</link>
+      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_nuitka/</guid>
+      <description>&amp;ndash;by DeadWood8
+打包环境 link OS: Windows11 Python: 3.8.10 rapidocr_onnxruntime: 1.2.0 nuitka: 1.5.3 onnxruntime: 1.14.0 打包步骤 link 安装Nuitka pip install nuitka 注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。 修改rapidocr-onnxruntime源码（修改后可以将所有依赖打包进文件） ⚠️ rapidocr_onnxruntime&amp;gt;=1.2.8以后不用再手动修改下面代码，已经做了修改。可以跳过该步。 进入rapidocr-onnxruntime安装位置，一般在Lib\site-packages\rapidocr_onnxruntime或者你设置的虚拟环境下。 用编辑器打开rapid_ocr_api.py，对39-52行进行修改，如下图： nuitka打包 cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --output-dir=out ocrweb.py 如下图所示： 拷贝静态文件 打包后的文件位于当前位置的out\ocrweb.dist目录下，需要将web项目和rapidocr-onnxruntime相关文件拷贝到此目录。 拷贝rapidocr_web目录static和templates两个文件夹全部拷贝到out\ocrweb.dist下 在out\ocrweb.dist创建rapidocr_onnxruntime文件夹，将Lib\site-packages\rapidocr_onnxruntime目录下的config.yaml和models文件夹拷贝到out\ocrweb.dist\rapidocr_onnxruntime文件夹内 运行程序 进入out\ocrweb.dist，直接双击ocrweb.exe运行。 打包好的exe下载：百度网盘 | Google Drive | Gitee 补充 link 如果不想运行程序后有黑框，可以在打包命令中加入以下参数 --windows-disable-console 完整命令为： nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --windows-disable-console --output-dir=out ocrweb.py </description>
     </item>
     
   </channel>

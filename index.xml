@@ -13,7 +13,7 @@
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr/</guid>
-      <description>😉2023-07-12 v1.2.12 update: link 在rapidocr_onnxruntime初始化时，添加det_use_cuda、cls_use_cuda、rec_use_cuda参数 兼容配置文件方式传入RapidOCR类中 🎮2023-03-11 v1.2.2 update: link 修复实例化python中RapidOCR类传入参数错误 🧢2023-03-07 v1.2.1 update: link rapidocr系列包更新到v1.2.0 优化python下rapidocr系列包的接口传入参数，支持实例化类时，动态给定各个参数，更加灵活。 如果不指定，则用config.yaml下的默认参数。 具体可参见：传入参数 ⛸2023-02-16 update: link 优化ocrweb部分代码，可直接pip安装，快速使用，详情参见README。 优化python中各个部分的推理代码，更加紧凑，同时易于维护。 🎉2023-01-21 update: link [python] 添加含有文字的图像方向分类模块，具体参见Rapid Orientation ⚽2022-12-19 update: link [python] 添加表格结构还原模块，具体参见Rapid Table 🤖2022-12-14 update: link [python] 将配置参数和模型移到模块里面，同时将模型打到whl包内，可以直接pip安装使用，更加方便快捷。 详情参见：README 🧻2022-11-20 update: link [python] 添加版面分析部分,支持中文、英文和表格三种版面的检测分析。详情参见:Rapid Structure部分。 🎃2022-11-01 update: link 添加Hugging Face Demo, 增加可以调节超参数的功能，详情可访问Hugging Face Demo 🚩2022-10-01 udpate: link 修复python部分下一些较小bugs merge来自AutumnSun1996的OCRWeb实现的多语言部署demo，详情参见：ocrweb_mutli-README 添加onnxruntime-gpu推理速度较慢于CPU的问题说明，详情参见：onnxruntime-gpu版相关说明 🛴2022-09-01 update: link 由于openvino发布了2022.2.0.dev20220829版本，该版本解决了cls部分模型推理的问题。至此，基于openvino的rapidocr完成了统一，全部由openvino推理引擎完成。 详细使用方法参见：python/README 🧸2022-08-17 update: link python/ocrweb部分 v1.</description>
+      <description>🧸2023-09-06 v1.3.2 update: link 修复issue #116 ⭐2023-08-29 v1.3.1 update: link 修复issue #115 🎉2023-08-26 v1.3.0 update: link 将PaddleOCR v4版对应的文本检测和文本识别轻量模型转换为onnx，并打包到whl中。 接口与v1.2.x一致，直接使用即可。 ⚠️注意： link v1.3.x系列集成的是PaddleOCR v4系列模型 rapidocr_onnxruntime==1.2.x和rapidocr_openvino==1.2.x系列集成的是PaddleOCR v3模型 😉2023-07-12 v1.2.12 update: link 在rapidocr_onnxruntime初始化时，添加det_use_cuda、cls_use_cuda、rec_use_cuda参数 兼容配置文件方式传入RapidOCR类中 rapidocr_openvino同理 🎮2023-03-11 v1.2.2 update: link 修复实例化python中RapidOCR类传入参数错误 🧢2023-03-07 v1.2.1 update: link rapidocr系列包更新到v1.2.0 优化python下rapidocr系列包的接口传入参数，支持实例化类时，动态给定各个参数，更加灵活。 如果不指定，则用config.yaml下的默认参数。 具体可参见：传入参数 ⛸2023-02-16 update: link 优化ocrweb部分代码，可直接pip安装，快速使用，详情参见README。 优化python中各个部分的推理代码，更加紧凑，同时易于维护。 🎉2023-01-21 update: link [python] 添加含有文字的图像方向分类模块，具体参见Rapid Orientation ⚽2022-12-19 update: link [python] 添加表格结构还原模块，具体参见Rapid Table 🤖2022-12-14 update: link [python] 将配置参数和模型移到模块里面，同时将模型打到whl包内，可以直接pip安装使用，更加方便快捷。 详情参见：README 🧻2022-11-20 update: link [python] 添加版面分析部分,支持中文、英文和表格三种版面的检测分析。详情参见:Rapid Structure部分。 🎃2022-11-01 update: link 添加Hugging Face Demo, 增加可以调节超参数的功能，详情可访问Hugging Face Demo 🚩2022-10-01 udpate: link 修复python部分下一些较小bugs merge来自AutumnSun1996的OCRWeb实现的多语言部署demo，详情参见：ocrweb_mutli-README 添加onnxruntime-gpu推理速度较慢于CPU的问题说明，详情参见：onnxruntime-gpu版相关说明 🛴2022-09-01 update: link 由于openvino发布了2022.</description>
     </item>
     
     <item>
@@ -54,16 +54,7 @@
     </item>
     
     <item>
-      <title>rapidocr_api</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/</link>
-      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/</guid>
-      <description>采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 使用步骤 link 安装rapidocr_api $ pip install rapidocr_api # 源码安装 $ python setup.py bdist_wheel v0.0.1 $ cd dist $ pip install rapidocr_*.whl 运行 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 示例: $ rapidocr_api -ip 0.0.0.0 -p 9003 使用 ⚠️：本质就是发送一个POST请求，其他语言同理 curl调用 $ curl -F image_file=@1.</description>
-    </item>
-    
-    <item>
-      <title>rapidocr_web</title>
+      <title>rapidocr_web使用教程</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web/</link>
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
       
@@ -101,6 +92,56 @@ ch_PP-OCRv3_det &amp;#43; ch_ppocr_mobile_v2.0_cls &amp;#43; ch_PP-OCRv3_rec 网
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/</guid>
       <description>🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&amp;gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 </description>
+    </item>
+    
+    <item>
+      <title>RapidOCRWeb桌面版使用教程</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_desktop/</link>
+      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_desktop/</guid>
+      <description>引言 link 说明：桌面版指的是可以直接解压，双击即可运行的版本。 通俗来说，对rapidocr_web做了打包，将相关依赖全部放到一个zip包中，不需要本地有额外的环境，降低使用门槛。 下面会以Windows版为例，作简要说明。 使用步骤 link 下载对应的zip包
+目前已有的zip包如下： 下载方式: Github | 百度网盘 | QQ群共享（群号：755960114） 解压目录如下示例
+. ├── api-ms-win-core-console-l1-1-0.dll ├── api-ms-win-core-datetime-l1-1-0.dll ├── api-ms-win-core-debug-l1-1-0.dll ├── api-ms-win-core-errorhandling-l1-1-0.dll ├── api-ms-win-core-file-l1-1-0.dll ├── api-ms-win-core-file-l1-2-0.dll ├── api-ms-win-core-file-l2-1-0.dll ├── api-ms-win-core-handle-l1-1-0.dll ├── api-ms-win-core-heap-l1-1-0.dll ├── api-ms-win-core-interlocked-l1-1-0.dll ├── api-ms-win-core-libraryloader-l1-1-0.dll ├── api-ms-win-core-localization-l1-2-0.dll ├── api-ms-win-core-memory-l1-1-0.dll ├── api-ms-win-core-namedpipe-l1-1-0.dll ├── api-ms-win-core-processenvironment-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-1.dll ├── api-ms-win-core-profile-l1-1-0.dll ├── api-ms-win-core-rtlsupport-l1-1-0.dll ├── api-ms-win-core-string-l1-1-0.dll ├── api-ms-win-core-synch-l1-1-0.dll ├── api-ms-win-core-synch-l1-2-0.dll ├── api-ms-win-core-sysinfo-l1-1-0.dll ├── api-ms-win-core-timezone-l1-1-0.dll ├── api-ms-win-core-util-l1-1-0.dll ├── api-ms-win-crt-conio-l1-1-0.dll ├── api-ms-win-crt-convert-l1-1-0.</description>
+    </item>
+    
+    <item>
+      <title>Nuitka打包rapidocr_web操作文档</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_nuitka/</link>
+      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_nuitka/</guid>
+      <description>&amp;ndash;by DeadWood8
+打包环境 link OS: Windows11 Python: 3.8.10 rapidocr_onnxruntime: 1.2.0 nuitka: 1.5.3 onnxruntime: 1.14.0 打包步骤 link 安装Nuitka pip install nuitka 注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。 修改rapidocr-onnxruntime源码（修改后可以将所有依赖打包进文件） ⚠️ rapidocr_onnxruntime&amp;gt;=1.2.8以后不用再手动修改下面代码，已经做了修改。可以跳过该步。 进入rapidocr-onnxruntime安装位置，一般在Lib\site-packages\rapidocr_onnxruntime或者你设置的虚拟环境下。 用编辑器打开rapid_ocr_api.py，对39-52行进行修改，如下图： nuitka打包 cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --output-dir=out ocrweb.py 如下图所示： 拷贝静态文件 打包后的文件位于当前位置的out\ocrweb.dist目录下，需要将web项目和rapidocr-onnxruntime相关文件拷贝到此目录。 拷贝rapidocr_web目录static和templates两个文件夹全部拷贝到out\ocrweb.dist下 在out\ocrweb.dist创建rapidocr_onnxruntime文件夹，将Lib\site-packages\rapidocr_onnxruntime目录下的config.yaml和models文件夹拷贝到out\ocrweb.dist\rapidocr_onnxruntime文件夹内 运行程序 进入out\ocrweb.dist，直接双击ocrweb.exe运行。 打包好的exe下载：百度网盘 | Google Drive | Gitee 补充 link 如果不想运行程序后有黑框，可以在打包命令中加入以下参数 --windows-disable-console 完整命令为： nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --windows-disable-console --output-dir=out ocrweb.py </description>
+    </item>
+    
+    <item>
+      <title>rapidocr_api</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/</link>
+      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/</guid>
+      <description>采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 Installation link pip安装 pip install rapidocr_api 源码安装 python setup.py bdist_wheel v0.0.1 cd dist pip install rapidocr_*.whl Usage link⚠️：本质就是发送一个POST请求，其他语言同理
+用法:
+$ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动:
+$ rapidocr_api -ip 0.0.0.0 -p 9003 curl调用
+$ curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用</description>
+    </item>
+    
+    <item>
+      <title>FAQ</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/faq/</link>
+      <pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/faq/</guid>
+      <description>Q: 请问这个能在32位C#中用嘛? linkA: C#可以32位，要用32位的dll，但nuget上的onnxruntime不支持win7。
+Q: Windows系统下，装完环境之后，运行示例程序之后，报错OSError: [WinError 126] 找不到指定的模組 linkA: 原因是Shapely库没有正确安装，如果是在Windows，可以在Shapely whl下载对应的whl包，离线安装即可；另外一种解决办法是用conda安装也可。
+Q: Linux部署python的程序时，import cv2时会报ImportError: ligGL.so.1: cannot open shared object file: No such file or directory? linkA: 解决方法 有两个(来自群友ddeef)：
+安装opencv-python-headless取代opencv-python; 运行sudo apt-get install -y libgl1-mesa-dev Q: 询问下，我编译出来的进程在win7下面通过cmd调用，发生了崩溃的情况? linkA: 不支持win7 (by @如果我有時光機)
+Q: 能不能搞个openmmlab类似的那个提取信息的? linkA: 这个目前正在调研测试当中，如果mmocr中关键信息提取效果还可以，后期会考虑整合进来。
+Q: RapidOCR和PaddleOCR是什么关系呢？ linkA: RapidOCR是将PaddleOCR的预训练模型转为onnx模型，不依赖paddle框架，方便各个平台部署。
+Q: onnxruntime arm32 有人编译过吗？ 我编译成功了，但是使用的时候libonnxruntime.so👎 error: file not recognized: File format not recognized 应该是版本不匹配 linkA: 没遇到过。我是直接在当前平台编译的，我们用的是arm。估计是平台不兼容,建议在本身平台上编译。没遇到过问题。通常出在交叉编译方式下。
+Q: 请问一下c++ demo必须要vs2017及以上版本吗? linkA: 最好用vs2019</description>
     </item>
     
   </channel>

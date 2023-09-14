@@ -112,11 +112,6 @@
                                     
                                         
                                         
-                                            <li class="current "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/">rapidocr_api</a></li>
-                                        
-                                    
-                                        
-                                        
                                             <li class="sidebar-dropdown nested  ">
                                                 <button class="btn">
                                                     
@@ -147,11 +142,22 @@
                                                     <ul>
                                                         
                                                             
-                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web/">rapidocr_web</a></li>
+                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web/">rapidocr_web使用教程</a></li>
+                                                        
+                                                            
+                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_desktop/">RapidOCRWeb桌面版使用教程</a></li>
+                                                        
+                                                            
+                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_nuitka/">Nuitka打包rapidocr_web操作文档</a></li>
                                                         
                                                     </ul>
                                                 </div>
                                             </li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class="current "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/guides/rapidocr_api/">rapidocr_api</a></li>
                                         
                                     
                                 </ul>
@@ -186,6 +192,17 @@
                                     
                                 </ul>
                             </div>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://rapidai.github.io/RapidOCRDocs/docs/faq/">
+                                <i class="material-icons me-2">quiz</i>
+                                
+                                FAQ
+                            </a>
                         </li>
                     
                 
@@ -309,7 +326,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#使用步骤">使用步骤</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#api输出">API输出</a></li>
           </ul>
         </li>
       </ul>
@@ -329,7 +348,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#使用步骤">使用步骤</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#api输出">API输出</a></li>
           </ul>
         </li>
       </ul>
@@ -363,8 +384,8 @@
 <li>采用<code>FastAPI</code> + <code>uvicorn</code>实现。</li>
 <li>该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。</li>
 </ul>
-<h3 id="使用步骤">使用步骤 <a href="#%e4%bd%bf%e7%94%a8%e6%ad%a5%e9%aa%a4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
-<li>安装<code>rapidocr_api</code>
+<h3 id="installation">Installation <a href="#installation" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>pip安装
 
 
 
@@ -380,19 +401,12 @@
   
 
   <div class="prism-codeblock ">
-  <pre id="52e3792" class="language-bash ">
-  <code>$ pip install rapidocr_api
-
-# 源码安装
-$ python setup.py bdist_wheel v0.0.1
-$ cd dist
-$ pip install rapidocr_*.whl</code>
+  <pre id="748fe34" class="language-bash ">
+  <code>pip install rapidocr_api</code>
   </pre>
   </div>
 </li>
-<li>运行
-<ul>
-<li>用法:
+<li>源码安装
 
 
 
@@ -408,7 +422,34 @@ $ pip install rapidocr_*.whl</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="18b172f" class="language-bash ">
+  <pre id="8bb90be" class="language- ">
+  <code>python setup.py bdist_wheel v0.0.1
+cd dist
+pip install rapidocr_*.whl</code>
+  </pre>
+  </div>
+</li>
+</ul>
+<h3 id="usage">Usage <a href="#usage" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>⚠️：本质就是发送一个POST请求，其他语言同理</p>
+<ul>
+<li>
+<p>用法:</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="08d3cb3" class="language-bash ">
   <code>$ rapidocr_api -h
 usage: rapidocr_api [-h] [-ip IP] [-p PORT]
 
@@ -419,7 +460,8 @@ optional arguments:
   </pre>
   </div>
 </li>
-<li>示例:
+<li>
+<p>启动:</p>
 
 
 
@@ -435,17 +477,13 @@ optional arguments:
   
 
   <div class="prism-codeblock ">
-  <pre id="fd7e3bc" class="language-bash ">
+  <pre id="190a703" class="language-bash ">
   <code>$ rapidocr_api -ip 0.0.0.0 -p 9003</code>
   </pre>
   </div>
 </li>
-</ul>
-</li>
-<li>使用
-<ul>
-<li>⚠️：本质就是发送一个POST请求，其他语言同理</li>
-<li>curl调用
+<li>
+<p>curl调用</p>
 
 
 
@@ -461,12 +499,13 @@ optional arguments:
   
 
   <div class="prism-codeblock ">
-  <pre id="ca8b391" class="language-bash ">
+  <pre id="b7cd05a" class="language-bash ">
   <code>$ curl -F image_file=@1.png http://0.0.0.0:9003/ocr</code>
   </pre>
   </div>
 </li>
-<li>python调用
+<li>
+<p>python调用</p>
 <ul>
 <li>以文件的方式发送请求
 
@@ -484,7 +523,7 @@ optional arguments:
   
 
   <div class="prism-codeblock ">
-  <pre id="b0941aa" class="language-python ">
+  <pre id="4c4c0e3" class="language-python ">
   <code>import requests
 
 url = &#39;http://localhost:9003/ocr&#39;
@@ -514,7 +553,7 @@ print(response.json())</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="85888ba" class="language-python ">
+  <pre id="0d8c5c1" class="language-python ">
   <code>import base64
 import requests
 
@@ -534,13 +573,11 @@ print(resp.json())</code>
 </ul>
 </li>
 </ul>
-</li>
-<li>API输出
-<ul>
+<h3 id="api输出">API输出 <a href="#api%e8%be%93%e5%87%ba" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
 <li>
 <p>示例结果：</p>
-   <details>
-   <summary>详情</summary>
+  <details>
+  <summary>详情</summary>
 
 
 
@@ -556,49 +593,49 @@ print(resp.json())</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="0132473" class="language-json ">
-  <code> {
-     &#34;0&#34;: {
-         &#34;rec_txt&#34;: &#34;8月26日！&#34;,
-         &#34;dt_boxes&#34;: [
-             [333.0, 72.0],
-             [545.0, 40.0],
-             [552.0, 90.0],
-             [341.0, 122.0]
-         ],
-         &#34;score&#34;: &#34;0.7342076812471662&#34;
-     },
-     &#34;1&#34;: {
-         &#34;rec_txt&#34;: &#34;澳洲名校招生信息&#34;,
-         &#34;dt_boxes&#34;: [
-             [266.0, 163.0],
-             [612.0, 116.0],
-             [619.0, 163.0],
-             [272.0, 210.0]
-         ],
-         &#34;score&#34;: &#34;0.8261737492349412&#34;
-     },
-     &#34;2&#34;: {
-         &#34;rec_txt&#34;: &#34;解读！！&#34;,
-         &#34;dt_boxes&#34;: [
-             [341.0, 187.0],
-             [595.0, 179.0],
-             [598.0, 288.0],
-             [344.0, 296.0]
-         ],
-         &#34;score&#34;: &#34;0.6152311325073242&#34;
-     },
-     &#34;3&#34;: {
-         &#34;rec_txt&#34;: &#34;Rules...&#34;,
-         &#34;dt_boxes&#34;: [
-             [446.0, 321.0],
-             [560.0, 326.0],
-             [559.0, 352.0],
-             [445.0, 347.0]
-         ],
-         &#34;score&#34;: &#34;0.8704230123096042&#34;
-     }
- }</code>
+  <pre id="f520e2c" class="language-json ">
+  <code>{
+    &#34;0&#34;: {
+        &#34;rec_txt&#34;: &#34;8月26日！&#34;,
+        &#34;dt_boxes&#34;: [
+            [333.0, 72.0],
+            [545.0, 40.0],
+            [552.0, 90.0],
+            [341.0, 122.0]
+        ],
+        &#34;score&#34;: &#34;0.7342076812471662&#34;
+    },
+    &#34;1&#34;: {
+        &#34;rec_txt&#34;: &#34;澳洲名校招生信息&#34;,
+        &#34;dt_boxes&#34;: [
+            [266.0, 163.0],
+            [612.0, 116.0],
+            [619.0, 163.0],
+            [272.0, 210.0]
+        ],
+        &#34;score&#34;: &#34;0.8261737492349412&#34;
+    },
+    &#34;2&#34;: {
+        &#34;rec_txt&#34;: &#34;解读！！&#34;,
+        &#34;dt_boxes&#34;: [
+            [341.0, 187.0],
+            [595.0, 179.0],
+            [598.0, 288.0],
+            [344.0, 296.0]
+        ],
+        &#34;score&#34;: &#34;0.6152311325073242&#34;
+    },
+    &#34;3&#34;: {
+        &#34;rec_txt&#34;: &#34;Rules...&#34;,
+        &#34;dt_boxes&#34;: [
+            [446.0, 321.0],
+            [560.0, 326.0],
+            [559.0, 352.0],
+            [445.0, 347.0]
+        ],
+        &#34;score&#34;: &#34;0.8704230123096042&#34;
+    }
+}</code>
   </pre>
   </div>
   </details>
@@ -622,18 +659,18 @@ print(resp.json())</code>
   
 
   <div class="prism-codeblock ">
-  <pre id="00cb216" class="language-python ">
+  <pre id="7bd8911" class="language-python ">
   <code>{
- &#34;0&#34;: {
-     &#34;rec_txt&#34;: &#34;香港深圳抽血，&#34;,  # 识别的文本
-     &#34;dt_boxes&#34;: [  # 依次为左上角 → 右上角 → 右下角 → 左下角
-         [265, 18],
-         [472, 231],
-         [431, 271],
-         [223, 59]
-     ],
-     &#34;score&#34;: &#34;0.8175641223788261&#34;  # 置信度
-     }
+&#34;0&#34;: {
+    &#34;rec_txt&#34;: &#34;香港深圳抽血，&#34;,  # 识别的文本
+    &#34;dt_boxes&#34;: [  # 依次为左上角 → 右上角 → 右下角 → 左下角
+        [265, 18],
+        [472, 231],
+        [431, 271],
+        [223, 59]
+    ],
+    &#34;score&#34;: &#34;0.8175641223788261&#34;  # 置信度
+    }
 }</code>
   </pre>
   </div>
@@ -642,9 +679,7 @@ print(resp.json())</code>
 </ul>
 </li>
 </ul>
-</li>
-<li><strong>!!说明：OCR的输出结果为最原始结果，大家可按需进一步扩展。</strong></li>
-</ol>
+<p><strong>!!说明：OCR的输出结果为最原始结果，大家可按需进一步扩展。</strong></p>
 
     </div>
 
@@ -682,9 +717,9 @@ print(resp.json())</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-13T17:24:52&#43;0800"
-            title="13 Sep 2023, 17:24 &#43;0800">
-            13 Sep 2023, 17:24 &#43;0800
+            data-authdate="2023-09-14T21:58:48&#43;0800"
+            title="14 Sep 2023, 21:58 &#43;0800">
+            14 Sep 2023, 21:58 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -700,10 +735,10 @@ print(resp.json())</code>
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/RapidOCRDocs/docs/changelog/rapidocr_web/">
+		<a href="/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web_nuitka/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> rapidocr_web</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Nuitka打包rapidocr_web操作文档</p>
 					<p class="card-text ms-2"></p>
 					
 				</div>
@@ -711,11 +746,11 @@ print(resp.json())</code>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/RapidOCRDocs/docs/guides/rapidocr_web/rapidocr_web/">
+		<a class="ms-auto" href="/RapidOCRDocs/docs/faq/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">rapidocr_web <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2"></p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">FAQ <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2">Answers to frequently asked …</p>
 					
 				</div>
 			</div>

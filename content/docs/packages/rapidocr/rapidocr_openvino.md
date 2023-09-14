@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 2
 date: "2023-09-11"
 draft: false
 author: "SWHL"
@@ -13,7 +13,6 @@ categories:
 ---
 
 
-## RapidOCR Python
 <p>
     <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.12-aff.svg"></a>
     <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>

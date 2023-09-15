@@ -38,6 +38,11 @@
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
     
+            
+                
+                <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js" integrity="sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn" crossorigin="anonymous"></script>
+                
+        
     
     
     
@@ -57,7 +62,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel="stylesheet">
 
-    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.b1d7009fcb3a8b0151758684274bb4b0c75d855b2326442acbd933d2e2ce65abb51a3f84c732bb73c35513c6cd1a8bae.css" integrity="sha384-sdcAn8s6iwFRdYaEJ0u0sMddhVsjJkQqy9kz0uLOZau1Gj&#43;ExzK7c8NVE8bNGouu"crossorigin="anonymous">
+    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.57e9efba42418914c22e375eade35e78513a0ae95b74888bc928020e9c1765a36e4be5be96be2593ce2c04c70917f94e.css" integrity="sha384-V&#43;nvukJBiRTCLjdereNeeFE6CulbdIiLySgCDpwXZaNuS&#43;W&#43;lr4lk84sBMcJF/lO"crossorigin="anonymous">
     
     
     
@@ -315,9 +320,24 @@
             <button id="close-sidebar" class="btn btn-icon btn-soft">
                 <span class="material-icons size-20 menu-icon align-middle">menu</span>
             </button>
-            <span><div id="docsearch"></div></span>
             
             
+                    
+                    <button id="flexsearch-button" class="ms-3 btn btn-soft" data-bs-toggle="collapse" data-bs-target="#FlexSearchCollapse" aria-expanded="false" aria-controls="FlexSearchCollapse">
+                        <span class="material-icons size-20 menu-icon align-middle">search</span>
+                        <span class="flexsearch-button-placeholder ms-1 me-2 d-none d-sm-block">Search</span>
+                        <div class="d-none d-sm-block">
+                            <span class="flexsearch-button-keys">
+                                <kbd class="flexsearch-button-cmd-key">
+                                    <svg width="44" height="15"><path d="M2.118,11.5A1.519,1.519,0,0,1,1,11.042,1.583,1.583,0,0,1,1,8.815a1.519,1.519,0,0,1,1.113-.458h.715V6.643H2.118A1.519,1.519,0,0,1,1,6.185,1.519,1.519,0,0,1,.547,5.071,1.519,1.519,0,0,1,1,3.958,1.519,1.519,0,0,1,2.118,3.5a1.519,1.519,0,0,1,1.114.458A1.519,1.519,0,0,1,3.69,5.071v.715H5.4V5.071A1.564,1.564,0,0,1,6.976,3.5,1.564,1.564,0,0,1,8.547,5.071,1.564,1.564,0,0,1,6.976,6.643H6.261V8.357h.715a1.575,1.575,0,0,1,1.113,2.685,1.583,1.583,0,0,1-2.227,0A1.519,1.519,0,0,1,5.4,9.929V9.214H3.69v.715a1.519,1.519,0,0,1-.458,1.113A1.519,1.519,0,0,1,2.118,11.5Zm0-.857a.714.714,0,0,0,.715-.714V9.214H2.118a.715.715,0,1,0,0,1.429Zm4.858,0a.715.715,0,1,0,0-1.429H6.261v.715a.714.714,0,0,0,.715.714ZM3.69,8.357H5.4V6.643H3.69ZM2.118,5.786h.715V5.071a.714.714,0,0,0-.715-.714.715.715,0,0,0-.5,1.22A.686.686,0,0,0,2.118,5.786Zm4.143,0h.715a.715.715,0,0,0,.5-1.22.715.715,0,0,0-1.22.5Z" fill="currentColor"></path><path d="M12.4,11.475H11.344l3.879-7.95h1.056Z" fill="currentColor"></path><path d="M25.073,5.384l-.864.576a2.121,2.121,0,0,0-1.786-.923,2.207,2.207,0,0,0-2.266,2.326,2.206,2.206,0,0,0,2.266,2.325,2.1,2.1,0,0,0,1.782-.918l.84.617a3.108,3.108,0,0,1-2.622,1.293,3.217,3.217,0,0,1-3.349-3.317,3.217,3.217,0,0,1,3.349-3.317A3.046,3.046,0,0,1,25.073,5.384Z" fill="currentColor"></path><path d="M30.993,5.142h-2.07v5.419H27.891V5.142h-2.07V4.164h5.172Z" fill="currentColor"></path><path d="M34.67,4.164c1.471,0,2.266.658,2.266,1.851,0,1.087-.832,1.809-2.134,1.855l2.107,2.691h-1.28L33.591,7.87H33.07v2.691H32.038v-6.4Zm-1.6.969v1.8h1.572c.832,0,1.22-.3,1.22-.918s-.411-.882-1.22-.882Z" fill="currentColor"></path><path d="M42.883,10.561H38.31v-6.4h1.033V9.583h3.54Z" fill="currentColor"></path></svg>
+                                </kbd>
+                                <kbd class="flexsearch-button-key">
+                                    <svg width="15" height="15"><path d="M5.926,12.279H4.41L9.073,2.721H10.59Z" fill="currentColor"/></svg>
+                                </kbd>
+                            </span>
+                        </div>
+                    </button>
+                
             </div>
 
         <div class="d-flex align-items-center">
@@ -361,6 +381,35 @@
     </div>
     
     
+            <div class="collapse" id="FlexSearchCollapse">
+                <div class="flexsearch-container">
+                    <div class="flexsearch-keymap">
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to navigate</span>
+                        </li>
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to select</span>
+                        </li>
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to close</span>
+                        </li>
+                    </div>
+                    <form class="flexsearch position-relative flex-grow-1 ms-2 me-2">
+                        <div class="d-flex flex-row">
+                            <input id="flexsearch" class="form-control" type="search" placeholder="Search" aria-label="Search" autocomplete="off">
+                            <button id="hideFlexsearch" type="button" class="ms-2 btn btn-soft">
+                                cancel
+                            </button>
+                        </div>
+                        <div id="suggestions" class="shadow rounded-1 d-none"></div>
+                    </form>
+                </div>
+            </div>
+        
     
     
 </div>
@@ -459,19 +508,19 @@
     <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 <h2 id="商业支持">商业支持 <a href="#%e5%95%86%e4%b8%9a%e6%94%af%e6%8c%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>🎉🎉🎉 推出知识星球<a href="https://t.zsxq.com/0duLBZczw">RapidAI私享群</a>，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。</li>
-<li>提供信创平台多架构，包括<strong>Arm/X86/mips(龙芯)/RISC-V</strong>等信创CPU支持，同时兼容<strong>ONNXRuntime/OpenVINO/NCNN</strong>。有意者邮件联系: <a href="mailto:znsoft@163.com">znsoft@163.com</a>, 请先邮件咨询服务项目，即时回复联系方式。</li>
-<li>提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ <a href="mailto:liekkaskono@163.com">liekkaskono@163.com</a>。</li>
+<li>🎉🎉🎉 推出知识星球<a href="https://t.zsxq.com/0duLBZczw" rel="external" target="_blank">RapidAI私享群<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。</li>
+<li>提供信创平台多架构，包括<strong>Arm/X86/mips(龙芯)/RISC-V</strong>等信创CPU支持，同时兼容<strong>ONNXRuntime/OpenVINO/NCNN</strong>。有意者邮件联系: <a href="mailto:znsoft@163.com" rel="external" target="_blank">znsoft@163.com<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>, 请先邮件咨询服务项目，即时回复联系方式。</li>
+<li>提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ <a href="mailto:liekkaskono@163.com" rel="external" target="_blank">liekkaskono@163.com<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>。</li>
 </ul>
 <h2 id="简介">简介 <a href="#%e7%ae%80%e4%bb%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
 <li>💖目前已知<strong>运行速度最快、支持最广</strong>，完全开源免费并支持离线快速部署的多平台多语言OCR。</li>
-<li><strong>支持的语言</strong>: 默认是中英文，其他语言识别需要自助转换。具体参考<a href="https://github.com/RapidAI/RapidOCR/wiki/support_language">这里</a></li>
+<li><strong>支持的语言</strong>: 默认是中英文，其他语言识别需要自助转换。具体参考<a href="https://github.com/RapidAI/RapidOCR/wiki/support_language" rel="external" target="_blank">这里<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
 <li><strong>缘起</strong>：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用<code>Python/C++/Java/Swift/C#</code> 将它移植到各个平台。</li>
 <li><strong>名称来源</strong>： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。</li>
 <li><strong>使用</strong>：
 <ul>
 <li>如果仓库下已有模型满足要求 → RapidOCR部署使用即可。</li>
-<li>不满足要求 → 基于<a href="https://github.com/PaddlePaddle/PaddleOCR">PaddleOCR</a>在自己数据上微调 → RapidOCR部署。</li>
+<li>不满足要求 → 基于<a href="https://github.com/PaddlePaddle/PaddleOCR" rel="external" target="_blank">PaddleOCR<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>在自己数据上微调 → RapidOCR部署。</li>
 </ul>
 </li>
 <li>如果该仓库有帮助到你，还请点个小星星⭐呗！</li>
@@ -612,7 +661,6 @@
     
 
 
-    
 
 
     
@@ -629,30 +677,631 @@
 
     
 
-    <script src="/RapidOCRDocs/docs/js/bootstrap.e8d9a90c17df6cf9c9b09d70807f24da08765377598f34eeffe9cc9c2b9d53bfdf9628eadd25faa1c9f4cf7c1e9193c8.js" integrity="sha384-6NmpDBffbPnJsJ1wgH8k2gh2U3dZjzTu/&#43;nMnCudU7/flijq3SX6ocn0z3wekZPI"defer></script>
+    <script src="/RapidOCRDocs/docs/js/bootstrap.39e36097440e8ae1bae5fa5b30b62819b701b2b6a0b19a492a1bf309e2a1dcfc02734909ea7951d33c11038d5ac48cd4.js" integrity="sha384-OeNgl0QOiuG65fpbMLYoGbcBsragsZpJKhvzCeKh3PwCc0kJ6nlR0zwRA41axIzU"defer></script>
 
 
-    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.f6f66f0e2808ecb12b892c811fbdefb7353cbd0aa55c1701d3a3315637d1cc08552562c5e73eea2ab7f7da6a325d1347.js" integrity="sha384-9vZvDigI7LEriSyBH73vtzU8vQqlXBcB06MxVjfRzAhVJWLF5z7qKrf32moyXRNH" crossorigin="anonymous" defer></script>
-    <script>
-    window.addEventListener('DOMContentLoaded', function() {
-        
-        docsearch({
-            container: '#docsearch',
-            appId: 'O2QIOCBDAK',
-            apiKey: 'fdc60eee76a72a35d739b54521498b77',
-            indexName: 'dev_lotusdocs.dev',
-            placeholder: 'Search Documentation',
-            translations: {
-                button: {
-                    buttonText: 'Search',
-                    buttonAriaLabel: 'Search',
-                }
-            }
+    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.fadb30d71fd1560a0277e58cce2f06da367f12ed4e6d22545b39e167b61d3abd0f930918104e515259a27804cabbfd71.js" integrity="sha384-&#43;tsw1x/RVgoCd&#43;WMzi8G2jZ/Eu1ObSJUWznhZ7YdOr0PkwkYEE5RUlmieATKu/1x" crossorigin="anonymous" defer></script>
+    
+
+    
+    <script type="module">
+    var suggestions = document.getElementById('suggestions');
+    var search = document.getElementById('flexsearch');
+
+    const flexsearchContainer = document.getElementById('FlexSearchCollapse');
+
+    const hideFlexsearchBtn = document.getElementById('hideFlexsearch');
+
+    const configObject = { toggle: false }
+    const flexsearchContainerCollapse = new Collapse(flexsearchContainer, configObject) 
+
+    if (search !== null) {
+        document.addEventListener('keydown', inputFocus);
+        flexsearchContainer.addEventListener('shown.bs.collapse', function () {
+            search.focus();
         });
+        
+        var topHeader = document.getElementById("top-header");
+        document.addEventListener('click', function(elem) {
+            if (!flexsearchContainer.contains(elem.target) && !topHeader.contains(elem.target))
+                flexsearchContainerCollapse.hide();
+        });
+    }
+
+    hideFlexsearchBtn.addEventListener('click', () =>{
+        flexsearchContainerCollapse.hide()
+    })
+
+    function inputFocus(e) {
+        if (e.ctrlKey && e.key === '/') {
+            e.preventDefault();
+            flexsearchContainerCollapse.toggle();
+        }
+        if (e.key === 'Escape' ) {
+            search.blur();
+            
+            flexsearchContainerCollapse.hide();
+        }
+    };
+
+    document.addEventListener('click', function(event) {
+
+    var isClickInsideElement = suggestions.contains(event.target);
+
+    if (!isClickInsideElement) {
+        suggestions.classList.add('d-none');
+    }
+
     });
-</script>
+
+    
+
+
+    document.addEventListener('keydown',suggestionFocus);
+
+    function suggestionFocus(e) {
+    const suggestionsHidden = suggestions.classList.contains('d-none');
+    if (suggestionsHidden) return;
+
+    const focusableSuggestions= [...suggestions.querySelectorAll('a')];
+    if (focusableSuggestions.length === 0) return;
+
+    const index = focusableSuggestions.indexOf(document.activeElement);
+
+    if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const nextIndex = index > 0 ? index - 1 : 0;
+        focusableSuggestions[nextIndex].focus();
+    }
+    else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const nextIndex= index + 1 < focusableSuggestions.length ? index + 1 : index;
+        focusableSuggestions[nextIndex].focus();
+    }
+
+    }
+
+    
+
+
+    (function(){
+
+    var index = new FlexSearch.Document({
+        
+        tokenize: "full",
+        minlength:  3 ,
+        cache:  100 ,
+        optimize:  true ,
+        document: {
+        id: 'id',
+        store: [
+            "href", "title", "description"
+        ],
+        index: ["title", "description", "content"]
+        }
+    });
+
+
+    
+
 
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+
+    
+
+    index.add(
+            {
+                id:  0 ,
+                href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr\/",
+                title: "rapidocr",
+                description: "🧸2023-09-06 v1.3.2 update: link 修复issue #116 ⭐2023-08-29 v1.3.1 update: link 修复issue #115 🎉2023-08-26 v1.3.0 update: link 将PaddleOCR v4版对应的文本检测和文本识别轻量模型转换为onnx，并打包到whl中。 接口与v1.2.x一致，直接使用即可。 ⚠️注意： link v1.3.x系列集成的是PaddleOCR v4系列模型 rapidocr_onnxruntime==1.2.x和rapidocr_openvino==1.2.x系列集成的是PaddleOCR v3模型 😉2023-07-12 v1.2.12 update: link 在rapidocr_onnxruntime初始化时，添加det_use_cuda、cls_use_cuda、rec_use_cuda参数 兼容配置文件方式传入RapidOCR类中 rapidocr_openvino同理 🎮2023-03-11 v1.2.2 update: link 修复实例化python中RapidOCR类传入参数错误 🧢2023-03-07 v1.2.1 update: link rapidocr系列包更新到v1.2.0 优化python下rapidocr系列包的接口传入参数，支持实例化类时，动态给定各个参数，更加灵活。 如果不指定，则用config.yaml下的默认参数。 具体可参见：传入参数 ⛸2023-02-16 update: link 优化ocrweb部分代码，可直接pip安装，快速使用，详情参见README。 优化python中各个部分的推理代码，更加紧凑，同时易于维护。 🎉2023-01-21 update: link [python] 添加含有文字的图像方向分类模块，具体参见Rapid Orientation ⚽2022-12-19 update: link [python] 添加表格结构还原模块，具体参见Rapid Table 🤖2022-12-14 update: link [python] 将配置参数和模型移到模块里面，同时将模型打到whl包内，可以直接pip安装使用，更加方便快捷。 详情参见：README 🧻2022-11-20 update: link [python] 添加版面分析部分,支持中文、英文和表格三种版面的检测分析。详情参见:Rapid Structure部分。 🎃2022-11-01 update: link 添加Hugging Face Demo, 增加可以调节超参数的功能，详情可访问Hugging Face Demo 🚩2022-10-01 udpate: link 修复python部分下一些较小bugs merge来自AutumnSun1996的OCRWeb实现的多语言部署demo，详情参见：ocrweb_mutli-README 添加onnxruntime-gpu推理速度较慢于CPU的问题说明，详情参见：onnxruntime-gpu版相关说明 🛴2022-09-01 update: link 由于openvino发布了2022.",
+                content: "🧸2023-09-06 v1.3.2 update: link 修复issue #116 ⭐2023-08-29 v1.3.1 update: link 修复issue #115 🎉2023-08-26 v1.3.0 update: link 将PaddleOCR v4版对应的文本检测和文本识别轻量模型转换为onnx，并打包到whl中。 接口与v1.2.x一致，直接使用即可。 ⚠️注意： link v1.3.x系列集成的是PaddleOCR v4系列模型 rapidocr_onnxruntime==1.2.x和rapidocr_openvino==1.2.x系列集成的是PaddleOCR v3模型 😉2023-07-12 v1.2.12 update: link 在rapidocr_onnxruntime初始化时，添加det_use_cuda、cls_use_cuda、rec_use_cuda参数 兼容配置文件方式传入RapidOCR类中 rapidocr_openvino同理 🎮2023-03-11 v1.2.2 update: link 修复实例化python中RapidOCR类传入参数错误 🧢2023-03-07 v1.2.1 update: link rapidocr系列包更新到v1.2.0 优化python下rapidocr系列包的接口传入参数，支持实例化类时，动态给定各个参数，更加灵活。 如果不指定，则用config.yaml下的默认参数。 具体可参见：传入参数 ⛸2023-02-16 update: link 优化ocrweb部分代码，可直接pip安装，快速使用，详情参见README。 优化python中各个部分的推理代码，更加紧凑，同时易于维护。 🎉2023-01-21 update: link [python] 添加含有文字的图像方向分类模块，具体参见Rapid Orientation ⚽2022-12-19 update: link [python] 添加表格结构还原模块，具体参见Rapid Table 🤖2022-12-14 update: link [python] 将配置参数和模型移到模块里面，同时将模型打到whl包内，可以直接pip安装使用，更加方便快捷。 详情参见：README 🧻2022-11-20 update: link [python] 添加版面分析部分,支持中文、英文和表格三种版面的检测分析。详情参见:Rapid Structure部分。 🎃2022-11-01 update: link 添加Hugging Face Demo, 增加可以调节超参数的功能，详情可访问Hugging Face Demo 🚩2022-10-01 udpate: link 修复python部分下一些较小bugs merge来自AutumnSun1996的OCRWeb实现的多语言部署demo，详情参见：ocrweb_mutli-README 添加onnxruntime-gpu推理速度较慢于CPU的问题说明，详情参见：onnxruntime-gpu版相关说明 🛴2022-09-01 update: link 由于openvino发布了2022.2.0.dev20220829版本，该版本解决了cls部分模型推理的问题。至此，基于openvino的rapidocr完成了统一，全部由openvino推理引擎完成。 详细使用方法参见：python/README 🧸2022-08-17 update: link python/ocrweb部分 v1.1.0发布，详情参见v1.1.0 🕶2022-08-14 update: link ocrweb部分增加以API方式部署调用的功能，可以通过发送POST请求，来获得OCR识别结果。 详情参见：API方式调用 ✨2022-07-07 update: link 修复python版中v3 rec推理bug，并将v3 rec与v2 rec合并为同一套推理代码，更加简洁和方便 添加python模块下的单元测试 该页面添加致谢模块，感谢为这个项目作出贡献的小伙伴。 😁2022-07-05 update: link 添加对单行文本的处理能力，对于单行文本，可自行设定阈值，不过检测模块，直接识别即可。详情参见README 优化python部分代码逻辑，更优雅简洁。 🏝2022-06-30 update: link python推理部分，增加参数选择使用GPU推理的配置选项，在正确安装onnxruntime-gpu版本前提下，可以一键使用（Fix issue#30） 具体基于GPU的推理情况，需要等我后续整理一下，再更新出来 详情参见：onnxruntime-gpu版推理配置 📌2022-06-25 update: link 重新整理python部分推理代码，将常用调节参数全部放到yaml文件中，便于调节，更加容易使用 详情参见：README 🍿2022-05-15 udpate: link 增加PaddleOCR v3 rec模型转换后的ONNX模型，直接去网盘下载替换即可。(百度网盘 | Google Drive) 增加文本识别模型各个版本效果对比表格，详情点击各个版本ONNX模型效果对比。v3的文本识别模型从自己构建测试集上的指标来看不如之前的好。 😀2022-05-12 upadte link 增加PaddleOCR v3 det模型转换的ONNX模型，直接去网盘下载，替换即可。(百度网盘 | Google Drive) 增加各个版本文本检测模型效果对比表格，详情点击各个版本ONNX模型效果对比。v3的文本检测模型从指标来看是好于之前的v2的，推荐使用。 🎧2022-04-04 udpate: link 增加python下的基于OpenVINO推理引擎的支持 给出OpenVINO和ONNXRuntime的性能对比表格 详情参见:python/README 2022-02-24 udpate: link 优化python目录下的推理代码 添加调用不同语言模型的推理代码示例 详情参见：python/onnxruntime_infer/README 2021-12-18 udpate: link 添加Google Colab Demo 2021-11-28 udpate: link 更新ocrweb部分 添加显示各个阶段处理时间 更新说明文档 更换文本检测模型为ch_PP-OCRv2_det_infer.onnx,推理更快，更准 2021-11-13 udpate: link 添加python版本中文本检测和识别可调节的超参数，主要有box_thresh|unclip_ratio|text_score，详情见参数调节 将文本识别中字典位置以参数方式给出，便于灵活配置，详情见keys_path 2021-10-27 udpate: link 添加使用onnxruntime-gpu版推理的代码（不过gpu版本的onnxruntime不太好用，按照官方教程配置，感觉没有调用起来GPU） 具体使用步骤参见: onnxruntime-gpu推理配置 2021-09-13 udpate: link 添加基于python的whl文件，便于使用，详情参见release/python_sdk 2021-09-11 udpate: link 添加PP-OCRv2新增模型onnx版本 使用方法推理代码不变，直接替换对应模型即可。 经过在自有测试集上评测： PP-OCRv2检测模型效果有大幅度提升，模型大小没变。 PP-OCRv2识别模型效果无明显提升，模型大小增加了3.58M。 模型上传到百度网盘 提取码：30jv 2021-08-07 udpate: link PP-Structure 表格结构和cell坐标预测 正在整理中 之前做的,未完成的，欢迎提PR 打Dokcer镜像 尝试onnxruntime-gpu推理 2021-07-17 udpate: link 完善README文档 增加英文、数字识别onnx模型，具体参见python/en_number_ppocr_mobile_v2_rec，用法同其他 整理一下模型转onnx 2021-07-04 udpate: link 目前仓库下的python程序已经可以在树莓派4B上，成功运行，详细信息请进群，询问群主 更新整体结构图，添加树莓派的支持 2021-06-20 udpate: link 优化ocrweb中识别结果显示，同时添加识别动图演示 更新datasets目录，添加一些常用数据库链接(搬运一下^-^) 更新FAQ 2021-06-10 udpate: link 添加server版文本识别模型，详情见提取码：30jv 2021-06-08 udpate: link 整理仓库，统一模型下载路径 完善相关说明文档 2021-03-24 udpate: link 新模型已经完全兼容ONNXRuntime 1.7 或更高版本。 特别感谢：@Channingss 新版onnxruntime比1.6.0 性能提升40%以上。 "
+            }
+        );
+    index.add(
+            {
+                id:  1 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr\/rapidocr_onnxruntime\/",
+                title: "rapidocr_onnxruntime",
+                description: "简介 link 该部分为python版的OCR推理，包括基于ONNXRuntime和OpenVINO两个推理引擎的包。 因为模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 说明 link rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，默认都是在CPU上运行。 按语义版本号来讲，两个包其主版本号和次版本号同步更新，修订号可能会有区别。也就是说x.y.z中x和y是一样的，z可能不同。 各个版本的对应关系： 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 推荐使用PaddleOCRModelConveter在线转换，现用现转。推理代码都是同一个，只需更换模型即可。已转好ONNX模型下载地址：百度网盘 | Google Drive，大家可自行搭配使用。 所有常用的参数配置都在config.yaml下，其中每个独立的模块下均有独立的config.yaml配置文件，可以单独使用。 关于选择哪个版本的包（rapidocr_onnxruntime 或者 rapidocr_openvino）? 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ ⚠️ openvino存在内存不释放的问题，参见wiki pip安装快速使用（推荐） link 安装环境\n包名 版本 安装命令 rapidocr_onnxruntime pip install rapidocr-onnxruntime rapidocr_openvino pip install rapidocr-openvino python脚本使用\n⚠️注意：初始化RapidOCR可不提供config.yaml，默认使用安装目录下的config.yaml。如有自定义需求：\n一是可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 二是复制config.yaml，自行更改，然后初始化给出。e.g. engine = RapidOCR(config_path=\"custom.yaml\") 输入：Union[str, np.ndarray, bytes, Path]\n输出：\n有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，e.g. [[左上, 右上, 右下, 左下], '小明', '0.",
+                content: " 简介 link 该部分为python版的OCR推理，包括基于ONNXRuntime和OpenVINO两个推理引擎的包。 因为模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 说明 link rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，默认都是在CPU上运行。 按语义版本号来讲，两个包其主版本号和次版本号同步更新，修订号可能会有区别。也就是说x.y.z中x和y是一样的，z可能不同。 各个版本的对应关系： 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 推荐使用PaddleOCRModelConveter在线转换，现用现转。推理代码都是同一个，只需更换模型即可。已转好ONNX模型下载地址：百度网盘 | Google Drive，大家可自行搭配使用。 所有常用的参数配置都在config.yaml下，其中每个独立的模块下均有独立的config.yaml配置文件，可以单独使用。 关于选择哪个版本的包（rapidocr_onnxruntime 或者 rapidocr_openvino）? 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ ⚠️ openvino存在内存不释放的问题，参见wiki pip安装快速使用（推荐） link 安装环境\n包名 版本 安装命令 rapidocr_onnxruntime pip install rapidocr-onnxruntime rapidocr_openvino pip install rapidocr-openvino python脚本使用\n⚠️注意：初始化RapidOCR可不提供config.yaml，默认使用安装目录下的config.yaml。如有自定义需求：\n一是可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 二是复制config.yaml，自行更改，然后初始化给出。e.g. engine = RapidOCR(config_path=\"custom.yaml\") 输入：Union[str, np.ndarray, bytes, Path]\n输出：\n有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，e.g. [[左上, 右上, 右下, 左下], '小明', '0.99'], [0.02, 0.02, 0.85] 为空：(None, None) 示例：\nimport cv2 from rapidocr_onnxruntime import RapidOCR # from rapidocr_openvino import RapidOCR # RapidOCR可传入参数参考下面的命令行部分 rapid_ocr = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' # 输入格式一：str result, elapse = rapid_ocr(img_path) # 输入格式二：np.ndarray img = cv2.imread('tests/test_files/ch_en_num.jpg') result, elapse = rapid_ocr(img) # 输入格式三：bytes with open(img_path, 'rb') as f: img = f.read() result, elapse = rapid_ocr(img) # 输入格式四：Path result, elapse = rapid_ocr(Path(img_path)) print(result) 命令行使用\n参数说明： $ rapidocr_onnxruntime -h usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE] [--use_angle_cls USE_ANGLE_CLS] [--use_text_det USE_TEXT_DET] [--print_verbose PRINT_VERBOSE] [--min_height MIN_HEIGHT] [--width_height_ratio WIDTH_HEIGHT_RATIO] [--det_use_cuda DET_USE_CUDA] [--det_model_path DET_MODEL_PATH] [--det_limit_side_len DET_LIMIT_SIDE_LEN] [--det_limit_type {max,min}] [--det_thresh DET_THRESH] [--det_box_thresh DET_BOX_THRESH] [--det_unclip_ratio DET_UNCLIP_RATIO] [--det_use_dilation DET_USE_DILATION] [--det_score_mode {slow,fast}] [--cls_use_cuda CLS_USE_CUDA] [--cls_model_path CLS_MODEL_PATH] [--cls_image_shape CLS_IMAGE_SHAPE] [--cls_label_list CLS_LABEL_LIST] [--cls_batch_num CLS_BATCH_NUM] [--cls_thresh CLS_THRESH] [--rec_use_cuda REC_USE_CUDA] [--rec_model_path REC_MODEL_PATH] [--rec_img_shape REC_IMAGE_SHAPE] [--rec_batch_num REC_BATCH_NUM] optional arguments: -h, --help show this help message and exit -img IMG_PATH, --img_path IMG_PATH MUST -p, --print_cost Global: --text_score TEXT_SCORE --use_angle_cls USE_ANGLE_CLS --use_text_det USE_TEXT_DET --print_verbose PRINT_VERBOSE --min_height MIN_HEIGHT --width_height_ratio WIDTH_HEIGHT_RATIO Det: --det_use_cuda DET_USE_CUDA --det_model_path DET_MODEL_PATH --det_limit_side_len DET_LIMIT_SIDE_LEN --det_limit_type {max,min} --det_thresh DET_THRESH --det_box_thresh DET_BOX_THRESH --det_unclip_ratio DET_UNCLIP_RATIO --det_use_dilation DET_USE_DILATION --det_score_mode {slow,fast} Cls: --cls_use_cuda CLS_USE_CUDA --cls_model_path CLS_MODEL_PATH --cls_image_shape CLS_IMAGE_SHAPE --cls_label_list CLS_LABEL_LIST --cls_batch_num CLS_BATCH_NUM --cls_thresh CLS_THRESH Rec: --rec_use_cuda REC_USE_CUDA --rec_model_path REC_MODEL_PATH --rec_img_shape REC_IMAGE_SHAPE --rec_batch_num REC_BATCH_NUM 示例： $ rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg 源码使用步骤 link 下载整个项目到本地\ncd RapidOCR/python 下载链接下的resources目录（包含模型和显示的字体文件）\n下载链接：百度网盘 | Google Drive 最终目录如下，自行比对: . ├── README.md ├── demo.py ├── rapidocr_onnxruntime │ ├── __init__.py │ ├── ch_ppocr_v2_cls │ ├── ch_ppocr_v3_det │ ├── ch_ppocr_v3_rec │ ├── config.yaml │ ├── rapid_ocr_api.py │ └── models │ ├── ch_PP-OCRv3_det_infer.onnx │ ├── ch_ppocr_mobile_v2.0_cls_infer.onnx │ └── ch_PP-OCRv3_rec_infer.onnx ├── rapidocr_openvino │ ├── __init__.py │ ├── README.md │ ├── ch_ppocr_v2_cls │ ├── ch_ppocr_v3_det │ ├── ch_ppocr_v3_rec │ ├── config.yaml │ ├── rapid_ocr_api.py │ └── models │ ├── ch_PP-OCRv3_det_infer.onnx │ ├── ch_ppocr_mobile_v2.0_cls_infer.onnx │ └── ch_PP-OCRv3_rec_infer.onnx ├── requirements.txt └── resources └── fonts └── FZYTK.TTF 安装运行环境\n基于onnxruntime推理所需环境安装： pip install onnxruntime\u003e=1.7.0 pip install -r requirements.txt 基于openvino推理所需环境安装： pip install openvino pip install -r requirements.txt ⚠️: 在Windows端，Shapely库自动安装可能会有问题，解决方案参见Q15 运行示例\n运行单元测试 pytest tests/test_*.py 接口调用 import cv2 # 基于onnxruntime引擎推理 from rapidocr_onnxruntime import RapidOCR # 基于openvino引擎推理 # from rapidocr_openvino import RapidOCR rapid_ocr = RapidOCR() image_path = r'test_images/det_images/ch_en_num.jpg' img = cv2.imread(image_path) result = rapid_ocr(img) print(result) # result: [[文本框坐标], 文本内容, 置信度] # 示例：[[左上, 右上, 右下, 左下], '小明', '0.99'] 直接运行demo.py，可直接可视化查看结果。 python demo.py "
+            }
+        );
+    index.add(
+            {
+                id:  2 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr\/",
+                title: "rapidcor",
+                description: "rapidocr",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  3 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr\/rapidocr_openvino\/",
+                title: "rapidocr_openvino",
+                description: "简介 link 该部分为python版的OCR推理，包括基于ONNXRuntime和OpenVINO两个推理引擎的包。 因为模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 说明 link rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，默认都是在CPU上运行。 按语义版本号来讲，两个包其主版本号和次版本号同步更新，修订号可能会有区别。也就是说x.y.z中x和y是一样的，z可能不同。 各个版本的对应关系： 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 推荐使用PaddleOCRModelConveter在线转换，现用现转。推理代码都是同一个，只需更换模型即可。已转好ONNX模型下载地址：百度网盘 | Google Drive，大家可自行搭配使用。 所有常用的参数配置都在config.yaml下，其中每个独立的模块下均有独立的config.yaml配置文件，可以单独使用。 关于选择哪个版本的包（rapidocr_onnxruntime 或者 rapidocr_openvino）? 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ ⚠️ openvino存在内存不释放的问题，参见wiki pip安装快速使用（推荐） link 安装环境\n包名 版本 安装命令 rapidocr_onnxruntime pip install rapidocr-onnxruntime rapidocr_openvino pip install rapidocr-openvino python脚本使用\n⚠️注意：初始化RapidOCR可不提供config.yaml，默认使用安装目录下的config.yaml。如有自定义需求：\n一是可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 二是复制config.yaml，自行更改，然后初始化给出。e.g. engine = RapidOCR(config_path=\"custom.yaml\") 输入：Union[str, np.ndarray, bytes, Path]\n输出：\n有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，e.g. [[左上, 右上, 右下, 左下], '小明', '0.",
+                content: " 简介 link 该部分为python版的OCR推理，包括基于ONNXRuntime和OpenVINO两个推理引擎的包。 因为模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 说明 link rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，默认都是在CPU上运行。 按语义版本号来讲，两个包其主版本号和次版本号同步更新，修订号可能会有区别。也就是说x.y.z中x和y是一样的，z可能不同。 各个版本的对应关系： 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 推荐使用PaddleOCRModelConveter在线转换，现用现转。推理代码都是同一个，只需更换模型即可。已转好ONNX模型下载地址：百度网盘 | Google Drive，大家可自行搭配使用。 所有常用的参数配置都在config.yaml下，其中每个独立的模块下均有独立的config.yaml配置文件，可以单独使用。 关于选择哪个版本的包（rapidocr_onnxruntime 或者 rapidocr_openvino）? 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ ⚠️ openvino存在内存不释放的问题，参见wiki pip安装快速使用（推荐） link 安装环境\n包名 版本 安装命令 rapidocr_onnxruntime pip install rapidocr-onnxruntime rapidocr_openvino pip install rapidocr-openvino python脚本使用\n⚠️注意：初始化RapidOCR可不提供config.yaml，默认使用安装目录下的config.yaml。如有自定义需求：\n一是可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 二是复制config.yaml，自行更改，然后初始化给出。e.g. engine = RapidOCR(config_path=\"custom.yaml\") 输入：Union[str, np.ndarray, bytes, Path]\n输出：\n有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，e.g. [[左上, 右上, 右下, 左下], '小明', '0.99'], [0.02, 0.02, 0.85] 为空：(None, None) 示例：\nimport cv2 from rapidocr_onnxruntime import RapidOCR # from rapidocr_openvino import RapidOCR # RapidOCR可传入参数参考下面的命令行部分 rapid_ocr = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' # 输入格式一：str result, elapse = rapid_ocr(img_path) # 输入格式二：np.ndarray img = cv2.imread('tests/test_files/ch_en_num.jpg') result, elapse = rapid_ocr(img) # 输入格式三：bytes with open(img_path, 'rb') as f: img = f.read() result, elapse = rapid_ocr(img) # 输入格式四：Path result, elapse = rapid_ocr(Path(img_path)) print(result) 命令行使用\n参数说明： $ rapidocr_onnxruntime -h usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE] [--use_angle_cls USE_ANGLE_CLS] [--use_text_det USE_TEXT_DET] [--print_verbose PRINT_VERBOSE] [--min_height MIN_HEIGHT] [--width_height_ratio WIDTH_HEIGHT_RATIO] [--det_use_cuda DET_USE_CUDA] [--det_model_path DET_MODEL_PATH] [--det_limit_side_len DET_LIMIT_SIDE_LEN] [--det_limit_type {max,min}] [--det_thresh DET_THRESH] [--det_box_thresh DET_BOX_THRESH] [--det_unclip_ratio DET_UNCLIP_RATIO] [--det_use_dilation DET_USE_DILATION] [--det_score_mode {slow,fast}] [--cls_use_cuda CLS_USE_CUDA] [--cls_model_path CLS_MODEL_PATH] [--cls_image_shape CLS_IMAGE_SHAPE] [--cls_label_list CLS_LABEL_LIST] [--cls_batch_num CLS_BATCH_NUM] [--cls_thresh CLS_THRESH] [--rec_use_cuda REC_USE_CUDA] [--rec_model_path REC_MODEL_PATH] [--rec_img_shape REC_IMAGE_SHAPE] [--rec_batch_num REC_BATCH_NUM] optional arguments: -h, --help show this help message and exit -img IMG_PATH, --img_path IMG_PATH MUST -p, --print_cost Global: --text_score TEXT_SCORE --use_angle_cls USE_ANGLE_CLS --use_text_det USE_TEXT_DET --print_verbose PRINT_VERBOSE --min_height MIN_HEIGHT --width_height_ratio WIDTH_HEIGHT_RATIO Det: --det_use_cuda DET_USE_CUDA --det_model_path DET_MODEL_PATH --det_limit_side_len DET_LIMIT_SIDE_LEN --det_limit_type {max,min} --det_thresh DET_THRESH --det_box_thresh DET_BOX_THRESH --det_unclip_ratio DET_UNCLIP_RATIO --det_use_dilation DET_USE_DILATION --det_score_mode {slow,fast} Cls: --cls_use_cuda CLS_USE_CUDA --cls_model_path CLS_MODEL_PATH --cls_image_shape CLS_IMAGE_SHAPE --cls_label_list CLS_LABEL_LIST --cls_batch_num CLS_BATCH_NUM --cls_thresh CLS_THRESH Rec: --rec_use_cuda REC_USE_CUDA --rec_model_path REC_MODEL_PATH --rec_img_shape REC_IMAGE_SHAPE --rec_batch_num REC_BATCH_NUM 示例： $ rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg 源码使用步骤 link 下载整个项目到本地\ncd RapidOCR/python 下载链接下的resources目录（包含模型和显示的字体文件）\n下载链接：百度网盘 | Google Drive 最终目录如下，自行比对: . ├── README.md ├── demo.py ├── rapidocr_onnxruntime │ ├── __init__.py │ ├── ch_ppocr_v2_cls │ ├── ch_ppocr_v3_det │ ├── ch_ppocr_v3_rec │ ├── config.yaml │ ├── rapid_ocr_api.py │ └── models │ ├── ch_PP-OCRv3_det_infer.onnx │ ├── ch_ppocr_mobile_v2.0_cls_infer.onnx │ └── ch_PP-OCRv3_rec_infer.onnx ├── rapidocr_openvino │ ├── __init__.py │ ├── README.md │ ├── ch_ppocr_v2_cls │ ├── ch_ppocr_v3_det │ ├── ch_ppocr_v3_rec │ ├── config.yaml │ ├── rapid_ocr_api.py │ └── models │ ├── ch_PP-OCRv3_det_infer.onnx │ ├── ch_ppocr_mobile_v2.0_cls_infer.onnx │ └── ch_PP-OCRv3_rec_infer.onnx ├── requirements.txt └── resources └── fonts └── FZYTK.TTF 安装运行环境\n基于onnxruntime推理所需环境安装： pip install onnxruntime\u003e=1.7.0 pip install -r requirements.txt 基于openvino推理所需环境安装： pip install openvino pip install -r requirements.txt ⚠️: 在Windows端，Shapely库自动安装可能会有问题，解决方案参见Q15 运行示例\n运行单元测试 pytest tests/test_*.py 接口调用 import cv2 # 基于onnxruntime引擎推理 from rapidocr_onnxruntime import RapidOCR # 基于openvino引擎推理 # from rapidocr_openvino import RapidOCR rapid_ocr = RapidOCR() image_path = r'test_images/det_images/ch_en_num.jpg' img = cv2.imread(image_path) result = rapid_ocr(img) print(result) # result: [[文本框坐标], 文本内容, 置信度] # 示例：[[左上, 右上, 右下, 左下], '小明', '0.99'] 直接运行demo.py，可直接可视化查看结果。 python demo.py "
+            }
+        );
+    index.add(
+            {
+                id:  4 ,
+                href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr_web\/",
+                title: "rapidocr_web",
+                description: "❤2023-05-20 ocrweb update: link 增加桌面版RapidOCRWeb，详情可参见RapidOCRWeb桌面版使用教程 对仓库文档做了整理，大部分文档放到了Wiki 🌹2023-05-14 ocrweb v0.1.5 update: link 增加界面版返回坐标框的返回值(issue #85) API模式增加base64格式传入 详情参见：link 🏸2023-04-16 ocrweb v0.1.1 update: link API部署改为FastAPI库支持 将API模式与Web解耦合，可通过pip install rapidocr_web[api]来选择性安装 详情参见：link ",
+                content: "❤2023-05-20 ocrweb update: link 增加桌面版RapidOCRWeb，详情可参见RapidOCRWeb桌面版使用教程 对仓库文档做了整理，大部分文档放到了Wiki 🌹2023-05-14 ocrweb v0.1.5 update: link 增加界面版返回坐标框的返回值(issue #85) API模式增加base64格式传入 详情参见：link 🏸2023-04-16 ocrweb v0.1.1 update: link API部署改为FastAPI库支持 将API模式与Web解耦合，可通过pip install rapidocr_web[api]来选择性安装 详情参见：link "
+            }
+        );
+    index.add(
+            {
+                id:  5 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr_web\/rapidocr_web\/",
+                title: "rapidocr_web使用教程",
+                description: " 简要说明 link 该模块依赖rapidocr_onnxruntime库。\n如果想要离线部署，可以先手动下载rapidocr_onnxruntime whl包，再手动安装rapidocr_web whl包来使用。\n所用模型组合（最优组合）为：\nch_PP-OCRv3_det + ch_ppocr_mobile_v2.0_cls + ch_PP-OCRv3_rec 网页上显示的推理时间具体解释如下：\n桌面版使用教程 link界面版使用步骤 link 安装rapidocr_web $ pip install rapidocr_web 运行 用法: $ rapidocr_web -h usage: rapidocr_web [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 示例: $ rapidocr_web -ip 0.0.0.0 -p 9003 使用 浏览器打开http://localhost:9003/，enjoy it. ",
+                content: " 简要说明 link 该模块依赖rapidocr_onnxruntime库。\n如果想要离线部署，可以先手动下载rapidocr_onnxruntime whl包，再手动安装rapidocr_web whl包来使用。\n所用模型组合（最优组合）为：\nch_PP-OCRv3_det + ch_ppocr_mobile_v2.0_cls + ch_PP-OCRv3_rec 网页上显示的推理时间具体解释如下：\n桌面版使用教程 link界面版使用步骤 link 安装rapidocr_web $ pip install rapidocr_web 运行 用法: $ rapidocr_web -h usage: rapidocr_web [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 示例: $ rapidocr_web -ip 0.0.0.0 -p 9003 使用 浏览器打开http://localhost:9003/，enjoy it. "
+            }
+        );
+    index.add(
+            {
+                id:  6 ,
+                href: "\/RapidOCRDocs\/docs\/overview\/",
+                title: "概览",
+                description: "捷智OCR link信创级开源OCR - 为世界内容安全贡献力量 商业支持 link 🎉🎉🎉 推出知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 生态框架 linkflowchart LR subgraph Step direction TB C(Text Det) --\u003e D(Text Cls) --\u003e E(Text Rec) end A[/OurSelf Dataset/] --\u003e B(PaddleOCR) --Train--\u003e Step --\u003e F(PaddleOCRModelConverter) F --ONNX--\u003e G{RapidOCR Deploy\\nPython/C++/Java/C#} G --\u003e H(Windows x86/x64) \u0026 I(Linux) \u0026 J(Android) \u0026 K(Web) \u0026 L(Raspberry Pi) click B \"https://github.",
+                content: " 捷智OCR link信创级开源OCR - 为世界内容安全贡献力量\n商业支持 link 🎉🎉🎉 推出知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 生态框架 linkflowchart LR subgraph Step direction TB C(Text Det) --\u003e D(Text Cls) --\u003e E(Text Rec) end A[/OurSelf Dataset/] --\u003e B(PaddleOCR) --Train--\u003e Step --\u003e F(PaddleOCRModelConverter) F --ONNX--\u003e G{RapidOCR Deploy\\nPython/C++/Java/C#} G --\u003e H(Windows x86/x64) \u0026 I(Linux) \u0026 J(Android) \u0026 K(Web) \u0026 L(Raspberry Pi) click B \"https://github.com/PaddlePaddle/PaddleOCR\" _blank click F \"https://github.com/RapidAI/PaddleOCRModelConverter\" _blank "
+            }
+        );
+    index.add(
+            {
+                id:  7 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr_web\/",
+                title: "rapidocr_web",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  8 ,
+                href: "\/RapidOCRDocs\/docs\/quickstart\/",
+                title: "快速开始",
+                description: "只需3步，即可安装使用。",
+                content: "1. 安装 link pip install rapidocr_onnxruntime 2. 终端使用 link rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg 3. 脚本使用 link from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() result, elapse = engine(img_path) print(result) 3. 查看效果 link [[[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], '正品促销', '0.7986101984977723'], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], '大桶装更划算', '0.7368737288883754'], [[[69.0, 144.0], [255.0, 144.0], [255.0, 164.0], [69.0, 164.0]], '强力去污符合国标', '0.8172478278477987'], [[[107.0, 170.0], [219.0, 170.0], [219.0, 182.0], [107.0, 182.0]], '-40深度防冻不结冰', '0.8655969283797524'], [[[35.0, 227.0], [63.0, 227.0], [63.0, 236.0], [35.0, 236.0]], '日常价?', '0.6502826035022735'], [[[141.0, 223.0], [187.0, 225.0], [185.0, 249.0], [139.0, 247.0]], '直击', '0.596031109491984'], [[[34.0, 234.0], [81.0, 236.0], [80.0, 254.0], [33.0, 252.0]], '10.0起', '0.8231529593467712'], [[[257.0, 234.0], [304.0, 236.0], [303.0, 253.0], [256.0, 251.0]], '10.0起', '0.8304102122783661'], [[[258.0, 227.0], [287.0, 226.0], [287.0, 236.0], [258.0, 237.0]], '日常价?', '0.5725070595741272'], [[[140.0, 245.0], [186.0, 246.0], [186.0, 272.0], [139.0, 271.0]], '底价', '0.5142453710238138'], [[[129.0, 290.0], [207.0, 292.0], [206.0, 339.0], [128.0, 337.0]], '5.8', '0.6341951936483383'], [[[98.0, 320.0], [129.0, 320.0], [129.0, 331.0], [98.0, 331.0]], '券后价?', '0.6209247708320618'], [[[114.0, 343.0], [210.0, 343.0], [210.0, 355.0], [114.0, 355.0]], '惊喜福利不容错过', '0.8640043867958916'], [[[69.0, 363.0], [151.0, 363.0], [151.0, 383.0], [69.0, 383.0]], '极速发货', '0.7552512288093567'], [[[201.0, 363.0], [285.0, 363.0], [285.0, 383.0], [201.0, 383.0]], '冰点标准', '0.7194759607315063'], [[[68.0, 392.0], [151.0, 392.0], [151.0, 412.0], [68.0, 412.0]], '破损就赔', '0.7711991906166077'], [[[202.0, 391.0], [285.0, 391.0], [285.0, 413.0], [202.0, 413.0]], '假一赔十', '0.6546663284301758']] "
+            }
+        );
+    index.add(
+            {
+                id:  9 ,
+                href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr_api\/",
+                title: "rapidocr_api",
+                description: "🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web\u003e0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 ",
+                content: "🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web\u003e0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 "
+            }
+        );
+    index.add(
+            {
+                id:  10 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr\/optim_tutorial\/",
+                title: "RapidOCR调优尝试教程",
+                description: "引言 link 由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。 基本的原则是尽量不去动模型内部，降低使用成本。 本篇文章就来说说在识别效果不好时，如何去调优。 因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。 ✨以下尝试情况，均已经在在线demo中实现，看完之后，可移步那里去尝试。 常见错例种类 link本地使用过程中，识别结果： 个别字丢失 个别字识别错误 个别字丢失调优篇 link 查看图像是否shape太小，导致文本检测丢失。 对于长度较长，高度较小的图像，可尝试对该图像高度做上下补充，来减小文字在原始图像中比例，利于文本检测。类似下图这种，左侧一条为原始图像，右侧为上下补边的图像。 padding代码参考： from typing import Tuple import cv2 import numpy as np def padding_img(img: np.ndarray, padding_value: Tuple[int, int, int, int], padding_color: Tuple = (0, 0, 0)) -\u003e np.ndarray: padded_img = cv2.copyMakeBorder(img, padding_value[0], padding_value[1], padding_value[2], padding_value[3], cv2.BORDER_CONSTANT, value=padding_color) return padded_img img = cv2.imread('xxx.jpg') # padding_value: (top, bottom, left, right) # 对该图像上下各补充10像素的白边 padded_img = padding_img(img, (10, 10, 0, 0), (255, 255, 255)) 将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。 将该图像上传到在线demo中，查看能否复现问题？",
+                content: "引言 link 由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。 基本的原则是尽量不去动模型内部，降低使用成本。 本篇文章就来说说在识别效果不好时，如何去调优。 因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。 ✨以下尝试情况，均已经在在线demo中实现，看完之后，可移步那里去尝试。 常见错例种类 link本地使用过程中，识别结果：\n个别字丢失 个别字识别错误 个别字丢失调优篇 link 查看图像是否shape太小，导致文本检测丢失。\n对于长度较长，高度较小的图像，可尝试对该图像高度做上下补充，来减小文字在原始图像中比例，利于文本检测。类似下图这种，左侧一条为原始图像，右侧为上下补边的图像。 padding代码参考： from typing import Tuple import cv2 import numpy as np def padding_img(img: np.ndarray, padding_value: Tuple[int, int, int, int], padding_color: Tuple = (0, 0, 0)) -\u003e np.ndarray: padded_img = cv2.copyMakeBorder(img, padding_value[0], padding_value[1], padding_value[2], padding_value[3], cv2.BORDER_CONSTANT, value=padding_color) return padded_img img = cv2.imread('xxx.jpg') # padding_value: (top, bottom, left, right) # 对该图像上下各补充10像素的白边 padded_img = padding_img(img, (10, 10, 0, 0), (255, 255, 255)) 将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。 将该图像上传到在线demo中，查看能否复现问题？\n如不能复现，着重比对环境是否与在线demo中相关包使用版本不一致情况？ 在线demo所用的各个包版本情况： Python: 3.8 onnxruntime: 1.14.1 rapidocr_onnxruntime: 1.2.5 如能复现，尝试调节在线demo中的三个参数，注意控制变量调节参数\n首先调节box_thresh参数，该参数用来控制文本检测部分检测所得框是文本的概率。个别字丢失，一般是单独的字丢失，很大可能是文本检测模型没有检测到该独立的文字。尝试调低box_thresh值，查看是否可以检出丢失的文字。（没有找到合适的例子） 固定box_thresh，调节text_score参数。该参数是控制识别文本结果正确的概率。尝试调低text_score值，查看是否可以识别出丢失的文字。 固定box_thresh和text_score两个参数，调节unclip_ratio参数。该参数用来控制文本检测所得文本框的大小。尝试调大unclip_ratio值，查看是否可以识别出丢失的文字。 如果调节三个参数也不能解决问题，只能尝试server版的文本检测和文本识别模型了。\n首先更换server版的文本检测模型，查看是否解决问题 在第1步基础上，更换server版的文本识别模型，查看是否解决问题 尝试更换不同版本模型，来查看效果。具体可在在线demo中尝试\n个别字识别错误调优篇 link 个别字错误的情况，例如：成识别为戍，这种一般是文本识别模型的问题。 情况一：轻量中英文模型识别对个别汉字识别错误 link 尝试padding图像，再重新识别 更换不同版本的识别模型，包括v2、v3和server版尝试 情况二：轻量中英文模型对个别英文或数字识别错误 link 更换不同版本的识别模型，包括v2、v3和server版尝试 如果是只识别英文单词和数字，可以更换英文和数字专有模型（en_PP-OCRv3_rec_infer.onnx和en_number_mobile_v2.0_rec_infer.onnx） "
+            }
+        );
+    index.add(
+            {
+                id:  11 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr_web\/rapidocr_web_desktop\/",
+                title: "RapidOCRWeb桌面版使用教程",
+                description: "引言 link 说明：桌面版指的是可以直接解压，双击即可运行的版本。 通俗来说，对rapidocr_web做了打包，将相关依赖全部放到一个zip包中，不需要本地有额外的环境，降低使用门槛。 下面会以Windows版为例，作简要说明。 使用步骤 link 下载对应的zip包\n目前已有的zip包如下：\n下载方式: Github | 百度网盘 | QQ群共享（群号：755960114）\n解压目录如下示例\n. ├── api-ms-win-core-console-l1-1-0.dll ├── api-ms-win-core-datetime-l1-1-0.dll ├── api-ms-win-core-debug-l1-1-0.dll ├── api-ms-win-core-errorhandling-l1-1-0.dll ├── api-ms-win-core-file-l1-1-0.dll ├── api-ms-win-core-file-l1-2-0.dll ├── api-ms-win-core-file-l2-1-0.dll ├── api-ms-win-core-handle-l1-1-0.dll ├── api-ms-win-core-heap-l1-1-0.dll ├── api-ms-win-core-interlocked-l1-1-0.dll ├── api-ms-win-core-libraryloader-l1-1-0.dll ├── api-ms-win-core-localization-l1-2-0.dll ├── api-ms-win-core-memory-l1-1-0.dll ├── api-ms-win-core-namedpipe-l1-1-0.dll ├── api-ms-win-core-processenvironment-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-1.dll ├── api-ms-win-core-profile-l1-1-0.dll ├── api-ms-win-core-rtlsupport-l1-1-0.dll ├── api-ms-win-core-string-l1-1-0.dll ├── api-ms-win-core-synch-l1-1-0.dll ├── api-ms-win-core-synch-l1-2-0.dll ├── api-ms-win-core-sysinfo-l1-1-0.dll ├── api-ms-win-core-timezone-l1-1-0.dll ├── api-ms-win-core-util-l1-1-0.dll ├── api-ms-win-crt-conio-l1-1-0.dll ├── api-ms-win-crt-convert-l1-1-0.",
+                content: "引言 link 说明：桌面版指的是可以直接解压，双击即可运行的版本。 通俗来说，对rapidocr_web做了打包，将相关依赖全部放到一个zip包中，不需要本地有额外的环境，降低使用门槛。 下面会以Windows版为例，作简要说明。 使用步骤 link 下载对应的zip包\n目前已有的zip包如下：\n下载方式: Github | 百度网盘 | QQ群共享（群号：755960114）\n解压目录如下示例\n. ├── api-ms-win-core-console-l1-1-0.dll ├── api-ms-win-core-datetime-l1-1-0.dll ├── api-ms-win-core-debug-l1-1-0.dll ├── api-ms-win-core-errorhandling-l1-1-0.dll ├── api-ms-win-core-file-l1-1-0.dll ├── api-ms-win-core-file-l1-2-0.dll ├── api-ms-win-core-file-l2-1-0.dll ├── api-ms-win-core-handle-l1-1-0.dll ├── api-ms-win-core-heap-l1-1-0.dll ├── api-ms-win-core-interlocked-l1-1-0.dll ├── api-ms-win-core-libraryloader-l1-1-0.dll ├── api-ms-win-core-localization-l1-2-0.dll ├── api-ms-win-core-memory-l1-1-0.dll ├── api-ms-win-core-namedpipe-l1-1-0.dll ├── api-ms-win-core-processenvironment-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-1.dll ├── api-ms-win-core-profile-l1-1-0.dll ├── api-ms-win-core-rtlsupport-l1-1-0.dll ├── api-ms-win-core-string-l1-1-0.dll ├── api-ms-win-core-synch-l1-1-0.dll ├── api-ms-win-core-synch-l1-2-0.dll ├── api-ms-win-core-sysinfo-l1-1-0.dll ├── api-ms-win-core-timezone-l1-1-0.dll ├── api-ms-win-core-util-l1-1-0.dll ├── api-ms-win-crt-conio-l1-1-0.dll ├── api-ms-win-crt-convert-l1-1-0.dll ├── api-ms-win-crt-environment-l1-1-0.dll ├── api-ms-win-crt-filesystem-l1-1-0.dll ├── api-ms-win-crt-heap-l1-1-0.dll ├── api-ms-win-crt-locale-l1-1-0.dll ├── api-ms-win-crt-math-l1-1-0.dll ├── api-ms-win-crt-process-l1-1-0.dll ├── api-ms-win-crt-runtime-l1-1-0.dll ├── api-ms-win-crt-stdio-l1-1-0.dll ├── api-ms-win-crt-string-l1-1-0.dll ├── api-ms-win-crt-time-l1-1-0.dll ├── api-ms-win-crt-utility-l1-1-0.dll ├── _asyncio.pyd ├── base_library.zip ├── _bz2.pyd ├── _ctypes.pyd ├── cv2 ├── _decimal.pyd ├── _hashlib.pyd ├── importlib_metadata-6.6.0.dist-info ├── libcrypto-1_1.dll ├── libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll ├── libssl-1_1.dll ├── _lzma.pyd ├── markupsafe ├── MSVCP140.dll ├── _multiprocessing.pyd ├── numpy ├── onnxruntime ├── _overlapped.pyd ├── PIL ├── pyclipper ├── pyexpat.pyd ├── python37.dll ├── python3.dll ├── _queue.pyd ├── rapidocr_onnxruntime ├── RapidOCRWeb.exe ├── select.pyd ├── shapely ├── Shapely.libs ├── _socket.pyd ├── _ssl.pyd ├── static ├── templates ├── ucrtbase.dll ├── unicodedata.pyd ├── VCRUNTIME140_1.dll ├── VCRUNTIME140.dll └── yaml 双击RapidOCRWeb.exe运行，界面如下图所示：\n浏览器中打开http://localhost:9003/，即可看到熟悉的RapidOCRWeb界面。\n⚠️如果遇到浏览器不显示界面的情况，可以尝试在黑框上按Ctrl + C\n示例图如下：\n"
+            }
+        );
+    index.add(
+            {
+                id:  12 ,
+                href: "\/RapidOCRDocs\/docs\/inference_engine\/onnxruntime\/",
+                title: "ONNXRuntime",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  13 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr\/config_parameter\/",
+                title: "config.yaml参数解释",
+                description: "Global部分 link 参数名称 取值范围 默认值 作用 text_score [0, 1] 0.5 文本识别结果置信度，值越大，把握越大 use_angle_cls bool true 是否使用文本行的方向分类 print_verbose bool true 是否打印各个部分耗时信息 min_height int 30 图像最小高度（单位是像素）低于这个值，会跳过文本检测阶段，直接进行后续识别 width_height_ratio int 8 如果输入图像的宽高比大于width_height_ratio，则会跳过文本检测，直接进行后续识别width_height_ratio=-1：不用这个参数 min_height是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。\nDet部分 link 参数名称 取值范围 默认值 作用 use_cuda bool false 是否使用CUDA，加速推理 limit_side_len - 736 限制图像边的长度的像素值 limit_type [min, max] min 限制图像的最小边长度还是最大边为limit_side_len 示例解释：当limit_type=min和limit_side_len=736时，图像最小边小于736时，会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 thresh [0, 1] 0.3 图像中文字部分和背景部分分割阈值值越大，文字部分会越小 box_thresh [0, 1] 0.5 文本检测所得框是否保留的阈值，值越大，召回率越低 max_candidates - 1000 图像中最大可检测到的文本框数目，一般够用 unclip_ratio [1.6, 2.0] 1.6 控制文本检测框的大小，值越大，检测框整体越大 use_dilation bool true 是否使用形态学中的膨胀操作，一般采用默认值即可 score_mode string fast fast是求rectangle区域的平均分数，容易造成弯曲文本漏检，slow是求polygon区域的平均分数，会更准确，但速度有所降低，可按需选择 Cls部分 link 参数名称 取值范围 默认值 作用 cls_img_shape - [3, 48, 192] 输入方向分类模型的图像Shape（CHW） cls_batch_num - 6 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差 cls_thresh [0, 1] 0.",
+                content: "Global部分 link 参数名称 取值范围 默认值 作用 text_score [0, 1] 0.5 文本识别结果置信度，值越大，把握越大 use_angle_cls bool true 是否使用文本行的方向分类 print_verbose bool true 是否打印各个部分耗时信息 min_height int 30 图像最小高度（单位是像素）低于这个值，会跳过文本检测阶段，直接进行后续识别 width_height_ratio int 8 如果输入图像的宽高比大于width_height_ratio，则会跳过文本检测，直接进行后续识别width_height_ratio=-1：不用这个参数 min_height是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。\nDet部分 link 参数名称 取值范围 默认值 作用 use_cuda bool false 是否使用CUDA，加速推理 limit_side_len - 736 限制图像边的长度的像素值 limit_type [min, max] min 限制图像的最小边长度还是最大边为limit_side_len 示例解释：当limit_type=min和limit_side_len=736时，图像最小边小于736时，会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 thresh [0, 1] 0.3 图像中文字部分和背景部分分割阈值值越大，文字部分会越小 box_thresh [0, 1] 0.5 文本检测所得框是否保留的阈值，值越大，召回率越低 max_candidates - 1000 图像中最大可检测到的文本框数目，一般够用 unclip_ratio [1.6, 2.0] 1.6 控制文本检测框的大小，值越大，检测框整体越大 use_dilation bool true 是否使用形态学中的膨胀操作，一般采用默认值即可 score_mode string fast fast是求rectangle区域的平均分数，容易造成弯曲文本漏检，slow是求polygon区域的平均分数，会更准确，但速度有所降低，可按需选择 Cls部分 link 参数名称 取值范围 默认值 作用 cls_img_shape - [3, 48, 192] 输入方向分类模型的图像Shape（CHW） cls_batch_num - 6 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差 cls_thresh [0, 1] 0.9 方向分类结果的置信度 label_list - [0, 180] 方向分类的标签，0°或者180°，该参数不能动 Rec部分 link 参数名称 取值范围 默认值 作用 rec_img_shape - [3, 48, 320] 输入文本识别模型的图像Shape（CHW） rec_batch_num - 6 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差 "
+            }
+        );
+    index.add(
+            {
+                id:  14 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr_web\/rapidocr_web_nuitka\/",
+                title: "Nuitka打包rapidocr_web操作文档",
+                description: "–by DeadWood8 打包环境 link OS: Windows11 Python: 3.8.10 rapidocr_onnxruntime: 1.2.0 nuitka: 1.5.3 onnxruntime: 1.14.0 打包步骤 link 安装Nuitka pip install nuitka 注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。 修改rapidocr-onnxruntime源码（修改后可以将所有依赖打包进文件） ⚠️ rapidocr_onnxruntime\u003e=1.2.8以后不用再手动修改下面代码，已经做了修改。可以跳过该步。 进入rapidocr-onnxruntime安装位置，一般在Lib\\site-packages\\rapidocr_onnxruntime或者你设置的虚拟环境下。 用编辑器打开rapid_ocr_api.py，对39-52行进行修改，如下图： nuitka打包 cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --output-dir=out ocrweb.py 如下图所示： 拷贝静态文件 打包后的文件位于当前位置的out\\ocrweb.dist目录下，需要将web项目和rapidocr-onnxruntime相关文件拷贝到此目录。 拷贝rapidocr_web目录static和templates两个文件夹全部拷贝到out\\ocrweb.dist下 在out\\ocrweb.dist创建rapidocr_onnxruntime文件夹，将Lib\\site-packages\\rapidocr_onnxruntime目录下的config.yaml和models文件夹拷贝到out\\ocrweb.dist\\rapidocr_onnxruntime文件夹内 运行程序 进入out\\ocrweb.dist，直接双击ocrweb.exe运行。 打包好的exe下载：百度网盘 | Google Drive | Gitee 补充 link 如果不想运行程序后有黑框，可以在打包命令中加入以下参数 --windows-disable-console 完整命令为： nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --windows-disable-console --output-dir=out ocrweb.py ",
+                content: "–by DeadWood8\n打包环境 link OS: Windows11 Python: 3.8.10 rapidocr_onnxruntime: 1.2.0 nuitka: 1.5.3 onnxruntime: 1.14.0 打包步骤 link 安装Nuitka\npip install nuitka 注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。\n修改rapidocr-onnxruntime源码（修改后可以将所有依赖打包进文件）\n⚠️ rapidocr_onnxruntime\u003e=1.2.8以后不用再手动修改下面代码，已经做了修改。可以跳过该步。 进入rapidocr-onnxruntime安装位置，一般在Lib\\site-packages\\rapidocr_onnxruntime或者你设置的虚拟环境下。 用编辑器打开rapid_ocr_api.py，对39-52行进行修改，如下图： nuitka打包\ncd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --output-dir=out ocrweb.py 如下图所示： 拷贝静态文件\n打包后的文件位于当前位置的out\\ocrweb.dist目录下，需要将web项目和rapidocr-onnxruntime相关文件拷贝到此目录。 拷贝rapidocr_web目录static和templates两个文件夹全部拷贝到out\\ocrweb.dist下 在out\\ocrweb.dist创建rapidocr_onnxruntime文件夹，将Lib\\site-packages\\rapidocr_onnxruntime目录下的config.yaml和models文件夹拷贝到out\\ocrweb.dist\\rapidocr_onnxruntime文件夹内 运行程序\n进入out\\ocrweb.dist，直接双击ocrweb.exe运行。 打包好的exe下载：百度网盘 | Google Drive | Gitee\n补充 link 如果不想运行程序后有黑框，可以在打包命令中加入以下参数 --windows-disable-console 完整命令为： nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --windows-disable-console --output-dir=out ocrweb.py "
+            }
+        );
+    index.add(
+            {
+                id:  15 ,
+                href: "\/RapidOCRDocs\/docs\/inference_engine\/openvino\/",
+                title: "OpenVINO",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  16 ,
+                href: "\/RapidOCRDocs\/docs\/inference_engine\/openvino\/infer\/",
+                title: "OpenVINO推理",
+                description: "⚠️ 基于目前openvino==2022.3.0版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见issue11939 安装 link $ pip install openvino # 里面含有mo $ pip install openvino-dev 模型问题 link 因为OpenVINO可以直接推理ONNX模型，故这里暂时不作转换，直接推理之前ONNX模型即可 这里仍然给出转换的代码，用作参考: mo --input_model models/ch_PP-OCRv2_det_infer.onnx --output_dir models/IR/ mo --input_model models/ch_PP-OCRv2_det_infer.onnx \\ --output_dir models/IR/static \\ --input_shape \"[1,3,12128,800]\" 关于OpenVINO link OpenVINO可以直接推理IR、ONNX和PaddlePaddle模型，具体如下(图来源:link)：\n和ONNXRuntime同时推理同一个ONNX模型，OpenVINO推理速度更快\n但是从对比来看，OpenVINO占用内存更大，其原因是拿空间换的时间\n当指定input_shape在一个区间范围时，推理时内存占用会减少一些 示例命令: mo --input_model models/ch_PP-OCRv2_det_infer.onnx \\ --output_dir models/IR/static \\ --input_shape \"[1,3,960:1200,800]\" OpenVINO与ONNXRuntime性能对比 link 推理设备：Windows 64位 Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz 2.59 GHz 测试图像宽高: 12119x810 测试模型 推理框架 占用内存(3次平均) 推理时间(3次平均) ch_PP-OCRv2_det_infer.onnx ONNXRuntime=1.10.0 0.8G 5.",
+                content: " ⚠️ 基于目前openvino==2022.3.0版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见issue11939 安装 link $ pip install openvino # 里面含有mo $ pip install openvino-dev 模型问题 link 因为OpenVINO可以直接推理ONNX模型，故这里暂时不作转换，直接推理之前ONNX模型即可 这里仍然给出转换的代码，用作参考: mo --input_model models/ch_PP-OCRv2_det_infer.onnx --output_dir models/IR/ mo --input_model models/ch_PP-OCRv2_det_infer.onnx \\ --output_dir models/IR/static \\ --input_shape \"[1,3,12128,800]\" 关于OpenVINO link OpenVINO可以直接推理IR、ONNX和PaddlePaddle模型，具体如下(图来源:link)：\n和ONNXRuntime同时推理同一个ONNX模型，OpenVINO推理速度更快\n但是从对比来看，OpenVINO占用内存更大，其原因是拿空间换的时间\n当指定input_shape在一个区间范围时，推理时内存占用会减少一些 示例命令: mo --input_model models/ch_PP-OCRv2_det_infer.onnx \\ --output_dir models/IR/static \\ --input_shape \"[1,3,960:1200,800]\" OpenVINO与ONNXRuntime性能对比 link 推理设备：Windows 64位 Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz 2.59 GHz 测试图像宽高: 12119x810 测试模型 推理框架 占用内存(3次平均) 推理时间(3次平均) ch_PP-OCRv2_det_infer.onnx ONNXRuntime=1.10.0 0.8G 5.354s ch_PP-OCRv2_det_infer.onnx openvino=2022.1.0 3.225G 2.53s ch_PP-OCRv2_det_infer.xml FP32 动态图 openvino=2022.1.0 3.175G 2.0455s OpenVINO与ONNXRuntime推理代码写法对比 linkNOTE: 以ch_ppocr_mobile_v2_det中推理代码为例子\nONNXRuntime import onnxruntime # 声明 sess_opt = onnxruntime.SessionOptions() sess_opt.log_severity_level = 4 sess_opt.enable_cpu_mem_arena = False session = onnxruntime.InferenceSession(det_model_path, sess_opt) input_name = session.get_inputs()[0].name output_name = session.get_outputs()[0].name # 推理 preds = session.run([output_name], {input_name: img}) OpenVINO from openvino.runtime import Core # 初始化 ie = Core() model_onnx = ie.read_model(det_model_path) compile_model = ie.compile_model(model=model_onnx, device_name='CPU') vino_session = compile_model.create_infer_request() # 推理 vino_session.infer(inputs=[img]) vino_preds = vino_session.get_output_tensor().data "
+            }
+        );
+    index.add(
+            {
+                id:  17 ,
+                href: "\/RapidOCRDocs\/docs\/inference_engine\/inference_summary\/",
+                title: "推理引擎相关",
+                description: "引言 link 关于模型的推理框架有很多，包括PC/移动端等等。之前在老潘的个人博客里看到过相关介绍 我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。 目前已知推理引擎 link CPU端：ONNXruntime、OpenVINO、libtorch、Caffe、PaddleInference GPU端：TensorRT、OpenPPL、AITemplate 移动端：NCNN，MNN, Paddle-Lite 通吃：TVM、OpenPPL ONNXRuntime（微软） link 目前仓库中已经在使用的推理引擎，CPU端最好用的轻量推理引擎。支持动态输入。 目前在GPU端，动态输入的情况下，速度比CPU上还要慢一些，暂时尚未解决。 ONNXRuntime + TensorRT结合 → 尝试但未跑通 OpenVINO（英特尔） link CPU端推理速度更快，支持动态输入。但是占用内存较大，拿空间换了时间。 当自己资源不吃紧时，但要求更快地推理速度时，可以考虑用这个。 GPU端仅支持自家显卡，暂时用不到。 MNN（阿里） link GPU端没有找到容易的使用方式，需要自行编译，门槛太高。理想情况是像onnxruntime-gpu这种，可以快速安装使用。 说是支持动态输入，但是尚未找到有效验证方法。 TensorRT（英伟达） link GPU端快速推理，占坑 据说存在内存泄漏的bug，暂时没有尝试。 Paddle Inference（百度） link 依赖Paddle框架，有些重，但是不失为GPU上推理模型的一个选择。 暂时不考虑这个，因为paddlepaddle-gpu版有大约500M左右，太太了。 NCNN（腾讯） link 移动端比较好用的 FastDeploy（百度） link TODO ",
+                content: "引言 link 关于模型的推理框架有很多，包括PC/移动端等等。之前在老潘的个人博客里看到过相关介绍 我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。 目前已知推理引擎 link CPU端：ONNXruntime、OpenVINO、libtorch、Caffe、PaddleInference GPU端：TensorRT、OpenPPL、AITemplate 移动端：NCNN，MNN, Paddle-Lite 通吃：TVM、OpenPPL ONNXRuntime（微软） link 目前仓库中已经在使用的推理引擎，CPU端最好用的轻量推理引擎。支持动态输入。 目前在GPU端，动态输入的情况下，速度比CPU上还要慢一些，暂时尚未解决。 ONNXRuntime + TensorRT结合 → 尝试但未跑通 OpenVINO（英特尔） link CPU端推理速度更快，支持动态输入。但是占用内存较大，拿空间换了时间。 当自己资源不吃紧时，但要求更快地推理速度时，可以考虑用这个。 GPU端仅支持自家显卡，暂时用不到。 MNN（阿里） link GPU端没有找到容易的使用方式，需要自行编译，门槛太高。理想情况是像onnxruntime-gpu这种，可以快速安装使用。 说是支持动态输入，但是尚未找到有效验证方法。 TensorRT（英伟达） link GPU端快速推理，占坑 据说存在内存泄漏的bug，暂时没有尝试。 Paddle Inference（百度） link 依赖Paddle框架，有些重，但是不失为GPU上推理模型的一个选择。 暂时不考虑这个，因为paddlepaddle-gpu版有大约500M左右，太太了。 NCNN（腾讯） link 移动端比较好用的 FastDeploy（百度） link TODO "
+            }
+        );
+    index.add(
+            {
+                id:  18 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/rapidocr_api\/",
+                title: "rapidocr_api",
+                description: "采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 Installation link pip安装 pip install rapidocr_api 源码安装 python setup.py bdist_wheel v0.0.1 cd dist pip install rapidocr_*.whl Usage link⚠️：本质就是发送一个POST请求，其他语言同理\n用法:\n$ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动:\n$ rapidocr_api -ip 0.0.0.0 -p 9003 curl调用\n$ curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用",
+                content: " 采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 Installation link pip安装 pip install rapidocr_api 源码安装 python setup.py bdist_wheel v0.0.1 cd dist pip install rapidocr_*.whl Usage link⚠️：本质就是发送一个POST请求，其他语言同理\n用法:\n$ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动:\n$ rapidocr_api -ip 0.0.0.0 -p 9003 curl调用\n$ curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用\n以文件的方式发送请求 import requests url = 'http://localhost:9003/ocr' img_path = '../python/tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as f: file_dict = {'image_file': (img_path, f, 'image/png')} response = requests.post(url, files=file_dict, timeout=60) print(response.json()) 以base64方式发送post请求 import base64 import requests url = 'http://localhost:9003/ocr' img_path = '../python/tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as fa: img_str = base64.b64encode(fa.read()) payload = {'image_data': img_str} resp = requests.post(url, data=payload) print(resp.json()) API输出 link 示例结果：\n详情 { \"0\": { \"rec_txt\": \"8月26日！\", \"dt_boxes\": [ [333.0, 72.0], [545.0, 40.0], [552.0, 90.0], [341.0, 122.0] ], \"score\": \"0.7342076812471662\" }, \"1\": { \"rec_txt\": \"澳洲名校招生信息\", \"dt_boxes\": [ [266.0, 163.0], [612.0, 116.0], [619.0, 163.0], [272.0, 210.0] ], \"score\": \"0.8261737492349412\" }, \"2\": { \"rec_txt\": \"解读！！\", \"dt_boxes\": [ [341.0, 187.0], [595.0, 179.0], [598.0, 288.0], [344.0, 296.0] ], \"score\": \"0.6152311325073242\" }, \"3\": { \"rec_txt\": \"Rules...\", \"dt_boxes\": [ [446.0, 321.0], [560.0, 326.0], [559.0, 352.0], [445.0, 347.0] ], \"score\": \"0.8704230123096042\" } } 输出结果说明：\n如果图像中存在文字，则会输出字典格式，具体介绍如下： { \"0\": { \"rec_txt\": \"香港深圳抽血，\", # 识别的文本 \"dt_boxes\": [ # 依次为左上角 → 右上角 → 右下角 → 左下角 [265, 18], [472, 231], [431, 271], [223, 59] ], \"score\": \"0.8175641223788261\" # 置信度 } } 如果没有检测到文字，则会输出空json({})。 !!说明：OCR的输出结果为最原始结果，大家可按需进一步扩展。\n"
+            }
+        );
+    index.add(
+            {
+                id:  19 ,
+                href: "\/RapidOCRDocs\/docs\/inference_engine\/openvino\/infer-gpu\/",
+                title: "OpenVINO GPU推理",
+                description: " 官方参考文档：docs 考虑到openvino只能使用自家显卡推理，通用性不高，这里暂不作相关配置说明。 ",
+                content: " 官方参考文档：docs 考虑到openvino只能使用自家显卡推理，通用性不高，这里暂不作相关配置说明。 "
+            }
+        );
+    index.add(
+            {
+                id:  20 ,
+                href: "\/RapidOCRDocs\/docs\/",
+                title: "Documentation",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  21 ,
+                href: "\/RapidOCRDocs\/docs\/packages\/",
+                title: "Packages",
+                description: "Packages",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  22 ,
+                href: "\/RapidOCRDocs\/docs\/inference_engine\/",
+                title: "推理引擎相关",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  23 ,
+                href: "\/RapidOCRDocs\/docs\/inference_engine\/onnxruntime\/infer_optim\/",
+                title: "ONNXRuntime",
+                description: "引言 link 平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。 因此，决定在这一篇文章中来梳理一下相关的设置。 以下参数都是来自SessionOptions中 相关测试代码可以前往AI Studio查看 欢迎补充和指出不足之处。 推荐常用设置 link import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL sess_options.log_severity_level = 4 sess_options.enable_cpu_mem_arena = False # 其他参数，采用默认即可 enable_cpu_mem_arena link 作用：启用CPU上的memory arena。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为enable_cpu_mem_area=False，默认是True\n结论：建议关闭\n开启之后，占用内存会剧增（5618.3M » 5.3M），且持续占用，不释放；推理时间只有大约13%提升 测试环境：\nPython: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu_memory_area_example.zip）\n# pip install onnxruntime==1.14.1 # pip install memory_profiler import numpy as np import onnxruntime as ort from memory_profiler import profile @profile def onnx_prediction(model_path, input_data): ort_sess = ort.InferenceSession(model_path, sess_options=sess_options) preds = ort_sess.",
+                content: "引言 link 平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。 因此，决定在这一篇文章中来梳理一下相关的设置。 以下参数都是来自SessionOptions中 相关测试代码可以前往AI Studio查看 欢迎补充和指出不足之处。 推荐常用设置 link import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL sess_options.log_severity_level = 4 sess_options.enable_cpu_mem_arena = False # 其他参数，采用默认即可 enable_cpu_mem_arena link 作用：启用CPU上的memory arena。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为enable_cpu_mem_area=False，默认是True\n结论：建议关闭\n开启之后，占用内存会剧增（5618.3M » 5.3M），且持续占用，不释放；推理时间只有大约13%提升 测试环境：\nPython: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu_memory_area_example.zip）\n# pip install onnxruntime==1.14.1 # pip install memory_profiler import numpy as np import onnxruntime as ort from memory_profiler import profile @profile def onnx_prediction(model_path, input_data): ort_sess = ort.InferenceSession(model_path, sess_options=sess_options) preds = ort_sess.run(output_names=[\"predictions\"], input_feed={\"input_1\": input_data})[0] return preds sess_options = ort.SessionOptions() sess_options.enable_cpu_mem_arena = False input_data = np.load('enable_cpu_memory_area_example/input.npy') print(f'input_data shape: {input_data.shape}') model_path = 'enable_cpu_memory_area_example/model.onnx' onnx_prediction(model_path, input_data) Windows端 | Mac端 | Linux端 测试情况都大致相同\nenable_cpu_mem_arena=True (demo) PS G:\u003e python .\\test_enable_cpu_mem_arena.py enable_cpu_mem_arena: True input_data shape: (32, 200, 200, 1) Filename: .\\test_enable_cpu_mem_arena.py Line # Mem usage Increment Occurrences Line Contents ============================================================= 7 69.1 MiB 69.1 MiB 1 @profile 8 def onnx_prediction(model_path, input_data): 9 77.2 MiB 8.1 MiB 1 ort_sess = ort.InferenceSession(model_path, sess_options=sess_options) 10 77.2 MiB 0.0 MiB 1 preds = ort_sess.run(output_names=[\"predictions\"], 11 5695.5 MiB 5618.3 MiB 1 input_feed={\"input_1\": input_data})[0] 12 5695.5 MiB 0.0 MiB 1 return preds enable_cpu_mem_arena=False (demo) PS G:\u003e python .\\test_enable_cpu_mem_arena.py enable_cpu_mem_arena: False input_data shape: (32, 200, 200, 1) Filename: .\\test_enable_cpu_mem_arena.py Line # Mem usage Increment Occurrences Line Contents ============================================================= 7 69.1 MiB 69.1 MiB 1 @profile 8 def onnx_prediction(model_path, input_data): 9 76.9 MiB 7.8 MiB 1 ort_sess = ort.InferenceSession(model_path, sess_options=sess_options) 10 76.9 MiB 0.0 MiB 1 preds = ort_sess.run(output_names=[\"predictions\"], 11 82.1 MiB 5.3 MiB 1 input_feed={\"input_1\": input_data})[0] 12 82.1 MiB 0.0 MiB 1 return preds enable_profiling link 开启这个参数，在推理时，会生成一个类似onnxruntime_profile__2023-05-07_09-02-15.json的日志文件，包含详细的性能数据（线程、每个运算符的延迟等）。 建议开启 示例代码： import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.enable_profiling = True execution_mode link 设置运行模型的模式，包括rt.ExecutionMode.ORT_SEQUENTIAL和rt.ExecutionMode.ORT_PARALLEL。一个序列执行，一个并行。默认是序列执行 通常来说，当一个模型中有许多分支时，可以设置该参数为ORT_PARALLEL来达到更好的表现 当设置sess_options.execution_mode = rt.ExecutionMode.ORT_PARALLEL时，可以设置sess_options.inter_op_num_threads来控制使用线程的数量，来并行化执行（模型中各个节点之间） inter_op_num_threads link 设置并行化执行图（跨节点）时，使用的线程数。默认是0，交由onnxruntime自行决定。 示例代码： import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.inter_op_num_threads = 2 intra_op_num_threads link 设置并行化执行图（内部节点）时，使用的线程数。默认是0，交由onnxruntime自行决定，一般会选择使用设备上所有的核。 ⚠️ 这个值并不是越大越好，具体参考AI Studio中的消融实验。 示例代码： import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.intra_op_num_threads = 2 graph_optimization_level link 运行图时，对图中算子的优化水平。默认是开启全部算子的优化。建议采用默认值即可。 可选的枚举值有：ORT_DISABLE_ALL | ORT_ENABLE_BASIC | ORT_ENABLE_EXTENDED | ORT_ENABLE_ALL 示例代码： import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL FAQ link为什么我的模型在GPU上比在CPU上还要慢？ link 取决于所使用的执行提供者，它可能没有完全支持模型中的所有操作。回落到CPU操作可能会导致性能速度的下降。此外，即使一个操作是由CUDA execution provider实现的，由于性能的原因，它也不一定会把操作分配/放置到CUDA EP上。要想看到ORT决定的位置，请打开verbose日志并查看控制台的输出。 参考资料 link ONNX Runtime Performance Tuning Python API "
+            }
+        );
+    index.add(
+            {
+                id:  24 ,
+                href: "\/RapidOCRDocs\/docs\/inference_engine\/onnxruntime\/onnxruntime-gpu\/",
+                title: "ONNXRuntime GPU版推理",
+                description: "onnxruntime-gpu版相关说明 link 目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见onnxruntime issue#13198 有关onnxruntime-gpu推理慢的相关帖子 link Pre-allocating dynamic shaped tensor memory for ONNX runtime inference? 快速查看比较版本 link 国外小伙伴可以基于Google Colab，国内的小伙伴可以基于百度的AI Studio来查看效果 自己折腾版 link onnxruntime-gpu需要严格按照与CUDA、cuDNN版本对应来安装，具体参考文档，这一步关乎后面是否可以成功调用GPU。\n以下是安装示例： 所用机器环境情况： nvcc-smi显示CUDA Driver API版本：11.7 nccc -V显示CUDA Runtime API版本：11.6 以上两个版本的对应关系，可参考博客 具体安装命令如下： conda install cudatoolkit=11.6.0 conda install cudnn=8.3.2.44 pip install onnxruntime-gpu==1.12.0 验证是否可以onnxruntime-gpu正常调用GPU 验证get_device()是否可返回GPU import onnxruntime as ort print(ort.get_device()) # GPU 如果第一步满足了，继续验证onnxruntime-gpu加载模型时是否可以调用GPU import onnxruntime as ort providers = [ ('CUDAExecutionProvider', { 'device_id': 0, 'arena_extend_strategy': 'kNextPowerOfTwo', 'gpu_mem_limit': 2 * 1024 * 1024 * 1024, 'cudnn_conv_algo_search': 'EXHAUSTIVE', 'do_copy_in_default_stream': True, }), 'CPUExecutionProvider', ] # download link: https://github.",
+                content: "onnxruntime-gpu版相关说明 link 目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见onnxruntime issue#13198 有关onnxruntime-gpu推理慢的相关帖子 link Pre-allocating dynamic shaped tensor memory for ONNX runtime inference? 快速查看比较版本 link 国外小伙伴可以基于Google Colab，国内的小伙伴可以基于百度的AI Studio来查看效果 自己折腾版 link onnxruntime-gpu需要严格按照与CUDA、cuDNN版本对应来安装，具体参考文档，这一步关乎后面是否可以成功调用GPU。\n以下是安装示例： 所用机器环境情况： nvcc-smi显示CUDA Driver API版本：11.7 nccc -V显示CUDA Runtime API版本：11.6 以上两个版本的对应关系，可参考博客 具体安装命令如下： conda install cudatoolkit=11.6.0 conda install cudnn=8.3.2.44 pip install onnxruntime-gpu==1.12.0 验证是否可以onnxruntime-gpu正常调用GPU 验证get_device()是否可返回GPU import onnxruntime as ort print(ort.get_device()) # GPU 如果第一步满足了，继续验证onnxruntime-gpu加载模型时是否可以调用GPU import onnxruntime as ort providers = [ ('CUDAExecutionProvider', { 'device_id': 0, 'arena_extend_strategy': 'kNextPowerOfTwo', 'gpu_mem_limit': 2 * 1024 * 1024 * 1024, 'cudnn_conv_algo_search': 'EXHAUSTIVE', 'do_copy_in_default_stream': True, }), 'CPUExecutionProvider', ] # download link: https://github.com/openvinotoolkit/openvino/files/9355419/super_resolution.zip model_path = 'super_resolution.onnx' session = ort.InferenceSession(model_path, providers=providers) print(session.get_providers()) # 如果输出中含有CUDAExecutionProvider,则证明可以正常调用GPU # ['CUDAExecutionProvider', 'CPUExecutionProvider'] 更改config.yaml中对应部分的参数即可，详细参数介绍参见官方文档。\nuse_cuda: true CUDAExecutionProvider: device_id: 0 arena_extend_strategy: kNextPowerOfTwo gpu_mem_limit: 2 * 1024 * 1024 * 1024 cudnn_conv_algo_search: EXHAUSTIVE do_copy_in_default_stream: true 推理情况\n下载基准测试数据集（test_images_benchmark），放到tests/benchmark目录下。 百度网盘 | Google Drive 最终目录结构如下： tests/benchmark/ ├── benchmark.py ├── config_gpu.yaml ├── config.yaml └── test_images_benchmark 运行以下代码（python目录下运行）： # CPU python tests/benchmark/benchmark.py --yaml_path config.yaml # GPU python tests/benchmark/benchmark.py --yaml_path config_gpu.yaml 运行相关信息汇总：（以下仅为个人测试情况，具体情况请自行测试） 环境 测试者 设备 OS CPU GPU onnxruntime-gpu [1]zhsunlight 宏碁(Acer) 暗影骑士·威N50-N93游戏台式机 Windows 十代i5-10400F 16G 512G SSD NVIDIA GeForce GTX 1660Super 6G 1.11.0 [2]SWHL 服务器 Linux AMD R9 5950X NVIDIA GeForce RTX 3090 1.12.1 耗时 对应上面序号 CPU总耗时(s) CPU平均耗时(s/img) GPU总耗时(s) GPU平均耗时(s/img) [1] 296.8841 1.18282 646.14667 2.57429 [2] 149.35427 0.50504 250.81760 0.99927 "
+            }
+        );
+    index.add(
+            {
+                id:  25 ,
+                href: "\/RapidOCRDocs\/docs\/changelog\/",
+                title: "Changelog",
+                description: "Changelog",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  26 ,
+                href: "\/RapidOCRDocs\/docs\/related_projects\/",
+                title: "相关项目",
+                description: " 以下几个方向，每个都是比较独立的方向，但是却和OCR有着千丝万缕的关系，关于它们的资料就像散落在天空中的星星一般，散发着微弱的光芒，这里要做的就是将这些点点光芒聚集起来。 这里将会汇总出以下几个OCR周边项目的一些文档和资源，包括学术动态和一些工程化代码。 欢迎各位小伙伴提供PR。 版面分析 link 相关论文和帖子： 版面分析方法汇总 相关工程： PaddleOCR Layout 海康DAVAR VSR 数据集汇总： 英文版面分析数据集：\nPubLayNet: IBM构建，34万张图像，分为5类：text, title list table figure。 DocBank：微软亚洲研究院构建，50万英文文档图像，分为12类：摘要、作者、标题、公式、图形、页脚、列表、段落、参考、节标题、表格和文章标题。 中文版面分析数据集：\nCDLA：中文文档版面分析数据集，面向中文文献类（论文）场景，总共6000张（5000训练，1000测试），分为10类：正文、标题、图片、图片标题、表格、表格标题、页眉、页脚、注释和公式。 表格识别 link 相关论文和帖子： OCR之表格结构识别综述 合合信息：表格识别与内容提炼技术理解及研发趋势 论文阅读: （ICDAR2021 海康威视）LGPMA（表格识别算法）及官方源码对应解读 相关工程： 海康官方LGPMA源码 LGPMA Inference PaddleOCR Table 数据集汇总： 英文表格识别数据集： PubTabNet: IBM构建，568k+文档图像数据，包括表格图像和对应的HTML标注。 视频OCR link 相关论文和帖子： 【NeurIPS2021】A Bilingual, OpenWorld Video Text Dataset and End-to-end Video Text Spotter with Transformer | 博客解读 【ACM MM 2019】You only recognize once: Towards fast video text spotting 相关工程： video-subtitle-extractor: 一款将视频中的硬字幕提取为外挂字幕文件(srt格式)的软件 RapidVideOCR: 提取视频中硬字幕 数据集汇总： BOVText: A Large-Scale, Bilingual Open World Dataset for Video Text Spotting: 快手科技、浙江大学和北京邮电大学合作提出，大规模双语开放场景下的视频文本基准数据集，该数据集主要提供了2000+视频，1,750,000帧开放视频场景的视频。同时，还提供了丰富的标注类型（标题、字幕、场景文本等）。该数据集支持四个任务：视频帧检测、视频帧识别、视频文本跟踪和端到端视频文本识别。 卡证OCR link 相关论文和帖子： 相关工程： fake_certificate_generator: 假的证件合成器，包括身份证、驾驶证、营业执照。 数据集汇总： 暂无，一般这类数据较为敏感，通常都合成假数据来使用。 印章OCR link 相关论文和帖子： 【技术新趋势】合合信息：复杂环境下ocr与印章识别技术理解及研发趋势 基于文字分割的印章识别技术 相关工程： JS生成印章 Python绘制透明背景印章 在线印章合成大全网站 数据集汇总： 暂无 ",
+                content: " 以下几个方向，每个都是比较独立的方向，但是却和OCR有着千丝万缕的关系，关于它们的资料就像散落在天空中的星星一般，散发着微弱的光芒，这里要做的就是将这些点点光芒聚集起来。 这里将会汇总出以下几个OCR周边项目的一些文档和资源，包括学术动态和一些工程化代码。 欢迎各位小伙伴提供PR。 版面分析 link 相关论文和帖子： 版面分析方法汇总 相关工程： PaddleOCR Layout 海康DAVAR VSR 数据集汇总： 英文版面分析数据集：\nPubLayNet: IBM构建，34万张图像，分为5类：text, title list table figure。 DocBank：微软亚洲研究院构建，50万英文文档图像，分为12类：摘要、作者、标题、公式、图形、页脚、列表、段落、参考、节标题、表格和文章标题。 中文版面分析数据集：\nCDLA：中文文档版面分析数据集，面向中文文献类（论文）场景，总共6000张（5000训练，1000测试），分为10类：正文、标题、图片、图片标题、表格、表格标题、页眉、页脚、注释和公式。 表格识别 link 相关论文和帖子： OCR之表格结构识别综述 合合信息：表格识别与内容提炼技术理解及研发趋势 论文阅读: （ICDAR2021 海康威视）LGPMA（表格识别算法）及官方源码对应解读 相关工程： 海康官方LGPMA源码 LGPMA Inference PaddleOCR Table 数据集汇总： 英文表格识别数据集： PubTabNet: IBM构建，568k+文档图像数据，包括表格图像和对应的HTML标注。 视频OCR link 相关论文和帖子： 【NeurIPS2021】A Bilingual, OpenWorld Video Text Dataset and End-to-end Video Text Spotter with Transformer | 博客解读 【ACM MM 2019】You only recognize once: Towards fast video text spotting 相关工程： video-subtitle-extractor: 一款将视频中的硬字幕提取为外挂字幕文件(srt格式)的软件 RapidVideOCR: 提取视频中硬字幕 数据集汇总： BOVText: A Large-Scale, Bilingual Open World Dataset for Video Text Spotting: 快手科技、浙江大学和北京邮电大学合作提出，大规模双语开放场景下的视频文本基准数据集，该数据集主要提供了2000+视频，1,750,000帧开放视频场景的视频。同时，还提供了丰富的标注类型（标题、字幕、场景文本等）。该数据集支持四个任务：视频帧检测、视频帧识别、视频文本跟踪和端到端视频文本识别。 卡证OCR link 相关论文和帖子： 相关工程： fake_certificate_generator: 假的证件合成器，包括身份证、驾驶证、营业执照。 数据集汇总： 暂无，一般这类数据较为敏感，通常都合成假数据来使用。 印章OCR link 相关论文和帖子： 【技术新趋势】合合信息：复杂环境下ocr与印章识别技术理解及研发趋势 基于文字分割的印章识别技术 相关工程： JS生成印章 Python绘制透明背景印章 在线印章合成大全网站 数据集汇总： 暂无 "
+            }
+        );
+    index.add(
+            {
+                id:  27 ,
+                href: "\/RapidOCRDocs\/docs\/faq\/",
+                title: "FAQ",
+                description: "Answers to frequently asked questions.",
+                content: "Q: 请问这个能在32位C#中用嘛? linkA: C#可以32位，要用32位的dll，但nuget上的onnxruntime不支持win7。\nQ: Windows系统下，装完环境之后，运行示例程序之后，报错OSError: [WinError 126] 找不到指定的模組 linkA: 原因是Shapely库没有正确安装，如果是在Windows，可以在Shapely whl下载对应的whl包，离线安装即可；另外一种解决办法是用conda安装也可。\nQ: Linux部署python的程序时，import cv2时会报ImportError: ligGL.so.1: cannot open shared object file: No such file or directory? linkA: 解决方法 有两个(来自群友ddeef)：\n安装opencv-python-headless取代opencv-python; 运行sudo apt-get install -y libgl1-mesa-dev Q: 询问下，我编译出来的进程在win7下面通过cmd调用，发生了崩溃的情况? linkA: 不支持win7 (by @如果我有時光機)\nQ: 能不能搞个openmmlab类似的那个提取信息的? linkA: 这个目前正在调研测试当中，如果mmocr中关键信息提取效果还可以，后期会考虑整合进来。\nQ: RapidOCR和PaddleOCR是什么关系呢？ linkA: RapidOCR是将PaddleOCR的预训练模型转为onnx模型，不依赖paddle框架，方便各个平台部署。\nQ: onnxruntime arm32 有人编译过吗？ 我编译成功了，但是使用的时候libonnxruntime.so👎 error: file not recognized: File format not recognized 应该是版本不匹配 linkA: 没遇到过。我是直接在当前平台编译的，我们用的是arm。估计是平台不兼容,建议在本身平台上编译。没遇到过问题。通常出在交叉编译方式下。\nQ: 请问一下c++ demo必须要vs2017及以上版本吗? linkA: 最好用vs2019\nQ: 可以达到百度EasyEdge Free App的效果吗？ linkA: edge的模型应该没有开源。百度开源的模型里server det的识别效果可以达到，但是模型比较大。\nQ: 我用c++推理onnx貌似是cpu推理的，gpu没有反应? linkA: 如果想用GPU的话，需要安装onnxruntime-gpu版，自己在onnxruntime的代码中添加EP (execution provider)。我们的定位是通用，只用cpu推理。\nQ: 您好，我想部署下咱们的ocr识别，有提供linux版本的ocr部署包吗? linkA: linux版本的自己编译即可, 可以参考我们的action中的脚本；其实编译非常容易，安装个opencv后，在cmakelists.txt中修改一下onnxruntime的路径即可，具体参考这个： https://github.com/RapidOCR/RapidOCR/blob/main/.github/workflows/make-linux.yml\nQ: onnxruntime编译好的C++库，哪里可以下载到？ linkA: 从这里：https://github.com/RapidOCR/OnnxruntimeBuilder/releases/tag/1.7.0\nQ: 目前简单测试环境是 Win10 + Cygwin + gcc + 纯C编程，可以在C程序中直接接入简单OCR功能吗？ linkA: 直接使用API就行，API就是由c导出的\nQ: 模型下载地址 linkA: 百度网盘 | Google Drive\nQ: onnxruntime 1.7 下出错：onnxruntime::SequentialExecutor::Execute] Non-zero status code returned while running ScatterND node. Name:‘ScatterND@1’ Status Message: updates linkA: 由于模型只支持onnxruntime=1.5.0导致，请更新模型,下载地址见Q3\nQ: 边缘总有一行文字无法识别，怎么办？ linkA: 在 padding 参数中添加一个值 ，默认是0,你可以添加5或10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。\n"
+            }
+        );
+    search.addEventListener('input', show_results, true);
+
+    function show_results(){
+        const maxResult =  5 ;
+        const minlength =  3 ;
+        var searchQuery = this.value;
+        var results = index.search(searchQuery, {limit: maxResult, enrich: true});
+
+        
+        const flatResults = new Map(); 
+        for (const result of results.flatMap(r => r.result)) {
+        if (flatResults.has(result.doc.href)) continue;
+        flatResults.set(result.doc.href, result.doc);
+        }
+
+        suggestions.innerHTML = "";
+        suggestions.classList.remove('d-none');
+
+        
+        if (searchQuery.length < minlength) {
+            const minCharMessage = document.createElement('div')
+            minCharMessage.innerHTML = `Please type at least <strong>${minlength}</strong> characters`
+            minCharMessage.classList.add("suggestion__no-results");
+            suggestions.appendChild(minCharMessage);
+            return;
+        } else {
+            
+            if (flatResults.size === 0 && searchQuery) {
+                const noResultsMessage = document.createElement('div')
+                noResultsMessage.innerHTML = "No results for" + ` "<strong>${searchQuery}</strong>"`
+                noResultsMessage.classList.add("suggestion__no-results");
+                suggestions.appendChild(noResultsMessage);
+                return;
+            }
+        }
+
+        
+        for(const [href, doc] of flatResults) {
+            const entry = document.createElement('div');
+            suggestions.appendChild(entry);
+
+            const a = document.createElement('a');
+            a.href = href;
+            entry.appendChild(a);
+
+            const title = document.createElement('span');
+            title.textContent = doc.title;
+            title.classList.add("suggestion__title");
+            a.appendChild(title);
+
+            const description = document.createElement('span');
+            description.textContent = doc.description;
+            description.classList.add("suggestion__description");
+            a.appendChild(description);
+
+            suggestions.appendChild(entry);
+
+            if(suggestions.childElementCount == maxResult) break;
+        }
+    }
+    }());
+</script>
     
 </body></html>

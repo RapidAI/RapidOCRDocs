@@ -8,8 +8,7 @@ icon: "model_training"
 toc: true
 description: ""
 publishdate: "2023-09-08"
-tags:
-categories:
+katex: true
 ---
 
 ### 各个版本ONNX模型效果对比(仅供参考)

@@ -10,7 +10,6 @@ publishdate: "2023-09-08"
 tags:
 categories:
 toc: true
-katex: true
 ---
 
 

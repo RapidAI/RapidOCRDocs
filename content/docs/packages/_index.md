@@ -1,5 +1,5 @@
 ---
-weight: 400
+weight: 30
 title: "Packages"
 description: "Packages"
 icon: package

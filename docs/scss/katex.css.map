@@ -3,8 +3,8 @@
 	"file": "katex.css",
 	"sourceRoot": "/home/runner/work/RapidOCRDocs/RapidOCRDocs",
 	"sources": [
-		"/home/runner/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/colinwilson/lotusdocs@v0.0.0-20230915023249-88b6c0d9bd73/assets/docs/scss/katex.scss",
-		"../../../.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/colinwilson/lotusdocs@v0.0.0-20230915023249-88b6c0d9bd73/assets/docs/scss/custom/plugins/katex/_katex.scss"
+		"/home/runner/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/colinwilson/lotusdocs@v0.0.0-20230915145608-8bab2d130c1e/assets/docs/scss/katex.scss",
+		"../../../.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/colinwilson/lotusdocs@v0.0.0-20230915145608-8bab2d130c1e/assets/docs/scss/custom/plugins/katex/_katex.scss"
 	],
 	"sourcesContent": [
 		"// Katex\n@import \"custom/plugins/katex/katex\";",

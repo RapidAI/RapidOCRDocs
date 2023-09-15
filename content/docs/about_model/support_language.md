@@ -5,11 +5,12 @@ draft: false
 author: "SWHL"
 title: "支持识别语言及自助转换模型"
 icon: "support"
-toc: true
 description: ""
 publishdate: "2023-09-08"
 tags:
 categories:
+toc: true
+katex: true
 ---
 
 

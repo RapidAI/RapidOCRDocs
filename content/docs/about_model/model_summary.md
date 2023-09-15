@@ -74,7 +74,7 @@ katex: true
 #### Exact Match (精确匹配准确率):
 
 $$
-Exact\_Match = \frac{1}{N}\sum_{i=0}^{N} s(p_{i}, g_{i})
+Exact\ Match = \frac{1}{N}\sum_{i=0}^{N} s(p_{i}, g_{i})
 $$
 
 $$
@@ -91,7 +91,7 @@ $$
 
 #### Char Match (字符级准确率):
 $$
-Char\_Match = 1 - \frac{1}{N} \sum_{i=0}^{N} s(p_{i}, g_{i})
+Char\ Match = 1 - \frac{1}{N} \sum_{i=0}^{N} s(p_{i}, g_{i})
 $$
 
 $$

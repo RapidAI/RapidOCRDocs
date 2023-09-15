@@ -913,7 +913,7 @@ nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to
     var index = new FlexSearch.Document({
         
         tokenize: "full",
-        minlength:  3 ,
+        minlength:  1 ,
         cache:  100 ,
         optimize:  true ,
         document: {
@@ -1389,7 +1389,7 @@ nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to
 
     function show_results(){
         const maxResult =  5 ;
-        const minlength =  3 ;
+        const minlength =  1 ;
         var searchQuery = this.value;
         var results = index.search(searchQuery, {limit: maxResult, enrich: true});
 

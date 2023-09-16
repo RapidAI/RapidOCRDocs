@@ -1,9 +1,9 @@
 ---
-weight: 3
+weight: 30
 date: "2023-09-11"
 draft: false
 author: "SWHL"
-title: "RapidOCR调优尝试教程"
+title: "调优尝试教程"
 icon: "code"
 toc: true
 description: ""

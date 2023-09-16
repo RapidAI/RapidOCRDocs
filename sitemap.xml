@@ -6,13 +6,13 @@
     <lastmod>2023-09-14T21:58:48+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr/rapidocr_onnxruntime/</loc>
-    <lastmod>2023-09-14T22:24:52+08:00</lastmod>
+    <lastmod>2023-09-16T14:55:48+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr/</loc>
-    <lastmod>2023-09-14T22:18:32+08:00</lastmod>
+    <lastmod>2023-09-16T14:55:48+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr/rapidocr_openvino/</loc>
-    <lastmod>2023-09-14T22:24:52+08:00</lastmod>
+    <lastmod>2023-09-16T14:55:48+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/</loc>
     <lastmod>2023-09-13T10:00:48+08:00</lastmod>
@@ -25,6 +25,9 @@
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/</loc>
     <lastmod>2023-09-14T22:18:32+08:00</lastmod>
+  </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/inference_summary/</loc>
+    <lastmod>2023-09-16T14:55:48+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/</loc>
     <lastmod>2023-09-13T10:00:48+08:00</lastmod>
@@ -56,9 +59,6 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</loc>
     <lastmod>2023-09-14T22:11:20+08:00</lastmod>
   </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/inference_summary/</loc>
-    <lastmod>2023-09-14T22:13:18+08:00</lastmod>
-  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_api/</loc>
     <lastmod>2023-09-14T22:18:32+08:00</lastmod>
   </url><url>
@@ -75,7 +75,7 @@
     <lastmod>2023-09-15T11:28:10+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/</loc>
-    <lastmod>2023-09-15T11:28:10+08:00</lastmod>
+    <lastmod>2023-09-16T14:55:48+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/about_model/</loc>
     <lastmod>2023-09-15T11:28:10+08:00</lastmod>
@@ -96,7 +96,7 @@
     <lastmod>2023-09-14T22:08:28+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/</loc>
-    <lastmod>2023-09-16T07:58:31+08:00</lastmod>
+    <lastmod>2023-09-16T14:55:48+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/categories/</loc>
   </url><url>

@@ -39,7 +39,7 @@ categories:
     |推理引擎|推理速度更快|占用内存更少|
     |:---:|:---:|:---:|
     |`rapidocr_onnxruntime`||✓|
-    |`rapidocr_openvino`|✓|⚠️ openvino存在内存不释放的问题，参见[wiki](https://github.com/RapidAI/RapidOCR/wiki/openvino%E5%85%A5%E9%97%A8)|
+    |`rapidocr_openvino`|✓|⚠️ openvino存在内存不释放的问题，参见[issue #11939](https://github.com/openvinotoolkit/openvino/issues/11939)|
 
 
 ### pip安装快速使用（推荐）

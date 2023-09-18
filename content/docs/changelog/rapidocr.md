@@ -3,7 +3,7 @@ weight: 1
 date: "2023-09-11"
 draft: false
 author: "SWHL"
-title: "rapidocr_onnxruntime & rapidocr_openvino"
+title: "rapidocr_onnxruntime/openvino"
 icon: "update"
 toc: true
 description: ""

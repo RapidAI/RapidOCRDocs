@@ -62,7 +62,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel="stylesheet">
 
-    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.abb3af304688d6d7c998f9392ca55979523dabb5a7f68d5abbee77daee9c8ab7a6eb82b8774ce134dceaa7e8066885ce.css" integrity="sha384-q7OvMEaI1tfJmPk5LKVZeVI9q7Wn9o1au&#43;532u6cirem64K4d0zhNNzqp&#43;gGaIXO"crossorigin="anonymous">
+    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.bbb07706a2d324422e35ff6b8426ccc87465befa6801d6926875ec34aa27cfa3c2db1fb5df673649c607e35f2333705e.css" integrity="sha384-u7B3BqLTJEIuNf9rhCbMyHRlvvpoAdaSaHXsNKonz6PC2x&#43;132c2ScYH418jM3Be"crossorigin="anonymous">
     
     
     
@@ -524,84 +524,24 @@
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
         <h3 id="1-安装">1. 安装 <a href="#1-%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="4e573e8" class="language-bash ">
-  <code>pip install rapidocr_onnxruntime</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install rapidocr_onnxruntime</span></span></code></pre></div>
 <h3 id="2-终端使用">2. 终端使用 <a href="#2-%e7%bb%88%e7%ab%af%e4%bd%bf%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="2ce9f71" class="language-bash ">
-  <code>rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg</span></span></code></pre></div>
 <h3 id="3-脚本使用">3. 脚本使用 <a href="#3-%e8%84%9a%e6%9c%ac%e4%bd%bf%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="52e27b9" class="language-python ">
-  <code>from rapidocr_onnxruntime import RapidOCR
-
-engine = RapidOCR()
-result, elapse = engine(img_path)
-print(result)</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> rapidocr_onnxruntime <span style="color:#f92672">import</span> RapidOCR
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>engine <span style="color:#f92672">=</span> RapidOCR()
+</span></span><span style="display:flex;"><span>result, elapse <span style="color:#f92672">=</span> engine(img_path)
+</span></span><span style="display:flex;"><span>print(result)</span></span></code></pre></div>
 <h3 id="3-查看效果">3. 查看效果 <a href="#3-%e6%9f%a5%e7%9c%8b%e6%95%88%e6%9e%9c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="68e00fc" class="language-python ">
-  <code>[[[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], &#39;正品促销&#39;, &#39;0.7986101984977723&#39;], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], &#39;大桶装更划算&#39;, &#39;0.7368737288883754&#39;], [[[69.0, 144.0], [255.0, 144.0], [255.0, 164.0], [69.0, 164.0]], &#39;强力去污符合国标&#39;, &#39;0.8172478278477987&#39;], [[[107.0, 170.0], [219.0, 170.0], [219.0, 182.0], [107.0, 182.0]], &#39;-40深度防冻不结冰&#39;, &#39;0.8655969283797524&#39;], [[[35.0, 227.0], [63.0, 227.0], [63.0, 236.0], [35.0, 236.0]], &#39;日常价?&#39;, &#39;0.6502826035022735&#39;], [[[141.0, 223.0], [187.0, 225.0], [185.0, 249.0], [139.0, 247.0]], &#39;直击&#39;, &#39;0.596031109491984&#39;], [[[34.0, 234.0], [81.0, 236.0], [80.0, 254.0], [33.0, 252.0]], &#39;10.0起&#39;, &#39;0.8231529593467712&#39;], [[[257.0, 234.0], [304.0, 236.0], [303.0, 253.0], [256.0, 251.0]], &#39;10.0起&#39;, &#39;0.8304102122783661&#39;], [[[258.0, 227.0], [287.0, 226.0], [287.0, 236.0], [258.0, 237.0]], &#39;日常价?&#39;, &#39;0.5725070595741272&#39;], [[[140.0, 245.0], [186.0, 246.0], [186.0, 272.0], [139.0, 271.0]], &#39;底价&#39;, &#39;0.5142453710238138&#39;], [[[129.0, 290.0], [207.0, 292.0], [206.0, 339.0], [128.0, 337.0]], &#39;5.8&#39;, &#39;0.6341951936483383&#39;], [[[98.0, 320.0], [129.0, 320.0], [129.0, 331.0], [98.0, 331.0]], &#39;券后价?&#39;, &#39;0.6209247708320618&#39;], [[[114.0, 343.0], [210.0, 343.0], [210.0, 355.0], [114.0, 355.0]], &#39;惊喜福利不容错过&#39;, &#39;0.8640043867958916&#39;], [[[69.0, 363.0], [151.0, 363.0], [151.0, 383.0], [69.0, 383.0]], &#39;极速发货&#39;, &#39;0.7552512288093567&#39;], [[[201.0, 363.0], [285.0, 363.0], [285.0, 383.0], [201.0, 383.0]], &#39;冰点标准&#39;, &#39;0.7194759607315063&#39;], [[[68.0, 392.0], [151.0, 392.0], [151.0, 412.0], [68.0, 412.0]], &#39;破损就赔&#39;, &#39;0.7711991906166077&#39;], [[[202.0, 391.0], [285.0, 391.0], [285.0, 413.0], [202.0, 413.0]], &#39;假一赔十&#39;, &#39;0.6546663284301758&#39;]]</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[[[[<span style="color:#ae81ff">9.0</span>, <span style="color:#ae81ff">2.0</span>], [<span style="color:#ae81ff">321.0</span>, <span style="color:#ae81ff">11.0</span>], [<span style="color:#ae81ff">318.0</span>, <span style="color:#ae81ff">102.0</span>], [<span style="color:#ae81ff">6.0</span>, <span style="color:#ae81ff">93.0</span>]], <span style="color:#e6db74">&#39;正品促销&#39;</span>, <span style="color:#e6db74">&#39;0.7986101984977723&#39;</span>], [[[<span style="color:#ae81ff">70.0</span>, <span style="color:#ae81ff">98.0</span>], [<span style="color:#ae81ff">251.0</span>, <span style="color:#ae81ff">98.0</span>], [<span style="color:#ae81ff">251.0</span>, <span style="color:#ae81ff">125.0</span>], [<span style="color:#ae81ff">70.0</span>, <span style="color:#ae81ff">125.0</span>]], <span style="color:#e6db74">&#39;大桶装更划算&#39;</span>, <span style="color:#e6db74">&#39;0.7368737288883754&#39;</span>], [[[<span style="color:#ae81ff">69.0</span>, <span style="color:#ae81ff">144.0</span>], [<span style="color:#ae81ff">255.0</span>, <span style="color:#ae81ff">144.0</span>], [<span style="color:#ae81ff">255.0</span>, <span style="color:#ae81ff">164.0</span>], [<span style="color:#ae81ff">69.0</span>, <span style="color:#ae81ff">164.0</span>]], <span style="color:#e6db74">&#39;强力去污符合国标&#39;</span>, <span style="color:#e6db74">&#39;0.8172478278477987&#39;</span>], [[[<span style="color:#ae81ff">107.0</span>, <span style="color:#ae81ff">170.0</span>], [<span style="color:#ae81ff">219.0</span>, <span style="color:#ae81ff">170.0</span>], [<span style="color:#ae81ff">219.0</span>, <span style="color:#ae81ff">182.0</span>], [<span style="color:#ae81ff">107.0</span>, <span style="color:#ae81ff">182.0</span>]], <span style="color:#e6db74">&#39;-40深度防冻不结冰&#39;</span>, <span style="color:#e6db74">&#39;0.8655969283797524&#39;</span>], [[[<span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">227.0</span>], [<span style="color:#ae81ff">63.0</span>, <span style="color:#ae81ff">227.0</span>], [<span style="color:#ae81ff">63.0</span>, <span style="color:#ae81ff">236.0</span>], [<span style="color:#ae81ff">35.0</span>, <span style="color:#ae81ff">236.0</span>]], <span style="color:#e6db74">&#39;日常价?&#39;</span>, <span style="color:#e6db74">&#39;0.6502826035022735&#39;</span>], [[[<span style="color:#ae81ff">141.0</span>, <span style="color:#ae81ff">223.0</span>], [<span style="color:#ae81ff">187.0</span>, <span style="color:#ae81ff">225.0</span>], [<span style="color:#ae81ff">185.0</span>, <span style="color:#ae81ff">249.0</span>], [<span style="color:#ae81ff">139.0</span>, <span style="color:#ae81ff">247.0</span>]], <span style="color:#e6db74">&#39;直击&#39;</span>, <span style="color:#e6db74">&#39;0.596031109491984&#39;</span>], [[[<span style="color:#ae81ff">34.0</span>, <span style="color:#ae81ff">234.0</span>], [<span style="color:#ae81ff">81.0</span>, <span style="color:#ae81ff">236.0</span>], [<span style="color:#ae81ff">80.0</span>, <span style="color:#ae81ff">254.0</span>], [<span style="color:#ae81ff">33.0</span>, <span style="color:#ae81ff">252.0</span>]], <span style="color:#e6db74">&#39;10.0起&#39;</span>, <span style="color:#e6db74">&#39;0.8231529593467712&#39;</span>], [[[<span style="color:#ae81ff">257.0</span>, <span style="color:#ae81ff">234.0</span>], [<span style="color:#ae81ff">304.0</span>, <span style="color:#ae81ff">236.0</span>], [<span style="color:#ae81ff">303.0</span>, <span style="color:#ae81ff">253.0</span>], [<span style="color:#ae81ff">256.0</span>, <span style="color:#ae81ff">251.0</span>]], <span style="color:#e6db74">&#39;10.0起&#39;</span>, <span style="color:#e6db74">&#39;0.8304102122783661&#39;</span>], [[[<span style="color:#ae81ff">258.0</span>, <span style="color:#ae81ff">227.0</span>], [<span style="color:#ae81ff">287.0</span>, <span style="color:#ae81ff">226.0</span>], [<span style="color:#ae81ff">287.0</span>, <span style="color:#ae81ff">236.0</span>], [<span style="color:#ae81ff">258.0</span>, <span style="color:#ae81ff">237.0</span>]], <span style="color:#e6db74">&#39;日常价?&#39;</span>, <span style="color:#e6db74">&#39;0.5725070595741272&#39;</span>], [[[<span style="color:#ae81ff">140.0</span>, <span style="color:#ae81ff">245.0</span>], [<span style="color:#ae81ff">186.0</span>, <span style="color:#ae81ff">246.0</span>], [<span style="color:#ae81ff">186.0</span>, <span style="color:#ae81ff">272.0</span>], [<span style="color:#ae81ff">139.0</span>, <span style="color:#ae81ff">271.0</span>]], <span style="color:#e6db74">&#39;底价&#39;</span>, <span style="color:#e6db74">&#39;0.5142453710238138&#39;</span>], [[[<span style="color:#ae81ff">129.0</span>, <span style="color:#ae81ff">290.0</span>], [<span style="color:#ae81ff">207.0</span>, <span style="color:#ae81ff">292.0</span>], [<span style="color:#ae81ff">206.0</span>, <span style="color:#ae81ff">339.0</span>], [<span style="color:#ae81ff">128.0</span>, <span style="color:#ae81ff">337.0</span>]], <span style="color:#e6db74">&#39;5.8&#39;</span>, <span style="color:#e6db74">&#39;0.6341951936483383&#39;</span>], [[[<span style="color:#ae81ff">98.0</span>, <span style="color:#ae81ff">320.0</span>], [<span style="color:#ae81ff">129.0</span>, <span style="color:#ae81ff">320.0</span>], [<span style="color:#ae81ff">129.0</span>, <span style="color:#ae81ff">331.0</span>], [<span style="color:#ae81ff">98.0</span>, <span style="color:#ae81ff">331.0</span>]], <span style="color:#e6db74">&#39;券后价?&#39;</span>, <span style="color:#e6db74">&#39;0.6209247708320618&#39;</span>], [[[<span style="color:#ae81ff">114.0</span>, <span style="color:#ae81ff">343.0</span>], [<span style="color:#ae81ff">210.0</span>, <span style="color:#ae81ff">343.0</span>], [<span style="color:#ae81ff">210.0</span>, <span style="color:#ae81ff">355.0</span>], [<span style="color:#ae81ff">114.0</span>, <span style="color:#ae81ff">355.0</span>]], <span style="color:#e6db74">&#39;惊喜福利不容错过&#39;</span>, <span style="color:#e6db74">&#39;0.8640043867958916&#39;</span>], [[[<span style="color:#ae81ff">69.0</span>, <span style="color:#ae81ff">363.0</span>], [<span style="color:#ae81ff">151.0</span>, <span style="color:#ae81ff">363.0</span>], [<span style="color:#ae81ff">151.0</span>, <span style="color:#ae81ff">383.0</span>], [<span style="color:#ae81ff">69.0</span>, <span style="color:#ae81ff">383.0</span>]], <span style="color:#e6db74">&#39;极速发货&#39;</span>, <span style="color:#e6db74">&#39;0.7552512288093567&#39;</span>], [[[<span style="color:#ae81ff">201.0</span>, <span style="color:#ae81ff">363.0</span>], [<span style="color:#ae81ff">285.0</span>, <span style="color:#ae81ff">363.0</span>], [<span style="color:#ae81ff">285.0</span>, <span style="color:#ae81ff">383.0</span>], [<span style="color:#ae81ff">201.0</span>, <span style="color:#ae81ff">383.0</span>]], <span style="color:#e6db74">&#39;冰点标准&#39;</span>, <span style="color:#e6db74">&#39;0.7194759607315063&#39;</span>], [[[<span style="color:#ae81ff">68.0</span>, <span style="color:#ae81ff">392.0</span>], [<span style="color:#ae81ff">151.0</span>, <span style="color:#ae81ff">392.0</span>], [<span style="color:#ae81ff">151.0</span>, <span style="color:#ae81ff">412.0</span>], [<span style="color:#ae81ff">68.0</span>, <span style="color:#ae81ff">412.0</span>]], <span style="color:#e6db74">&#39;破损就赔&#39;</span>, <span style="color:#e6db74">&#39;0.7711991906166077&#39;</span>], [[[<span style="color:#ae81ff">202.0</span>, <span style="color:#ae81ff">391.0</span>], [<span style="color:#ae81ff">285.0</span>, <span style="color:#ae81ff">391.0</span>], [<span style="color:#ae81ff">285.0</span>, <span style="color:#ae81ff">413.0</span>], [<span style="color:#ae81ff">202.0</span>, <span style="color:#ae81ff">413.0</span>]], <span style="color:#e6db74">&#39;假一赔十&#39;</span>, <span style="color:#e6db74">&#39;0.6546663284301758&#39;</span>]]</span></span></code></pre></div>
 
     </div>
 
@@ -721,7 +661,6 @@ print(result)</code>
         
     
     
-    
 
 
 
@@ -733,7 +672,7 @@ print(result)</code>
     <script src="/RapidOCRDocs/docs/js/bootstrap.39e36097440e8ae1bae5fa5b30b62819b701b2b6a0b19a492a1bf309e2a1dcfc02734909ea7951d33c11038d5ac48cd4.js" integrity="sha384-OeNgl0QOiuG65fpbMLYoGbcBsragsZpJKhvzCeKh3PwCc0kJ6nlR0zwRA41axIzU"defer></script>
 
 
-    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.d366a47881d032acbbb655e523bc69bfccd2532d6b4a2ddd45720c6e4f041d325d4f5f56b6079f6a8329b5e3d424b7b7.js" integrity="sha384-02akeIHQMqy7tlXlI7xpv8zSUy1rSi3dRXIMbk8EHTJdT19WtgefaoMptePUJLe3" crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.c1647582cf9f6991447dd7075337658d760c96dd16728a2e653994e64ee2e57f0ce0e6dbc578a1e6a88843220b88390d.js" integrity="sha384-wWR1gs&#43;faZFEfdcHUzdljXYMlt0WcoouZTmU5k7i5X8M4ObbxXih5qiIQyILiDkN" crossorigin="anonymous" defer></script>
     
 
     

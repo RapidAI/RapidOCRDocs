@@ -61,7 +61,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel="stylesheet">
 
-    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.abb3af304688d6d7c998f9392ca55979523dabb5a7f68d5abbee77daee9c8ab7a6eb82b8774ce134dceaa7e8066885ce.css" integrity="sha384-q7OvMEaI1tfJmPk5LKVZeVI9q7Wn9o1au&#43;532u6cirem64K4d0zhNNzqp&#43;gGaIXO"crossorigin="anonymous">
+    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.bbb07706a2d324422e35ff6b8426ccc87465befa6801d6926875ec34aa27cfa3c2db1fb5df673649c607e35f2333705e.css" integrity="sha384-u7B3BqLTJEIuNf9rhCbMyHRlvvpoAdaSaHXsNKonz6PC2x&#43;132c2ScYH418jM3Be"crossorigin="anonymous">
     
     
     
@@ -584,45 +584,30 @@
 </ul>
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="a8a1f4c" class="language-python ">
-  <code>from typing import Tuple
-
-import cv2
-import numpy as np
-
-
-def padding_img(img: np.ndarray,
-                padding_value: Tuple[int, int, int, int],
-                padding_color: Tuple = (0, 0, 0)) -&gt; np.ndarray:
-    padded_img = cv2.copyMakeBorder(img,
-                                    padding_value[0],
-                                    padding_value[1],
-                                    padding_value[2],
-                                    padding_value[3],
-                                    cv2.BORDER_CONSTANT,
-                                    value=padding_color)
-    return padded_img
-
-img = cv2.imread(&#39;xxx.jpg&#39;)
-
-# padding_value: (top, bottom, left, right)
-# 对该图像上下各补充10像素的白边
-padded_img = padding_img(img, (10, 10, 0, 0), (255, 255, 255))</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Tuple
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cv2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">padding_img</span>(img: np<span style="color:#f92672">.</span>ndarray,
+</span></span><span style="display:flex;"><span>                padding_value: Tuple[int, int, int, int],
+</span></span><span style="display:flex;"><span>                padding_color: Tuple <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)) <span style="color:#f92672">-&gt;</span> np<span style="color:#f92672">.</span>ndarray:
+</span></span><span style="display:flex;"><span>    padded_img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>copyMakeBorder(img,
+</span></span><span style="display:flex;"><span>                                    padding_value[<span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>                                    padding_value[<span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span>                                    padding_value[<span style="color:#ae81ff">2</span>],
+</span></span><span style="display:flex;"><span>                                    padding_value[<span style="color:#ae81ff">3</span>],
+</span></span><span style="display:flex;"><span>                                    cv2<span style="color:#f92672">.</span>BORDER_CONSTANT,
+</span></span><span style="display:flex;"><span>                                    value<span style="color:#f92672">=</span>padding_color)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> padded_img
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">&#39;xxx.jpg&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># padding_value: (top, bottom, left, right)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 对该图像上下各补充10像素的白边</span>
+</span></span><span style="display:flex;"><span>padded_img <span style="color:#f92672">=</span> padding_img(img, (<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), (<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>))</span></span></code></pre></div>
 <ul>
 <li>将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。</li>
 </ul>
@@ -634,25 +619,10 @@ padded_img = padding_img(img, (10, 10, 0, 0), (255, 255, 255))</code>
 <li>在线demo所用的各个包版本情况：
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="27c11da" class="language-text ">
-  <code>Python: 3.8
-onnxruntime: 1.14.1
-rapidocr_onnxruntime: 1.2.5</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Python: 3.8
+</span></span><span style="display:flex;"><span>onnxruntime: 1.14.1
+</span></span><span style="display:flex;"><span>rapidocr_onnxruntime: 1.2.5</span></span></code></pre></div>
 </li>
 </ul>
 </li>
@@ -805,7 +775,6 @@ rapidocr_onnxruntime: 1.2.5</code>
         
     
     
-    
 
 
 
@@ -817,7 +786,7 @@ rapidocr_onnxruntime: 1.2.5</code>
     <script src="/RapidOCRDocs/docs/js/bootstrap.39e36097440e8ae1bae5fa5b30b62819b701b2b6a0b19a492a1bf309e2a1dcfc02734909ea7951d33c11038d5ac48cd4.js" integrity="sha384-OeNgl0QOiuG65fpbMLYoGbcBsragsZpJKhvzCeKh3PwCc0kJ6nlR0zwRA41axIzU"defer></script>
 
 
-    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.d366a47881d032acbbb655e523bc69bfccd2532d6b4a2ddd45720c6e4f041d325d4f5f56b6079f6a8329b5e3d424b7b7.js" integrity="sha384-02akeIHQMqy7tlXlI7xpv8zSUy1rSi3dRXIMbk8EHTJdT19WtgefaoMptePUJLe3" crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.c1647582cf9f6991447dd7075337658d760c96dd16728a2e653994e64ee2e57f0ce0e6dbc578a1e6a88843220b88390d.js" integrity="sha384-wWR1gs&#43;faZFEfdcHUzdljXYMlt0WcoouZTmU5k7i5X8M4ObbxXih5qiIQyILiDkN" crossorigin="anonymous" defer></script>
     
 
     

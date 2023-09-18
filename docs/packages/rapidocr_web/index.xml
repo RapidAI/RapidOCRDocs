@@ -16,7 +16,7 @@
       <description> 简要说明 link 该模块依赖rapidocr_onnxruntime库。
 如果想要离线部署，可以先手动下载rapidocr_onnxruntime whl包，再手动安装rapidocr_web whl包来使用。
 所用模型组合（最优组合）为：
-ch_PP-OCRv3_det &amp;#43; ch_ppocr_mobile_v2.0_cls &amp;#43; ch_PP-OCRv3_rec 网页上显示的推理时间具体解释如下：
+ch_PP-OCRv3_det + ch_ppocr_mobile_v2.0_cls + ch_PP-OCRv3_rec 网页上显示的推理时间具体解释如下：
 桌面版使用教程 link界面版使用步骤 link 安装rapidocr_web $ pip install rapidocr_web 运行 用法: $ rapidocr_web -h usage: rapidocr_web [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 示例: $ rapidocr_web -ip 0.0.0.0 -p 9003 使用 浏览器打开http://localhost:9003/，enjoy it. </description>
     </item>
     

@@ -61,7 +61,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel="stylesheet">
 
-    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.abb3af304688d6d7c998f9392ca55979523dabb5a7f68d5abbee77daee9c8ab7a6eb82b8774ce134dceaa7e8066885ce.css" integrity="sha384-q7OvMEaI1tfJmPk5LKVZeVI9q7Wn9o1au&#43;532u6cirem64K4d0zhNNzqp&#43;gGaIXO"crossorigin="anonymous">
+    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.bbb07706a2d324422e35ff6b8426ccc87465befa6801d6926875ec34aa27cfa3c2db1fb5df673649c607e35f2333705e.css" integrity="sha384-u7B3BqLTJEIuNf9rhCbMyHRlvvpoAdaSaHXsNKonz6PC2x&#43;132c2ScYH418jM3Be"crossorigin="anonymous">
     
     
     
@@ -563,96 +563,51 @@
 <li>安装<code>paddleocr_convert</code>
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="3039541" class="language-bash ">
-  <code>pip install paddleocr_convert</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install paddleocr_convert</span></span></code></pre></div>
 </li>
 <li>命令行使用
 <ul>
 <li>用法:
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="0b2feb4" class="language-bash ">
-  <code>$ paddleocr_convert -h
-usage: paddleocr_convert [-h] [-p MODEL_PATH] [-o SAVE_DIR]
-                        [-txt_path TXT_PATH]
-
-optional arguments:
--h, --help            show this help message and exit
--p MODEL_PATH, --model_path MODEL_PATH
-                        The inference model url or local path of paddleocr.
-                        e.g. https://paddleocr.bj.bcebos.com/PP-
-                        OCRv3/chinese/ch_PP-OCRv3_det_infer.tar or
-                        models/ch_PP-OCRv3_det_infer.tar
--o SAVE_DIR, --save_dir SAVE_DIR
-                        The directory of saving the model.
--txt_path TXT_PATH, --txt_path TXT_PATH
-                        The raw txt url or local txt path, if the model is
-                        recognition model.</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ paddleocr_convert -h
+</span></span><span style="display:flex;"><span>usage: paddleocr_convert <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p MODEL_PATH<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-o SAVE_DIR<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">[</span>-txt_path TXT_PATH<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>optional arguments:
+</span></span><span style="display:flex;"><span>-h, --help            show this help message and exit
+</span></span><span style="display:flex;"><span>-p MODEL_PATH, --model_path MODEL_PATH
+</span></span><span style="display:flex;"><span>                        The inference model url or local path of paddleocr.
+</span></span><span style="display:flex;"><span>                        e.g. https://paddleocr.bj.bcebos.com/PP-
+</span></span><span style="display:flex;"><span>                        OCRv3/chinese/ch_PP-OCRv3_det_infer.tar or
+</span></span><span style="display:flex;"><span>                        models/ch_PP-OCRv3_det_infer.tar
+</span></span><span style="display:flex;"><span>-o SAVE_DIR, --save_dir SAVE_DIR
+</span></span><span style="display:flex;"><span>                        The directory of saving the model.
+</span></span><span style="display:flex;"><span>-txt_path TXT_PATH, --txt_path TXT_PATH
+</span></span><span style="display:flex;"><span>                        The raw txt url or local txt path, <span style="color:#66d9ef">if</span> the model is
+</span></span><span style="display:flex;"><span>                        recognition model.</span></span></code></pre></div>
 </li>
 <li>示例:
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="0f9f436" class="language-bash ">
-  <code># online
-$ paddleocr_convert -p https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_det_infer.tar \
-                    -o models
-
-$ paddleocr_convert -p https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_rec_infer.tar \
-                    -o models \
-                    -txt_path https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.6/ppocr/utils/ppocr_keys_v1.txt
-
-# offline
-$ paddleocr_convert -p models/ch_PP-OCRv3_det_infer.tar \
-                    -o models
-
-$ paddleocr_convert -p models/ch_PP-OCRv3_rec_infer.tar \
-                    -o models \
-                    -txt_path models/ppocr_keys_v1.txt</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># online</span>
+</span></span><span style="display:flex;"><span>$ paddleocr_convert -p https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_det_infer.tar <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                    -o models
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ paddleocr_convert -p https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_rec_infer.tar <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                    -o models <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                    -txt_path https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.6/ppocr/utils/ppocr_keys_v1.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># offline</span>
+</span></span><span style="display:flex;"><span>$ paddleocr_convert -p models/ch_PP-OCRv3_det_infer.tar <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                    -o models
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ paddleocr_convert -p models/ch_PP-OCRv3_rec_infer.tar <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                    -o models <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>                    -txt_path models/ppocr_keys_v1.txt</span></span></code></pre></div>
 </li>
 </ul>
 </li>
@@ -661,58 +616,28 @@ $ paddleocr_convert -p models/ch_PP-OCRv3_rec_infer.tar \
 <li>online mode
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="72d79a8" class="language-python ">
-  <code>from paddleocr_convert import PaddleOCRModelConvert
-
-converter = PaddleOCRModelConvert()
-save_dir = &#39;models&#39;
-# online
-url = &#39;https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_rec_infer.tar&#39;
-txt_url = &#39;https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.6/ppocr/utils/ppocr_keys_v1.txt&#39;
-
-converter(url, save_dir, txt_path=txt_url)</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> paddleocr_convert <span style="color:#f92672">import</span> PaddleOCRModelConvert
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>converter <span style="color:#f92672">=</span> PaddleOCRModelConvert()
+</span></span><span style="display:flex;"><span>save_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;models&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># online</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_rec_infer.tar&#39;</span>
+</span></span><span style="display:flex;"><span>txt_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.6/ppocr/utils/ppocr_keys_v1.txt&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>converter(url, save_dir, txt_path<span style="color:#f92672">=</span>txt_url)</span></span></code></pre></div>
 </li>
 <li>offline mode
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="834b14d" class="language-python ">
-  <code>from paddleocr_convert import PaddleOCRModelConvert
-
-converter = PaddleOCRModelConvert()
-save_dir = &#39;models&#39;
-model_path = &#39;models/ch_PP-OCRv3_rec_infer.tar&#39;
-txt_path = &#39;models/ppocr_keys_v1.txt&#39;
-converter(model_path, save_dir, txt_path=txt_path)</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> paddleocr_convert <span style="color:#f92672">import</span> PaddleOCRModelConvert
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>converter <span style="color:#f92672">=</span> PaddleOCRModelConvert()
+</span></span><span style="display:flex;"><span>save_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;models&#39;</span>
+</span></span><span style="display:flex;"><span>model_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;models/ch_PP-OCRv3_rec_infer.tar&#39;</span>
+</span></span><span style="display:flex;"><span>txt_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;models/ppocr_keys_v1.txt&#39;</span>
+</span></span><span style="display:flex;"><span>converter(model_path, save_dir, txt_path<span style="color:#f92672">=</span>txt_path)</span></span></code></pre></div>
 </li>
 </ul>
 </li>
@@ -724,98 +649,38 @@ converter(model_path, save_dir, txt_path=txt_path)</code>
 <li>安装<code>rapidocr_onnxruntime</code>库
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="59af4f1" class="language-bash ">
-  <code>pip install rapidocr_onnxruntime</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install rapidocr_onnxruntime</span></span></code></pre></div>
 </li>
 <li>脚本使用
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="6904936" class="language-python ">
-  <code>from rapidocr_onnxruntime import RapidOCR
-
-model_path = &#39;local/models/japan.onnx&#39;
-engine = RapidOCR(rec_model_path=model_path)
-
-img = &#39;1.jpg&#39;
-result, elapse = engine(img)</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> rapidocr_onnxruntime <span style="color:#f92672">import</span> RapidOCR
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>model_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;local/models/japan.onnx&#39;</span>
+</span></span><span style="display:flex;"><span>engine <span style="color:#f92672">=</span> RapidOCR(rec_model_path<span style="color:#f92672">=</span>model_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1.jpg&#39;</span>
+</span></span><span style="display:flex;"><span>result, elapse <span style="color:#f92672">=</span> engine(img)</span></span></code></pre></div>
 </li>
 <li>命令行使用
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="d05cd79" class="language-bash ">
-  <code>$ rapidocr_onnxruntime -img 1.jpg --rec_model_path local/models/japan.onnx</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rapidocr_onnxruntime -img 1.jpg --rec_model_path local/models/japan.onnx</span></span></code></pre></div>
 </li>
 <li>其他文本检测模型也可同理，通过参数给出。支持的参数列表参见<a href="https://github.com/RapidAI/RapidOCR/tree/main/python#%E6%8E%A8%E8%8D%90pip%E5%AE%89%E8%A3%85%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8" rel="external" target="_blank">这里<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="d288899" class="language-python ">
-  <code>from rapidocr_onnxruntime import RapidOCR
-
-model_path = &#39;local/models/japan.onnx&#39;
-engine = RapidOCR(rec_model_path=model_path, det_model_path=&#39;xxx.onnx&#39;)
-
-img = &#39;1.jpg&#39;
-result, elapse = engine(img)</code>
-  </pre>
-  </div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> rapidocr_onnxruntime <span style="color:#f92672">import</span> RapidOCR
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>model_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;local/models/japan.onnx&#39;</span>
+</span></span><span style="display:flex;"><span>engine <span style="color:#f92672">=</span> RapidOCR(rec_model_path<span style="color:#f92672">=</span>model_path, det_model_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;xxx.onnx&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1.jpg&#39;</span>
+</span></span><span style="display:flex;"><span>result, elapse <span style="color:#f92672">=</span> engine(img)</span></span></code></pre></div>
 </li>
 </ol>
 
@@ -937,7 +802,6 @@ result, elapse = engine(img)</code>
         
     
     
-    
 
 
 
@@ -949,7 +813,7 @@ result, elapse = engine(img)</code>
     <script src="/RapidOCRDocs/docs/js/bootstrap.39e36097440e8ae1bae5fa5b30b62819b701b2b6a0b19a492a1bf309e2a1dcfc02734909ea7951d33c11038d5ac48cd4.js" integrity="sha384-OeNgl0QOiuG65fpbMLYoGbcBsragsZpJKhvzCeKh3PwCc0kJ6nlR0zwRA41axIzU"defer></script>
 
 
-    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.d366a47881d032acbbb655e523bc69bfccd2532d6b4a2ddd45720c6e4f041d325d4f5f56b6079f6a8329b5e3d424b7b7.js" integrity="sha384-02akeIHQMqy7tlXlI7xpv8zSUy1rSi3dRXIMbk8EHTJdT19WtgefaoMptePUJLe3" crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.c1647582cf9f6991447dd7075337658d760c96dd16728a2e653994e64ee2e57f0ce0e6dbc578a1e6a88843220b88390d.js" integrity="sha384-wWR1gs&#43;faZFEfdcHUzdljXYMlt0WcoouZTmU5k7i5X8M4ObbxXih5qiIQyILiDkN" crossorigin="anonymous" defer></script>
     
 
     

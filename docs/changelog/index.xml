@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Nov 2022 12:36:15 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/changelog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>rapidocr</title>
+      <title>rapidocr_onnxruntime &amp; rapidocr_openvino</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
       
@@ -22,7 +22,7 @@
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/</guid>
-      <description>❤2023-05-20 ocrweb update: link 增加桌面版RapidOCRWeb，详情可参见RapidOCRWeb桌面版使用教程 对仓库文档做了整理，大部分文档放到了Wiki 🌹2023-05-14 ocrweb v0.1.5 update: link 增加界面版返回坐标框的返回值(issue #85) API模式增加base64格式传入 详情参见：link 🏸2023-04-16 ocrweb v0.1.1 update: link API部署改为FastAPI库支持 将API模式与Web解耦合，可通过pip install rapidocr_web[api]来选择性安装 详情参见：link </description>
+      <description> ❤2023-05-20 ocrweb update: link 增加桌面版RapidOCRWeb，详情可参见RapidOCRWeb桌面版使用教程 对仓库文档做了整理，大部分文档放到了Wiki 🌹2023-05-14 ocrweb v0.1.5 update: link 增加界面版返回坐标框的返回值(issue #85) API模式增加base64格式传入 详情参见：link 🏸2023-04-16 ocrweb v0.1.1 update: link API部署改为FastAPI库支持 将API模式与Web解耦合，可通过pip install rapidocr_web[api]来选择性安装 详情参见：link </description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/</guid>
-      <description>🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&amp;gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 </description>
+      <description> 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&amp;gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 </description>
     </item>
     
   </channel>

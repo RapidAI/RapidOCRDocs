@@ -59,7 +59,7 @@ categories:
       - 有值：`([[文本框坐标], 文本内容, 置信度], 推理时间)`，e.g. `[[左上, 右上, 右下, 左下], '小明', '0.99'], [0.02, 0.02, 0.85]`
       - 为空：`(None, None)`
     - 示例：
-      ```python
+      ```python {linenos=table}
       import cv2
       from rapidocr_onnxruntime import RapidOCR
       # from rapidocr_openvino import RapidOCR
@@ -88,7 +88,7 @@ categories:
 
 3. 命令行使用
     - 参数说明：
-      ```bash
+      ```bash {linenos=table}
       $ rapidocr_onnxruntime -h
       usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE]
                                   [--use_angle_cls USE_ANGLE_CLS]
@@ -155,7 +155,7 @@ categories:
       --rec_batch_num REC_BATCH_NUM
       ```
   - 示例：
-    ```bash
+    ```bash {linenos=table}
     $ rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg
     ```
 
@@ -206,12 +206,12 @@ categories:
 
 3. 安装运行环境
    - 基于onnxruntime推理所需环境安装：
-        ```bash
+        ```bash {linenos=table}
         pip install onnxruntime>=1.7.0
         pip install -r requirements.txt
         ```
    - 基于openvino推理所需环境安装：
-        ```bash
+        ```bash {linenos=table}
         pip install openvino
         pip install -r requirements.txt
         ```
@@ -219,11 +219,11 @@ categories:
 
 4. 运行示例
     - 运行单元测试
-        ```bash
+        ```bash {linenos=table}
         pytest tests/test_*.py
         ```
     - 接口调用
-        ```python
+        ```python {linenos=table}
         import cv2
 
         # 基于onnxruntime引擎推理
@@ -244,7 +244,7 @@ categories:
         # 示例：[[左上, 右上, 右下, 左下], '小明', '0.99']
         ```
     - 直接运行`demo.py`，可直接可视化查看结果。
-        ```bash
+        ```bash {linenos=table}
         python demo.py
         ```
 </details>

@@ -30,7 +30,7 @@ categories:
     - 对于长度较长，高度较小的图像，可尝试对该图像高度做上下补充，来减小文字在原始图像中比例，利于文本检测。类似下图这种，左侧一条为原始图像，右侧为上下补边的图像。
     ![Snipaste_2023-04-09_14-01-45](https://user-images.githubusercontent.com/28639377/230757239-3aad8686-4fbd-4f1a-abff-f7e1cb90f3aa.png)
     - padding代码参考：
-    ```python
+    ```python {linenos=table}
     from typing import Tuple
 
     import cv2

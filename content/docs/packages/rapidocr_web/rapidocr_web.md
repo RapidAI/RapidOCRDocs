@@ -37,12 +37,12 @@ categories:
 
 ### 界面版使用步骤
 1. 安装`rapidocr_web`
-   ```bash
+   ```bash {linenos=table}
    $ pip install rapidocr_web
    ```
 2. 运行
    - 用法:
-       ```bash
+       ```bash {linenos=table}
        $ rapidocr_web -h
        usage: rapidocr_web [-h] [-ip IP] [-p PORT]
 
@@ -52,7 +52,7 @@ categories:
        -p PORT, --port PORT  IP port
        ```
    - 示例:
-       ```bash
+       ```bash {linenos=table}
        $ rapidocr_web -ip 0.0.0.0 -p 9003
        ```
 3. 使用

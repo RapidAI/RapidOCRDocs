@@ -36,12 +36,12 @@ toc: true
 
 #### 离线安装库转换
 1. 安装`paddleocr_convert`
-   ```bash
+   ```bash {linenos=table}
    pip install paddleocr_convert
    ```
 2. 命令行使用
    - 用法:
-        ```bash
+        ```bash {linenos=table}
         $ paddleocr_convert -h
         usage: paddleocr_convert [-h] [-p MODEL_PATH] [-o SAVE_DIR]
                                 [-txt_path TXT_PATH]
@@ -60,7 +60,7 @@ toc: true
                                 recognition model.
         ```
    - 示例:
-        ```bash
+        ```bash {linenos=table}
         # online
         $ paddleocr_convert -p https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_det_infer.tar \
                             -o models
@@ -79,7 +79,7 @@ toc: true
         ```
 3. 脚本使用
     - online mode
-        ```python
+        ```python {linenos=table}
         from paddleocr_convert import PaddleOCRModelConvert
 
         converter = PaddleOCRModelConvert()
@@ -91,7 +91,7 @@ toc: true
         converter(url, save_dir, txt_path=txt_url)
         ```
     - offline mode
-        ```python
+        ```python {linenos=table}
         from paddleocr_convert import PaddleOCRModelConvert
 
         converter = PaddleOCRModelConvert()
@@ -104,11 +104,11 @@ toc: true
 #### 使用模型方法
 - 假设要用日文识别模型，且已经转好，路径为：`local/models/japan.onnx`
 1. 安装`rapidocr_onnxruntime`库
-   ```bash
+   ```bash {linenos=table}
    pip install rapidocr_onnxruntime
    ```
 2. 脚本使用
-   ```python
+   ```python {linenos=table}
    from rapidocr_onnxruntime import RapidOCR
 
    model_path = 'local/models/japan.onnx'
@@ -118,11 +118,11 @@ toc: true
    result, elapse = engine(img)
    ```
 3. 命令行使用
-   ```bash
+   ```bash {linenos=table}
    $ rapidocr_onnxruntime -img 1.jpg --rec_model_path local/models/japan.onnx
    ```
 4. 其他文本检测模型也可同理，通过参数给出。支持的参数列表参见[这里](https://github.com/RapidAI/RapidOCR/tree/main/python#%E6%8E%A8%E8%8D%90pip%E5%AE%89%E8%A3%85%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8)
-   ```python
+   ```python {linenos=table}
    from rapidocr_onnxruntime import RapidOCR
 
    model_path = 'local/models/japan.onnx'

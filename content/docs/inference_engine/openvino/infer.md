@@ -12,7 +12,7 @@ images: []
 - ⚠️ 基于目前`openvino==2022.3.0`版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见[issue11939](https://github.com/openvinotoolkit/openvino/issues/11939)
 
 ### 安装
-```bash
+```bash {linenos=table}
 $ pip install openvino
 
 # 里面含有mo
@@ -22,7 +22,7 @@ $ pip install openvino-dev
 ### 模型问题
 - 因为OpenVINO可以直接推理ONNX模型，故这里暂时不作转换，直接推理之前ONNX模型即可
 - 这里仍然给出转换的代码，用作参考:
-    ```bash
+    ```bash {linenos=table}
     mo --input_model models/ch_PP-OCRv2_det_infer.onnx --output_dir models/IR/
 
     mo --input_model models/ch_PP-OCRv2_det_infer.onnx \
@@ -41,7 +41,7 @@ $ pip install openvino-dev
 - 但是从对比来看，OpenVINO占用内存更大，其原因是拿空间换的时间
   - 当指定`input_shape`在一个区间范围时，推理时内存占用会减少一些
   - 示例命令:
-    ```bash
+    ```bash {linenos=table}
     mo --input_model models/ch_PP-OCRv2_det_infer.onnx \
     --output_dir models/IR/static \
     --input_shape "[1,3,960:1200,800]"
@@ -61,7 +61,7 @@ $ pip install openvino-dev
 ### OpenVINO与ONNXRuntime推理代码写法对比
 NOTE: 以`ch_ppocr_mobile_v2_det`中推理代码为例子
 - ONNXRuntime
-    ```python
+    ```python {linenos=table}
     import onnxruntime
 
     # 声明
@@ -76,7 +76,7 @@ NOTE: 以`ch_ppocr_mobile_v2_det`中推理代码为例子
     preds = session.run([output_name], {input_name: img})
     ```
 - OpenVINO
-    ```python
+    ```python {linenos=table}
     from openvino.runtime import Core
 
     # 初始化

@@ -21,7 +21,7 @@ categories:
 
 
 ### Installation
-```bash
+```bash {linenos=table}
 pip install rapidocr-onnxruntime
 ```
 
@@ -29,7 +29,7 @@ pip install rapidocr-onnxruntime
 - 初始化`RapidOCR`类可不提供[`config.yaml`](https://github.com/RapidAI/RapidOCR/blob/29d5f5fc01fbff7c49926a3c297fa8a3fb1624af/python/rapidocr_onnxruntime/config.yaml)文件，默认使用安装目录下的`config.yaml`。如有自定义需求：
   - 方案一：可直接通过初始化参数传入。详细参数参考下面命令行部分，和`config.yaml`基本对应。
   - 方案二：复制`config.yaml`，自行更改，然后初始化给出。示例如下：
-    ```python
+    ```python {linenos=table}
     engine = RapidOCR(config_path="your.yaml")
     ```
 
@@ -41,7 +41,7 @@ pip install rapidocr-onnxruntime
     ```
   - 无值：`(None, None)`
 - 示例：
-  ```python
+  ```python {linenos=table}
   from pathlib import Path
 
   import cv2
@@ -71,7 +71,7 @@ pip install rapidocr-onnxruntime
 
 ### 命令行使用
 - 参数说明：
-  ```bash
+  ```bash {linenos=table}
   $ rapidocr_onnxruntime -h
   usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE]
                               [--use_angle_cls USE_ANGLE_CLS]
@@ -138,6 +138,6 @@ pip install rapidocr-onnxruntime
   --rec_batch_num REC_BATCH_NUM
   ```
 - 示例：
-  ```bash
+  ```bash {linenos=table}
   $ rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg
   ```

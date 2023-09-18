@@ -19,7 +19,7 @@ images: []
 - 欢迎补充和指出不足之处。
 
 #### 推荐常用设置
-```python
+```python {linenos=table}
 import onnxruntime as rt
 
 sess_options = rt.SessionOptions()
@@ -39,7 +39,7 @@ sess_options.enable_cpu_mem_arena = False
     - Python: 3.7.13
     - ONNXRuntime: 1.14.1
 - 测试代码（来自[issue 11627](https://github.com/microsoft/onnxruntime/issues/11627)，[enable_cpu_memory_area_example.zip](https://github.com/microsoft/onnxruntime/files/8772315/enable_cpu_memory_area_example.zip)）
-    ```python
+    ```python {linenos=table}
     # pip install onnxruntime==1.14.1
     # pip install memory_profiler
 
@@ -69,7 +69,7 @@ sess_options.enable_cpu_mem_arena = False
     <details>
 
     - `enable_cpu_mem_arena=True`
-        ```bash
+        ```bash {linenos=table}
         (demo) PS G:> python .\test_enable_cpu_mem_arena.py
         enable_cpu_mem_arena: True
         input_data shape: (32, 200, 200, 1)
@@ -85,7 +85,7 @@ sess_options.enable_cpu_mem_arena = False
             12   5695.5 MiB      0.0 MiB           1       return preds
         ```
     - `enable_cpu_mem_arena=False`
-        ```bash
+        ```bash {linenos=table}
         (demo) PS G:> python .\test_enable_cpu_mem_arena.py
         enable_cpu_mem_arena: False
         input_data shape: (32, 200, 200, 1)
@@ -107,7 +107,7 @@ sess_options.enable_cpu_mem_arena = False
 - 开启这个参数，在推理时，会生成一个类似`onnxruntime_profile__2023-05-07_09-02-15.json`的日志文件，包含详细的性能数据（线程、每个运算符的延迟等）。
 - 建议开启
 - 示例代码：
-    ```python
+    ```python {linenos=table}
     import onnxruntime as rt
 
     sess_options = rt.SessionOptions()
@@ -122,7 +122,7 @@ sess_options.enable_cpu_mem_arena = False
 #### `inter_op_num_threads`
 - 设置并行化执行图（跨节点）时，使用的线程数。默认是0，交由onnxruntime自行决定。
 - 示例代码：
-    ```python
+    ```python {linenos=table}
     import onnxruntime as rt
 
     sess_options = rt.SessionOptions()
@@ -133,7 +133,7 @@ sess_options.enable_cpu_mem_arena = False
 - 设置并行化执行图（内部节点）时，使用的线程数。默认是0，交由onnxruntime自行决定，一般会选择使用设备上所有的核。
 - ⚠️ 这个值并不是越大越好，具体参考[AI Studio](https://aistudio.baidu.com/aistudio/projectdetail/6109918?sUid=57084&shared=1&ts=1683438418669)中的消融实验。
 - 示例代码：
-    ```python
+    ```python {linenos=table}
     import onnxruntime as rt
 
     sess_options = rt.SessionOptions()
@@ -144,7 +144,7 @@ sess_options.enable_cpu_mem_arena = False
 - 运行图时，对图中算子的优化水平。默认是开启全部算子的优化。建议采用默认值即可。
 - 可选的枚举值有：`ORT_DISABLE_ALL | ORT_ENABLE_BASIC | ORT_ENABLE_EXTENDED | ORT_ENABLE_ALL`
 - 示例代码：
-    ```python
+    ```python {linenos=table}
     import onnxruntime as rt
 
     sess_options = rt.SessionOptions()

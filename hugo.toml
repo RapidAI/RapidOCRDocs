@@ -59,7 +59,7 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with submodule 
 
         darkMode        = true                                # enable dark mode option? default false
 
-        prism           = false                                # enable syntax highlighting via Prism
+        prism           = true                                # enable syntax highlighting via Prism
 
         # gitinfo
         repoURL         = "https://github.com/RapidAI/RapidOCR"  # Git repository URL for your site [support for GitHub, GitLab, and BitBucket]

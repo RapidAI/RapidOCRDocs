@@ -23,7 +23,7 @@ categories:
 
 #### 打包步骤
 1. 安装`Nuitka`
-    ```bash
+    ```bash {linenos=table}
     pip install nuitka
     ```
    注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。
@@ -34,7 +34,7 @@ categories:
 
     ![image](https://user-images.githubusercontent.com/28639377/227765049-357c6670-56cb-44a4-a32c-f2dde479838e.png)
 3. `nuitka`打包
-    ```bash
+    ```bash {linenos=table}
     cd rapidocr_web
     nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --output-dir=out ocrweb.py
     ```
@@ -57,6 +57,6 @@ categories:
 - 如果不想运行程序后有黑框，可以在打包命令中加入以下参数
  `--windows-disable-console`
 - 完整命令为：
-    ```bash
+    ```bash {linenos=table}
     nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --windows-disable-console --output-dir=out ocrweb.py
     ```

@@ -26,21 +26,21 @@ images: []
             - `nccc -V`显示**CUDA Runtime API**版本：11.6
             - 以上两个版本的对应关系，可参考[博客](https://blog.csdn.net/weixin_39518984/article/details/111406728)
         - 具体安装命令如下：
-            ```bash
+            ```bash {linenos=table}
             conda install cudatoolkit=11.6.0
             conda install cudnn=8.3.2.44
             pip install onnxruntime-gpu==1.12.0
             ```
         - 验证是否可以`onnxruntime-gpu`正常调用GPU
             1. 验证`get_device()`是否可返回GPU
-                ```python
+                ```python {linenos=table}
                 import onnxruntime as ort
 
                 print(ort.get_device())
                 # GPU
                 ```
             2. 如果第一步满足了，继续验证`onnxruntime-gpu`加载模型时是否可以调用GPU
-                ```python
+                ```python {linenos=table}
                 import onnxruntime as ort
 
                 providers = [

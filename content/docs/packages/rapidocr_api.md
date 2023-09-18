@@ -24,7 +24,7 @@ categories:
 
 ### Installation
 - pip安装
-    ```bash
+    ```bash {linenos=table}
     pip install rapidocr_api
     ```
 - 源码安装
@@ -38,7 +38,7 @@ categories:
 ⚠️：本质就是发送一个POST请求，其他语言同理
 
 - 用法:
-    ```bash
+    ```bash {linenos=table}
     $ rapidocr_api -h
     usage: rapidocr_api [-h] [-ip IP] [-p PORT]
 
@@ -48,17 +48,17 @@ categories:
     -p PORT, --port PORT  IP port
     ```
 - 启动:
-    ```bash
+    ```bash {linenos=table}
     $ rapidocr_api -ip 0.0.0.0 -p 9003
     ```
 
 - curl调用
-    ```bash
+    ```bash {linenos=table}
     $ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
     ```
 - python调用
     - 以文件的方式发送请求
-        ```python
+        ```python {linenos=table}
         import requests
 
         url = 'http://localhost:9003/ocr'
@@ -71,7 +71,7 @@ categories:
         print(response.json())
         ```
     - 以`base64`方式发送post请求
-        ```python
+        ```python {linenos=table}
         import base64
         import requests
 
@@ -139,7 +139,7 @@ categories:
 
 - 输出结果说明：
     - 如果图像中存在文字，则会输出字典格式，具体介绍如下：
-        ```python
+        ```python {linenos=table}
         {
         "0": {
             "rec_txt": "香港深圳抽血，",  # 识别的文本

@@ -61,7 +61,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel="stylesheet">
 
-    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.5bb3dfeb65c03e070002541c55f854a7d4f6c68f39935b635fbe8d467961fb63a553660f6c0ec039e0472772a67aa8aa.css" integrity="sha384-W7Pf62XAPgcAAlQcVfhUp9T2xo85k1tjX76NRnlh&#43;2OlU2YPbA7AOeBHJ3Kmeqiq"crossorigin="anonymous">
+    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.abb3af304688d6d7c998f9392ca55979523dabb5a7f68d5abbee77daee9c8ab7a6eb82b8774ce134dceaa7e8066885ce.css" integrity="sha384-q7OvMEaI1tfJmPk5LKVZeVI9q7Wn9o1au&#43;532u6cirem64K4d0zhNNzqp&#43;gGaIXO"crossorigin="anonymous">
     <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/katex.min.8d55e5153865e6cbdd63203b1168f5a06c9e69e03d8c3aa45aa84a3c1809fc595ec0c4e233ee383a3d110eb6ef09baae.css" integrity="sha384-jVXlFThl5svdYyA7EWj1oGyeaeA9jDqkWqhKPBgJ/FlewMTiM&#43;44Oj0RDrbvCbqu"crossorigin="anonymous">
     
     
@@ -557,9 +557,7 @@
                                         <div class="mb-0 d-flex">
                                             
                                             <h1 class="content-title mb-0">
-                                                <span class="title-text">
-                                                    不同版本模型之间比较
-                                                </span>
+                                                不同版本模型之间比较
                                                 
                                             </h1>
                                         </div>
@@ -944,7 +942,7 @@ $$</p>
     <script src="/RapidOCRDocs/docs/js/bootstrap.39e36097440e8ae1bae5fa5b30b62819b701b2b6a0b19a492a1bf309e2a1dcfc02734909ea7951d33c11038d5ac48cd4.js" integrity="sha384-OeNgl0QOiuG65fpbMLYoGbcBsragsZpJKhvzCeKh3PwCc0kJ6nlR0zwRA41axIzU"defer></script>
 
 
-    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.fadb30d71fd1560a0277e58cce2f06da367f12ed4e6d22545b39e167b61d3abd0f930918104e515259a27804cabbfd71.js" integrity="sha384-&#43;tsw1x/RVgoCd&#43;WMzi8G2jZ/Eu1ObSJUWznhZ7YdOr0PkwkYEE5RUlmieATKu/1x" crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.d366a47881d032acbbb655e523bc69bfccd2532d6b4a2ddd45720c6e4f041d325d4f5f56b6079f6a8329b5e3d424b7b7.js" integrity="sha384-02akeIHQMqy7tlXlI7xpv8zSUy1rSi3dRXIMbk8EHTJdT19WtgefaoMptePUJLe3" crossorigin="anonymous" defer></script>
     
 
     
@@ -1574,7 +1572,7 @@ $$</p>
     function show_results(){
         const maxResult =  5 ;
         const minlength =  1 ;
-        var searchQuery = this.value;
+        var searchQuery = sanitizeHTML(this.value);
         var results = index.search(searchQuery, {limit: maxResult, enrich: true});
 
         

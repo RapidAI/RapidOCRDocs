@@ -3,7 +3,7 @@ weight: 1
 date: "2023-09-11"
 draft: false
 author: "SWHL"
-title: "rapidocr"
+title: "rapidocr_onnxruntime & rapidocr_openvino"
 icon: "update"
 toc: true
 description: ""
@@ -11,6 +11,13 @@ publishdate: "2023-09-08"
 tags:
 categories:
 ---
+
+<p>
+    <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.12-aff.svg"></a>
+    <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
+    <a href="https://pypi.org/project/rapidocr-onnxruntime/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-onnxruntime?style=flat-square"></a>
+    <a href="https://pepy.tech/project/rapidocr_onnxruntime"><img src="https://static.pepy.tech/personalized-badge/rapidocr_onnxruntime?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Ort"></a>
+</p>
 
 #### ⏰2023-09-18 v1.3.3 update:
 - 优化更新参数部分的函数实现

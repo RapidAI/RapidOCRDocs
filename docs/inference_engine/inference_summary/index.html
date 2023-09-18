@@ -547,7 +547,14 @@
                                             
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h4 id="引言">引言 <a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+        <div class="alert alert-warning d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  <span class="material-icons size-20 me-2">
+  warning
+  </span></div>
+  <div class="w-100"><strong>Caution</strong> - This documentation is in progress</div>
+  </div>
+<h4 id="引言">引言 <a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
 <li>关于模型的推理框架有很多，包括PC/移动端等等。之前在<a href="https://ai.oldpan.me/t/topic/24" rel="external" target="_blank">老潘的个人博客<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>里看到过相关介绍</li>
 <li>我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。</li>
 </ul>
@@ -623,9 +630,9 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-16T14:55:48&#43;0800"
-            title="16 Sep 2023, 14:55 &#43;0800">
-            16 Sep 2023, 14:55 &#43;0800
+            data-authdate="2023-09-18T09:03:50&#43;0800"
+            title="18 Sep 2023, 09:03 &#43;0800">
+            18 Sep 2023, 09:03 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1122,8 +1129,8 @@
                 id:  7 ,
                 href: "\/RapidOCRDocs\/docs\/inference_engine\/inference_summary\/",
                 title: "推理引擎汇总",
-                description: "引言 link 关于模型的推理框架有很多，包括PC/移动端等等。之前在老潘的个人博客里看到过相关介绍 我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。 目前已知推理引擎 link CPU端：ONNXruntime、OpenVINO、libtorch、Caffe、PaddleInference GPU端：TensorRT、OpenPPL、AITemplate 移动端：NCNN，MNN, Paddle-Lite 通吃：TVM、OpenPPL ONNXRuntime（微软） link 目前仓库中已经在使用的推理引擎，CPU端最好用的轻量推理引擎。支持动态输入。 目前在GPU端，动态输入的情况下，速度比CPU上还要慢一些，暂时尚未解决。 ONNXRuntime + TensorRT结合 → 尝试但未跑通 OpenVINO（英特尔） link CPU端推理速度更快，支持动态输入。但是占用内存较大，拿空间换了时间。 当自己资源不吃紧时，但要求更快地推理速度时，可以考虑用这个。 GPU端仅支持自家显卡，暂时用不到。 MNN（阿里） link GPU端没有找到容易的使用方式，需要自行编译，门槛太高。理想情况是像onnxruntime-gpu这种，可以快速安装使用。 说是支持动态输入，但是尚未找到有效验证方法。 TensorRT（英伟达） link GPU端快速推理，占坑 据说存在内存泄漏的bug，暂时没有尝试。 Paddle Inference（百度） link 依赖Paddle框架，有些重，但是不失为GPU上推理模型的一个选择。 暂时不考虑这个，因为paddlepaddle-gpu版有大约500M左右，太太了。 NCNN（腾讯） link 移动端比较好用的 FastDeploy（百度） link TODO ",
-                content: "引言 link 关于模型的推理框架有很多，包括PC/移动端等等。之前在老潘的个人博客里看到过相关介绍 我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。 目前已知推理引擎 link CPU端：ONNXruntime、OpenVINO、libtorch、Caffe、PaddleInference GPU端：TensorRT、OpenPPL、AITemplate 移动端：NCNN，MNN, Paddle-Lite 通吃：TVM、OpenPPL ONNXRuntime（微软） link 目前仓库中已经在使用的推理引擎，CPU端最好用的轻量推理引擎。支持动态输入。 目前在GPU端，动态输入的情况下，速度比CPU上还要慢一些，暂时尚未解决。 ONNXRuntime + TensorRT结合 → 尝试但未跑通 OpenVINO（英特尔） link CPU端推理速度更快，支持动态输入。但是占用内存较大，拿空间换了时间。 当自己资源不吃紧时，但要求更快地推理速度时，可以考虑用这个。 GPU端仅支持自家显卡，暂时用不到。 MNN（阿里） link GPU端没有找到容易的使用方式，需要自行编译，门槛太高。理想情况是像onnxruntime-gpu这种，可以快速安装使用。 说是支持动态输入，但是尚未找到有效验证方法。 TensorRT（英伟达） link GPU端快速推理，占坑 据说存在内存泄漏的bug，暂时没有尝试。 Paddle Inference（百度） link 依赖Paddle框架，有些重，但是不失为GPU上推理模型的一个选择。 暂时不考虑这个，因为paddlepaddle-gpu版有大约500M左右，太太了。 NCNN（腾讯） link 移动端比较好用的 FastDeploy（百度） link TODO "
+                description: " warning Caution - This documentation is in progress 引言 link 关于模型的推理框架有很多，包括PC/移动端等等。之前在老潘的个人博客里看到过相关介绍 我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。 目前已知推理引擎 link CPU端：ONNXruntime、OpenVINO、libtorch、Caffe、PaddleInference GPU端：TensorRT、OpenPPL、AITemplate 移动端：NCNN，MNN, Paddle-Lite 通吃：TVM、OpenPPL ONNXRuntime（微软） link 目前仓库中已经在使用的推理引擎，CPU端最好用的轻量推理引擎。支持动态输入。 目前在GPU端，动态输入的情况下，速度比CPU上还要慢一些，暂时尚未解决。 ONNXRuntime + TensorRT结合 → 尝试但未跑通 OpenVINO（英特尔） link CPU端推理速度更快，支持动态输入。但是占用内存较大，拿空间换了时间。 当自己资源不吃紧时，但要求更快地推理速度时，可以考虑用这个。 GPU端仅支持自家显卡，暂时用不到。 MNN（阿里） link GPU端没有找到容易的使用方式，需要自行编译，门槛太高。理想情况是像onnxruntime-gpu这种，可以快速安装使用。 说是支持动态输入，但是尚未找到有效验证方法。 TensorRT（英伟达） link GPU端快速推理，占坑 据说存在内存泄漏的bug，暂时没有尝试。 Paddle Inference（百度） link 依赖Paddle框架，有些重，但是不失为GPU上推理模型的一个选择。 暂时不考虑这个，因为paddlepaddle-gpu版有大约500M左右，太太了。 NCNN（腾讯） link 移动端比较好用的 FastDeploy（百度） link TODO ",
+                content: " warning Caution - This documentation is in progress 引言 link 关于模型的推理框架有很多，包括PC/移动端等等。之前在老潘的个人博客里看到过相关介绍 我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。 目前已知推理引擎 link CPU端：ONNXruntime、OpenVINO、libtorch、Caffe、PaddleInference GPU端：TensorRT、OpenPPL、AITemplate 移动端：NCNN，MNN, Paddle-Lite 通吃：TVM、OpenPPL ONNXRuntime（微软） link 目前仓库中已经在使用的推理引擎，CPU端最好用的轻量推理引擎。支持动态输入。 目前在GPU端，动态输入的情况下，速度比CPU上还要慢一些，暂时尚未解决。 ONNXRuntime + TensorRT结合 → 尝试但未跑通 OpenVINO（英特尔） link CPU端推理速度更快，支持动态输入。但是占用内存较大，拿空间换了时间。 当自己资源不吃紧时，但要求更快地推理速度时，可以考虑用这个。 GPU端仅支持自家显卡，暂时用不到。 MNN（阿里） link GPU端没有找到容易的使用方式，需要自行编译，门槛太高。理想情况是像onnxruntime-gpu这种，可以快速安装使用。 说是支持动态输入，但是尚未找到有效验证方法。 TensorRT（英伟达） link GPU端快速推理，占坑 据说存在内存泄漏的bug，暂时没有尝试。 Paddle Inference（百度） link 依赖Paddle框架，有些重，但是不失为GPU上推理模型的一个选择。 暂时不考虑这个，因为paddlepaddle-gpu版有大约500M左右，太太了。 NCNN（腾讯） link 移动端比较好用的 FastDeploy（百度） link TODO "
             }
         );
     index.add(

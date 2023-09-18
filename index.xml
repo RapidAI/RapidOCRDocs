@@ -6,7 +6,7 @@
     <description>Recent content on RapidOCR Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rapidocr</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr/</link>
@@ -77,19 +77,6 @@ $ rapidocr_web -ip 0.0.0.0 -p 9003 浏览器打开 http://localhost:9003/，enjo
     </item>
     
     <item>
-      <title>不同版本模型之间比较</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/about_model/model_summary/</link>
-      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/model_summary/</guid>
-      <description>各个版本ONNX模型效果对比(仅供参考) link⚠️注意： 以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。
-文本检测模型 link 评测采用的是TextDetMetric库 + 文本检测测试集，详情可以移步AI Studio运行查看。
-⚠️注意：以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。
-指标计算都是在以下参数下计算得来，差别仅在于模型文件不同。
-pre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImage: std: [0.229, 0.224, 0.225] mean: [0.485, 0.456, 0.406] scale: 1./255. order: hwc ToCHWImage: KeepKeys: keep_keys: [&amp;#39;image&amp;#39;, &amp;#39;shape&amp;#39;] post_process: thresh: 0.3 box_thresh: 0.5 max_candidates: 1000 unclip_ratio: 1.6 use_dilation: true score_mode: &amp;#34;fast&amp;#34; 模型 模型大小 Precision Recall H-mean Speed(s/img) ch_PP-OCRv4_det_infer.onnx 4.5M 0.6958 0.8608 0.7696 0.6176 ch_PP-OCRv4_det_server_infer.onnx 108M 0.7070 0.9330 0.8044 13.9348 ch_PP-OCRv3_det_infer.onnx 2.3M 0.</description>
-    </item>
-    
-    <item>
       <title>桌面版使用教程</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/rapidocr_web_desktop/</link>
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
@@ -100,15 +87,6 @@ pre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImag
 下载方式: Github | 百度网盘 | QQ群共享（群号：755960114）
 解压目录如下示例
 . ├── api-ms-win-core-console-l1-1-0.dll ├── api-ms-win-core-datetime-l1-1-0.dll ├── api-ms-win-core-debug-l1-1-0.dll ├── api-ms-win-core-errorhandling-l1-1-0.dll ├── api-ms-win-core-file-l1-1-0.dll ├── api-ms-win-core-file-l1-2-0.dll ├── api-ms-win-core-file-l2-1-0.dll ├── api-ms-win-core-handle-l1-1-0.dll ├── api-ms-win-core-heap-l1-1-0.dll ├── api-ms-win-core-interlocked-l1-1-0.dll ├── api-ms-win-core-libraryloader-l1-1-0.dll ├── api-ms-win-core-localization-l1-2-0.dll ├── api-ms-win-core-memory-l1-1-0.dll ├── api-ms-win-core-namedpipe-l1-1-0.dll ├── api-ms-win-core-processenvironment-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-0.dll ├── api-ms-win-core-processthreads-l1-1-1.dll ├── api-ms-win-core-profile-l1-1-0.dll ├── api-ms-win-core-rtlsupport-l1-1-0.dll ├── api-ms-win-core-string-l1-1-0.dll ├── api-ms-win-core-synch-l1-1-0.dll ├── api-ms-win-core-synch-l1-2-0.dll ├── api-ms-win-core-sysinfo-l1-1-0.dll ├── api-ms-win-core-timezone-l1-1-0.dll ├── api-ms-win-core-util-l1-1-0.dll ├── api-ms-win-crt-conio-l1-1-0.dll ├── api-ms-win-crt-convert-l1-1-0.</description>
-    </item>
-    
-    <item>
-      <title>支持识别语言及自助转换模型</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/about_model/support_language/</link>
-      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/support_language/</guid>
-      <description>支持识别的语言 link 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。 中英文检测和识别（可以直接使用） link 因为中英文是最为常用的模型，所以在打包时，就默认将中英文识别的模型放到了rapidocr_onnxruntime和rapidocr_openvino中，直接pip安装即可使用。 其他语种检测和识别（需要转换） link PaddleOCR中已有文本检测模型列表：link PaddleOCR已有文本识别模型列表： link 除了slim和蒸馏过的模型，上面链接中的其他模型都可以转换为ONNX格式，通过RapidOCR快速部署。 自助转换使用教程 link ⚠️ 主要借助paddleocr_convert库来实现。 在线快速转换 link 通过Hugging Face上的应用，快速转换模型。整体界面是下面这个样子 离线安装库转换 link 安装paddleocr_convert pip install paddleocr_convert 命令行使用 用法: $ paddleocr_convert -h usage: paddleocr_convert [-h] [-p MODEL_PATH] [-o SAVE_DIR] [-txt_path TXT_PATH] optional arguments: -h, --help show this help message and exit -p MODEL_PATH, --model_path MODEL_PATH The inference model url or local path of paddleocr. e.g. https://paddleocr.bj.bcebos.com/PP- OCRv3/chinese/ch_PP-OCRv3_det_infer.tar or models/ch_PP-OCRv3_det_infer.tar -o SAVE_DIR, --save_dir SAVE_DIR The directory of saving the model.</description>
     </item>
     
     <item>
@@ -199,6 +177,19 @@ from pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR # 
     </item>
     
     <item>
+      <title>不同版本模型之间比较</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/about_model/model_summary/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/model_summary/</guid>
+      <description>各个版本ONNX模型效果对比(仅供参考) link⚠️注意： 以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。
+文本检测模型 link 评测采用的是TextDetMetric库 + 文本检测测试集，详情可以移步AI Studio运行查看。
+⚠️注意：以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。
+指标计算都是在以下参数下计算得来，差别仅在于模型文件不同。
+pre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImage: std: [0.229, 0.224, 0.225] mean: [0.485, 0.456, 0.406] scale: 1./255. order: hwc ToCHWImage: KeepKeys: keep_keys: [&amp;#39;image&amp;#39;, &amp;#39;shape&amp;#39;] post_process: thresh: 0.3 box_thresh: 0.5 max_candidates: 1000 unclip_ratio: 1.6 use_dilation: true score_mode: &amp;#34;fast&amp;#34; 模型 模型大小 Precision Recall H-mean Speed(s/img) ch_PP-OCRv4_det_infer.onnx 4.5M 0.6958 0.8608 0.7696 0.6176 ch_PP-OCRv4_det_server_infer.onnx 108M 0.7070 0.9330 0.8044 13.9348 ch_PP-OCRv3_det_infer.onnx 2.3M 0.</description>
+    </item>
+    
+    <item>
       <title>调优尝试教程</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr/optim_tutorial/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
@@ -217,6 +208,24 @@ from pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR # 
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr/config_parameter/</guid>
       <description>config.yaml源码 linkGlobal部分 link 参数名称 取值范围 默认值 作用 text_score [0, 1] 0.5 文本识别结果置信度，值越大，把握越大 use_angle_cls bool true 是否使用文本行的方向分类 print_verbose bool true 是否打印各个部分耗时信息 min_height int 30 图像最小高度（单位是像素）低于这个值，会跳过文本检测阶段，直接进行后续识别 width_height_ratio int 8 如果输入图像的宽高比大于width_height_ratio，则会跳过文本检测，直接进行后续识别width_height_ratio=-1：不用这个参数 min_height是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
 Det部分 link 参数名称 取值范围 默认值 作用 use_cuda bool false 是否使用CUDA，加速推理 limit_side_len - 736 限制图像边的长度的像素值 limit_type [min, max] min 限制图像的最小边长度还是最大边为limit_side_len 示例解释：当limit_type=min和limit_side_len=736时，图像最小边小于736时，会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 thresh [0, 1] 0.3 图像中文字部分和背景部分分割阈值值越大，文字部分会越小 box_thresh [0, 1] 0.5 文本检测所得框是否保留的阈值，值越大，召回率越低 max_candidates - 1000 图像中最大可检测到的文本框数目，一般够用 unclip_ratio [1.6, 2.0] 1.6 控制文本检测框的大小，值越大，检测框整体越大 use_dilation bool true 是否使用形态学中的膨胀操作，一般采用默认值即可 score_mode string fast fast是求rectangle区域的平均分数，容易造成弯曲文本漏检，slow是求polygon区域的平均分数，会更准确，但速度有所降低，可按需选择 Cls部分 link 参数名称 取值范围 默认值 作用 cls_img_shape - [3, 48, 192] 输入方向分类模型的图像Shape（CHW） cls_batch_num - 6 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差 cls_thresh [0, 1] 0.</description>
+    </item>
+    
+    <item>
+      <title>支持识别语言</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/about_model/support_language/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/support_language/</guid>
+      <description>简介 link 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。 中英文检测和识别（可以直接使用） link 因为中英文是最为常用的模型，所以在打包时，就默认将中英文识别的模型放到了rapidocr_onnxruntime和rapidocr_openvino中，直接pip安装即可使用。 其他语种检测和识别（需要转换） link PaddleOCR中已有文本检测模型列表：link PaddleOCR已有文本识别模型列表： link 除了slim和蒸馏过的模型，上面链接中的其他模型都可以转换为ONNX格式，通过RapidOCR快速部署。 </description>
+    </item>
+    
+    <item>
+      <title>转换Paddle模型为ONNX</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/about_model/convert_model/</link>
+      <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/convert_model/</guid>
+      <description>简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 在线快速转换 link 魔搭 Hugging Face 离线转换 link</description>
     </item>
     
     <item>

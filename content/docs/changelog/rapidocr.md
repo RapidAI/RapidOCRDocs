@@ -12,6 +12,8 @@ tags:
 categories:
 ---
 
+#### ⏰2023-09-18 v1.3.3 update:
+- 优化更新参数部分的函数实现
 #### 🧸2023-09-06 v1.3.2 update:
 - 修复issue [#116](https://github.com/RapidAI/RapidOCR/issues/116)
 #### ⭐2023-08-29 v1.3.1 update:

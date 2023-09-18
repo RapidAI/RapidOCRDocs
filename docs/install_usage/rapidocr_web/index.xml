@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rapidocr_web on RapidOCR Documentation</title>
-    <link>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/</link>
+    <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/</link>
     <description>Recent content in rapidocr_web on RapidOCR Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rapidocr_web使用教程</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/rapidocr_web/</link>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web/</link>
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/rapidocr_web/</guid>
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web/</guid>
       <description>Introduction link 该模块依赖最新版本的rapidocr_onnxruntime库。
 如果想要离线部署，可以先手动下载rapidocr_onnxruntime whl包，再手动安装rapidocr_web whl包来使用。
 网页上显示的推理时间具体解释如下：
@@ -23,10 +23,10 @@ $ rapidocr_web -ip 0.0.0.0 -p 9003 浏览器打开 http://localhost:9003/，enjo
     
     <item>
       <title>桌面版使用教程</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/rapidocr_web_desktop/</link>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web_desktop/</link>
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/rapidocr_web_desktop/</guid>
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web_desktop/</guid>
       <description>引言 link 说明：桌面版指的是可以直接解压，双击即可运行的版本。 通俗来说，对rapidocr_web做了打包，将相关依赖全部放到一个zip包中，不需要本地有额外的环境，降低使用门槛。 下面会以Windows版为例，作简要说明。 使用步骤 link 下载对应的zip包
 目前已有的zip包如下：
 下载方式: Github | 百度网盘 | QQ群共享（群号：755960114）
@@ -36,10 +36,10 @@ $ rapidocr_web -ip 0.0.0.0 -p 9003 浏览器打开 http://localhost:9003/，enjo
     
     <item>
       <title>Nuitka打包rapidocr_web操作文档</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/rapidocr_web_nuitka/</link>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web_nuitka/</link>
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/packages/rapidocr_web/rapidocr_web_nuitka/</guid>
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web_nuitka/</guid>
       <description>&amp;ndash;by DeadWood8
 打包环境 link OS: Windows11 Python: 3.8.10 rapidocr_onnxruntime: 1.2.0 nuitka: 1.5.3 onnxruntime: 1.14.0 打包步骤 link 安装Nuitka
 pip install nuitka 注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。

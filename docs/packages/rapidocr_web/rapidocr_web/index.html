@@ -61,7 +61,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel="stylesheet">
 
-    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.bbb07706a2d324422e35ff6b8426ccc87465befa6801d6926875ec34aa27cfa3c2db1fb5df673649c607e35f2333705e.css" integrity="sha384-u7B3BqLTJEIuNf9rhCbMyHRlvvpoAdaSaHXsNKonz6PC2x&#43;132c2ScYH418jM3Be"crossorigin="anonymous">
+    <link rel="stylesheet" href="/RapidOCRDocs/docs/scss/style.min.abb3af304688d6d7c998f9392ca55979523dabb5a7f68d5abbee77daee9c8ab7a6eb82b8774ce134dceaa7e8066885ce.css" integrity="sha384-q7OvMEaI1tfJmPk5LKVZeVI9q7Wn9o1au&#43;532u6cirem64K4d0zhNNzqp&#43;gGaIXO"crossorigin="anonymous">
     
     
     
@@ -552,8 +552,23 @@
 <p>所用模型组合（最优组合）为：</p>
 
 
-    
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ch_PP-OCRv3_det + ch_ppocr_mobile_v2.0_cls + ch_PP-OCRv3_rec</span></span></code></pre></div>
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="a64e814" class="language-text ">
+  <code>ch_PP-OCRv3_det &#43; ch_ppocr_mobile_v2.0_cls &#43; ch_PP-OCRv3_rec</code>
+  </pre>
+  </div>
 </li>
 <li>
 <p>网页上显示的推理时间具体解释如下：</p>
@@ -566,28 +581,82 @@
 <li>安装<code>rapidocr_web</code>
 
 
+
+  
+  
+  
+
+  
+  
+  
     
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install rapidocr_web</span></span></code></pre></div>
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="71b14c4" class="language-bash  line-numbers">
+  <code>$ pip install rapidocr_web</code>
+  </pre>
+  </div>
 </li>
 <li>运行
 <ul>
 <li>用法:
 
 
+
+  
+  
+  
+
+  
+  
+  
     
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rapidocr_web -h
-</span></span><span style="display:flex;"><span>usage: rapidocr_web <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-ip IP<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p PORT<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>optional arguments:
-</span></span><span style="display:flex;"><span>-h, --help            show this help message and exit
-</span></span><span style="display:flex;"><span>-ip IP, --ip IP       IP Address
-</span></span><span style="display:flex;"><span>-p PORT, --port PORT  IP port</span></span></code></pre></div>
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="47b7bf6" class="language-bash  line-numbers">
+  <code>$ rapidocr_web -h
+usage: rapidocr_web [-h] [-ip IP] [-p PORT]
+
+optional arguments:
+-h, --help            show this help message and exit
+-ip IP, --ip IP       IP Address
+-p PORT, --port PORT  IP port</code>
+  </pre>
+  </div>
 </li>
 <li>示例:
 
 
+
+  
+  
+  
+
+  
+  
+  
     
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rapidocr_web -ip 0.0.0.0 -p <span style="color:#ae81ff">9003</span></span></span></code></pre></div>
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="a61df9a" class="language-bash  line-numbers">
+  <code>$ rapidocr_web -ip 0.0.0.0 -p 9003</code>
+  </pre>
+  </div>
 </li>
 </ul>
 </li>
@@ -634,9 +703,9 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-14T22:18:32&#43;0800"
-            title="14 Sep 2023, 22:18 &#43;0800">
-            14 Sep 2023, 22:18 &#43;0800
+            data-authdate="2023-09-18T08:45:13&#43;0800"
+            title="18 Sep 2023, 08:45 &#43;0800">
+            18 Sep 2023, 08:45 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -716,6 +785,7 @@
         
     
     
+    
 
 
 
@@ -727,7 +797,7 @@
     <script src="/RapidOCRDocs/docs/js/bootstrap.39e36097440e8ae1bae5fa5b30b62819b701b2b6a0b19a492a1bf309e2a1dcfc02734909ea7951d33c11038d5ac48cd4.js" integrity="sha384-OeNgl0QOiuG65fpbMLYoGbcBsragsZpJKhvzCeKh3PwCc0kJ6nlR0zwRA41axIzU"defer></script>
 
 
-    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.c1647582cf9f6991447dd7075337658d760c96dd16728a2e653994e64ee2e57f0ce0e6dbc578a1e6a88843220b88390d.js" integrity="sha384-wWR1gs&#43;faZFEfdcHUzdljXYMlt0WcoouZTmU5k7i5X8M4ObbxXih5qiIQyILiDkN" crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="https://rapidai.github.io/RapidOCRDocs/docs/js/bundle.min.d366a47881d032acbbb655e523bc69bfccd2532d6b4a2ddd45720c6e4f041d325d4f5f56b6079f6a8329b5e3d424b7b7.js" integrity="sha384-02akeIHQMqy7tlXlI7xpv8zSUy1rSi3dRXIMbk8EHTJdT19WtgefaoMptePUJLe3" crossorigin="anonymous" defer></script>
     
 
     

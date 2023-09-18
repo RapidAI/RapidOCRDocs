@@ -12,6 +12,7 @@ categories:
 toc: true
 ---
 
+
 ### 简介
 - 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。
 

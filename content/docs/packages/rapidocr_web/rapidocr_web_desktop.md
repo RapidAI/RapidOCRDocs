@@ -3,7 +3,7 @@ weight: 3
 date: "2023-09-08"
 draft: false
 author: "SWHL"
-title: "RapidOCRWeb桌面版使用教程"
+title: "桌面版使用教程"
 icon: "code"
 toc: true
 description: ""

@@ -27,7 +27,7 @@ jobs:
 
       - name: Build
         run: |
-          hugo mode -u
+          hugo mod -u
           hugo
 
       - name: Deploy

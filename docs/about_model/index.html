@@ -105,6 +105,17 @@
                     
                 
                     
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://rapidai.github.io/RapidOCRDocs/docs/online_demo/">
+                                <i class="material-icons me-2">language</i>
+                                
+                                在线demo
+                            </a>
+                        </li>
+                    
+                
+                    
                     
                         <li class="sidebar-dropdown  ">
                             <button class="btn">
@@ -317,7 +328,7 @@
                             <a class="sidebar-root-link" href="https://rapidai.github.io/RapidOCRDocs/docs/faq/">
                                 <i class="material-icons me-2">quiz</i>
                                 
-                                FAQ
+                                常见问题 (FAQ)
                             </a>
                         </li>
                     
@@ -943,6 +954,13 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -1132,6 +1150,15 @@
     index.add(
             {
                 id:  20 ,
+                href: "\/RapidOCRDocs\/docs\/online_demo\/",
+                title: "在线demo",
+                description: "Hugging Face Demo link 魔搭 link",
+                content: "Hugging Face Demo link 魔搭 link"
+            }
+        );
+    index.add(
+            {
+                id:  21 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/",
                 title: "安装使用",
                 description: "",
@@ -1140,7 +1167,7 @@
         );
     index.add(
             {
-                id:  21 ,
+                id:  22 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/model_summary\/",
                 title: "不同版本模型之间比较",
                 description: "各个版本ONNX模型效果对比(仅供参考) link⚠️注意： 以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。\n文本检测模型 link 评测采用的是TextDetMetric库 + 文本检测测试集，详情可以移步AI Studio运行查看。\n⚠️注意：以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。\n指标计算都是在以下参数下计算得来，差别仅在于模型文件不同。\npre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImage: std: [0.229, 0.224, 0.225] mean: [0.485, 0.456, 0.406] scale: 1./255. order: hwc ToCHWImage: KeepKeys: keep_keys: ['image', 'shape'] post_process: thresh: 0.3 box_thresh: 0.5 max_candidates: 1000 unclip_ratio: 1.6 use_dilation: true score_mode: \"fast\" 模型 模型大小 Precision Recall H-mean Speed(s/img) ch_PP-OCRv4_det_infer.onnx 4.5M 0.6958 0.8608 0.7696 0.6176 ch_PP-OCRv4_det_server_infer.onnx 108M 0.7070 0.9330 0.8044 13.9348 ch_PP-OCRv3_det_infer.onnx 2.3M 0.",
@@ -1149,7 +1176,7 @@
         );
     index.add(
             {
-                id:  22 ,
+                id:  23 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/optim_tutorial\/",
                 title: "调优尝试教程",
                 description: "引言 link 由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。 基本的原则是尽量不去动模型内部，降低使用成本。 本篇文章就来说说在识别效果不好时，如何去调优。 因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。 ✨以下尝试情况，均已经在在线demo中实现，看完之后，可移步那里去尝试。 常见错例种类 link本地使用过程中，识别结果： 个别字丢失 个别字识别错误 个别字丢失调优篇 link 查看图像是否shape太小，导致文本检测丢失。 对于长度较长，高度较小的图像，可尝试对该图像高度做上下补充，来减小文字在原始图像中比例，利于文本检测。类似下图这种，左侧一条为原始图像，右侧为上下补边的图像。 padding代码参考： from typing import Tuple import cv2 import numpy as np def padding_img(img: np.ndarray, padding_value: Tuple[int, int, int, int], padding_color: Tuple = (0, 0, 0)) -\u003e np.ndarray: padded_img = cv2.copyMakeBorder(img, padding_value[0], padding_value[1], padding_value[2], padding_value[3], cv2.BORDER_CONSTANT, value=padding_color) return padded_img img = cv2.imread('xxx.jpg') # padding_value: (top, bottom, left, right) # 对该图像上下各补充10像素的白边 padded_img = padding_img(img, (10, 10, 0, 0), (255, 255, 255)) 将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。 将该图像上传到在线demo中，查看能否复现问题？",
@@ -1158,7 +1185,7 @@
         );
     index.add(
             {
-                id:  23 ,
+                id:  24 ,
                 href: "\/RapidOCRDocs\/docs\/inference_engine\/",
                 title: "推理引擎相关",
                 description: "",
@@ -1167,7 +1194,7 @@
         );
     index.add(
             {
-                id:  24 ,
+                id:  25 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/config_parameter\/",
                 title: "config.yaml参数解释",
                 description: "config.yaml源码 linkGlobal部分 link 参数名称 取值范围 默认值 作用 text_score [0, 1] 0.5 文本识别结果置信度，值越大，把握越大 use_angle_cls bool true 是否使用文本行的方向分类 print_verbose bool true 是否打印各个部分耗时信息 min_height int 30 图像最小高度（单位是像素）低于这个值，会跳过文本检测阶段，直接进行后续识别 width_height_ratio int 8 如果输入图像的宽高比大于width_height_ratio，则会跳过文本检测，直接进行后续识别width_height_ratio=-1：不用这个参数 min_height是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。\nDet部分 link 参数名称 取值范围 默认值 作用 use_cuda bool false 是否使用CUDA，加速推理 limit_side_len - 736 限制图像边的长度的像素值 limit_type [min, max] min 限制图像的最小边长度还是最大边为limit_side_len 示例解释：当limit_type=min和limit_side_len=736时，图像最小边小于736时，会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 thresh [0, 1] 0.3 图像中文字部分和背景部分分割阈值值越大，文字部分会越小 box_thresh [0, 1] 0.5 文本检测所得框是否保留的阈值，值越大，召回率越低 max_candidates - 1000 图像中最大可检测到的文本框数目，一般够用 unclip_ratio [1.6, 2.0] 1.6 控制文本检测框的大小，值越大，检测框整体越大 use_dilation bool true 是否使用形态学中的膨胀操作，一般采用默认值即可 score_mode string fast fast是求rectangle区域的平均分数，容易造成弯曲文本漏检，slow是求polygon区域的平均分数，会更准确，但速度有所降低，可按需选择 Cls部分 link 参数名称 取值范围 默认值 作用 cls_img_shape - [3, 48, 192] 输入方向分类模型的图像Shape（CHW） cls_batch_num - 6 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差 cls_thresh [0, 1] 0.",
@@ -1176,7 +1203,7 @@
         );
     index.add(
             {
-                id:  25 ,
+                id:  26 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/support_language\/",
                 title: "支持识别语言",
                 description: "简介 link 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。 中英文检测和识别（可以直接使用） link 因为中英文是最为常用的模型，所以在打包时，就默认将中英文识别的模型放到了rapidocr_onnxruntime和rapidocr_openvino中，直接pip安装即可使用。 其他语种检测和识别（需要转换） link PaddleOCR中已有文本检测模型列表：link PaddleOCR已有文本识别模型列表： link 除了slim和蒸馏过的模型，上面链接中的其他模型都可以转换为ONNX格式，通过RapidOCR快速部署。 ",
@@ -1185,7 +1212,7 @@
         );
     index.add(
             {
-                id:  26 ,
+                id:  27 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/",
                 title: "模型相关",
                 description: "",
@@ -1194,7 +1221,7 @@
         );
     index.add(
             {
-                id:  27 ,
+                id:  28 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/convert_model\/",
                 title: "转换Paddle模型为ONNX",
                 description: "简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 在线快速转换 link 魔搭 Hugging Face 离线转换 link",
@@ -1203,7 +1230,7 @@
         );
     index.add(
             {
-                id:  28 ,
+                id:  29 ,
                 href: "\/RapidOCRDocs\/docs\/changelog\/",
                 title: "Changelog",
                 description: "Changelog",
@@ -1212,7 +1239,7 @@
         );
     index.add(
             {
-                id:  29 ,
+                id:  30 ,
                 href: "\/RapidOCRDocs\/docs\/related_projects\/",
                 title: "相关项目",
                 description: " 以下几个方向，每个都是比较独立的方向，但是却和OCR有着千丝万缕的关系，关于它们的资料就像散落在天空中的星星一般，散发着微弱的光芒，这里要做的就是将这些点点光芒聚集起来。 这里将会汇总出以下几个OCR周边项目的一些文档和资源，包括学术动态和一些工程化代码。 欢迎各位小伙伴提供PR。 版面分析 link 相关论文和帖子： 版面分析方法汇总 相关工程： PaddleOCR Layout 海康DAVAR VSR 数据集汇总： 英文版面分析数据集：\nPubLayNet: IBM构建，34万张图像，分为5类：text, title list table figure。 DocBank：微软亚洲研究院构建，50万英文文档图像，分为12类：摘要、作者、标题、公式、图形、页脚、列表、段落、参考、节标题、表格和文章标题。 中文版面分析数据集：\nCDLA：中文文档版面分析数据集，面向中文文献类（论文）场景，总共6000张（5000训练，1000测试），分为10类：正文、标题、图片、图片标题、表格、表格标题、页眉、页脚、注释和公式。 表格识别 link 相关论文和帖子： OCR之表格结构识别综述 合合信息：表格识别与内容提炼技术理解及研发趋势 论文阅读: （ICDAR2021 海康威视）LGPMA（表格识别算法）及官方源码对应解读 相关工程： 海康官方LGPMA源码 LGPMA Inference PaddleOCR Table 数据集汇总： 英文表格识别数据集： PubTabNet: IBM构建，568k+文档图像数据，包括表格图像和对应的HTML标注。 视频OCR link 相关论文和帖子： 【NeurIPS2021】A Bilingual, OpenWorld Video Text Dataset and End-to-end Video Text Spotter with Transformer | 博客解读 【ACM MM 2019】You only recognize once: Towards fast video text spotting 相关工程： video-subtitle-extractor: 一款将视频中的硬字幕提取为外挂字幕文件(srt格式)的软件 RapidVideOCR: 提取视频中硬字幕 数据集汇总： BOVText: A Large-Scale, Bilingual Open World Dataset for Video Text Spotting: 快手科技、浙江大学和北京邮电大学合作提出，大规模双语开放场景下的视频文本基准数据集，该数据集主要提供了2000+视频，1,750,000帧开放视频场景的视频。同时，还提供了丰富的标注类型（标题、字幕、场景文本等）。该数据集支持四个任务：视频帧检测、视频帧识别、视频文本跟踪和端到端视频文本识别。 卡证OCR link 相关论文和帖子： 相关工程： fake_certificate_generator: 假的证件合成器，包括身份证、驾驶证、营业执照。 数据集汇总： 暂无，一般这类数据较为敏感，通常都合成假数据来使用。 印章OCR link 相关论文和帖子： 【技术新趋势】合合信息：复杂环境下ocr与印章识别技术理解及研发趋势 基于文字分割的印章识别技术 相关工程： JS生成印章 Python绘制透明背景印章 在线印章合成大全网站 数据集汇总： 暂无 ",
@@ -1221,16 +1248,16 @@
         );
     index.add(
             {
-                id:  30 ,
+                id:  31 ,
                 href: "\/RapidOCRDocs\/docs\/faq\/",
-                title: "FAQ",
+                title: "常见问题 (FAQ)",
                 description: "Answers to frequently asked questions.",
                 content: "Q: 请问这个能在32位C#中用嘛? linkA: C#可以32位，要用32位的dll，但nuget上的onnxruntime不支持win7。\nQ: Windows系统下，装完环境之后，运行示例程序之后，报错OSError: [WinError 126] 找不到指定的模組 linkA: 原因是Shapely库没有正确安装，如果是在Windows，可以在Shapely whl下载对应的whl包，离线安装即可；另外一种解决办法是用conda安装也可。\nQ: Linux部署python的程序时，import cv2时会报ImportError: ligGL.so.1: cannot open shared object file: No such file or directory? linkA: 解决方法 有两个(来自群友ddeef)：\n安装opencv-python-headless取代opencv-python; 运行sudo apt-get install -y libgl1-mesa-dev Q: 询问下，我编译出来的进程在win7下面通过cmd调用，发生了崩溃的情况? linkA: 不支持win7 (by @如果我有時光機)\nQ: 能不能搞个openmmlab类似的那个提取信息的? linkA: 这个目前正在调研测试当中，如果mmocr中关键信息提取效果还可以，后期会考虑整合进来。\nQ: RapidOCR和PaddleOCR是什么关系呢？ linkA: RapidOCR是将PaddleOCR的预训练模型转为onnx模型，不依赖paddle框架，方便各个平台部署。\nQ: onnxruntime arm32 有人编译过吗？ 我编译成功了，但是使用的时候libonnxruntime.so👎 error: file not recognized: File format not recognized 应该是版本不匹配 linkA: 没遇到过。我是直接在当前平台编译的，我们用的是arm。估计是平台不兼容,建议在本身平台上编译。没遇到过问题。通常出在交叉编译方式下。\nQ: 请问一下c++ demo必须要vs2017及以上版本吗? linkA: 最好用vs2019\nQ: 可以达到百度EasyEdge Free App的效果吗？ linkA: edge的模型应该没有开源。百度开源的模型里server det的识别效果可以达到，但是模型比较大。\nQ: 我用c++推理onnx貌似是cpu推理的，gpu没有反应? linkA: 如果想用GPU的话，需要安装onnxruntime-gpu版，自己在onnxruntime的代码中添加EP (execution provider)。我们的定位是通用，只用cpu推理。\nQ: 您好，我想部署下咱们的ocr识别，有提供linux版本的ocr部署包吗? linkA: linux版本的自己编译即可, 可以参考我们的action中的脚本；其实编译非常容易，安装个opencv后，在cmakelists.txt中修改一下onnxruntime的路径即可，具体参考这个： https://github.com/RapidOCR/RapidOCR/blob/main/.github/workflows/make-linux.yml\nQ: onnxruntime编译好的C++库，哪里可以下载到？ linkA: 从这里：https://github.com/RapidOCR/OnnxruntimeBuilder/releases/tag/1.7.0\nQ: 目前简单测试环境是 Win10 + Cygwin + gcc + 纯C编程，可以在C程序中直接接入简单OCR功能吗？ linkA: 直接使用API就行，API就是由c导出的\nQ: 模型下载地址 linkA: 百度网盘 | Google Drive\nQ: onnxruntime 1.7 下出错：onnxruntime::SequentialExecutor::Execute] Non-zero status code returned while running ScatterND node. Name:‘ScatterND@1’ Status Message: updates linkA: 由于模型只支持onnxruntime=1.5.0导致，请更新模型,下载地址见Q3\nQ: 边缘总有一行文字无法识别，怎么办？ linkA: 在 padding 参数中添加一个值 ，默认是0,你可以添加5或10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。\n"
             }
         );
     index.add(
             {
-                id:  31 ,
+                id:  32 ,
                 href: "\/RapidOCRDocs\/docs\/inference_engine\/onnxruntime\/infer_optim\/",
                 title: "ONNXRuntime",
                 description: "引言 link 平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。 因此，决定在这一篇文章中来梳理一下相关的设置。 以下参数都是来自SessionOptions中 相关测试代码可以前往AI Studio查看 欢迎补充和指出不足之处。 推荐常用设置 link import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL sess_options.log_severity_level = 4 sess_options.enable_cpu_mem_arena = False # 其他参数，采用默认即可 enable_cpu_mem_arena link 作用：启用CPU上的memory arena。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为enable_cpu_mem_area=False，默认是True\n结论：建议关闭\n开启之后，占用内存会剧增（5618.3M » 5.3M），且持续占用，不释放；推理时间只有大约13%提升 测试环境：\nPython: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu_memory_area_example.zip）\n# pip install onnxruntime==1.14.1 # pip install memory_profiler import numpy as np import onnxruntime as ort from memory_profiler import profile @profile def onnx_prediction(model_path, input_data): ort_sess = ort.InferenceSession(model_path, sess_options=sess_options) preds = ort_sess.",
@@ -1239,7 +1266,7 @@
         );
     index.add(
             {
-                id:  32 ,
+                id:  33 ,
                 href: "\/RapidOCRDocs\/docs\/inference_engine\/onnxruntime\/onnxruntime-gpu\/",
                 title: "ONNXRuntime GPU版推理",
                 description: "onnxruntime-gpu版相关说明 link 目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见onnxruntime issue#13198 有关onnxruntime-gpu推理慢的相关帖子 link Pre-allocating dynamic shaped tensor memory for ONNX runtime inference? 快速查看比较版本 link 国外小伙伴可以基于Google Colab，国内的小伙伴可以基于百度的AI Studio来查看效果 自己折腾版 link onnxruntime-gpu需要严格按照与CUDA、cuDNN版本对应来安装，具体参考文档，这一步关乎后面是否可以成功调用GPU。\n以下是安装示例： 所用机器环境情况： nvcc-smi显示CUDA Driver API版本：11.7 nccc -V显示CUDA Runtime API版本：11.6 以上两个版本的对应关系，可参考博客 具体安装命令如下： conda install cudatoolkit=11.6.0 conda install cudnn=8.3.2.44 pip install onnxruntime-gpu==1.12.0 验证是否可以onnxruntime-gpu正常调用GPU 验证get_device()是否可返回GPU import onnxruntime as ort print(ort.get_device()) # GPU 如果第一步满足了，继续验证onnxruntime-gpu加载模型时是否可以调用GPU import onnxruntime as ort providers = [ ('CUDAExecutionProvider', { 'device_id': 0, 'arena_extend_strategy': 'kNextPowerOfTwo', 'gpu_mem_limit': 2 * 1024 * 1024 * 1024, 'cudnn_conv_algo_search': 'EXHAUSTIVE', 'do_copy_in_default_stream': True, }), 'CPUExecutionProvider', ] # download link: https://github.",

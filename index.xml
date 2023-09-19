@@ -177,6 +177,15 @@ from pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR # 
     </item>
     
     <item>
+      <title>在线demo</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/online_demo/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/online_demo/</guid>
+      <description>Hugging Face Demo link 魔搭 link</description>
+    </item>
+    
+    <item>
       <title>不同版本模型之间比较</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/about_model/model_summary/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
@@ -240,7 +249,7 @@ CDLA：中文文档版面分析数据集，面向中文文献类（论文）场�
     </item>
     
     <item>
-      <title>FAQ</title>
+      <title>常见问题 (FAQ)</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/faq/</link>
       <pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate>
       

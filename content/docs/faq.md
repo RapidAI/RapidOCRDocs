@@ -1,6 +1,6 @@
 ---
 weight: 70
-title: "FAQ"
+title: "常见问题 (FAQ)"
 icon: "quiz"
 description: "Answers to frequently asked questions."
 lead: "Answers to frequently asked questions."

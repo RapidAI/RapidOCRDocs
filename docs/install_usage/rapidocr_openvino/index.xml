@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rapidcor_openvino on RapidOCR Documentation</title>
+    <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/</link>
+    <description>Recent content in rapidcor_openvino on RapidOCR Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/install/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/install/</guid>
+      <description> info 各个版本的对应关系： link 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 notifications 请使用Python3.6及以上版本。 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
+pip install rapidocr-onnxruntime 安装速度慢的话，可以指定国内的安装源，如使用清华源：
+pip install rapidocr_onnxruntime -i https://pypi.tuna.tsinghua.edu.cn/simple/ 依赖的包如下：
+info 如果在安装过程中，出现某个依赖包不能正确安装时，可先单独安装某个依赖包，之后再安装rapidocr_onnxruntime即可。 pyclipper&amp;gt;=1.2.1 onnxruntime&amp;gt;=1.7.0 opencv_python&amp;gt;=4.5.1.48 numpy&amp;gt;=1.19.3 six&amp;gt;=1.15.0 Shapely&amp;gt;=1.7.1 PyYAML Pillow </description>
+    </item>
+    
+    <item>
+      <title>使用说明</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/usage/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/usage/</guid>
+      <description>安装 link pip install rapidocr-onnxruntime 初始化 link类RapidOCR是主类，其初始化函数如下：
+class RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：
+以config.yaml方式
+找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml (推荐) 以具体参数传入
+class RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 脚本使用 link 初始化RapidOCR类可不提供config.yaml文件，默认使用安装目录下的config.yaml。如有自定义需求：
+方案一：可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 方案二：复制config.yaml，自行更改，然后初始化给出。示例如下： engine = RapidOCR(config_path=&amp;#34;your.yaml&amp;#34;) 输入：Union[str, np.ndarray, bytes, Path]
+输出：
+有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，示例如下： [[左上, 右上, 右下, 左下], &amp;#39;小明&amp;#39;, &amp;#39;0.99&amp;#39;], [0.02, 0.02, 0.85] 无值：(None, None) 示例：
+from pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR # RapidOCR可传入的参数参考下面的命令行部分 engine = RapidOCR() img_path = &amp;#39;tests/test_files/ch_en_num.</description>
+    </item>
+    
+    <item>
+      <title>rapidocr_openvino</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/rapidocr_openvino/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/rapidocr_openvino/</guid>
+      <description>简介 link 该部分为python版的OCR推理，包括基于ONNXRuntime和OpenVINO两个推理引擎的包。 因为模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 说明 link rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，默认都是在CPU上运行。 按语义版本号来讲，两个包其主版本号和次版本号同步更新，修订号可能会有区别。也就是说x.y.z中x和y是一样的，z可能不同。 各个版本的对应关系： 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 推荐使用PaddleOCRModelConveter在线转换，现用现转。推理代码都是同一个，只需更换模型即可。已转好ONNX模型下载地址：百度网盘 | Google Drive，大家可自行搭配使用。 所有常用的参数配置都在config.yaml下，其中每个独立的模块下均有独立的config.yaml配置文件，可以单独使用。 关于选择哪个版本的包（rapidocr_onnxruntime 或者 rapidocr_openvino）? 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ ⚠️ openvino存在内存不释放的问题，参见issue #11939 pip安装快速使用（推荐） link 安装环境
+包名 版本 安装命令 rapidocr_onnxruntime pip install rapidocr-onnxruntime rapidocr_openvino pip install rapidocr-openvino python脚本使用
+⚠️注意：初始化RapidOCR可不提供config.yaml，默认使用安装目录下的config.yaml。如有自定义需求：
+一是可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 二是复制config.yaml，自行更改，然后初始化给出。e.g. engine = RapidOCR(config_path=&amp;quot;custom.yaml&amp;quot;) 输入：Union[str, np.ndarray, bytes, Path]
+输出：
+有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，e.g. [[左上, 右上, 右下, 左下], &#39;小明&#39;, &#39;0.</description>
+    </item>
+    
+    <item>
+      <title>命令行工具</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/cli/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_openvino/cli/</guid>
+      <description>rapidocr_onnxruntime包含了命令行工具，安装之后，即可使用。
+参数说明 link $ rapidocr_onnxruntime -h usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE] [--no_det] [--no_cls] [--no_rec] [--print_verbose] [--min_height MIN_HEIGHT] [--width_height_ratio WIDTH_HEIGHT_RATIO] [--det_use_cuda] [--det_model_path DET_MODEL_PATH] [--det_limit_side_len DET_LIMIT_SIDE_LEN] [--det_limit_type {max,min}] [--det_thresh DET_THRESH] [--det_box_thresh DET_BOX_THRESH] [--det_unclip_ratio DET_UNCLIP_RATIO] [--det_donot_use_dilation] [--det_score_mode {slow,fast}] [--cls_use_cuda] [--cls_model_path CLS_MODEL_PATH] [--cls_image_shape CLS_IMAGE_SHAPE] [--cls_label_list CLS_LABEL_LIST] [--cls_batch_num CLS_BATCH_NUM] [--cls_thresh CLS_THRESH] [--rec_use_cuda] [--rec_model_path REC_MODEL_PATH] [--rec_img_shape REC_IMG_SHAPE] [--rec_batch_num REC_BATCH_NUM] options: -h, --help show this help message and exit -img IMG_PATH, --img_path IMG_PATH -p, --print_cost Global: --text_score TEXT_SCORE --no_det --no_cls --no_rec --print_verbose --min_height MIN_HEIGHT --width_height_ratio WIDTH_HEIGHT_RATIO Det: --det_use_cuda --det_model_path DET_MODEL_PATH --det_limit_side_len DET_LIMIT_SIDE_LEN --det_limit_type {max,min} --det_thresh DET_THRESH --det_box_thresh DET_BOX_THRESH --det_unclip_ratio DET_UNCLIP_RATIO --det_donot_use_dilation --det_score_mode {slow,fast} Cls: --cls_use_cuda --cls_model_path CLS_MODEL_PATH --cls_image_shape CLS_IMAGE_SHAPE --cls_label_list CLS_LABEL_LIST --cls_batch_num CLS_BATCH_NUM --cls_thresh CLS_THRESH Rec: --rec_use_cuda --rec_model_path REC_MODEL_PATH --rec_img_shape REC_IMG_SHAPE --rec_batch_num REC_BATCH_NUM 图像预测 link rapidocr_onnxruntime -img tests/test_files/ch_en_num.</description>
+    </item>
+    
+  </channel>
+</rss>

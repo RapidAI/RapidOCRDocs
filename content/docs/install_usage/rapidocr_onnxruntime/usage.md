@@ -85,7 +85,7 @@ class RapidOCR:
   - 无值：`(None, None)`
 
 ### 不同传入方式使用示例
-{{< tabs tabTotal="3">}}
+{{< tabs tabTotal="4">}}
 {{% tab tabName="str" %}}
 
 ```python {linenos=table}

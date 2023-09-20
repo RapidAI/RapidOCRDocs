@@ -6,7 +6,6 @@ icon: language
 date: 2023-09-13
 lastmod: 2023-09-13
 draft: false
-images: []
 ---
 
 #### Introduction
@@ -18,7 +17,7 @@ images: []
 
 #### Demo地址
 - Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo
-- 魔搭社区：https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary
+- 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary
 
 
 <div align="center">

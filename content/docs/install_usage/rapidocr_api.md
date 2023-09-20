@@ -19,24 +19,16 @@ categories:
     <a href="https://pepy.tech/project/rapidocr_api"><img src="https://static.pepy.tech/personalized-badge/rapidocr_api?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
 
+### 简介
 - 采用`FastAPI` + `uvicorn`实现。
 - 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。
 
-### Installation
-- pip安装
-    ```bash {linenos=table}
-    pip install rapidocr_api
-    ```
-- 源码安装
-    ```
-    python setup.py bdist_wheel v0.0.1
-    cd dist
-    pip install rapidocr_*.whl
-    ```
+### 安装
+```bash {linenos=table}
+pip install rapidocr_api
+```
 
-### Usage
-⚠️：本质就是发送一个POST请求，其他语言同理
-
+### 启动服务端
 - 用法:
     ```bash {linenos=table}
     $ rapidocr_api -h
@@ -52,46 +44,50 @@ categories:
     $ rapidocr_api -ip 0.0.0.0 -p 9003
     ```
 
-- curl调用
-    ```bash {linenos=table}
-    $ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
+### 调用
+{{< alert context="info" text="本质就是发送一个POST请求，其他语言同理。" />}}
+
+#### curl调用
+```bash {linenos=table}
+curl -F image_file=@1.png http://0.0.0.0:9003/ocr
+```
+#### python调用
+- 以文件的方式发送请求
+    ```python {linenos=table}
+    import requests
+
+    url = 'http://localhost:9003/ocr'
+    img_path = 'tests/test_files/ch_en_num.jpg'
+
+    with open(img_path, 'rb') as f:
+        file_dict = {'image_file': (img_path, f, 'image/png')}
+        response = requests.post(url, files=file_dict, timeout=60)
+
+    print(response.json())
     ```
-- python调用
-    - 以文件的方式发送请求
-        ```python {linenos=table}
-        import requests
+- 以`base64`方式发送post请求
+    ```python {linenos=table}
+    import base64
+    import requests
 
-        url = 'http://localhost:9003/ocr'
-        img_path = '../python/tests/test_files/ch_en_num.jpg'
+    url = 'http://localhost:9003/ocr'
+    img_path = 'tests/test_files/ch_en_num.jpg'
 
-        with open(img_path, 'rb') as f:
-            file_dict = {'image_file': (img_path, f, 'image/png')}
-            response = requests.post(url, files=file_dict, timeout=60)
+    with open(img_path, 'rb') as fa:
+        img_str = base64.b64encode(fa.read())
 
-        print(response.json())
-        ```
-    - 以`base64`方式发送post请求
-        ```python {linenos=table}
-        import base64
-        import requests
+    payload = {'image_data': img_str}
+    response = requests.post(url, data=payload)
 
-        url = 'http://localhost:9003/ocr'
-        img_path = '../python/tests/test_files/ch_en_num.jpg'
+    print(response.json())
+    ```
 
-        with open(img_path, 'rb') as fa:
-            img_str = base64.b64encode(fa.read())
-
-        payload = {'image_data': img_str}
-        resp = requests.post(url, data=payload)
-
-        print(resp.json())
-        ```
 ### API输出
 - 示例结果：
     <details>
     <summary>详情</summary>
 
-    ```json
+    ```json {linenos=table}
     {
         "0": {
             "rec_txt": "8月26日！",
@@ -155,4 +151,4 @@ categories:
         ```
     - 如果没有检测到文字，则会输出空json(`{}`)。
 
-**!!说明：OCR的输出结果为最原始结果，大家可按需进一步扩展。**
+{{< alert context="warning" text="OCR API的输出结果为最原始结果，大家可按需进一步扩展。" />}}

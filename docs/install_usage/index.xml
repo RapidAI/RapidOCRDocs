@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>安装使用 on RapidOCR Documentation</title>
+    <title>安装及使用 on RapidOCR Documentation</title>
     <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/</link>
-    <description>Recent content in 安装使用 on RapidOCR Documentation</description>
+    <description>Recent content in 安装及使用 on RapidOCR Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/index.xml" rel="self" type="application/rss+xml" />
@@ -13,11 +13,7 @@
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_api/</guid>
-      <description>采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 Installation link pip安装 pip install rapidocr_api 源码安装 python setup.py bdist_wheel v0.0.1 cd dist pip install rapidocr_*.whl Usage link⚠️：本质就是发送一个POST请求，其他语言同理
-用法:
-$ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动:
-$ rapidocr_api -ip 0.0.0.0 -p 9003 curl调用
-$ curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用</description>
+      <description>简介 link 采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: $ rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 本质就是发送一个POST请求，其他语言同理。 curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用 link 以文件的方式发送请求 import requests url = &amp;#39;http://localhost:9003/ocr&amp;#39; img_path = &amp;#39;tests/test_files/ch_en_num.</description>
     </item>
     
   </channel>

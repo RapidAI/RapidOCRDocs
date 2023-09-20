@@ -120,7 +120,7 @@
                         <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">package</i>
-                                安装使用
+                                安装及使用
                             </button>
                             <div class="sidebar-submenu d-block">
                                 <ul>
@@ -473,7 +473,7 @@
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="/RapidOCRDocs/docs/install_usage/">
-                        <span itemprop="name">安装使用</span>
+                        <span itemprop="name">安装及使用</span>
                     </a>
                     <meta itemprop="position" content='2' />
                 </li>
@@ -1220,8 +1220,8 @@
                 id:  14 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_api\/",
                 title: "rapidocr_api",
-                description: "采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 Installation link pip安装 pip install rapidocr_api 源码安装 python setup.py bdist_wheel v0.0.1 cd dist pip install rapidocr_*.whl Usage link⚠️：本质就是发送一个POST请求，其他语言同理\n用法:\n$ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动:\n$ rapidocr_api -ip 0.0.0.0 -p 9003 curl调用\n$ curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用",
-                content: " 采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 Installation link pip安装 pip install rapidocr_api 源码安装 python setup.py bdist_wheel v0.0.1 cd dist pip install rapidocr_*.whl Usage link⚠️：本质就是发送一个POST请求，其他语言同理\n用法:\n$ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动:\n$ rapidocr_api -ip 0.0.0.0 -p 9003 curl调用\n$ curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用\n以文件的方式发送请求 import requests url = 'http://localhost:9003/ocr' img_path = '../python/tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as f: file_dict = {'image_file': (img_path, f, 'image/png')} response = requests.post(url, files=file_dict, timeout=60) print(response.json()) 以base64方式发送post请求 import base64 import requests url = 'http://localhost:9003/ocr' img_path = '../python/tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as fa: img_str = base64.b64encode(fa.read()) payload = {'image_data': img_str} resp = requests.post(url, data=payload) print(resp.json()) API输出 link 示例结果：\n详情 { \"0\": { \"rec_txt\": \"8月26日！\", \"dt_boxes\": [ [333.0, 72.0], [545.0, 40.0], [552.0, 90.0], [341.0, 122.0] ], \"score\": \"0.7342076812471662\" }, \"1\": { \"rec_txt\": \"澳洲名校招生信息\", \"dt_boxes\": [ [266.0, 163.0], [612.0, 116.0], [619.0, 163.0], [272.0, 210.0] ], \"score\": \"0.8261737492349412\" }, \"2\": { \"rec_txt\": \"解读！！\", \"dt_boxes\": [ [341.0, 187.0], [595.0, 179.0], [598.0, 288.0], [344.0, 296.0] ], \"score\": \"0.6152311325073242\" }, \"3\": { \"rec_txt\": \"Rules...\", \"dt_boxes\": [ [446.0, 321.0], [560.0, 326.0], [559.0, 352.0], [445.0, 347.0] ], \"score\": \"0.8704230123096042\" } } 输出结果说明：\n如果图像中存在文字，则会输出字典格式，具体介绍如下： { \"0\": { \"rec_txt\": \"香港深圳抽血，\", # 识别的文本 \"dt_boxes\": [ # 依次为左上角 → 右上角 → 右下角 → 左下角 [265, 18], [472, 231], [431, 271], [223, 59] ], \"score\": \"0.8175641223788261\" # 置信度 } } 如果没有检测到文字，则会输出空json({})。 !!说明：OCR的输出结果为最原始结果，大家可按需进一步扩展。\n"
+                description: "简介 link 采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: $ rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 本质就是发送一个POST请求，其他语言同理。 curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用 link 以文件的方式发送请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.",
+                content: " 简介 link 采用FastAPI + uvicorn实现。 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: $ rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 本质就是发送一个POST请求，其他语言同理。 curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr python调用 link 以文件的方式发送请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as f: file_dict = {'image_file': (img_path, f, 'image/png')} response = requests.post(url, files=file_dict, timeout=60) print(response.json()) 以base64方式发送post请求 import base64 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as fa: img_str = base64.b64encode(fa.read()) payload = {'image_data': img_str} response = requests.post(url, data=payload) print(response.json()) API输出 link 示例结果：\n详情 { \"0\": { \"rec_txt\": \"8月26日！\", \"dt_boxes\": [ [333.0, 72.0], [545.0, 40.0], [552.0, 90.0], [341.0, 122.0] ], \"score\": \"0.7342076812471662\" }, \"1\": { \"rec_txt\": \"澳洲名校招生信息\", \"dt_boxes\": [ [266.0, 163.0], [612.0, 116.0], [619.0, 163.0], [272.0, 210.0] ], \"score\": \"0.8261737492349412\" }, \"2\": { \"rec_txt\": \"解读！！\", \"dt_boxes\": [ [341.0, 187.0], [595.0, 179.0], [598.0, 288.0], [344.0, 296.0] ], \"score\": \"0.6152311325073242\" }, \"3\": { \"rec_txt\": \"Rules...\", \"dt_boxes\": [ [446.0, 321.0], [560.0, 326.0], [559.0, 352.0], [445.0, 347.0] ], \"score\": \"0.8704230123096042\" } } 输出结果说明：\n如果图像中存在文字，则会输出字典格式，具体介绍如下： { \"0\": { \"rec_txt\": \"香港深圳抽血，\", # 识别的文本 \"dt_boxes\": [ # 依次为左上角 → 右上角 → 右下角 → 左下角 [265, 18], [472, 231], [431, 271], [223, 59] ], \"score\": \"0.8175641223788261\" # 置信度 } } 如果没有检测到文字，则会输出空json({})。 warning OCR API的输出结果为最原始结果，大家可按需进一步扩展。 "
             }
         );
     index.add(
@@ -1274,15 +1274,15 @@
                 id:  20 ,
                 href: "\/RapidOCRDocs\/docs\/online_demo\/",
                 title: "在线demo",
-                description: "Introduction link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区：https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
-                content: "Introduction link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区：https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
+                description: "Introduction link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
+                content: "Introduction link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
             }
         );
     index.add(
             {
                 id:  21 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/",
-                title: "安装使用",
+                title: "安装及使用",
                 description: "",
                 content: ""
             }

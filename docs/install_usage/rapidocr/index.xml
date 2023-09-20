@@ -13,20 +13,7 @@
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/overview/</guid>
-      <description> 简介 link rapidocr按照推理引擎的不同，共分为两个包：rapidocr_onnxruntime和rapidocr_openvino两个。除推理引擎不同之外，其余代码均相同，默认都是在CPU上运行。 因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 pypi版本对应关系 link 按语义版本号来讲，两个包其主版本号和次版本号同步更新，修订号可能会有区别。也就是说x.y.z中x和y是一样的，z可能不同。 各个版本的对应关系： 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 选择哪个？ link 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ ⚠️ openvino存在内存不释放的问题，参见issue #11939 </description>
-    </item>
-    
-    <item>
-      <title>rapidocr_onnxruntime</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/rapidocr_onnxruntime/</link>
-      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/rapidocr_onnxruntime/</guid>
-      <description>Installation link pip install rapidocr-onnxruntime 脚本使用 link 初始化RapidOCR类可不提供config.yaml文件，默认使用安装目录下的config.yaml。如有自定义需求：
-方案一：可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 方案二：复制config.yaml，自行更改，然后初始化给出。示例如下： engine = RapidOCR(config_path=&amp;#34;your.yaml&amp;#34;) 输入：Union[str, np.ndarray, bytes, Path]
-输出：
-有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，示例如下： [[左上, 右上, 右下, 左下], &amp;#39;小明&amp;#39;, &amp;#39;0.99&amp;#39;], [0.02, 0.02, 0.85] 无值：(None, None) 示例：
-from pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR # RapidOCR可传入的参数参考下面的命令行部分 engine = RapidOCR() img_path = &amp;#39;tests/test_files/ch_en_num.jpg&amp;#39; # 输入格式一：str result, elapse = engine(img_path) # 输入格式二：np.ndarray img = cv2.imread(&amp;#39;tests/test_files/ch_en_num.jpg&amp;#39;) result, elapse = engine(img) # 输入格式三：bytes with open(img_path, &amp;#39;rb&amp;#39;) as f: img = f.</description>
+      <description>简介 link rapidocr按照推理引擎的不同，共分为两个包：rapidocr_onnxruntime和rapidocr_openvino两个。除推理引擎不同之外，其余代码均相同，默认都是在CPU上运行。 因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 pypi版本对应关系 link 按语义版本号来讲，两个包其主版本号和次版本号同步更新，修订号可能会有区别。也就是说x.y.z中x和y是一样的，z可能不同。 各个版本的对应关系： 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 选择哪个？ link 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ warning openvino存在内存不释放的问题，参见issue #11939</description>
     </item>
     
     <item>

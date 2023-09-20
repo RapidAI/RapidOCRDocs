@@ -21,8 +21,7 @@ categories:
 
 
 ### 简介
-- 该库是对`rapidocr_onnxruntime`
-- 该模块依赖最新版本的`rapidocr_onnxruntime`库。
+- 该库是`rapidocr_onnxruntime`的web版本，依赖最新版本的[`rapidocr_onnxruntime`](../rapidocr/rapidocr_onnxruntime.md)库。
 - 如果想要离线部署，可以先手动下载[`rapidocr_onnxruntime`](https://pypi.org/project/rapidocr-onnxruntime/#files) whl包，再手动安装[`rapidocr_web`](https://pypi.org/project/rapidocr-web/#files) whl包来使用。
 - 网页上显示的推理时间具体解释如下：
 
@@ -48,7 +47,11 @@ pip install rapidocr_web
     ```
 - 示例:
     ```bash {linenos=table}
-    $ rapidocr_web -ip 0.0.0.0 -p 9003
+    rapidocr_web -ip 0.0.0.0 -p 9003
     ```
 
 - 浏览器打开 `http://localhost:9003/`，enjoy it!
+
+    <div align="center">
+                <img src="https://github.com/RapidAI/RapidOCR/blob/ae529c2ba79e6cbf04c54caf2d24feb75e947ca4/assets/demo.gif" width="100%" height="100%">
+    </div>

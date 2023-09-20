@@ -3,7 +3,7 @@ weight: 4
 date: "2023-09-08"
 draft: false
 author: "SWHL"
-title: "Nuitka打包rapidocr_web操作文档"
+title: "Nuitka打包"
 icon: "code"
 toc: true
 description: ""

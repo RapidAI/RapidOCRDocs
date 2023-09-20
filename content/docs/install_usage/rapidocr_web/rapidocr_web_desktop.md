@@ -113,6 +113,7 @@ categories:
    ![image](https://github.com/RapidAI/RapidOCR/assets/28639377/5ff1d582-bde8-407f-83be-f3a3ec9c9b87)
 
 4. 浏览器中打开`http://localhost:9003/`，即可看到熟悉的RapidOCRWeb界面。
-    {{< alert context="info" text="如果遇到浏览器不显示界面的情况，可以尝试在黑框上按`Ctrl + C`" />}}
 
     ![image](https://github.com/RapidAI/RapidOCR/assets/28639377/c113c1c6-376a-48b2-9e52-201e499b1a4f)
+
+    {{< alert context="info" text="如果遇到浏览器不显示界面的情况，可以尝试在黑框上按`Ctrl + C`" />}}

@@ -54,7 +54,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 
 #### Python调用
 {{< tabs tabTotal="2">}}
-{{% tab tabName="以文件的方式发送POST请求" %}}
+{{% tab tabName="以文件方式发送POST请求" %}}
 
 ```python {linenos=table}
 import requests
@@ -70,7 +70,7 @@ print(response.json())
 ```
 
 {{% /tab %}}
-{{% tab tabName="以`base64`方式发送POST请求" %}}
+{{% tab tabName="以base64方式发送POST请求" %}}
 
 ```python {linenos=table}
 import base64

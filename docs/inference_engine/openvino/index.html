@@ -139,9 +139,6 @@
                                                             <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/overview/">概述</a></li>
                                                         
                                                             
-                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/rapidocr_onnxruntime/">rapidcor</a></li>
-                                                        
-                                                            
                                                             <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/rapidocr_openvino/">rapidocr_openvino</a></li>
                                                         
                                                             
@@ -182,6 +179,30 @@
                                         
                                         
                                             <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_api/">rapidocr_api</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class="sidebar-dropdown nested  ">
+                                                <button class="btn">
+                                                    
+                                                    rapidcor
+                                                </button>
+                                                <div class="sidebar-submenu ">
+                                                    <ul>
+                                                        
+                                                            
+                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_onnxruntime/install/">安装</a></li>
+                                                        
+                                                            
+                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_onnxruntime/usage/">使用说明</a></li>
+                                                        
+                                                            
+                                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_onnxruntime/cli/">命令行工具</a></li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </li>
                                         
                                     
                                 </ul>
@@ -1225,7 +1246,7 @@
     index.add(
             {
                 id:  27 ,
-                href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/rapidocr_onnxruntime\/install\/",
+                href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_onnxruntime\/install\/",
                 title: "安装",
                 description: " notifications 请使用Python3.6及以上版本。 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。 pip install rapidocr-onnxruntime 安装速度慢的话，可以指定国内的安装源，如使用清华源： pip install rapidocr_onnxruntime -i https://pypi.tuna.tsinghua.edu.cn/simple/ 依赖的包如下： info 如果在安装过程中，出现某个依赖包不能正确安装时，可先单独安装某个依赖包，之后再安装rapidocr_onnxruntime即可。 pyclipper\u003e=1.2.1 onnxruntime\u003e=1.7.0 opencv_python\u003e=4.5.1.48 numpy\u003e=1.19.3 six\u003e=1.15.0 Shapely\u003e=1.7.1 PyYAML Pillow ",
                 content: " notifications 请使用Python3.6及以上版本。 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。\npip install rapidocr-onnxruntime 安装速度慢的话，可以指定国内的安装源，如使用清华源：\npip install rapidocr_onnxruntime -i https://pypi.tuna.tsinghua.edu.cn/simple/ 依赖的包如下：\ninfo 如果在安装过程中，出现某个依赖包不能正确安装时，可先单独安装某个依赖包，之后再安装rapidocr_onnxruntime即可。 pyclipper\u003e=1.2.1 onnxruntime\u003e=1.7.0 opencv_python\u003e=4.5.1.48 numpy\u003e=1.19.3 six\u003e=1.15.0 Shapely\u003e=1.7.1 PyYAML Pillow "
@@ -1243,7 +1264,7 @@
     index.add(
             {
                 id:  29 ,
-                href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/rapidocr_onnxruntime\/",
+                href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_onnxruntime\/",
                 title: "rapidcor",
                 description: "rapidocr",
                 content: ""
@@ -1252,7 +1273,7 @@
     index.add(
             {
                 id:  30 ,
-                href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/rapidocr_onnxruntime\/usage\/",
+                href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_onnxruntime\/usage\/",
                 title: "使用说明",
                 description: "安装 link pip install rapidocr-onnxruntime 初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明： 以config.yaml方式 （推荐）以具体参数传入 找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可 class RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 脚本使用 link 初始化RapidOCR类可不提供config.yaml文件，默认使用安装目录下的config.yaml。如有自定义需求：\n方案一：可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 方案二：复制config.yaml，自行更改，然后初始化给出。示例如下： engine = RapidOCR(config_path=\"your.yaml\") 输入：Union[str, np.ndarray, bytes, Path]\n输出：\n有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，示例如下： [[左上, 右上, 右下, 左下], '小明', '0.99'], [0.02, 0.02, 0.85] 无值：(None, None) 示例：\nfrom pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR # RapidOCR可传入的参数参考下面的命令行部分 engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.",
                 content: " 安装 link pip install rapidocr-onnxruntime 初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明： 以config.yaml方式 （推荐）以具体参数传入 找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可 class RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 脚本使用 link 初始化RapidOCR类可不提供config.yaml文件，默认使用安装目录下的config.yaml。如有自定义需求：\n方案一：可直接通过初始化参数传入。详细参数参考下面命令行部分，和config.yaml基本对应。 方案二：复制config.yaml，自行更改，然后初始化给出。示例如下： engine = RapidOCR(config_path=\"your.yaml\") 输入：Union[str, np.ndarray, bytes, Path]\n输出：\n有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，示例如下： [[左上, 右上, 右下, 左下], '小明', '0.99'], [0.02, 0.02, 0.85] 无值：(None, None) 示例：\nfrom pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR # RapidOCR可传入的参数参考下面的命令行部分 engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' # 输入格式一：str result, elapse = engine(img_path) # 输入格式二：np.ndarray img = cv2.imread('tests/test_files/ch_en_num.jpg') result, elapse = engine(img) # 输入格式三：bytes with open(img_path, 'rb') as f: img = f.read() result, elapse = engine(img) # 输入格式四：Path result, elapse = engine(Path(img_path)) print(result) "
@@ -1270,7 +1291,7 @@
     index.add(
             {
                 id:  32 ,
-                href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/rapidocr_onnxruntime\/cli\/",
+                href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_onnxruntime\/cli\/",
                 title: "命令行工具",
                 description: "rapidocr_onnxruntime包含了命令行工具，安装之后，即可使用。\n参数说明 link $ rapidocr_onnxruntime -h usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE] [--no_det] [--no_cls] [--no_rec] [--print_verbose] [--min_height MIN_HEIGHT] [--width_height_ratio WIDTH_HEIGHT_RATIO] [--det_use_cuda] [--det_model_path DET_MODEL_PATH] [--det_limit_side_len DET_LIMIT_SIDE_LEN] [--det_limit_type {max,min}] [--det_thresh DET_THRESH] [--det_box_thresh DET_BOX_THRESH] [--det_unclip_ratio DET_UNCLIP_RATIO] [--det_donot_use_dilation] [--det_score_mode {slow,fast}] [--cls_use_cuda] [--cls_model_path CLS_MODEL_PATH] [--cls_image_shape CLS_IMAGE_SHAPE] [--cls_label_list CLS_LABEL_LIST] [--cls_batch_num CLS_BATCH_NUM] [--cls_thresh CLS_THRESH] [--rec_use_cuda] [--rec_model_path REC_MODEL_PATH] [--rec_img_shape REC_IMG_SHAPE] [--rec_batch_num REC_BATCH_NUM] options: -h, --help show this help message and exit -img IMG_PATH, --img_path IMG_PATH -p, --print_cost Global: --text_score TEXT_SCORE --no_det --no_cls --no_rec --print_verbose --min_height MIN_HEIGHT --width_height_ratio WIDTH_HEIGHT_RATIO Det: --det_use_cuda --det_model_path DET_MODEL_PATH --det_limit_side_len DET_LIMIT_SIDE_LEN --det_limit_type {max,min} --det_thresh DET_THRESH --det_box_thresh DET_BOX_THRESH --det_unclip_ratio DET_UNCLIP_RATIO --det_donot_use_dilation --det_score_mode {slow,fast} Cls: --cls_use_cuda --cls_model_path CLS_MODEL_PATH --cls_image_shape CLS_IMAGE_SHAPE --cls_label_list CLS_LABEL_LIST --cls_batch_num CLS_BATCH_NUM --cls_thresh CLS_THRESH Rec: --rec_use_cuda --rec_model_path REC_MODEL_PATH --rec_img_shape REC_IMG_SHAPE --rec_batch_num REC_BATCH_NUM 图像预测 link rapidocr_onnxruntime -img tests/test_files/ch_en_num.",
                 content: " rapidocr_onnxruntime包含了命令行工具，安装之后，即可使用。\n参数说明 link $ rapidocr_onnxruntime -h usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE] [--no_det] [--no_cls] [--no_rec] [--print_verbose] [--min_height MIN_HEIGHT] [--width_height_ratio WIDTH_HEIGHT_RATIO] [--det_use_cuda] [--det_model_path DET_MODEL_PATH] [--det_limit_side_len DET_LIMIT_SIDE_LEN] [--det_limit_type {max,min}] [--det_thresh DET_THRESH] [--det_box_thresh DET_BOX_THRESH] [--det_unclip_ratio DET_UNCLIP_RATIO] [--det_donot_use_dilation] [--det_score_mode {slow,fast}] [--cls_use_cuda] [--cls_model_path CLS_MODEL_PATH] [--cls_image_shape CLS_IMAGE_SHAPE] [--cls_label_list CLS_LABEL_LIST] [--cls_batch_num CLS_BATCH_NUM] [--cls_thresh CLS_THRESH] [--rec_use_cuda] [--rec_model_path REC_MODEL_PATH] [--rec_img_shape REC_IMG_SHAPE] [--rec_batch_num REC_BATCH_NUM] options: -h, --help show this help message and exit -img IMG_PATH, --img_path IMG_PATH -p, --print_cost Global: --text_score TEXT_SCORE --no_det --no_cls --no_rec --print_verbose --min_height MIN_HEIGHT --width_height_ratio WIDTH_HEIGHT_RATIO Det: --det_use_cuda --det_model_path DET_MODEL_PATH --det_limit_side_len DET_LIMIT_SIDE_LEN --det_limit_type {max,min} --det_thresh DET_THRESH --det_box_thresh DET_BOX_THRESH --det_unclip_ratio DET_UNCLIP_RATIO --det_donot_use_dilation --det_score_mode {slow,fast} Cls: --cls_use_cuda --cls_model_path CLS_MODEL_PATH --cls_image_shape CLS_IMAGE_SHAPE --cls_label_list CLS_LABEL_LIST --cls_batch_num CLS_BATCH_NUM --cls_thresh CLS_THRESH Rec: --rec_use_cuda --rec_model_path REC_MODEL_PATH --rec_img_shape REC_IMG_SHAPE --rec_batch_num REC_BATCH_NUM 图像预测 link rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg "

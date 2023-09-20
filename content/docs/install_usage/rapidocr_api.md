@@ -53,35 +53,43 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 ```
 
 #### Python调用
-- 以文件的方式发送POST请求
-    ```python {linenos=table}
-    import requests
+{{< tabs tabTotal="2">}}
+{{% tab tabName="以文件的方式发送POST请求" %}}
 
-    url = 'http://localhost:9003/ocr'
-    img_path = 'tests/test_files/ch_en_num.jpg'
+```python {linenos=table}
+import requests
 
-    with open(img_path, 'rb') as f:
-        file_dict = {'image_file': (img_path, f, 'image/png')}
-        response = requests.post(url, files=file_dict, timeout=60)
+url = 'http://localhost:9003/ocr'
+img_path = 'tests/test_files/ch_en_num.jpg'
 
-    print(response.json())
-    ```
-- 以`base64`方式发送POST请求
-    ```python {linenos=table}
-    import base64
-    import requests
+with open(img_path, 'rb') as f:
+    file_dict = {'image_file': (img_path, f, 'image/png')}
+    response = requests.post(url, files=file_dict, timeout=60)
 
-    url = 'http://localhost:9003/ocr'
-    img_path = 'tests/test_files/ch_en_num.jpg'
+print(response.json())
+```
 
-    with open(img_path, 'rb') as fa:
-        img_str = base64.b64encode(fa.read())
+{{% /tab %}}
+{{% tab tabName="以`base64`方式发送POST请求" %}}
 
-    payload = {'image_data': img_str}
-    response = requests.post(url, data=payload)
+```python {linenos=table}
+import base64
+import requests
 
-    print(response.json())
-    ```
+url = 'http://localhost:9003/ocr'
+img_path = 'tests/test_files/ch_en_num.jpg'
+
+with open(img_path, 'rb') as fa:
+    img_str = base64.b64encode(fa.read())
+
+payload = {'image_data': img_str}
+response = requests.post(url, data=payload)
+
+print(response.json())
+```
+
+{{% /tab %}}
+{{< /tabs >}}
 
 ### API输出
 - 输出结果说明：

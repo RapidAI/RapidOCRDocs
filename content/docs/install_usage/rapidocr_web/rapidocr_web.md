@@ -29,12 +29,12 @@ categories:
         <img src="https://raw.githubusercontent.com/RapidAI/RapidOCR/ae529c2ba79e6cbf04c54caf2d24feb75e947ca4/assets/ocrweb_time.jpg" width="80%" height="80%">
     </div>
 
-### Installation
+### 安装
 ```bash {linenos=table}
 pip install rapidocr_web
 ```
 
-### Usage
+### 使用
 - 用法:
     ```bash {linenos=table}
     $ rapidocr_web -h
@@ -45,13 +45,13 @@ pip install rapidocr_web
     -ip IP, --ip IP       IP Address
     -p PORT, --port PORT  IP port
     ```
-- 示例:
+- 运行:
     ```bash {linenos=table}
     rapidocr_web -ip 0.0.0.0 -p 9003
     ```
 
-- 浏览器打开 `http://localhost:9003/`，enjoy it!
+- 浏览器打开 http://localhost:9003/，enjoy it!
 
     <div align="center">
-                <img src="https://github.com/RapidAI/RapidOCR/blob/ae529c2ba79e6cbf04c54caf2d24feb75e947ca4/assets/demo.gif" width="100%" height="100%">
+                <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/rapidocr_web_demo.gif" width="100%" height="100%">
     </div>

@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: "Blog"
+title: "博客"
 description: ""
 icon: article
 date: 2022-11-22T12:36:15+00:00

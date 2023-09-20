@@ -102,7 +102,7 @@ print(elapse)
 ```
 
 {{% /tab %}}
-{{% tab tabName="`np.ndarray`" %}}
+{{% tab tabName="np.ndarray" %}}
 
 ```python {linenos=table}
 from pathlib import Path
@@ -152,5 +152,5 @@ result, elapse = engine(img_path)
 print(result)
 print(elapse)
 ```
-{{< /tabs >}}
+{{% /tab %}}
 {{< /tabs >}}

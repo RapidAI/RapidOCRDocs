@@ -35,12 +35,13 @@
     </item>
     
     <item>
-      <title>rapidocr_web使用教程</title>
+      <title>安装及使用</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web/</link>
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web/</guid>
-      <description>Introduction link 该模块依赖最新版本的rapidocr_onnxruntime库。
+      <description>简介 link 该库是对rapidocr_onnxruntime
+该模块依赖最新版本的rapidocr_onnxruntime库。
 如果想要离线部署，可以先手动下载rapidocr_onnxruntime whl包，再手动安装rapidocr_web whl包来使用。
 网页上显示的推理时间具体解释如下：
 Installation link pip install rapidocr_web Usage link 用法:
@@ -124,7 +125,7 @@ cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --no
       <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_api/</guid>
-      <description>简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出curl和python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件的方式发送POST请求 import requests url = &amp;#39;http://localhost:9003/ocr&amp;#39; img_path = &amp;#39;tests/test_files/ch_en_num.</description>
+      <description>简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速调用rapidocr_onnxruntime的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件的方式发送POST请求 import requests url = &amp;#39;http://localhost:9003/ocr&amp;#39; img_path = &amp;#39;tests/test_files/ch_en_num.</description>
     </item>
     
     <item>

@@ -1098,7 +1098,7 @@
                 id:  14 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_api\/",
                 title: "rapidocr_api",
-                description: "简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速调用rapidocr_onnxruntime的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件的方式发送POST请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.",
+                description: "简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速调用rapidocr_onnxruntime的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件的方式发送POST请求 以`base64`方式发送POST请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.",
                 content: " 简介 link 该包是将"
             }
         );

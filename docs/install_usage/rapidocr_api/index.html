@@ -677,9 +677,44 @@ optional arguments:
   <code>curl -F image_file=@1.png http://0.0.0.0:9003/ocr</code>
   </pre>
   </div>
-<h4 id="python调用">Python调用 <a href="#python%e8%b0%83%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>以文件的方式发送POST请求
+<h4 id="python调用">Python调用 <a href="#python%e8%b0%83%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
+		
+		
+		
+		
+
+		
+
+		<a class="nav-link  active"
+		   id="befadcTab" data-bs-toggle="tab" data-bs-target="#befadc"
+		   type="button" role="tab" aria-controls="befadc" aria-selected="true">以文件的方式发送POST请求</a>
+
+		
+
+		<a class="nav-link "
+		   id="dafcebTab" data-bs-toggle="tab" data-bs-target="#dafceb"
+		   type="button" role="tab" aria-controls="dafceb" aria-selected="true">以`base64`方式发送POST请求</a>
+
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="befadc" role="tabpanel" aria-labelledby="nav-1">
+
+	
 
 
   
@@ -697,7 +732,7 @@ optional arguments:
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="83a6fe6" class="language-python  line-numbers">
+  <pre id="d5871e1" class="language-python  line-numbers">
   <code>import requests
 
 url = &#39;http://localhost:9003/ocr&#39;
@@ -710,9 +745,18 @@ with open(img_path, &#39;rb&#39;) as f:
 print(response.json())</code>
   </pre>
   </div>
-</li>
-<li>以<code>base64</code>方式发送POST请求
 
+
+</div>
+
+
+
+
+
+
+<div class="tab-pane fade" id="dafceb" role="tabpanel" aria-labelledby="nav-1">
+
+	
 
 
   
@@ -730,7 +774,7 @@ print(response.json())</code>
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="0e6dc07" class="language-python  line-numbers">
+  <pre id="97dc0a4" class="language-python  line-numbers">
   <code>import base64
 import requests
 
@@ -746,8 +790,12 @@ response = requests.post(url, data=payload)
 print(response.json())</code>
   </pre>
   </div>
-</li>
-</ul>
+
+
+</div>
+
+
+</div>
 <h3 id="api输出">API输出 <a href="#api%e8%be%93%e5%87%ba" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
 <li>
 <p>输出结果说明：</p>
@@ -771,7 +819,7 @@ print(response.json())</code>
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="3b8d81e" class="language-python  line-numbers">
+  <pre id="9ebca03" class="language-python  line-numbers">
   <code>{
 &#34;0&#34;: {
     &#34;rec_txt&#34;: &#34;香港深圳抽血，&#34;,  # 识别的文本
@@ -812,7 +860,7 @@ print(response.json())</code>
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="f520e2c" class="language-json  line-numbers">
+  <pre id="40871c0" class="language-json  line-numbers">
   <code>{
     &#34;0&#34;: {
         &#34;rec_txt&#34;: &#34;8月26日！&#34;,
@@ -907,9 +955,9 @@ print(response.json())</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-20T09:17:31&#43;0800"
-            title="20 Sep 2023, 09:17 &#43;0800">
-            20 Sep 2023, 09:17 &#43;0800
+            data-authdate="2023-09-20T09:28:19&#43;0800"
+            title="20 Sep 2023, 09:28 &#43;0800">
+            20 Sep 2023, 09:28 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1482,7 +1530,7 @@ print(response.json())</code>
                 id:  14 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_api\/",
                 title: "rapidocr_api",
-                description: "简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速调用rapidocr_onnxruntime的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件的方式发送POST请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.",
+                description: "简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速调用rapidocr_onnxruntime的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件的方式发送POST请求 以`base64`方式发送POST请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.",
                 content: " 简介 link 该包是将"
             }
         );

@@ -19,6 +19,8 @@ categories:
     <a href="https://pepy.tech/project/rapidocr_onnxruntime"><img src="https://static.pepy.tech/personalized-badge/rapidocr_onnxruntime?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Ort"></a>
 </p>
 
+{{< alert text="`v1.3.x`系列集成的是PaddleOCR v4系列模型 <br/> `rapidocr_onnxruntime==1.2.x`和`rapidocr_openvino==1.2.x`系列集成的是PaddleOCR v3模型"/>}}
+
 #### 🧸2023-09-20 v1.3.6 update:
 - 添加`VisRes`类，便于快速可视化结果。详情参见[demo.py](https://github.com/RapidAI/RapidOCR/blob/508beba09af5549e08340da336b0cff4a101e622/python/demo.py)用法
 #### 😀2023-09-20 v1.3.5 update:
@@ -32,11 +34,6 @@ categories:
 #### 🎉2023-08-26 v1.3.0 update:
 - 将PaddleOCR v4版对应的文本检测和文本识别轻量模型转换为onnx，并打包到whl中。
 - 接口与`v1.2.x`一致，直接使用即可。
----
-#### ⚠️注意：
-- `v1.3.x`系列集成的是PaddleOCR v4系列模型
-- `rapidocr_onnxruntime==1.2.x`和`rapidocr_openvino==1.2.x`系列集成的是PaddleOCR v3模型
-
 #### 😉2023-07-12 v1.2.12 update:
 - 在`rapidocr_onnxruntime`初始化时，添加`det_use_cuda`、`cls_use_cuda`、`rec_use_cuda`参数
 - 兼容配置文件方式传入`RapidOCR`类中

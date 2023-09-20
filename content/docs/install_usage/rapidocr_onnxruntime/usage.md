@@ -32,36 +32,50 @@ class RapidOCR:
         pass
 ```
 支持两种自定义传参数的方案，下面分别详细说明：
-{{< tabs tabTotal="3">}}
-{{% tab tabName="以config.yaml方式" %}}
+- 以`config.yaml`方式
+  1. 找到`rapidocr_onnxruntime`安装目录下的`config.yaml`文件，可以通过`pip show rapidocr_onnxruntime`找到其安装路径。
+  2. 将`config.yaml`拷贝出来，放到当前运行目录下
+  3. 按需自定义参数修改即可，具体参数解释，参见[config.yaml]()
+      ```python {linenos=table}
+      engine = RapidOCR(config_path="your.yaml")
+      ```
+- (推荐) 以具体参数传入，参数基本和`config.yaml`中对应，只是个别名称有所区别。
+  ```python {linenos=table}
+  class RapidOCR:
+      def __init__(
+          self,
+          text_score: float = 0.5,
+          print_verbose: bool = False,
+          min_height: int = 30,
+          width_height_ratio: float = 8,
+          det_use_cuda: bool = False,
+          det_model_path: Optional[str] = None,
+          det_limit_side_len: float = 736,
+          det_limit_type: str = "min",
+          det_thresh: float = 0.3,
+          det_box_thresh: float = 0.5,
+          det_unclip_ratio: float = 1.6,
+          det_donot_use_dilation: bool = False,
+          det_score_mode: str = "fast",
+          cls_use_cuda: bool = False,
+          cls_model_path: Optional[str] = None,
+          cls_image_shape: List[int] = [3, 48, 192],
+          cls_label_list: List[str] = ["0", "180"],
+          cls_batch_num: int = 6,
+          cls_thresh: float = 0.9,
+          rec_use_cuda: bool = False,
+          rec_model_path: Optional[str] = None,
+          rec_img_shape: List[int] = [3, 48, 320],
+          rec_batch_num: int = 6,
+      ):
+          pass
 
-1. 找到`rapidocr_onnxruntime`安装目录下的`config.yaml`文件，可以通过`pip show rapidocr_onnxruntime`找到其安装路径。
-2. 将`config.yaml`拷贝出来，放到当前运行目录下
-3. 按需自定义参数修改即可
+  engine = RapidOCR()
 
-{{% /tab %}}
-{{% tab tabName="（推荐）以具体参数传入" %}}
+  res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)
+  ```
 
-```python {linenos=table}
-class RapidOCR:
-    def __init__(self, config_path: Optional[str] = None, **kwargs):
-        pass
-```
-
-{{% /tab %}}
-{{< /tabs >}}
-
-
-
-
-### 脚本使用
-- 初始化`RapidOCR`类可不提供[`config.yaml`](https://github.com/RapidAI/RapidOCR/blob/29d5f5fc01fbff7c49926a3c297fa8a3fb1624af/python/rapidocr_onnxruntime/config.yaml)文件，默认使用安装目录下的`config.yaml`。如有自定义需求：
-  - 方案一：可直接通过初始化参数传入。详细参数参考下面命令行部分，和`config.yaml`基本对应。
-  - 方案二：复制`config.yaml`，自行更改，然后初始化给出。示例如下：
-    ```python {linenos=table}
-    engine = RapidOCR(config_path="your.yaml")
-    ```
-
+### 输入和输出
 - 输入：`Union[str, np.ndarray, bytes, Path]`
 - 输出：
   - 有值：`([[文本框坐标], 文本内容, 置信度], 推理时间)`，示例如下：
@@ -69,31 +83,74 @@ class RapidOCR:
     [[左上, 右上, 右下, 左下], '小明', '0.99'], [0.02, 0.02, 0.85]
     ```
   - 无值：`(None, None)`
-- 示例：
-  ```python {linenos=table}
-  from pathlib import Path
 
-  import cv2
-  from rapidocr_onnxruntime import RapidOCR
+### 不同传入方式使用示例
+{{< tabs tabTotal="3">}}
+{{% tab tabName="str" %}}
 
-  # RapidOCR可传入的参数参考下面的命令行部分
-  engine = RapidOCR()
+```python {linenos=table}
+from pathlib import Path
 
-  img_path = 'tests/test_files/ch_en_num.jpg'
+import cv2
+from rapidocr_onnxruntime import RapidOCR
 
-  # 输入格式一：str
-  result, elapse = engine(img_path)
+engine = RapidOCR()
+img_path = 'tests/test_files/ch_en_num.jpg'
+result, elapse = engine(img_path)
+print(result)
+print(elapse)
+```
 
-  # 输入格式二：np.ndarray
-  img = cv2.imread('tests/test_files/ch_en_num.jpg')
-  result, elapse = engine(img)
+{{% /tab %}}
+{{% tab tabName="`np.ndarray`" %}}
 
-  # 输入格式三：bytes
-  with open(img_path, 'rb') as f:
-      img = f.read()
-  result, elapse = engine(img)
+```python {linenos=table}
+from pathlib import Path
 
-  # 输入格式四：Path
-  result, elapse = engine(Path(img_path))
-  print(result)
-  ```
+import cv2
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+img = cv2.imread('tests/test_files/ch_en_num.jpg')
+result, elapse = engine(img)
+print(result)
+print(elapse)
+```
+
+{{% /tab %}}
+{{% tab tabName="Bytes" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+import cv2
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+with open(img_path, 'rb') as f:
+    img = f.read()
+result, elapse = engine(img)
+print(result)
+print(elapse)
+```
+
+{{% /tab %}}
+{{% tab tabName="Path" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+import cv2
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = Path('tests/test_files/ch_en_num.jpg')
+result, elapse = engine(img_path)
+print(result)
+print(elapse)
+```
+{{< /tabs >}}
+{{< /tabs >}}

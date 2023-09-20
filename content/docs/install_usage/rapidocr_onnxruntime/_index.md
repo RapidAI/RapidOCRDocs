@@ -1,6 +1,6 @@
 ---
 weight: 200
-title: "rapidcor"
+title: "rapidocr_onnxruntime"
 description: "rapidocr_onnxruntime"
 icon: menu_book
 date: 2023-09-13

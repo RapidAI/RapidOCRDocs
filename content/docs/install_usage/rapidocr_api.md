@@ -20,8 +20,8 @@ categories:
 </p>
 
 ### 简介
-- 采用`FastAPI` + `uvicorn`实现。
-- 该模块定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。
+- 该包是将`rapidocr_onnxruntime`库做了API封装，采用`FastAPI` + `uvicorn`实现。
+- 定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看[gunicorn](https://gunicorn.org/)等。
 
 ### 安装
 ```bash {linenos=table}
@@ -41,18 +41,19 @@ pip install rapidocr_api
     ```
 - 启动:
     ```bash {linenos=table}
-    $ rapidocr_api -ip 0.0.0.0 -p 9003
+    rapidocr_api -ip 0.0.0.0 -p 9003
     ```
 
 ### 调用
-{{< alert context="info" text="本质就是发送一个POST请求，其他语言同理。" />}}
+{{< alert context="info" text="调用本质就是发送一个POST请求，以下给出curl和python的调用示例，其他编程语言同理。" />}}
 
-#### curl调用
+#### Curl调用
 ```bash {linenos=table}
 curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 ```
-#### python调用
-- 以文件的方式发送请求
+
+#### Python调用
+- 以文件的方式发送POST请求
     ```python {linenos=table}
     import requests
 
@@ -65,7 +66,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 
     print(response.json())
     ```
-- 以`base64`方式发送post请求
+- 以`base64`方式发送POST请求
     ```python {linenos=table}
     import base64
     import requests
@@ -83,6 +84,23 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
     ```
 
 ### API输出
+- 输出结果说明：
+    - 如果图像中存在文字，则会输出字典格式，具体介绍如下：
+        ```python {linenos=table}
+        {
+        "0": {
+            "rec_txt": "香港深圳抽血，",  # 识别的文本
+            "dt_boxes": [  # 依次为左上角 → 右上角 → 右下角 → 左下角
+                [265, 18],
+                [472, 231],
+                [431, 271],
+                [223, 59]
+            ],
+            "score": "0.8175641223788261"  # 置信度
+            }
+        }
+        ```
+    - 如果没有检测到文字，则会输出空json(`{}`)。
 - 示例结果：
     <details>
     <summary>详情</summary>
@@ -132,23 +150,5 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
     }
     ```
     </details>
-
-- 输出结果说明：
-    - 如果图像中存在文字，则会输出字典格式，具体介绍如下：
-        ```python {linenos=table}
-        {
-        "0": {
-            "rec_txt": "香港深圳抽血，",  # 识别的文本
-            "dt_boxes": [  # 依次为左上角 → 右上角 → 右下角 → 左下角
-                [265, 18],
-                [472, 231],
-                [431, 271],
-                [223, 59]
-            ],
-            "score": "0.8175641223788261"  # 置信度
-            }
-        }
-        ```
-    - 如果没有检测到文字，则会输出空json(`{}`)。
 
 {{< alert context="warning" text="OCR API的输出结果为最原始结果，大家可按需进一步扩展。" />}}

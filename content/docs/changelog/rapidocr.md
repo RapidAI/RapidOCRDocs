@@ -19,7 +19,11 @@ categories:
     <a href="https://pepy.tech/project/rapidocr_onnxruntime"><img src="https://static.pepy.tech/personalized-badge/rapidocr_onnxruntime?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Ort"></a>
 </p>
 
-#### ⏰2023-09-18 v1.3.3 update:
+#### 🧸2023-09-20 v1.3.6 update:
+- 添加`VisRes`类，便于快速可视化结果。详情参见[demo.py](https://github.com/RapidAI/RapidOCR/blob/508beba09af5549e08340da336b0cff4a101e622/python/demo.py)用法
+#### 😀2023-09-20 v1.3.5 update:
+- Fixed issue [#122](https://github.com/RapidAI/RapidOCR/issues/122)
+#### ⏰2023-09-18 v1.3.4 update:
 - 优化更新参数部分的函数实现
 #### 🧸2023-09-06 v1.3.2 update:
 - 修复issue [#116](https://github.com/RapidAI/RapidOCR/issues/116)

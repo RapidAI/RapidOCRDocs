@@ -28,7 +28,7 @@ categories:
     ```
    注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。
 2. 修改`rapidocr-onnxruntime`源码（修改后可以将所有依赖打包进文件）
-   - ⚠️ `rapidocr_onnxruntime>=1.2.8`以后不用再手动修改下面代码，已经做了修改。可以跳过该步。
+    {{< alert context="info" text="`rapidocr_onnxruntime>=1.2.8`以后不用再手动修改下面代码，已经做了修改。可以跳过该步。" />}}
    - 进入`rapidocr-onnxruntime`安装位置，一般在`Lib\site-packages\rapidocr_onnxruntime`或者你设置的虚拟环境下。
    - 用编辑器打开`rapid_ocr_api.py`，对**39-52行**进行修改，如下图：
 

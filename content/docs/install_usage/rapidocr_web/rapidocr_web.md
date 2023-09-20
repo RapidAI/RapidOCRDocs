@@ -3,7 +3,7 @@ weight: 2
 date: "2023-09-08"
 draft: false
 author: "SWHL"
-title: "rapidocr_web使用教程"
+title: "安装及使用"
 icon: "code"
 toc: true
 description: ""
@@ -20,7 +20,8 @@ categories:
 </p>
 
 
-### Introduction
+### 简介
+- 该库是对`rapidocr_onnxruntime`
 - 该模块依赖最新版本的`rapidocr_onnxruntime`库。
 - 如果想要离线部署，可以先手动下载[`rapidocr_onnxruntime`](https://pypi.org/project/rapidocr-onnxruntime/#files) whl包，再手动安装[`rapidocr_web`](https://pypi.org/project/rapidocr-web/#files) whl包来使用。
 - 网页上显示的推理时间具体解释如下：

@@ -20,8 +20,8 @@ categories:
 </p>
 
 ### 简介
-- 该包是将`rapidocr_onnxruntime`库做了API封装，采用`FastAPI` + `uvicorn`实现。
-- 定位是一个快速搭建示例的demo，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看[gunicorn](https://gunicorn.org/)等。
+- 该包是将[rapidocr_onnxruntime](./rapidocr/rapidocr_onnxruntime.md)库做了API封装，采用[FastAPI](https://fastapi.tiangolo.com/) + [uvicorn](https://www.uvicorn.org/)实现。
+- 定位是一个快速调用`rapidocr_onnxruntime`的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看[gunicorn](https://gunicorn.org/)等。
 
 ### 安装
 ```bash {linenos=table}
@@ -45,7 +45,7 @@ pip install rapidocr_api
     ```
 
 ### 调用
-{{< alert context="info" text="调用本质就是发送一个POST请求，以下给出curl和python的调用示例，其他编程语言同理。" />}}
+{{< alert context="info" text="调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。" />}}
 
 #### Curl调用
 ```bash {linenos=table}

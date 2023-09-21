@@ -147,7 +147,7 @@ print(elapse)
 ### 输出
 类RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分。不同的参数，决定了不同的输出，详细搭配如下：
 
-{{< tabs tabTotal="3">}}
+{{< tabs tabTotal="6">}}
 {{% tab tabName="只有检测" %}}
 
 ```python {linenos=table}

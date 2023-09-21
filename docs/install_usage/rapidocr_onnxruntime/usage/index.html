@@ -556,10 +556,10 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#安装">安装</a></li>
             <li><a href="#初始化">初始化</a></li>
-            <li><a href="#输入和输出">输入和输出</a></li>
-            <li><a href="#不同传入方式使用示例">不同传入方式使用示例</a></li>
+            <li><a href="#输入">输入</a></li>
+            <li><a href="#输出">输出</a></li>
+            <li><a href="#可视化查看结果">可视化查看结果</a></li>
           </ul>
         </li>
       </ul>
@@ -579,10 +579,10 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#安装">安装</a></li>
             <li><a href="#初始化">初始化</a></li>
-            <li><a href="#输入和输出">输入和输出</a></li>
-            <li><a href="#不同传入方式使用示例">不同传入方式使用示例</a></li>
+            <li><a href="#输入">输入</a></li>
+            <li><a href="#输出">输出</a></li>
+            <li><a href="#可视化查看结果">可视化查看结果</a></li>
           </ul>
         </li>
       </ul>
@@ -610,29 +610,7 @@
     <a href="https://pypi.org/project/rapidocr-onnxruntime/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-onnxruntime?style=flat-square"></a>
     <a href="https://pepy.tech/project/rapidocr_onnxruntime"><img src="https://static.pepy.tech/personalized-badge/rapidocr_onnxruntime?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Ort"></a>
 </p>
-<h3 id="安装">安装 <a href="#%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-  
-  
-  
-
-  
-  
-  
-    
-  
-  
-
-   
-  
-
-  <div class="prism-codeblock  linenos">
-  <pre id="7cd47f2" class="language-bash  line-numbers">
-  <code>pip install rapidocr-onnxruntime</code>
-  </pre>
-  </div>
-<h3 id="初始化">初始化 <a href="#%e5%88%9d%e5%a7%8b%e5%8c%96" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>类RapidOCR是主类，其初始化函数如下：</p>
+<h3 id="初始化">初始化 <a href="#%e5%88%9d%e5%a7%8b%e5%8c%96" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>类<a href="https://github.com/RapidAI/RapidOCR/blob/a981e21743f03d9bbfbe596974123fecfe8a7d62/python/rapidocr_onnxruntime/main.py#L19" rel="external" target="_blank">RapidOCR<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>是主类，其初始化函数如下：</p>
 
 
 
@@ -651,7 +629,7 @@
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="27304be" class="language-python  line-numbers">
+  <pre id="c9478f2" class="language-python  line-numbers">
   <code>class RapidOCR:
     def __init__(self, config_path: Optional[str] = None, **kwargs):
         pass</code>
@@ -659,11 +637,12 @@
   </div>
 <p>支持两种自定义传参数的方案，下面分别详细说明：</p>
 <ul>
-<li>以<code>config.yaml</code>方式
+<li>
+<p>以<code>config.yaml</code>方式</p>
 <ol>
 <li>找到<code>rapidocr_onnxruntime</code>安装目录下的<code>config.yaml</code>文件，可以通过<code>pip show rapidocr_onnxruntime</code>找到其安装路径。</li>
 <li>将<code>config.yaml</code>拷贝出来，放到当前运行目录下</li>
-<li>按需自定义参数修改即可，具体参数解释，参见<a href="">config.yaml</a>
+<li>按需自定义参数修改即可，具体参数解释，参见<a data-bs-delay="{&#34;hide&#34;:300,&#34;show&#34;:550}" data-bs-html="true" data-bs-title="<a href='/RapidOCRDocs/docs/blog/config_parameter/'><p>博客</p><strong>config.yaml参数解释</strong><br></a>" data-bs-toggle="tooltip" href="/RapidOCRDocs/docs/blog/config_parameter/">config.yaml</a>
 
 
 
@@ -682,14 +661,25 @@
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="0683527" class="language-python  line-numbers">
+  <pre id="2b30925" class="language-python  line-numbers">
   <code>engine = RapidOCR(config_path=&#34;your.yaml&#34;)</code>
   </pre>
   </div>
 </li>
 </ol>
 </li>
-<li>(推荐) 以具体参数传入，参数基本和<code>config.yaml</code>中对应，只是个别名称有所区别。
+<li>
+<p>(推荐) 以具体参数传入，参数基本和<a data-bs-delay="{&#34;hide&#34;:300,&#34;show&#34;:550}" data-bs-html="true" data-bs-title="<a href='/RapidOCRDocs/docs/blog/config_parameter/'><p>博客</p><strong>config.yaml参数解释</strong><br></a>" data-bs-toggle="tooltip" href="/RapidOCRDocs/docs/blog/config_parameter/">config.yaml</a>中对应，只是个别名称有所区别。</p>
+
+  <div class="alert alert-info d-flex" role="alert">
+    <div class="flex-shrink-1 alert-icon">
+    
+    <span class="material-icons size-20 me-2">
+    info
+    </span></div>
+    
+    <div class="w-100">以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。</div>
+    </div>
 
 
 
@@ -708,7 +698,7 @@
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="38c1e04" class="language-python  line-numbers">
+  <pre id="24af0a1" class="language-python  line-numbers">
   <code>class RapidOCR:
     def __init__(
         self,
@@ -745,36 +735,8 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
   </div>
 </li>
 </ul>
-<h3 id="输入和输出">输入和输出 <a href="#%e8%be%93%e5%85%a5%e5%92%8c%e8%be%93%e5%87%ba" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
-<li>输入：<code>Union[str, np.ndarray, bytes, Path]</code></li>
-<li>输出：
-<ul>
-<li>有值：<code>([[文本框坐标], 文本内容, 置信度], 推理时间)</code>，示例如下：
+<h3 id="输入">输入 <a href="#%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>支持4种输入类型：<code>Union[str, np.ndarray, bytes, Path]</code></p>
 
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="8a2fe81" class="language-text ">
-  <code>[[左上, 右上, 右下, 左下], &#39;小明&#39;, &#39;0.99&#39;], [0.02, 0.02, 0.85]</code>
-  </pre>
-  </div>
-</li>
-<li>无值：<code>(None, None)</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="不同传入方式使用示例">不同传入方式使用示例 <a href="#%e4%b8%8d%e5%90%8c%e4%bc%a0%e5%85%a5%e6%96%b9%e5%bc%8f%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -786,26 +748,26 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 		
 
 		<a class="nav-link  active"
-		   id="afbdceTab" data-bs-toggle="tab" data-bs-target="#afbdce"
-		   type="button" role="tab" aria-controls="afbdce" aria-selected="true">str</a>
+		   id="fadcebTab" data-bs-toggle="tab" data-bs-target="#fadceb"
+		   type="button" role="tab" aria-controls="fadceb" aria-selected="true">str</a>
 
 		
 
 		<a class="nav-link "
-		   id="fcadbeTab" data-bs-toggle="tab" data-bs-target="#fcadbe"
-		   type="button" role="tab" aria-controls="fcadbe" aria-selected="true">np.ndarray</a>
+		   id="cefabdTab" data-bs-toggle="tab" data-bs-target="#cefabd"
+		   type="button" role="tab" aria-controls="cefabd" aria-selected="true">np.ndarray</a>
 
 		
 
 		<a class="nav-link "
-		   id="dacfbeTab" data-bs-toggle="tab" data-bs-target="#dacfbe"
-		   type="button" role="tab" aria-controls="dacfbe" aria-selected="true">Bytes</a>
+		   id="baecfdTab" data-bs-toggle="tab" data-bs-target="#baecfd"
+		   type="button" role="tab" aria-controls="baecfd" aria-selected="true">Bytes</a>
 
 		
 
 		<a class="nav-link "
-		   id="dfaebcTab" data-bs-toggle="tab" data-bs-target="#dfaebc"
-		   type="button" role="tab" aria-controls="dfaebc" aria-selected="true">Path</a>
+		   id="facebdTab" data-bs-toggle="tab" data-bs-target="#facebd"
+		   type="button" role="tab" aria-controls="facebd" aria-selected="true">Path</a>
 
 		
 
@@ -821,7 +783,7 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 
 
 
-<div class="tab-pane fade show active" id="afbdce" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="fadceb" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -863,7 +825,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="fcadbe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cefabd" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -905,7 +867,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="dacfbe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="baecfd" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -950,7 +912,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="dfaebc" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="facebd" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -982,6 +944,210 @@ img_path = Path(&#39;tests/test_files/ch_en_num.jpg&#39;)
 result, elapse = engine(img_path)
 print(result)
 print(elapse)</code>
+  </pre>
+  </div>
+
+
+</div>
+
+
+</div>
+<h3 id="输出">输出 <a href="#%e8%be%93%e5%87%ba" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>
+<p>有值：<code>([[文本框坐标], 文本内容, 置信度], 推理时间)</code>，示例如下：</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="70a27af" class="language-text ">
+  <code>[[左上, 右上, 右下, 左下], &#39;小明&#39;, &#39;0.99&#39;], [0.02, 0.02, 0.85]</code>
+  </pre>
+  </div>
+</li>
+<li>
+<p>无值：<code>(None, None)</code></p>
+</li>
+<li>
+<p>除耗时外的示例结果：</p>
+  <details>
+      <summary>详情</summary>
+
+
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="1f66038" class="language-python  line-numbers">
+  <code>[
+    [[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], &#39;正品促销&#39;, &#39;0.7986101984977723&#39;],
+    [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], &#39;大桶装更划算&#39;, &#39;0.7368737288883754&#39;],
+    [[[69.0, 144.0], [255.0, 144.0], [255.0, 164.0], [69.0, 164.0]], &#39;强力去污符合国标&#39;, &#39;0.8172478278477987&#39;],
+    [[[107.0, 170.0], [219.0, 170.0], [219.0, 182.0], [107.0, 182.0]], &#39;-40深度防冻不结冰&#39;, &#39;0.8655969283797524&#39;],
+    [[[35.0, 227.0], [63.0, 227.0], [63.0, 236.0], [35.0, 236.0]], &#39;日常价?&#39;, &#39;0.6502826035022735&#39;],
+    [[[141.0, 223.0], [187.0, 225.0], [185.0, 249.0], [139.0, 247.0]], &#39;直击&#39;, &#39;0.596031109491984&#39;],
+    [[[34.0, 234.0], [81.0, 236.0], [80.0, 254.0], [33.0, 252.0]], &#39;10.0起&#39;, &#39;0.8231529593467712&#39;],
+    [[[257.0, 234.0], [304.0, 236.0], [303.0, 253.0], [256.0, 251.0]], &#39;10.0起&#39;, &#39;0.8304102122783661&#39;],
+    [[[258.0, 227.0], [287.0, 226.0], [287.0, 236.0], [258.0, 237.0]], &#39;日常价?&#39;, &#39;0.5725070595741272&#39;],
+    [[[140.0, 245.0], [186.0, 246.0], [186.0, 272.0], [139.0, 271.0]], &#39;底价&#39;, &#39;0.5142453710238138&#39;],
+    [[[129.0, 290.0], [207.0, 292.0], [206.0, 339.0], [128.0, 337.0]], &#39;5.8&#39;, &#39;0.6341951936483383&#39;],
+    [[[98.0, 320.0], [129.0, 320.0], [129.0, 331.0], [98.0, 331.0]], &#39;券后价?&#39;, &#39;0.6209247708320618&#39;],
+    [[[114.0, 343.0], [210.0, 343.0], [210.0, 355.0], [114.0, 355.0]], &#39;惊喜福利不容错过&#39;, &#39;0.8640043867958916&#39;],
+    [[[69.0, 363.0], [151.0, 363.0], [151.0, 383.0], [69.0, 383.0]], &#39;极速发货&#39;, &#39;0.7552512288093567&#39;],
+    [[[201.0, 363.0], [285.0, 363.0], [285.0, 383.0], [201.0, 383.0]], &#39;冰点标准&#39;, &#39;0.7194759607315063&#39;],
+    [[[68.0, 392.0], [151.0, 392.0], [151.0, 412.0], [68.0, 412.0]], &#39;破损就赔&#39;, &#39;0.7711991906166077&#39;],
+    [[[202.0, 391.0], [285.0, 391.0], [285.0, 413.0], [202.0, 413.0]], &#39;假一赔十&#39;, &#39;0.6546663284301758&#39;]
+]</code>
+  </pre>
+  </div>
+  </details>
+</li>
+</ul>
+<h3 id="可视化查看结果">可视化查看结果 <a href="#%e5%8f%af%e8%a7%86%e5%8c%96%e6%9f%a5%e7%9c%8b%e7%bb%93%e6%9e%9c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>为了便于查看检测和识别结果，该库中封装了<a href="https://github.com/RapidAI/RapidOCR/blob/a981e21743f03d9bbfbe596974123fecfe8a7d62/python/rapidocr_onnxruntime/utils.py#L351" rel="external" target="_blank"><code>VisRes</code><svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>类，可借助该类快速可视化查看结果。</p>
+
+<div class="alert alert-info d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  
+  <span class="material-icons size-20 me-2">
+  info
+  </span></div>
+  
+  <div class="w-100">可视化时，需要提供字体文件</div>
+  </div>
+
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		<a class="nav-link  active"
+		   id="acdefbTab" data-bs-toggle="tab" data-bs-target="#acdefb"
+		   type="button" role="tab" aria-controls="acdefb" aria-selected="true">只可视化检测</a>
+
+		
+
+		<a class="nav-link "
+		   id="aebfcdTab" data-bs-toggle="tab" data-bs-target="#aebfcd"
+		   type="button" role="tab" aria-controls="aebfcd" aria-selected="true">可视化检测和识别</a>
+
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="acdefb" role="tabpanel" aria-labelledby="nav-1">
+
+	
+
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="af52f6e" class="language-python  line-numbers">
+  <code>import cv2
+
+from rapidocr_onnxruntime import RapidOCR, VisRes
+
+engine = RapidOCR()
+vis = VisRes(font_path=&#34;resources/fonts/FZYTK.TTF&#34;)
+
+image_path = &#34;tests/test_files/ch_en_num.jpg&#34;
+result, elapse_list = rapid_ocr(img)
+boxes, txts, scores = list(zip(*result))
+res = vis(img, boxes, None, None)
+cv2.imwrite(&#34;only_vis_det.png&#34;, res)</code>
+  </pre>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="tab-pane fade" id="aebfcd" role="tabpanel" aria-labelledby="nav-1">
+
+	
+
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="41fee3c" class="language-python  line-numbers">
+  <code>import cv2
+
+from rapidocr_onnxruntime import RapidOCR, VisRes
+
+engine = RapidOCR()
+vis = VisRes(font_path=&#34;resources/fonts/FZYTK.TTF&#34;)
+
+image_path = &#34;tests/test_files/ch_en_num.jpg&#34;
+result, elapse_list = rapid_ocr(img)
+boxes, txts, scores = list(zip(*result))
+res = vis(img, boxes, txts, scores)
+cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
   </pre>
   </div>
 
@@ -1027,9 +1193,9 @@ print(elapse)</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-20T22:48:30&#43;0800"
-            title="20 Sep 2023, 22:48 &#43;0800">
-            20 Sep 2023, 22:48 &#43;0800
+            data-authdate="2023-09-21T08:29:12&#43;0800"
+            title="21 Sep 2023, 08:29 &#43;0800">
+            21 Sep 2023, 08:29 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1777,8 +1943,8 @@ print(elapse)</code>
                 id:  28 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_onnxruntime\/usage\/",
                 title: "使用说明",
-                description: "安装 link pip install rapidocr-onnxruntime 初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：\n以config.yaml方式 找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml engine = RapidOCR(config_path=\"your.yaml\") (推荐) 以具体参数传入，参数基本和config.yaml中对应，只是个别名称有所区别。 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = \"min\", det_thresh: float = 0.",
-                content: " 安装 link pip install rapidocr-onnxruntime 初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：\n以config.yaml方式 找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml engine = RapidOCR(config_path=\"your.yaml\") (推荐) 以具体参数传入，参数基本和config.yaml中对应，只是个别名称有所区别。 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = \"min\", det_thresh: float = 0.3, det_box_thresh: float = 0.5, det_unclip_ratio: float = 1.6, det_donot_use_dilation: bool = False, det_score_mode: str = \"fast\", cls_use_cuda: bool = False, cls_model_path: Optional[str] = None, cls_image_shape: List[int] = [3, 48, 192], cls_label_list: List[str] = [\"0\", \"180\"], cls_batch_num: int = 6, cls_thresh: float = 0.9, rec_use_cuda: bool = False, rec_model_path: Optional[str] = None, rec_img_shape: List[int] = [3, 48, 320], rec_batch_num: int = 6, ): pass engine = RapidOCR() res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True) 输入和输出 link 输入：Union[str, np.ndarray, bytes, Path] 输出： 有值：([[文本框坐标], 文本内容, 置信度], 推理时间)，示例如下： [[左上, 右上, 右下, 左下], '小明', '0.99'], [0.02, 0.02, 0.85] 无值：(None, None) 不同传入方式使用示例 link str np.ndarray Bytes Path from pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path) print(result) print(elapse) from pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img = cv2.imread('tests/test_files/ch_en_num.jpg') result, elapse = engine(img) print(result) print(elapse) from pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as f: img = f.read() result, elapse = engine(img) print(result) print(elapse) from pathlib import Path import cv2 from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = Path('tests/test_files/ch_en_num.jpg') result, elapse = engine(img_path) print(result) print(elapse) "
+                description: "初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：\n以config.yaml方式\n找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml engine = RapidOCR(config_path=\"your.yaml\") (推荐) 以具体参数传入，参数基本和config.yaml中对应，只是个别名称有所区别。\ninfo 以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = \"min\", det_thresh: float = 0.3, det_box_thresh: float = 0.",
+                content: " 初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：\n以config.yaml方式\n找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见"
             }
         );
     index.add(

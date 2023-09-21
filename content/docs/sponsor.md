@@ -1,6 +1,6 @@
 ---
 weight: 100
-title: "给作者加油🥤"
+title: "给作者加油"
 description: ""
 icon: article
 date: 2022-11-22T12:36:15+00:00
@@ -27,14 +27,14 @@ images: []
 通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/RapidAI/.github/6db6b6b9273f3151094a462a61fbc8e88564562c/assets/Sponsor.png" width="50%" height="50%">
+    <img src="https://raw.githubusercontent.com/RapidAI/.github/6db6b6b9273f3151094a462a61fbc8e88564562c/assets/Sponsor.png" width="40%" height="40%">
 </div>
 
 ### 3. Buy me a Coffee
 If you are not in mainland China, you can also support the author through:
 
 <div align="center">
-    <a href="https://www.buymeacoffee.com/SWHL"><img src="https://raw.githubusercontent.com/RapidAI/.github/main/assets/buymeacoffe.png" width="50%" height="50%"></a>
+    <a href="https://www.buymeacoffee.com/SWHL"><img src="https://raw.githubusercontent.com/RapidAI/.github/main/assets/buymeacoffe.png" width="30%" height="30%"></a>
 </div>
 
 

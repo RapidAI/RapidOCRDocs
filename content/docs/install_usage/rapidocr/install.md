@@ -19,8 +19,11 @@ categories:
     <a href="https://pepy.tech/project/rapidocr_onnxruntime"><img src="https://static.pepy.tech/personalized-badge/rapidocr_onnxruntime?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Ort"></a>
 </p>
 
+{{< alert context="info" text="`rapidocr_onnxruntime`和`rapidocr_openvino`两个包除推理引擎不同之外，其余均相同，后续说明文档均以`rapidocr_onnxruntime`为例<br/>如使用`rapidocr_openvino`，直接更换关键词`rapidocr_onnxruntime`为`rapidocr_openvino`即可。" />}}
+
+
 {{% alert context="info" %}}
-#### 各个版本的对应关系：
+#### pypi上各个版本的对应关系：
 
 |版本|内置模型版本|对应PaddleOCR 分支|
 |:---:|:---:|:---:|

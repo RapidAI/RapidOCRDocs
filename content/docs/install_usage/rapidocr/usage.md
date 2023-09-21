@@ -80,8 +80,6 @@ class RapidOCR:
 {{% tab tabName="str" %}}
 
 ```python {linenos=table}
-from pathlib import Path
-
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -96,8 +94,6 @@ print(elapse)
 {{% tab tabName="np.ndarray" %}}
 
 ```python {linenos=table}
-from pathlib import Path
-
 import cv2
 from rapidocr_onnxruntime import RapidOCR
 
@@ -112,8 +108,6 @@ print(elapse)
 {{% tab tabName="Bytes" %}}
 
 ```python {linenos=table}
-from pathlib import Path
-
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -151,8 +145,6 @@ print(elapse)
 {{% tab tabName="只有检测" %}}
 
 ```python {linenos=table}
-from pathlib import Path
-
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -177,8 +169,6 @@ print(elapse)
 {{% tab tabName="只有分类" %}}
 
 ```python {linenos=table}
-from pathlib import Path
-
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -200,8 +190,6 @@ print(elapse)
 {{% tab tabName="只有识别" %}}
 
 ```python {linenos=table}
-from pathlib import Path
-
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -223,8 +211,6 @@ print(elapse)
 {{% tab tabName="检测 + 识别" %}}
 
 ```python {linenos=table}
-from pathlib import Path
-
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -247,8 +233,6 @@ print(elapse)
 {{% tab tabName="分类 + 识别" %}}
 
 ```python {linenos=table}
-from pathlib import Path
-
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -271,8 +255,6 @@ print(elapse)
 {{% tab tabName="检测 + 分类 + 识别" %}}
 
 ```python {linenos=table}
-from pathlib import Path
-
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()

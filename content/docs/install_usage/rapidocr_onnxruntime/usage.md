@@ -73,6 +73,85 @@ class RapidOCR:
   res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)
   ```
 
+### 灵活搭配
+类RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分。详细搭配如下：
+
+{{< tabs tabTotal="3">}}
+{{% tab tabName="只有检测" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+result, elapse = engine(img_path, use_det=True, use_cls=False, use_rec=False)
+print(result)
+print(elapse)
+```
+
+返回值为: `List[List[float]]` (每个框的坐标`[左上角x,y, 右下角x,y]`)
+```python
+[
+    [[5.0, 2.0], [322.0, 9.0], [319.0, 103.0], [3.0, 96.0]],
+    [[70.0, 98.0], [252.0, 97.0], [252.0, 125.0], [70.0, 126.0]],
+    ...
+]
+```
+
+
+{{% /tab %}}
+{{% tab tabName="只有分类" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=False)
+print(result)
+print(elapse)
+```
+返回值为: `List[List[str, float]]` (`[方向0或180, 置信度]`)
+```python
+[
+    ['0', 0.9998784],
+    ...
+]
+```
+
+{{% /tab %}}
+{{% tab tabName="只有识别" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+result, elapse = engine(img_path, use_det=False, use_cls=False, use_rec=True)
+print(result)
+print(elapse)
+```
+返回值为: `List[List[str, float]]` (`[识别的文本, 置信度]`)
+```python
+[
+    ['韩国小馆', 0.7992169380187988],
+    ...
+]
+```
+
+{{% /tab %}}
+{{< /tabs >}}
+
+
 ### 输入
 支持4种输入类型：`Union[str, np.ndarray, bytes, Path]`
 
@@ -82,10 +161,10 @@ class RapidOCR:
 ```python {linenos=table}
 from pathlib import Path
 
-import cv2
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
+
 img_path = 'tests/test_files/ch_en_num.jpg'
 result, elapse = engine(img_path)
 print(result)
@@ -114,7 +193,6 @@ print(elapse)
 ```python {linenos=table}
 from pathlib import Path
 
-import cv2
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -133,7 +211,6 @@ print(elapse)
 ```python {linenos=table}
 from pathlib import Path
 
-import cv2
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()

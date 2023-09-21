@@ -350,6 +350,17 @@
                     
                 
                     
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://rapidai.github.io/RapidOCRDocs/docs/business_support/">
+                                <i class="material-icons me-2">work</i>
+                                
+                                商业支持
+                            </a>
+                        </li>
+                    
+                
+                    
                     
                         <li class="sidebar-dropdown  ">
                             <button class="btn">
@@ -708,26 +719,26 @@ Visual Result:
 		
 
 		<a class="nav-link  active"
-		   id="cbfaedTab" data-bs-toggle="tab" data-bs-target="#cbfaed"
-		   type="button" role="tab" aria-controls="cbfaed" aria-selected="true">图像预测</a>
+		   id="fbcdeaTab" data-bs-toggle="tab" data-bs-target="#fbcdea"
+		   type="button" role="tab" aria-controls="fbcdea" aria-selected="true">图像预测</a>
 
 		
 
 		<a class="nav-link "
-		   id="aedbcfTab" data-bs-toggle="tab" data-bs-target="#aedbcf"
-		   type="button" role="tab" aria-controls="aedbcf" aria-selected="true">只使用检测</a>
+		   id="fbeadcTab" data-bs-toggle="tab" data-bs-target="#fbeadc"
+		   type="button" role="tab" aria-controls="fbeadc" aria-selected="true">只使用检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="ebafdcTab" data-bs-toggle="tab" data-bs-target="#ebafdc"
-		   type="button" role="tab" aria-controls="ebafdc" aria-selected="true">只使用识别</a>
+		   id="daecfbTab" data-bs-toggle="tab" data-bs-target="#daecfb"
+		   type="button" role="tab" aria-controls="daecfb" aria-selected="true">只使用识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="afcdbeTab" data-bs-toggle="tab" data-bs-target="#afcdbe"
-		   type="button" role="tab" aria-controls="afcdbe" aria-selected="true">可视化查看</a>
+		   id="ebfcdaTab" data-bs-toggle="tab" data-bs-target="#ebfcda"
+		   type="button" role="tab" aria-controls="ebfcda" aria-selected="true">可视化查看</a>
 
 		
 
@@ -743,7 +754,7 @@ Visual Result:
 
 
 
-<div class="tab-pane fade show active" id="cbfaed" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="fbcdea" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -776,7 +787,7 @@ Visual Result:
 
 
 
-<div class="tab-pane fade" id="aedbcf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="fbeadc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -809,7 +820,7 @@ Visual Result:
 
 
 
-<div class="tab-pane fade" id="ebafdc" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="daecfb" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -842,7 +853,7 @@ Visual Result:
 
 
 
-<div class="tab-pane fade" id="afcdbe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ebfcda" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1375,6 +1386,13 @@ Visual Result:
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -1413,8 +1431,8 @@ Visual Result:
                 id:  3 ,
                 href: "\/RapidOCRDocs\/docs\/overview\/",
                 title: "概览",
-                description: "捷智OCR link信创级开源OCR - 为世界内容安全贡献力量 商业支持 link 🎉🎉🎉 推出知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 生态框架 linkflowchart LR subgraph Step direction TB C(Text Det) --\u003e D(Text Cls) --\u003e E(Text Rec) end A[/OurSelf Dataset/] --\u003e B(PaddleOCR) --Train--\u003e Step --\u003e F(PaddleOCRModelConverter) F --ONNX--\u003e G{RapidOCR Deploy\\nPython/C++/Java/C#} G --\u003e H(Windows x86/x64) \u0026 I(Linux) \u0026 J(Android) \u0026 K(Web) \u0026 L(Raspberry Pi) click B \"https://github.",
-                content: " 捷智OCR link信创级开源OCR - 为世界内容安全贡献力量\n商业支持 link 🎉🎉🎉 推出知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 生态框架 linkflowchart LR subgraph Step direction TB C(Text Det) --\u003e D(Text Cls) --\u003e E(Text Rec) end A[/OurSelf Dataset/] --\u003e B(PaddleOCR) --Train--\u003e Step --\u003e F(PaddleOCRModelConverter) F --ONNX--\u003e G{RapidOCR Deploy\\nPython/C++/Java/C#} G --\u003e H(Windows x86/x64) \u0026 I(Linux) \u0026 J(Android) \u0026 K(Web) \u0026 L(Raspberry Pi) click B \"https://github.com/PaddlePaddle/PaddleOCR\" _blank click F \"https://github.com/RapidAI/PaddleOCRModelConverter\" _blank "
+                description: "捷智OCR link信创级开源OCR - 为世界内容安全贡献力量 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 整体框架 linkflowchart LR subgraph Step direction TB C(Text Det) --\u003e D(Text Cls) --\u003e E(Text Rec) end A[/OurSelf Dataset/] --\u003e B(PaddleOCR) --Train--\u003e Step --\u003e F(PaddleOCRModelConverter) F --ONNX--\u003e G{RapidOCR Deploy\\nPython/C++/Java/C#} G --\u003e H(Windows x86/x64) \u0026 I(Linux) \u0026 J(Android) \u0026 K(Web) \u0026 L(Raspberry Pi) click B \"https://github.com/PaddlePaddle/PaddleOCR\" _blank click F \"https://github.",
+                content: " 捷智OCR link信创级开源OCR - 为世界内容安全贡献力量\n简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 整体框架 linkflowchart LR subgraph Step direction TB C(Text Det) --\u003e D(Text Cls) --\u003e E(Text Rec) end A[/OurSelf Dataset/] --\u003e B(PaddleOCR) --Train--\u003e Step --\u003e F(PaddleOCRModelConverter) F --ONNX--\u003e G{RapidOCR Deploy\\nPython/C++/Java/C#} G --\u003e H(Windows x86/x64) \u0026 I(Linux) \u0026 J(Android) \u0026 K(Web) \u0026 L(Raspberry Pi) click B \"https://github.com/PaddlePaddle/PaddleOCR\" _blank click F \"https://github.com/RapidAI/PaddleOCRModelConverter\" _blank Authors and acknowledgment link "
             }
         );
     index.add(
@@ -1512,8 +1530,8 @@ Visual Result:
                 id:  14 ,
                 href: "\/RapidOCRDocs\/docs\/online_demo\/",
                 title: "在线demo",
-                description: "简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
-                content: "简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
+                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
+                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
             }
         );
     index.add(
@@ -1627,6 +1645,15 @@ Visual Result:
     index.add(
             {
                 id:  27 ,
+                href: "\/RapidOCRDocs\/docs\/business_support\/",
+                title: "商业支持",
+                description: "问题咨询服务 link 加入知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 信创CPU支持 link 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 国产操作系统OCR Docker部署 link 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 ",
+                content: "问题咨询服务 link 加入知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 信创CPU支持 link 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 国产操作系统OCR Docker部署 link 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 "
+            }
+        );
+    index.add(
+            {
+                id:  28 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/",
                 title: "rapidocr",
                 description: "rapidocr",
@@ -1635,7 +1662,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  28 ,
+                id:  29 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/usage\/",
                 title: "使用说明",
                 description: "初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：\n以config.yaml方式\n找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml engine = RapidOCR(config_path=\"your.yaml\") (推荐) 以具体参数传入，参数基本和config.yaml中对应，只是个别名称有所区别。\ninfo 以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = \"min\", det_thresh: float = 0.3, det_box_thresh: float = 0.",
@@ -1644,7 +1671,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  29 ,
+                id:  30 ,
                 href: "\/RapidOCRDocs\/docs\/blog\/optim_tutorial\/",
                 title: "调优尝试教程",
                 description: "引言 link 由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。 基本的原则是尽量不去动模型内部，降低使用成本。 本篇文章就来说说在识别效果不好时，如何去调优。 因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。 ✨以下尝试情况，均已经在在线demo中实现，看完之后，可移步那里去尝试。 常见错例种类 link本地使用过程中，识别结果： 个别字丢失 个别字识别错误 个别字丢失调优篇 link 查看图像是否shape太小，导致文本检测丢失。 对于长度较长，高度较小的图像，可尝试对该图像高度做上下补充，来减小文字在原始图像中比例，利于文本检测。类似下图这种，左侧一条为原始图像，右侧为上下补边的图像。 padding代码参考： from typing import Tuple import cv2 import numpy as np def padding_img(img: np.ndarray, padding_value: Tuple[int, int, int, int], padding_color: Tuple = (0, 0, 0)) -\u003e np.ndarray: padded_img = cv2.copyMakeBorder(img, padding_value[0], padding_value[1], padding_value[2], padding_value[3], cv2.BORDER_CONSTANT, value=padding_color) return padded_img img = cv2.imread('xxx.jpg') # padding_value: (top, bottom, left, right) # 对该图像上下各补充10像素的白边 padded_img = padding_img(img, (10, 10, 0, 0), (255, 255, 255)) 将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。 将该图像上传到在线demo中，查看能否复现问题？",
@@ -1653,7 +1680,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  30 ,
+                id:  31 ,
                 href: "\/RapidOCRDocs\/docs\/changelog\/",
                 title: "更新日志",
                 description: "Changelog",
@@ -1662,7 +1689,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  31 ,
+                id:  32 ,
                 href: "\/RapidOCRDocs\/docs\/blog\/which_inference\/",
                 title: "选择哪个推理引擎？",
                 description: "推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ warning openvino存在内存不释放的问题，参见issue #11939",
@@ -1671,7 +1698,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  32 ,
+                id:  33 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_web\/",
                 title: "rapidocr_web",
                 description: "",
@@ -1680,7 +1707,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  33 ,
+                id:  34 ,
                 href: "\/RapidOCRDocs\/docs\/blog\/config_parameter\/",
                 title: "config.yaml参数解释",
                 description: "config.yaml源码 linkGlobal部分 link 参数名称 取值范围 默认值 作用 text_score [0, 1] 0.5 文本识别结果置信度，值越大，把握越大 use_angle_cls bool true 是否使用文本行的方向分类 print_verbose bool true 是否打印各个部分耗时信息 min_height int 30 图像最小高度（单位是像素）低于这个值，会跳过文本检测阶段，直接进行后续识别 width_height_ratio int 8 如果输入图像的宽高比大于width_height_ratio，则会跳过文本检测，直接进行后续识别width_height_ratio=-1：不用这个参数 min_height是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。\nDet部分 link 参数名称 取值范围 默认值 作用 use_cuda bool false 是否使用CUDA，加速推理 limit_side_len - 736 限制图像边的长度的像素值 limit_type [min, max] min 限制图像的最小边长度还是最大边为limit_side_len 示例解释：当limit_type=min和limit_side_len=736时，图像最小边小于736时，会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 thresh [0, 1] 0.3 图像中文字部分和背景部分分割阈值值越大，文字部分会越小 box_thresh [0, 1] 0.5 文本检测所得框是否保留的阈值，值越大，召回率越低 max_candidates - 1000 图像中最大可检测到的文本框数目，一般够用 unclip_ratio [1.6, 2.0] 1.6 控制文本检测框的大小，值越大，检测框整体越大 use_dilation bool true 是否使用形态学中的膨胀操作，一般采用默认值即可 score_mode string fast fast是求rectangle区域的平均分数，容易造成弯曲文本漏检，slow是求polygon区域的平均分数，会更准确，但速度有所降低，可按需选择 Cls部分 link 参数名称 取值范围 默认值 作用 cls_img_shape - [3, 48, 192] 输入方向分类模型的图像Shape（CHW） cls_batch_num - 6 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差 cls_thresh [0, 1] 0.",
@@ -1689,7 +1716,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  34 ,
+                id:  35 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/cli\/",
                 title: "命令行工具",
                 description: "rapidocr_onnxruntime包含了命令行工具，安装之后，即可使用。\n参数说明 link $ rapidocr_onnxruntime -h usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE] [--no_det] [--no_cls] [--no_rec] [--print_verbose] [--min_height MIN_HEIGHT] [--width_height_ratio WIDTH_HEIGHT_RATIO] [--det_use_cuda] [--det_model_path DET_MODEL_PATH] [--det_limit_side_len DET_LIMIT_SIDE_LEN] [--det_limit_type {max,min}] [--det_thresh DET_THRESH] [--det_box_thresh DET_BOX_THRESH] [--det_unclip_ratio DET_UNCLIP_RATIO] [--det_donot_use_dilation] [--det_score_mode {slow,fast}] [--cls_use_cuda] [--cls_model_path CLS_MODEL_PATH] [--cls_image_shape CLS_IMAGE_SHAPE] [--cls_label_list CLS_LABEL_LIST] [--cls_batch_num CLS_BATCH_NUM] [--cls_thresh CLS_THRESH] [--rec_use_cuda] [--rec_model_path REC_MODEL_PATH] [--rec_img_shape REC_IMG_SHAPE] [--rec_batch_num REC_BATCH_NUM] [-vis] [--vis_font_path VIS_FONT_PATH] [--vis_save_path VIS_SAVE_PATH] optional arguments: -h, --help show this help message and exit -img IMG_PATH, --img_path IMG_PATH -p, --print_cost Global: --text_score TEXT_SCORE --no_det --no_cls --no_rec --print_verbose --min_height MIN_HEIGHT --width_height_ratio WIDTH_HEIGHT_RATIO Det: --det_use_cuda --det_model_path DET_MODEL_PATH --det_limit_side_len DET_LIMIT_SIDE_LEN --det_limit_type {max,min} --det_thresh DET_THRESH --det_box_thresh DET_BOX_THRESH --det_unclip_ratio DET_UNCLIP_RATIO --det_donot_use_dilation --det_score_mode {slow,fast} Cls: --cls_use_cuda --cls_model_path CLS_MODEL_PATH --cls_image_shape CLS_IMAGE_SHAPE --cls_label_list CLS_LABEL_LIST --cls_batch_num CLS_BATCH_NUM --cls_thresh CLS_THRESH Rec: --rec_use_cuda --rec_model_path REC_MODEL_PATH --rec_img_shape REC_IMG_SHAPE --rec_batch_num REC_BATCH_NUM Visual Result: -vis, --vis_res --vis_font_path VIS_FONT_PATH When -vis is True, the font_path must have value.",
@@ -1698,7 +1725,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  35 ,
+                id:  36 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_api\/",
                 title: "rapidocr_api",
                 description: "简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速调用rapidocr_onnxruntime的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件方式发送POST请求 以base64方式发送POST请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.",
@@ -1707,7 +1734,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  36 ,
+                id:  37 ,
                 href: "\/RapidOCRDocs\/docs\/inference_engine\/onnxruntime\/infer_optim\/",
                 title: "CPU推理优化",
                 description: "引言 link 平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。 因此，决定在这一篇文章中来梳理一下相关的设置。 以下参数都是来自SessionOptions中 相关测试代码可以前往AI Studio查看 欢迎补充和指出不足之处。 推荐常用设置 link import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL sess_options.log_severity_level = 4 sess_options.enable_cpu_mem_arena = False # 其他参数，采用默认即可 enable_cpu_mem_arena link 作用：启用CPU上的memory arena。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为enable_cpu_mem_area=False，默认是True\n结论：建议关闭\n开启之后，占用内存会剧增（5618.3M » 5.3M），且持续占用，不释放；推理时间只有大约13%提升 测试环境：\nPython: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu_memory_area_example.zip）\n# pip install onnxruntime==1.14.1 # pip install memory_profiler import numpy as np import onnxruntime as ort from memory_profiler import profile @profile def onnx_prediction(model_path, input_data): ort_sess = ort.InferenceSession(model_path, sess_options=sess_options) preds = ort_sess.",
@@ -1716,7 +1743,7 @@ Visual Result:
         );
     index.add(
             {
-                id:  37 ,
+                id:  38 ,
                 href: "\/RapidOCRDocs\/docs\/inference_engine\/onnxruntime\/onnxruntime-gpu\/",
                 title: "GPU版推理",
                 description: "onnxruntime-gpu版相关说明 link 目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见onnxruntime issue#13198 有关onnxruntime-gpu推理慢的相关帖子 link Pre-allocating dynamic shaped tensor memory for ONNX runtime inference? 快速查看比较版本 link 国外小伙伴可以基于Google Colab，国内的小伙伴可以基于百度的AI Studio来查看效果 自己折腾版 link onnxruntime-gpu需要严格按照与CUDA、cuDNN版本对应来安装，具体参考文档，这一步关乎后面是否可以成功调用GPU。\n以下是安装示例： 所用机器环境情况： nvcc-smi显示CUDA Driver API版本：11.7 nccc -V显示CUDA Runtime API版本：11.6 以上两个版本的对应关系，可参考博客 具体安装命令如下： conda install cudatoolkit=11.6.0 conda install cudnn=8.3.2.44 pip install onnxruntime-gpu==1.12.0 验证是否可以onnxruntime-gpu正常调用GPU 验证get_device()是否可返回GPU import onnxruntime as ort print(ort.get_device()) # GPU 如果第一步满足了，继续验证onnxruntime-gpu加载模型时是否可以调用GPU import onnxruntime as ort providers = [ ('CUDAExecutionProvider', { 'device_id': 0, 'arena_extend_strategy': 'kNextPowerOfTwo', 'gpu_mem_limit': 2 * 1024 * 1024 * 1024, 'cudnn_conv_algo_search': 'EXHAUSTIVE', 'do_copy_in_default_stream': True, }), 'CPUExecutionProvider', ] # download link: https://github.",

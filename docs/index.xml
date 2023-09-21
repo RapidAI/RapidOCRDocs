@@ -14,7 +14,7 @@
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/overview/</guid>
       <description>捷智OCR link信创级开源OCR - 为世界内容安全贡献力量
-商业支持 link 🎉🎉🎉 推出知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 生态框架 linkflowchart LR subgraph Step direction TB C(Text Det) --&amp;gt; D(Text Cls) --&amp;gt; E(Text Rec) end A[/OurSelf Dataset/] --&amp;gt; B(PaddleOCR) --Train--&amp;gt; Step --&amp;gt; F(PaddleOCRModelConverter) F --ONNX--&amp;gt; G{RapidOCR Deploy\n&amp;lt;b&amp;gt;Python/C&amp;#43;&amp;#43;/Java/C#&amp;lt;/b&amp;gt;} G --&amp;gt; H(Windows x86/x64) &amp;amp; I(Linux) &amp;amp; J(Android) &amp;amp; K(Web) &amp;amp; L(Raspberry Pi) click B &amp;#34;https://github.</description>
+简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：百度paddlepaddle工程化不是太好，为了方便大家在各种端上进行ocr推理，我们将它转换为onnx格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习技术的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 整体框架 linkflowchart LR subgraph Step direction TB C(Text Det) --&amp;gt; D(Text Cls) --&amp;gt; E(Text Rec) end A[/OurSelf Dataset/] --&amp;gt; B(PaddleOCR) --Train--&amp;gt; Step --&amp;gt; F(PaddleOCRModelConverter) F --ONNX--&amp;gt; G{RapidOCR Deploy\n&amp;lt;b&amp;gt;Python/C&amp;#43;&amp;#43;/Java/C#&amp;lt;/b&amp;gt;} G --&amp;gt; H(Windows x86/x64) &amp;amp; I(Linux) &amp;amp; J(Android) &amp;amp; K(Web) &amp;amp; L(Raspberry Pi) click B &amp;#34;https://github.com/PaddlePaddle/PaddleOCR&amp;#34; _blank click F &amp;#34;https://github.</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@
       <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/online_demo/</guid>
-      <description>简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary </description>
+      <description> 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary </description>
     </item>
     
     <item>
@@ -84,6 +84,15 @@ QQ交流群 link欢迎加入我们的QQ群下载模型及测试程序。1群：~
 我喜欢开源，喜欢AI技术，因为我认为开源和AI会为有需要的人带来方便和帮助，也会让这个世界变得更好。通过对这些项目的捐赠，您可以和我一道让AI为更多人带来温暖和美好。
 知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。
 支付宝或微信打赏 (Alipay reward or WeChat reward) link通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.</description>
+    </item>
+    
+    <item>
+      <title>商业支持</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/business_support/</link>
+      <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/business_support/</guid>
+      <description>问题咨询服务 link 加入知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 信创CPU支持 link 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 国产操作系统OCR Docker部署 link 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 </description>
     </item>
     
   </channel>

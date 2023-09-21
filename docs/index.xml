@@ -45,6 +45,15 @@
     </item>
     
     <item>
+      <title>其他编程语言支持</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/other_programing_lan/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/other_programing_lan/</guid>
+      <description>C++范例(Windows/Linux/macOS) link RapidOcrOnnx RapidOcrNcnn JVM范例(Java/Kotlin) link RapidOcrOnnxJvm RapidOcrNcnnJvm .Net范例(C#) linkAndroid范例 link</description>
+    </item>
+    
+    <item>
       <title>常见问题 (FAQ)</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/faq/</link>
       <pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate>

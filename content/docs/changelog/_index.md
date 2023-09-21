@@ -1,6 +1,6 @@
 ---
 weight: 200
-title: "Changelog"
+title: "更新日志"
 description: "Changelog"
 icon: update
 date: 2022-11-22T12:36:15+00:00

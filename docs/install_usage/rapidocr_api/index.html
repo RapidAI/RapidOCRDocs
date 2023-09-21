@@ -774,14 +774,14 @@ optional arguments:
 		
 
 		<a class="nav-link  active"
-		   id="facbdeTab" data-bs-toggle="tab" data-bs-target="#facbde"
-		   type="button" role="tab" aria-controls="facbde" aria-selected="true">以文件方式发送POST请求</a>
+		   id="efbcdaTab" data-bs-toggle="tab" data-bs-target="#efbcda"
+		   type="button" role="tab" aria-controls="efbcda" aria-selected="true">以文件方式发送POST请求</a>
 
 		
 
 		<a class="nav-link "
-		   id="bdfeacTab" data-bs-toggle="tab" data-bs-target="#bdfeac"
-		   type="button" role="tab" aria-controls="bdfeac" aria-selected="true">以base64方式发送POST请求</a>
+		   id="dcabfeTab" data-bs-toggle="tab" data-bs-target="#dcabfe"
+		   type="button" role="tab" aria-controls="dcabfe" aria-selected="true">以base64方式发送POST请求</a>
 
 		
 
@@ -797,7 +797,7 @@ optional arguments:
 
 
 
-<div class="tab-pane fade show active" id="facbde" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="efbcda" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -839,7 +839,7 @@ print(response.json())</code>
 
 
 
-<div class="tab-pane fade" id="bdfeac" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="dcabfe" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1705,8 +1705,8 @@ print(response.json())</code>
                 id:  17 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/support_language\/",
                 title: "支持识别语言",
-                description: "简介 link 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。 中英文检测和识别（可以直接使用） link 因为中英文是最为常用的模型，所以在打包时，就默认将中英文识别的模型放到了rapidocr_onnxruntime和rapidocr_openvino中，直接pip安装即可使用。 其他语种检测和识别（需要转换） link PaddleOCR中已有文本检测模型列表：link PaddleOCR已有文本识别模型列表： link 除了slim和蒸馏过的模型，上面链接中的其他模型都可以转换为ONNX格式，通过RapidOCR快速部署。 ",
-                content: "简介 link 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。 中英文检测和识别（可以直接使用） link 因为中英文是最为常用的模型，所以在打包时，就默认将中英文识别的模型放到了rapidocr_onnxruntime和rapidocr_openvino中，直接pip安装即可使用。 其他语种检测和识别（需要转换） link PaddleOCR中已有文本检测模型列表：link PaddleOCR已有文本识别模型列表： link 除了slim和蒸馏过的模型，上面链接中的其他模型都可以转换为ONNX格式，通过RapidOCR快速部署。 "
+                description: "简介 link 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。 中英文检测和识别（可以直接使用） link 因为中英文是最为常用的模型，所以在打包时，就默认将中英文识别的模型放到了rapidocr_onnxruntime和rapidocr_openvino中，直接pip安装即可使用。 其他语种检测和识别（需要转换） link PaddleOCR中已有文本检测模型列表：link PaddleOCR已有文本识别模型列表： link 除了slim量化版的模型，上面链接中的其他模型都可以转换为ONNX格式，通过RapidOCR快速部署。 转换教程 link",
+                content: "简介 link 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。 中英文检测和识别（可以直接使用） link 因为中英文是最为常用的模型，所以在打包时，就默认将中英文识别的模型放到了rapidocr_onnxruntime和rapidocr_openvino中，直接pip安装即可使用。 其他语种检测和识别（需要转换） link PaddleOCR中已有文本检测模型列表：link PaddleOCR已有文本识别模型列表： link 除了slim量化版的模型，上面链接中的其他模型都可以转换为ONNX格式，通过RapidOCR快速部署。 "
             }
         );
     index.add(
@@ -1723,8 +1723,8 @@ print(response.json())</code>
                 id:  19 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/convert_model\/",
                 title: "转换Paddle模型为ONNX",
-                description: "简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 在线快速转换 link 魔搭 Hugging Face 离线转换 link",
-                content: "简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 在线快速转换 link 魔搭 Hugging Face 离线转换 link"
+                description: "简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 info 不支持slim量化版的模型转换 在线快速转换 link 魔搭 Hugging Face 离线转换 link",
+                content: "简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 info 不支持slim量化版的模型转换 在线快速转换 link 魔搭 Hugging Face 离线转换 link"
             }
         );
     index.add(

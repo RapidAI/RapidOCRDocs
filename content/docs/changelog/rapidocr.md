@@ -12,6 +12,9 @@ tags:
 categories:
 ---
 
+#### 📡2023-09-21 v1.3.7 update:
+- 完善`VisRes`类在终端情况下的使用
+- 修复`auto_text_det`的条件错误
 #### 🧸2023-09-20 v1.3.6 update:
 - 添加`VisRes`类，便于快速可视化结果。详情参见[demo.py](https://github.com/RapidAI/RapidOCR/blob/508beba09af5549e08340da336b0cff4a101e622/python/demo.py)用法
 #### 😀2023-09-20 v1.3.5 update:

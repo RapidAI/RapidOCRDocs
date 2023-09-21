@@ -116,11 +116,9 @@
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/model_summary/</guid>
-      <description>各个版本ONNX模型效果对比(仅供参考) link⚠️注意： 以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。
-文本检测模型 link 评测采用的是TextDetMetric库 + 文本检测测试集，详情可以移步AI Studio运行查看。
-⚠️注意：以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。
+      <description>各个版本ONNX模型效果对比(仅供参考) link notifications 以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。 文本检测模型 link notifications 以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。 评测采用的是TextDetMetric库 + 文本检测测试集，详情可以移步AI Studio运行查看。
 指标计算都是在以下参数下计算得来，差别仅在于模型文件不同。
-pre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImage: std: [0.229, 0.224, 0.225] mean: [0.485, 0.456, 0.406] scale: 1./255. order: hwc ToCHWImage: KeepKeys: keep_keys: [&amp;#39;image&amp;#39;, &amp;#39;shape&amp;#39;] post_process: thresh: 0.3 box_thresh: 0.5 max_candidates: 1000 unclip_ratio: 1.6 use_dilation: true score_mode: &amp;#34;fast&amp;#34; 模型 模型大小 Precision Recall H-mean Speed(s/img) ch_PP-OCRv4_det_infer.onnx 4.5M 0.6958 0.8608 0.7696 0.6176 ch_PP-OCRv4_det_server_infer.onnx 108M 0.7070 0.9330 0.8044 13.9348 ch_PP-OCRv3_det_infer.onnx 2.3M 0.</description>
+pre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImage: std: [0.229, 0.224, 0.225] mean: [0.485, 0.456, 0.406] scale: 1./255. order: hwc ToCHWImage: KeepKeys: keep_keys: [&amp;#39;image&amp;#39;, &amp;#39;shape&amp;#39;] post_process: thresh: 0.3 box_thresh: 0.5 max_candidates: 1000 unclip_ratio: 1.6 use_dilation: true score_mode: &amp;#34;fast&amp;#34; 模型 模型大小 Precision Recall H-mean Speed(s/img) ch_PP-OCRv4_det_infer.onnx 4.5M 0.6958 0.8608 0.7696 0.6176 ch_PP-OCRv4_det_server_infer.onnx 108M 0.7070 0.9330 0.8044 13.9348 ch_PP-OCRv3_det_infer.</description>
     </item>
     
     <item>
@@ -232,7 +230,8 @@ info 以下参数均有默认值，可以不传入任何参数，直接初始化
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/optim_tutorial/</guid>
-      <description>引言 link 由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。 基本的原则是尽量不去动模型内部，降低使用成本。 本篇文章就来说说在识别效果不好时，如何去调优。 因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。 ✨以下尝试情况，均已经在在线demo中实现，看完之后，可移步那里去尝试。 常见错例种类 link本地使用过程中，识别结果：
+      <description>notifications 以下尝试情况，均已经在在线demo中实现，看完之后，可移步那里去尝试。
+引言 link 由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。 基本的原则是尽量不去动模型内部，降低使用成本。 本篇文章就来说说在识别效果不好时，如何去调优。 因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。 常见错例种类 link本地使用过程中，识别结果：
 个别字丢失 个别字识别错误 个别字丢失调优篇 link 查看图像是否shape太小，导致文本检测丢失。
 对于长度较长，高度较小的图像，可尝试对该图像高度做上下补充，来减小文字在原始图像中比例，利于文本检测。类似下图这种，左侧一条为原始图像，右侧为上下补边的图像。 padding代码参考： from typing import Tuple import cv2 import numpy as np def padding_img(img: np.ndarray, padding_value: Tuple[int, int, int, int], padding_color: Tuple = (0, 0, 0)) -&amp;gt; np.ndarray: padded_img = cv2.copyMakeBorder(img, padding_value[0], padding_value[1], padding_value[2], padding_value[3], cv2.BORDER_CONSTANT, value=padding_color) return padded_img img = cv2.imread(&amp;#39;xxx.jpg&amp;#39;) # padding_value: (top, bottom, left, right) # 对该图像上下各补充10像素的白边 padded_img = padding_img(img, (10, 10, 0, 0), (255, 255, 255)) 将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。 将该图像上传到在线demo中，查看能否复现问题？</description>
     </item>

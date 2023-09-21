@@ -13,7 +13,8 @@
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/optim_tutorial/</guid>
-      <description>引言 link 由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。 基本的原则是尽量不去动模型内部，降低使用成本。 本篇文章就来说说在识别效果不好时，如何去调优。 因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。 ✨以下尝试情况，均已经在在线demo中实现，看完之后，可移步那里去尝试。 常见错例种类 link本地使用过程中，识别结果：
+      <description>notifications 以下尝试情况，均已经在在线demo中实现，看完之后，可移步那里去尝试。
+引言 link 由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。 基本的原则是尽量不去动模型内部，降低使用成本。 本篇文章就来说说在识别效果不好时，如何去调优。 因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。 常见错例种类 link本地使用过程中，识别结果：
 个别字丢失 个别字识别错误 个别字丢失调优篇 link 查看图像是否shape太小，导致文本检测丢失。
 对于长度较长，高度较小的图像，可尝试对该图像高度做上下补充，来减小文字在原始图像中比例，利于文本检测。类似下图这种，左侧一条为原始图像，右侧为上下补边的图像。 padding代码参考： from typing import Tuple import cv2 import numpy as np def padding_img(img: np.ndarray, padding_value: Tuple[int, int, int, int], padding_color: Tuple = (0, 0, 0)) -&amp;gt; np.ndarray: padded_img = cv2.copyMakeBorder(img, padding_value[0], padding_value[1], padding_value[2], padding_value[3], cv2.BORDER_CONSTANT, value=padding_color) return padded_img img = cv2.imread(&amp;#39;xxx.jpg&amp;#39;) # padding_value: (top, bottom, left, right) # 对该图像上下各补充10像素的白边 padded_img = padding_img(img, (10, 10, 0, 0), (255, 255, 255)) 将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。 将该图像上传到在线demo中，查看能否复现问题？</description>
     </item>

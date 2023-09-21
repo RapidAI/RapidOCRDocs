@@ -557,6 +557,7 @@
         <li>
           <ul>
             <li><a href="#初始化">初始化</a></li>
+            <li><a href="#灵活搭配">灵活搭配</a></li>
             <li><a href="#输入">输入</a></li>
             <li><a href="#输出">输出</a></li>
             <li><a href="#可视化查看结果">可视化查看结果</a></li>
@@ -580,6 +581,7 @@
         <li>
           <ul>
             <li><a href="#初始化">初始化</a></li>
+            <li><a href="#灵活搭配">灵活搭配</a></li>
             <li><a href="#输入">输入</a></li>
             <li><a href="#输出">输出</a></li>
             <li><a href="#可视化查看结果">可视化查看结果</a></li>
@@ -735,7 +737,7 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
   </div>
 </li>
 </ul>
-<h3 id="输入">输入 <a href="#%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>支持4种输入类型：<code>Union[str, np.ndarray, bytes, Path]</code></p>
+<h3 id="灵活搭配">灵活搭配 <a href="#%e7%81%b5%e6%b4%bb%e6%90%ad%e9%85%8d" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>类RapidOCR在调用时，有三个参数<code>use_det | use_cls | use_rec</code>，可以控制是否使用检测、方向分类和识别这三部分。详细搭配如下：</p>
 
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -748,26 +750,20 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 		
 
 		<a class="nav-link  active"
-		   id="fadcebTab" data-bs-toggle="tab" data-bs-target="#fadceb"
-		   type="button" role="tab" aria-controls="fadceb" aria-selected="true">str</a>
+		   id="dfceabTab" data-bs-toggle="tab" data-bs-target="#dfceab"
+		   type="button" role="tab" aria-controls="dfceab" aria-selected="true">只有检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="cefabdTab" data-bs-toggle="tab" data-bs-target="#cefabd"
-		   type="button" role="tab" aria-controls="cefabd" aria-selected="true">np.ndarray</a>
+		   id="cebadfTab" data-bs-toggle="tab" data-bs-target="#cebadf"
+		   type="button" role="tab" aria-controls="cebadf" aria-selected="true">只有分类</a>
 
 		
 
 		<a class="nav-link "
-		   id="baecfdTab" data-bs-toggle="tab" data-bs-target="#baecfd"
-		   type="button" role="tab" aria-controls="baecfd" aria-selected="true">Bytes</a>
-
-		
-
-		<a class="nav-link "
-		   id="facebdTab" data-bs-toggle="tab" data-bs-target="#facebd"
-		   type="button" role="tab" aria-controls="facebd" aria-selected="true">Path</a>
+		   id="cdfbeaTab" data-bs-toggle="tab" data-bs-target="#cdfbea"
+		   type="button" role="tab" aria-controls="cdfbea" aria-selected="true">只有识别</a>
 
 		
 
@@ -783,7 +779,7 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 
 
 
-<div class="tab-pane fade show active" id="fadceb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="dfceab" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -803,13 +799,254 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="5e2e128" class="language-python  line-numbers">
+  <pre id="34b65dc" class="language-python  line-numbers">
   <code>from pathlib import Path
 
-import cv2
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
+
+img_path = &#39;tests/test_files/ch_en_num.jpg&#39;
+result, elapse = engine(img_path, use_det=True, use_cls=False, use_rec=False)
+print(result)
+print(elapse)</code>
+  </pre>
+  </div>
+<p>返回值为: <code>List[List[float]]</code> (每个框的坐标<code>[左上角x,y, 右下角x,y]</code>)</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="d487fb2" class="language-python ">
+  <code>[
+    [[5.0, 2.0], [322.0, 9.0], [319.0, 103.0], [3.0, 96.0]],
+    [[70.0, 98.0], [252.0, 97.0], [252.0, 125.0], [70.0, 126.0]],
+    ...
+]</code>
+  </pre>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="tab-pane fade" id="cebadf" role="tabpanel" aria-labelledby="nav-1">
+
+	
+
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="5b9bebc" class="language-python  line-numbers">
+  <code>from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = &#39;tests/test_files/ch_en_num.jpg&#39;
+result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=False)
+print(result)
+print(elapse)</code>
+  </pre>
+  </div>
+<p>返回值为: <code>List[List[str, float]]</code> (<code>[方向0或180, 置信度]</code>)</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="3e524b5" class="language-python ">
+  <code>[
+    [&#39;0&#39;, 0.9998784],
+    ...
+]</code>
+  </pre>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="tab-pane fade" id="cdfbea" role="tabpanel" aria-labelledby="nav-1">
+
+	
+
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="1674a67" class="language-python  line-numbers">
+  <code>from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = &#39;tests/test_files/ch_en_num.jpg&#39;
+result, elapse = engine(img_path, use_det=False, use_cls=False, use_rec=True)
+print(result)
+print(elapse)</code>
+  </pre>
+  </div>
+<p>返回值为: <code>List[List[str, float]]</code> (<code>[识别的文本, 置信度]</code>)</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="0442b40" class="language-python ">
+  <code>[
+    [&#39;韩国小馆&#39;, 0.7992169380187988],
+    ...
+]</code>
+  </pre>
+  </div>
+
+
+</div>
+
+
+</div>
+<h3 id="输入">输入 <a href="#%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>支持4种输入类型：<code>Union[str, np.ndarray, bytes, Path]</code></p>
+
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		<a class="nav-link  active"
+		   id="bdcafeTab" data-bs-toggle="tab" data-bs-target="#bdcafe"
+		   type="button" role="tab" aria-controls="bdcafe" aria-selected="true">str</a>
+
+		
+
+		<a class="nav-link "
+		   id="befadcTab" data-bs-toggle="tab" data-bs-target="#befadc"
+		   type="button" role="tab" aria-controls="befadc" aria-selected="true">np.ndarray</a>
+
+		
+
+		<a class="nav-link "
+		   id="efadcbTab" data-bs-toggle="tab" data-bs-target="#efadcb"
+		   type="button" role="tab" aria-controls="efadcb" aria-selected="true">Bytes</a>
+
+		
+
+		<a class="nav-link "
+		   id="ecdfbaTab" data-bs-toggle="tab" data-bs-target="#ecdfba"
+		   type="button" role="tab" aria-controls="ecdfba" aria-selected="true">Path</a>
+
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="bdcafe" role="tabpanel" aria-labelledby="nav-1">
+
+	
+
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="7f8d2e9" class="language-python  line-numbers">
+  <code>from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
 img_path = &#39;tests/test_files/ch_en_num.jpg&#39;
 result, elapse = engine(img_path)
 print(result)
@@ -825,7 +1062,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="cefabd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="befadc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -867,7 +1104,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="baecfd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="efadcb" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -887,10 +1124,9 @@ print(elapse)</code>
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="592cc71" class="language-python  line-numbers">
+  <pre id="fa2895c" class="language-python  line-numbers">
   <code>from pathlib import Path
 
-import cv2
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -912,7 +1148,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="facebd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ecdfba" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -932,10 +1168,9 @@ print(elapse)</code>
   
 
   <div class="prism-codeblock  linenos">
-  <pre id="5cff264" class="language-python  line-numbers">
+  <pre id="e50e1ce" class="language-python  line-numbers">
   <code>from pathlib import Path
 
-import cv2
 from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
@@ -1048,14 +1283,14 @@ print(elapse)</code>
 		
 
 		<a class="nav-link  active"
-		   id="acdefbTab" data-bs-toggle="tab" data-bs-target="#acdefb"
-		   type="button" role="tab" aria-controls="acdefb" aria-selected="true">只可视化检测</a>
+		   id="cabfedTab" data-bs-toggle="tab" data-bs-target="#cabfed"
+		   type="button" role="tab" aria-controls="cabfed" aria-selected="true">只可视化检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="aebfcdTab" data-bs-toggle="tab" data-bs-target="#aebfcd"
-		   type="button" role="tab" aria-controls="aebfcd" aria-selected="true">可视化检测和识别</a>
+		   id="badcfeTab" data-bs-toggle="tab" data-bs-target="#badcfe"
+		   type="button" role="tab" aria-controls="badcfe" aria-selected="true">可视化检测和识别</a>
 
 		
 
@@ -1071,7 +1306,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade show active" id="acdefb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="cabfed" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1115,7 +1350,7 @@ cv2.imwrite(&#34;only_vis_det.png&#34;, res)</code>
 
 
 
-<div class="tab-pane fade" id="aebfcd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="badcfe" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1193,9 +1428,9 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-21T08:29:12&#43;0800"
-            title="21 Sep 2023, 08:29 &#43;0800">
-            21 Sep 2023, 08:29 &#43;0800
+            data-authdate="2023-09-21T08:46:28&#43;0800"
+            title="21 Sep 2023, 08:46 &#43;0800">
+            21 Sep 2023, 08:46 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>

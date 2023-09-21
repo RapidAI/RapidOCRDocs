@@ -8,9 +8,6 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/</loc>
     <lastmod>2023-09-18T23:00:59+08:00</lastmod>
   </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web/</loc>
-    <lastmod>2023-09-20T09:51:10+08:00</lastmod>
-  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/overview/</loc>
     <lastmod>2023-09-21T16:24:57+08:00</lastmod>
   </url><url>
@@ -20,14 +17,8 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/</loc>
     <lastmod>2023-09-18T23:00:59+08:00</lastmod>
   </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web_desktop/</loc>
-    <lastmod>2023-09-20T09:44:45+08:00</lastmod>
-  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/</loc>
     <lastmod>2023-09-14T22:11:20+08:00</lastmod>
-  </url><url>
-    <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web_nuitka/</loc>
-    <lastmod>2023-09-20T19:08:09+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/</loc>
     <lastmod>2023-09-14T22:11:20+08:00</lastmod>
@@ -69,7 +60,7 @@
     <lastmod>2023-09-18T13:50:47+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/related_projects/</loc>
-    <lastmod>2023-09-15T11:28:10+08:00</lastmod>
+    <lastmod>2023-09-21T17:20:36+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/faq/</loc>
     <lastmod>2023-09-19T08:02:27+08:00</lastmod>
@@ -80,6 +71,9 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/communicate/</loc>
     <lastmod>2023-09-21T11:21:37+08:00</lastmod>
   </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/related_projects/derivatives_projects/</loc>
+    <lastmod>2023-09-21T17:20:36+08:00</lastmod>
+  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/install/</loc>
     <lastmod>2023-09-21T09:05:22+08:00</lastmod>
   </url><url>
@@ -89,11 +83,17 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/</loc>
     <lastmod>2023-09-21T09:05:22+08:00</lastmod>
   </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/related_projects/related_projects/</loc>
+    <lastmod>2023-09-21T17:20:36+08:00</lastmod>
+  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/usage/</loc>
     <lastmod>2023-09-21T10:54:50+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/blog/optim_tutorial/</loc>
     <lastmod>2023-09-20T22:40:57+08:00</lastmod>
+  </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web/</loc>
+    <lastmod>2023-09-21T17:20:36+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/changelog/</loc>
     <lastmod>2023-09-21T13:46:06+08:00</lastmod>
@@ -110,6 +110,12 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/cli/</loc>
     <lastmod>2023-09-21T10:54:50+08:00</lastmod>
   </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/desktop_usage/</loc>
+    <lastmod>2023-09-21T17:20:36+08:00</lastmod>
+  </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/nuitka_package/</loc>
+    <lastmod>2023-09-21T17:20:36+08:00</lastmod>
+  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_api/</loc>
     <lastmod>2023-09-20T19:14:09+08:00</lastmod>
   </url><url>
@@ -119,8 +125,11 @@
     <loc>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</loc>
     <lastmod>2023-09-21T13:33:02+08:00</lastmod>
   </url><url>
+    <loc>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/ocrweb_multi/</loc>
+    <lastmod>2023-09-21T17:20:36+08:00</lastmod>
+  </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/</loc>
-    <lastmod>2023-09-21T16:36:32+08:00</lastmod>
+    <lastmod>2023-09-21T17:20:36+08:00</lastmod>
   </url><url>
     <loc>https://rapidai.github.io/RapidOCRDocs/categories/</loc>
   </url><url>

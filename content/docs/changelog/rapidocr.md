@@ -12,15 +12,6 @@ tags:
 categories:
 ---
 
-<p>
-    <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.12-aff.svg"></a>
-    <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
-    <a href="https://pypi.org/project/rapidocr-onnxruntime/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-onnxruntime?style=flat-square"></a>
-    <a href="https://pepy.tech/project/rapidocr_onnxruntime"><img src="https://static.pepy.tech/personalized-badge/rapidocr_onnxruntime?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Ort"></a>
-</p>
-
-{{< alert text="`v1.3.x`系列集成的是PaddleOCR v4系列模型 <br/> `rapidocr_onnxruntime==1.2.x`和`rapidocr_openvino==1.2.x`系列集成的是PaddleOCR v3模型"/>}}
-
 #### 🧸2023-09-20 v1.3.6 update:
 - 添加`VisRes`类，便于快速可视化结果。详情参见[demo.py](https://github.com/RapidAI/RapidOCR/blob/508beba09af5549e08340da336b0cff4a101e622/python/demo.py)用法
 #### 😀2023-09-20 v1.3.5 update:

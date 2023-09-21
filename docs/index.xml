@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>商业支持</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/business_support/</link>
+      <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/business_support/</guid>
+      <description>服务一：AI相关问题咨询 link 加入知识星球RapidAI私享群，目前星球已有C++/Rust/Go/Python以及AI大佬加入。 这里的提问会优先得到详尽回答和支持，也会享受到RapidAI组织后续持续优质的服务。 欢迎加入。 服务二：信创CPU支持 link 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。 有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 服务三：国产操作系统OCR Docker部署 link 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务。 有意者 → ✉ liekkaskono@163.com。 </description>
+    </item>
+    
+    <item>
       <title>快速开始</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/quickstart/</link>
       <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
@@ -84,15 +93,6 @@ QQ交流群 link欢迎加入我们的QQ群下载模型及测试程序。1群：~
 我喜欢开源，喜欢AI技术，因为我认为开源和AI会为有需要的人带来方便和帮助，也会让这个世界变得更好。通过对这些项目的捐赠，您可以和我一道让AI为更多人带来温暖和美好。
 知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。
 支付宝或微信打赏 (Alipay reward or WeChat reward) link通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.</description>
-    </item>
-    
-    <item>
-      <title>商业支持</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/business_support/</link>
-      <pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/business_support/</guid>
-      <description>问题咨询服务 link 加入知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 信创CPU支持 link 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 国产操作系统OCR Docker部署 link 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 </description>
     </item>
     
   </channel>

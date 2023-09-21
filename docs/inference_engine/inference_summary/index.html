@@ -96,6 +96,17 @@
                     
                         
                         <li class="">
+                            <a class="sidebar-root-link" href="https://rapidai.github.io/RapidOCRDocs/docs/business_support/">
+                                <i class="material-icons me-2">work</i>
+                                
+                                商业支持
+                            </a>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
                             <a class="sidebar-root-link" href="https://rapidai.github.io/RapidOCRDocs/docs/quickstart/">
                                 <i class="material-icons me-2">rocket_launch</i>
                                 
@@ -345,17 +356,6 @@
                                 <i class="material-icons me-2">article</i>
                                 
                                 给作者加油
-                            </a>
-                        </li>
-                    
-                
-                    
-                        
-                        <li class="">
-                            <a class="sidebar-root-link" href="https://rapidai.github.io/RapidOCRDocs/docs/business_support/">
-                                <i class="material-icons me-2">work</i>
-                                
-                                商业支持
                             </a>
                         </li>
                     
@@ -1293,6 +1293,15 @@
     index.add(
             {
                 id:  12 ,
+                href: "\/RapidOCRDocs\/docs\/business_support\/",
+                title: "商业支持",
+                description: "服务一：AI相关问题咨询 link 加入知识星球RapidAI私享群，目前星球已有C++/Rust/Go/Python以及AI大佬加入。 这里的提问会优先得到详尽回答和支持，也会享受到RapidAI组织后续持续优质的服务。 欢迎加入。 服务二：信创CPU支持 link 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。 有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 服务三：国产操作系统OCR Docker部署 link 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务。 有意者 → ✉ liekkaskono@163.com。 ",
+                content: "服务一：AI相关问题咨询 link 加入知识星球RapidAI私享群，目前星球已有C++/Rust/Go/Python以及AI大佬加入。 这里的提问会优先得到详尽回答和支持，也会享受到RapidAI组织后续持续优质的服务。 欢迎加入。 服务二：信创CPU支持 link 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。 有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 服务三：国产操作系统OCR Docker部署 link 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务。 有意者 → ✉ liekkaskono@163.com。 "
+            }
+        );
+    index.add(
+            {
+                id:  13 ,
                 href: "\/RapidOCRDocs\/docs\/",
                 title: "Documentation",
                 description: "",
@@ -1301,7 +1310,7 @@
         );
     index.add(
             {
-                id:  13 ,
+                id:  14 ,
                 href: "\/RapidOCRDocs\/docs\/quickstart\/",
                 title: "快速开始",
                 description: "只需3步，即可安装使用。",
@@ -1310,7 +1319,7 @@
         );
     index.add(
             {
-                id:  14 ,
+                id:  15 ,
                 href: "\/RapidOCRDocs\/docs\/online_demo\/",
                 title: "在线demo",
                 description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo地址 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
@@ -1319,7 +1328,7 @@
         );
     index.add(
             {
-                id:  15 ,
+                id:  16 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/",
                 title: "安装及使用",
                 description: "",
@@ -1328,7 +1337,7 @@
         );
     index.add(
             {
-                id:  16 ,
+                id:  17 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/model_summary\/",
                 title: "不同版本模型之间比较",
                 description: "各个版本ONNX模型效果对比(仅供参考) link⚠️注意： 以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。\n文本检测模型 link 评测采用的是TextDetMetric库 + 文本检测测试集，详情可以移步AI Studio运行查看。\n⚠️注意：以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。\n指标计算都是在以下参数下计算得来，差别仅在于模型文件不同。\npre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImage: std: [0.229, 0.224, 0.225] mean: [0.485, 0.456, 0.406] scale: 1./255. order: hwc ToCHWImage: KeepKeys: keep_keys: ['image', 'shape'] post_process: thresh: 0.3 box_thresh: 0.5 max_candidates: 1000 unclip_ratio: 1.6 use_dilation: true score_mode: \"fast\" 模型 模型大小 Precision Recall H-mean Speed(s/img) ch_PP-OCRv4_det_infer.onnx 4.5M 0.6958 0.8608 0.7696 0.6176 ch_PP-OCRv4_det_server_infer.onnx 108M 0.7070 0.9330 0.8044 13.9348 ch_PP-OCRv3_det_infer.onnx 2.3M 0.",
@@ -1337,7 +1346,7 @@
         );
     index.add(
             {
-                id:  17 ,
+                id:  18 ,
                 href: "\/RapidOCRDocs\/docs\/inference_engine\/",
                 title: "推理引擎相关",
                 description: "",
@@ -1346,7 +1355,7 @@
         );
     index.add(
             {
-                id:  18 ,
+                id:  19 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/support_language\/",
                 title: "支持识别语言",
                 description: "简介 link 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。 中英文检测和识别（可以直接使用） link 因为中英文是最为常用的模型，所以在打包时，就默认将中英文识别的模型放到了rapidocr_onnxruntime和rapidocr_openvino中，直接pip安装即可使用。 其他语种检测和识别（需要转换） link PaddleOCR中已有文本检测模型列表：link PaddleOCR已有文本识别模型列表： link 除了slim和蒸馏过的模型，上面链接中的其他模型都可以转换为ONNX格式，通过RapidOCR快速部署。 ",
@@ -1355,7 +1364,7 @@
         );
     index.add(
             {
-                id:  19 ,
+                id:  20 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/",
                 title: "模型相关",
                 description: "",
@@ -1364,7 +1373,7 @@
         );
     index.add(
             {
-                id:  20 ,
+                id:  21 ,
                 href: "\/RapidOCRDocs\/docs\/about_model\/convert_model\/",
                 title: "转换Paddle模型为ONNX",
                 description: "简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 在线快速转换 link 魔搭 Hugging Face 离线转换 link",
@@ -1373,7 +1382,7 @@
         );
     index.add(
             {
-                id:  21 ,
+                id:  22 ,
                 href: "\/RapidOCRDocs\/docs\/related_projects\/",
                 title: "相关项目",
                 description: " 以下几个方向，每个都是比较独立的方向，但是却和OCR有着千丝万缕的关系，关于它们的资料就像散落在天空中的星星一般，散发着微弱的光芒，这里要做的就是将这些点点光芒聚集起来。 这里将会汇总出以下几个OCR周边项目的一些文档和资源，包括学术动态和一些工程化代码。 欢迎各位小伙伴提供PR。 版面分析 link 相关论文和帖子： 版面分析方法汇总 相关工程： PaddleOCR Layout 海康DAVAR VSR 数据集汇总： 英文版面分析数据集：\nPubLayNet: IBM构建，34万张图像，分为5类：text, title list table figure。 DocBank：微软亚洲研究院构建，50万英文文档图像，分为12类：摘要、作者、标题、公式、图形、页脚、列表、段落、参考、节标题、表格和文章标题。 中文版面分析数据集：\nCDLA：中文文档版面分析数据集，面向中文文献类（论文）场景，总共6000张（5000训练，1000测试），分为10类：正文、标题、图片、图片标题、表格、表格标题、页眉、页脚、注释和公式。 表格识别 link 相关论文和帖子： OCR之表格结构识别综述 合合信息：表格识别与内容提炼技术理解及研发趋势 论文阅读: （ICDAR2021 海康威视）LGPMA（表格识别算法）及官方源码对应解读 相关工程： 海康官方LGPMA源码 LGPMA Inference PaddleOCR Table 数据集汇总： 英文表格识别数据集： PubTabNet: IBM构建，568k+文档图像数据，包括表格图像和对应的HTML标注。 视频OCR link 相关论文和帖子： 【NeurIPS2021】A Bilingual, OpenWorld Video Text Dataset and End-to-end Video Text Spotter with Transformer | 博客解读 【ACM MM 2019】You only recognize once: Towards fast video text spotting 相关工程： video-subtitle-extractor: 一款将视频中的硬字幕提取为外挂字幕文件(srt格式)的软件 RapidVideOCR: 提取视频中硬字幕 数据集汇总： BOVText: A Large-Scale, Bilingual Open World Dataset for Video Text Spotting: 快手科技、浙江大学和北京邮电大学合作提出，大规模双语开放场景下的视频文本基准数据集，该数据集主要提供了2000+视频，1,750,000帧开放视频场景的视频。同时，还提供了丰富的标注类型（标题、字幕、场景文本等）。该数据集支持四个任务：视频帧检测、视频帧识别、视频文本跟踪和端到端视频文本识别。 卡证OCR link 相关论文和帖子： 相关工程： fake_certificate_generator: 假的证件合成器，包括身份证、驾驶证、营业执照。 数据集汇总： 暂无，一般这类数据较为敏感，通常都合成假数据来使用。 印章OCR link 相关论文和帖子： 【技术新趋势】合合信息：复杂环境下ocr与印章识别技术理解及研发趋势 基于文字分割的印章识别技术 相关工程： JS生成印章 Python绘制透明背景印章 在线印章合成大全网站 数据集汇总： 暂无 ",
@@ -1382,7 +1391,7 @@
         );
     index.add(
             {
-                id:  22 ,
+                id:  23 ,
                 href: "\/RapidOCRDocs\/docs\/faq\/",
                 title: "常见问题 (FAQ)",
                 description: "Answers to frequently asked questions.",
@@ -1391,7 +1400,7 @@
         );
     index.add(
             {
-                id:  23 ,
+                id:  24 ,
                 href: "\/RapidOCRDocs\/docs\/blog\/",
                 title: "博客",
                 description: "",
@@ -1400,7 +1409,7 @@
         );
     index.add(
             {
-                id:  24 ,
+                id:  25 ,
                 href: "\/RapidOCRDocs\/docs\/communicate\/",
                 title: "交流群",
                 description: "可通过以下方式与RapidOCR维护者SWHL进行沟通，也欢迎反馈使用过程中遇到的问题。\n知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。\n微信交流群 link微信扫描以下二维码，关注RapidAI公众号，回复OCR即可加入RapidOCR微信交流群：\nQQ交流群 link欢迎加入我们的QQ群下载模型及测试程序。1群：~887298230~ 已满，2群：~755960114~ 已满，3群：450338158",
@@ -1409,7 +1418,7 @@
         );
     index.add(
             {
-                id:  25 ,
+                id:  26 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/install\/",
                 title: "安装",
                 description: " info rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，后续说明文档均以rapidocr_onnxruntime为例如使用rapidocr_openvino，直接更换关键词rapidocr_onnxruntime为rapidocr_openvino即可。 info pypi上各个版本的对应关系： link 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 notifications 请使用Python3.6及以上版本。 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。 pip install rapidocr-onnxruntime 安装速度慢的话，可以指定国内的安装源，如使用清华源： pip install rapidocr_onnxruntime -i https://pypi.tuna.tsinghua.edu.cn/simple/ 依赖的包如下： info 如果在安装过程中，出现某个依赖包不能正确安装时，可先单独安装某个依赖包，之后再安装rapidocr_onnxruntime即可。 pyclipper\u003e=1.2.1 onnxruntime\u003e=1.7.0 opencv_python\u003e=4.5.1.48 numpy\u003e=1.19.3 six\u003e=1.15.0 Shapely\u003e=1.7.1 PyYAML Pillow ",
@@ -1418,20 +1427,11 @@
         );
     index.add(
             {
-                id:  26 ,
+                id:  27 ,
                 href: "\/RapidOCRDocs\/docs\/sponsor\/",
                 title: "给作者加油",
                 description: "写在前面 linkI like open source and AI technology because I think open source and AI will bring convenience and help to people in need, and will also make the world a better place. By donating to these projects, you can join me in making AI bring warmth and beauty to more people.\n我喜欢开源，喜欢AI技术，因为我认为开源和AI会为有需要的人带来方便和帮助，也会让这个世界变得更好。通过对这些项目的捐赠，您可以和我一道让AI为更多人带来温暖和美好。\n知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。\n支付宝或微信打赏 (Alipay reward or WeChat reward) link通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.",
                 content: "写在前面 linkI like open source and AI technology because I think open source and AI will bring convenience and help to people in need, and will also make the world a better place. By donating to these projects, you can join me in making AI bring warmth and beauty to more people.\n我喜欢开源，喜欢AI技术，因为我认为开源和AI会为有需要的人带来方便和帮助，也会让这个世界变得更好。通过对这些项目的捐赠，您可以和我一道让AI为更多人带来温暖和美好。\n知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。\n支付宝或微信打赏 (Alipay reward or WeChat reward) link通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.\nBuy me a Coffee linkIf you are not in mainland China, you can also support the author through:\n"
-            }
-        );
-    index.add(
-            {
-                id:  27 ,
-                href: "\/RapidOCRDocs\/docs\/business_support\/",
-                title: "商业支持",
-                description: "问题咨询服务 link 加入知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 信创CPU支持 link 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 国产操作系统OCR Docker部署 link 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 ",
-                content: "问题咨询服务 link 加入知识星球RapidAI私享群，这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。 信创CPU支持 link 提供信创平台多架构，包括Arm/X86/mips(龙芯)/RISC-V等信创CPU支持，同时兼容ONNXRuntime/OpenVINO/NCNN。有意者邮件联系: znsoft@163.com, 请先邮件咨询服务项目，即时回复联系方式。 国产操作系统OCR Docker部署 link 提供国产操作系统（海光、中科方德、麒麟等等）OCR Docker部署服务，有意者 → ✉ liekkaskono@163.com。 "
             }
         );
     index.add(

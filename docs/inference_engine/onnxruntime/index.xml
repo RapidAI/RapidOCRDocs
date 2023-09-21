@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ONNXRuntime</title>
+      <title>CPU推理优化</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/</link>
       <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
       
@@ -21,7 +21,7 @@ Python: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu
     </item>
     
     <item>
-      <title>ONNXRuntime GPU版推理</title>
+      <title>GPU版推理</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</link>
       <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
       

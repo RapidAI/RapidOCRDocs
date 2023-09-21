@@ -28,5 +28,5 @@ draft: false
 
 
 <div align="center">
-    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/hf_demo.png" width="100%" height="100%">
+    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/hf_demo_part.png" width="100%" height="100%">
 </div>

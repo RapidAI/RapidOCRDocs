@@ -1,9 +1,9 @@
 ---
-weight: 60
+weight: 200
 date: "2023-09-13"
 draft: false
 author: "SWHL"
-title: "相关项目"
+title: "垂直项目(偏学术)"
 icon: "family_link"
 description: ""
 publishdate: "2023-09-13"
@@ -14,6 +14,13 @@ categories:
 - 以下几个方向，每个都是比较独立的方向，但是却和OCR有着千丝万缕的关系，关于它们的资料就像散落在天空中的星星一般，散发着微弱的光芒，这里要做的就是将这些点点光芒聚集起来。
 - 这里将会汇总出以下几个OCR周边项目的一些文档和资源，包括学术动态和一些工程化代码。
 - 欢迎各位小伙伴提供PR。
+
+### 图像文字擦除
+- [CTRNet](https://github.com/lcy0604/CTRNet)：图像文字擦除 | [Demo](https://huggingface.co/spaces/SWHL/CTRNetDemo)
+
+
+### 文档图像矫正
+- [PaperEdge](https://github.com/cvlab-stonybrook/PaperEdge)：文档图像矫正 | [Demo](https://huggingface.co/spaces/SWHL/PaperEdgeDemo)
 
 ### 版面分析
 - 相关论文和帖子：

@@ -73,85 +73,6 @@ class RapidOCR:
   res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)
   ```
 
-### 灵活搭配
-类RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分。详细搭配如下：
-
-{{< tabs tabTotal="3">}}
-{{% tab tabName="只有检测" %}}
-
-```python {linenos=table}
-from pathlib import Path
-
-from rapidocr_onnxruntime import RapidOCR
-
-engine = RapidOCR()
-
-img_path = 'tests/test_files/ch_en_num.jpg'
-result, elapse = engine(img_path, use_det=True, use_cls=False, use_rec=False)
-print(result)
-print(elapse)
-```
-
-返回值为: `List[List[float]]` (每个框的坐标`[左上角x,y, 右下角x,y]`)
-```python
-[
-    [[5.0, 2.0], [322.0, 9.0], [319.0, 103.0], [3.0, 96.0]],
-    [[70.0, 98.0], [252.0, 97.0], [252.0, 125.0], [70.0, 126.0]],
-    ...
-]
-```
-
-
-{{% /tab %}}
-{{% tab tabName="只有分类" %}}
-
-```python {linenos=table}
-from pathlib import Path
-
-from rapidocr_onnxruntime import RapidOCR
-
-engine = RapidOCR()
-
-img_path = 'tests/test_files/ch_en_num.jpg'
-result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=False)
-print(result)
-print(elapse)
-```
-返回值为: `List[List[str, float]]` (`[方向0或180, 置信度]`)
-```python
-[
-    ['0', 0.9998784],
-    ...
-]
-```
-
-{{% /tab %}}
-{{% tab tabName="只有识别" %}}
-
-```python {linenos=table}
-from pathlib import Path
-
-from rapidocr_onnxruntime import RapidOCR
-
-engine = RapidOCR()
-
-img_path = 'tests/test_files/ch_en_num.jpg'
-result, elapse = engine(img_path, use_det=False, use_cls=False, use_rec=True)
-print(result)
-print(elapse)
-```
-返回值为: `List[List[str, float]]` (`[识别的文本, 置信度]`)
-```python
-[
-    ['韩国小馆', 0.7992169380187988],
-    ...
-]
-```
-
-{{% /tab %}}
-{{< /tabs >}}
-
-
 ### 输入
 支持4种输入类型：`Union[str, np.ndarray, bytes, Path]`
 
@@ -224,38 +145,157 @@ print(elapse)
 {{< /tabs >}}
 
 ### 输出
-- 有值：`([[文本框坐标], 文本内容, 置信度], 推理时间)`，示例如下：
-    ```text
-    [[左上, 右上, 右下, 左下], '小明', '0.99'], [0.02, 0.02, 0.85]
-    ```
-- 无值：`(None, None)`
-- 除耗时外的示例结果：
+类RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分。不同的参数，决定了不同的输出，详细搭配如下：
 
-    <details>
-        <summary>详情</summary>
+{{< tabs tabTotal="3">}}
+{{% tab tabName="只有检测" %}}
 
-    ```python {linenos=table}
-    [
-        [[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], '正品促销', '0.7986101984977723'],
-        [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], '大桶装更划算', '0.7368737288883754'],
-        [[[69.0, 144.0], [255.0, 144.0], [255.0, 164.0], [69.0, 164.0]], '强力去污符合国标', '0.8172478278477987'],
-        [[[107.0, 170.0], [219.0, 170.0], [219.0, 182.0], [107.0, 182.0]], '-40深度防冻不结冰', '0.8655969283797524'],
-        [[[35.0, 227.0], [63.0, 227.0], [63.0, 236.0], [35.0, 236.0]], '日常价?', '0.6502826035022735'],
-        [[[141.0, 223.0], [187.0, 225.0], [185.0, 249.0], [139.0, 247.0]], '直击', '0.596031109491984'],
-        [[[34.0, 234.0], [81.0, 236.0], [80.0, 254.0], [33.0, 252.0]], '10.0起', '0.8231529593467712'],
-        [[[257.0, 234.0], [304.0, 236.0], [303.0, 253.0], [256.0, 251.0]], '10.0起', '0.8304102122783661'],
-        [[[258.0, 227.0], [287.0, 226.0], [287.0, 236.0], [258.0, 237.0]], '日常价?', '0.5725070595741272'],
-        [[[140.0, 245.0], [186.0, 246.0], [186.0, 272.0], [139.0, 271.0]], '底价', '0.5142453710238138'],
-        [[[129.0, 290.0], [207.0, 292.0], [206.0, 339.0], [128.0, 337.0]], '5.8', '0.6341951936483383'],
-        [[[98.0, 320.0], [129.0, 320.0], [129.0, 331.0], [98.0, 331.0]], '券后价?', '0.6209247708320618'],
-        [[[114.0, 343.0], [210.0, 343.0], [210.0, 355.0], [114.0, 355.0]], '惊喜福利不容错过', '0.8640043867958916'],
-        [[[69.0, 363.0], [151.0, 363.0], [151.0, 383.0], [69.0, 383.0]], '极速发货', '0.7552512288093567'],
-        [[[201.0, 363.0], [285.0, 363.0], [285.0, 383.0], [201.0, 383.0]], '冰点标准', '0.7194759607315063'],
-        [[[68.0, 392.0], [151.0, 392.0], [151.0, 412.0], [68.0, 412.0]], '破损就赔', '0.7711991906166077'],
-        [[[202.0, 391.0], [285.0, 391.0], [285.0, 413.0], [202.0, 413.0]], '假一赔十', '0.6546663284301758']
-    ]
-    ```
-    </details>
+```python {linenos=table}
+from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+result, elapse = engine(img_path, use_det=True, use_cls=False, use_rec=False)
+print(result)
+print(elapse)
+```
+
+返回值`result`: `List[List[float]]` (每个框的坐标`[左上, 右上, 右下, 左下]`)
+```python
+[
+    [[5.0, 2.0], [322.0, 9.0], [319.0, 103.0], [3.0, 96.0]],
+    [[70.0, 98.0], [252.0, 97.0], [252.0, 125.0], [70.0, 126.0]],
+    ...
+]
+```
+
+
+{{% /tab %}}
+{{% tab tabName="只有分类" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=False)
+print(result)
+print(elapse)
+```
+返回值`result`: `List[List[str, float]]` (`[方向0或180, 置信度]`)
+```python
+[
+    ['0', 0.9998784],
+    ...
+]
+```
+
+{{% /tab %}}
+{{% tab tabName="只有识别" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+result, elapse = engine(img_path, use_det=False, use_cls=False, use_rec=True)
+print(result)
+print(elapse)
+```
+返回值`result`: `List[List[str, float]]` (`[识别的文本, 置信度]`)
+```python
+[
+    ['韩国小馆', 0.7992169380187988],
+    ...
+]
+```
+
+{{% /tab %}}
+{{% tab tabName="检测 + 识别" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+result, elapse = engine(img_path, use_det=True, use_cls=False, use_rec=True)
+print(result)
+print(elapse)
+```
+返回值`result`: `List[List[float], str, float]` (`[[左上, 右上, 右下, 左下], 文本内容, 置信度]`)
+```python {linenos=table}
+[
+    [[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], '正品促销', '0.7986101984977723'],
+    [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], '大桶装更划算', '0.7368737288883754'],
+    ...
+]
+```
+
+{{% /tab %}}
+{{% tab tabName="分类 + 识别" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=True)
+print(result)
+print(elapse)
+```
+
+返回值`result`: `List[List[str, float]]` (`[识别的文本, 置信度]`)
+```python
+[
+    ['韩国小馆', 0.7992169380187988],
+    ...
+]
+```
+
+{{% /tab %}}
+{{% tab tabName="检测 + 分类 + 识别" %}}
+
+```python {linenos=table}
+from pathlib import Path
+
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+
+img_path = 'tests/test_files/ch_en_num.jpg'
+
+# 默认都为True
+result, elapse = engine(img_path, use_det=True, use_cls=True, use_rec=True)
+print(result)
+print(elapse)
+```
+
+返回值`result`: `List[List[float], str, float]` (`[[左上, 右上, 右下, 左下], 文本内容, 置信度]`)
+```python {linenos=table}
+[
+    [[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], '正品促销', '0.7986101984977723'],
+    [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], '大桶装更划算', '0.7368737288883754'],
+    ...
+]
+```
+
+{{% /tab %}}
+{{< /tabs >}}
 
 ### 可视化查看结果
 为了便于查看检测和识别结果，该库中封装了[`VisRes`](https://github.com/RapidAI/RapidOCR/blob/a981e21743f03d9bbfbe596974123fecfe8a7d62/python/rapidocr_onnxruntime/utils.py#L351)类，可借助该类快速可视化查看结果。

@@ -18,6 +18,8 @@ toc: true
     - 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo；
     - 方法二：离线转换，pip安装该工具，即可本地转换使用。
 
+{{< alert context="primary" text="不支持<strong>slim量化版</strong>的模型转换" />}}
+
 ### 在线快速转换
 - [魔搭](https://www.modelscope.cn/studios/liekkas/PaddleOCRModelConverter/summary)
 - [Hugging Face](https://huggingface.co/spaces/SWHL/PaddleOCRModelConverter)

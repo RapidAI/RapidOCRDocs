@@ -1,6 +1,6 @@
 ---
 weight: 403
-title: "ONNXRuntime GPU版推理"
+title: "GPU版推理"
 description:
 icon: menu_book
 date: 2023-09-13

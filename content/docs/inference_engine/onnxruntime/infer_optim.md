@@ -1,6 +1,6 @@
 ---
 weight: 402
-title: "ONNXRuntime"
+title: "CPU推理优化"
 description:
 icon: menu_book
 date: 2023-09-13
@@ -8,8 +8,6 @@ lastmod: 2023-09-13
 draft: false
 images: []
 ---
-
-
 
 #### 引言
 - 平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。

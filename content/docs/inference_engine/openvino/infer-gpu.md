@@ -1,6 +1,6 @@
 ---
 weight: 7
-title: "OpenVINO GPU推理"
+title: "GPU推理"
 description:
 icon: menu_book
 date: 2023-09-13

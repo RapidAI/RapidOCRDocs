@@ -1,6 +1,6 @@
 ---
 weight: 6
-title: "OpenVINO推理"
+title: "CPU推理"
 description:
 icon: menu_book
 date: 2023-09-13
@@ -9,7 +9,7 @@ draft: false
 images: []
 ---
 
-- ⚠️ 基于目前`openvino==2022.3.0`版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见[issue11939](https://github.com/openvinotoolkit/openvino/issues/11939)
+{{< alert context="info" text=" 基于目前`openvino==2022.3.0`版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见[issue11939](https://github.com/openvinotoolkit/openvino/issues/11939)"/>}}
 
 ### 安装
 ```bash {linenos=table}

@@ -12,15 +12,16 @@ katex: true
 ---
 
 ### 各个版本ONNX模型效果对比(仅供参考)
-⚠️注意： 以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。
+{{< alert text="以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。"/>}}
 
 #### 文本检测模型
+{{< alert text="以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。"/>}}
+
 - 评测采用的是[TextDetMetric库](https://github.com/SWHL/TextDetMetric) + [文本检测测试集](https://www.modelscope.cn/datasets/liekkas/text_det_test_dataset/summary)，详情可以移步[AI Studio](https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&shared=1&ts=1693054678460)运行查看。
-- ⚠️注意：以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。
 - 指标计算都是在以下参数下计算得来，差别仅在于模型文件不同。
   <details>
 
-  ```yaml
+  ```yaml {linenos=table}
   pre_process:
       DetResizeForTest:
           limit_side_len: 736

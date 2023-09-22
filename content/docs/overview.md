@@ -61,10 +61,3 @@ flowchart LR
     click B "https://github.com/PaddlePaddle/PaddleOCR" _blank
     click F "https://github.com/RapidAI/PaddleOCRModelConverter" _blank
 ```
-
-### Authors and acknowledgment
-<p align="left">
-  <a href="https://github.com/RapidAI/RapidOCR/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=RapidAI/RapidOCR" width="30%"/>
-  </a>
-</p>

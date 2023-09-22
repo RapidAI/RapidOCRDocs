@@ -728,7 +728,14 @@ post_process:
 </details>
 </li>
 </ul>
-<table>
+
+
+
+
+
+
+
+<table class="table table-hover">
 <thead>
 <tr>
 <th style="text-align:center">模型</th>
@@ -798,6 +805,7 @@ post_process:
 </tr>
 </tbody>
 </table>
+
 <h4 id="文本识别模型">文本识别模型 <a href="#%e6%96%87%e6%9c%ac%e8%af%86%e5%88%ab%e6%a8%a1%e5%9e%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
 <li>测试集: 自己构建<code>中英文(168个)</code></li>
 <li>输入Shape:
@@ -807,7 +815,14 @@ post_process:
 </ul>
 </li>
 </ul>
-<table>
+
+
+
+
+
+
+
+<table class="table table-hover">
 <thead>
 <tr>
 <th style="text-align:center">模型</th>
@@ -885,6 +900,7 @@ post_process:
 </tr>
 </tbody>
 </table>
+
 <h4 id="指标说明">指标说明 <a href="#%e6%8c%87%e6%a0%87%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -897,20 +913,20 @@ post_process:
 		
 
 		<a class="nav-link  active"
-		   id="cfaebdTab" data-bs-toggle="tab" data-bs-target="#cfaebd"
-		   type="button" role="tab" aria-controls="cfaebd" aria-selected="true">Exact Match (精确匹配准确率)</a>
+		   id="fcdeabTab" data-bs-toggle="tab" data-bs-target="#fcdeab"
+		   type="button" role="tab" aria-controls="fcdeab" aria-selected="true">Exact Match (精确匹配准确率)</a>
 
 		
 
 		<a class="nav-link "
-		   id="adebfcTab" data-bs-toggle="tab" data-bs-target="#adebfc"
-		   type="button" role="tab" aria-controls="adebfc" aria-selected="true">Char Match (字符级准确率)</a>
+		   id="ebfcdaTab" data-bs-toggle="tab" data-bs-target="#ebfcda"
+		   type="button" role="tab" aria-controls="ebfcda" aria-selected="true">Char Match (字符级准确率)</a>
 
 		
 
 		<a class="nav-link "
-		   id="bcefadTab" data-bs-toggle="tab" data-bs-target="#bcefad"
-		   type="button" role="tab" aria-controls="bcefad" aria-selected="true">Score(两者综合)</a>
+		   id="ebcadfTab" data-bs-toggle="tab" data-bs-target="#ebcadf"
+		   type="button" role="tab" aria-controls="ebcadf" aria-selected="true">Score(两者综合)</a>
 
 		
 
@@ -926,7 +942,7 @@ post_process:
 
 
 
-<div class="tab-pane fade show active" id="cfaebd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="fcdeab" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>$$
 Exact\ Match = \frac{1}{N}\sum_{i=0}^{N} s(p_{i}, g_{i})
@@ -951,7 +967,7 @@ $$</p>
 
 
 
-<div class="tab-pane fade" id="adebfc" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ebfcda" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>$$
 Char\ Match = 1 - \frac{1}{N} \sum_{i=0}^{N} s(p_{i}, g_{i})
@@ -979,7 +995,7 @@ $$</p>
 
 
 
-<div class="tab-pane fade" id="bcefad" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ebcadf" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>$$
 Score = \frac{1}{2}(Exact\ Match + Char\ Match)
@@ -1027,9 +1043,9 @@ $$</p>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-22T08:26:58&#43;0800"
-            title="22 Sep 2023, 08:26 &#43;0800">
-            22 Sep 2023, 08:26 &#43;0800
+            data-authdate="2023-09-22T08:32:46&#43;0800"
+            title="22 Sep 2023, 08:32 &#43;0800">
+            22 Sep 2023, 08:32 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1836,8 +1852,8 @@ $$</p>
                 id:  33 ,
                 href: "\/RapidOCRDocs\/docs\/blog\/which_inference\/",
                 title: "选择哪个推理引擎？",
-                description: "推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ warning openvino存在内存不释放的问题，参见issue #11939",
-                content: " 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ warning openvino存在内存不释放的问题，参见issue #11939\n"
+                description: " warning openvino存在内存不释放的问题，参见issue #11939\n推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ ",
+                content: " warning openvino存在内存不释放的问题，参见issue #11939\n推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ "
             }
         );
     index.add(

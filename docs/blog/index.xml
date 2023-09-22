@@ -25,7 +25,8 @@
       <pubDate>Wed, 20 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/which_inference/</guid>
-      <description>推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ warning openvino存在内存不释放的问题，参见issue #11939</description>
+      <description> warning openvino存在内存不释放的问题，参见issue #11939
+推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ </description>
     </item>
     
     <item>

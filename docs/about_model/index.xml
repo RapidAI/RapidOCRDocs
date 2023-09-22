@@ -33,7 +33,7 @@ pre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImag
       <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/convert_model/</guid>
-      <description>简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 info 不支持slim量化版的模型转换 在线快速转换 link 魔搭 Hugging Face 离线转换 link</description>
+      <description> warning 不支持slim量化版的模型转换 简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 在线快速转换 link 魔搭 Hugging Face 离线转换 link</description>
     </item>
     
   </channel>

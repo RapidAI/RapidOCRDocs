@@ -45,6 +45,7 @@ katex: true
   ```
   </details>
 
+{{< table "table-hover" >}}
 |  模型  | 模型大小| Precision | Recall | H-mean   | Speed(s/img) |
 | :---------------------------------: | :----------------: | :-------: | :----: | :----: | :------ |
 |     ch_PP-OCRv4_det_infer.onnx      |     4.5M      |  0.6958   | 0.8608 | 0.7696 |   0.6176   |
@@ -54,6 +55,7 @@ katex: true
 ||||||
 |     ch_PP-OCRv2_det_infer.onnx      |     2.2M      |  0.7850   | 0.8093 | **0.7970** |   0.3441   |
 | ch_ppocr_server_v2.0_det_infer.onnx |     47M      |  0.6736   | 0.8402 | 0.7477 |   2.6560   |
+{{< /table >}}
 
 #### 文本识别模型
 - 测试集: 自己构建`中英文(168个)`
@@ -61,6 +63,7 @@ katex: true
   - v2: `[3, 32, 320]`
   - v3~v4: `[3, 48, 320]`
 
+{{< table "table-hover" >}}
 |                模型                  | 对应PaddleOCR分支|  模型大小  |    Exact Match   |   Char Match    | Score |Speed(s/img)  |
 | :---------------------------: |:--:| :--------------:    | :-------: | :--------------: | :-------------: | :--: |
 |ch_PP-OCRv4_rec_infer.onnx | release/v2.7      |       10M        |      0.5655      |     0.9261      |   0.7458   | 0.0218 |
@@ -70,6 +73,7 @@ katex: true
 ||||||||
 |     ch_PP-OCRv2_rec_infer.onnx | release/v2.3     |      8.0M        |       0.4881      |     0.9029      | 0.6955   | 0.0193 |
 | ch_ppocr_mobile_v2.0_rec_infer.onnx | release/v2.0 |      4.3M        |        0.5595      |     0.8979      | 0.7287   |0.0045  |
+{{< /table >}}
 
 #### 指标说明
 

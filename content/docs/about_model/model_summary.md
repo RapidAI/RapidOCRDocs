@@ -71,8 +71,10 @@ katex: true
 |     ch_PP-OCRv2_rec_infer.onnx | release/v2.3     |      8.0M        |       0.4881      |     0.9029      | 0.6955   | 0.0193 |
 | ch_ppocr_mobile_v2.0_rec_infer.onnx | release/v2.0 |      4.3M        |        0.5595      |     0.8979      | 0.7287   |0.0045  |
 
-### 指标说明
-#### Exact Match (精确匹配准确率):
+#### 指标说明
+
+{{< tabs tabTotal="3">}}
+{{% tab tabName="Exact Match (精确匹配准确率)" %}}
 
 $$
 Exact\ Match = \frac{1}{N}\sum_{i=0}^{N} s(p_{i}, g_{i})
@@ -90,7 +92,9 @@ $$
 - $p_{i}$: 第 $i$ 条文本行识别结果
 - $g_{i}$: 第 $i$ 条文本行对应的真实标签
 
-#### Char Match (字符级准确率):
+{{% /tab %}}
+{{% tab tabName="Char Match (字符级准确率)" %}}
+
 $$
 Char\ Match = 1 - \frac{1}{N} \sum_{i=0}^{N} s(p_{i}, g_{i})
 $$
@@ -110,7 +114,12 @@ $$
 - $max(x, y)$: 求 $x$ 和 $y$ 的最大值
 - $len(x)$: 求所给字符串 $x$ 的长度
 
-#### Score(两者综合):
+{{% /tab %}}
+{{% tab tabName="Score(两者综合)" %}}
+
 $$
 Score = \frac{1}{2}(Exact\ Match + Char\ Match)
 $$
+
+{{% /tab %}}
+{{< /tabs >}}

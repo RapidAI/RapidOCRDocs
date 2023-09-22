@@ -149,11 +149,6 @@ sess_options.enable_cpu_mem_arena = False
     sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL
     ```
 
-#### FAQ
-##### 为什么我的模型在GPU上比在CPU上还要慢？
-  - 取决于所使用的执行提供者，它可能没有完全支持模型中的所有操作。回落到CPU操作可能会导致性能速度的下降。此外，即使一个操作是由CUDA execution provider实现的，由于性能的原因，它也不一定会把操作分配/放置到CUDA EP上。要想看到ORT决定的位置，请打开verbose日志并查看控制台的输出。
-
-
 #### 参考资料
 - [ONNX Runtime Performance Tuning](https://github.com/microsoft/onnxruntime-openenclave/blob/openenclave-public/docs/ONNX_Runtime_Perf_Tuning.md)
 - [Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)

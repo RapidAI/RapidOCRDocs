@@ -8,6 +8,7 @@ lastmod: 2023-09-21
 draft: false
 ---
 
+{{< alert context="warning" text="以下项目不确定是否支持最新的推理代码，Python版为最新的。" />}}
 
 #### C++范例(Windows/Linux/macOS)
 - [RapidOcrOnnx](https://github.com/RapidAI/RapidOcrOnnx)

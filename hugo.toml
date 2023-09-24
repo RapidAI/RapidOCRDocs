@@ -105,9 +105,9 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with submodule 
         # indexName = "dev_lotusdocs.dev"               # Index Name to perform search on (or set env variable HUGO_PARAM_DOCSEARCH_indexName)
 
     [params.plausible] # Parameters for Plausible Analytics
-        dataDomain = "rapidai.github.io/RapidOCRDocs" # (or set via env variable HUGO_PARAMS_PLAUSIBLE_dataDomain)
-        scriptURL  = "/docs/s/js/script.outbound-links.js"       # (or set via env variable HUGO_PARAMS_PLAUSIBLE_scriptURL)
-        eventAPI   = "/docs/s/api/event/"       # optional - (or set via env variable HUGO_PARAMS_PLAUSIBLE_eventAPI)
+        dataDomain = "rapidai.github.io" # (or set via env variable HUGO_PARAMS_PLAUSIBLE_dataDomain)
+        scriptURL  = "/RapidOCRDocs/docs/s/js/script.outbound-links.js"       # (or set via env variable HUGO_PARAMS_PLAUSIBLE_scriptURL)
+        eventAPI   = "/RapidOCRDocs/docs/s/api/event/"       # optional - (or set via env variable HUGO_PARAMS_PLAUSIBLE_eventAPI)
 
     [params.feedback]
         enabled = false

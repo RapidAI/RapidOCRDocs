@@ -15,9 +15,11 @@ categories:
 - 这里将会汇总出以下几个OCR周边项目的一些文档和资源，包括学术动态和一些工程化代码。
 - 欢迎各位小伙伴提供PR。
 
+### 发票识别
+- [CSIG 2022 Competition on Invoice Recognition and Analysis](https://davar-lab.github.io/competition/CSIG2022-invoice-ch.html##)
+
 ### 图像文字擦除
 - [CTRNet](https://github.com/lcy0604/CTRNet)：图像文字擦除 | [Demo](https://huggingface.co/spaces/SWHL/CTRNetDemo)
-
 
 ### 文档图像矫正
 - [PaperEdge](https://github.com/cvlab-stonybrook/PaperEdge)：文档图像矫正 | [Demo](https://huggingface.co/spaces/SWHL/PaperEdgeDemo)

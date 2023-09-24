@@ -49,7 +49,7 @@
       <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/other_programing_lan/</guid>
-      <description>C++范例(Windows/Linux/macOS) link RapidOcrOnnx RapidOcrNcnn JVM范例(Java/Kotlin) link RapidOcrOnnxJvm RapidOcrNcnnJvm .Net范例(C#) linkAndroid范例 link</description>
+      <description> warning 以下项目不确定是否支持最新的推理代码，Python版为最新的。 C++范例(Windows/Linux/macOS) link RapidOcrOnnx RapidOcrNcnn JVM范例(Java/Kotlin) link RapidOcrOnnxJvm RapidOcrNcnnJvm .Net范例(C#) linkAndroid范例 link</description>
     </item>
     
     <item>

@@ -22,7 +22,11 @@ draft: false
     - 快速查看指定图像的识别效果和识别时长
     - 快速比较不同版本的检测和识别模型效果差异
 
-#### Demo地址
+#### demo源码
+- Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main
+- 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files
+
+#### 在线Demo
 - Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo
 - 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary
 

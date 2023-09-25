@@ -106,8 +106,8 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with submodule 
 
     [params.plausible] # Parameters for Plausible Analytics
         dataDomain = "rapidai.github.io/rapidocrdocs" # (or set via env variable HUGO_PARAMS_PLAUSIBLE_dataDomain)
-        scriptURL  = "https://plausible.yourdomain.com/js/script.js"    # optional
-        eventAPI   = "https://plausible.yourdomain.com/stats/api/event" # optional
+        scriptURL  = "https://plausible.rapidai.github.io/rapidocrdocs/js/script.js"    # optional
+        eventAPI   = "https://plausible.rapidai.github.io/rapidocrdocs/stats/api/event" # optional
 
     [params.feedback]
         enabled = false

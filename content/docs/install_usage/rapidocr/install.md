@@ -1,15 +1,12 @@
 ---
 weight: 100
-date: "2023-09-11"
+date: "2023-08-25"
 draft: false
 author: "SWHL"
 title: "安装"
 icon: "code"
 toc: true
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 ---
 
 <p>

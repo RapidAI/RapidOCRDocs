@@ -1,14 +1,11 @@
 ---
 weight: 50
-date: "2023-09-18"
+date: "2023-09-27"
 draft: false
 author: "SWHL"
 title: "转换Paddle模型为ONNX"
 icon: "support"
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 toc: true
 ---
 

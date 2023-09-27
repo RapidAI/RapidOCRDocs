@@ -1,13 +1,12 @@
 ---
 weight: 30
-date: "2023-09-11"
+date: "2023-09-29"
 draft: false
 author: "SWHL"
 title: "不同版本模型之间比较"
 icon: "model_training"
 toc: true
 description: ""
-publishdate: "2023-09-08"
 katex: true
 ---
 

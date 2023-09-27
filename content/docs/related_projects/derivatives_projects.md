@@ -1,14 +1,12 @@
 ---
 weight: 100
-date: "2023-09-13"
+date: "2023-09-30"
 draft: false
 author: "SWHL"
 title: "衍生项目(偏工程)"
 icon: "family_link"
 description: ""
-publishdate: "2023-09-13"
-tags:
-categories:
+toc: true
 ---
 
 #### [RapidStructure](https://github.com/RapidAI/RapidStructure) ：版面分析

@@ -1,15 +1,12 @@
 ---
 weight: 1
-date: "2023-09-11"
+date: "2023-10-08"
 draft: false
 author: "SWHL"
 title: "rapidocr_onnxruntime/openvino"
 icon: "update"
 toc: true
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 ---
 
 #### 📡2023-09-21 v1.3.7 update:

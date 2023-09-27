@@ -3,8 +3,7 @@ weight: 70
 title: "常见问题 (FAQ)"
 icon: "quiz"
 description: ""
-date: 2020-10-06T08:49:31+00:00
-lastmod: 2020-10-06T08:49:31+00:00
+date: "2023-10-02"
 draft: false
 toc: true
 ---

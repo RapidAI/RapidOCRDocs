@@ -1,15 +1,12 @@
 ---
 weight: 500
-date: "2023-09-08"
+date: "2023-09-18"
 draft: false
 author: "AutumnSun1996"
 title: "多语言版本部署使用"
 icon: "code"
 toc: true
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 ---
 
 ### 简介

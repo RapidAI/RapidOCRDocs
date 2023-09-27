@@ -1,14 +1,12 @@
 ---
 weight: 20
-date: "2023-09-13"
+date: "2023-08-10"
 draft: false
 author: "SWHL"
 title: "快速开始"
 icon: "rocket_launch"
 description: "故事的开始，只需3步。"
-publishdate: "2023-09-13"
-tags:
-categories:
+toc: true
 ---
 
 ### 1. 安装

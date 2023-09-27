@@ -1,14 +1,12 @@
 ---
 weight: 200
-date: "2023-09-13"
+date: "2023-10-01"
 draft: false
 author: "SWHL"
 title: "垂直项目(偏学术)"
 icon: "family_link"
 description: ""
-publishdate: "2023-09-13"
-tags:
-categories:
+toc: true
 ---
 
 - 以下几个方向，每个都是比较独立的方向，但是却和OCR有着千丝万缕的关系，关于它们的资料就像散落在天空中的星星一般，散发着微弱的光芒，这里要做的就是将这些点点光芒聚集起来。

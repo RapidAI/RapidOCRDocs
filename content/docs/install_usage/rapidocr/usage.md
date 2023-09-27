@@ -1,15 +1,12 @@
 ---
 weight: 200
-date: "2023-09-11"
+date: "2023-08-30"
 draft: false
 author: "SWHL"
 title: "使用说明"
 icon: "code"
 toc: true
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 ---
 
 ### 初始化

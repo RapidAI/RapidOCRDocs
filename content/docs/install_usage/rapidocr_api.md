@@ -1,15 +1,12 @@
 ---
 weight: 400
-date: "2023-09-08"
+date: "2023-09-20"
 draft: false
 author: "SWHL"
 title: "rapidocr_api"
 icon: "code"
 toc: true
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 ---
 
 <p>

@@ -3,10 +3,8 @@ weight: 90
 title: "交流群"
 description: ""
 icon: article
-date: 2022-11-22T12:36:15+00:00
-lastmod: 2022-11-22T12:36:15+00:00
-draft: false
-images: []
+date: "2023-10-06"
+toc: true
 ---
 
 可通过以下方式与RapidOCR维护者[SWHL](https://github.com/SWHL)进行沟通，也欢迎反馈使用过程中遇到的问题。

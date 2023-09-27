@@ -1,15 +1,12 @@
 ---
 weight: 200
-date: "2023-09-11"
+date: "2023-10-03"
 draft: false
 author: "SWHL"
 title: "调优尝试教程"
 icon: "code"
 toc: true
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 ---
 
 {{< alert text="以下尝试情况，均已经在[在线demo](https://huggingface.co/spaces/SWHL/RapidOCRDemo)中实现，看完之后，可移步那里去尝试。" />}}

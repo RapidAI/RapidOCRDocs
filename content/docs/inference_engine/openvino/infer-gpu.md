@@ -3,10 +3,8 @@ weight: 7
 title: "GPU推理"
 description:
 icon: menu_book
-date: 2023-09-13
-lastmod: 2023-09-13
-draft: false
-images: []
+date: "2023-09-26"
+toc: true
 ---
 
 - 官方参考文档：[docs](https://docs.openvino.ai/latest/api/ie_python_api/_autosummary/openvino.runtime.Core.html?highlight=compile_model#openvino.runtime.Core.compile_model)

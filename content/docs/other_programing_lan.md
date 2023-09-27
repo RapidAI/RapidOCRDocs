@@ -3,9 +3,9 @@ weight: 25
 title: "其他编程语言支持"
 description:
 icon: code
-date: 2023-09-13
-lastmod: 2023-09-21
+date: "2023-08-20"
 draft: false
+toc: true
 ---
 
 {{< alert context="warning" text="以下项目不确定是否支持最新的推理代码，Python版为最新的。" />}}

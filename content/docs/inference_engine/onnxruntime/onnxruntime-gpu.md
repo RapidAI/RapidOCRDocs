@@ -3,10 +3,9 @@ weight: 403
 title: "GPU版推理"
 description:
 icon: menu_book
-date: 2023-09-13
-lastmod: 2023-09-13
+date: "2023-09-24"
 draft: false
-images: []
+toc: true
 ---
 
 ### onnxruntime-gpu版相关说明

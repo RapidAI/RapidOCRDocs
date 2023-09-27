@@ -1,15 +1,12 @@
 ---
 weight: 300
-date: "2023-09-11"
+date: "2023-10-05"
 draft: false
 author: "SWHL"
 title: "config.yaml参数解释"
 icon: "code"
 toc: true
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 ---
 
 #### [config.yaml源码](https://github.com/RapidAI/RapidOCR/blob/29d5f5fc01fbff7c49926a3c297fa8a3fb1624af/python/rapidocr_onnxruntime/config.yaml)

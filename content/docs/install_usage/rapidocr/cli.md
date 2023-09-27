@@ -1,15 +1,12 @@
 ---
 weight: 300
-date: "2023-09-11"
+date: "2023-09-01"
 draft: false
 author: "SWHL"
 title: "命令行工具"
 icon: "code"
 toc: true
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 ---
 
 `rapidocr_onnxruntime`包含了命令行工具，安装之后，即可使用。

@@ -7,9 +7,6 @@ title: "桌面版使用教程"
 icon: "code"
 toc: true
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 ---
 
 #### 引言

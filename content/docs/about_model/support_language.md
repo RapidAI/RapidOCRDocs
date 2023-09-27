@@ -1,14 +1,11 @@
 ---
 weight: 40
-date: "2023-09-11"
+date: "2023-09-28"
 draft: false
 author: "SWHL"
 title: "支持识别语言"
 icon: "support"
 description: ""
-publishdate: "2023-09-08"
-tags:
-categories:
 toc: true
 ---
 

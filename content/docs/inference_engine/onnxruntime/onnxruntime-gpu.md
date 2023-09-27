@@ -29,5 +29,4 @@ onnxruntime-gpu版在动态输入情况下，推理速度要比CPU慢很多。�
 |设备2[^1]|1.12.1|149.35427|0.50504|250.81760|0.99927|
 
 [^1]: 宏碁(Acer) 暗影骑士·威N50-N93游戏台式机 | Windows | 十代i5-10400F 16G 512G SSD | NVIDIA GeForce GTX 1660Super 6G
-
 [^2]: Linux | AMD R9 5950X | NVIDIA GeForce RTX 3090

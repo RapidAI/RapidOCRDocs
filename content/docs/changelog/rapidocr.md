@@ -1,6 +1,6 @@
 ---
 weight: 1
-date: "2023-10-08"
+date: "2022-10-08"
 draft: false
 author: "SWHL"
 title: "rapidocr_onnxruntime/openvino"

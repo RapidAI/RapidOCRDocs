@@ -1,6 +1,6 @@
 ---
 weight: 200
-date: "2023-10-01"
+date: "2022-10-01"
 draft: false
 author: "SWHL"
 title: "垂直项目(偏学术)"

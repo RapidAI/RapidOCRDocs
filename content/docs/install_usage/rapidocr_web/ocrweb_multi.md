@@ -1,6 +1,6 @@
 ---
 weight: 500
-date: "2023-09-18"
+date: "2022-09-18"
 draft: false
 author: "AutumnSun1996"
 title: "多语言版本部署使用"

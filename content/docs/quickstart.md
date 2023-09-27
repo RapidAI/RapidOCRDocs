@@ -1,6 +1,6 @@
 ---
 weight: 20
-date: "2023-08-10"
+date: "2022-08-10"
 draft: false
 author: "SWHL"
 title: "快速开始"

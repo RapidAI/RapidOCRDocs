@@ -3,7 +3,7 @@ weight: 7
 title: "GPU推理"
 description:
 icon: menu_book
-date: "2023-09-26"
+date: "2022-09-26"
 toc: true
 ---
 

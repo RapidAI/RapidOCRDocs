@@ -1,6 +1,6 @@
 ---
 weight: 40
-date: "2023-09-28"
+date: "2022-09-28"
 draft: false
 author: "SWHL"
 title: "支持识别语言"

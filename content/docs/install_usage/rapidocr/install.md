@@ -1,6 +1,6 @@
 ---
 weight: 100
-date: "2023-08-25"
+date: "2022-08-25"
 draft: false
 author: "SWHL"
 title: "安装"

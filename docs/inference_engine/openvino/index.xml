@@ -10,7 +10,7 @@
     <item>
       <title>CPU推理</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</link>
-      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer/</guid>
       <description>info 基于目前openvino==2022.3.0版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见issue11939
@@ -23,7 +23,7 @@
     <item>
       <title>GPU推理</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</link>
-      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 26 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/openvino/infer-gpu/</guid>
       <description> 官方参考文档：docs 考虑到openvino只能使用自家显卡推理，通用性不高，这里暂不作相关配置说明。 </description>

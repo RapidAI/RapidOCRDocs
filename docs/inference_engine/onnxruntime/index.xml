@@ -10,7 +10,7 @@
     <item>
       <title>CPU推理优化</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/</link>
-      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/</guid>
       <description>引言 link 平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。 因此，决定在这一篇文章中来梳理一下相关的设置。 以下参数都是来自SessionOptions中 相关测试代码可以前往AI Studio查看 欢迎补充和指出不足之处。 推荐常用设置 link import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL sess_options.log_severity_level = 4 sess_options.enable_cpu_mem_arena = False # 其他参数，采用默认即可 enable_cpu_mem_arena link 作用：启用CPU上的memory arena。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为enable_cpu_mem_area=False，默认是True
@@ -23,11 +23,12 @@ Python: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu
     <item>
       <title>GPU版推理</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</link>
-      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 24 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</guid>
-      <description>onnxruntime-gpu版相关说明 link 目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见onnxruntime issue#13198 有关onnxruntime-gpu推理慢的相关帖子 link Pre-allocating dynamic shaped tensor memory for ONNX runtime inference? 快速查看比较版本 link 国外小伙伴可以基于Google Colab，国内的小伙伴可以基于百度的AI Studio来查看效果 自己折腾版 link onnxruntime-gpu需要严格按照与CUDA、cuDNN版本对应来安装，具体参考文档，这一步关乎后面是否可以成功调用GPU。
-以下是安装示例： 所用机器环境情况： nvcc-smi显示CUDA Driver API版本：11.7 nccc -V显示CUDA Runtime API版本：11.6 以上两个版本的对应关系，可参考博客 具体安装命令如下： conda install cudatoolkit=11.6.0 conda install cudnn=8.3.2.44 pip install onnxruntime-gpu==1.12.0 验证是否可以onnxruntime-gpu正常调用GPU 验证get_device()是否可返回GPU import onnxruntime as ort print(ort.get_device()) # GPU 如果第一步满足了，继续验证onnxruntime-gpu加载模型时是否可以调用GPU import onnxruntime as ort providers = [ (&amp;#39;CUDAExecutionProvider&amp;#39;, { &amp;#39;device_id&amp;#39;: 0, &amp;#39;arena_extend_strategy&amp;#39;: &amp;#39;kNextPowerOfTwo&amp;#39;, &amp;#39;gpu_mem_limit&amp;#39;: 2 * 1024 * 1024 * 1024, &amp;#39;cudnn_conv_algo_search&amp;#39;: &amp;#39;EXHAUSTIVE&amp;#39;, &amp;#39;do_copy_in_default_stream&amp;#39;: True, }), &amp;#39;CPUExecutionProvider&amp;#39;, ] # download link: https://github.</description>
+      <description>onnxruntime-gpu版相关说明 link 目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见onnxruntime issue#13198 有关onnxruntime-gpu推理慢的相关帖子 link Pre-allocating dynamic shaped tensor memory for ONNX runtime inference? 快速查看比较版本 link 国外小伙伴可以基于Google Colab，国内的小伙伴可以基于百度的AI Studio来查看效果 结论 linkonnxruntime-gpu版在动态输入情况下，推理速度要比CPU慢很多。而OCR任务就是动态输入，因此不推荐使用onnxruntime-gpu版推理。
+目前一直在找寻GPU端，可以快速推理ONNX模型的推理引擎。
+相关对比表格 link 设备 onnxruntime-gpu CPU总耗时(s) CPU平均耗时(s/img) GPU总耗时(s) GPU平均耗时(s/img) 设备11 1.11.0 296.8841 1.18282 646.14667 2.57429 设备21 1.12.1 149.35427 0.50504 250.81760 0.99927 宏碁(Acer) 暗影骑士·威N50-N93游戏台式机 | Windows | 十代i5-10400F 16G 512G SSD | NVIDIA GeForce GTX 1660Super 6G&amp;#160;&amp;#x21a9;&amp;#xfe0e;&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
     </item>
     
   </channel>

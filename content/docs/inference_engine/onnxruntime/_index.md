@@ -3,8 +3,7 @@ weight: 4
 title: "ONNXRuntime"
 description:
 icon: menu_book
-date: 2023-09-13
-lastmod: 2023-09-13
+lastmod: "2022-09-22"
 draft: false
 images: []
 ---

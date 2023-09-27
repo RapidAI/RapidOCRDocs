@@ -3,8 +3,7 @@ weight: 5
 title: "OpenVINO"
 description:
 icon: menu_book
-date: 2023-09-13
-lastmod: 2023-09-13
+lastmod: "2022-09-24"
 draft: false
 images: []
 ---

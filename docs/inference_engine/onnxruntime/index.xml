@@ -10,7 +10,7 @@
     <item>
       <title>CPU推理优化</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/</link>
-      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/</guid>
       <description>引言 link 平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。 因此，决定在这一篇文章中来梳理一下相关的设置。 以下参数都是来自SessionOptions中 相关测试代码可以前往AI Studio查看 欢迎补充和指出不足之处。 推荐常用设置 link import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL sess_options.log_severity_level = 4 sess_options.enable_cpu_mem_arena = False # 其他参数，采用默认即可 enable_cpu_mem_arena link 作用：启用CPU上的memory arena。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为enable_cpu_mem_area=False，默认是True
@@ -23,7 +23,7 @@ Python: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu
     <item>
       <title>GPU版推理</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</link>
-      <pubDate>Sun, 24 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/</guid>
       <description>onnxruntime-gpu版相关说明 link 目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见onnxruntime issue#13198 有关onnxruntime-gpu推理慢的相关帖子 link Pre-allocating dynamic shaped tensor memory for ONNX runtime inference? 快速查看比较版本 link 国外小伙伴可以基于Google Colab，国内的小伙伴可以基于百度的AI Studio来查看效果 结论 linkonnxruntime-gpu版在动态输入情况下，推理速度要比CPU慢很多。而OCR任务就是动态输入，因此不推荐使用onnxruntime-gpu版推理。

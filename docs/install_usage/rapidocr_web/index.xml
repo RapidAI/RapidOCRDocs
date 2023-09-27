@@ -10,7 +10,7 @@
     <item>
       <title>安装及使用</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web/</link>
-      <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/rapidocr_web/</guid>
       <description>简介 link 该库是rapidocr_onnxruntime的web版本，依赖最新版本的rapidocr_onnxruntime库。
@@ -24,7 +24,7 @@ rapidocr_web -ip 0.0.0.0 -p 9003 浏览器打开 http://localhost:9003/，enjoy 
     <item>
       <title>桌面版使用教程</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/desktop_usage/</link>
-      <pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/desktop_usage/</guid>
       <description>引言 link 说明：桌面版指的是可以直接解压，双击即可运行的版本。 通俗来说，对rapidocr_web做了打包，将相关依赖全部放到一个zip包中，不需要本地有额外的环境，降低使用门槛。 下面会以Windows版为例，作简要说明。 使用步骤 link 下载对应的zip包
@@ -37,7 +37,7 @@ rapidocr_web -ip 0.0.0.0 -p 9003 浏览器打开 http://localhost:9003/，enjoy 
     <item>
       <title>Nuitka打包</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/nuitka_package/</link>
-      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/nuitka_package/</guid>
       <description>&amp;ndash;by DeadWood8
@@ -53,7 +53,7 @@ cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --no
     <item>
       <title>多语言版本部署使用</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/ocrweb_multi/</link>
-      <pubDate>Mon, 18 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/ocrweb_multi/</guid>
       <description>简介 link 同时支持多种语言，可通过接口参数配置语言及预测过程中的其他参数 调整结果展示方式为基于canvas, 减少后端处理和接口数据传输 预测接口添加Token验证支持 添加pyinstaller打包脚本，简化安装步骤 示例打包结果：pyinstaller demo 安装 link 克隆项目到本地 git clone -b main https://github.com/RapidAI/RapidOCR.git 安装运行所需环境 cd ocrweb_multi pip install -r requirements.txt -i https://pypi.douban.com/simple/ 运行步骤 link 下载models文件到当前目录下

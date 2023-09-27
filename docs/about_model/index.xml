@@ -8,9 +8,29 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Nov 2022 12:36:15 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/about_model/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>不同版本模型之间比较</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/about_model/model_summary/</link>
+      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/model_summary/</guid>
+      <description>各个版本ONNX模型效果对比(仅供参考) link notifications 以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。 文本检测模型 link notifications 以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。 评测采用的是TextDetMetric库 + 文本检测测试集，详情可以移步AI Studio运行查看。
+指标计算都是在以下参数下计算得来，差别仅在于模型文件不同。
+pre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImage: std: [0.229, 0.224, 0.225] mean: [0.485, 0.456, 0.406] scale: 1./255. order: hwc ToCHWImage: KeepKeys: keep_keys: [&amp;#39;image&amp;#39;, &amp;#39;shape&amp;#39;] post_process: thresh: 0.3 box_thresh: 0.5 max_candidates: 1000 unclip_ratio: 1.6 use_dilation: true score_mode: &amp;#34;fast&amp;#34; 模型 模型大小 Precision Recall H-mean Speed(s/img) ch_PP-OCRv4_det_infer.onnx 4.5M 0.6958 0.8608 0.7696 0.6176 ch_PP-OCRv4_det_server_infer.onnx 108M 0.7070 0.9330 0.8044 13.9348 ch_PP-OCRv3_det_infer.</description>
+    </item>
+    
+    <item>
+      <title>支持识别语言</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/about_model/support_language/</link>
+      <pubDate>Wed, 28 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/support_language/</guid>
+      <description>简介 link 因为本项目依托于PaddleOCR，所以理论上PaddleOCR支持识别的模型，RapidOCR都是支持的。 中英文检测和识别（可以直接使用） link 因为中英文是最为常用的模型，所以在打包时，就默认将中英文识别的模型放到了rapidocr_onnxruntime和rapidocr_openvino中，直接pip安装即可使用。 其他语种检测和识别（需要转换） link PaddleOCR中已有文本检测模型列表：link PaddleOCR已有文本识别模型列表： link 除了slim量化版的模型，上面链接中的其他模型都可以转换为ONNX格式，通过RapidOCR快速部署。 转换教程 link</description>
+    </item>
+    
+    <item>
       <title>转换Paddle模型为ONNX</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/about_model/convert_model/</link>
-      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/about_model/convert_model/</guid>
       <description> warning 不支持slim量化版的模型转换 简介 link Paddle格式模型的转换，主要借助paddle2onnx库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了PaddleOCRModelConverter转换工具。 主要有两种使用方式： 方法一：在线转换，借助魔搭和Hugging Face两个平台，搭建在线转换demo； 方法二：离线转换，pip安装该工具，即可本地转换使用。 在线快速转换 link 魔搭 Hugging Face 离线转换 link</description>

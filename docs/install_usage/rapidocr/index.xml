@@ -10,7 +10,7 @@
     <item>
       <title>安装</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/install/</link>
-      <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 25 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/install/</guid>
       <description> info rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，后续说明文档均以rapidocr_onnxruntime为例如使用rapidocr_openvino，直接更换关键词rapidocr_onnxruntime为rapidocr_openvino即可。 info pypi上各个版本的对应关系： link 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 notifications 请使用Python3.6及以上版本。 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
@@ -22,7 +22,7 @@ info 如果在安装过程中，出现某个依赖包不能正确安装时，可
     <item>
       <title>使用说明</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/usage/</link>
-      <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/usage/</guid>
       <description>初始化 link类RapidOCR是主类，其初始化函数如下：
@@ -35,7 +35,7 @@ info 以下参数均有默认值，可以不传入任何参数，直接初始化
     <item>
       <title>命令行工具</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/cli/</link>
-      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/cli/</guid>
       <description>rapidocr_onnxruntime包含了命令行工具，安装之后，即可使用。

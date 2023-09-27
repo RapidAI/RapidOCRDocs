@@ -3,7 +3,7 @@ weight: 403
 title: "GPU版推理"
 description:
 icon: menu_book
-date: "2022-09-24"
+lastmod: "2022-09-24"
 draft: false
 toc: true
 ---

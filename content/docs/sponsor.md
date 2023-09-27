@@ -3,7 +3,7 @@ weight: 100
 title: "给作者加油"
 description: ""
 icon: article
-date: "2022-10-07"
+lastmod: "2022-10-07"
 draft: false
 toc: true
 ---

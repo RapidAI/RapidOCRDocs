@@ -1,6 +1,6 @@
 ---
 weight: 200
-date: "2022-09-05"
+lastmod: "2022-09-05"
 draft: false
 author: "SWHL"
 title: "安装及使用"

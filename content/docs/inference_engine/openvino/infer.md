@@ -3,7 +3,7 @@ weight: 6
 title: "CPU推理"
 description:
 icon: menu_book
-date: "2022-09-25"
+lastmod: "2022-09-25"
 draft: false
 toc: true
 ---

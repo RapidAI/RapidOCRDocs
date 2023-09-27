@@ -1,6 +1,6 @@
 ---
 weight: 300
-date: "2022-10-05"
+lastmod: "2022-10-05"
 draft: false
 author: "SWHL"
 title: "config.yaml参数解释"

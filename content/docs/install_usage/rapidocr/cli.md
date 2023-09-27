@@ -1,6 +1,6 @@
 ---
 weight: 300
-date: "2022-09-01"
+lastmod: "2022-09-01"
 draft: false
 author: "SWHL"
 title: "命令行工具"

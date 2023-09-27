@@ -1,6 +1,6 @@
 ---
 weight: 300
-date: "2022-10-04"
+lastmod: "2022-10-04"
 draft: false
 author: "SWHL"
 title: "选择哪个推理引擎？"

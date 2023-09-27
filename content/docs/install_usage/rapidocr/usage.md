@@ -1,6 +1,6 @@
 ---
 weight: 200
-date: "2022-08-30"
+lastmod: "2022-08-30"
 draft: false
 author: "SWHL"
 title: "使用说明"

@@ -1,6 +1,6 @@
 ---
 weight: 30
-date: "2022-09-29"
+lastmod: "2022-09-29"
 draft: false
 author: "SWHL"
 title: "不同版本模型之间比较"

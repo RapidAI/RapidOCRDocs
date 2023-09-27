@@ -1,6 +1,6 @@
 ---
 weight: 3
-date: "2022-10-10"
+lastmod: "2022-10-10"
 draft: false
 author: "SWHL"
 title: "rapidocr_api"

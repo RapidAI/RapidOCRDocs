@@ -1,6 +1,6 @@
 ---
 weight: 100
-date: "2022-08-25"
+lastmod: "2022-08-25"
 draft: false
 author: "SWHL"
 title: "安装"

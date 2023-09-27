@@ -1,6 +1,6 @@
 ---
 weight: 2
-date: "2022-10-09"
+lastmod: "2022-10-09"
 draft: false
 author: "SWHL"
 title: "rapidocr_web"

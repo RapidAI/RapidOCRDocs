@@ -32,7 +32,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://rapidai.github.io/RapidOCRDocs/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rapidai.github.io/RapidOCRDocs/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://rapidai.github.io/RapidOCRDocs/site.webmanifest">
+<meta property="og:title" content="推理引擎汇总" />
+<meta property="og:description" content=" warning Caution - This documentation is in progress 引言 link 关于模型的推理框架有很多，包括PC/移动端等等。之前在老潘的个人博客里看到过相关介绍 我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。 目前已知推理引擎 link CPU端：ONNXruntime、OpenVINO、libtorch、Caffe、PaddleInference GPU端：TensorRT、OpenPPL、AITemplate 移动端：NCNN，MNN, Paddle-Lite 通吃：TVM、OpenPPL ONNXRuntime（微软） link 目前仓库中已经在使用的推理引擎，CPU端最好用的轻量推理引擎。支持动态输入。 目前在GPU端，动态输入的情况下，速度比CPU上还要慢一些，暂时尚未解决。 ONNXRuntime &#43; TensorRT结合 → 尝试但未跑通 OpenVINO（英特尔） link CPU端推理速度更快，支持动态输入。但是占用内存较大，拿空间换了时间。 当自己资源不吃紧时，但要求更快地推理速度时，可以考虑用这个。 GPU端仅支持自家显卡，暂时用不到。 MNN（阿里） link GPU端没有找到容易的使用方式，需要自行编译，门槛太高。理想情况是像onnxruntime-gpu这种，可以快速安装使用。 说是支持动态输入，但是尚未找到有效验证方法。 TensorRT（英伟达） link GPU端快速推理，占坑 据说存在内存泄漏的bug，暂时没有尝试。 Paddle Inference（百度） link 依赖Paddle框架，有些重，但是不失为GPU上推理模型的一个选择。 暂时不考虑这个，因为paddlepaddle-gpu版有大约500M左右，太太了。 NCNN（腾讯） link 移动端比较好用的 FastDeploy（百度） link TODO " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/inference_summary/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_4471898682664714783.png"/><meta property="article:section" content="docs" />
 
+<meta property="article:modified_time" content="2023-09-28T08:38:57+08:00" />
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
@@ -1279,8 +1284,8 @@
                 id:  4 ,
                 href: "\/RapidOCRDocs\/docs\/online_demo\/",
                 title: "在线demo",
-                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
-                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
+                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
+                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
             }
         );
     index.add(

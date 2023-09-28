@@ -32,7 +32,19 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://rapidai.github.io/RapidOCRDocs/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rapidai.github.io/RapidOCRDocs/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://rapidai.github.io/RapidOCRDocs/site.webmanifest">
+<meta property="og:title" content="Nuitka打包" />
+<meta property="og:description" content="&ndash;by DeadWood8
+打包环境 link OS: Windows11 Python: 3.8.10 rapidocr_onnxruntime: 1.2.0 nuitka: 1.5.3 onnxruntime: 1.14.0 打包步骤 link 安装Nuitka
+pip install nuitka 注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。
+修改rapidocr-onnxruntime源码（修改后可以将所有依赖打包进文件） info rapidocr_onnxruntime&gt;=1.2.8以后不用再手动修改下面代码，已经做了修改。可以跳过该步。 进入rapidocr-onnxruntime安装位置，一般在Lib\site-packages\rapidocr_onnxruntime或者你设置的虚拟环境下。 用编辑器打开rapid_ocr_api.py，对39-52行进行修改，如下图： nuitka打包
+cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --output-dir=out ocrweb.py 如下图所示： 拷贝静态文件
+打包后的文件位于当前位置的out\ocrweb.dist目录下，需要将web项目和rapidocr-onnxruntime相关文件拷贝到此目录。 拷贝rapidocr_web目录static和templates两个文件夹全部拷贝到out\ocrweb.dist下 在out\ocrweb.dist创建rapidocr_onnxruntime文件夹，将Lib\site-packages\rapidocr_onnxruntime目录下的config.yaml和models文件夹拷贝到out\ocrweb.dist\rapidocr_onnxruntime文件夹内 运行程序
+进入out\ocrweb.dist，直接双击ocrweb.exe运行。 打包好的exe下载：百度网盘 | Google Drive | Gitee
+补充 link 如果不想运行程序后有黑框，可以在打包命令中加入以下参数 --windows-disable-console 完整命令为： nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to=tkinter --windows-disable-console --output-dir=out ocrweb.py " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/nuitka_package/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_959547818402079117.png"/><meta property="article:section" content="docs" />
 
+<meta property="article:modified_time" content="2023-09-28T08:38:57+08:00" />
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
@@ -1422,8 +1434,8 @@ nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to
                 id:  4 ,
                 href: "\/RapidOCRDocs\/docs\/online_demo\/",
                 title: "在线demo",
-                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
-                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
+                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
+                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
             }
         );
     index.add(

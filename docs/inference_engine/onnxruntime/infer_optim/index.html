@@ -32,7 +32,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://rapidai.github.io/RapidOCRDocs/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rapidai.github.io/RapidOCRDocs/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://rapidai.github.io/RapidOCRDocs/site.webmanifest">
+<meta property="og:title" content="CPU推理优化" />
+<meta property="og:description" content="引言 link 平时推理用的最多是ONNXRuntime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于ONNXRuntime参数设置的资料却散落在各个地方，不能形成有效的指导意见。 因此，决定在这一篇文章中来梳理一下相关的设置。 以下参数都是来自SessionOptions中 相关测试代码可以前往AI Studio查看 欢迎补充和指出不足之处。 推荐常用设置 link import onnxruntime as rt sess_options = rt.SessionOptions() sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL sess_options.log_severity_level = 4 sess_options.enable_cpu_mem_arena = False # 其他参数，采用默认即可 enable_cpu_mem_arena link 作用：启用CPU上的memory arena。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为enable_cpu_mem_area=False，默认是True
+结论：建议关闭
+开启之后，占用内存会剧增（5618.3M &raquo; 5.3M），且持续占用，不释放；推理时间只有大约13%提升 测试环境：
+Python: 3.7.13 ONNXRuntime: 1.14.1 测试代码（来自issue 11627，enable_cpu_memory_area_example.zip）
+# pip install onnxruntime==1.14.1 # pip install memory_profiler import numpy as np import onnxruntime as ort from memory_profiler import profile @profile def onnx_prediction(model_path, input_data): ort_sess = ort.InferenceSession(model_path, sess_options=sess_options) preds = ort_sess." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/infer_optim/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_8836147668014078466.png"/><meta property="article:section" content="docs" />
 
+<meta property="article:modified_time" content="2023-09-28T08:38:57+08:00" />
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
@@ -1554,8 +1563,8 @@ sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL
                 id:  4 ,
                 href: "\/RapidOCRDocs\/docs\/online_demo\/",
                 title: "在线demo",
-                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
-                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
+                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
+                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
             }
         );
     index.add(

@@ -32,7 +32,19 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://rapidai.github.io/RapidOCRDocs/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rapidai.github.io/RapidOCRDocs/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://rapidai.github.io/RapidOCRDocs/site.webmanifest">
+<meta property="og:title" content="常见问题 (FAQ)" />
+<meta property="og:description" content="Q: 为什么我的模型在GPU上比在CPU上还要慢？ linkA: : 取决于所使用的执行提供者，它可能没有完全支持模型中的所有操作。回落到CPU操作可能会导致性能速度的下降。此外，即使一个操作是由CUDA execution provider实现的，由于性能的原因，它也不一定会把操作分配/放置到CUDA EP上。要想看到ORT决定的位置，请打开verbose日志并查看控制台的输出。
+Q: 请问这个能在32位C#中用嘛? linkA: C#可以32位，要用32位的dll，但nuget上的onnxruntime不支持win7。
+Q: Windows系统下，装完环境之后，运行示例程序之后，报错OSError: [WinError 126] 找不到指定的模組 linkA: 原因是Shapely库没有正确安装，如果是在Windows，可以在Shapely whl下载对应的whl包，离线安装即可；另外一种解决办法是用conda安装也可。
+Q: Linux部署python的程序时，import cv2时会报ImportError: ligGL.so.1: cannot open shared object file: No such file or directory? linkA: 解决方法 有两个(来自群友ddeef)：
+安装opencv-python-headless取代opencv-python; 运行sudo apt-get install -y libgl1-mesa-dev Q: 询问下，我编译出来的进程在win7下面通过cmd调用，发生了崩溃的情况? linkA: 不支持win7 (by @如果我有時光機)
+Q: 能不能搞个openmmlab类似的那个提取信息的? linkA: 这个目前正在调研测试当中，如果mmocr中关键信息提取效果还可以，后期会考虑整合进来。
+Q: RapidOCR和PaddleOCR是什么关系呢？ linkA: RapidOCR是将PaddleOCR的预训练模型转为onnx模型，不依赖paddle框架，方便各个平台部署。
+Q: onnxruntime arm32 有人编译过吗？ 我编译成功了，但是使用的时候libonnxruntime.so👎 error: file not recognized: File format not recognized 应该是版本不匹配 linkA: 没遇到过。我是直接在当前平台编译的，我们用的是arm。估计是平台不兼容,建议在本身平台上编译。没遇到过问题。通常出在交叉编译方式下。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/faq/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_14290869961882180560.png"/><meta property="article:section" content="docs" />
 
+<meta property="article:modified_time" content="2023-09-28T08:38:57+08:00" />
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
@@ -1262,8 +1274,8 @@
                 id:  4 ,
                 href: "\/RapidOCRDocs\/docs\/online_demo\/",
                 title: "在线demo",
-                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
-                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
+                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
+                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
             }
         );
     index.add(

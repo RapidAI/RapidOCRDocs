@@ -32,7 +32,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://rapidai.github.io/RapidOCRDocs/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rapidai.github.io/RapidOCRDocs/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://rapidai.github.io/RapidOCRDocs/site.webmanifest">
+<meta property="og:title" content="命令行工具" />
+<meta property="og:description" content="rapidocr_onnxruntime包含了命令行工具，安装之后，即可使用。
+参数说明 link $ rapidocr_onnxruntime -h usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE] [--no_det] [--no_cls] [--no_rec] [--print_verbose] [--min_height MIN_HEIGHT] [--width_height_ratio WIDTH_HEIGHT_RATIO] [--det_use_cuda] [--det_model_path DET_MODEL_PATH] [--det_limit_side_len DET_LIMIT_SIDE_LEN] [--det_limit_type {max,min}] [--det_thresh DET_THRESH] [--det_box_thresh DET_BOX_THRESH] [--det_unclip_ratio DET_UNCLIP_RATIO] [--det_donot_use_dilation] [--det_score_mode {slow,fast}] [--cls_use_cuda] [--cls_model_path CLS_MODEL_PATH] [--cls_image_shape CLS_IMAGE_SHAPE] [--cls_label_list CLS_LABEL_LIST] [--cls_batch_num CLS_BATCH_NUM] [--cls_thresh CLS_THRESH] [--rec_use_cuda] [--rec_model_path REC_MODEL_PATH] [--rec_img_shape REC_IMG_SHAPE] [--rec_batch_num REC_BATCH_NUM] [-vis] [--vis_font_path VIS_FONT_PATH] [--vis_save_path VIS_SAVE_PATH] optional arguments: -h, --help show this help message and exit -img IMG_PATH, --img_path IMG_PATH -p, --print_cost Global: --text_score TEXT_SCORE --no_det --no_cls --no_rec --print_verbose --min_height MIN_HEIGHT --width_height_ratio WIDTH_HEIGHT_RATIO Det: --det_use_cuda --det_model_path DET_MODEL_PATH --det_limit_side_len DET_LIMIT_SIDE_LEN --det_limit_type {max,min} --det_thresh DET_THRESH --det_box_thresh DET_BOX_THRESH --det_unclip_ratio DET_UNCLIP_RATIO --det_donot_use_dilation --det_score_mode {slow,fast} Cls: --cls_use_cuda --cls_model_path CLS_MODEL_PATH --cls_image_shape CLS_IMAGE_SHAPE --cls_label_list CLS_LABEL_LIST --cls_batch_num CLS_BATCH_NUM --cls_thresh CLS_THRESH Rec: --rec_use_cuda --rec_model_path REC_MODEL_PATH --rec_img_shape REC_IMG_SHAPE --rec_batch_num REC_BATCH_NUM Visual Result: -vis, --vis_res --vis_font_path VIS_FONT_PATH When -vis is True, the font_path must have value." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/cli/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_4096948263207471536.png"/><meta property="article:section" content="docs" />
 
+<meta property="article:modified_time" content="2023-09-28T08:38:57+08:00" />
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
@@ -747,26 +753,26 @@ Visual Result:
 		
 
 		<a class="nav-link  active"
-		   id="feacbdTab" data-bs-toggle="tab" data-bs-target="#feacbd"
-		   type="button" role="tab" aria-controls="feacbd" aria-selected="true">图像预测</a>
+		   id="aebcfdTab" data-bs-toggle="tab" data-bs-target="#aebcfd"
+		   type="button" role="tab" aria-controls="aebcfd" aria-selected="true">图像预测</a>
 
 		
 
 		<a class="nav-link "
-		   id="eafbcdTab" data-bs-toggle="tab" data-bs-target="#eafbcd"
-		   type="button" role="tab" aria-controls="eafbcd" aria-selected="true">只使用检测</a>
+		   id="fdabceTab" data-bs-toggle="tab" data-bs-target="#fdabce"
+		   type="button" role="tab" aria-controls="fdabce" aria-selected="true">只使用检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="badefcTab" data-bs-toggle="tab" data-bs-target="#badefc"
-		   type="button" role="tab" aria-controls="badefc" aria-selected="true">只使用识别</a>
+		   id="dfbecaTab" data-bs-toggle="tab" data-bs-target="#dfbeca"
+		   type="button" role="tab" aria-controls="dfbeca" aria-selected="true">只使用识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="fcdbeaTab" data-bs-toggle="tab" data-bs-target="#fcdbea"
-		   type="button" role="tab" aria-controls="fcdbea" aria-selected="true">可视化查看</a>
+		   id="cbdfeaTab" data-bs-toggle="tab" data-bs-target="#cbdfea"
+		   type="button" role="tab" aria-controls="cbdfea" aria-selected="true">可视化查看</a>
 
 		
 
@@ -782,7 +788,7 @@ Visual Result:
 
 
 
-<div class="tab-pane fade show active" id="feacbd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="aebcfd" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -815,7 +821,7 @@ Visual Result:
 
 
 
-<div class="tab-pane fade" id="eafbcd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="fdabce" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -848,7 +854,7 @@ Visual Result:
 
 
 
-<div class="tab-pane fade" id="badefc" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="dfbeca" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -881,7 +887,7 @@ Visual Result:
 
 
 
-<div class="tab-pane fade" id="fcdbea" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cbdfea" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1496,8 +1502,8 @@ Visual Result:
                 id:  4 ,
                 href: "\/RapidOCRDocs\/docs\/online_demo\/",
                 title: "在线demo",
-                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
-                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
+                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
+                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
             }
         );
     index.add(

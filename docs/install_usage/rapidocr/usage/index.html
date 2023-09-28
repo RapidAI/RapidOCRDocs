@@ -32,7 +32,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://rapidai.github.io/RapidOCRDocs/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rapidai.github.io/RapidOCRDocs/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://rapidai.github.io/RapidOCRDocs/site.webmanifest">
+<meta property="og:title" content="使用说明" />
+<meta property="og:description" content="初始化 link类RapidOCR是主类，其初始化函数如下：
+class RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：
+以config.yaml方式
+找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml engine = RapidOCR(config_path=&#34;your.yaml&#34;) (推荐) 以具体参数传入，参数基本和config.yaml中对应，只是个别名称有所区别。
+info 以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = &#34;min&#34;, det_thresh: float = 0.3, det_box_thresh: float = 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/usage/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_17795501070310800273.png"/><meta property="article:section" content="docs" />
 
+<meta property="article:modified_time" content="2023-09-28T08:38:57+08:00" />
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
@@ -776,26 +785,26 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 		
 
 		<a class="nav-link  active"
-		   id="efabcdTab" data-bs-toggle="tab" data-bs-target="#efabcd"
-		   type="button" role="tab" aria-controls="efabcd" aria-selected="true">str</a>
+		   id="efabdcTab" data-bs-toggle="tab" data-bs-target="#efabdc"
+		   type="button" role="tab" aria-controls="efabdc" aria-selected="true">str</a>
 
 		
 
 		<a class="nav-link "
-		   id="edcfabTab" data-bs-toggle="tab" data-bs-target="#edcfab"
-		   type="button" role="tab" aria-controls="edcfab" aria-selected="true">np.ndarray</a>
+		   id="ceabdfTab" data-bs-toggle="tab" data-bs-target="#ceabdf"
+		   type="button" role="tab" aria-controls="ceabdf" aria-selected="true">np.ndarray</a>
 
 		
 
 		<a class="nav-link "
-		   id="cabdefTab" data-bs-toggle="tab" data-bs-target="#cabdef"
-		   type="button" role="tab" aria-controls="cabdef" aria-selected="true">Bytes</a>
+		   id="dfaecbTab" data-bs-toggle="tab" data-bs-target="#dfaecb"
+		   type="button" role="tab" aria-controls="dfaecb" aria-selected="true">Bytes</a>
 
 		
 
 		<a class="nav-link "
-		   id="fbdeacTab" data-bs-toggle="tab" data-bs-target="#fbdeac"
-		   type="button" role="tab" aria-controls="fbdeac" aria-selected="true">Path</a>
+		   id="aefdbcTab" data-bs-toggle="tab" data-bs-target="#aefdbc"
+		   type="button" role="tab" aria-controls="aefdbc" aria-selected="true">Path</a>
 
 		
 
@@ -811,7 +820,7 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 
 
 
-<div class="tab-pane fade show active" id="efabcd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="efabdc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -851,7 +860,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="edcfab" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ceabdf" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -891,7 +900,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="cabdef" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="dfaecb" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -933,7 +942,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="fbdeac" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="aefdbc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -985,38 +994,38 @@ print(elapse)</code>
 		
 
 		<a class="nav-link  active"
-		   id="dacebfTab" data-bs-toggle="tab" data-bs-target="#dacebf"
-		   type="button" role="tab" aria-controls="dacebf" aria-selected="true">只有检测</a>
+		   id="abfdecTab" data-bs-toggle="tab" data-bs-target="#abfdec"
+		   type="button" role="tab" aria-controls="abfdec" aria-selected="true">只有检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="ecdbafTab" data-bs-toggle="tab" data-bs-target="#ecdbaf"
-		   type="button" role="tab" aria-controls="ecdbaf" aria-selected="true">只有分类</a>
+		   id="bdfaceTab" data-bs-toggle="tab" data-bs-target="#bdface"
+		   type="button" role="tab" aria-controls="bdface" aria-selected="true">只有分类</a>
 
 		
 
 		<a class="nav-link "
-		   id="bcfdeaTab" data-bs-toggle="tab" data-bs-target="#bcfdea"
-		   type="button" role="tab" aria-controls="bcfdea" aria-selected="true">只有识别</a>
+		   id="fadcebTab" data-bs-toggle="tab" data-bs-target="#fadceb"
+		   type="button" role="tab" aria-controls="fadceb" aria-selected="true">只有识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="ecabfdTab" data-bs-toggle="tab" data-bs-target="#ecabfd"
-		   type="button" role="tab" aria-controls="ecabfd" aria-selected="true">检测 &#43; 识别</a>
+		   id="cdefbaTab" data-bs-toggle="tab" data-bs-target="#cdefba"
+		   type="button" role="tab" aria-controls="cdefba" aria-selected="true">检测 &#43; 识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="efadcbTab" data-bs-toggle="tab" data-bs-target="#efadcb"
-		   type="button" role="tab" aria-controls="efadcb" aria-selected="true">分类 &#43; 识别</a>
+		   id="edabfcTab" data-bs-toggle="tab" data-bs-target="#edabfc"
+		   type="button" role="tab" aria-controls="edabfc" aria-selected="true">分类 &#43; 识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="feadcbTab" data-bs-toggle="tab" data-bs-target="#feadcb"
-		   type="button" role="tab" aria-controls="feadcb" aria-selected="true">检测 &#43; 分类 &#43; 识别</a>
+		   id="debcfaTab" data-bs-toggle="tab" data-bs-target="#debcfa"
+		   type="button" role="tab" aria-controls="debcfa" aria-selected="true">检测 &#43; 分类 &#43; 识别</a>
 
 		
 
@@ -1032,7 +1041,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade show active" id="dacebf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="abfdec" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1096,7 +1105,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="ecdbaf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bdface" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1159,7 +1168,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="bcfdea" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="fadceb" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1222,7 +1231,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="ecabfd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cdefba" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1289,7 +1298,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="efadcb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="edabfc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1352,7 +1361,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="feadcb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="debcfa" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1441,14 +1450,14 @@ print(elapse)</code>
 		
 
 		<a class="nav-link  active"
-		   id="ecdfabTab" data-bs-toggle="tab" data-bs-target="#ecdfab"
-		   type="button" role="tab" aria-controls="ecdfab" aria-selected="true">只可视化检测</a>
+		   id="dbaefcTab" data-bs-toggle="tab" data-bs-target="#dbaefc"
+		   type="button" role="tab" aria-controls="dbaefc" aria-selected="true">只可视化检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="cadbfeTab" data-bs-toggle="tab" data-bs-target="#cadbfe"
-		   type="button" role="tab" aria-controls="cadbfe" aria-selected="true">可视化检测和识别</a>
+		   id="bfacdeTab" data-bs-toggle="tab" data-bs-target="#bfacde"
+		   type="button" role="tab" aria-controls="bfacde" aria-selected="true">可视化检测和识别</a>
 
 		
 
@@ -1464,7 +1473,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade show active" id="ecdfab" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="dbaefc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1508,7 +1517,7 @@ cv2.imwrite(&#34;only_vis_det.png&#34;, res)</code>
 
 
 
-<div class="tab-pane fade" id="cadbfe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bfacde" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -2134,8 +2143,8 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
                 id:  4 ,
                 href: "\/RapidOCRDocs\/docs\/online_demo\/",
                 title: "在线demo",
-                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
-                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
+                description: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary ",
+                content: " 简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看指定图像的识别效果和识别时长 快速比较不同版本的检测和识别模型效果差异 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidOCRDemo 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidOCRDemo/summary "
             }
         );
     index.add(

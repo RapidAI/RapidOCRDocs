@@ -1,5 +1,5 @@
 ---
-weight: 7
+weight: 2200
 title: "GPU推理"
 description:
 icon: menu_book

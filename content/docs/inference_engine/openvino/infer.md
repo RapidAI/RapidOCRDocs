@@ -1,5 +1,5 @@
 ---
-weight: 6
+weight: 2100
 title: "CPU推理"
 description:
 icon: menu_book

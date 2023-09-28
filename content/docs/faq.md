@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 3000
 title: "常见问题 (FAQ)"
 icon: "quiz"
 description: ""

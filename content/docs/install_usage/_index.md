@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 550
 title: "安装及使用"
 description:
 icon: package

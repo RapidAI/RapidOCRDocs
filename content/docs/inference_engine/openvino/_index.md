@@ -1,5 +1,5 @@
 ---
-weight: 5
+weight: 2000
 title: "OpenVINO"
 description:
 icon: menu_book

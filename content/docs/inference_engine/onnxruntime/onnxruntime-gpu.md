@@ -1,5 +1,5 @@
 ---
-weight: 403
+weight: 1900
 title: "GPU版推理"
 description:
 icon: menu_book

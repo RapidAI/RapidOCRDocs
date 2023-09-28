@@ -1,5 +1,5 @@
 ---
-weight: 25
+weight: 500
 title: "其他编程语言支持"
 description:
 icon: code

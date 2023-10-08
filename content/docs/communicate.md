@@ -2,7 +2,7 @@
 weight: 3500
 title: "交流群"
 description: ""
-icon: article
+icon: chat
 lastmod: "2022-10-06"
 toc: true
 ---

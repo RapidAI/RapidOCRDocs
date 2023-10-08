@@ -11,25 +11,74 @@ description: ""
 
 #### [config.yaml源码](https://github.com/RapidAI/RapidOCR/blob/29d5f5fc01fbff7c49926a3c297fa8a3fb1624af/python/rapidocr_onnxruntime/config.yaml)
 
+<details>
+    <summary>详情</summary>
+
+```yaml {linenos=table}
+Global:
+    text_score: 0.5
+    use_det: true
+    use_cls: true
+    use_rec: true
+    print_verbose: false
+    min_height: 30
+    width_height_ratio: 8
+
+Det:
+    use_cuda: false
+
+    model_path: models/ch_PP-OCRv4_det_infer.onnx
+
+    limit_side_len: 736
+    limit_type: min
+
+    thresh: 0.3
+    box_thresh: 0.5
+    max_candidates: 1000
+    unclip_ratio: 1.6
+    use_dilation: true
+    score_mode: fast
+
+Cls:
+    use_cuda: false
+
+    model_path: models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+
+    cls_image_shape: [3, 48, 192]
+    cls_batch_num: 6
+    cls_thresh: 0.9
+    label_list: ['0', '180']
+
+Rec:
+    use_cuda: false
+
+    model_path: models/ch_PP-OCRv4_rec_infer.onnx
+
+    rec_img_shape: [3, 48, 320]
+    rec_batch_num: 6
+```
+
+</details>
 
 #### `Global`部分
 
 |    参数名称      | 取值范围   | 默认值   |                       作用                       |
-|:------------: | :----------: | :-----: | :----------------------------------------------|
+|:------------ | :----------: | :-----: | :----------------------------------------------|
 | `text_score`  |    `[0, 1]`    |   0.5   |       文本识别结果置信度，值越大，把握越大       |
 | `use_angle_cls`  |  `bool`      |   `true`   |       是否使用文本行的方向分类       |
 | `print_verbose`  |    `bool`    |   `true`   |       是否打印各个部分耗时信息       |
 | `min_height`  |    `int`    |   30   |       图像最小高度（单位是像素）<br/>低于这个值，会跳过文本检测阶段，直接进行后续识别       |
 |`width_height_ratio`| `int`| 8| 如果输入图像的宽高比大于`width_height_ratio`，则会跳过文本检测，直接进行后续识别<br/>`width_height_ratio=-1`：不用这个参数 |
 
-- `min_height`是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
+`min_height`是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
 
-    ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
+![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
+
 
 #### `Det`部分
 
 |    参数名称      | 取值范围   | 默认值   |                       作用                       |
-| :------------: | :----------: | :-----: | :----------------------------------------------|
+| :------------ | :----------: | :-----: | :----------------------------------------------|
 |  `use_cuda`   |    `bool`     | `false` |              是否使用CUDA，加速推理              |
 |`limit_side_len`| - | 736 | 限制图像边的长度的像素值 |
 |`limit_type`| `[min, max]` | `min` | 限制图像的最小边长度还是最大边为`limit_side_len` <br/> 示例解释：当`limit_type=min`和`limit_side_len=736`时，图像最小边小于736时，<br/>会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 |
@@ -42,7 +91,7 @@ description: ""
 
 #### `Cls`部分
 |    参数名称      | 取值范围   | 默认值   |                       作用                       |
-| :------------: | :----------: | :-----: | :----------------------------------------------|
+| :------------ | :----------: | :-----: | :----------------------------------------------|
 |`cls_img_shape`| - |`[3, 48, 192]`| 输入方向分类模型的图像Shape（CHW） |
 |`cls_batch_num`| - | 6 | 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差 |
 |`cls_thresh`|`[0, 1]`|0.9| 方向分类结果的置信度|
@@ -51,6 +100,6 @@ description: ""
 #### `Rec`部分
 
 |    参数名称      | 取值范围   | 默认值   |                       作用                       |
-|:------------: | :----------: | :-----: | :----------------------------------------------|
+|:------------ | :----------: | :-----: | :----------------------------------------------|
 |`rec_img_shape`| - |`[3, 48, 320]`| 输入文本识别模型的图像Shape（CHW） |
 |`rec_batch_num`| - | 6 | 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差 |

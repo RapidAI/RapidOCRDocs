@@ -29,7 +29,7 @@ description: ""
 
 {{% /alert %}}
 
-{{< alert text="请使用Python3.6及以上版本。" />}}
+{{< alert text="请使用Python3.6及以上版本。rapidocr系列库目前仅在CPU上支持较好，GPU上推理很慢，不建议用onnxruntime-gpu版推理，后续会持续探索GPU上合理的推理方案。" />}}
 
 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
 

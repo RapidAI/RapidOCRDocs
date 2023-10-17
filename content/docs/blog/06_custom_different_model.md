@@ -22,9 +22,9 @@ description: ""
 请先根据教程，装好`rapidocr_onnxruntime`库，具体可参考：[link](../install_usage/rapidocr/install.md)
 
 #### 2. 获得英文和数字的ONNX识别模型
-模型地址：https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar
+模型地址: https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar
 
-字典地址；https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt
+字典地址: https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt
 
 基于[PaddleOCRModelConvert工具在线转换](https://www.modelscope.cn/studios/liekkas/PaddleOCRModelConverter/summary)，得到`en_PP-OCRv4_rec_infer.onnx`模型
 

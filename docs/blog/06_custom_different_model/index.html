@@ -36,6 +36,7 @@
 <meta property="og:description" content="引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。
 这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。
 这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。
+notifications 检测模型，对应模型路径参数为det_model_path，识别模型，对应模型路径参数为rec_model_path。 详细说明参见：link
 1. 安装rapidocr_onnxruntime link请先根据教程，装好rapidocr_onnxruntime库，具体可参考：link
 2. 获得英文和数字的ONNX识别模型 link模型地址：https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar
 字典地址；https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt
@@ -44,12 +45,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/blog/06_custom_different_model/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3299394472509675448.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-10-17T22:22:21+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2023-10-17T22:26:52+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3299394472509675448.png"/>
 <meta name="twitter:title" content="如何更换其他检测和识别模型？"/>
 <meta name="twitter:description" content="引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。
 这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。
 这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。
+notifications 检测模型，对应模型路径参数为det_model_path，识别模型，对应模型路径参数为rec_model_path。 详细说明参见：link
 1. 安装rapidocr_onnxruntime link请先根据教程，装好rapidocr_onnxruntime库，具体可参考：link
 2. 获得英文和数字的ONNX识别模型 link模型地址：https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar
 字典地址；https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt
@@ -698,7 +700,18 @@
         <h4 id="引言">引言 <a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p><code>rapidocr</code>系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。</p>
 <p>这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。</p>
 <p>这个博客就是以如何更换<code>rapidocr_onnxruntime</code>的识别模型为<strong>英文和数字的识别模型</strong>为例做讲解。其他模型同理。</p>
-<h4 id="1-安装rapidocr_onnxruntime">1. 安装<code>rapidocr_onnxruntime</code> <a href="#1-%e5%ae%89%e8%a3%85rapidocr_onnxruntime" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p>请先根据教程，装好<code>rapidocr_onnxruntime</code>库，具体可参考：<a href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/install/" rel="external" target="_blank">link<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
+
+<div class="alert alert-default d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  
+  <span class="material-icons size-20 me-2">
+  notifications
+  </span></div>
+  
+  <div class="w-100"><p>检测模型，对应模型路径参数为<code>det_model_path</code>，识别模型，对应模型路径参数为<code>rec_model_path</code>。<br/> 详细说明参见：<a data-bs-delay="{&#34;hide&#34;:300,&#34;show&#34;:550}" data-bs-html="true" data-bs-title="<a href='/RapidOCRDocs/docs/install_usage/rapidocr/usage/'><p>RAPIDOCR</p><strong>使用说明</strong><br></a>" data-bs-toggle="tooltip" href="/RapidOCRDocs/docs/install_usage/rapidocr/usage/">link</a></p>
+</div>
+  </div>
+<h4 id="1-安装rapidocr_onnxruntime">1. 安装<code>rapidocr_onnxruntime</code> <a href="#1-%e5%ae%89%e8%a3%85rapidocr_onnxruntime" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p>请先根据教程，装好<code>rapidocr_onnxruntime</code>库，具体可参考：<a data-bs-delay="{&#34;hide&#34;:300,&#34;show&#34;:550}" data-bs-html="true" data-bs-title="<a href='/RapidOCRDocs/docs/install_usage/rapidocr/install/'><p>RAPIDOCR</p><strong>安装</strong><br></a>" data-bs-toggle="tooltip" href="/RapidOCRDocs/docs/install_usage/rapidocr/install/">link</a></p>
 <h4 id="2-获得英文和数字的onnx识别模型">2. 获得英文和数字的ONNX识别模型 <a href="#2-%e8%8e%b7%e5%be%97%e8%8b%b1%e6%96%87%e5%92%8c%e6%95%b0%e5%ad%97%e7%9a%84onnx%e8%af%86%e5%88%ab%e6%a8%a1%e5%9e%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p>模型地址：https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar</p>
 <p>字典地址；https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt</p>
 <p>基于<a href="https://www.modelscope.cn/studios/liekkas/PaddleOCRModelConverter/summary" rel="external" target="_blank">PaddleOCRModelConvert工具在线转换<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>，得到<code>en_PP-OCRv4_rec_infer.onnx</code>模型</p>
@@ -768,9 +781,9 @@ print(elapse)</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-10-17T22:22:21&#43;0800"
-            title="17 Oct 2023, 22:22 &#43;0800">
-            17 Oct 2023, 22:22 &#43;0800
+            data-authdate="2023-10-17T22:26:52&#43;0800"
+            title="17 Oct 2023, 22:26 &#43;0800">
+            17 Oct 2023, 22:26 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1636,8 +1649,8 @@ print(elapse)</code>
                 id:  38 ,
                 href: "\/RapidOCRDocs\/docs\/blog\/06_custom_different_model\/",
                 title: "如何更换其他检测和识别模型？",
-                description: "引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。\n这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。\n这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。\n1. 安装rapidocr_onnxruntime link请先根据教程，装好rapidocr_onnxruntime库，具体可参考：link\n2. 获得英文和数字的ONNX识别模型 link模型地址：https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar\n字典地址；https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt\n基于PaddleOCRModelConvert工具在线转换，得到en_PP-OCRv4_rec_infer.onnx模型\n3. 使用该模型 link from rapidocr_onnxruntime import RapidOCR model = RapidOCR(rec_model_path=\"en_PP-OCRv4_rec_infer.onnx\") img_path = \"1.png\" result, elapse = model(img_path) print(result) print(elapse) ",
-                content: "引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。\n这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。\n这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。\n1. 安装rapidocr_onnxruntime link请先根据教程，装好rapidocr_onnxruntime库，具体可参考：link\n2. 获得英文和数字的ONNX识别模型 link模型地址：https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar\n字典地址；https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt\n基于PaddleOCRModelConvert工具在线转换，得到en_PP-OCRv4_rec_infer.onnx模型\n3. 使用该模型 link from rapidocr_onnxruntime import RapidOCR model = RapidOCR(rec_model_path=\"en_PP-OCRv4_rec_infer.onnx\") img_path = \"1.png\" result, elapse = model(img_path) print(result) print(elapse) "
+                description: "引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。\n这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。\n这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。\nnotifications 检测模型，对应模型路径参数为det_model_path，识别模型，对应模型路径参数为rec_model_path。 详细说明参见：link\n1. 安装rapidocr_onnxruntime link请先根据教程，装好rapidocr_onnxruntime库，具体可参考：link\n2. 获得英文和数字的ONNX识别模型 link模型地址：https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar\n字典地址；https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt\n基于PaddleOCRModelConvert工具在线转换，得到en_PP-OCRv4_rec_infer.onnx模型\n3. 使用该模型 link from rapidocr_onnxruntime import RapidOCR model = RapidOCR(rec_model_path=\"en_PP-OCRv4_rec_infer.onnx\") img_path = \"1.png\" result, elapse = model(img_path) print(result) print(elapse) ",
+                content: "引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。\n这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。\n这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。\nnotifications 检测模型，对应模型路径参数为det_model_path，识别模型，对应模型路径参数为rec_model_path。 详细说明参见："
             }
         );
     index.add(

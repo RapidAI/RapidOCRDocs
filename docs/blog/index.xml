@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 22 Nov 2022 12:36:15 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>调优尝试教程</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/optim_tutorial/</link>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/01_optim_tutorial/</link>
       <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/optim_tutorial/</guid>
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/01_optim_tutorial/</guid>
       <description>notifications 以下尝试情况，均已经在在线demo中实现，看完之后，可移步那里去尝试。
 引言 link 由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。 基本的原则是尽量不去动模型内部，降低使用成本。 本篇文章就来说说在识别效果不好时，如何去调优。 因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。 常见错例种类 link本地使用过程中，识别结果：
 个别字丢失 个别字识别错误 个别字丢失调优篇 link 查看图像是否shape太小，导致文本检测丢失。
@@ -21,38 +21,38 @@
     
     <item>
       <title>config.yaml参数解释</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/config_parameter/</link>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/02_config_parameter/</link>
       <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/config_parameter/</guid>
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/02_config_parameter/</guid>
       <description>config.yaml源码 link 详情 Global: text_score: 0.5 use_det: true use_cls: true use_rec: true print_verbose: false min_height: 30 width_height_ratio: 8 Det: use_cuda: false model_path: models/ch_PP-OCRv4_det_infer.onnx limit_side_len: 736 limit_type: min thresh: 0.3 box_thresh: 0.5 max_candidates: 1000 unclip_ratio: 1.6 use_dilation: true score_mode: fast Cls: use_cuda: false model_path: models/ch_ppocr_mobile_v2.0_cls_infer.onnx cls_image_shape: [3, 48, 192] cls_batch_num: 6 cls_thresh: 0.9 label_list: [&amp;#39;0&amp;#39;, &amp;#39;180&amp;#39;] Rec: use_cuda: false model_path: models/ch_PP-OCRv4_rec_infer.onnx rec_img_shape: [3, 48, 320] rec_batch_num: 6 Global部分 link 参数名称 取值范围 默认值 作用 text_score [0, 1] 0.</description>
     </item>
     
     <item>
       <title>选择哪个推理引擎？</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/which_inference/</link>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/03_which_inference/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/which_inference/</guid>
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/03_which_inference/</guid>
       <description> warning openvino存在内存不释放的问题，参见issue #11939
 推理引擎 推理速度更快 占用内存更少 rapidocr_onnxruntime ✓ rapidocr_openvino ✓ </description>
     </item>
     
     <item>
       <title>推理引擎汇总</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/inference_summary/</link>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/04_inference_summary/</link>
       <pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/inference_summary/</guid>
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/04_inference_summary/</guid>
       <description> warning Caution - This documentation is in progress 引言 link 关于模型的推理框架有很多，包括PC/移动端等等。之前在老潘的个人博客里看到过相关介绍 我在这里做一个简单汇总。但更侧重于寻找一个在GPU上，可以支持动态输入且在GPU上更快，轻量的推理引擎。 目前已知推理引擎 link CPU端：ONNXruntime、OpenVINO、libtorch、Caffe、PaddleInference GPU端：TensorRT、OpenPPL、AITemplate 移动端：NCNN，MNN, Paddle-Lite 通吃：TVM、OpenPPL ONNXRuntime（微软） link 目前仓库中已经在使用的推理引擎，CPU端最好用的轻量推理引擎。支持动态输入。 目前在GPU端，动态输入的情况下，速度比CPU上还要慢一些，暂时尚未解决。 ONNXRuntime + TensorRT结合 → 尝试但未跑通 OpenVINO（英特尔） link CPU端推理速度更快，支持动态输入。但是占用内存较大，拿空间换了时间。 当自己资源不吃紧时，但要求更快地推理速度时，可以考虑用这个。 GPU端仅支持自家显卡，暂时用不到。 MNN（阿里） link GPU端没有找到容易的使用方式，需要自行编译，门槛太高。理想情况是像onnxruntime-gpu这种，可以快速安装使用。 说是支持动态输入，但是尚未找到有效验证方法。 TensorRT（英伟达） link GPU端快速推理，占坑 据说存在内存泄漏的bug，暂时没有尝试。 Paddle Inference（百度） link 依赖Paddle框架，有些重，但是不失为GPU上推理模型的一个选择。 暂时不考虑这个，因为paddlepaddle-gpu版有大约500M左右，太太了。 NCNN（腾讯） link 移动端比较好用的 FastDeploy（百度） link TODO </description>
     </item>
     
     <item>
       <title>关于识别模型中字典的读写</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/rec_dict_onnx/</link>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/05_rec_dict_onnx/</link>
       <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/rec_dict_onnx/</guid>
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/05_rec_dict_onnx/</guid>
       <description>引言 link在文本识别时，识别的每一种语言，都有一个对应的字典，用来还原识别的文本内容。例如英文识别模型的字典就是26个英文字母的大小写以及常用符号，中文识别模型的字典一般包括常用汉字、字母和符号等。
 受启发于issue #42，目前基于ONNXRuntime的推理引擎rapidocr_onnxruntime库已经将字典写入到onnx模型中，无需额外指定字典TXT文件。
 以下将对这一部分做详细讲解，感兴趣小伙伴，可自行取用。
@@ -63,13 +63,18 @@ import json import onnxruntime as ort sess = ort.InferenceSession(&amp;#39;/path
     
     <item>
       <title>如何更换其他检测和识别模型？</title>
-      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/custom_different_rec/</link>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/06_custom_different_model/</link>
       <pubDate>Tue, 17 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/custom_different_rec/</guid>
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/06_custom_different_model/</guid>
       <description>引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。
 这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。
-这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。</description>
+这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。
+1. 安装rapidocr_onnxruntime link请先根据教程，装好rapidocr_onnxruntime库，具体可参考：link
+2. 获得英文和数字的ONNX识别模型 link模型地址：https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar
+字典地址；https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt
+基于PaddleOCRModelConvert工具在线转换，得到en_PP-OCRv4_rec_infer.onnx模型
+3. 使用该模型 link from rapidocr_onnxruntime import RapidOCR model = RapidOCR(rec_model_path=&amp;#34;en_PP-OCRv4_rec_infer.onnx&amp;#34;) img_path = &amp;#34;1.png&amp;#34; result, elapse = model(img_path) print(result) print(elapse) </description>
     </item>
     
   </channel>

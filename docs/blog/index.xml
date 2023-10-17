@@ -61,5 +61,16 @@ import onnx model = onnx.load_model(&amp;#39;/path/to/model.onnx&amp;#39;) # 添
 import json import onnxruntime as ort sess = ort.InferenceSession(&amp;#39;/path/to/model.onnx&amp;#39;) metamap = sess.get_modelmeta().custom_metadata_map # 读取dictionary键对应的值 chars = metamap[&amp;#39;dictionary&amp;#39;].splitlines() # 读取shape键对应的值 input_shape = json.loads(metamap[&amp;#39;shape&amp;#39;]) </description>
     </item>
     
+    <item>
+      <title>如何更换其他检测和识别模型？</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/blog/custom_different_rec/</link>
+      <pubDate>Tue, 17 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/blog/custom_different_rec/</guid>
+      <description>引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。
+这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。
+这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。</description>
+    </item>
+    
   </channel>
 </rss>

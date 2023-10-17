@@ -405,6 +405,11 @@ info 以下参数均有默认值，可以不传入任何参数，直接初始化
                                             <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/blog/rec_dict_onnx/">关于识别模型中字典的读写</a></li>
                                         
                                     
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/blog/custom_different_rec/">如何更换其他检测和识别模型？</a></li>
+                                        
+                                    
                                 </ul>
                             </div>
                         </li>
@@ -822,26 +827,26 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 		
 
 		<a class="nav-link  active"
-		   id="cbedafTab" data-bs-toggle="tab" data-bs-target="#cbedaf"
-		   type="button" role="tab" aria-controls="cbedaf" aria-selected="true">str</a>
+		   id="cbadfeTab" data-bs-toggle="tab" data-bs-target="#cbadfe"
+		   type="button" role="tab" aria-controls="cbadfe" aria-selected="true">str</a>
 
 		
 
 		<a class="nav-link "
-		   id="befdacTab" data-bs-toggle="tab" data-bs-target="#befdac"
-		   type="button" role="tab" aria-controls="befdac" aria-selected="true">np.ndarray</a>
+		   id="becfadTab" data-bs-toggle="tab" data-bs-target="#becfad"
+		   type="button" role="tab" aria-controls="becfad" aria-selected="true">np.ndarray</a>
 
 		
 
 		<a class="nav-link "
-		   id="cbafedTab" data-bs-toggle="tab" data-bs-target="#cbafed"
-		   type="button" role="tab" aria-controls="cbafed" aria-selected="true">Bytes</a>
+		   id="dfebcaTab" data-bs-toggle="tab" data-bs-target="#dfebca"
+		   type="button" role="tab" aria-controls="dfebca" aria-selected="true">Bytes</a>
 
 		
 
 		<a class="nav-link "
-		   id="edcfbaTab" data-bs-toggle="tab" data-bs-target="#edcfba"
-		   type="button" role="tab" aria-controls="edcfba" aria-selected="true">Path</a>
+		   id="defcbaTab" data-bs-toggle="tab" data-bs-target="#defcba"
+		   type="button" role="tab" aria-controls="defcba" aria-selected="true">Path</a>
 
 		
 
@@ -857,7 +862,7 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 
 
 
-<div class="tab-pane fade show active" id="cbedaf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="cbadfe" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -897,7 +902,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="befdac" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="becfad" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -937,7 +942,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="cbafed" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="dfebca" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -979,7 +984,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="edcfba" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="defcba" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1031,38 +1036,38 @@ print(elapse)</code>
 		
 
 		<a class="nav-link  active"
-		   id="fadbceTab" data-bs-toggle="tab" data-bs-target="#fadbce"
-		   type="button" role="tab" aria-controls="fadbce" aria-selected="true">只有检测</a>
+		   id="aefbdcTab" data-bs-toggle="tab" data-bs-target="#aefbdc"
+		   type="button" role="tab" aria-controls="aefbdc" aria-selected="true">只有检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="ebfadcTab" data-bs-toggle="tab" data-bs-target="#ebfadc"
-		   type="button" role="tab" aria-controls="ebfadc" aria-selected="true">只有分类</a>
+		   id="bfdecaTab" data-bs-toggle="tab" data-bs-target="#bfdeca"
+		   type="button" role="tab" aria-controls="bfdeca" aria-selected="true">只有分类</a>
 
 		
 
 		<a class="nav-link "
-		   id="aebfcdTab" data-bs-toggle="tab" data-bs-target="#aebfcd"
-		   type="button" role="tab" aria-controls="aebfcd" aria-selected="true">只有识别</a>
+		   id="afbdceTab" data-bs-toggle="tab" data-bs-target="#afbdce"
+		   type="button" role="tab" aria-controls="afbdce" aria-selected="true">只有识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="cafbdeTab" data-bs-toggle="tab" data-bs-target="#cafbde"
-		   type="button" role="tab" aria-controls="cafbde" aria-selected="true">检测 &#43; 识别</a>
+		   id="cfaebdTab" data-bs-toggle="tab" data-bs-target="#cfaebd"
+		   type="button" role="tab" aria-controls="cfaebd" aria-selected="true">检测 &#43; 识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="aefcbdTab" data-bs-toggle="tab" data-bs-target="#aefcbd"
-		   type="button" role="tab" aria-controls="aefcbd" aria-selected="true">分类 &#43; 识别</a>
+		   id="ecbfadTab" data-bs-toggle="tab" data-bs-target="#ecbfad"
+		   type="button" role="tab" aria-controls="ecbfad" aria-selected="true">分类 &#43; 识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="cfbeadTab" data-bs-toggle="tab" data-bs-target="#cfbead"
-		   type="button" role="tab" aria-controls="cfbead" aria-selected="true">检测 &#43; 分类 &#43; 识别</a>
+		   id="bdfeacTab" data-bs-toggle="tab" data-bs-target="#bdfeac"
+		   type="button" role="tab" aria-controls="bdfeac" aria-selected="true">检测 &#43; 分类 &#43; 识别</a>
 
 		
 
@@ -1078,7 +1083,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade show active" id="fadbce" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="aefbdc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1142,7 +1147,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="ebfadc" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bfdeca" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1205,7 +1210,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="aebfcd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="afbdce" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1268,7 +1273,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="cafbde" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cfaebd" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1335,7 +1340,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="aefcbd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ecbfad" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1398,7 +1403,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="cfbead" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bdfeac" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1487,14 +1492,14 @@ print(elapse)</code>
 		
 
 		<a class="nav-link  active"
-		   id="fcdbaeTab" data-bs-toggle="tab" data-bs-target="#fcdbae"
-		   type="button" role="tab" aria-controls="fcdbae" aria-selected="true">只可视化检测</a>
+		   id="afdbecTab" data-bs-toggle="tab" data-bs-target="#afdbec"
+		   type="button" role="tab" aria-controls="afdbec" aria-selected="true">只可视化检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="adbecfTab" data-bs-toggle="tab" data-bs-target="#adbecf"
-		   type="button" role="tab" aria-controls="adbecf" aria-selected="true">可视化检测和识别</a>
+		   id="bfaecdTab" data-bs-toggle="tab" data-bs-target="#bfaecd"
+		   type="button" role="tab" aria-controls="bfaecd" aria-selected="true">可视化检测和识别</a>
 
 		
 
@@ -1510,7 +1515,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade show active" id="fcdbae" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="afdbec" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1554,7 +1559,7 @@ cv2.imwrite(&#34;only_vis_det.png&#34;, res)</code>
 
 
 
-<div class="tab-pane fade" id="adbecf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bfaecd" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1830,6 +1835,13 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
     
 
 
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2491,6 +2503,15 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
     index.add(
             {
                 id:  38 ,
+                href: "\/RapidOCRDocs\/docs\/blog\/custom_different_rec\/",
+                title: "如何更换其他检测和识别模型？",
+                description: "引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。\n这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。\n这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。",
+                content: "引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。\n这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。\n这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。\n"
+            }
+        );
+    index.add(
+            {
+                id:  39 ,
                 href: "\/RapidOCRDocs\/docs\/communicate\/",
                 title: "交流群",
                 description: "可通过以下方式与RapidOCR维护者SWHL进行沟通，也欢迎反馈使用过程中遇到的问题。\n知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。\n微信交流群 link微信扫描以下二维码，关注RapidAI公众号，回复OCR即可加入RapidOCR微信交流群：\nQQ交流群 link欢迎加入我们的QQ群下载模型及测试程序。1群：887298230 已满，2群：755960114 已满，3群：450338158",
@@ -2499,7 +2520,7 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
         );
     index.add(
             {
-                id:  39 ,
+                id:  40 ,
                 href: "\/RapidOCRDocs\/docs\/sponsor\/",
                 title: "给作者加油",
                 description: "写在前面 linkI like open source and AI technology because I think open source and AI will bring convenience and help to people in need, and will also make the world a better place. By donating to these projects, you can join me in making AI bring warmth and beauty to more people.\n我喜欢开源，喜欢AI技术，因为我认为开源和AI会为有需要的人带来方便和帮助，也会让这个世界变得更好。通过对这些项目的捐赠，您可以和我一道让AI为更多人带来温暖和美好。\n知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。\n支付宝或微信打赏 (Alipay reward or WeChat reward) link通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.",
@@ -2508,7 +2529,7 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
         );
     index.add(
             {
-                id:  40 ,
+                id:  41 ,
                 href: "\/RapidOCRDocs\/docs\/changelog\/",
                 title: "更新日志",
                 description: "",
@@ -2517,7 +2538,7 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
         );
     index.add(
             {
-                id:  41 ,
+                id:  42 ,
                 href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr\/",
                 title: "rapidocr_onnxruntime/openvino",
                 description: "📡2023-09-21 v1.3.7 update: link 完善VisRes类在终端情况下的使用 修复auto_text_det的条件错误 🧸2023-09-20 v1.3.6 update: link 添加VisRes类，便于快速可视化结果。详情参见demo.py用法 😀2023-09-20 v1.3.5 update: link Fixed issue #122 ⏰2023-09-18 v1.3.4 update: link 优化更新参数部分的函数实现 🧸2023-09-06 v1.3.2 update: link 修复issue #116 ⭐2023-08-29 v1.3.1 update: link 修复issue #115 🎉2023-08-26 v1.3.0 update: link 将PaddleOCR v4版对应的文本检测和文本识别轻量模型转换为onnx，并打包到whl中。 接口与v1.2.x一致，直接使用即可。 😉2023-07-12 v1.2.12 update: link 在rapidocr_onnxruntime初始化时，添加det_use_cuda、cls_use_cuda、rec_use_cuda参数 兼容配置文件方式传入RapidOCR类中 rapidocr_openvino同理 🎮2023-03-11 v1.2.2 update: link 修复实例化python中RapidOCR类传入参数错误 🧢2023-03-07 v1.2.1 update: link rapidocr系列包更新到v1.2.0 优化python下rapidocr系列包的接口传入参数，支持实例化类时，动态给定各个参数，更加灵活。 如果不指定，则用config.yaml下的默认参数。 具体可参见：传入参数 ⛸2023-02-16 update: link 优化ocrweb部分代码，可直接pip安装，快速使用，详情参见README。 优化python中各个部分的推理代码，更加紧凑，同时易于维护。 🎉2023-01-21 update: link [python] 添加含有文字的图像方向分类模块，具体参见Rapid Orientation ⚽2022-12-19 update: link [python] 添加表格结构还原模块，具体参见Rapid Table 🤖2022-12-14 update: link [python] 将配置参数和模型移到模块里面，同时将模型打到whl包内，可以直接pip安装使用，更加方便快捷。 详情参见：README 🧻2022-11-20 update: link [python] 添加版面分析部分,支持中文、英文和表格三种版面的检测分析。详情参见:Rapid Structure部分。 🎃2022-11-01 update: link 添加Hugging Face Demo, 增加可以调节超参数的功能，详情可访问Hugging Face Demo 🚩2022-10-01 udpate: link 修复python部分下一些较小bugs merge来自AutumnSun1996的OCRWeb实现的多语言部署demo，详情参见：ocrweb_mutli-README 添加onnxruntime-gpu推理速度较慢于CPU的问题说明，详情参见：onnxruntime-gpu版相关说明 🛴2022-09-01 update: link 由于openvino发布了2022.",
@@ -2526,7 +2547,7 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
         );
     index.add(
             {
-                id:  42 ,
+                id:  43 ,
                 href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr_web\/",
                 title: "rapidocr_web",
                 description: " ❤2023-05-20 ocrweb update: link 增加桌面版RapidOCRWeb，详情可参见RapidOCRWeb桌面版使用教程 对仓库文档做了整理，大部分文档放到了Wiki 🌹2023-05-14 ocrweb v0.1.5 update: link 增加界面版返回坐标框的返回值(issue #85) API模式增加base64格式传入 详情参见：link 🏸2023-04-16 ocrweb v0.1.1 update: link API部署改为FastAPI库支持 将API模式与Web解耦合，可通过pip install rapidocr_web[api]来选择性安装 详情参见：link ",
@@ -2535,7 +2556,7 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
         );
     index.add(
             {
-                id:  43 ,
+                id:  44 ,
                 href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr_api\/",
                 title: "rapidocr_api",
                 description: " 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web\u003e0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 ",

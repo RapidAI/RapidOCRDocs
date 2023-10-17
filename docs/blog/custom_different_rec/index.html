@@ -18,7 +18,7 @@
 
 <html lang="en-us"><head>
     <meta charset="utf-8" />
-    <title>关于识别模型中字典的读写 | RapidOCR Documentation</title>
+    <title>如何更换其他检测和识别模型？ | RapidOCR Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
     <meta name="author" content="Colin Wilson - Lotus Labs" />
@@ -32,25 +32,19 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://rapidai.github.io/RapidOCRDocs/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://rapidai.github.io/RapidOCRDocs/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://rapidai.github.io/RapidOCRDocs/site.webmanifest">
-<meta property="og:title" content="关于识别模型中字典的读写" />
-<meta property="og:description" content="引言 link在文本识别时，识别的每一种语言，都有一个对应的字典，用来还原识别的文本内容。例如英文识别模型的字典就是26个英文字母的大小写以及常用符号，中文识别模型的字典一般包括常用汉字、字母和符号等。
-受启发于issue #42，目前基于ONNXRuntime的推理引擎rapidocr_onnxruntime库已经将字典写入到onnx模型中，无需额外指定字典TXT文件。
-以下将对这一部分做详细讲解，感兴趣小伙伴，可自行取用。
-将字典内容写入到ONNX中 link notifications 在PaddleOCRModelConvert工具中已经将上述操作写到了包中，使用该工具可自动将字典写入到ONNX中。源码位于：link
-import onnx model = onnx.load_model(&#39;/path/to/model.onnx&#39;) # 添加dictionary对应的值 meta = model.metadata_props.add() meta.key = &#39;dictionary&#39; meta.value = open(&#39;/path/to/ppocr_keys_v1.txt&#39;, &#39;r&#39;, -1, &#39;u8&#39;).read() # 添加shape对应的值 meta = model.metadata_props.add() meta.key = &#39;shape&#39; meta.value = &#39;[3,48,320]&#39; onnx.save_model(model, &#39;/path/to/model.onnx&#39;) 获取字典内容 link notifications 该部分已经在rapidocr_onnxruntime上实现，详情参见：link
-import json import onnxruntime as ort sess = ort.InferenceSession(&#39;/path/to/model.onnx&#39;) metamap = sess.get_modelmeta().custom_metadata_map # 读取dictionary键对应的值 chars = metamap[&#39;dictionary&#39;].splitlines() # 读取shape键对应的值 input_shape = json.loads(metamap[&#39;shape&#39;]) " />
+<meta property="og:title" content="如何更换其他检测和识别模型？" />
+<meta property="og:description" content="引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。
+这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。
+这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/blog/rec_dict_onnx/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_4648633535455489101.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/blog/custom_different_rec/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3299394472509675448.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-10-16T22:17:05+08:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_4648633535455489101.png"/>
-<meta name="twitter:title" content="关于识别模型中字典的读写"/>
-<meta name="twitter:description" content="引言 link在文本识别时，识别的每一种语言，都有一个对应的字典，用来还原识别的文本内容。例如英文识别模型的字典就是26个英文字母的大小写以及常用符号，中文识别模型的字典一般包括常用汉字、字母和符号等。
-受启发于issue #42，目前基于ONNXRuntime的推理引擎rapidocr_onnxruntime库已经将字典写入到onnx模型中，无需额外指定字典TXT文件。
-以下将对这一部分做详细讲解，感兴趣小伙伴，可自行取用。
-将字典内容写入到ONNX中 link notifications 在PaddleOCRModelConvert工具中已经将上述操作写到了包中，使用该工具可自动将字典写入到ONNX中。源码位于：link
-import onnx model = onnx.load_model(&#39;/path/to/model.onnx&#39;) # 添加dictionary对应的值 meta = model.metadata_props.add() meta.key = &#39;dictionary&#39; meta.value = open(&#39;/path/to/ppocr_keys_v1.txt&#39;, &#39;r&#39;, -1, &#39;u8&#39;).read() # 添加shape对应的值 meta = model.metadata_props.add() meta.key = &#39;shape&#39; meta.value = &#39;[3,48,320]&#39; onnx.save_model(model, &#39;/path/to/model.onnx&#39;) 获取字典内容 link notifications 该部分已经在rapidocr_onnxruntime上实现，详情参见：link
-import json import onnxruntime as ort sess = ort.InferenceSession(&#39;/path/to/model.onnx&#39;) metamap = sess.get_modelmeta().custom_metadata_map # 读取dictionary键对应的值 chars = metamap[&#39;dictionary&#39;].splitlines() # 读取shape键对应的值 input_shape = json.loads(metamap[&#39;shape&#39;]) "/>
+<meta property="article:modified_time" content="2023-10-17T19:59:39+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3299394472509675448.png"/>
+<meta name="twitter:title" content="如何更换其他检测和识别模型？"/>
+<meta name="twitter:description" content="引言 linkrapidocr系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。
+这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。
+这个博客就是以如何更换rapidocr_onnxruntime的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -404,12 +398,12 @@ import json import onnxruntime as ort sess = ort.InferenceSession(&#39;/path/to/
                                     
                                         
                                         
-                                            <li class="current "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/blog/rec_dict_onnx/">关于识别模型中字典的读写</a></li>
+                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/blog/rec_dict_onnx/">关于识别模型中字典的读写</a></li>
                                         
                                     
                                         
                                         
-                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/blog/custom_different_rec/">如何更换其他检测和识别模型？</a></li>
+                                            <li class="current "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/blog/custom_different_rec/">如何更换其他检测和识别模型？</a></li>
                                         
                                     
                                 </ul>
@@ -618,7 +612,7 @@ import json import onnxruntime as ort sess = ort.InferenceSession(&#39;/path/to/
             
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">关于识别模型中字典的读写</span>
+                <span itemprop="name">如何更换其他检测和识别模型？</span>
                 <meta itemprop="position" content='3' />
             </li>
         
@@ -635,9 +629,11 @@ import json import onnxruntime as ort sess = ort.InferenceSession(&#39;/path/to/
       <ul>
         <li>
           <ul>
-            <li><a href="#引言">引言</a></li>
-            <li><a href="#将字典内容写入到onnx中">将字典内容写入到ONNX中</a></li>
-            <li><a href="#获取字典内容">获取字典内容</a></li>
+            <li>
+              <ul>
+                <li><a href="#引言">引言</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -657,9 +653,11 @@ import json import onnxruntime as ort sess = ort.InferenceSession(&#39;/path/to/
       <ul>
         <li>
           <ul>
-            <li><a href="#引言">引言</a></li>
-            <li><a href="#将字典内容写入到onnx中">将字典内容写入到ONNX中</a></li>
-            <li><a href="#获取字典内容">获取字典内容</a></li>
+            <li>
+              <ul>
+                <li><a href="#引言">引言</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -670,7 +668,7 @@ import json import onnxruntime as ort sess = ort.InferenceSession(&#39;/path/to/
                                             <div class="mb-0 d-flex">
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    关于识别模型中字典的读写
+                                                    如何更换其他检测和识别模型？
                                                     
                                                 </h1>
                                             </div>
@@ -681,99 +679,9 @@ import json import onnxruntime as ort sess = ort.InferenceSession(&#39;/path/to/
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h3 id="引言">引言 <a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>在文本识别时，识别的每一种语言，都有一个对应的字典，用来还原识别的文本内容。例如英文识别模型的字典就是26个英文字母的大小写以及常用符号，中文识别模型的字典一般包括常用汉字、字母和符号等。</p>
-<p>受启发于<a href="https://github.com/RapidAI/RapidOCR/issues/42" rel="external" target="_blank">issue #42<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>，目前基于ONNXRuntime的推理引擎<code>rapidocr_onnxruntime</code>库已经将字典写入到onnx模型中，无需额外指定字典TXT文件。</p>
-<p>以下将对这一部分做详细讲解，感兴趣小伙伴，可自行取用。</p>
-<h3 id="将字典内容写入到onnx中">将字典内容写入到ONNX中 <a href="#%e5%b0%86%e5%ad%97%e5%85%b8%e5%86%85%e5%ae%b9%e5%86%99%e5%85%a5%e5%88%b0onnx%e4%b8%ad" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-<div class="alert alert-default d-flex" role="alert">
-  <div class="flex-shrink-1 alert-icon">
-  
-  <span class="material-icons size-20 me-2">
-  notifications
-  </span></div>
-  
-  <div class="w-100"><p>在PaddleOCRModelConvert工具中已经将上述操作写到了包中，使用该工具可自动将字典写入到ONNX中。源码位于：<a href="https://github.com/RapidAI/PaddleOCRModelConvert/blob/64a66ebe8c6147f0bacc5e0dd22a0809cad332e6/paddleocr_convert/main.py#L51" rel="external" target="_blank">link<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
-</div>
-  </div>
-
-
-
-  
-  
-  
-
-  
-  
-  
-    
-  
-  
-
-   
-  
-
-  <div class="prism-codeblock  linenos">
-  <pre id="b645153" class="language-python  line-numbers">
-  <code>import onnx
-
-model = onnx.load_model(&#39;/path/to/model.onnx&#39;)
-
-# 添加dictionary对应的值
-meta = model.metadata_props.add()
-meta.key = &#39;dictionary&#39;
-meta.value = open(&#39;/path/to/ppocr_keys_v1.txt&#39;, &#39;r&#39;, -1, &#39;u8&#39;).read()
-
-# 添加shape对应的值
-meta = model.metadata_props.add()
-meta.key = &#39;shape&#39;
-meta.value = &#39;[3,48,320]&#39;
-
-onnx.save_model(model, &#39;/path/to/model.onnx&#39;)</code>
-  </pre>
-  </div>
-<h3 id="获取字典内容">获取字典内容 <a href="#%e8%8e%b7%e5%8f%96%e5%ad%97%e5%85%b8%e5%86%85%e5%ae%b9" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-<div class="alert alert-default d-flex" role="alert">
-  <div class="flex-shrink-1 alert-icon">
-  
-  <span class="material-icons size-20 me-2">
-  notifications
-  </span></div>
-  
-  <div class="w-100"><p>该部分已经在rapidocr_onnxruntime上实现，详情参见：<a href="https://github.com/RapidAI/RapidOCR/blob/37e49c6ae25135a339b208f9ac64382ee7d4d688/python/rapidocr_onnxruntime/ch_ppocr_v3_rec/text_recognize.py#L31-L32" rel="external" target="_blank">link<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
-</div>
-  </div>
-
-
-
-  
-  
-  
-
-  
-  
-  
-    
-  
-  
-
-   
-  
-
-  <div class="prism-codeblock  linenos">
-  <pre id="785e49f" class="language-python  line-numbers">
-  <code>import json
-import onnxruntime as ort
-
-sess = ort.InferenceSession(&#39;/path/to/model.onnx&#39;)
-metamap = sess.get_modelmeta().custom_metadata_map
-
-# 读取dictionary键对应的值
-chars = metamap[&#39;dictionary&#39;].splitlines()
-
-# 读取shape键对应的值
-input_shape = json.loads(metamap[&#39;shape&#39;])</code>
-  </pre>
-  </div>
+        <h4 id="引言">引言 <a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p><code>rapidocr</code>系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。</p>
+<p>这一点，在设计接口时，已经做了考虑，留出了接口，只是没有专门博客来介绍这个事情。</p>
+<p>这个博客就是以如何更换<code>rapidocr_onnxruntime</code>的识别模型为英文和数字的识别模型为例做讲解。其他模型同理。</p>
 
     </div>
 
@@ -793,7 +701,7 @@ input_shape = json.loads(metamap[&#39;shape&#39;])</code>
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
     <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/RapidAI/RapidOCR/blob/main/content/docs/blog/rec_dict_onnx.md" alt="关于识别模型中字典的读写" rel="noopener noreferrer" target="_blank">
+        <a href="https://github.com/RapidAI/RapidOCR/blob/main/content/docs/blog/custom_different_rec.md" alt="如何更换其他检测和识别模型？" rel="noopener noreferrer" target="_blank">
             
             <span class="me-1 align-text-bottom">
                 
@@ -811,9 +719,9 @@ input_shape = json.loads(metamap[&#39;shape&#39;])</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-10-16T22:17:05&#43;0800"
-            title="16 Oct 2023, 22:17 &#43;0800">
-            16 Oct 2023, 22:17 &#43;0800
+            data-authdate="2023-10-17T19:59:39&#43;0800"
+            title="17 Oct 2023, 19:59 &#43;0800">
+            17 Oct 2023, 19:59 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -829,10 +737,10 @@ input_shape = json.loads(metamap[&#39;shape&#39;])</code>
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/RapidOCRDocs/docs/blog/inference_summary/">
+		<a href="/RapidOCRDocs/docs/blog/rec_dict_onnx/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 推理引擎汇总</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 关于识别模型中字典的读写</p>
 					<p class="card-text ms-2"></p>
 					
 				</div>
@@ -840,10 +748,10 @@ input_shape = json.loads(metamap[&#39;shape&#39;])</code>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/RapidOCRDocs/docs/blog/custom_different_rec/">
+		<a class="ms-auto" href="/RapidOCRDocs/docs/communicate/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">如何更换其他检测和识别模型？ <i class="material-icons align-middle">navigate_next</i></p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">交流群 <i class="material-icons align-middle">navigate_next</i></p>
 					<p class="card-text me-2"></p>
 					
 				</div>

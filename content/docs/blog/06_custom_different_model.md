@@ -16,7 +16,7 @@ description: ""
 
 这个博客就是以如何更换`rapidocr_onnxruntime`的识别模型为**英文和数字的识别模型**为例做讲解。其他模型同理。
 
-{{< alert text="检测模型，对应模型路径参数为`det_model_path`，识别模型，对应模型路径参数为`rec_model_path`。<br/> 详细说明参见：[link](../install_usage/rapidocr/usage.md)" />}}
+{{< alert text="检测模型，对应模型路径参数为`det_model_path`<br/>识别模型，对应模型路径参数为`rec_model_path`。<br/> 详细说明参见：[link](../install_usage/rapidocr/usage.md)" />}}
 
 #### 1. 安装`rapidocr_onnxruntime`
 请先根据教程，装好`rapidocr_onnxruntime`库，具体可参考：[link](../install_usage/rapidocr/install.md)

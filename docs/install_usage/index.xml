@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>[GPU端] rapidocr_paddle</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_paddle/</link>
+      <pubDate>Sat, 21 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_paddle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>rapidocr_api</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_api/</link>
       <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>

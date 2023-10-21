@@ -6,7 +6,7 @@
     <description>Recent content on RapidOCR Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>概览</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/overview/</link>
@@ -50,6 +50,15 @@
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/other_programing_lan/</guid>
       <description> warning 以下项目不确定是否支持最新的推理代码，Python版为最新的。 C++范例(Windows/Linux/macOS) link RapidOcrOnnx RapidOcrNcnn JVM范例(Java/Kotlin) link RapidOcrOnnxJvm RapidOcrNcnnJvm .Net范例(C#) linkAndroid范例 link</description>
+    </item>
+    
+    <item>
+      <title>[GPU端] rapidocr_paddle</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_paddle/</link>
+      <pubDate>Sat, 21 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_paddle/</guid>
+      <description></description>
     </item>
     
     <item>

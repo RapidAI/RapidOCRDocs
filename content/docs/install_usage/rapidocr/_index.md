@@ -1,6 +1,6 @@
 ---
 weight: 600
-title: "rapidocr"
+title: "[CPU端] rapidocr"
 description: "rapidocr"
 icon: menu_book
 date: "2022-08-24"

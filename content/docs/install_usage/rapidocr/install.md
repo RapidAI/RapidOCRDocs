@@ -13,15 +13,21 @@ description: ""
     <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.12-aff.svg"></a>
     <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
     <a href="https://pypi.org/project/rapidocr-onnxruntime/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-onnxruntime?style=flat-square"></a>
-    <a href="https://pepy.tech/project/rapidocr_openvino"><img src="https://static.pepy.tech/personalized-badge/rapidocr_openvino?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Vino"></a>
     <a href="https://pepy.tech/project/rapidocr_onnxruntime"><img src="https://static.pepy.tech/personalized-badge/rapidocr_onnxruntime?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Ort"></a>
+    <a href="https://pepy.tech/project/rapidocr_openvino"><img src="https://static.pepy.tech/personalized-badge/rapidocr_openvino?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Vino"></a>
 </p>
 
-{{< alert context="info" text="`rapidocr_onnxruntime`和`rapidocr_openvino`两个包除推理引擎不同之外，其余均相同，后续说明文档均以`rapidocr_onnxruntime`为例<br/>如使用`rapidocr_openvino`，直接更换关键词`rapidocr_onnxruntime`为`rapidocr_openvino`即可。" />}}
+
+#### 简介
+`rapidocr_onnxruntime`和`rapidocr_openvino`两个包除推理引擎不同之外，其余均相同。后续说明文档均以`rapidocr_onnxruntime`为例
+
+如使用`rapidocr_openvino`，直接更换关键词`rapidocr_onnxruntime`为`rapidocr_openvino`即可。
+
+两者均是在CPU上推理的，如想在GPU上推理，可以参考[rapidocr_paddle版](../rapidocr_paddle.md)。
 
 
 {{% alert context="info" %}}
-#### pypi上各个版本的对应关系：
+pypi上各个版本的对应关系：<br/>
 
 |版本|内置模型版本|对应PaddleOCR 分支|
 |:---:|:---:|:---:|
@@ -29,6 +35,8 @@ description: ""
 |`v1.2.x`<br/>`v1.1.x`<br/>`v1.0.x`|PaddleOCR v3版| [release/2.6](https://github.com/PaddlePaddle/PaddleOCR/tree/release/2.6)|
 
 {{% /alert %}}
+
+#### 安装
 
 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
 

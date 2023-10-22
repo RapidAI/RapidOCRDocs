@@ -72,11 +72,12 @@ result, elapse_list = engine(image_path)
 其他使用详情，同`rapidocor_onnxruntime`系列，参见: [link](./rapidocr/usage.md)
 
 #### 推理速度比较
+
+{{< alert context="light" text="相关测评代码，参见[AI Studio](https://aistudio.baidu.com/projectdetail/6924494)，Fork可直接运行查看。" />}}
+
 经过初步粗略估计，同一张图像，推理10次，耗时情况见下表：
 
 |推理库|平均耗时(s/img)|备注|
 |:---:|:---:|:---:|
 |`rapidocr_onnxruntime`|1.6505||
 |`rapidocr_paddle[GPU]`|0.0508|V100 16G|
-
-相关测评代码，参见[AI Studio](https://aistudio.baidu.com/projectdetail/6924494)，Fork可直接运行查看。

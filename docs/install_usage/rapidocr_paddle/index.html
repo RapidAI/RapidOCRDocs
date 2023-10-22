@@ -39,12 +39,11 @@
 安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle
 import cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = &#34;tests/test_files/ch_en_num.jpg&#34; result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。
 import cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = &#34;tests/test_files/ch_en_num.jpg&#34; result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: link
-推理速度比较 link经过初步粗略估计，同一张图像，推理10次，耗时情况见下表：
-推理库 平均耗时(s/img) 备注 rapidocr_onnxruntime 1." />
+推理速度比较 link 相关测评代码，参见AI Studio，Fork可直接运行查看。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_paddle/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7876778629309099575.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-10-21T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-10-22T09:28:44+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2023-10-22T09:34:42+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7876778629309099575.png"/>
 <meta name="twitter:title" content="[GPU端] rapidocr_paddle"/>
 <meta name="twitter:description" content="简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。
@@ -53,8 +52,7 @@ import cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine =
 安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle
 import cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = &#34;tests/test_files/ch_en_num.jpg&#34; result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。
 import cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = &#34;tests/test_files/ch_en_num.jpg&#34; result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: link
-推理速度比较 link经过初步粗略估计，同一张图像，推理10次，耗时情况见下表：
-推理库 平均耗时(s/img) 备注 rapidocr_onnxruntime 1."/>
+推理速度比较 link 相关测评代码，参见AI Studio，Fork可直接运行查看。"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -768,14 +766,14 @@ print(paddle.utils.run_check())
 		
 
 		<a class="nav-link  active"
-		   id="aecfbdTab" data-bs-toggle="tab" data-bs-target="#aecfbd"
-		   type="button" role="tab" aria-controls="aecfbd" aria-selected="true">CPU端推理</a>
+		   id="cedafbTab" data-bs-toggle="tab" data-bs-target="#cedafb"
+		   type="button" role="tab" aria-controls="cedafb" aria-selected="true">CPU端推理</a>
 
 		
 
 		<a class="nav-link "
-		   id="edfcabTab" data-bs-toggle="tab" data-bs-target="#edfcab"
-		   type="button" role="tab" aria-controls="edfcab" aria-selected="true">GPU端推理</a>
+		   id="cefbdaTab" data-bs-toggle="tab" data-bs-target="#cefbda"
+		   type="button" role="tab" aria-controls="cefbda" aria-selected="true">GPU端推理</a>
 
 		
 
@@ -791,7 +789,7 @@ print(paddle.utils.run_check())
 
 
 
-<div class="tab-pane fade show active" id="aecfbd" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="cedafb" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>前提是安装了CPU版的PaddlePaddle</p>
 
@@ -834,7 +832,7 @@ print(elapse_list)</code>
 
 
 
-<div class="tab-pane fade" id="edfcab" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cefbda" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>前提是安装了GPU版的PaddlePaddle，注意在实例化<code>RapidOCR</code>类时，需要通过参数显式指定使用GPU。</p>
 
@@ -874,7 +872,18 @@ result, elapse_list = engine(image_path)</code>
 
 </div>
 <p>其他使用详情，同<code>rapidocor_onnxruntime</code>系列，参见: <a data-bs-delay="{&#34;hide&#34;:300,&#34;show&#34;:550}" data-bs-html="true" data-bs-title="<a href='/RapidOCRDocs/docs/install_usage/rapidocr/usage/'><p>[CPU端] RAPIDOCR</p><strong>使用说明</strong><br></a>" data-bs-toggle="tooltip" href="/RapidOCRDocs/docs/install_usage/rapidocr/usage/">link</a></p>
-<h4 id="推理速度比较">推理速度比较 <a href="#%e6%8e%a8%e7%90%86%e9%80%9f%e5%ba%a6%e6%af%94%e8%be%83" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p>经过初步粗略估计，同一张图像，推理10次，耗时情况见下表：</p>
+<h4 id="推理速度比较">推理速度比较 <a href="#%e6%8e%a8%e7%90%86%e9%80%9f%e5%ba%a6%e6%af%94%e8%be%83" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
+<div class="alert alert-light d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  
+  <span class="material-icons size-20 me-2">
+  
+  </span></div>
+  
+  <div class="w-100"><p>相关测评代码，参见<a href="https://aistudio.baidu.com/projectdetail/6924494" rel="external" target="_blank">AI Studio<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>，Fork可直接运行查看。</p>
+</div>
+  </div>
+<p>经过初步粗略估计，同一张图像，推理10次，耗时情况见下表：</p>
 <table>
 <thead>
 <tr>
@@ -896,7 +905,6 @@ result, elapse_list = engine(image_path)</code>
 </tr>
 </tbody>
 </table>
-<p>相关测评代码，参见<a href="https://aistudio.baidu.com/projectdetail/6924494" rel="external" target="_blank">AI Studio<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>，Fork可直接运行查看。</p>
 
     </div>
 
@@ -934,9 +942,9 @@ result, elapse_list = engine(image_path)</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-10-22T09:28:44&#43;0800"
-            title="22 Oct 2023, 09:28 &#43;0800">
-            22 Oct 2023, 09:28 &#43;0800
+            data-authdate="2023-10-22T09:34:42&#43;0800"
+            title="22 Oct 2023, 09:34 &#43;0800">
+            22 Oct 2023, 09:34 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1539,7 +1547,7 @@ result, elapse_list = engine(image_path)</code>
                 id:  8 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_paddle\/",
                 title: "[GPU端] rapidocr_paddle",
-                description: "简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。\n推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。\n封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。\n安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle\nimport cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。\nimport cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: link\n推理速度比较 link经过初步粗略估计，同一张图像，推理10次，耗时情况见下表：\n推理库 平均耗时(s/img) 备注 rapidocr_onnxruntime 1.",
+                description: "简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。\n推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。\n封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。\n安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle\nimport cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。\nimport cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: link\n推理速度比较 link 相关测评代码，参见AI Studio，Fork可直接运行查看。",
                 content: "简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。\n推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。\n封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。\n安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle\nimport cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。\nimport cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: "
             }
         );

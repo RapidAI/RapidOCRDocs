@@ -64,8 +64,7 @@
 安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle
 import cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = &amp;#34;tests/test_files/ch_en_num.jpg&amp;#34; result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。
 import cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = &amp;#34;tests/test_files/ch_en_num.jpg&amp;#34; result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: link
-推理速度比较 link经过初步粗略估计，同一张图像，推理10次，耗时情况见下表：
-推理库 平均耗时(s/img) 备注 rapidocr_onnxruntime 1.</description>
+推理速度比较 link 相关测评代码，参见AI Studio，Fork可直接运行查看。</description>
     </item>
     
     <item>

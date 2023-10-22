@@ -33,7 +33,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="https://rapidai.github.io/RapidOCRDocs/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://rapidai.github.io/RapidOCRDocs/site.webmanifest">
 <meta property="og:title" content="[GPU端] rapidocr_paddle" />
-<meta property="og:description" content="简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。
+<meta property="og:description" content="简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。值得说明的是，这个包和PaddleOCR相比，代码基本都是一样的，只不过这个库将里面核心推理代码抽了出来，更加精简而已。
 推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。
 封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。
 安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle
@@ -43,10 +43,10 @@ import cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine =
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_paddle/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7876778629309099575.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-10-21T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-10-22T09:34:42+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2023-10-22T22:22:19+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7876778629309099575.png"/>
 <meta name="twitter:title" content="[GPU端] rapidocr_paddle"/>
-<meta name="twitter:description" content="简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。
+<meta name="twitter:description" content="简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。值得说明的是，这个包和PaddleOCR相比，代码基本都是一样的，只不过这个库将里面核心推理代码抽了出来，更加精简而已。
 推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。
 封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。
 安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle
@@ -698,7 +698,7 @@ import cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine =
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h4 id="简介">简介 <a href="#%e7%ae%80%e4%bb%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p><code>rapidocr_paddle</code>系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。</p>
+        <h4 id="简介">简介 <a href="#%e7%ae%80%e4%bb%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p><code>rapidocr_paddle</code>系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。值得说明的是，这个包和PaddleOCR相比，代码基本都是一样的，只不过这个库将里面核心推理代码抽了出来，更加精简而已。</p>
 <p>推荐GPU上用这个，CPU端还是以<code>rapidocr_onnxruntime</code>和<code>rapidocr_openvino</code>为主。毕竟PaddlePaddle的CPU端还是比较重的。</p>
 <p>封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。</p>
 <h4 id="安装">安装 <a href="#%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ol>
@@ -766,14 +766,14 @@ print(paddle.utils.run_check())
 		
 
 		<a class="nav-link  active"
-		   id="cedafbTab" data-bs-toggle="tab" data-bs-target="#cedafb"
-		   type="button" role="tab" aria-controls="cedafb" aria-selected="true">CPU端推理</a>
+		   id="dcabefTab" data-bs-toggle="tab" data-bs-target="#dcabef"
+		   type="button" role="tab" aria-controls="dcabef" aria-selected="true">CPU端推理</a>
 
 		
 
 		<a class="nav-link "
-		   id="cefbdaTab" data-bs-toggle="tab" data-bs-target="#cefbda"
-		   type="button" role="tab" aria-controls="cefbda" aria-selected="true">GPU端推理</a>
+		   id="bdacefTab" data-bs-toggle="tab" data-bs-target="#bdacef"
+		   type="button" role="tab" aria-controls="bdacef" aria-selected="true">GPU端推理</a>
 
 		
 
@@ -789,7 +789,7 @@ print(paddle.utils.run_check())
 
 
 
-<div class="tab-pane fade show active" id="cedafb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="dcabef" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>前提是安装了CPU版的PaddlePaddle</p>
 
@@ -832,7 +832,7 @@ print(elapse_list)</code>
 
 
 
-<div class="tab-pane fade" id="cefbda" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bdacef" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>前提是安装了GPU版的PaddlePaddle，注意在实例化<code>RapidOCR</code>类时，需要通过参数显式指定使用GPU。</p>
 
@@ -942,9 +942,9 @@ result, elapse_list = engine(image_path)</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-10-22T09:34:42&#43;0800"
-            title="22 Oct 2023, 09:34 &#43;0800">
-            22 Oct 2023, 09:34 &#43;0800
+            data-authdate="2023-10-22T22:22:19&#43;0800"
+            title="22 Oct 2023, 22:22 &#43;0800">
+            22 Oct 2023, 22:22 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1547,8 +1547,8 @@ result, elapse_list = engine(image_path)</code>
                 id:  8 ,
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_paddle\/",
                 title: "[GPU端] rapidocr_paddle",
-                description: "简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。\n推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。\n封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。\n安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle\nimport cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。\nimport cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: link\n推理速度比较 link 相关测评代码，参见AI Studio，Fork可直接运行查看。",
-                content: "简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。\n推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。\n封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。\n安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle\nimport cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。\nimport cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: "
+                description: "简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。值得说明的是，这个包和PaddleOCR相比，代码基本都是一样的，只不过这个库将里面核心推理代码抽了出来，更加精简而已。\n推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。\n封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。\n安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle\nimport cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。\nimport cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: link\n推理速度比较 link 相关测评代码，参见AI Studio，Fork可直接运行查看。",
+                content: "简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。值得说明的是，这个包和PaddleOCR相比，代码基本都是一样的，只不过这个库将里面核心推理代码抽了出来，更加精简而已。\n推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。\n封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。\n安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle\nimport cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。\nimport cv2 from rapidocr_paddle import RapidOCR # 注意这里的参数 engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = \"tests/test_files/ch_en_num.jpg\" result, elapse_list = engine(image_path) 其他使用详情，同rapidocor_onnxruntime系列，参见: "
             }
         );
     index.add(

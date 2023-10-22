@@ -58,7 +58,7 @@
       <pubDate>Sat, 21 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_paddle/</guid>
-      <description>简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。
+      <description>简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。值得说明的是，这个包和PaddleOCR相比，代码基本都是一样的，只不过这个库将里面核心推理代码抽了出来，更加精简而已。
 推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。
 封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足需求。
 安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle

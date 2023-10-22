@@ -8,7 +8,7 @@ draft: false
 ---
 
 #### 简介
-`rapidocr_paddle`系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。
+`rapidocr_paddle`系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理。值得说明的是，这个包和PaddleOCR相比，代码基本都是一样的，只不过这个库将里面核心推理代码抽了出来，更加精简而已。
 
 推荐GPU上用这个，CPU端还是以`rapidocr_onnxruntime`和`rapidocr_openvino`为主。毕竟PaddlePaddle的CPU端还是比较重的。
 

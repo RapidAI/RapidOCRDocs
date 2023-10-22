@@ -58,7 +58,11 @@
       <pubDate>Sat, 21 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_paddle/</guid>
-      <description></description>
+      <description>简介 linkrapidocr_paddle系列包是基于PaddlePaddle框架作为推理引擎的，支持CPU和GPU上推理，我推荐GPU上用这个，CPU端还是以rapidocr_onnxruntime和rapidocr_openvino为主。毕竟PaddlePaddle的CPU端还是比较重的。
+封装这个包的原因是为了弥补GPU端推理的空缺。因为面对成千上万的图像需要提取文字时，CPU端上推理速度还是较慢，不能满足。
+安装 link 根据自己需求，先安装PaddlePaddle框架（CPU/GPU），并验证，参见: 官方教程，注意验证是否安装成功： import paddle print(paddle.utils.run_check()) # 如果出现PaddlePaddle is installed successfully!，说明您已成功安装。 安装rapidocr_paddle pip install rapidocr_paddle 使用 link CPU端推理 GPU端推理 前提是安装了CPU版的PaddlePaddle
+import cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR() image_path = &amp;#34;tests/test_files/ch_en_num.jpg&amp;#34; result, elapse_list = engine(image_path) print(result) print(elapse_list) 前提是安装了GPU版的PaddlePaddle，注意在实例化RapidOCR类时，需要通过参数显式指定使用GPU。
+import cv2 from rapidocr_paddle import RapidOCR engine = RapidOCR(det_use_cuda=True, cls_use_cuda=True, rec_use_cuda=True) image_path = &amp;#34;tests/test_files/ch_en_num.jpg&amp;#34; result, elapse_list = engine(image_path) 其他详情，同rapidocor_onnxruntime系列，参见: link</description>
     </item>
     
     <item>
@@ -67,7 +71,11 @@
       <pubDate>Thu, 25 Aug 2022 15:39:03 +0100</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/install/</guid>
-      <description> info rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，后续说明文档均以rapidocr_onnxruntime为例如使用rapidocr_openvino，直接更换关键词rapidocr_onnxruntime为rapidocr_openvino即可。 info pypi上各个版本的对应关系： link 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
+      <description> 简介 linkrapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同。后续说明文档均以rapidocr_onnxruntime为例
+如使用rapidocr_openvino，直接更换关键词rapidocr_onnxruntime为rapidocr_openvino即可。
+两者均是在CPU上推理的，如想在GPU上推理，可以参考rapidocr_paddle版。
+info pypi上各个版本的对应关系：
+版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 安装 link顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
 notifications 请使用Python3.6及以上版本。 rapidocr系列库目前仅在CPU上支持较好，GPU上推理很慢，这一点可参考link。因此不建议用onnxruntime-gpu版推理，后续会持续探索GPU上合理的推理方案。
 pip install rapidocr-onnxruntime 安装速度慢的话，可以指定国内的安装源，如使用清华源：
 pip install rapidocr_onnxruntime -i https://pypi.tuna.tsinghua.edu.cn/simple/ 依赖的包如下：

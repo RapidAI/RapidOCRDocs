@@ -13,7 +13,11 @@
       <pubDate>Thu, 25 Aug 2022 15:39:03 +0100</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/install/</guid>
-      <description> info rapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同，后续说明文档均以rapidocr_onnxruntime为例如使用rapidocr_openvino，直接更换关键词rapidocr_onnxruntime为rapidocr_openvino即可。 info pypi上各个版本的对应关系： link 版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
+      <description> 简介 linkrapidocr_onnxruntime和rapidocr_openvino两个包除推理引擎不同之外，其余均相同。后续说明文档均以rapidocr_onnxruntime为例
+如使用rapidocr_openvino，直接更换关键词rapidocr_onnxruntime为rapidocr_openvino即可。
+两者均是在CPU上推理的，如想在GPU上推理，可以参考rapidocr_paddle版。
+info pypi上各个版本的对应关系：
+版本 内置模型版本 对应PaddleOCR 分支 v1.3.x PaddleOCR v4版 release/2.7 v1.2.xv1.1.xv1.0.x PaddleOCR v3版 release/2.6 安装 link顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
 notifications 请使用Python3.6及以上版本。 rapidocr系列库目前仅在CPU上支持较好，GPU上推理很慢，这一点可参考link。因此不建议用onnxruntime-gpu版推理，后续会持续探索GPU上合理的推理方案。
 pip install rapidocr-onnxruntime 安装速度慢的话，可以指定国内的安装源，如使用清华源：
 pip install rapidocr_onnxruntime -i https://pypi.tuna.tsinghua.edu.cn/simple/ 依赖的包如下：

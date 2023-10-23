@@ -476,6 +476,11 @@ pre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImag
                                     
                                         
                                         
+                                            <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_paddle/">rapidocr_paddle</a></li>
+                                        
+                                    
+                                        
+                                        
                                             <li class=" "><a class="sidebar-nested-link" href="https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/">rapidocr_web</a></li>
                                         
                                     
@@ -949,20 +954,20 @@ post_process:
 		
 
 		<a class="nav-link  active"
-		   id="afdbecTab" data-bs-toggle="tab" data-bs-target="#afdbec"
-		   type="button" role="tab" aria-controls="afdbec" aria-selected="true">Exact Match (精确匹配准确率)</a>
+		   id="abecdfTab" data-bs-toggle="tab" data-bs-target="#abecdf"
+		   type="button" role="tab" aria-controls="abecdf" aria-selected="true">Exact Match (精确匹配准确率)</a>
 
 		
 
 		<a class="nav-link "
-		   id="cadfebTab" data-bs-toggle="tab" data-bs-target="#cadfeb"
-		   type="button" role="tab" aria-controls="cadfeb" aria-selected="true">Char Match (字符级准确率)</a>
+		   id="afcbedTab" data-bs-toggle="tab" data-bs-target="#afcbed"
+		   type="button" role="tab" aria-controls="afcbed" aria-selected="true">Char Match (字符级准确率)</a>
 
 		
 
 		<a class="nav-link "
-		   id="cbafdeTab" data-bs-toggle="tab" data-bs-target="#cbafde"
-		   type="button" role="tab" aria-controls="cbafde" aria-selected="true">Score(两者综合)</a>
+		   id="ceabfdTab" data-bs-toggle="tab" data-bs-target="#ceabfd"
+		   type="button" role="tab" aria-controls="ceabfd" aria-selected="true">Score(两者综合)</a>
 
 		
 
@@ -978,7 +983,7 @@ post_process:
 
 
 
-<div class="tab-pane fade show active" id="afdbec" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="abecdf" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>$$
 Exact\ Match = \frac{1}{N}\sum_{i=0}^{N} s(p_{i}, g_{i})
@@ -1003,7 +1008,7 @@ $$</p>
 
 
 
-<div class="tab-pane fade" id="cadfeb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="afcbed" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>$$
 Char\ Match = 1 - \frac{1}{N} \sum_{i=0}^{N} s(p_{i}, g_{i})
@@ -1031,7 +1036,7 @@ $$</p>
 
 
 
-<div class="tab-pane fade" id="cbafde" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="ceabfd" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>$$
 Score = \frac{1}{2}(Exact\ Match + Char\ Match)
@@ -1277,6 +1282,13 @@ $$</p>
     
 
 
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2006,6 +2018,15 @@ $$</p>
     index.add(
             {
                 id:  44 ,
+                href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr_paddle\/",
+                title: "rapidocr_paddle",
+                description: "2023-10-23 v1.3.9 update: link首次适配PaddlePaddle框架，作为GPU端推理引擎",
+                content: "2023-10-23 v1.3.9 update: link首次适配PaddlePaddle框架，作为GPU端推理引擎\n"
+            }
+        );
+    index.add(
+            {
+                id:  45 ,
                 href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr_web\/",
                 title: "rapidocr_web",
                 description: " ❤2023-05-20 ocrweb update: link 增加桌面版RapidOCRWeb，详情可参见RapidOCRWeb桌面版使用教程 对仓库文档做了整理，大部分文档放到了Wiki 🌹2023-05-14 ocrweb v0.1.5 update: link 增加界面版返回坐标框的返回值(issue #85) API模式增加base64格式传入 详情参见：link 🏸2023-04-16 ocrweb v0.1.1 update: link API部署改为FastAPI库支持 将API模式与Web解耦合，可通过pip install rapidocr_web[api]来选择性安装 详情参见：link ",
@@ -2014,7 +2035,7 @@ $$</p>
         );
     index.add(
             {
-                id:  45 ,
+                id:  46 ,
                 href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr_api\/",
                 title: "rapidocr_api",
                 description: " 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web\u003e0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 ",

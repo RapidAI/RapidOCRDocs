@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>rapidocr_paddle</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_paddle/</link>
+      <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_paddle/</guid>
+      <description>2023-10-23 v1.3.9 update: link首次适配PaddlePaddle框架，作为GPU端推理引擎</description>
+    </item>
+    
+    <item>
       <title>rapidocr_web</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_web/</link>
       <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>

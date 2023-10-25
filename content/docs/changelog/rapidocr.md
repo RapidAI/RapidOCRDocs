@@ -9,6 +9,9 @@ toc: true
 description: ""
 ---
 
+#### 😜2023-10-25 v1.3.8 update:
+- 修复[issue #133](https://github.com/RapidAI/RapidOCR/issues/133)
+
 #### 📡2023-09-21 v1.3.7 update:
 - 完善`VisRes`类在终端情况下的使用
 - 修复`auto_text_det`的条件错误

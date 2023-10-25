@@ -282,15 +282,14 @@ import cv2
 from rapidocr_onnxruntime import RapidOCR, VisRes
 
 engine = RapidOCR()
-vis = VisRes(font_path="resources/fonts/FZYTK.TTF")
+vis = VisRes()
 
 image_path = "tests/test_files/ch_en_num.jpg"
 img = cv2.imread(image_path)
 
 result, elapse_list = engine(img)
 boxes, txts, scores = list(zip(*result))
-
-res = vis(img, boxes, None, None)
+res = vis(img, boxes)
 cv2.imwrite("only_vis_det.png", res)
 ```
 
@@ -303,7 +302,7 @@ import cv2
 from rapidocr_onnxruntime import RapidOCR, VisRes
 
 engine = RapidOCR()
-vis = VisRes(font_path="resources/fonts/FZYTK.TTF")
+vis = VisRes()
 
 image_path = "tests/test_files/ch_en_num.jpg"
 img = cv2.imread(image_path)
@@ -311,7 +310,8 @@ img = cv2.imread(image_path)
 result, elapse_list = engine(img)
 boxes, txts, scores = list(zip(*result))
 
-res = vis(img, boxes, txts, scores)
+font_path="resources/fonts/FZYTK.TTF"
+res = vis(img, boxes, txts, scores, font_path)
 cv2.imwrite("vis_det_rec.png", res)
 ```
 

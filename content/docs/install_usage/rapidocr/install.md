@@ -12,7 +12,6 @@ description: ""
 <p>
     <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.12-aff.svg"></a>
     <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
-    <a href="https://pypi.org/project/rapidocr-onnxruntime/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-onnxruntime?style=flat-square"></a>
     <a href="https://pepy.tech/project/rapidocr_onnxruntime"><img src="https://static.pepy.tech/personalized-badge/rapidocr_onnxruntime?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Ort"></a>
     <a href="https://pepy.tech/project/rapidocr_openvino"><img src="https://static.pepy.tech/personalized-badge/rapidocr_openvino?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Vino"></a>
 </p>
@@ -25,16 +24,21 @@ description: ""
 
 两者均是在CPU上推理的，如想在GPU上推理，可以参考[rapidocr_paddle版](../rapidocr_paddle.md)。
 
+#### 版本情况
 
-{{% alert context="info" %}}
-pypi上各个版本的对应关系：<br/>
+各个库的最新版本：
+|           库           |                                                                       pypi最新版本                                                                       |
+| :--------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `rapidocr_onnxruntime` | <a href="https://pypi.org/project/rapidocr-onnxruntime/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-onnxruntime?style=flat-square"></a> |
+|  `rapidocr_openvino`   |    <a href="https://pypi.org/project/rapidocr-openvino/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-openvino?style=flat-square"></a>    |
+|   `rapidocr_paddle`    |      <a href="https://pypi.org/project/rapidocr-paddle/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-paddle?style=flat-square"></a>      |
 
-|版本|内置模型版本|对应PaddleOCR 分支|
-|:---:|:---:|:---:|
-|`v1.3.x`|PaddleOCR v4版| [release/2.7](https://github.com/PaddlePaddle/PaddleOCR/tree/release/2.7)|
-|`v1.2.x`<br/>`v1.1.x`<br/>`v1.0.x`|PaddleOCR v3版| [release/2.6](https://github.com/PaddlePaddle/PaddleOCR/tree/release/2.6)|
+pypi上各个版本的对应关系：
 
-{{% /alert %}}
+|                版本                |  内置模型版本  |                            对应PaddleOCR 分支                             |
+| :--------------------------------: | :------------: | :-----------------------------------------------------------------------: |
+|              `v1.3.x`              | PaddleOCR v4版 | [release/2.7](https://github.com/PaddlePaddle/PaddleOCR/tree/release/2.7) |
+| `v1.2.x`<br/>`v1.1.x`<br/>`v1.0.x` | PaddleOCR v3版 | [release/2.6](https://github.com/PaddlePaddle/PaddleOCR/tree/release/2.6) |
 
 #### 安装
 

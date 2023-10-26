@@ -15,6 +15,7 @@ toc: true
 - [RapidOcrNcnn](https://github.com/RapidAI/RapidOcrNcnn)
 
 #### JVM范例(Java/Kotlin)
+- [🔥RapidOcr-Java](https://github.com/MyMonsterCat/RapidOcr-Java)
 - [RapidOcrOnnxJvm](https://github.com/RapidAI/RapidOcrOnnxJvm)
 - [RapidOcrNcnnJvm](https://github.com/RapidAI/RapidOcrNcnnJvm)
 

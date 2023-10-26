@@ -44,7 +44,7 @@ pypi上各个版本的对应关系：
 
 顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
 
-{{< alert text="请使用Python3.6及以上版本。<br/> `rapidocr`系列库目前仅在CPU上支持较好，GPU上推理很慢，这一点可参考[link](https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/)。因此不建议用onnxruntime-gpu版推理，后续会持续探索GPU上合理的推理方案。" />}}
+{{< alert text="请使用Python3.6及以上版本。<br/> `rapidocr`系列库目前仅在CPU上支持较好，GPU上推理很慢，这一点可参考[link](https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/)。因此不建议用onnxruntime-gpu版推理。推荐用[`rapidocr_paddle`](../rapidocr_paddle.md)" />}}
 
 ```bash {linenos=table}
 pip install rapidocr-onnxruntime

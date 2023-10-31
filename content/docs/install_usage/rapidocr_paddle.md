@@ -80,7 +80,7 @@ result, elapse_list = engine(image_path)
 
 #### 推理速度比较
 
-{{< alert context="light" text="相关测评代码，参见[AI Studio](https://aistudio.baidu.com/projectdetail/6924494)，Fork可直接运行查看。" />}}
+{{< alert context="light" text="相关测评代码，参见[AI Studio](https://aistudio.baidu.com/projectdetail/6924494)，Fork可直接运行查看。不要只推理一张来推理速度，推理第一张时，需要预热。" />}}
 
 经过初步粗略估计，同一张图像，推理10次，耗时情况见下表：
 

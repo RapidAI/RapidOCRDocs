@@ -51,6 +51,15 @@ cd rapidocr_web nuitka --mingw64 --standalone --show-memory --show-progress --no
     </item>
     
     <item>
+      <title>PyInstaller打包</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/pyinstaller/</link>
+      <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/pyinstaller/</guid>
+      <description>参考Actions中写法，详情移步：package_ocrweb.yml</description>
+    </item>
+    
+    <item>
       <title>多语言版本部署使用</title>
       <link>https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr_web/ocrweb_multi/</link>
       <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>

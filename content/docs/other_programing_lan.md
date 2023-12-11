@@ -22,3 +22,5 @@ toc: true
 #### [.Net范例(C#)](https://github.com/RapidAI/RapidOCRCSharp)
 
 #### [Android范例](https://github.com/RapidAI/RapidOcrAndroidOnnx)
+
+#### [易语言](https://github.com/Physton/RapidOCRServer)

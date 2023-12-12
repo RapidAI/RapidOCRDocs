@@ -60,3 +60,8 @@ flowchart LR
     click B "https://github.com/PaddlePaddle/PaddleOCR" _blank
     click F "https://github.com/RapidAI/PaddleOCRModelConverter" _blank
 ```
+
+### 相关产品概览图
+<div>
+    <img src="https://github.com/RapidAI/RapidOCRDocs/releases/download/assets/RapidOCR_RelatedProjects.png">
+</div>

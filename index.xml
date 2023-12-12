@@ -261,7 +261,7 @@ pre_process: DetResizeForTest: limit_side_len: 736 limit_type: min NormalizeImag
       <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/related_projects/derivatives_projects/</guid>
-      <description>RapidStructure ：版面分析 link 含文本的图像方向分类 版面分析 表格还原 RapidOCRServer：RapidOCR HTTP服务/win32程序/易语言编写 linkPaddleOCRModelConverte： 模型自助转换 linkTextDetMetric：文本检测模型评估 linkRapidOCRPDF：解析PDF文件 linkRapidVideOCR：基于RapidOCR，提取视频中的硬字幕 link</description>
+      <description>RapidStructure ：版面分析 link 含文本的图像方向分类 版面分析 表格还原 RapidOCRServer：RapidOCR HTTP服务/win32程序/易语言编写 linkPaddleOCRModelConvert： 模型自助转换 linkTextDetMetric：文本检测模型评估 linkRapidOCRPDF：解析PDF文件 linkRapidVideOCR：基于RapidOCR，提取视频中的硬字幕 link</description>
     </item>
     
     <item>

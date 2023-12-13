@@ -965,20 +965,20 @@ post_process:
 		
 
 		<a class="nav-link  active"
-		   id="cbaedfTab" data-bs-toggle="tab" data-bs-target="#cbaedf"
-		   type="button" role="tab" aria-controls="cbaedf" aria-selected="true">Exact Match (精确匹配准确率)</a>
+		   id="dbcafeTab" data-bs-toggle="tab" data-bs-target="#dbcafe"
+		   type="button" role="tab" aria-controls="dbcafe" aria-selected="true">Exact Match (精确匹配准确率)</a>
 
 		
 
 		<a class="nav-link "
-		   id="defabcTab" data-bs-toggle="tab" data-bs-target="#defabc"
-		   type="button" role="tab" aria-controls="defabc" aria-selected="true">Char Match (字符级准确率)</a>
+		   id="efbcadTab" data-bs-toggle="tab" data-bs-target="#efbcad"
+		   type="button" role="tab" aria-controls="efbcad" aria-selected="true">Char Match (字符级准确率)</a>
 
 		
 
 		<a class="nav-link "
-		   id="cefadbTab" data-bs-toggle="tab" data-bs-target="#cefadb"
-		   type="button" role="tab" aria-controls="cefadb" aria-selected="true">Score(两者综合)</a>
+		   id="bdacfeTab" data-bs-toggle="tab" data-bs-target="#bdacfe"
+		   type="button" role="tab" aria-controls="bdacfe" aria-selected="true">Score(两者综合)</a>
 
 		
 
@@ -994,7 +994,7 @@ post_process:
 
 
 
-<div class="tab-pane fade show active" id="cbaedf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="dbcafe" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>$$
 Exact\ Match = \frac{1}{N}\sum_{i=0}^{N} s(p_{i}, g_{i})
@@ -1019,7 +1019,7 @@ $$</p>
 
 
 
-<div class="tab-pane fade" id="defabc" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="efbcad" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>$$
 Char\ Match = 1 - \frac{1}{N} \sum_{i=0}^{N} s(p_{i}, g_{i})
@@ -1047,7 +1047,7 @@ $$</p>
 
 
 
-<div class="tab-pane fade" id="cefadb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bdacfe" role="tabpanel" aria-labelledby="nav-1">
 
 	<p>$$
 Score = \frac{1}{2}(Exact\ Match + Char\ Match)
@@ -1652,7 +1652,7 @@ $$</p>
                 href: "\/RapidOCRDocs\/docs\/overview\/",
                 title: "概览",
                 description: " 信创级开源OCR - 为世界内容安全贡献力量 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：PaddleOCR工程化不是太好，为了方便大家在各种端上进行OCR推理，我们将PaddleOCR中的模型转换为ONNX格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 整体框架 linkflowchart LR subgraph Step direction TB C(Text Det) --\u003e D(Text Cls) --\u003e E(Text Rec) end A[/OurSelf Dataset/] --\u003e B(PaddleOCR) --Train--\u003e Step --\u003e F(PaddleOCRModelConverter) F --ONNX--\u003e G{RapidOCR Deploy\\nPython/C++/Java/C#} G --\u003e H(Windows x86/x64) \u0026 I(Linux) \u0026 J(Android) \u0026 K(Web) \u0026 L(Raspberry Pi) click B \"https://github.com/PaddlePaddle/PaddleOCR\" _blank click F \"https://github.",
-                content: " 信创级开源OCR - 为世界内容安全贡献力量 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：PaddleOCR工程化不是太好，为了方便大家在各种端上进行OCR推理，我们将PaddleOCR中的模型转换为ONNX格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 整体框架 linkflowchart LR subgraph Step direction TB C(Text Det) --\u003e D(Text Cls) --\u003e E(Text Rec) end A[/OurSelf Dataset/] --\u003e B(PaddleOCR) --Train--\u003e Step --\u003e F(PaddleOCRModelConverter) F --ONNX--\u003e G{RapidOCR Deploy\\nPython/C++/Java/C#} G --\u003e H(Windows x86/x64) \u0026 I(Linux) \u0026 J(Android) \u0026 K(Web) \u0026 L(Raspberry Pi) click B \"https://github.com/PaddlePaddle/PaddleOCR\" _blank click F \"https://github.com/RapidAI/PaddleOCRModelConverter\" _blank 相关产品概览图 link info 下图表格中：第一行是功能介绍第二行是对应的仓库名称，可直接去Github搜索该名称即可。 "
+                content: " 信创级开源OCR - 为世界内容安全贡献力量 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：PaddleOCR工程化不是太好，为了方便大家在各种端上进行OCR推理，我们将PaddleOCR中的模型转换为ONNX格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 整体框架 linkflowchart LR subgraph Step direction TB C(Text Det) --\u003e D(Text Cls) --\u003e E(Text Rec) end A[/OurSelf Dataset/] --\u003e B(PaddleOCR) --Train--\u003e Step --\u003e F(PaddleOCRModelConverter) F --ONNX--\u003e G{RapidOCR Deploy\\nPython/C++/Java/C#} G --\u003e H(Windows x86/x64) \u0026 I(Linux) \u0026 J(Android) \u0026 K(Web) \u0026 L(Raspberry Pi) click B \"https://github.com/PaddlePaddle/PaddleOCR\" _blank click F \"https://github.com/RapidAI/PaddleOCRModelConverter\" _blank 相关产品概览图 link info 下图表格中，除测评集部分托管在魔搭社区下，其余均在Github下，详细介绍如下：第一行是功能介绍第二行是对应的仓库名称，可直接去Github搜索该名称即可。 "
             }
         );
     index.add(

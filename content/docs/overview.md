@@ -62,7 +62,7 @@ flowchart LR
 ```
 
 ### 相关产品概览图
-{{< alert context="info" text="下图表格中：<br/>第一行是功能介绍<br/>第二行是对应的仓库名称，可直接去Github搜索该名称即可。" />}}
+{{< alert context="info" text="下图表格中，除测评集部分托管在魔搭社区下，其余均在Github下，详细介绍如下：<br/>第一行是功能介绍<br/>第二行是对应的仓库名称，可直接去Github搜索该名称即可。" />}}
 
 <div>
     <img src="https://github.com/RapidAI/RapidOCRDocs/releases/download/assets/RapidOCR_RelatedProjects.png">

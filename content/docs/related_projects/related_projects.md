@@ -13,6 +13,24 @@ toc: true
 - 这里将会汇总出以下几个OCR周边项目的一些文档和资源，包括学术动态和一些工程化代码。
 - 欢迎各位小伙伴提供PR。
 
+### 手写体识别
+TODO
+
+### 手写体公式识别
+TODO
+
+### 公式识别
+TODO
+
+### 公式检测
+图像中公式检测需求一般出现于文档分析和还原需求中。
+
+单纯公式检测任务包括对行内公式和行间公式的检测。而版面分析任务中，仅有对行间公式的标注，缺乏行内公式标注。如果想要精细化做版面还原，行内公式的检测识别就变得尤为重要。
+
+这一块的工作，breezedeus做得比较好，详情可以参见其博客：[Pix2Text (P2T) 新版公式检测模型](https://www.breezedeus.com/article/p2t-mfd-20230613)。
+
+有关数据集：[IBEM](https://zenodo.org/record/4757865) 和中文 [CnMFD_Dataset](https://github.com/breezedeus/CnMFD_Dataset)
+
 ### 发票识别
 - [CSIG 2022 Competition on Invoice Recognition and Analysis](https://davar-lab.github.io/competition/CSIG2022-invoice-ch.html##)
 

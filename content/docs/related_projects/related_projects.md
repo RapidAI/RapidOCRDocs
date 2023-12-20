@@ -39,6 +39,7 @@ TODO
 
 ### 文档图像矫正
 - [PaperEdge](https://github.com/cvlab-stonybrook/PaperEdge)：文档图像矫正 | [Demo](https://huggingface.co/spaces/SWHL/PaperEdgeDemo)
+- [DocTr++](https://arxiv.org/pdf/2304.08796.pdf) | [Demo](https://demo.doctrp.top/) | [Code](https://github.com/fh2019ustc/DocTr-Plus)
 
 ### 版面分析
 - 相关论文和帖子：
@@ -54,7 +55,7 @@ TODO
   - 中文版面分析数据集：
     - [CDLA](https://github.com/buptlihang/CDLA)：中文文档版面分析数据集，面向中文文献类（论文）场景，总共6000张（5000训练，1000测试），分为10类：正文、标题、图片、图片标题、表格、表格标题、页眉、页脚、注释和公式。
 
-### 表格识别
+### 表格结构识别
 - 相关论文和帖子：
   - [OCR之表格结构识别综述](https://blog.csdn.net/shiwanghualuo/article/details/123726879)
   - [合合信息：表格识别与内容提炼技术理解及研发趋势](https://blog.csdn.net/INTSIG/article/details/123000010?spm=1001.2014.3001.5502)

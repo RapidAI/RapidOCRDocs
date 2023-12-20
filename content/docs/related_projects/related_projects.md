@@ -37,6 +37,9 @@ TODO
 ### 图像文字擦除
 - [CTRNet](https://github.com/lcy0604/CTRNet)：图像文字擦除 | [Demo](https://huggingface.co/spaces/SWHL/CTRNetDemo)
 
+### 文档增强
+- [DocDiff](https://arxiv.org/pdf/2305.03892.pdf) | [Demo](https://github.com/Royalvice/DocDiff)
+
 ### 文档图像矫正
 - [PaperEdge](https://github.com/cvlab-stonybrook/PaperEdge)：文档图像矫正 | [Demo](https://huggingface.co/spaces/SWHL/PaperEdgeDemo)
 - [DocTr++](https://arxiv.org/pdf/2304.08796.pdf) | [Demo](https://demo.doctrp.top/) | [Code](https://github.com/fh2019ustc/DocTr-Plus)

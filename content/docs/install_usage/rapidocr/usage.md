@@ -271,7 +271,7 @@ print(elapse)
 ### 可视化查看结果
 为了便于查看检测和识别结果，该库中封装了[`VisRes`](https://github.com/RapidAI/RapidOCR/blob/a981e21743f03d9bbfbe596974123fecfe8a7d62/python/rapidocr_onnxruntime/utils.py#L351)类，可借助该类快速可视化查看结果。
 
-{{< alert context="info" text="可视化时，需要提供字体文件" />}}
+{{< alert context="info" text="可视化时，需要提供字体文件。下载链接：[link](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/FZYTK.TTF)" />}}
 
 {{< tabs tabTotal="2">}}
 {{% tab tabName="只可视化检测" %}}

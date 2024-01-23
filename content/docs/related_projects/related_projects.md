@@ -38,7 +38,7 @@ TODO
 - [CTRNet](https://github.com/lcy0604/CTRNet)：图像文字擦除 | [Demo](https://huggingface.co/spaces/SWHL/CTRNetDemo)
 
 ### 文档增强
-- [DocDiff](https://arxiv.org/pdf/2305.03892.pdf) | [Demo](https://github.com/Royalvice/DocDiff)
+- [DocDiff](https://arxiv.org/pdf/2305.03892.pdf)（[Github](https://github.com/Royalvice/DocDiff)）: 文档增强模型，可以用于文档去模糊、文档去噪、文档二值化、文档去水印和印章等任务。
 
 ### 文档图像矫正
 - [PaperEdge](https://github.com/cvlab-stonybrook/PaperEdge)：文档图像矫正 | [Demo](https://huggingface.co/spaces/SWHL/PaperEdgeDemo)
@@ -97,4 +97,4 @@ TODO
   - [Python绘制透明背景印章](https://www.bilibili.com/read/cv15847481/)
   - [在线印章合成大全网站](http://www.395.net.cn/)
 - 数据集汇总：
-  - 暂无
+  - [来自DocDiff](https://github.com/Royalvice/DocDiff)

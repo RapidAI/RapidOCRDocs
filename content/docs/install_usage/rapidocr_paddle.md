@@ -80,11 +80,11 @@ result, elapse_list = engine(image_path)
 
 #### 推理速度比较
 
-{{< alert context="light" text="相关测评代码，参见[AI Studio](https://aistudio.baidu.com/projectdetail/6924494)，Fork可直接运行查看。不要只推理一张来推理速度，推理第一张时，需要预热。" />}}
+{{< alert context="light" text="相关测评代码，参见[AI Studio](https://aistudio.baidu.com/projectdetail/6924494)，Fork可直接运行查看。不要只推理一张来测试推理速度，需要先推理一张作为预热，后续再看推理速度。" />}}
 
 经过初步粗略估计，同一张图像，推理10次，耗时情况见下表：
 
-|         推理库         | 平均耗时(s/img) |   备注   |
+|         推理库         | 平均耗时(s/img) |   运行环境   |
 | :--------------------: | :-------------: | :------: |
-| `rapidocr_onnxruntime` |     1.6505      |          |
-| `rapidocr_paddle[GPU]` |     0.0508      | V100 16G |
+| `rapidocr_onnxruntime` |     1.6505      | CPU 2 Cores RAM 16GB         |
+| `rapidocr_paddle[GPU]` |     0.0508      | CPU 2 Cores RAM 16GB <br/> GPU Tesla V100 16G |

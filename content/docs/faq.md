@@ -8,8 +8,8 @@ draft: false
 toc: true
 ---
 
-#### Q: 为什么我的模型在GPU上比在CPU上还要慢？
-**A:** : 取决于所使用的执行提供者，它可能没有完全支持模型中的所有操作。回落到CPU操作可能会导致性能速度的下降。此外，即使一个操作是由CUDA execution provider实现的，由于性能的原因，它也不一定会把操作分配/放置到CUDA EP上。要想看到ORT决定的位置，请打开verbose日志并查看控制台的输出。
+#### Q: 为什么我的模型在ONNXRuntime GPU版上比在CPU上还要慢？
+**A:** : 因为OCR任务中输入图像Shape是动态的。每次GPU上都需要重新清空上一次不同Shape的缓存结果。如果输入图像Shape不变的情况下，ONNXRuntime GPU版一般都要比CPU快的。该问题已经提了相关issue（[issue #13198](https://github.com/microsoft/onnxruntime/issues/13198)）。推荐CPU端推理用`rapidocr_onnxruntime`或者`rapidocr_openvino`，GPU端用`rapidocr_paddle`。
 
 #### Q: 请问这个能在32位C#中用嘛?
 **A:** C#可以32位，要用32位的dll，但nuget上的onnxruntime不支持win7。

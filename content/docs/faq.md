@@ -9,7 +9,9 @@ toc: true
 ---
 
 #### Q: 为什么我的模型在ONNXRuntime GPU版上比在CPU上还要慢？
-**A:** : 因为OCR任务中输入图像Shape是动态的。每次GPU上都需要重新清空上一次不同Shape的缓存结果。如果输入图像Shape不变的情况下，ONNXRuntime GPU版一般都要比CPU快的。该问题已经提了相关issue（[issue #13198](https://github.com/microsoft/onnxruntime/issues/13198)）。推荐CPU端推理用`rapidocr_onnxruntime`或者`rapidocr_openvino`，GPU端用`rapidocr_paddle`。
+**A:** 因为OCR任务中输入图像Shape是动态的。每次GPU上都需要重新清空上一次不同Shape的缓存结果。如果输入图像Shape不变的情况下，ONNXRuntime GPU版一般都要比CPU快的。该问题已经提了相关issue（[issue #13198](https://github.com/microsoft/onnxruntime/issues/13198)）。
+
+推荐CPU端推理用`rapidocr_onnxruntime`或者`rapidocr_openvino`，GPU端用`rapidocr_paddle`。关于`rapidocr_onnxruntime`和`rapidocr_paddle`两者之间推理，可参见：[docs](./install_usage/rapidocr_paddle.md#推理速度比较)
 
 #### Q: 请问这个能在32位C#中用嘛?
 **A:** C#可以32位，要用32位的dll，但nuget上的onnxruntime不支持win7。

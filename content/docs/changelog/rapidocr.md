@@ -9,6 +9,9 @@ toc: true
 description: ""
 ---
 
+#### 🌈2024-01-30 v1.3.10 update:
+- 修复`get_boxes_img_without_det` [bug](https://github.com/RapidAI/RapidOCR/pull/150) by [AuroraWright](https://github.com/AuroraWright)
+
 #### 🥰2023-12-28 v1.3.9 update:
 - 优化rapidocr系列库主函数代码逻辑，便于小伙伴们二次开发
 - Merge [PR #141](https://github.com/RapidAI/RapidOCR/pull/141) by [theikkila](https://github.com/theikkila)

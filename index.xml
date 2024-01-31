@@ -411,7 +411,8 @@ QQ交流群 link欢迎加入我们的QQ群下载模型及测试程序。1群：8
       <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_paddle/</guid>
-      <description>2023-10-25 v1.3.10 update: link修复issue #133
+      <description>2024-01-30 v1.3.11 update: link同rapidocr_onnxrutnime change log
+2023-10-25 v1.3.10 update: link修复issue #133
 2023-10-23 v1.3.9 update: link首次适配PaddlePaddle框架，作为GPU端推理引擎</description>
     </item>
     

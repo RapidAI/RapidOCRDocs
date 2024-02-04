@@ -9,6 +9,11 @@ toc: true
 description: ""
 ---
 
+### ♥️2024-02-04 v1.3.11 update:
+Merge [PR #151](https://github.com/RapidAI/RapidOCR/pull/151) by [LWQ2EDU](https://github.com/LWQ2EDU)
+- 添加自动padding策略：当传入图像小于`min_height`或者`>width_height_ratio`时，会触发自动padding图像，后续再进入检测。
+- ⚠️注意：padding值多少？[当前值](https://github.com/RapidAI/RapidOCR/blob/65369c41f0f04266461e5e9dd81a31ca8c08540d/python/rapidocr_onnxruntime/main.py#L116)是一个权衡设置，大家可根据具体使用场景，自定设置合适值。
+
 #### 🌈2024-01-30 v1.3.10 update:
 - 修复`get_boxes_img_without_det` [bug](https://github.com/RapidAI/RapidOCR/pull/150) by [AuroraWright](https://github.com/AuroraWright)
 

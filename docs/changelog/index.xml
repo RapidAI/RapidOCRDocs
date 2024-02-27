@@ -13,8 +13,9 @@
       <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr/</guid>
-      <description>♥️2024-02-04 v1.3.11 update: linkMerge PR #151 by LWQ2EDU
-添加自动padding策略：当传入图像小于min_height或者&amp;gt;width_height_ratio时，会触发自动padding图像，后续再进入检测。 ⚠️注意：padding值多少？当前值是一个权衡设置，大家可根据具体使用场景，自定设置合适值。 🌈2024-01-30 v1.3.10 update: link 修复get_boxes_img_without_det bug by AuroraWright 🥰2023-12-28 v1.3.9 update: link 优化rapidocr系列库主函数代码逻辑，便于小伙伴们二次开发 Merge PR #141 by theikkila Merge PR #139 by debanjum 😜2023-10-25 v1.3.8 update: link 修复issue #133 📡2023-09-21 v1.3.7 update: link 完善VisRes类在终端情况下的使用 修复auto_text_det的条件错误 🧸2023-09-20 v1.3.6 update: link 添加VisRes类，便于快速可视化结果。详情参见demo.py用法 😀2023-09-20 v1.3.5 update: link Fixed issue #122 ⏰2023-09-18 v1.3.4 update: link 优化更新参数部分的函数实现 🧸2023-09-06 v1.3.2 update: link 修复issue #116 ⭐2023-08-29 v1.3.1 update: link 修复issue #115 🎉2023-08-26 v1.</description>
+      <description>🍉2024-02-27 v1.3.12 update: link可视化函数适配Pillow v9和v10两个版本，自动根据各个版本情况，来选择相应获得char大小的函数
+♥️2024-02-04 v1.3.11 update: linkMerge PR #151 by LWQ2EDU
+添加自动padding策略：当传入图像小于min_height或者&amp;gt;width_height_ratio时，会触发自动padding图像，后续再进入检测。 ⚠️注意：padding值多少？当前值是一个权衡设置，大家可根据具体使用场景，自定设置合适值。 🌈2024-01-30 v1.3.10 update: link 修复get_boxes_img_without_det bug by AuroraWright 🥰2023-12-28 v1.3.9 update: link 优化rapidocr系列库主函数代码逻辑，便于小伙伴们二次开发 Merge PR #141 by theikkila Merge PR #139 by debanjum 😜2023-10-25 v1.3.8 update: link 修复issue #133 📡2023-09-21 v1.3.7 update: link 完善VisRes类在终端情况下的使用 修复auto_text_det的条件错误 🧸2023-09-20 v1.3.6 update: link 添加VisRes类，便于快速可视化结果。详情参见demo.py用法 😀2023-09-20 v1.3.5 update: link Fixed issue #122 ⏰2023-09-18 v1.3.4 update: link 优化更新参数部分的函数实现 🧸2023-09-06 v1.3.2 update: link 修复issue #116 ⭐2023-08-29 v1.</description>
     </item>
     
     <item>
@@ -23,7 +24,8 @@
       <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_paddle/</guid>
-      <description>2024-02-04 v1.3.13 update: link同rapidocr_onnxruntime Change log
+      <description>2024-02-27 v1.3.14 update: link同rapidocr_onnxruntime Change log
+2024-02-04 v1.3.13 update: link同rapidocr_onnxruntime Change log
 2024-01-30 v1.3.12 update: link同rapidocr_onnxrutnime Change log
 2023-10-25 v1.3.10 update: link修复issue #133
 2023-10-23 v1.3.9 update: link首次适配PaddlePaddle框架，作为GPU端推理引擎</description>

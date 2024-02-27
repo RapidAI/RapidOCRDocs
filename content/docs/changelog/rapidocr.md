@@ -9,7 +9,10 @@ toc: true
 description: ""
 ---
 
-### ♥️2024-02-04 v1.3.11 update:
+#### 🍉2024-02-27 v1.3.12 update:
+可视化函数适配Pillow v9和v10两个版本，自动根据各个版本情况，来选择相应获得char大小的函数
+
+#### ♥️2024-02-04 v1.3.11 update:
 Merge [PR #151](https://github.com/RapidAI/RapidOCR/pull/151) by [LWQ2EDU](https://github.com/LWQ2EDU)
 - 添加自动padding策略：当传入图像小于`min_height`或者`>width_height_ratio`时，会触发自动padding图像，后续再进入检测。
 - ⚠️注意：padding值多少？[当前值](https://github.com/RapidAI/RapidOCR/blob/65369c41f0f04266461e5e9dd81a31ca8c08540d/python/rapidocr_onnxruntime/main.py#L116)是一个权衡设置，大家可根据具体使用场景，自定设置合适值。

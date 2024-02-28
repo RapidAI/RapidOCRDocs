@@ -41,7 +41,7 @@ info 以下参数均有默认值，可以不传入任何参数，直接初始化
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/install_usage/rapidocr/usage/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_17795501070310800273.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2024-01-18T20:34:24+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2024-02-28T15:17:05+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_17795501070310800273.png"/>
 <meta name="twitter:title" content="使用说明"/>
 <meta name="twitter:description" content="初始化 link类RapidOCR是主类，其初始化函数如下：
@@ -835,7 +835,17 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
   </div>
 </li>
 </ul>
-<h3 id="输入">输入 <a href="#%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>支持4种输入类型：<code>Union[str, np.ndarray, bytes, Path]</code></p>
+<h3 id="输入">输入 <a href="#%e8%be%93%e5%85%a5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+<div class="alert alert-info d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  
+  <span class="material-icons size-20 me-2">
+  info
+  </span></div>
+  
+  <div class="w-100">确保输入模型前的图像通道顺序为BGR即可。当前<code>LoadImage</code>类内部已经对此做了处理，参考下面写法即可正常使用。</div>
+  </div>
+<p>支持4种输入类型：<code>Union[str, np.ndarray, bytes, Path, PIL.Image.Image]</code></p>
 
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -848,26 +858,32 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 		
 
 		<a class="nav-link  active"
-		   id="cedfbaTab" data-bs-toggle="tab" data-bs-target="#cedfba"
-		   type="button" role="tab" aria-controls="cedfba" aria-selected="true">str</a>
+		   id="cbeadfTab" data-bs-toggle="tab" data-bs-target="#cbeadf"
+		   type="button" role="tab" aria-controls="cbeadf" aria-selected="true">str</a>
 
 		
 
 		<a class="nav-link "
-		   id="eabdcfTab" data-bs-toggle="tab" data-bs-target="#eabdcf"
-		   type="button" role="tab" aria-controls="eabdcf" aria-selected="true">np.ndarray</a>
+		   id="cadbefTab" data-bs-toggle="tab" data-bs-target="#cadbef"
+		   type="button" role="tab" aria-controls="cadbef" aria-selected="true">np.ndarray</a>
 
 		
 
 		<a class="nav-link "
-		   id="becfadTab" data-bs-toggle="tab" data-bs-target="#becfad"
-		   type="button" role="tab" aria-controls="becfad" aria-selected="true">Bytes</a>
+		   id="bdaefcTab" data-bs-toggle="tab" data-bs-target="#bdaefc"
+		   type="button" role="tab" aria-controls="bdaefc" aria-selected="true">PIL.Image.Image</a>
 
 		
 
 		<a class="nav-link "
-		   id="cedbafTab" data-bs-toggle="tab" data-bs-target="#cedbaf"
-		   type="button" role="tab" aria-controls="cedbaf" aria-selected="true">Path</a>
+		   id="fadbecTab" data-bs-toggle="tab" data-bs-target="#fadbec"
+		   type="button" role="tab" aria-controls="fadbec" aria-selected="true">Bytes</a>
+
+		
+
+		<a class="nav-link "
+		   id="fdacbeTab" data-bs-toggle="tab" data-bs-target="#fdacbe"
+		   type="button" role="tab" aria-controls="fdacbe" aria-selected="true">Path</a>
 
 		
 
@@ -883,7 +899,7 @@ res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)</code>
 
 
 
-<div class="tab-pane fade show active" id="cedfba" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="cbeadf" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -923,7 +939,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="eabdcf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cadbef" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -963,7 +979,47 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="becfad" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bdaefc" role="tabpanel" aria-labelledby="nav-1">
+
+	
+
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+   
+  
+
+  <div class="prism-codeblock  linenos">
+  <pre id="90b96ac" class="language-python  line-numbers">
+  <code>from PIL import Image
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+img = Image.open(&#39;tests/test_files/ch_en_num.jpg&#39;)
+result, elapse = engine(img)
+print(result)
+print(elapse)</code>
+  </pre>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="tab-pane fade" id="fadbec" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1005,7 +1061,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="cedbaf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="fdacbe" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1057,38 +1113,38 @@ print(elapse)</code>
 		
 
 		<a class="nav-link  active"
-		   id="dfbcaeTab" data-bs-toggle="tab" data-bs-target="#dfbcae"
-		   type="button" role="tab" aria-controls="dfbcae" aria-selected="true">只有检测</a>
+		   id="fdbceaTab" data-bs-toggle="tab" data-bs-target="#fdbcea"
+		   type="button" role="tab" aria-controls="fdbcea" aria-selected="true">只有检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="cfaedbTab" data-bs-toggle="tab" data-bs-target="#cfaedb"
-		   type="button" role="tab" aria-controls="cfaedb" aria-selected="true">只有分类</a>
+		   id="cfabdeTab" data-bs-toggle="tab" data-bs-target="#cfabde"
+		   type="button" role="tab" aria-controls="cfabde" aria-selected="true">只有分类</a>
 
 		
 
 		<a class="nav-link "
-		   id="adcebfTab" data-bs-toggle="tab" data-bs-target="#adcebf"
-		   type="button" role="tab" aria-controls="adcebf" aria-selected="true">只有识别</a>
+		   id="cebafdTab" data-bs-toggle="tab" data-bs-target="#cebafd"
+		   type="button" role="tab" aria-controls="cebafd" aria-selected="true">只有识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="efdbcaTab" data-bs-toggle="tab" data-bs-target="#efdbca"
-		   type="button" role="tab" aria-controls="efdbca" aria-selected="true">检测 &#43; 识别</a>
+		   id="dafcebTab" data-bs-toggle="tab" data-bs-target="#dafceb"
+		   type="button" role="tab" aria-controls="dafceb" aria-selected="true">检测 &#43; 识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="fcbaedTab" data-bs-toggle="tab" data-bs-target="#fcbaed"
-		   type="button" role="tab" aria-controls="fcbaed" aria-selected="true">分类 &#43; 识别</a>
+		   id="bfeadcTab" data-bs-toggle="tab" data-bs-target="#bfeadc"
+		   type="button" role="tab" aria-controls="bfeadc" aria-selected="true">分类 &#43; 识别</a>
 
 		
 
 		<a class="nav-link "
-		   id="dafcbeTab" data-bs-toggle="tab" data-bs-target="#dafcbe"
-		   type="button" role="tab" aria-controls="dafcbe" aria-selected="true">检测 &#43; 分类 &#43; 识别</a>
+		   id="edfbacTab" data-bs-toggle="tab" data-bs-target="#edfbac"
+		   type="button" role="tab" aria-controls="edfbac" aria-selected="true">检测 &#43; 分类 &#43; 识别</a>
 
 		
 
@@ -1104,7 +1160,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade show active" id="dfbcae" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="fdbcea" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1168,7 +1224,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="cfaedb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cfabde" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1231,7 +1287,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="adcebf" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cebafd" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1294,7 +1350,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="efdbca" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="dafceb" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1361,7 +1417,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="fcbaed" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="bfeadc" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1424,7 +1480,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade" id="dafcbe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="edfbac" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1514,14 +1570,14 @@ print(elapse)</code>
 		
 
 		<a class="nav-link  active"
-		   id="fbecdaTab" data-bs-toggle="tab" data-bs-target="#fbecda"
-		   type="button" role="tab" aria-controls="fbecda" aria-selected="true">只可视化检测</a>
+		   id="fcdeabTab" data-bs-toggle="tab" data-bs-target="#fcdeab"
+		   type="button" role="tab" aria-controls="fcdeab" aria-selected="true">只可视化检测</a>
 
 		
 
 		<a class="nav-link "
-		   id="cadfbeTab" data-bs-toggle="tab" data-bs-target="#cadfbe"
-		   type="button" role="tab" aria-controls="cadfbe" aria-selected="true">可视化检测和识别</a>
+		   id="badcfeTab" data-bs-toggle="tab" data-bs-target="#badcfe"
+		   type="button" role="tab" aria-controls="badcfe" aria-selected="true">可视化检测和识别</a>
 
 		
 
@@ -1537,7 +1593,7 @@ print(elapse)</code>
 
 
 
-<div class="tab-pane fade show active" id="fbecda" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="fcdeab" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1583,7 +1639,7 @@ cv2.imwrite(&#34;only_vis_det.png&#34;, res)</code>
 
 
 
-<div class="tab-pane fade" id="cadfbe" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="badcfe" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -1665,9 +1721,9 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2024-01-18T20:34:24&#43;0800"
-            title="18 Jan 2024, 20:34 &#43;0800">
-            18 Jan 2024, 20:34 &#43;0800
+            data-authdate="2024-02-28T15:17:05&#43;0800"
+            title="28 Feb 2024, 15:17 &#43;0800">
+            28 Feb 2024, 15:17 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -2303,7 +2359,7 @@ cv2.imwrite(&#34;vis_det_rec.png&#34;, res)</code>
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr\/usage\/",
                 title: "使用说明",
                 description: "初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：\n以config.yaml方式\n找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml engine = RapidOCR(config_path=\"your.yaml\") (推荐) 以具体参数传入，参数基本和config.yaml中对应，只是个别名称有所区别。\ninfo 以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = \"min\", det_thresh: float = 0.3, det_box_thresh: float = 0.",
-                content: "初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：\n以config.yaml方式\n找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml engine = RapidOCR(config_path=\"your.yaml\") (推荐) 以具体参数传入，参数基本和config.yaml中对应，只是个别名称有所区别。\ninfo 以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = \"min\", det_thresh: float = 0.3, det_box_thresh: float = 0.5, det_unclip_ratio: float = 1.6, det_donot_use_dilation: bool = False, det_score_mode: str = \"fast\", cls_use_cuda: bool = False, cls_model_path: Optional[str] = None, cls_image_shape: List[int] = [3, 48, 192], cls_label_list: List[str] = [\"0\", \"180\"], cls_batch_num: int = 6, cls_thresh: float = 0.9, rec_use_cuda: bool = False, rec_model_path: Optional[str] = None, rec_img_shape: List[int] = [3, 48, 320], rec_batch_num: int = 6, ): pass engine = RapidOCR() res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True) 输入 link支持4种输入类型：Union[str, np.ndarray, bytes, Path]\nstr np.ndarray Bytes Path from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path) print(result) print(elapse) import cv2 from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img = cv2.imread('tests/test_files/ch_en_num.jpg') result, elapse = engine(img) print(result) print(elapse) from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as f: img = f.read() result, elapse = engine(img) print(result) print(elapse) from pathlib import Path from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = Path('tests/test_files/ch_en_num.jpg') result, elapse = engine(img_path) print(result) print(elapse) 输出 link类RapidOCR在调用时，有三个参数use_det | use_cls | use_rec，可以控制是否使用检测、方向分类和识别这三部分。不同的参数，决定了不同的输出，详细搭配如下：\n只有检测 只有分类 只有识别 检测 + 识别 分类 + 识别 检测 + 分类 + 识别 from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=True, use_cls=False, use_rec=False) print(result) print(elapse) 返回值result: List[List[float]] (每个框的坐标[左上, 右上, 右下, 左下])\n[ [[5.0, 2.0], [322.0, 9.0], [319.0, 103.0], [3.0, 96.0]], [[70.0, 98.0], [252.0, 97.0], [252.0, 125.0], [70.0, 126.0]], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=False) print(result) print(elapse) 返回值result: List[List[str, float]] ([方向0或180, 置信度])\n[ ['0', 0.9998784], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=False, use_cls=False, use_rec=True) print(result) print(elapse) 返回值result: List[List[str, float]] ([识别的文本, 置信度])\n[ ['韩国小馆', 0.7992169380187988], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=True, use_cls=False, use_rec=True) print(result) print(elapse) 返回值result: List[List[float], str, float] ([[左上, 右上, 右下, 左下], 文本内容, 置信度])\n[ [[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], '正品促销', '0.7986101984977723'], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], '大桶装更划算', '0.7368737288883754'], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=True) print(result) print(elapse) 返回值result: List[List[str, float]] ([识别的文本, 置信度])\n[ ['韩国小馆', 0.7992169380187988], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' # 默认都为True result, elapse = engine(img_path, use_det=True, use_cls=True, use_rec=True) print(result) print(elapse) 返回值result: List[List[float], str, float] ([[左上, 右上, 右下, 左下], 文本内容, 置信度])\n[ [[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], '正品促销', '0.7986101984977723'], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], '大桶装更划算', '0.7368737288883754'], ... ] 可视化查看结果 link为了便于查看检测和识别结果，该库中封装了VisRes类，可借助该类快速可视化查看结果。\ninfo 可视化时，需要提供字体文件。下载链接：link\n只可视化检测 可视化检测和识别 import cv2 from rapidocr_onnxruntime import RapidOCR, VisRes engine = RapidOCR() vis = VisRes() image_path = \"tests/test_files/ch_en_num.jpg\" img = cv2.imread(image_path) result, elapse_list = engine(img) boxes, txts, scores = list(zip(*result)) res = vis(img, boxes) cv2.imwrite(\"only_vis_det.png\", res) import cv2 from rapidocr_onnxruntime import RapidOCR, VisRes engine = RapidOCR() vis = VisRes() image_path = \"tests/test_files/ch_en_num.jpg\" img = cv2.imread(image_path) result, elapse_list = engine(img) boxes, txts, scores = list(zip(*result)) font_path=\"resources/fonts/FZYTK.TTF\" res = vis(img, boxes, txts, scores, font_path) cv2.imwrite(\"vis_det_rec.png\", res) "
+                content: "初始化 link类RapidOCR是主类，其初始化函数如下：\nclass RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：\n以config.yaml方式\n找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml engine = RapidOCR(config_path=\"your.yaml\") (推荐) 以具体参数传入，参数基本和config.yaml中对应，只是个别名称有所区别。\ninfo 以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = \"min\", det_thresh: float = 0.3, det_box_thresh: float = 0.5, det_unclip_ratio: float = 1.6, det_donot_use_dilation: bool = False, det_score_mode: str = \"fast\", cls_use_cuda: bool = False, cls_model_path: Optional[str] = None, cls_image_shape: List[int] = [3, 48, 192], cls_label_list: List[str] = [\"0\", \"180\"], cls_batch_num: int = 6, cls_thresh: float = 0.9, rec_use_cuda: bool = False, rec_model_path: Optional[str] = None, rec_img_shape: List[int] = [3, 48, 320], rec_batch_num: int = 6, ): pass engine = RapidOCR() res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True) 输入 link info 确保输入模型前的图像通道顺序为BGR即可。当前LoadImage类内部已经对此做了处理，参考下面写法即可正常使用。 支持4种输入类型：Union[str, np.ndarray, bytes, Path, PIL.Image.Image]\nstr np.ndarray PIL.Image.Image Bytes Path from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path) print(result) print(elapse) import cv2 from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img = cv2.imread('tests/test_files/ch_en_num.jpg') result, elapse = engine(img) print(result) print(elapse) from PIL import Image from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img = Image.open('tests/test_files/ch_en_num.jpg') result, elapse = engine(img) print(result) print(elapse) from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as f: img = f.read() result, elapse = engine(img) print(result) print(elapse) from pathlib import Path from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = Path('tests/test_files/ch_en_num.jpg') result, elapse = engine(img_path) print(result) print(elapse) 输出 link类RapidOCR在调用时，有三个参数use_det | use_cls | use_rec，可以控制是否使用检测、方向分类和识别这三部分。不同的参数，决定了不同的输出，详细搭配如下：\n只有检测 只有分类 只有识别 检测 + 识别 分类 + 识别 检测 + 分类 + 识别 from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=True, use_cls=False, use_rec=False) print(result) print(elapse) 返回值result: List[List[float]] (每个框的坐标[左上, 右上, 右下, 左下])\n[ [[5.0, 2.0], [322.0, 9.0], [319.0, 103.0], [3.0, 96.0]], [[70.0, 98.0], [252.0, 97.0], [252.0, 125.0], [70.0, 126.0]], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=False) print(result) print(elapse) 返回值result: List[List[str, float]] ([方向0或180, 置信度])\n[ ['0', 0.9998784], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=False, use_cls=False, use_rec=True) print(result) print(elapse) 返回值result: List[List[str, float]] ([识别的文本, 置信度])\n[ ['韩国小馆', 0.7992169380187988], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=True, use_cls=False, use_rec=True) print(result) print(elapse) 返回值result: List[List[float], str, float] ([[左上, 右上, 右下, 左下], 文本内容, 置信度])\n[ [[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], '正品促销', '0.7986101984977723'], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], '大桶装更划算', '0.7368737288883754'], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=True) print(result) print(elapse) 返回值result: List[List[str, float]] ([识别的文本, 置信度])\n[ ['韩国小馆', 0.7992169380187988], ... ] from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = 'tests/test_files/ch_en_num.jpg' # 默认都为True result, elapse = engine(img_path, use_det=True, use_cls=True, use_rec=True) print(result) print(elapse) 返回值result: List[List[float], str, float] ([[左上, 右上, 右下, 左下], 文本内容, 置信度])\n[ [[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], '正品促销', '0.7986101984977723'], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], '大桶装更划算', '0.7368737288883754'], ... ] 可视化查看结果 link为了便于查看检测和识别结果，该库中封装了VisRes类，可借助该类快速可视化查看结果。\ninfo 可视化时，需要提供字体文件。下载链接：link\n只可视化检测 可视化检测和识别 import cv2 from rapidocr_onnxruntime import RapidOCR, VisRes engine = RapidOCR() vis = VisRes() image_path = \"tests/test_files/ch_en_num.jpg\" img = cv2.imread(image_path) result, elapse_list = engine(img) boxes, txts, scores = list(zip(*result)) res = vis(img, boxes) cv2.imwrite(\"only_vis_det.png\", res) import cv2 from rapidocr_onnxruntime import RapidOCR, VisRes engine = RapidOCR() vis = VisRes() image_path = \"tests/test_files/ch_en_num.jpg\" img = cv2.imread(image_path) result, elapse_list = engine(img) boxes, txts, scores = list(zip(*result)) font_path=\"resources/fonts/FZYTK.TTF\" res = vis(img, boxes, txts, scores, font_path) cv2.imwrite(\"vis_det_rec.png\", res) "
             }
         );
     index.add(

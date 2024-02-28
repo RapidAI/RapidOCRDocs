@@ -63,7 +63,7 @@ class RapidOCR:
   ```
 
 ### 输入
-{{< alert context="info" text="确保输入模型前的图像通道顺序为BGR即可。当前`LoadImage`类内部已经对此做了处理，参考下面写法即可正常使用。" />}}
+{{< alert context="info" text="确保输入模型前的图像通道顺序为BGR。当前`LoadImage`类内部已经对此做了处理，参考下面写法即可正常使用。" />}}
 
 支持4种输入类型：`Union[str, np.ndarray, bytes, Path, PIL.Image.Image]`
 
@@ -287,7 +287,7 @@ print(elapse)
 ### 可视化查看结果
 为了便于查看检测和识别结果，该库中封装了[`VisRes`](https://github.com/RapidAI/RapidOCR/blob/a981e21743f03d9bbfbe596974123fecfe8a7d62/python/rapidocr_onnxruntime/utils.py#L351)类，可借助该类快速可视化查看结果。
 
-{{< alert context="info" text="可视化时，需要提供字体文件。下载链接：[link](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/FZYTK.TTF)" />}}
+{{< alert context="info" text="可视化识别结果时，需要提供字体文件。下载链接：[link](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/FZYTK.TTF)" />}}
 
 {{< tabs tabTotal="2">}}
 {{% tab tabName="只可视化检测" %}}

@@ -63,9 +63,11 @@ class RapidOCR:
   ```
 
 ### 输入
-支持4种输入类型：`Union[str, np.ndarray, bytes, Path]`
+{{< alert context="info" text="确保输入模型前的图像通道顺序为BGR即可。当前`LoadImage`类内部已经对此做了处理，参考下面写法即可正常使用。" />}}
 
-{{< tabs tabTotal="4">}}
+支持4种输入类型：`Union[str, np.ndarray, bytes, Path, PIL.Image.Image]`
+
+{{< tabs tabTotal="5">}}
 {{% tab tabName="str" %}}
 
 ```python {linenos=table}
@@ -88,6 +90,20 @@ from rapidocr_onnxruntime import RapidOCR
 
 engine = RapidOCR()
 img = cv2.imread('tests/test_files/ch_en_num.jpg')
+result, elapse = engine(img)
+print(result)
+print(elapse)
+```
+
+{{% /tab %}}
+{{% tab tabName="PIL.Image.Image" %}}
+
+```python {linenos=table}
+from PIL import Image
+from rapidocr_onnxruntime import RapidOCR
+
+engine = RapidOCR()
+img = Image.open('tests/test_files/ch_en_num.jpg')
 result, elapse = engine(img)
 print(result)
 print(elapse)

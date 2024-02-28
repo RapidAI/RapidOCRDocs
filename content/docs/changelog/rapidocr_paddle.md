@@ -9,6 +9,9 @@ toc: true
 description: ""
 ---
 
+#### 2024-02-28 v1.3.15 update:
+同`rapidocr_onnxruntime` [Change log](./rapidocr.md#🔖2024-02-28-v1313-update)
+
 #### 2024-02-27 v1.3.14 update:
 同`rapidocr_onnxruntime` [Change log](./rapidocr.md#🍉2024-02-27-v1312-update)
 

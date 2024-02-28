@@ -9,6 +9,10 @@ toc: true
 description: ""
 ---
 
+#### 🔖2024-02-28 v1.3.13 update:
+- 优化`LoadImage`类，添加对输入`PIL.Image.Image`的支持
+- 修复不同输入类型下，图像通道顺序不同的问题
+
 #### 🍉2024-02-27 v1.3.12 update:
 可视化函数适配Pillow v9和v10两个版本，自动根据各个版本情况，来选择相应获得char大小的函数
 

@@ -105,11 +105,8 @@ print(response.json())
             }
         }
         ```
-    - 如果没有检测到文字，则会输出空json(`{}`)。
+    - 如果没有检测到文字，则会输出空字典(`{}`)。
 - 示例结果：
-    <details>
-    <summary>详情</summary>
-
     ```json {linenos=table}
     {
         "0": {
@@ -154,6 +151,5 @@ print(response.json())
         }
     }
     ```
-    </details>
 
 {{< alert context="warning" text="OCR API的输出结果为最原始结果，大家可按需进一步扩展。" />}}

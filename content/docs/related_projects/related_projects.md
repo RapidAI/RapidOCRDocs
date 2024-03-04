@@ -54,6 +54,7 @@ TODO
   - 英文版面分析数据集：
     - [PubLayNet](https://github.com/ibm-aur-nlp/PubLayNet): IBM构建，34万张图像，分为5类：text, title list table figure。
     - [DocBank](https://doc-analysis.github.io/docbank-page/index.html)：微软亚洲研究院构建，50万英文文档图像，分为12类：摘要、作者、标题、公式、图形、页脚、列表、段落、参考、节标题、表格和文章标题。
+    - [D4LA](https://modelscope.cn/datasets/iic/D4LA/summary): 阿里通义实验室构建，11092张图像，12个文档种类，27个类别，手工标注。详情可参见论文[Vision Grid Transformer for Document Layout Analysis](https://arxiv.org/pdf/2308.14978.pdf)
 
   - 中文版面分析数据集：
     - [CDLA](https://github.com/buptlihang/CDLA)：中文文档版面分析数据集，面向中文文献类（论文）场景，总共6000张（5000训练，1000测试），分为10类：正文、标题、图片、图片标题、表格、表格标题、页眉、页脚、注释和公式。

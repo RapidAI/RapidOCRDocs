@@ -435,7 +435,7 @@ QQ交流群 link欢迎加入我们的QQ群下载模型及测试程序。1群：8
       <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/</guid>
-      <description> 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&amp;gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 </description>
+      <description> 🥥2024-03-04 v0.0.6 update: link 优化图像读取部分，与rapidocr_onnxruntime&amp;gt;=1.3.13版本保持一致 统一接口返回值类型为字典 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&amp;gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 </description>
     </item>
     
   </channel>

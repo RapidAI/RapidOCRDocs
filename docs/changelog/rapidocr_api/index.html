@@ -33,14 +33,14 @@
 <link rel="icon" type="image/png" sizes="16x16" href="https://rapidai.github.io/RapidOCRDocs/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://rapidai.github.io/RapidOCRDocs/site.webmanifest">
 <meta property="og:title" content="rapidocr_api" />
-<meta property="og:description" content=" 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 " />
+<meta property="og:description" content=" 🥥2024-03-04 v0.0.6 update: link 优化图像读取部分，与rapidocr_onnxruntime&gt;=1.3.13版本保持一致 统一接口返回值类型为字典 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/docs/changelog/rapidocr_api/" /><meta property="og:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_17757599498868929685.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-09-28T08:38:57+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2024-03-04T15:21:12+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://rapidai.github.io/RapidOCRDocs/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_17757599498868929685.png"/>
 <meta name="twitter:title" content="rapidocr_api"/>
-<meta name="twitter:description" content=" 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 "/>
+<meta name="twitter:description" content=" 🥥2024-03-04 v0.0.6 update: link 优化图像读取部分，与rapidocr_onnxruntime&gt;=1.3.13版本保持一致 统一接口返回值类型为字典 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web&gt;0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 "/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -648,6 +648,7 @@
           <ul>
             <li>
               <ul>
+                <li><a href="#2024-03-04-v006-update">🥥2024-03-04 v0.0.6 update:</a></li>
                 <li><a href="#2023-05-22-api-update">🍜2023-05-22 api update:</a></li>
               </ul>
             </li>
@@ -672,6 +673,7 @@
           <ul>
             <li>
               <ul>
+                <li><a href="#2024-03-04-v006-update">🥥2024-03-04 v0.0.6 update:</a></li>
                 <li><a href="#2023-05-22-api-update">🍜2023-05-22 api update:</a></li>
               </ul>
             </li>
@@ -702,6 +704,10 @@
     <a href="https://pypi.org/project/rapidocr-api/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-api"></a>
     <a href="https://pepy.tech/project/rapidocr_api"><img src="https://static.pepy.tech/personalized-badge/rapidocr_api?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
+<h4 id="2024-03-04-v006-update">🥥2024-03-04 v0.0.6 update: <a href="#2024-03-04-v006-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>优化图像读取部分，与<code>rapidocr_onnxruntime&gt;=1.3.13</code>版本保持一致</li>
+<li>统一接口返回值类型为字典</li>
+</ul>
 <h4 id="2023-05-22-api-update">🍜2023-05-22 api update: <a href="#2023-05-22-api-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
 <li>将API从ocrweb中解耦出来，作为单独模块维护，详情参见<a href="https://github.com/RapidAI/RapidOCR/tree/main/api" rel="external" target="_blank">API<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
 <li><code>rapidocr_web&gt;0.1.6</code>之后，将不支持<code>pip install rapidocr_web[api]</code>方式安装，可直接<code>pip install rapidocr_api</code>安装使用。</li>
@@ -743,9 +749,9 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-28T08:38:57&#43;0800"
-            title="28 Sep 2023, 08:38 &#43;0800">
-            28 Sep 2023, 08:38 &#43;0800
+            data-authdate="2024-03-04T15:21:12&#43;0800"
+            title="04 Mar 2024, 15:21 &#43;0800">
+            04 Mar 2024, 15:21 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1433,7 +1439,7 @@
                 href: "\/RapidOCRDocs\/docs\/install_usage\/rapidocr_api\/",
                 title: "rapidocr_api",
                 description: "简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速调用rapidocr_onnxruntime的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件方式发送POST请求 以base64方式发送POST请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.",
-                content: " 简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速调用rapidocr_onnxruntime的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件方式发送POST请求 以base64方式发送POST请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as f: file_dict = {'image_file': (img_path, f, 'image/png')} response = requests.post(url, files=file_dict, timeout=60) print(response.json()) import base64 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as fa: img_str = base64.b64encode(fa.read()) payload = {'image_data': img_str} response = requests.post(url, data=payload) print(response.json()) API输出 link 输出结果说明：\n如果图像中存在文字，则会输出字典格式，具体介绍如下： { \"0\": { \"rec_txt\": \"香港深圳抽血，\", # 识别的文本 \"dt_boxes\": [ # 依次为左上角 → 右上角 → 右下角 → 左下角 [265, 18], [472, 231], [431, 271], [223, 59] ], \"score\": \"0.8175641223788261\" # 置信度 } } 如果没有检测到文字，则会输出空json({})。 示例结果：\n详情 { \"0\": { \"rec_txt\": \"8月26日！\", \"dt_boxes\": [ [333.0, 72.0], [545.0, 40.0], [552.0, 90.0], [341.0, 122.0] ], \"score\": \"0.7342076812471662\" }, \"1\": { \"rec_txt\": \"澳洲名校招生信息\", \"dt_boxes\": [ [266.0, 163.0], [612.0, 116.0], [619.0, 163.0], [272.0, 210.0] ], \"score\": \"0.8261737492349412\" }, \"2\": { \"rec_txt\": \"解读！！\", \"dt_boxes\": [ [341.0, 187.0], [595.0, 179.0], [598.0, 288.0], [344.0, 296.0] ], \"score\": \"0.6152311325073242\" }, \"3\": { \"rec_txt\": \"Rules...\", \"dt_boxes\": [ [446.0, 321.0], [560.0, 326.0], [559.0, 352.0], [445.0, 347.0] ], \"score\": \"0.8704230123096042\" } } warning OCR API的输出结果为最原始结果，大家可按需进一步扩展。 "
+                content: " 简介 link 该包是将rapidocr_onnxruntime库做了API封装，采用FastAPI + uvicorn实现。 定位是一个快速调用rapidocr_onnxruntime的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看gunicorn等。 安装 link pip install rapidocr_api 启动服务端 link 用法: $ rapidocr_api -h usage: rapidocr_api [-h] [-ip IP] [-p PORT] optional arguments: -h, --help show this help message and exit -ip IP, --ip IP IP Address -p PORT, --port PORT IP port 启动: rapidocr_api -ip 0.0.0.0 -p 9003 调用 link info 调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。 Curl调用 link curl -F image_file=@1.png http://0.0.0.0:9003/ocr Python调用 link 以文件方式发送POST请求 以base64方式发送POST请求 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as f: file_dict = {'image_file': (img_path, f, 'image/png')} response = requests.post(url, files=file_dict, timeout=60) print(response.json()) import base64 import requests url = 'http://localhost:9003/ocr' img_path = 'tests/test_files/ch_en_num.jpg' with open(img_path, 'rb') as fa: img_str = base64.b64encode(fa.read()) payload = {'image_data': img_str} response = requests.post(url, data=payload) print(response.json()) API输出 link 输出结果说明： 如果图像中存在文字，则会输出字典格式，具体介绍如下： { \"0\": { \"rec_txt\": \"香港深圳抽血，\", # 识别的文本 \"dt_boxes\": [ # 依次为左上角 → 右上角 → 右下角 → 左下角 [265, 18], [472, 231], [431, 271], [223, 59] ], \"score\": \"0.8175641223788261\" # 置信度 } } 如果没有检测到文字，则会输出空字典({})。 示例结果： { \"0\": { \"rec_txt\": \"8月26日！\", \"dt_boxes\": [ [333.0, 72.0], [545.0, 40.0], [552.0, 90.0], [341.0, 122.0] ], \"score\": \"0.7342076812471662\" }, \"1\": { \"rec_txt\": \"澳洲名校招生信息\", \"dt_boxes\": [ [266.0, 163.0], [612.0, 116.0], [619.0, 163.0], [272.0, 210.0] ], \"score\": \"0.8261737492349412\" }, \"2\": { \"rec_txt\": \"解读！！\", \"dt_boxes\": [ [341.0, 187.0], [595.0, 179.0], [598.0, 288.0], [344.0, 296.0] ], \"score\": \"0.6152311325073242\" }, \"3\": { \"rec_txt\": \"Rules...\", \"dt_boxes\": [ [446.0, 321.0], [560.0, 326.0], [559.0, 352.0], [445.0, 347.0] ], \"score\": \"0.8704230123096042\" } } warning OCR API的输出结果为最原始结果，大家可按需进一步扩展。 "
             }
         );
     index.add(
@@ -1702,8 +1708,8 @@
                 id:  47 ,
                 href: "\/RapidOCRDocs\/docs\/changelog\/rapidocr_api\/",
                 title: "rapidocr_api",
-                description: " 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web\u003e0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 ",
-                content: " 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web\u003e0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 "
+                description: " 🥥2024-03-04 v0.0.6 update: link 优化图像读取部分，与rapidocr_onnxruntime\u003e=1.3.13版本保持一致 统一接口返回值类型为字典 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web\u003e0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 ",
+                content: " 🥥2024-03-04 v0.0.6 update: link 优化图像读取部分，与rapidocr_onnxruntime\u003e=1.3.13版本保持一致 统一接口返回值类型为字典 🍜2023-05-22 api update: link 将API从ocrweb中解耦出来，作为单独模块维护，详情参见API rapidocr_web\u003e0.1.6之后，将不支持pip install rapidocr_web[api]方式安装，可直接pip install rapidocr_api安装使用。 "
             }
         );
     search.addEventListener('input', show_results, true);

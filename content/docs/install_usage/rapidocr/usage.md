@@ -20,11 +20,11 @@ class RapidOCR:
 - 以`config.yaml`方式
   1. 找到`rapidocr_onnxruntime`安装目录下的`config.yaml`文件，可以通过`pip show rapidocr_onnxruntime`找到其安装路径。
   2. 将`config.yaml`拷贝出来，放到当前运行目录下
-  3. 按需自定义参数修改即可，具体参数解释，参见[config.yaml](../../blog/config_parameter.md)
+  3. 按需自定义参数修改即可，具体参数解释，参见[config.yaml](../../blog/02_config_parameter.md)
       ```python {linenos=table}
       engine = RapidOCR(config_path="your.yaml")
       ```
-- (推荐) 以具体参数传入，参数基本和[config.yaml](../../blog/config_parameter.md)中对应，只是个别名称有所区别。
+- (推荐) 以具体参数传入，参数基本和[config.yaml](../../blog/02_config_parameter.md)中对应，只是个别名称有所区别。
 
   {{< alert context="info" text="以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。" />}}
   ```python {linenos=table}

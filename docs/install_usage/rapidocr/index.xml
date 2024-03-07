@@ -35,7 +35,7 @@ info 如果在安装过程中，出现某个依赖包不能正确安装时，可
 class RapidOCR: def __init__(self, config_path: Optional[str] = None, **kwargs): pass 支持两种自定义传参数的方案，下面分别详细说明：
 以config.yaml方式
 找到rapidocr_onnxruntime安装目录下的config.yaml文件，可以通过pip show rapidocr_onnxruntime找到其安装路径。 将config.yaml拷贝出来，放到当前运行目录下 按需自定义参数修改即可，具体参数解释，参见config.yaml engine = RapidOCR(config_path=&amp;#34;your.yaml&amp;#34;) (推荐) 以具体参数传入，参数基本和config.yaml中对应，只是个别名称有所区别。
-info 以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = &amp;#34;min&amp;#34;, det_thresh: float = 0.3, det_box_thresh: float = 0.</description>
+info 以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。intra_op_num_threads和inter_op_num_threads仅是rapidocr_onnxruntime版本下的，其他推理引擎，请参见各自源码 class RapidOCR: def __init__( self, text_score: float = 0.5, print_verbose: bool = False, min_height: int = 30, width_height_ratio: float = 8, det_use_cuda: bool = False, det_model_path: Optional[str] = None, det_limit_side_len: float = 736, det_limit_type: str = &amp;#34;min&amp;#34;, det_thresh: float = 0.3, det_box_thresh: float = 0.</description>
     </item>
     
     <item>

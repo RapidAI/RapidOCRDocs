@@ -9,6 +9,8 @@ toc: true
 description: ""
 ---
 
+{{< alert text="该部分以`rapidocr_onnxruntime`库下`config.yaml`为例作讲解，其他推理引擎相关配置，请移步具体源码查看。"/>}}
+
 #### [config.yaml源码](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr_onnxruntime/config.yaml)
 
 <details>

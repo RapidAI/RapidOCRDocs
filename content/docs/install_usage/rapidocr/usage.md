@@ -26,7 +26,7 @@ class RapidOCR:
       ```
 - (推荐) 以具体参数传入，参数基本和[config.yaml](../../blog/02_config_parameter.md)中对应，只是个别名称有所区别。
 
-  {{< alert context="info" text="以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。" />}}
+  {{< alert context="info" text="以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。<br/>`intra_op_num_threads`和`inter_op_num_threads`仅是rapidocr_onnxruntime版本下的，其他推理引擎，请参见各自源码" />}}
   ```python {linenos=table}
   class RapidOCR:
       def __init__(
@@ -54,6 +54,8 @@ class RapidOCR:
           rec_model_path: Optional[str] = None,
           rec_img_shape: List[int] = [3, 48, 320],
           rec_batch_num: int = 6,
+          intra_op_num_threads: int = -1,
+          inter_op_num_threads: int = -1,
       ):
           pass
 

@@ -206,8 +206,9 @@ result, elapse = engine(img_path, use_det=False, use_cls=False, use_rec=True)
 print(result)
 print(elapse)
 ```
+
 返回值`result`: `List[List[str, float]]` (`[识别的文本, 置信度]`)
-```python
+```python {linenos=table}
 [
     ['韩国小馆', 0.7992169380187988],
     ...
@@ -251,7 +252,7 @@ print(elapse)
 ```
 
 返回值`result`: `List[List[str, float]]` (`[识别的文本, 置信度]`)
-```python
+```python {linenos=table}
 [
     ['韩国小馆', 0.7992169380187988],
     ...

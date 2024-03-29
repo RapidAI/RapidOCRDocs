@@ -23,13 +23,13 @@ description: ""
 
 #### 2. 获得英文和数字的ONNX识别模型
 
-{{< alert text="在用PaddleOCRModelConvert工具转换模型时，字典会自动写入到onnx模型里。" />}}
+{{< alert text="- 如果想用RapidOCR仓库推理其他模型，必须要用PaddleOCRModelConvert工具转换模型 <br/> - 在用PaddleOCRModelConvert工具转换模型时，字典会自动写入到onnx模型里。" />}}
 
 模型地址: https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar
 
 字典地址: https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt
 
-基于[PaddleOCRModelConvert工具在线转换](https://www.modelscope.cn/studios/liekkas/PaddleOCRModelConverter/summary)，得到`en_PP-OCRv4_rec_infer.onnx`模型
+基于[PaddleOCRModelConvert](https://www.modelscope.cn/studios/liekkas/PaddleOCRModelConverter/summary)工具在线转换，得到`en_PP-OCRv4_rec_infer.onnx`模型
 
 #### 3. 使用该模型
 ```python {linenos=table}

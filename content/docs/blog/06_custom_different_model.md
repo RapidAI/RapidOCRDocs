@@ -22,6 +22,9 @@ description: ""
 请先根据教程，装好`rapidocr_onnxruntime`库，具体可参考：[link](../install_usage/rapidocr/install.md)
 
 #### 2. 获得英文和数字的ONNX识别模型
+
+{{< alert text="在用PaddleOCRModelConvert工具转换模型时，字典会自动写入到onnx模型里。" />}}
+
 模型地址: https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar
 
 字典地址: https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/release/2.7/ppocr/utils/en_dict.txt

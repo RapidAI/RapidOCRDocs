@@ -24,7 +24,7 @@ I like open source and AI technology because I think open source and AI will bri
 通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/RapidAI/.github/6db6b6b9273f3151094a462a61fbc8e88564562c/assets/Sponsor.png" width="40%" height="40%">
+    <img src="https://raw.githubusercontent.com/RapidAI/.github/ce6c21bf30935ad441376a29886c63d62392b354/assets/Sponsor.png" width="40%" height="40%">
 </div>
 
 #### Buy me a Coffee

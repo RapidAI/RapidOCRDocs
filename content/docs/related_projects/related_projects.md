@@ -91,6 +91,7 @@ TODO
 
 ### 印章OCR
 - 相关论文和帖子：
+  - [来也智能文档处理系统中的印章识别实践](https://laiye.com/tech-blog/2613)
   - [【技术新趋势】合合信息：复杂环境下ocr与印章识别技术理解及研发趋势](https://blog.csdn.net/INTSIG/article/details/125203307)
   - [基于文字分割的印章识别技术](https://hanspub.org/journal/PaperInformation.aspx?paperID=40945)
 - 相关工程：
@@ -99,4 +100,4 @@ TODO
   - [在线印章合成大全网站](http://www.395.net.cn/)
   - [TrOCR-Seal-Recognition](https://github.com/Gmgge/TrOCR-Seal-Recognition)
 - 数据集汇总：
-  - [来自DocDiff](https://github.com/Royalvice/DocDiff)
+  - [DocDiff](https://github.com/Royalvice/DocDiff)

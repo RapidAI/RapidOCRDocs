@@ -47,11 +47,11 @@ katex: true
 |  模型  | 模型大小| Precision | Recall | H-mean   | Speed(s/img) |
 | :---------------------------------: | :----------------: | :-------: | :----: | :----: | :------ |
 |     ch_PP-OCRv4_det_infer.onnx      |     4.5M      |  0.6958   | 0.8608 | 0.7696 |   0.6176   |
-| ch_PP-OCRv4_det_server_infer.onnx |    108M      |  0.7070   | 0.9330 | **0.8044** |   13.9348   |
+| ch_PP-OCRv4_det_server_infer.onnx |    108M      |  0.7070   | 0.9330 | 0.8044 |   13.9348   |
 ||||||
 |     ch_PP-OCRv3_det_infer.onnx      |     2.3M      |  0.7056   | 0.8402 | 0.7671 |   0.4047  |
 ||||||
-|     ch_PP-OCRv2_det_infer.onnx      |     2.2M      |  0.7850   | 0.8093 | **0.7970** |   0.3441   |
+|     ch_PP-OCRv2_det_infer.onnx      |     2.2M      |  0.7850   | 0.8093 | 0.7970 |   0.3441   |
 | ch_ppocr_server_v2.0_det_infer.onnx |     47M      |  0.6736   | 0.8402 | 0.7477 |   2.6560   |
 
 #### 文本识别模型

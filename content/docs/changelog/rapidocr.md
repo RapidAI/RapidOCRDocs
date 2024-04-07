@@ -9,6 +9,9 @@ toc: true
 description: ""
 ---
 
+#### 📘2024-04-07 v1.3.16 update:
+修复[issue #161](https://github.com/RapidAI/RapidOCR/issues/161)
+
 #### 🍿2024-03-07 v1.3.15 update:
 - 修复 [issue #158](https://github.com/RapidAI/RapidOCR/issues/158)
 - 增加三个推理引擎（onnxruntime、openvino，paddlepaddle）初始化RapidOCR类，指定线程数的参数

@@ -28,6 +28,10 @@ katex: true
 ||||||
 | ch_PP-OCRv4_det_server_infer.onnx |    108M      |  0.7922   | 0.8533 | 0.8216 |   3.9093   |
 | ch_ppocr_server_v2.0_det_infer.onnx |     47M      |  0.7298   | 0.8128 | 0.7691 |   0.7419   |
+||||||
+|     [damo/cv_proxylessnas_ocr-detection-db-line-level_damo](https://www.modelscope.cn/models/iic/cv_proxylessnas_ocr-detection-db-line-level_damo/summary)      |     5.8M      |  0.7666  | 0.8128 | 0.7890 |   0.6636   |
+|     [damo/cv_resnet18_ocr-detection-db-line-level_damo](https://www.modelscope.cn/models/iic/cv_resnet18_ocr-detection-db-line-level_damo/summary)      |     47.2M      |  0.7749  | 0.8167 | 0.7952 |   0.4121   |
+|     [damo/cv_resnet18_ocr-detection-line-level_damo](https://modelscope.cn/models/iic/cv_resnet18_ocr-detection-line-level_damo/summary) 未跑通     |     312M      |  -  | - | - |   -  |
 
 #### 文本识别模型
 - 测试集: 自己构建`中英文(168个)`

@@ -3,7 +3,7 @@ weight: 2400
 lastmod: "2022-09-29"
 draft: false
 author: "SWHL"
-title: "不同版本模型之间比较"
+title: "Benchmark: 不同版本模型之间比较"
 icon: "model_training"
 toc: true
 description: ""

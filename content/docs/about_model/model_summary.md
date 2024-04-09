@@ -14,45 +14,20 @@ katex: true
 {{< alert text="以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。"/>}}
 
 #### 文本检测模型
-{{< alert text="以下表格中推理时间是基于MacBook Pro M1运行所得，不同机器会有差别，请侧重查看彼此之间的比较。"/>}}
+{{< alert text="以下表格中推理时间是基于MacBook Pro M2运行所得，不同机器会有差别，请侧重查看彼此之间的比较。"/>}}
 
-- 评测采用的是[TextDetMetric库](https://github.com/SWHL/TextDetMetric) + [文本检测测试集](https://www.modelscope.cn/datasets/liekkas/text_det_test_dataset/summary)，详情可以移步[AI Studio](https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&shared=1&ts=1693054678460)运行查看。
-- 指标计算都是在以下参数下计算得来，差别仅在于模型文件不同。
-  <details>
+评测采用的是[TextDetMetric库](https://github.com/SWHL/TextDetMetric) + [text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)，详情可以移步[AI Studio](https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&shared=1&ts=1693054678460)运行查看。
 
-  ```yaml {linenos=table}
-  pre_process:
-      DetResizeForTest:
-          limit_side_len: 736
-          limit_type: min
-      NormalizeImage:
-          std: [0.229, 0.224, 0.225]
-          mean: [0.485, 0.456, 0.406]
-          scale: 1./255.
-          order: hwc
-      ToCHWImage:
-      KeepKeys:
-          keep_keys: ['image', 'shape']
-
-  post_process:
-      thresh: 0.3
-      box_thresh: 0.5
-      max_candidates: 1000
-      unclip_ratio: 1.6
-      use_dilation: true
-      score_mode: "fast"
-  ```
-  </details>
+指标计算都是在相同参数下计算得来，差别仅在于模型文件不同。对应模型下载地址：[link](https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main/models/text_det)。
 
 |  模型  | 模型大小| Precision | Recall | H-mean   | Speed(s/img) |
 | :---------------------------------: | :----------------: | :-------: | :----: | :----: | :------ |
-|     ch_PP-OCRv4_det_infer.onnx      |     4.5M      |  0.6958   | 0.8608 | 0.7696 |   0.6176   |
-| ch_PP-OCRv4_det_server_infer.onnx |    108M      |  0.7070   | 0.9330 | 0.8044 |   13.9348   |
+|     ch_PP-OCRv4_det_infer.onnx      |     4.5M      |  0.8300   | 0.8659 | 0.8476 |   0.2256   |
+|     ch_PP-OCRv3_det_infer.onnx      |     2.3M      |  0.8021   | 0.8457 | 0.8234 |   0.1660  |
+|     ch_PP-OCRv2_det_infer.onnx      |     2.2M      |  0.7579   | 0.8010 | 0.7788 |   0.1570   |
 ||||||
-|     ch_PP-OCRv3_det_infer.onnx      |     2.3M      |  0.7056   | 0.8402 | 0.7671 |   0.4047  |
-||||||
-|     ch_PP-OCRv2_det_infer.onnx      |     2.2M      |  0.7850   | 0.8093 | 0.7970 |   0.3441   |
-| ch_ppocr_server_v2.0_det_infer.onnx |     47M      |  0.6736   | 0.8402 | 0.7477 |   2.6560   |
+| ch_PP-OCRv4_det_server_infer.onnx |    108M      |  0.7922   | 0.8533 | 0.8216 |   3.9093   |
+| ch_ppocr_server_v2.0_det_infer.onnx |     47M      |  0.7298   | 0.8128 | 0.7691 |   0.7419   |
 
 #### 文本识别模型
 - 测试集: 自己构建`中英文(168个)`

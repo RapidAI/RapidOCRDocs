@@ -40,7 +40,7 @@ katex: true
 |rapidocr_onnxruntime==1.3.16| ch_PP-OCRv4_det_infer.onnx |   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.2256       |
 |rapidocr_openvino==1.3.16| ch_PP-OCRv4_det_infer.onnx |   4.5M   |  0.8339   | 0.8629 | 0.8481 | 0.6447       |
 |rapidocr_paddle==1.3.18 | ch_PP-OCRv4_det_infer.onnx|   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.9924       |
-git 
+
 #### 文本识别模型
 - 测试集: 自己构建`中英文(168个)`
 - 输入Shape:

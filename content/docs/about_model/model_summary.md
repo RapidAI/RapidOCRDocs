@@ -16,13 +16,13 @@ katex: true
 #### 文本检测模型
 {{< alert text="以下表格中推理时间是基于MacBook Pro M2运行所得，不同机器会有差别，请侧重查看彼此之间的比较。"/>}}
 
-评测采用的是[TextDetMetric库](https://github.com/SWHL/TextDetMetric) + [text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)，详情可以移步[AI Studio](https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&shared=1&ts=1693054678460)运行查看。
+评测采用的是`rapidocr_onnxruntime==1.3.16` + [TextDetMetric库](https://github.com/SWHL/TextDetMetric) + [text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)，详情可以移步[AI Studio](https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&shared=1&ts=1693054678460)运行查看。
 
 指标计算都是在相同参数下计算得来，差别仅在于模型文件不同。对应模型下载地址：[link](https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main/models/text_det)。
 
 |  模型  | 模型大小| Precision | Recall | H-mean   | Speed(s/img) |
 | :---------------------------------: | :----------------: | :-------: | :----: | :----: | :------ |
-|     ch_PP-OCRv4_det_infer.onnx      |     4.5M      |  0.8300   | 0.8659 | 0.8476 |   0.2256   |
+|     ch_PP-OCRv4_det_infer.onnx      |     4.5M      |  0.8301   | 0.8659 | 0.8476 |   0.2256   |
 |     ch_PP-OCRv3_det_infer.onnx      |     2.3M      |  0.8021   | 0.8457 | 0.8234 |   0.1660  |
 |     ch_PP-OCRv2_det_infer.onnx      |     2.2M      |  0.7579   | 0.8010 | 0.7788 |   0.1570   |
 ||||||
@@ -33,6 +33,14 @@ katex: true
 |     [damo/cv_resnet18_ocr-detection-db-line-level_damo](https://www.modelscope.cn/models/iic/cv_resnet18_ocr-detection-db-line-level_damo/summary)      |     47.2M      |  0.7749  | 0.8167 | 0.7952 |   0.4121   |
 |     [damo/cv_resnet18_ocr-detection-line-level_damo](https://modelscope.cn/models/iic/cv_resnet18_ocr-detection-line-level_damo/summary) 未跑通     |     312M      |  -  | - | - |   -  |
 
+
+不同推理引擎下，效果比较：
+|推理引擎|                       模型                       | 模型大小 | Precision | Recall | H-mean | Speed(s/img) |
+|:---:| :----------------------------------------------: | :------: | :-------: | :----: | :----: | :----------- |
+|rapidocr_onnxruntime==1.3.16| ch_PP-OCRv4_det_infer.onnx |   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.2256       |
+|rapidocr_openvino==1.3.16| ch_PP-OCRv4_det_infer.onnx |   4.5M   |  0.8339   | 0.8629 | 0.8481 | 0.6447       |
+|rapidocr_paddle==1.3.18 | ch_PP-OCRv4_det_infer.onnx|   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.9924       |
+git 
 #### 文本识别模型
 - 测试集: 自己构建`中英文(168个)`
 - 输入Shape:

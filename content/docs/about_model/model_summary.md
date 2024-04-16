@@ -42,24 +42,48 @@ katex: true
 |rapidocr_paddle==1.3.18 | ch_PP-OCRv4_det_infer.onnx|   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.9924       |
 
 #### 文本识别模型
-- 测试集: 自己构建`中英文(168个)`
+评测采用的是`rapidocr_onnxruntime==1.3.16` + [TextRecMetric库](https://github.com/SWHL/TextRecMetric) + [text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)。
+
+指标计算都是在相同参数下计算得来，差别仅在于模型文件不同。对应模型下载地址：[link](https://huggingface.co/SWHL/RapidOCR/tree/main)。
+
+
+|                模型                  | 对应PaddleOCR分支|  模型大小  |    Exact Match   |   Char Match     |Speed(s/img)  |
+| :----- |:---- | :-----| :-------: | :--- | :--|
+|ch_PP-OCRv4_rec_infer.onnx | release/v2.7      |       10M        |      0.8323      |     0.9355  |  0.6836 |
+|ch_PP-OCRv3_rec_infer.onnx | release/v2.6      |       11M        |      0.7097      |     0.8919  |  0.6362 |
+|ch_PP-OCRv4_rec_server_infer.onnx | release/v2.7      |       86M        |      0.7968      |     0.9381  |  0.6967 |
+|ch_PP-OCRv2_rec_infer.onnx | release/v2.3     |      8.0M        |       0.6387      |     0.8398      | 0.6138|
+|ch_ppocr_mobile_v2.0_rec_infer.onnx  |  release/v2.0    |  4.3M  |       0.5323      |     0.7823     | 0.5575|
+
+不同推理引擎下，效果比较：
+|           推理引擎           |            模型            | 模型大小 | Exact Match | Char Match | Speed(s/img) |
+| :--------------------------: | :------------------------: | :------: | :-------: | :----: | :----: |
+| rapidocr_onnxruntime==1.3.16 | ch_PP-OCRv4_rec_infer.onnx |   10M   |  0.8323   | 0.9355 | 0.6836 |
+|  rapidocr_openvino==1.3.16   | ch_PP-OCRv4_rec_infer.onnx |   10M   |  0.8323   | 0.9355 | 0.6836 |
+|   rapidocr_paddle==1.3.18    | ch_PP-OCRv4_rec_infer.onnx |   10M   |  0.8323   | 0.9355 | 0.6836 |
+
 - 输入Shape:
   - v2: `[3, 32, 320]`
   - v3~v4: `[3, 48, 320]`
+- 不同模型，实例化如下：
+  ```python  {linenos=table}
+  from rapidocr_onnxruntime import RapidOCR
 
-|                模型                  | 对应PaddleOCR分支|  模型大小  |    Exact Match   |   Char Match    | Score |Speed(s/img)  |
-| :---------------------------: |:--:| :--------------:    | :-------: | :--------------: | :-------------: | :--: |
-|ch_PP-OCRv4_rec_infer.onnx | release/v2.7      |       10M        |      0.5655      |     0.9261      |   0.7458   | 0.0218 |
-| ch_PP-OCRv4_rec_server_infer.onnx | release/v2.7      |  86M  |        0.6310      |     0.9382      | **0.7846**   | 0.1622 |
-||||||||
-|     ch_PP-OCRv3_rec_infer.onnx | release/v2.6      |       10M         |     0.5893      |     0.9209      |  **0.7551**   |  0.0183 |
-||||||||
-|     ch_PP-OCRv2_rec_infer.onnx | release/v2.3     |      8.0M        |       0.4881      |     0.9029      | 0.6955   | 0.0193 |
-| ch_ppocr_mobile_v2.0_rec_infer.onnx | release/v2.0 |      4.3M        |        0.5595      |     0.8979      | 0.7287   |0.0045  |
+  # v3 or v4
+  engine = RapidOCR(
+    rec_model_path="models/ch_PP-OCRv3_rec_infer.onnx",
+  )
+
+  # v2
+  engine = RapidOCR(
+    rec_model_path="models/ch_ppocr_mobile_v2.0_rec_infer.onnx",
+    rec_img_shape=[3, 32, 320],
+  )
+  ```
 
 #### 指标说明
 
-{{< tabs tabTotal="3">}}
+{{< tabs tabTotal="2">}}
 {{% tab tabName="Exact Match (精确匹配准确率)" %}}
 
 $$
@@ -99,13 +123,6 @@ $$
 - $Levenshtein(x, y)$: 求字符串 $x$ 和字符串 $y$ 的编辑距离
 - $max(x, y)$: 求 $x$ 和 $y$ 的最大值
 - $len(x)$: 求所给字符串 $x$ 的长度
-
-{{% /tab %}}
-{{% tab tabName="Score(两者综合)" %}}
-
-$$
-Score = \frac{1}{2}(Exact\ Match + Char\ Match)
-$$
 
 {{% /tab %}}
 {{< /tabs >}}

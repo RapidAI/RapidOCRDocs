@@ -37,9 +37,9 @@ katex: true
 | ch_PP-OCRv4_det_server_infer.onnx |    108M      |  0.7922   | 0.8533 | 0.8216 |   3.9093   |
 | ch_ppocr_server_v2.0_det_infer.onnx |     47M      |  0.7298   | 0.8128 | 0.7691 |   0.7419   |
 ||||||
-|     [damo/cv_proxylessnas_ocr-detection-db-line-level_damo](https://www.modelscope.cn/models/iic/cv_proxylessnas_ocr-detection-db-line-level_damo/summary)      |     5.8M      |  0.7666  | 0.8128 | 0.7890 |   0.6636   |
-|     [damo/cv_resnet18_ocr-detection-db-line-level_damo](https://www.modelscope.cn/models/iic/cv_resnet18_ocr-detection-db-line-level_damo/summary)      |     47.2M      |  0.7749  | 0.8167 | 0.7952 |   0.4121   |
-|     [damo/cv_resnet18_ocr-detection-line-level_damo](https://modelscope.cn/models/iic/cv_resnet18_ocr-detection-line-level_damo/summary) 未跑通     |     312M      |  -  | - | - |   -  |
+|     [读光-文字检测-轻量化端侧DBNet行检测模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_proxylessnas_ocr-detection-db-line-level_damo/summary)      |     5.8M      |  0.7666  | 0.8128 | 0.7890 |   0.6636   |
+|     [读光-文字检测-DBNet行检测模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_resnet18_ocr-detection-db-line-level_damo/summary)      |     47.2M      |  0.7749  | 0.8167 | 0.7952 |   0.4121   |
+|     [读光-文字检测-行检测模型-中英-通用领域](https://modelscope.cn/models/iic/cv_resnet18_ocr-detection-line-level_damo/summary) 未跑通     |     312M      |  -  | - | - |   -  |
 
 
 不同推理引擎下，效果比较：
@@ -63,6 +63,13 @@ katex: true
 |ch_PP-OCRv4_rec_server_infer.onnx | release/v2.7      |       86M        |      0.7968      |     0.9381  |  0.6967 |
 |ch_PP-OCRv2_rec_infer.onnx | release/v2.3     |      8.0M        |       0.6387      |     0.8398      | 0.6138|
 |ch_ppocr_mobile_v2.0_rec_infer.onnx  |  release/v2.0    |  4.3M  |       0.5323      |     0.7823     | 0.5575|
+|[读光-文字识别-行识别模型-中英-文档印刷体文本领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-document_damo/summary)  |  -    |  73M  |       0.5968      |     0.7705     | - |
+|[读光-文字识别-行识别模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-general_damo/summary)  |  -    |  73M  |       0.5839      |     0.7615     | - |
+|[读光-文字识别-行识别模型-中英-自然场景文本领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-scene_damo/summary)  |  -    |  73M  |       0.5903      |     0.7779     | - |
+|[读光-文字识别-轻量化端侧识别模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_LightweightEdge_ocr-recognitoin-general_damo/summary)  |  -    |  7.4M  |       0.5484      |     0.7515     | - |
+|[读光-文字识别-CRNN模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_crnn_ocr-recognition-general_damo/summary)  |  -    |  46M  |       0.5935      |     0.7671     | - |
+|[OFA文字识别-中文-通用场景-base](https://www.modelscope.cn/models/iic/ofa_ocr-recognition_general_base_zh/summary) 未跑通 |  -    |  -  |       -      | -  | - |
+
 
 不同推理引擎下，效果比较：
 |           推理引擎           |            模型            | 模型大小 | Exact Match | Char Match | Speed(s/img) |
@@ -74,7 +81,8 @@ katex: true
 - 输入Shape:
   - v2: `[3, 32, 320]`
   - v3~v4: `[3, 48, 320]`
-- 不同模型，实例化如下：
+
+- 不同模型，实例化示例如下：
   ```python  {linenos=table}
   from rapidocr_onnxruntime import RapidOCR
 

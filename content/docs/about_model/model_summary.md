@@ -3,15 +3,26 @@ weight: 2400
 lastmod: "2022-09-29"
 draft: false
 author: "SWHL"
-title: "Benchmark: 不同版本模型之间比较"
+title: "开源OCR模型对比"
 icon: "model_training"
 toc: true
 description: ""
 katex: true
 ---
 
-### 各个版本ONNX模型效果对比(仅供参考)
-以下测试结果均在所指定的开源评测集上评测所得，不代表在其他测试集上结果也是如此，仅供参考。
+### 引言
+目前，开源的项目中有很多OCR模型，但是没有一个统一的基准来衡量哪个是更好一些的。
+面对这么多的模型，让我们有些不知所措。为此，最近一段时间以来，我一直想要构建这样一个基准，现在来看，已经初步具有雏形。
+
+为了能更好地评测各个模型效果，收集标注了两个开源评测集：
+- [text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)
+- [text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)
+
+为了能够方便计算各个模型指标，整理开源了两个计算常用指标的库：
+- [TextDetMetric](https://github.com/SWHL/TextDetMetric)
+- [TextRecMetric](https://github.com/SWHL/TextRecMetric)
+
+以下结果均是基于以上4个库来的，其指标结果仅仅代表在指定评测集上效果，不代表在其他测试集上结果也是如此，仅供参考。
 
 以下表格中推理时间是基于MacBook Pro M2运行所得，不同机器会有差别，请侧重查看彼此之间的比较。
 

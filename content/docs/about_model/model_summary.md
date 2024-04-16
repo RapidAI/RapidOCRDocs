@@ -11,14 +11,22 @@ katex: true
 ---
 
 ### 各个版本ONNX模型效果对比(仅供参考)
-{{< alert text="以下测试结果均在自己构建测试集上评测所得，不代表在其他测试集上结果也是如此。"/>}}
+以下测试结果均在所指定的开源评测集上评测所得，不代表在其他测试集上结果也是如此，仅供参考。
+
+以下表格中推理时间是基于MacBook Pro M2运行所得，不同机器会有差别，请侧重查看彼此之间的比较。
+
+指标计算都是在相同参数下计算得来，差别仅在于模型文件不同。
+
+对应模型下载地址，参见：[link](./download_onnx.md)。
+
 
 #### 文本检测模型
-{{< alert text="以下表格中推理时间是基于MacBook Pro M2运行所得，不同机器会有差别，请侧重查看彼此之间的比较。"/>}}
+评测依赖仓库：
+- `rapidocr_onnxruntime==1.3.16`: [link](https://github.com/RapidAI/RapidOCR)
+- 计算指标库 TextDetMetric: [link](https://github.com/SWHL/TextDetMetric)
+- 测试集 text_det_test_dataset: [link](https://huggingface.co/datasets/SWHL/text_det_test_dataset)
 
-评测采用的是`rapidocr_onnxruntime==1.3.16` + [TextDetMetric库](https://github.com/SWHL/TextDetMetric) + [text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)，详情可以移步[AI Studio](https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&shared=1&ts=1693054678460)运行查看。
-
-指标计算都是在相同参数下计算得来，差别仅在于模型文件不同。对应模型下载地址：[link](https://huggingface.co/spaces/SWHL/RapidOCRDemo/tree/main/models/text_det)。
+详情可以移步[AI Studio](https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&shared=1&ts=1693054678460)运行查看。
 
 |  模型  | 模型大小| Precision | Recall | H-mean   | Speed(s/img) |
 | :---------------------------------: | :----------------: | :-------: | :----: | :----: | :------ |
@@ -42,9 +50,10 @@ katex: true
 |rapidocr_paddle==1.3.18 | ch_PP-OCRv4_det_infer.onnx|   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.9924       |
 
 #### 文本识别模型
-评测采用的是`rapidocr_onnxruntime==1.3.16` + [TextRecMetric库](https://github.com/SWHL/TextRecMetric) + [text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)。
-
-指标计算都是在相同参数下计算得来，差别仅在于模型文件不同。对应模型下载地址：[link](https://huggingface.co/SWHL/RapidOCR/tree/main)。
+评测依赖仓库：
+- `rapidocr_onnxruntime==1.3.16`: [link](https://github.com/RapidAI/RapidOCR)
+- 计算指标库 TextRecMetric: [link](https://github.com/SWHL/TextRecMetric)
+- 测试集 text_rec_test_dataset: [link](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)
 
 
 |                模型                  | 对应PaddleOCR分支|  模型大小  |    Exact Match   |   Char Match     |Speed(s/img)  |
@@ -80,49 +89,3 @@ katex: true
     rec_img_shape=[3, 32, 320],
   )
   ```
-
-#### 指标说明
-
-{{< tabs tabTotal="2">}}
-{{% tab tabName="Exact Match (精确匹配准确率)" %}}
-
-$$
-Exact\ Match = \frac{1}{N}\sum_{i=0}^{N} s(p_{i}, g_{i})
-$$
-
-$$
-s(p_{i}, g_{i})  = \begin{cases}
-    1 & \text{if } p_{i} = g_{i} \\
-    0 & \text{otherwise }
-\end{cases}
-$$
-
-
-- $N$: 总的文本行个数
-- $p_{i}$: 第 $i$ 条文本行识别结果
-- $g_{i}$: 第 $i$ 条文本行对应的真实标签
-
-{{% /tab %}}
-{{% tab tabName="Char Match (字符级准确率)" %}}
-
-$$
-Char\ Match = 1 - \frac{1}{N} \sum_{i=0}^{N} s(p_{i}, g_{i})
-$$
-
-$$
-s(p_{i}, g_{i}) = 1 - NL(p_{i}, g_{i})
-$$
-
-$$
-NL(p_{i}, g_{i}) = \frac{Levenshtein(p_{i}, g_{i})}{\max \big(len(p_{i}), len(g_{i}) \big)}
-$$
-
-- $N$: 总的文本行个数
-- $p_{i}$: 第 $i$ 条文本行识别结果
-- $g_{i}$: 第 $i$ 条文本行对应的真实标签
-- $Levenshtein(x, y)$: 求字符串 $x$ 和字符串 $y$ 的编辑距离
-- $max(x, y)$: 求 $x$ 和 $y$ 的最大值
-- $len(x)$: 求所给字符串 $x$ 的长度
-
-{{% /tab %}}
-{{< /tabs >}}

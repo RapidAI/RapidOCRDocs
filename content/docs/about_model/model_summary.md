@@ -29,7 +29,7 @@ katex: true
 详情可以移步[AI Studio](https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&shared=1&ts=1693054678460)运行查看。
 
 |  模型  | 模型大小| Precision | Recall | H-mean   | Speed(s/img) |
-| :---------------------------------: | :----------------: | :-------: | :----: | :----: | :------ |
+| :---------------------------- | :----------------: | :-------: | :----: | :----: | :------ |
 |     ch_PP-OCRv4_det_infer.onnx      |     4.5M      |  0.8301   | 0.8659 | 0.8476 |   0.2256   |
 |     ch_PP-OCRv3_det_infer.onnx      |     2.3M      |  0.8021   | 0.8457 | 0.8234 |   0.1660  |
 |     ch_PP-OCRv2_det_infer.onnx      |     2.2M      |  0.7579   | 0.8010 | 0.7788 |   0.1570   |
@@ -44,7 +44,7 @@ katex: true
 
 不同推理引擎下，效果比较：
 |推理引擎|                       模型                       | 模型大小 | Precision | Recall | H-mean | Speed(s/img) |
-|:---:| :----------------------------------------------: | :------: | :-------: | :----: | :----: | :----------- |
+|:--| :---- | :------: | :-------: | :----: | :----: | :---- |
 |rapidocr_onnxruntime==1.3.16| ch_PP-OCRv4_det_infer.onnx |   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.2256       |
 |rapidocr_openvino==1.3.16| ch_PP-OCRv4_det_infer.onnx |   4.5M   |  0.8339   | 0.8629 | 0.8481 | 0.6447       |
 |rapidocr_paddle==1.3.18 | ch_PP-OCRv4_det_infer.onnx|   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.9924       |
@@ -66,7 +66,7 @@ katex: true
 
 不同推理引擎下，效果比较：
 |           推理引擎           |            模型            | 模型大小 | Exact Match | Char Match | Speed(s/img) |
-| :--------------------------: | :------------------------: | :------: | :-------: | :----: | :----: |
+| :--- | :------ | :------: | :-------: | :----: | :----: |
 | rapidocr_onnxruntime==1.3.16 | ch_PP-OCRv4_rec_infer.onnx |   10M   |  0.8323   | 0.9355 | 0.6836 |
 |  rapidocr_openvino==1.3.16   | ch_PP-OCRv4_rec_infer.onnx |   10M   |  0.8323   | 0.9355 | 0.6836 |
 |   rapidocr_paddle==1.3.18    | ch_PP-OCRv4_rec_infer.onnx |   10M   |  0.8323   | 0.9355 | 0.6836 |

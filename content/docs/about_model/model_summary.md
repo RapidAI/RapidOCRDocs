@@ -12,7 +12,8 @@ katex: true
 
 ### 引言
 目前，开源的项目中有很多OCR模型，但是没有一个统一的基准来衡量哪个是更好一些的。
-面对这么多的模型，让我们有些不知所措。为此，最近一段时间以来，我一直想要构建这样一个基准，现在来看，已经初步具有雏形。
+
+面对这么多的模型，让我们有些不知所措。为此，最近一段时间以来，我一直想要构建这样一个基准。现在来看，已经初步具有雏形。
 
 为了能更好地评测各个模型效果，收集标注了两个开源评测集：
 - [text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)
@@ -29,6 +30,16 @@ katex: true
 指标计算都是在相同参数下计算得来，差别仅在于模型文件不同。
 
 对应模型下载地址，参见：[link](./download_onnx.md)。
+
+
+#### 已知开源OCR项目
+- [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)
+- [EasyOCR](https://github.com/JaidedAI/EasyOCR)
+- [MMOCR](https://github.com/open-mmlab/mmocr/blob/main/README_zh-CN.md)
+- [CnOCR](https://github.com/breezedeus/cnocr)
+- [DAVAR-Lab-OCR](https://github.com/hikopensource/DAVAR-Lab-OCR)
+- [mindocr](https://github.com/mindspore-lab/mindocr)
+- [surya](https://github.com/VikParuchuri/surya)
 
 
 #### 文本检测模型

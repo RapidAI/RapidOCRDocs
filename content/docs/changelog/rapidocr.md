@@ -9,6 +9,11 @@ toc: true
 description: ""
 ---
 
+#### 🔥2024-04-19 v1.3.17 update:
+- Merge [PR](https://github.com/RapidAI/RapidOCR/pull/171)
+- 修复[issue #170](https://github.com/RapidAI/RapidOCR/issues/170)
+
+
 #### 📘2024-04-07 v1.3.16 update:
 修复[issue #161](https://github.com/RapidAI/RapidOCR/issues/161)
 

@@ -60,3 +60,20 @@ print(result)
     [[[202.0, 391.0], [285.0, 391.0], [285.0, 413.0], [202.0, 413.0]], '假一赔十', '0.6546663284301758']
 ]
 ```
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>

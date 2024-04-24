@@ -63,3 +63,20 @@ toc: true
 
 #### Q: 边缘总有一行文字无法识别，怎么办？
 **A:** 在 padding 参数中添加一个值 ，默认是0,你可以添加5或10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

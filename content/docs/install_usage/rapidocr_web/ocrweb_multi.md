@@ -75,3 +75,21 @@ description: ""
 3. 打开 http://127.0.0.1:8001 即可， enjoy it!
 
    ![ocr_web_multi_demo](https://raw.githubusercontent.com/RapidAI/RapidOCR/main/ocrweb_multi/assets/ocr_web_multi.jpg)
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

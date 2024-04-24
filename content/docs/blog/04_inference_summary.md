@@ -65,3 +65,20 @@ FastDeploy是一款全场景、易用灵活、极致高效的AI推理部署工�
 PaddleX 集成飞桨智能视觉领域图像分类、目标检测、语义分割、实例分割任务能力，将深度学习开发全流程从数据准备、模型训练与优化到多端部署端到端打通，并提供统一任务API接口及图形化开发界面Demo。开发者无需分别安装不同套件，以低代码的形式即可快速完成飞桨全流程开发。
 
 总结来说，PaddleX就是一个整合已有模型的低代码平台。严格意义来说，不算一个推理引擎。
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

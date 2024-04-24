@@ -38,3 +38,21 @@ description: ""
 
 #### 2023-10-23 v1.3.9 update:
 首次适配PaddlePaddle框架，作为GPU端推理引擎
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

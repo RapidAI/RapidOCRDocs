@@ -207,3 +207,21 @@ Merge [PR #151](https://github.com/RapidAI/RapidOCR/pull/151) by [LWQ2EDU](https
 #### 2021-03-24 udpate:
 - 新模型已经完全兼容ONNXRuntime 1.7 或更高版本。 特别感谢：@Channingss
 - 新版onnxruntime比1.6.0 性能提升40%以上。
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

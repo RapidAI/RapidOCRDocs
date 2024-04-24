@@ -29,3 +29,21 @@ description: ""
 - API部署改为FastAPI库支持
 - 将API模式与Web解耦合，可通过`pip install rapidocr_web[api]`来选择性安装
 - 详情参见：[link](https://github.com/RapidAI/RapidOCR/blob/main/ocrweb/README.md)
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

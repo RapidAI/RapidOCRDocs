@@ -20,3 +20,21 @@ toc: true
 #### 服务三：国产操作系统OCR Docker部署
 - 提供国产操作系统（**海光、中科方德、麒麟**等等）OCR Docker部署服务。
 - 有意者 → ✉ liekkaskono@163.com。
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

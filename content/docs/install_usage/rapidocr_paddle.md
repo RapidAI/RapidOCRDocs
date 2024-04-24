@@ -88,3 +88,21 @@ result, elapse_list = engine(image_path)
 | :--------------------: | :-------------: | :------: |
 | `rapidocr_onnxruntime` |     1.6505      | CPU 2 Cores RAM 16GB         |
 | `rapidocr_paddle[GPU]` |     0.0508      | CPU 2 Cores RAM 16GB <br/> GPU Tesla V100 16G |
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

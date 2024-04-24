@@ -81,3 +81,20 @@ description: ""
 #### 情况二：轻量中英文模型对个别英文或数字识别错误
 1. 更换不同版本的识别模型，包括`v2`、`v3`和`server`版尝试
 2. 如果是只识别英文单词和数字，可以更换英文和数字专有模型（`en_PP-OCRv3_rec_infer.onnx`和`en_number_mobile_v2.0_rec_infer.onnx`）
+
+<script src="https://giscus.app/client.js"
+        data-repo="RapidAI/RapidOCRDocs"
+        data-repo-id="R_kgDOKS1JHQ"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOKS1JHc4Ce5E0"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

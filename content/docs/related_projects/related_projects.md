@@ -13,6 +13,10 @@ toc: true
 - 这里将会汇总出以下几个OCR周边项目的一些文档和资源，包括学术动态和一些工程化代码。
 - 欢迎各位小伙伴提供PR。
 
+### 阅读序列抽取
+数据集：
+- [ReadingBank](https://github.com/doc-analysis/ReadingBank)
+
 ### 手写体识别
 TODO
 

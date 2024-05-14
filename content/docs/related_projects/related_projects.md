@@ -47,6 +47,7 @@ TODO
 ### 文档图像矫正
 - [PaperEdge](https://github.com/cvlab-stonybrook/PaperEdge)：文档图像矫正 | [Demo](https://huggingface.co/spaces/SWHL/PaperEdgeDemo)
 - [DocTr++](https://arxiv.org/pdf/2304.08796.pdf) | [Demo](https://demo.doctrp.top/) | [Code](https://github.com/fh2019ustc/DocTr-Plus)
+- [DocRes](https://github.com/ZZZHANG-jx/DocRes)： 统一文档图像恢复任务的广义模型
 
 ### 版面分析
 - 相关论文和帖子：

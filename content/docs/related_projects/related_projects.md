@@ -38,6 +38,7 @@ TODO
 ### 发票识别
 - [CSIG 2022 Competition on Invoice Recognition and Analysis](https://davar-lab.github.io/competition/CSIG2022-invoice-ch.html##)
 
+
 ### 图像文字擦除
 - [CTRNet](https://github.com/lcy0604/CTRNet)：图像文字擦除 | [Demo](https://huggingface.co/spaces/SWHL/CTRNetDemo)
 

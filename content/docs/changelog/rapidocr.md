@@ -9,6 +9,10 @@ toc: true
 description: ""
 ---
 
+#### 🛠️2024-05-15 v1.3.19 update:
+- 因为DirectML受支持设备限制，因此将DirectML作为一个选项写入配置文件，选择性调用
+- 在Windows平台仍然恢复到v1.3.18前，默认安装`onnxruntime`库。如DirectML可用，且显式指定时，需要手动安装。
+- 相关讨论：[PR #178]() [Discussion #175](https://github.com/RapidAI/RapidOCR/discussions/175)
 
 #### 🧚🏻‍♀️2024-05-12 v1.3.18 update:
 - Merge [PR #176](https://github.com/RapidAI/RapidOCR/pull/176)

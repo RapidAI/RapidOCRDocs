@@ -26,8 +26,6 @@ Global:
     min_height: 30
     width_height_ratio: 8
 
-    use_cuda: &use_cuda false
-
     intra_op_num_threads: &intra_nums -1
     inter_op_num_threads: &inter_nums -1
 
@@ -35,7 +33,8 @@ Det:
     intra_op_num_threads: *intra_nums
     inter_op_num_threads: *inter_nums
 
-    use_cuda: *use_cuda
+    use_cuda: false
+    use_dml: false
 
     model_path: models/ch_PP-OCRv4_det_infer.onnx
 
@@ -53,7 +52,8 @@ Cls:
     intra_op_num_threads: *intra_nums
     inter_op_num_threads: *inter_nums
 
-    use_cuda: *use_cuda
+    use_cuda: false
+    use_dml: false
 
     model_path: models/ch_ppocr_mobile_v2.0_cls_infer.onnx
 
@@ -66,12 +66,14 @@ Rec:
     intra_op_num_threads: *intra_nums
     inter_op_num_threads: *inter_nums
 
-    use_cuda: *use_cuda
+    use_cuda: false
+    use_dml: false
 
     model_path: models/ch_PP-OCRv4_rec_infer.onnx
 
     rec_img_shape: [3, 48, 320]
     rec_batch_num: 6
+
 ```
 
 </details>
@@ -85,7 +87,6 @@ Rec:
 | `print_verbose`  |    `bool`    |   `true`   |       是否打印各个部分耗时信息       |
 | `min_height`  |    `int`    |   30   |       图像最小高度（单位是像素）<br/>低于这个值，会跳过文本检测阶段，直接进行后续识别       |
 |`width_height_ratio`| `int`| 8| 如果输入图像的宽高比大于`width_height_ratio`，则会跳过文本检测，直接进行后续识别<br/>`width_height_ratio=-1`：不用这个参数 |
-|  `use_cuda`   |    `bool`     | `false` |              是否使用CUDA，加速推理              |
 |  `intra_op_num_threads`   |    `int`     | -1 |          参见[docs](https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.inter_op_num_threads)                  |
 |  `inter_op_num_threads`   |    `int`     | -1 |           参见[docs](https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.intra_op_num_threads)               |
 
@@ -98,7 +99,8 @@ Rec:
 
 |    参数名称      | 取值范围   | 默认值   |                       作用                       |
 | :------------ | :----------: | :-----: | :----------------------------------------------|
-|  `use_cuda`   |    `bool`     | `false` |              是否使用CUDA，加速推理              |
+|  `use_cuda`   |    `bool`     | `false` |              是否使用CUDA加速推理              |
+|  `use_dml`   |    `bool`     | `false` |              是否使用DirectML加速推理(仅限于Window10及以上)              |
 |`limit_side_len`| - | 736 | 限制图像边的长度的像素值 |
 |`limit_type`| `[min, max]` | `min` | 限制图像的最小边长度还是最大边为`limit_side_len` <br/> 示例解释：当`limit_type=min`和`limit_side_len=736`时，图像最小边小于736时，<br/>会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 |
 |  `thresh`      | `[0, 1]` | 0.3 | 图像中文字部分和背景部分分割阈值<br/>值越大，文字部分会越小 |

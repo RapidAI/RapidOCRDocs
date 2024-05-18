@@ -3,7 +3,7 @@ weight: 3800
 lastmod: "2022-10-08"
 draft: false
 author: "SWHL"
-title: "rapidocr_openvino"
+title: "rapidocr_onnxruntime"
 icon: "update"
 toc: true
 description: ""

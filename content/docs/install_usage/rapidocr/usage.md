@@ -10,62 +10,65 @@ description: ""
 ---
 
 ### 初始化
-类[RapidOCR](https://github.com/RapidAI/RapidOCR/blob/a981e21743f03d9bbfbe596974123fecfe8a7d62/python/rapidocr_onnxruntime/main.py#L19)是主类，其初始化函数如下：
+[RapidOCR](https://github.com/RapidAI/RapidOCR/blob/a981e21743f03d9bbfbe596974123fecfe8a7d62/python/rapidocr_onnxruntime/main.py#L19)类是主类，其初始化函数如下：
 ```python {linenos=table}
 class RapidOCR:
     def __init__(self, config_path: Optional[str] = None, **kwargs):
         pass
 ```
 支持两种自定义传参数的方案，下面分别详细说明：
-- 以`config.yaml`方式
-  1. 找到`rapidocr_onnxruntime`安装目录下的`config.yaml`文件，可以通过`pip show rapidocr_onnxruntime`找到其安装路径。
-  2. 将`config.yaml`拷贝出来，放到当前运行目录下
-  3. 按需自定义参数修改即可，具体参数解释，参见[config.yaml](../../blog/02_config_parameter.md)
-      ```python {linenos=table}
-      engine = RapidOCR(config_path="your.yaml")
-      ```
-- (推荐) 以具体参数传入，参数基本和[config.yaml](../../blog/02_config_parameter.md)中对应，只是个别名称有所区别。
+#### 以`config.yaml`方式
+1. 找到`rapidocr_onnxruntime`安装目录下的`config.yaml`文件，可以通过`pip show rapidocr_onnxruntime`找到其安装路径。
+2. 将`config.yaml`拷贝出来，放到当前运行目录下
+3. 按需自定义参数修改即可，具体参数解释，参见[config.yaml](../../blog/02_config_parameter.md)
+    ```python {linenos=table}
+    engine = RapidOCR(config_path="your.yaml")
+    ```
+#### (推荐) 以具体参数传入
 
-  {{< alert context="info" text="以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。<br/>`intra_op_num_threads`和`inter_op_num_threads`仅是rapidocr_onnxruntime版本下的，其他推理引擎，请参见各自源码" />}}
-  ```python {linenos=table}
-  class RapidOCR:
-      def __init__(
-          self,
-          text_score: float = 0.5,
-          print_verbose: bool = False,
-          min_height: int = 30,
-          width_height_ratio: float = 8,
-          det_use_cuda: bool = False,
-          det_use_dml: bool = False,
-          det_model_path: Optional[str] = None,
-          det_limit_side_len: float = 736,
-          det_limit_type: str = "min",
-          det_thresh: float = 0.3,
-          det_box_thresh: float = 0.5,
-          det_unclip_ratio: float = 1.6,
-          det_donot_use_dilation: bool = False,
-          det_score_mode: str = "fast",
-          cls_use_cuda: bool = False,
-          cls_use_dml: bool = False,
-          cls_model_path: Optional[str] = None,
-          cls_image_shape: List[int] = [3, 48, 192],
-          cls_label_list: List[str] = ["0", "180"],
-          cls_batch_num: int = 6,
-          cls_thresh: float = 0.9,
-          rec_use_cuda: bool = False,
-          rec_use_dml bool = False,
-          rec_model_path: Optional[str] = None,
-          rec_img_shape: List[int] = [3, 48, 320],
-          rec_batch_num: int = 6,
-          intra_op_num_threads: int = -1,
-          inter_op_num_threads: int = -1,
-      ):
-          pass
+参数基本和[config.yaml](../../blog/02_config_parameter.md)中对应，只是个别名称有所区别。
 
-  engine = RapidOCR()
+  {{< alert context="info" text="以下参数均有默认值，可以不传入任何参数，直接初始化使用即可。<br/>`intra_op_num_threads`和`inter_op_num_threads`仅是`rapidocr_onnxruntime`版本下的，其他推理引擎，请参见各自源码" />}}
 
-  res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)
-  ```
+```python {linenos=table}
+class RapidOCR:
+    def __init__(
+        self,
+        text_score: float = 0.5,
+        print_verbose: bool = False,
+        min_height: int = 30,
+        width_height_ratio: float = 8,
+        det_use_cuda: bool = False,
+        det_use_dml: bool = False,
+        det_model_path: Optional[str] = None,
+        det_limit_side_len: float = 736,
+        det_limit_type: str = "min",
+        det_thresh: float = 0.3,
+        det_box_thresh: float = 0.5,
+        det_unclip_ratio: float = 1.6,
+        det_donot_use_dilation: bool = False,
+        det_score_mode: str = "fast",
+        cls_use_cuda: bool = False,
+        cls_use_dml: bool = False,
+        cls_model_path: Optional[str] = None,
+        cls_image_shape: List[int] = [3, 48, 192],
+        cls_label_list: List[str] = ["0", "180"],
+        cls_batch_num: int = 6,
+        cls_thresh: float = 0.9,
+        rec_use_cuda: bool = False,
+        rec_use_dml bool = False,
+        rec_model_path: Optional[str] = None,
+        rec_img_shape: List[int] = [3, 48, 320],
+        rec_batch_num: int = 6,
+        intra_op_num_threads: int = -1,
+        inter_op_num_threads: int = -1,
+    ):
+        pass
+
+engine = RapidOCR()
+
+res, elapse = engine(img, use_det=True, use_cls=True, use_rec=True)
+```
 
 ### 输入
 {{< alert context="info" text="确保输入模型前的图像通道顺序为BGR。当前`LoadImage`类内部已经对此做了处理，参考下面写法即可正常使用。" />}}
@@ -149,7 +152,9 @@ print(elapse)
 {{< /tabs >}}
 
 ### 输出
-类RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分。不同的参数，决定了不同的输出，如果图像中未检测到有效文字信息，则返回`Tupule[None, None]`。详细搭配如下：
+RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分，不同的参数决定了不同的输出。
+
+如果图像中未检测到有效文字信息，则返回`Tuple[None, None]`。详细搭配如下：
 
 {{< tabs tabTotal="6">}}
 {{% tab tabName="只有检测" %}}
@@ -290,7 +295,7 @@ print(elapse)
 {{% /tab %}}
 {{< /tabs >}}
 
-### 可视化查看结果
+### 可视化查看
 为了便于查看检测和识别结果，该库中封装了[`VisRes`](https://github.com/RapidAI/RapidOCR/blob/a981e21743f03d9bbfbe596974123fecfe8a7d62/python/rapidocr_onnxruntime/utils.py#L351)类，可借助该类快速可视化查看结果。
 
 {{< alert context="info" text="可视化识别结果时，需要提供字体文件。下载链接：[link](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/FZYTK.TTF)" />}}

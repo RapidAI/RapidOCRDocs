@@ -27,8 +27,8 @@ description: ""
 #### 版本情况
 
 各个库的最新版本：
-|           库           |                                                                       pypi最新版本                                                                       |
-| :--------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|           库           |    pypi最新版本   |
+| :-----: | :-----: |
 | `rapidocr_onnxruntime` | <a href="https://pypi.org/project/rapidocr-onnxruntime/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-onnxruntime?style=flat-square"></a> |
 |  `rapidocr_openvino`   |    <a href="https://pypi.org/project/rapidocr-openvino/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-openvino?style=flat-square"></a>    |
 |   `rapidocr_paddle`    |      <a href="https://pypi.org/project/rapidocr-paddle/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-paddle?style=flat-square"></a>      |
@@ -42,12 +42,15 @@ pypi上各个版本的对应关系：
 
 #### 安装
 
-顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型。因为mobile版模型较小，因此将相关模型都已打到Whl包，可直接pip安装使用。
+顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型（文本检测、文本行方向分类和文本识别）。因为其中mobile版模型较小，因此将相关模型都已打到whl包，可直接pip安装使用。
 
-{{< alert text="请使用Python3.6及以上版本。<br/> `rapidocr`系列库目前仅在CPU上支持较好，GPU上推理很慢，这一点可参考[link](https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/)。因此不建议用onnxruntime-gpu版推理。推荐用[`rapidocr_paddle`](../rapidocr_paddle.md)" />}}
+{{< alert text="请使用Python3.6及以上版本。<br/> `rapidocr_onnxruntime`系列库目前仅在CPU上支持较好，GPU上推理很慢，这一点可参考[link](https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/)。因此不建议用`onnxruntime-gpu`版推理。<br/>GPU端推理推荐用[`rapidocr_paddle`](../rapidocr_paddle.md)" />}}
 
 ```bash {linenos=table}
 pip install rapidocr-onnxruntime
+
+# 基于OpenVINO
+pip install rapidocr_openvino
 ```
 
 安装速度慢的话，可以指定国内的安装源，如使用清华源：

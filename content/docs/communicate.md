@@ -29,11 +29,6 @@ toc: true
     <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/QQ4.jpeg" width="25%" height="25%" align="center">
 </div>
 
-### (推荐) 加入QQ频道
-<div align="center">
-    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/QQChannel.jpg" width="25%" height="25%">
-</div>
-
 
 <script src="https://giscus.app/client.js"
         data-repo="RapidAI/RapidOCRDocs"

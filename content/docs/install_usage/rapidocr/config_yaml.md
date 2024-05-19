@@ -1,6 +1,6 @@
 ---
-weight: 3300
-lastmod: "2022-10-05"
+weight: 850
+lastmod: "2024-05-19"
 draft: false
 author: "SWHL"
 title: "config.yaml参数解释"
@@ -94,6 +94,7 @@ Rec:
 
 ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
 
+<br/>
 
 #### `Det`部分
 
@@ -110,6 +111,8 @@ Rec:
 |`use_dilation`| `bool` | `true` | 是否使用形态学中的膨胀操作，一般采用默认值即可 |
 |`score_mode` | `string`| `fast` | `fast`是求rectangle区域的平均分数，容易造成弯曲文本漏检，`slow`是求polygon区域的平均分数，会更准确，但速度有所降低，可按需选择 |
 
+<br/>
+
 #### `Cls`部分
 |    参数名称      | 取值范围   | 默认值   |                       作用                       |
 | :------------ | :----------: | :-----: | :----------------------------------------------|
@@ -117,6 +120,8 @@ Rec:
 |`cls_batch_num`| - | 6 | 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差 |
 |`cls_thresh`|`[0, 1]`|0.9| 方向分类结果的置信度|
 |`label_list`| - | `[0, 180]` | 方向分类的标签，0°或者180°，**该参数不能动** |
+
+<br/>
 
 #### `Rec`部分
 

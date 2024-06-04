@@ -86,8 +86,8 @@ TODO
 ### 视频OCR
 - 相关论文和帖子：
     - [【NeurIPS2021】A Bilingual, OpenWorld Video Text Dataset and End-to-end Video Text Spotter with Transformer](https://arxiv.org/abs/2112.04888) | [博客解读](https://blog.csdn.net/shiwanghualuo/article/details/122712872?spm=1001.2014.3001.5501)
-  - [【ACM MM 2019】You only recognize once: Towards fast video text spotting](https://arxiv.org/pdf/1903.03299)
-  - [VimTS: A Unified Video and Image Text Spotter for Enhancing the Cross-domain Generalization](https://arxiv.org/pdf/2404.19652)
+    - [【ACM MM 2019】You only recognize once: Towards fast video text spotting](https://arxiv.org/pdf/1903.03299)
+    - [VimTS: A Unified Video and Image Text Spotter for Enhancing the Cross-domain Generalization](https://arxiv.org/pdf/2404.19652)
 - 相关工程：
     - [video-subtitle-extractor](https://github.com/YaoFANGUK/video-subtitle-extractor): 一款将视频中的硬字幕提取为外挂字幕文件(srt格式)的软件
     - [RapidVideOCR](https://github.com/SWHL/RapidVideOCR): 提取视频中硬字幕

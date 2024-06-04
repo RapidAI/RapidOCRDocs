@@ -1,0 +1,164 @@
+site_name: RapidOCR 文档
+site_url: https://rapidai.github.io/RapidOCRDocs/
+site_author: RapidAI
+site_description:
+  Awesome OCR multiple programing languages toolkits based on ONNXRuntime, OpenVION and PaddlePaddle.
+
+repo_name: RapidAI/RapidOCR
+repo_url: https://github.com/RapidAI/RapidOCR
+
+copyright: Copyright &copy; 2024 Maintained by SWHL.
+
+theme:
+  name: material
+  logo: ./static/images/logo.jpg
+  language: zh
+  custom_dir: overrides
+  features:
+    - announce.dismiss
+    - content.tooltips
+    - content.code.copy
+    - content.tabs.link
+    - content.footnote.tooltips
+    - navigation.expand  # 默认打开所有的字节
+    - navigation.tabs # 顶级索引被作为tab
+    - navigation.tabs.sticky # tab始终可见
+    - navigation.top # 开启顶部导航栏
+    - navigation.tracking # 导航栏跟踪
+    - navigation.footer
+    - navigation.indexes
+    - search.highlight # 搜索高亮
+    - search.share # 搜索分享
+    - search.suggest # 搜索建议
+    - toc.follow # 目录跟踪-页面右侧的小目录
+
+  palette:
+    - media: "(prefers-color-scheme: light)" # 浅色
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" # 深色
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  icon:
+    logo: logo
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    repo: fontawesome/brands/github
+    tag:
+      default-tag: fontawesome/solid/tag
+      hardware-tag: fontawesome/solid/microchip
+      software-tag: fontawesome/solid/laptop-code
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+plugins:
+  - tags
+  - blog:
+      archive: false
+      post_date_format: short
+      blog_toc: true
+      categories_toc: true
+      pagination: false
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - git-committers:
+      repository: RapidAI/RapidOCRDocs
+      branch: main
+      token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
+  - git-authors
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - pymdownx.snippets
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - footnotes
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/RapidAI
+    - icon: fontawesome/brands/weixin
+      link: https://raw.githubusercontent.com/RapidAI/.github/main/assets/RapidAI_poster_compose.png
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/rapidocr-onnxruntime/
+
+nav:
+  - 概览: index.md
+  - 快速开始: quickstart.md
+  - 在线demo: online_demo.md
+  - 安装及使用:
+    - rapidocr_onnxruntime:
+      - 安装: install_usage/rapidocr/install.md
+      - 使用说明: install_usage/rapidocr/usage.md
+      - 参数解释: install_usage/rapidocr/config_yaml.md
+      - 命令行工具: install_usage/rapidocr/cli.md
+    - rapidocr_paddle: install_usage/rapidocr_paddle.md
+    - rapidocr_web:
+      - 安装及使用: install_usage/rapidocr_web/rapidocr_web.md
+      - 桌面版使用教程: install_usage/rapidocr_web/desktop_usage.md
+      - Nuitka打包: install_usage/rapidocr_web/nuitka_package.md
+      - PyInstaller打包: install_usage/rapidocr_web/pyinstaller.md
+      - 多语言版本部署: install_usage/rapidocr_web/ocrweb_multi.md
+    - rapidocr_api: install_usage/rapidocr_api.md
+  - 博客:
+    - blog/index.md
+  - 交流群: communicate.md
+  - 赞助: sponsor.md
+  - 商业支持: business_support.md
+  - 更新日志:
+    - rapidocr_onnxruntime: changelog/rapidocr.md
+    - rapidocr_openvino: changelog/rapidocr_vino.md
+    - rapidocr_paddle: changelog/rapidocr_paddle.md
+    - rapidocr_web: changelog/rapidocr_web.md
+    - rapidocr_api: changelog/rapidocr_api.md

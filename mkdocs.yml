@@ -81,11 +81,11 @@ plugins:
       pagination: false
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  - git-committers:
-      repository: RapidAI/RapidOCRDocs
-      branch: main
-      token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
-  # - git-authors
+  # - git-committers:
+  #     repository: RapidAI/RapidOCRDocs
+  #     branch: main
+  #     token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
+  - git-authors
   - git-revision-date-localized:
       enable_creation_date: true
 

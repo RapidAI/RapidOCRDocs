@@ -137,6 +137,9 @@ nav:
   - 快速开始: quickstart.md
   - 在线demo: online_demo.md
   - 安装及使用:
+    - API:
+      - install_usage/api/RapidOCR.md
+      - install_usage/api/VisRes.md
     - rapidocr_onnxruntime:
       - 安装: install_usage/rapidocr/install.md
       - 使用说明: install_usage/rapidocr/usage.md

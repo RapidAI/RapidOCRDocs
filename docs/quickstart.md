@@ -55,4 +55,6 @@ pip install rapidocr_onnxruntime
 ]
 ```
 
-### [其他编程语言支持](./blog/posts/other_programing_lan.md)
+### 推荐阅读
+#### [API](./install_usage/api/RapidOCR.md)
+#### [其他编程语言支持](./blog/posts/other_programing_lan.md)

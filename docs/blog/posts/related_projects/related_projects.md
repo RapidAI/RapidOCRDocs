@@ -16,6 +16,10 @@ comments: true
 - 这里将会汇总出以下几个OCR周边项目的一些文档和资源，包括学术动态和一些工程化代码。
 - 欢迎各位小伙伴提供PR。
 
+
+### Visual Text Rendering
+- [Glyph-ByT5: A Customized Text Encoder for Accurate Visual Text Rendering](https://glyph-byt5.github.io/)
+
 ### 阅读序列抽取
 数据集：
 

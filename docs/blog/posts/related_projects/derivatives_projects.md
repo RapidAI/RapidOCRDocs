@@ -9,7 +9,6 @@ comments: true
 ---
 
 
-
 <!-- more -->
 
 #### [RapidStructure](https://github.com/RapidAI/RapidStructure) ：版面分析
@@ -22,5 +21,3 @@ comments: true
 #### [TextDetMetric](https://github.com/SWHL/TextDetMetric)：文本检测模型评估
 #### [RapidOCRPDF](https://github.com/RapidAI/RapidOCRPDF)：解析PDF文件
 #### [RapidVideOCR](https://github.com/SWHL/RapidVideOCR)：基于RapidOCR，提取视频中的硬字幕
-
-

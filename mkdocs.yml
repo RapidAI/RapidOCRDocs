@@ -146,6 +146,7 @@ nav:
       - 使用说明: install_usage/rapidocr/usage.md
       - 参数解释: install_usage/rapidocr/config_yaml.md
       - 命令行工具: install_usage/rapidocr/cli.md
+      - 更新日志: install_usage/rapidocr/changelog.md
     - rapidocr_paddle:
       - 安装及使用: install_usage/rapidocr_paddle/usage.md
       - 更新日志: install_usage/rapidocr_paddle/changelog.md

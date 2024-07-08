@@ -2,12 +2,23 @@
 comments: true
 ---
 
+## rapidocr_vino
+
+#### 2024-06-28 v1.3.22 update:
+- 对应[`rapidocr_onnxruntime==1.3.23`](https://github.com/RapidAI/RapidOCR/releases/tag/v1.3.23)
+
+#### 2024-05-18 v1.3.19 update:
+对应`rapidocr_onnxruntime==1.3.20`
+
+---
+
+## rapidocr_onnxruntime
+
 !!! note
 
     #### 2024-05-18 通知
     后续`rapidocr_onnxruntime>1.3.20`的更新日志不在此更新，只在[Github Release](https://github.com/RapidAI/RapidOCR/releases)处更新
 
----
 
 #### 🛠️2024-05-15 v1.3.19 update:
 - 因为DirectML受支持设备限制，因此将DirectML作为一个选项写入配置文件，选择性调用

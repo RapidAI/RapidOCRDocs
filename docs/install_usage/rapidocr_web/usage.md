@@ -25,24 +25,28 @@ pip install rapidocr_web
 ```
 
 ### 使用
-- 用法:
-    ```bash linenums="1"
-    $ rapidocr_web -h
-    usage: rapidocr_web [-h] [-ip IP] [-p PORT]
+#### 用法:
+```bash linenums="1"
+$ rapidocr_web -h
+usage: rapidocr_web [-h] [-ip IP] [-p PORT]
 
-    optional arguments:
-    -h, --help            show this help message and exit
-    -ip IP, --ip IP       IP Address
-    -p PORT, --port PORT  IP port
-    ```
-- 运行:
-    ```bash linenums="1"
-    rapidocr_web -ip 0.0.0.0 -p 9003
-    ```
+optional arguments:
+-h, --help            show this help message and exit
+-ip IP, --ip IP       IP Address
+-p PORT, --port PORT  IP port
+```
+#### 运行:
+```bash linenums="1"
+rapidocr_web -ip 0.0.0.0 -p 9003
+```
 
-- 浏览器打开 http://localhost:9003/，enjoy it!
+#### 浏览器打开 http://localhost:9003/，enjoy it!
 
-    <div align="center">
-                <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/rapidocr_web_demo.gif" width="100%" height="100%">
-    </div>
+!!! info
+
+    浏览器打开的网址是`http`的，不是`https`。
+
+<div align="center">
+            <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/rapidocr_web_demo.gif" width="100%" height="100%">
+</div>
 

@@ -14,16 +14,20 @@ comments: true
     OCR API的输出结果为最原始结果，大家可按需进一步扩展。
 
 ### 简介
+
 - 该包是将[rapidocr_onnxruntime](./rapidocr/install.md)库做了API封装，采用[FastAPI](https://fastapi.tiangolo.com/) + [uvicorn](https://www.uvicorn.org/)实现。
 - 定位是一个快速调用`rapidocr_onnxruntime`的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看[gunicorn](https://gunicorn.org/)等。
 
 ### 安装
+
 ```bash linenums="1"
 pip install rapidocr_api
 ```
 
 ### 启动服务端
+
 - 用法:
+
     ```bash linenums="1"
     $ rapidocr_api -h
     usage: rapidocr_api [-h] [-ip IP] [-p PORT]
@@ -33,22 +37,27 @@ pip install rapidocr_api
     -ip IP, --ip IP       IP Address
     -p PORT, --port PORT  IP port
     ```
+
 - 启动:
+
     ```bash linenums="1"
     rapidocr_api -ip 0.0.0.0 -p 9003
     ```
 
 ### 调用
+
 !!! info
 
     调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。
 
 #### Curl调用
+
 ```bash linenums="1"
 curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 ```
 
 #### Python调用
+
 === "以文件方式发送POST请求"
 
     ```python linenums="1"
@@ -77,15 +86,16 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
         img_str = base64.b64encode(fa.read())
 
     payload = {'image_data': img_str}
-    response = requests.post(url, data=payload)
+    response = requests.post(url, data=payload, timeout=60)
 
     print(response.json())
     ```
 
-
 ### API输出
+
 - 输出结果说明：
-    - 如果图像中存在文字，则会输出字典格式，具体介绍如下：
+  - 如果图像中存在文字，则会输出字典格式，具体介绍如下：
+
         ```python linenums="1"
         {
         "0": {
@@ -96,12 +106,14 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
                 [431, 271],
                 [223, 59]
             ],
-            "score": "0.8175641223788261"  # 置信度
+            "score": "0.8176"  # 置信度
             }
         }
         ```
-    - 如果没有检测到文字，则会输出空字典(`{}`)。
+
+  - 如果没有检测到文字，则会输出空字典(`{}`)。
 - 示例结果：
+
     ```json linenums="1"
     {
         "0": {
@@ -112,7 +124,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
                 [552.0, 90.0],
                 [341.0, 122.0]
             ],
-            "score": "0.7342076812471662"
+            "score": "0.7342"
         },
         "1": {
             "rec_txt": "澳洲名校招生信息",
@@ -122,7 +134,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
                 [619.0, 163.0],
                 [272.0, 210.0]
             ],
-            "score": "0.8261737492349412"
+            "score": "0.8262"
         },
         "2": {
             "rec_txt": "解读！！",
@@ -132,7 +144,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
                 [598.0, 288.0],
                 [344.0, 296.0]
             ],
-            "score": "0.6152311325073242"
+            "score": "0.6152"
         },
         "3": {
             "rec_txt": "Rules...",
@@ -142,10 +154,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
                 [559.0, 352.0],
                 [445.0, 347.0]
             ],
-            "score": "0.8704230123096042"
+            "score": "0.8704"
         }
     }
     ```
-
-
-

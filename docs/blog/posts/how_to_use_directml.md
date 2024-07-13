@@ -1,5 +1,5 @@
 ---
-title: 如何使用DirectML加速推理？
+title: 如何使用DirectML加速推理OCR？
 date: 2024-07-13
 authors: [SWHL]
 slug: how-to-use-directml

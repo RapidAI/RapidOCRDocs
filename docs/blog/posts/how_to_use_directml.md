@@ -1,6 +1,8 @@
 ---
 title: 如何使用DirectML加速推理OCR？
-date: 2024-07-13
+date:
+  created: 2024-07-13
+  updated: 2024-07-13
 authors: [SWHL]
 slug: how-to-use-directml
 categories:
@@ -66,6 +68,10 @@ result, elapse = engine(img_path, det_use_dml=True, cls_use_dml=True, rec_use_dm
 print(result)
 print(elapse)
 ```
+
+### Benchmark
+
+由于自己手头没有Windows机器，暂时没有相关测评，可以参考下面Disscussions中评测。
 
 ### 有关DirectML的讨论
 

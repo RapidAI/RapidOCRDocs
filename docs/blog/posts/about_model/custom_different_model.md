@@ -10,7 +10,6 @@ comments: true
 
 > 本文详尽地给出了如何更换其他检测和识别模型的保姆级教程。
 
-
 <!-- more -->
 
 !!! note
@@ -18,6 +17,7 @@ comments: true
     建议用`rapidocr_onnxruntime>=1.3.x`版本来加载PaddleOCR v3/v4版本训练所得模型。
 
 #### 引言
+
 `rapidocr`系列库中默认打包了轻量版的中英文检测和识别模型，这种配置可以覆盖到大部分场景。但是也总会有一些其他场景，要用到其他检测和识别模型。
 
 这一点在设计时已经做了考虑，留出了接口，这个博客就是以如何更换`rapidocr_onnxruntime`的识别模型为**英文和数字的识别模型**为例做讲解，其他模型同理。
@@ -26,6 +26,7 @@ comments: true
     检测模型，对应模型路径参数为`det_model_path`<br/>识别模型，对应模型路径参数为`rec_model_path` <br/> 详细说明参见：[link](../../../install_usage/rapidocr/usage.md)
 
 #### 1. 安装`rapidocr_onnxruntime`
+
 请先根据教程，装好`rapidocr_onnxruntime`库，具体可参考：[link](../../../install_usage/rapidocr/install.md)
 
 #### 2. 获得英文和数字的ONNX识别模型
@@ -47,6 +48,7 @@ comments: true
 **在线转换:** 基于[PaddleOCRModelConvert](https://huggingface.co/spaces/SWHL/PaddleOCRModelConverter)工具得到`en_PP-OCRv4_rec_infer.onnx`模型
 
 #### 3. 使用该模型
+
 ```python linenums="1"
 from rapidocr_onnxruntime import RapidOCR
 
@@ -57,4 +59,3 @@ result, elapse = model(img_path)
 print(result)
 print(elapse)
 ```
-

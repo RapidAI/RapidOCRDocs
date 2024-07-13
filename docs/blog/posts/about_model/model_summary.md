@@ -12,6 +12,7 @@ comments: true
 <!-- more -->
 
 #### 引言
+
 目前，开源的项目中有很多OCR模型，但是没有一个统一的基准来衡量哪个是更好一些的。
 
 面对这么多的模型，让我们有些不知所措。为此，最近一段时间以来，我一直想要构建这样一个基准。现在来看，已经初步具有雏形。
@@ -34,8 +35,8 @@ comments: true
 
 对应模型下载地址，参见：[link](./download_onnx.md)。
 
-
 #### 已知开源OCR项目
+
 - [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)
 - [EasyOCR](https://github.com/JaidedAI/EasyOCR)
 - [MMOCR](https://github.com/open-mmlab/mmocr/blob/main/README_zh-CN.md)
@@ -44,8 +45,8 @@ comments: true
 - [mindocr](https://github.com/mindspore-lab/mindocr)
 - [surya](https://github.com/VikParuchuri/surya)
 
-
 #### 文本检测模型
+
 评测依赖仓库：
 
 - `rapidocr_onnxruntime==1.3.16`: [link](https://github.com/RapidAI/RapidOCR)
@@ -67,7 +68,6 @@ comments: true
 |     [读光-文字检测-DBNet行检测模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_resnet18_ocr-detection-db-line-level_damo/summary)      |     47.2M      |  0.7749  | 0.8167 | 0.7952 |   0.4121   |
 |     [读光-文字检测-行检测模型-中英-通用领域](https://modelscope.cn/models/iic/cv_resnet18_ocr-detection-line-level_damo/summary) 未跑通     |     312M      |  -  | - | - |   -  |
 
-
 不同推理引擎下，效果比较：
 
 |推理引擎|                       模型                       | 模型大小 | Precision | Recall | H-mean | Speed(s/img) |
@@ -77,7 +77,9 @@ comments: true
 |rapidocr_paddle==1.3.18 | ch_PP-OCRv4_det_infer.onnx|   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.9924       |
 
 #### 文本识别模型
+
 评测依赖仓库：
+
 - `rapidocr_onnxruntime==1.3.16`: [link](https://github.com/RapidAI/RapidOCR)
 - 计算指标库 TextRecMetric: [link](https://github.com/SWHL/TextRecMetric)
 - 测试集 text_rec_test_dataset: [link](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)
@@ -96,7 +98,6 @@ comments: true
 |[读光-文字识别-CRNN模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_crnn_ocr-recognition-general_damo/summary)  |  -    |  46M  |       0.5935      |     0.7671     | - |
 |[OFA文字识别-中文-通用场景-base](https://www.modelscope.cn/models/iic/ofa_ocr-recognition_general_base_zh/summary) 未跑通 |  -    |  -  |       -      | -  | - |
 
-
 不同推理引擎下，效果比较：
 
 |           推理引擎           |            模型            | 模型大小 | Exact Match | Char Match | Speed(s/img) |
@@ -106,10 +107,11 @@ comments: true
 |   rapidocr_paddle==1.3.18    | ch_PP-OCRv4_rec_infer.onnx |   10M   |  0.8323   | 0.9355 | 0.6836 |
 
 - 输入Shape:
-  - v2: `[3, 32, 320]`
-  - v3~v4: `[3, 48, 320]`
+    - v2: `[3, 32, 320]`
+    - v3~v4: `[3, 48, 320]`
 
 - 不同模型，实例化示例如下：
+
   ```python  linenums="1"
   from rapidocr_onnxruntime import RapidOCR
 
@@ -124,4 +126,3 @@ comments: true
     rec_img_shape=[3, 32, 320],
   )
   ```
-

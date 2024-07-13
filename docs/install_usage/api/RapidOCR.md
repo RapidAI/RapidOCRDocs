@@ -8,7 +8,6 @@ comments: true
 
 ### **\_\_init\_\_** [[SOURCE]](https://github.com/RapidAI/RapidOCR/blob/bc12d446e9761c48377490cae2059c32e978ba9f/python/rapidocr_onnxruntime/utils/parse_parameters.py#L23)
 
-
 ```python linenums="1"
 def __init__(self, text_score: float = 0.5,
     print_verbose: bool = False,
@@ -43,6 +42,7 @@ def __init__(self, text_score: float = 0.5,
 ```
 
 #### 参数
+
 - **text_score** (*float, optional*): 文本识别结果置信度，值越大，把握越大。取值范围：`[0, 1]`, 默认值是0.5。
 - **print_verbose** (*bool, optional*): 是否打印各个部分耗时信息。 默认为`False`。
 - **min_height** (*int, optional*): 图像最小高度（单位是像素），低于这个值，会跳过文本检测阶段，直接进行后续识别。默认值为30。`min_height`是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
@@ -73,8 +73,8 @@ def __init__(self, text_score: float = 0.5,
 - **intra_op_num_threads** (*int, optional*): 参见[docs](https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.inter_op_num_threads)。默认值为-1.
 - **inter_op_num_threads** (*int, optional*): 参见[docs](https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.intra_op_num_threads)。默认值为-1.
 
-
 #### 使用示例
+
 ```python linenums="1"
 from pathlib import Path
 
@@ -103,13 +103,14 @@ def __call__(
 ```
 
 #### 参数
+
 - **img_content** (*Union[str, np.ndarray, bytes, Path]*): 图像内容。
 - **use_det** (*Optional[bool], optional*): 是否使用文本检测模型，当为`None`时，默认使用。默认值为`None`。
 - **use_cls** (*Optional[bool], optional*): 是否使用文本行方向分类模型，当为`None`时，默认使用。默认值为`None`。
 - **use_rec** (*Optional[bool], optional*): 是否使用文本识别模型，当为`None`时，默认使用。默认值为`None`。
 
-
 #### 输入
+
 确保输入模型前的图像通道顺序为BGR。当前`LoadImage`类内部已经对此做了处理，参考下面写法即可正常使用。支持4种输入类型：`Union[str, np.ndarray, bytes, Path, PIL.Image.Image]`
 
 === "str"
@@ -181,8 +182,8 @@ def __call__(
     print(elapse)
     ```
 
-
 #### 输出
+
 RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分，不同的参数决定了不同的输出。
 
 如果图像中未检测到有效文字信息，则返回`Tuple[None, None]`。详细搭配如下：

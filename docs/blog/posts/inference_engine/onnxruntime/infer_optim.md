@@ -35,11 +35,11 @@ sess_options.enable_cpu_mem_arena = False
 
 - 作用：启用CPU上的**memory arena**。Arena可能会为将来预先申请很多内存。如果不想使用它，可以设置为`enable_cpu_mem_area=False`，默认是`True`
 - 结论：建议关闭
-  - 开启之后，占用内存会剧增（5618.3M >> 5.3M），且持续占用，不释放；推理时间只有大约13%提升
+    - 开启之后，占用内存会剧增（5618.3M >> 5.3M），且持续占用，不释放；推理时间只有大约13%提升
 
 - 测试环境：
-  - Python: 3.7.13
-  - ONNXRuntime: 1.14.1
+    - Python: 3.7.13
+    - ONNXRuntime: 1.14.1
 - 测试代码（来自[issue 11627](https://github.com/microsoft/onnxruntime/issues/11627)，[enable_cpu_memory_area_example.zip](https://github.com/microsoft/onnxruntime/files/8772315/enable_cpu_memory_area_example.zip)）
 
     ```python linenums="1"
@@ -72,7 +72,7 @@ sess_options.enable_cpu_mem_arena = False
 - Windows端 | Mac端 | Linux端 测试情况都大致相同
     <details>
 
-  - `enable_cpu_mem_arena=True`
+    - `enable_cpu_mem_arena=True`
 
         ```bash linenums="1"
         (demo) PS G:> python .\test_enable_cpu_mem_arena.py
@@ -90,7 +90,7 @@ sess_options.enable_cpu_mem_arena = False
             12   5695.5 MiB      0.0 MiB           1       return preds
         ```
 
-  - `enable_cpu_mem_arena=False`
+    - `enable_cpu_mem_arena=False`
 
         ```bash linenums="1"
         (demo) PS G:> python .\test_enable_cpu_mem_arena.py

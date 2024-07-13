@@ -46,7 +46,7 @@ $ pip install openvino-dev
 
 - 和ONNXRuntime同时推理同一个ONNX模型，OpenVINO推理速度更快
 - 但是从对比来看，OpenVINO占用内存更大，其原因是拿空间换的时间
-  - 当指定`input_shape`在一个区间范围时，推理时内存占用会减少一些。示例命令:
+    - 当指定`input_shape`在一个区间范围时，推理时内存占用会减少一些。示例命令:
 
     ```bash linenums="1"
     mo --input_model models/ch_PP-OCRv2_det_infer.onnx \

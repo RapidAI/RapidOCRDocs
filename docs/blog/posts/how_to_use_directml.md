@@ -2,6 +2,7 @@
 title: 如何使用DirectML加速推理？
 date: 2024-07-13
 authors: [SWHL]
+slug: how-to-use-directml
 categories:
   - General
 comments: true
@@ -37,13 +38,13 @@ comments: true
 
 #### 安装`rapidocr_onnxruntime>=1.3.23`
 
-```bash
+```bash linenums="1"
 pip install rapidocr_onnxruntime
 ```
 
 #### 安装`onnxruntime-directml`
 
-```bash
+```bash linenums="1"
 # 首先卸载上一步默认安装的onnxruntime
 pip uninstall onnxruntime
 

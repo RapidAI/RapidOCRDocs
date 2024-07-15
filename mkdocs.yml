@@ -138,6 +138,7 @@ nav:
   - 概览: index.md
   - 快速开始: quickstart.md
   - 在线demo: online_demo.md
+  - 效果展示: visualization.md
   - 周边项目: related_projects.md
   - 安装及使用:
     - API:

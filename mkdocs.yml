@@ -100,6 +100,7 @@ markdown_extensions:
   - pymdownx.tilde
   - footnotes
   - def_list
+  - md_in_html
   - pymdownx.tasklist:
       custom_checkbox: true
   - toc:
@@ -137,6 +138,7 @@ nav:
   - 概览: index.md
   - 快速开始: quickstart.md
   - 在线demo: online_demo.md
+  - 周边项目: related_projects.md
   - 安装及使用:
     - API:
       - install_usage/api/RapidOCR.md

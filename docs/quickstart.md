@@ -6,6 +6,7 @@ hide:
 ---
 
 ### 1. 安装
+
 ```bash linenums="1"
 pip install rapidocr_onnxruntime
 ```
@@ -29,7 +30,6 @@ pip install rapidocr_onnxruntime
     result, elapse = engine(img_path)
     print(result)
     ```
-
 
 ### 3. 查看效果
 
@@ -56,5 +56,7 @@ pip install rapidocr_onnxruntime
 ```
 
 ### 推荐阅读
+
 #### [API](./install_usage/api/RapidOCR.md)
+
 #### [其他编程语言支持](./blog/posts/other_programing_lan.md)

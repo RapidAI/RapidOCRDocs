@@ -6,13 +6,8 @@ hide:
 ---
 
 <div align="center">
-  <p1icture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/RapidOCR_LOGO_white.png"  width="55%" height="55%">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RapidAI/RapidOCR/main/assets/RapidOCR_LOGO.png"  width="55%" height="55%">
-    <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://raw.githubusercontent.com/RapidAI/RapidOCR/main/assets/RapidOCR_LOGO.png">
-  </picture>
+  <img src="https://raw.githubusercontent.com/RapidAI/RapidOCR/main/assets/RapidOCR_LOGO.png" width="50%">
 
-<div>&nbsp;</div>
 <div align="center">
     <b><font size="4"><i>信创级开源OCR - 为世界内容安全贡献力量</i></font></b>
 </div>
@@ -52,12 +47,6 @@ hide:
 
 如果该仓库有帮助到你，还请点个小星星⭐呗！
 
-### 效果展示
-
-<div align="center">
-    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/demo.gif" alt="Demo" width="100%" height="100%">
-</div>
-
 ### 整体框架
 
 ```mermaid
@@ -75,13 +64,10 @@ flowchart LR
     click F "https://github.com/RapidAI/PaddleOCRModelConverter" _blank
 ```
 
-### 相关产品概览图
+### 效果展示
 
-!!! info
-    下图表格中，除**测评集**部分托管在[Hugging Face](https://huggingface.co/SWHL)下，其余均在Github下，详细介绍如下：<br/>第一行是功能介绍<br/>第二行是对应的仓库名称，可直接去Github搜索该名称即可。
-
-<div>
-    <img src="https://github.com/RapidAI/RapidOCRDocs/releases/download/assets/RapidOCR_RelatedProjects.png">
+<div align="center">
+    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/demo.gif" alt="Demo" width="60%">
 </div>
 
 ### 贡献者

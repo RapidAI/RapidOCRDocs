@@ -47,7 +47,8 @@ def __init__(self, text_score: float = 0.5,
 - **print_verbose** (*bool, optional*): 是否打印各个部分耗时信息。 默认为`False`。
 - **min_height** (*int, optional*): 图像最小高度（单位是像素），低于这个值，会跳过文本检测阶段，直接进行后续识别。默认值为30。`min_height`是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
 
-  ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
+    ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
+
 - **width_height_ratio** (*float, optional*): 如果输入图像的宽高比大于`width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1时：不用这个参数. 默认值为8。
 - **det_use_cuda** (*bool, optional*): 是否使用CUDA加速推理。默认值为`False`。
 - **det_use_dml** (*bool, optional*): 是否使用DirectML加速推理(仅限于Window10及以上)。默认值为`False`。详细参见 → [link](../../blog/posts/how_to_use_directml.md) 。

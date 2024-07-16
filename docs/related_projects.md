@@ -5,7 +5,7 @@ hide:
 #   - toc
 ---
 
-### 推理部署
+### ⚙ 推理部署
 
 |编程语言|对应项目|
 |:---:|:---|
@@ -20,7 +20,7 @@ hide:
 |Android|[RapidOcrAndroidOnnxCompose](https://github.com/RapidAI/RapidOcrAndroidOnnxCompose)|
 |易语言|[RapidOCRServer](https://github.com/Physton/RapidOCRServer)|
 
-### 智能文档
+### 📄 智能文档
 
 |项目名称|功能|
 |:---|:---|
@@ -31,21 +31,21 @@ hide:
 |[RapidOCRPDF](https://github.com/RapidAI/RapidOCRPDF)|PDF提取|
 |[ExtractOfficeContent](https://github.com/SWHL/ExtractOfficeContent)|Office内容提取|
 
-### 转换工具
+### 🔄 转换工具
 
 |项目名称|功能|
 |:---|:---|
 |[PaddleOCRModelConvert](https://github.com/RapidAI/PaddleOCRModelConvert)|PaddleOCR模型转换工具|
 |[LabelConvert](https://github.com/RapidAI/LabelConvert)|目标检测数据集格式转换|
 
-### 评测工具
+### 🏷 评测工具
 
 |项目名称|功能|
 |:---|:---|
 |[TextDetMetric](https://github.com/SWHL/TextDetMetric)|计算文本检测算法评测指标|
 |[TableRecognitionMetric](https://github.com/SWHL/TableRecognitionMetric)|计算表格识别算法评测指标|
 
-### 测评集
+### 🔢 测评集
 
 |项目名称|功能|
 |:---|:---|
@@ -53,7 +53,7 @@ hide:
 |[text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)|文本识别测试集|
 |[table_rec_test_dataset](https://huggingface.co/datasets/SWHL/table_rec_test_dataset)|表格识别测试集|
 
-### 场景应用
+### 📱 场景应用
 
 |项目名称|功能|
 |:---|:---|

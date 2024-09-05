@@ -148,8 +148,6 @@ dmypy.json
 .vs
 .vscode
 .idea
-/images
-/models
 
 #models
 *.onnx

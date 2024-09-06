@@ -32,6 +32,7 @@ def __init__(self, text_score: float = 0.5,
     cls_thresh: float = 0.9,
     rec_use_cuda: bool = False,
     rec_use_dml: bool = False,
+    rec_keys_path: Optional[str] = None,
     rec_model_path: Optional[str] = None,
     rec_img_shape: List[int] = [3, 48, 320],
     rec_batch_num: int = 6,
@@ -69,6 +70,7 @@ def __init__(self, text_score: float = 0.5,
 - **cls_thresh** (*float, optional*): 方向分类结果的置信度。取值范围：`[0, 1]`，默认值为0.9。
 - **rec_use_cuda** (*bool, optional*): 是否使用CUDA加速推理。默认值为`False`。
 - **rec_use_dml** (*bool, optional*): 是否使用DirectML加速推理(仅限于Window10及以上)。默认值为`False`。详细参见 → [link](../../blog/posts/how_to_use_directml.md) 。
+- **rec_keys_path** (*bool, optional*): 文本识别模型对应的字典文件，默认为`None`。
 - **rec_model_path** (*Optional[str], optional*): 文本识别模型路径，仅限于PaddleOCR训练文本识别模型。默认值为`None`。
 - **rec_img_shape** (*List[int], optional*): 输入文本识别模型的图像Shape(CHW)。默认值为`[3, 48, 320]`。
 - **rec_batch_num** (*int, optional*): 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为6。

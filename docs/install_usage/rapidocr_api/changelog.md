@@ -9,7 +9,7 @@ comments: true
     <a href="https://pepy.tech/project/rapidocr_api"><img src="https://static.pepy.tech/personalized-badge/rapidocr_api?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
 
-#### 🍿2024-10-15 v0.0.8 update
+#### 🍿2024-10-15 v0.0.9 update
 
 - 修复issue [#223](https://github.com/RapidAI/RapidOCR/issues/223)
 

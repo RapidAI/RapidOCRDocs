@@ -24,8 +24,7 @@ hide:
 
 ### QQ交流群
 
-欢迎加入我们的QQ群下载模型及测试程序。群号为：755960114
-
-<div align="lef">
-    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/qq_group2.png" width="15%" height="15%" align="center">
+欢迎加入我们的QQ群下载模型及测试程序。1群：~~887298230~~ 已满，2群：~~755960114~~ 已满，3群：~~450338158~~ 已满, 4群：419196348
+<div align="left">
+    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/qq_group4.png" width="15%" height="15%" align="center">
 </div>

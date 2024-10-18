@@ -13,6 +13,8 @@ def __init__(self, text_score: float = 0.5,
     print_verbose: bool = False,
     min_height: int = 30,
     width_height_ratio: float = 8,
+    max_side_len: int = 2000,
+    min_side_len: int = 30,
     det_use_cuda: bool = False,
     det_use_dml: bool = False,
     det_model_path: Optional[str] = None,
@@ -51,6 +53,8 @@ def __init__(self, text_score: float = 0.5,
     ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
 
 - **width_height_ratio** (*float, optional*): 如果输入图像的宽高比大于`width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1时：不用这个参数. 默认值为8。
+- **max_side_len** (*int, optional*): 如果输入图像的最大边大于`max_side_len`，则会按宽高比，将最大边缩放到`max_side_len`。默认为2000px。
+- **min_side_len** (*int, optional*): 如果输入图像的最小边小于`min_side_len`，则会按宽高比，将最小边缩放到`min_side_len`。默认为30px。
 - **det_use_cuda** (*bool, optional*): 是否使用CUDA加速推理。默认值为`False`。
 - **det_use_dml** (*bool, optional*): 是否使用DirectML加速推理(仅限于Window10及以上)。默认值为`False`。详细参见 → [link](../../blog/posts/how_to_use_directml.md) 。
 - **det_model_path** (*Optional[str], optional*): 文本检测模型路径，仅限于基于PaddleOCR训练所得DBNet文本检测模型。默认值为`None`。

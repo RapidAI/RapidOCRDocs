@@ -2,6 +2,10 @@
 comments: true
 ---
 
+#### 2024-10-18 v1.3.28 update
+
+- 对应[`rapidocr_onnxruntime==1.3.25`](https://github.com/RapidAI/RapidOCR/releases/tag/v1.3.25)
+
 #### 2024-07-11 v1.3.25 update
 
 - 取消Shapely版本限制，对应 issue [#202](https://github.com/RapidAI/RapidOCR/issues/202)

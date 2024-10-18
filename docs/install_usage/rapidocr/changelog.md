@@ -2,7 +2,11 @@
 comments: true
 ---
 
-### rapidocr_vino
+### rapidocr_openvino
+
+#### 2024-10-18 v1.3.26 update
+
+- 对应[`rapidocr_onnxruntime==1.3.25`](https://github.com/RapidAI/RapidOCR/releases/tag/v1.3.25)
 
 #### 2024-07-11 v1.3.23 update
 
@@ -228,9 +232,9 @@ Merge [PR #151](https://github.com/RapidAI/RapidOCR/pull/151) by [LWQ2EDU](https
 #### 2021-11-28 udpate
 
 - 更新[ocrweb](http://rapidocr.51pda.cn:9003/)部分
-  - 添加显示各个阶段处理时间
-  - 更新说明文档
-  - 更换文本检测模型为`ch_PP-OCRv2_det_infer.onnx`,推理更快，更准
+    - 添加显示各个阶段处理时间
+    - 更新说明文档
+    - 更换文本检测模型为`ch_PP-OCRv2_det_infer.onnx`,推理更快，更准
 
 #### 2021-11-13 udpate
 
@@ -249,18 +253,18 @@ Merge [PR #151](https://github.com/RapidAI/RapidOCR/pull/151) by [LWQ2EDU](https
 #### 2021-09-11 udpate
 
 - 添加PP-OCRv2新增模型onnx版本
-  - 使用方法推理代码不变，直接替换对应模型即可。
+    - 使用方法推理代码不变，直接替换对应模型即可。
 - 经过在自有测试集上评测：
-  - PP-OCRv2检测模型效果有大幅度提升，模型大小没变。
-  - PP-OCRv2识别模型效果无明显提升，模型大小增加了3.58M。
+    - PP-OCRv2检测模型效果有大幅度提升，模型大小没变。
+    - PP-OCRv2识别模型效果无明显提升，模型大小增加了3.58M。
 - 模型上传到[百度网盘 提取码：30jv](https://pan.baidu.com/s/1qkqWK4wRdMjqGGbzR-FyWg)
 
 #### 2021-08-07 udpate
 
 - [x] PP-Structure 表格结构和cell坐标预测 正在整理中
 - 之前做的,未完成的，欢迎提PR
-  - [ ] 打Dokcer镜像
-  - [x] 尝试onnxruntime-gpu推理
+    - [ ] 打Dokcer镜像
+    - [x] 尝试onnxruntime-gpu推理
 
 #### 2021-07-17 udpate
 

@@ -9,6 +9,14 @@ comments: true
     <a href="https://pepy.tech/project/rapidocr_api"><img src="https://static.pepy.tech/personalized-badge/rapidocr_api?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
 
+#### 2024-10-28 v0.1.1 update
+
+- 去掉`def ocr()`函数前的`async`声明，此处为误用。后期会考虑是否添加。
+
+#### 2024-10-28 v0.1.0 update
+
+- Merged PR [#242](https://github.com/RapidAI/RapidOCR/pull/242)
+
 #### 🍿2024-10-15 v0.0.9 update
 
 - 修复issue [#223](https://github.com/RapidAI/RapidOCR/issues/223)

@@ -9,8 +9,8 @@ comments: true
     <a href="https://pepy.tech/project/rapidocr_openvino"><img src="https://static.pepy.tech/personalized-badge/rapidocr_openvino?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Vino"></a>
 </p>
 
-
 #### 简介
+
 `rapidocr_onnxruntime`和`rapidocr_openvino`两个包除推理引擎不同之外，其余均相同。后续说明文档均以`rapidocr_onnxruntime`为例
 
 如使用`rapidocr_openvino`，直接更换关键词`rapidocr_onnxruntime`为`rapidocr_openvino`即可。
@@ -50,6 +50,7 @@ pip install rapidocr_openvino
 ```
 
 安装速度慢的话，可以指定国内的安装源，如使用清华源：
+
 ```bash linenums="1"
 pip install rapidocr_onnxruntime -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
@@ -70,4 +71,3 @@ Shapely>=1.7.1
 PyYAML
 Pillow
 ```
-

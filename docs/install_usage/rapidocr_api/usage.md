@@ -26,22 +26,44 @@ pip install rapidocr_api
 
 ### 启动服务端
 
-- 用法:
+在`rapidocr_api>=0.1.0`中，可通过环境变量传递模型参数：det_model_path, cls_model_path, rec_model_path；接口中可传入参数，控制是否使用检测、方向分类和识别这三部分的模型；具体调用可参见下面文档。
+
+=== "Windows下启动"
 
     ```bash linenums="1"
-    $ rapidocr_api -h
-    usage: rapidocr_api [-h] [-ip IP] [-p PORT]
+    set det_model_path=I:\models\图像相关\OCR\RapidOCR\PP-OCRv4\ch_PP-OCRv4_det_server_infer.onnx
+    set det_model_path=
 
-    optional arguments:
-    -h, --help            show this help message and exit
-    -ip IP, --ip IP       IP Address
-    -p PORT, --port PORT  IP port
+    set rec_model_path=I:\models\图像相关\OCR\RapidOCR\PP-OCRv4\ch_PP-OCRv4_rec_server_infer.onnx
+    rapidocr_api
     ```
 
-- 启动:
+=== "Linux下启动"
 
     ```bash linenums="1"
-    rapidocr_api -ip 0.0.0.0 -p 9003
+    # 默认参数启动
+    rapidocr_api
+
+    # 指定参数：端口与进程数量；
+    rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
+
+    # 指定模型
+    expert det_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_det_server_infer.onnx
+    expert rec_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_rec_server_infer.onnx
+    rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
+    ```
+
+=== "Docker下启动"
+
+    [Dockerfile源码](https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile)
+
+    ```bash linenums="1"
+    # 构建镜像
+    cd api
+    sudo docker build -t="rapidocr_api:0.1.1" .
+
+    # 启动镜像
+    docker run -p 9003:9003 --name rapidocr_api1 --restart always -d rapidocr_api:0.1.1
     ```
 
 ### 调用
@@ -88,6 +110,20 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
     payload = {'image_data': img_str}
     response = requests.post(url, data=payload, timeout=60)
 
+    print(response.json())
+    ```
+
+=== "控制是否使用检测、方向分类和识别这三部分的模型"
+
+    ```python linenums="1"
+    import requests
+
+    url = 'http://localhost:9003/ocr'
+    img_path = 'tests/test_files/ch_en_num.jpg'
+
+    with open(img_path, 'rb') as f:
+        data = {"use_det": False, "use_cls": True, "use_rec": True}
+        response = requests.post(url, files=file_dict, data=data, timeout=60)
     print(response.json())
     ```
 

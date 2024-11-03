@@ -32,8 +32,6 @@ pip install rapidocr_api
 
     ```bash linenums="1"
     set det_model_path=I:\models\图像相关\OCR\RapidOCR\PP-OCRv4\ch_PP-OCRv4_det_server_infer.onnx
-    set det_model_path=
-
     set rec_model_path=I:\models\图像相关\OCR\RapidOCR\PP-OCRv4\ch_PP-OCRv4_rec_server_infer.onnx
     rapidocr_api
     ```
@@ -48,8 +46,8 @@ pip install rapidocr_api
     rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
 
     # 指定模型
-    expert det_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_det_server_infer.onnx
-    expert rec_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_rec_server_infer.onnx
+    export det_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_det_server_infer.onnx
+    export rec_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_rec_server_infer.onnx
     rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
     ```
 
@@ -63,6 +61,26 @@ pip install rapidocr_api
     sudo docker build -t="rapidocr_api:0.1.1" .
 
     # 启动镜像
+    docker run -p 9003:9003 --name rapidocr_api1 --restart always -d rapidocr_api:0.1.1
+    ```
+
+    客户端调用说明：
+
+    ```bash linenums="1"
+    cd api
+    python demo.py
+    ```
+
+    构建镜像:
+
+    ```bash linenums="1"
+    cd api
+    sudo docker build -t="rapidocr_api:0.1.1" .
+    ```
+
+    启动镜像：
+
+    ```bash linenums="1"
     docker run -p 9003:9003 --name rapidocr_api1 --restart always -d rapidocr_api:0.1.1
     ```
 
@@ -127,70 +145,70 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
     print(response.json())
     ```
 
-### API输出
+### 输出结果说明
 
-- 输出结果说明：
-    - 如果图像中存在文字，则会输出字典格式，具体介绍如下：
+如果图像中存在文字，则会输出字典格式，具体介绍如下：
 
-        ```python linenums="1"
-        {
-        "0": {
-            "rec_txt": "香港深圳抽血，",  # 识别的文本
-            "dt_boxes": [  # 依次为左上角 → 右上角 → 右下角 → 左下角
-                [265, 18],
-                [472, 231],
-                [431, 271],
-                [223, 59]
-            ],
-            "score": "0.8176"  # 置信度
-            }
-        }
-        ```
-
-    - 如果没有检测到文字，则会输出空字典(`{}`)。
-- 示例结果：
-
-    ```json linenums="1"
+    ```python linenums="1"
     {
-        "0": {
-            "rec_txt": "8月26日！",
-            "dt_boxes": [
-                [333.0, 72.0],
-                [545.0, 40.0],
-                [552.0, 90.0],
-                [341.0, 122.0]
-            ],
-            "score": "0.7342"
-        },
-        "1": {
-            "rec_txt": "澳洲名校招生信息",
-            "dt_boxes": [
-                [266.0, 163.0],
-                [612.0, 116.0],
-                [619.0, 163.0],
-                [272.0, 210.0]
-            ],
-            "score": "0.8262"
-        },
-        "2": {
-            "rec_txt": "解读！！",
-            "dt_boxes": [
-                [341.0, 187.0],
-                [595.0, 179.0],
-                [598.0, 288.0],
-                [344.0, 296.0]
-            ],
-            "score": "0.6152"
-        },
-        "3": {
-            "rec_txt": "Rules...",
-            "dt_boxes": [
-                [446.0, 321.0],
-                [560.0, 326.0],
-                [559.0, 352.0],
-                [445.0, 347.0]
-            ],
-            "score": "0.8704"
+    "0": {
+        "rec_txt": "香港深圳抽血，",  # 识别的文本
+        "dt_boxes": [  # 依次为左上角 → 右上角 → 右下角 → 左下角
+            [265, 18],
+            [472, 231],
+            [431, 271],
+            [223, 59]
+        ],
+        "score": "0.8176"  # 置信度
         }
     }
     ```
+
+如果没有检测到文字，则会输出空字典(`{}`)。
+
+### 示例结果
+
+```json linenums="1"
+{
+    "0": {
+        "rec_txt": "8月26日！",
+        "dt_boxes": [
+            [333.0, 72.0],
+            [545.0, 40.0],
+            [552.0, 90.0],
+            [341.0, 122.0]
+        ],
+        "score": "0.7342"
+    },
+    "1": {
+        "rec_txt": "澳洲名校招生信息",
+        "dt_boxes": [
+            [266.0, 163.0],
+            [612.0, 116.0],
+            [619.0, 163.0],
+            [272.0, 210.0]
+        ],
+        "score": "0.8262"
+    },
+    "2": {
+        "rec_txt": "解读！！",
+        "dt_boxes": [
+            [341.0, 187.0],
+            [595.0, 179.0],
+            [598.0, 288.0],
+            [344.0, 296.0]
+        ],
+        "score": "0.6152"
+    },
+    "3": {
+        "rec_txt": "Rules...",
+        "dt_boxes": [
+            [446.0, 321.0],
+            [560.0, 326.0],
+            [559.0, 352.0],
+            [445.0, 347.0]
+        ],
+        "score": "0.8704"
+    }
+}
+```

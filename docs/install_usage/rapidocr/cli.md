@@ -5,6 +5,7 @@ comments: true
 `rapidocr_onnxruntime`包含了命令行工具，安装之后，即可使用。
 
 ### 参数说明
+
 ```bash linenums="1"
 $ rapidocr_onnxruntime -h
 usage: rapidocr_onnxruntime [-h] -img IMG_PATH [-p] [--text_score TEXT_SCORE]
@@ -83,7 +84,6 @@ Visual Result:
 
     以下只给出常见用例，具体可自行探索使用
 
-
 === "图像预测"
 
     ```bash linenums="1"
@@ -107,4 +107,3 @@ Visual Result:
     ```bash linenums="1"
     raprapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg -vis --vis_font_path resources/fonts/FZYTK.TTF
     ```
-

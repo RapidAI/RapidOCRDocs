@@ -15,7 +15,7 @@ comments: true
 
 如使用`rapidocr_openvino`，直接更换关键词`rapidocr_onnxruntime`为`rapidocr_openvino`即可。
 
-两者均是在CPU上推理的，如想在GPU上推理，可以参考[rapidocr_paddle版](../rapidocr_paddle.md)。
+两者均是在CPU上推理的，如想在GPU上推理，可以参考[rapidocr_paddle版](../rapidocr_paddle/usage.md)。
 
 #### 版本情况
 

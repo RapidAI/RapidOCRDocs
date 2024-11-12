@@ -9,6 +9,10 @@ comments: true
     <a href="https://pepy.tech/project/rapidocr_api"><img src="https://static.pepy.tech/personalized-badge/rapidocr_api?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
 
+#### 2024-11-12 v0.1.2 update
+
+- Merge PR [#263](https://github.com/RapidAI/RapidOCR/pull/253): 修复浮点类型使用错误导致不显示分数
+
 #### 2024-10-28 v0.1.1 update
 
 - 去掉`def ocr()`函数前的`async`声明，此处为误用。后期会考虑是否添加。

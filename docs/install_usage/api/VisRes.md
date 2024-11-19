@@ -41,6 +41,8 @@ def __call__(
 
 === "可视化单字坐标"
 
+    ⚠️注意：在`rapidocr_onnxruntime>=1.4.0`中支持。
+
     ```python linenums="1"
     import cv2
 

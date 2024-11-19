@@ -55,6 +55,7 @@ def __init__(self, text_score: float = 0.5,
 - **width_height_ratio** (*float, optional*): 如果输入图像的宽高比大于`width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1时：不用这个参数. 默认值为8。
 - **max_side_len** (*int, optional*): 如果输入图像的最大边大于`max_side_len`，则会按宽高比，将最大边缩放到`max_side_len`。默认为2000px。
 - **min_side_len** (*int, optional*): 如果输入图像的最小边小于`min_side_len`，则会按宽高比，将最小边缩放到`min_side_len`。默认为30px。
+- **return_word_box** (*bool, optional*): 是否返回文字的单字坐标。默认为`False`。汉字会返回单字坐标，英语返回单词坐标。
 - **det_use_cuda** (*bool, optional*): 是否使用CUDA加速推理。默认值为`False`。
 - **det_use_dml** (*bool, optional*): 是否使用DirectML加速推理(仅限于Window10及以上)。默认值为`False`。详细参见 → [link](../../blog/posts/how_to_use_directml.md) 。
 - **det_model_path** (*Optional[str], optional*): 文本检测模型路径，仅限于基于PaddleOCR训练所得DBNet文本检测模型。默认值为`None`。
@@ -195,6 +196,47 @@ def __call__(
 RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分，不同的参数决定了不同的输出。
 
 如果图像中未检测到有效文字信息，则返回`Tuple[None, None]`。详细搭配如下：
+
+=== "返回单字坐标"
+    ⚠️注意：汉字是单字坐标，英语是单词坐标
+
+    ```python linenuns="1"
+    from rapidocr_onnxruntime import RapidOCR
+
+    engine = RapidOCR()
+
+    img_path = 'tests/test_files/ch_en_num.jpg'
+    result, elapse = engine(img_path, return_word_box=True)
+    print(result)
+    print(elapse)
+    ```
+
+    返回值`result`: `List[List[float], str, float, List, List[str]]` (`[[左上, 右上, 右下, 左下], 文本内容, 置信度, 单字坐标, 对应的单字文本]`)
+    ```python linenums="1"
+    [
+        [
+            [[6.0, 2.0], [322.0, 9.0], [320.0, 104.0], [4.0, 97.0]],
+            '正品促销',
+            0.9989291429519653,
+            [
+                [[6, 2], [84, 3], [82, 98], [4, 97]],
+                [[84, 3], [163, 5], [161, 100], [82, 98]],
+                [[163, 5], [243, 7], [241, 102], [161, 100]],
+                [[243, 7], [322, 9], [320, 104], [241, 102]]
+            ],
+            ['正', '品', '促', '销']
+        ],
+        [
+            [[70.0, 98.0], [252.0, 98.0], [252.0, 125.0], [70.0, 125.0]],
+            '大桶装更划算',
+            0.9843036532402039,
+            [
+                [[70, 98], [99, 98], [99, 125], [70, 125]], [[99, 98], [129, 98], [129, 125], [99, 125]], [[129, 98], [160, 98], [160, 125], [129, 125]], [[165, 98], [194, 98], [194, 125], [165, 125]], [[194, 98], [224, 98], [224, 125], [194, 125]], [[224, 98], [252, 98], [252, 125], [224, 125]]
+            ],
+            ['大', '桶', '装', '更', '划', '算']
+        ],
+        ...
+    ]
 
 === "只有检测"
 

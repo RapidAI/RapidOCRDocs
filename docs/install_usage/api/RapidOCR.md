@@ -202,7 +202,7 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
 
     ⚠️注意：汉字是单字坐标，英语是单词坐标
 
-    ```python linenuns="1"
+    ```python linenums="1"
     from rapidocr_onnxruntime import RapidOCR
 
     engine = RapidOCR()

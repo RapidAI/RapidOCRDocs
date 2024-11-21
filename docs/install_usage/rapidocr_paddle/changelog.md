@@ -2,6 +2,10 @@
 comments: true
 ---
 
+#### 2024-11-21 v1.4.0 update
+
+- 对应[`rapidocr_onnxruntime==1.4.0`](https://github.com/RapidAI/RapidOCR/releases/tag/v1.4.0)
+
 #### 2024-10-18 v1.3.28 update
 
 - 对应[`rapidocr_onnxruntime==1.3.25`](https://github.com/RapidAI/RapidOCR/releases/tag/v1.3.25)

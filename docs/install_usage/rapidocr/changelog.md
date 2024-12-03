@@ -4,6 +4,10 @@ comments: true
 
 ### rapidocr_openvino
 
+#### 2024-12-03 v1.4.1 update
+
+- 对应[`rapidocr_onnxruntime==1.4.1`](https://github.com/RapidAI/RapidOCR/releases/tag/v1.4.1)
+
 #### 2024-11-21 v1.4.0 update
 
 - 对应[`rapidocr_onnxruntime==1.4.0`](https://github.com/RapidAI/RapidOCR/releases/tag/v1.4.0)

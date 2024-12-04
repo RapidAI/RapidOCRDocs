@@ -20,8 +20,12 @@ comments: true
 
 ### 安装
 
+可以选择依赖哪个推理引擎的RapidOCR，按需安装
+
 ```bash linenums="1"
-pip install rapidocr_api
+pip install rapidocr_api[onnx]
+pip install rapidocr_api[paddle]
+pip install rapidocr_api[openvino]
 ```
 
 ### 启动服务端

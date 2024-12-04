@@ -9,6 +9,11 @@ comments: true
     <a href="https://pepy.tech/project/rapidocr_api"><img src="https://static.pepy.tech/personalized-badge/rapidocr_api?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
 
+#### 2024-12-04 v0.1.4 update
+
+Merge PR[#282](https://github.com/RapidAI/RapidOCR/pull/282) [#281](https://github.com/RapidAI/RapidOCR/pull/281)
+主要是支持多种RapidOCR推理引擎选择。
+
 #### 2024-11-12 v0.1.2 update
 
 - Merge PR [#263](https://github.com/RapidAI/RapidOCR/pull/253): 修复浮点类型使用错误导致不显示分数

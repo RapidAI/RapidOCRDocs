@@ -56,3 +56,5 @@ RapidOCR在12款开源OCR中也算得上可圈可点了。完整的测评报告�
 ![图片](./images/640-20241208103550187)
 
 ![图片](./images/640-20241208103554131)
+
+完整测评报告：<https://pan.baidu.com/s/1DgFZfKw5PxQuyy1PIX8thg?pwd=0527>

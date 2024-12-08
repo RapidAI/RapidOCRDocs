@@ -54,10 +54,9 @@ def __call__(
     image_path = "tests/test_files/ch_en_num.jpg"
     img = cv2.imread(image_path)
 
-    result, elapse_list = engine(img)
-    boxes, txts, scores = list(zip(*result))
-    vis_img = vis(img, boxes, txts, scores, font_path)
-    cv2.imwrite("vis.png", vis_img)
+    result, elapse_list = engine(img, return_word_box=True)
+
+    (boxes, txts, scores, words_boxes, words) = list(zip(*result))
 
     words_boxes = sum(words_boxes, [])
     words_all = sum(words, [])

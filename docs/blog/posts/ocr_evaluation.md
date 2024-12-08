@@ -7,7 +7,6 @@ slug: guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-sta
 categories:
   - General
 comments: true
-typora-copy-images-to:images
 ---
 
 RapidOCR在12款开源OCR中表现优异

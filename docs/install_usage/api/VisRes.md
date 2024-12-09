@@ -81,10 +81,11 @@ def __call__(
     img = cv2.imread(image_path)
 
     result, elapse_list = engine(img)
-    boxes, txts, scores = list(zip(*result))
-    res = vis(img, boxes)
+    res = vis(img, result)
     cv2.imwrite("only_vis_det.png", res)
     ```
+
+    ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.3.25/only_vis_det.png)
 
 === "可视化检测和识别"
 

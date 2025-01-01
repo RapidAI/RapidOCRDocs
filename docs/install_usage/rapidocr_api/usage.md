@@ -153,7 +153,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 
 如果图像中存在文字，则会输出字典格式，具体介绍如下：
 
-    ```python linenums="1"
+    ```json linenums="1"
     {
     "0": {
         "rec_txt": "香港深圳抽血，",  # 识别的文本

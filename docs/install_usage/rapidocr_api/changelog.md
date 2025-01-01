@@ -9,6 +9,14 @@ comments: true
     <a href="https://pepy.tech/project/rapidocr_api"><img src="https://static.pepy.tech/personalized-badge/rapidocr_api?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
 
+#### 2025-01-01 v0.1.5 update
+
+Merge PR[#309](https://github.com/RapidAI/RapidOCR/pull/309)
+
+- 为uvicorn日志添加时间戳
+- 给docker image增加vim方便临时编辑
+- 运行docker加时区环境变量，让时间戳打印本地时间
+
 #### 2024-12-04 v0.1.4 update
 
 Merge PR[#282](https://github.com/RapidAI/RapidOCR/pull/282) [#281](https://github.com/RapidAI/RapidOCR/pull/281)

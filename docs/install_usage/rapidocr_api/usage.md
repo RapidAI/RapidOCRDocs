@@ -20,12 +20,17 @@ comments: true
 
 ### 安装
 
-可以选择依赖哪个推理引擎的RapidOCR，按需安装
+可以选择依赖哪个推理引擎的RapidOCR，按需安装。
+
+需要注意的是：`rapidocr_api[paddle]`对应的是`rapidocr_paddle` 版本，该版本支持GPU推理，需要安装对应的PaddlePaddle GPU版本。详情请参见：[link](../rapidocr_paddle/usage.md)
 
 ```bash linenums="1"
+# CPU
 pip install rapidocr_api[onnx]
-pip install rapidocr_api[paddle]
 pip install rapidocr_api[openvino]
+
+# GPU
+pip install rapidocr_api[paddle]
 ```
 
 ### 启动服务端

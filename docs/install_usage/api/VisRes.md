@@ -56,11 +56,12 @@ def __call__(
 
     result, elapse_list = engine(img, return_word_box=True)
 
-    (boxes, txts, scores, words_boxes, words) = list(zip(*result))
+    (boxes, txts, scores, words_boxes, words, words_scores) = list(zip(*result))
+    font_path = "resources/fonts/FZYTK.TTF"
 
     words_boxes = sum(words_boxes, [])
     words_all = sum(words, [])
-    words_scores = [1.0] * len(words_boxes)
+    words_scores = sum(words_scores, [])
     vis_img = vis(img, words_boxes, words_all, words_scores, font_path)
     cv2.imwrite("vis_single.png", vis_img)
     ```

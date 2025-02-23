@@ -24,7 +24,7 @@ hide:
 
 ### QQ交流群
 
-欢迎加入我们的QQ群下载模型及测试程序。1群：~~887298230~~ 已满，2群：~~755960114~~ 已满，3群：~~450338158~~ 已满, 4群：419196348
+欢迎加入我们的QQ群下载模型及测试程序。1群：~~887298230~~ 已满，2群：~~755960114~~ 已满，3群：~~450338158~~ 已满, 4群：~~419196348~~ 已满，5群：1032382811
 <div align="left">
-    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/qq_group4.png" width="15%" height="15%" align="center">
+    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/qq_group5.jpg" width="25%" height="25%" align="center">
 </div>

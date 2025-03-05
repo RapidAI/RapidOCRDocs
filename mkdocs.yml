@@ -7,7 +7,7 @@ site_description:
 repo_name: RapidAI/RapidOCR
 repo_url: https://github.com/RapidAI/RapidOCR
 
-copyright: Copyright &copy; 2024 Maintained by SWHL.
+copyright: Copyright &copy; 2025 Maintained by SWHL.
 
 theme:
   name: material
@@ -133,6 +133,8 @@ extra:
       link: https://raw.githubusercontent.com/RapidAI/.github/main/assets/RapidAI_poster_compose.png
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/rapidocr-onnxruntime/
+  version:
+    provider: mike
 
 nav:
   - 概览: index.md

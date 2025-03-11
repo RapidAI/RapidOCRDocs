@@ -125,11 +125,19 @@
          <lastmod>2025-03-11</lastmod>
     </url>
     <url>
-         <loc>https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/RapidOCR/</loc>
+         <loc>https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/</loc>
          <lastmod>2025-03-11</lastmod>
     </url>
     <url>
-         <loc>https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/VisRes/</loc>
+         <loc>https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/</loc>
+         <lastmod>2025-03-11</lastmod>
+    </url>
+    <url>
+         <loc>https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/API/RapidOCR/</loc>
+         <lastmod>2025-03-11</lastmod>
+    </url>
+    <url>
+         <loc>https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/API/VisRes/</loc>
          <lastmod>2025-03-11</lastmod>
     </url>
     <url>

@@ -36,7 +36,11 @@ pip install rapidocr
     cv2.imwrite("vis.png", vis_img)
     ```
 
-### 3. 返回`result`结果
+### 3. 查看可视化结果
+
+![Demo](./images/ch_en_num_vis.png)
+
+### 4. 返回`result`结果示例
 
 返回结果是一个`RapidOCROutput`数据类，可以直接通过`result.boxes`和`result.txts`来访问使用。
 
@@ -135,12 +139,6 @@ RapidOCROutput(
     scores=(0.99893, 0.9843, 0.97842, 0.93412, 0.81418, 0.66226, 0.99243, 0.99849, 0.81369, 0.99633, 0.9999, 0.83907, 0.99993, 0.99782, 0.99813, 0.99786, 0.92679, 0.99717),
     word_results=(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), elapse_list=[0.16008154186420143, 0.017705917358398438, 0.35501312371343374], elapse=0.5328005829360336)
 ```
-
-### 4. 查看可视化结果
-
-<div align="center">
-    <img src="./images/ch_en_num_vis.png" alt="Demo" width="100%">
-</div>
 
 ### 推荐阅读
 

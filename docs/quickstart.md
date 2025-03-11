@@ -22,6 +22,7 @@ pip install rapidocr
 === "Python使用"
 
     ```python linenums="1"
+    import cv2
     from rapidocr import RapidOCR, VisRes
 
     engine = RapidOCR()
@@ -138,7 +139,7 @@ RapidOCROutput(
 ### 4. 查看可视化结果
 
 <div align="center">
-    <img src="./static/images/ch_en_num_vis.png" alt="Demo" width="100%">
+    <img src="./images/ch_en_num_vis.png" alt="Demo" width="100%">
 </div>
 
 ### 推荐阅读

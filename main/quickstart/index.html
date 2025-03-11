@@ -659,9 +659,18 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-result" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 查看效果
+      3. 返回result结果
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 查看可视化结果
     </span>
   </a>
   
@@ -676,15 +685,6 @@ You're not viewing the latest version.
   
     <nav class="md-nav" aria-label="推荐阅读">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      API
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
@@ -1908,9 +1908,18 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-result" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 查看效果
+      3. 返回result结果
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 查看可视化结果
     </span>
   </a>
   
@@ -1925,15 +1934,6 @@ You're not viewing the latest version.
   
     <nav class="md-nav" aria-label="推荐阅读">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      API
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
@@ -1973,34 +1973,43 @@ You're not viewing the latest version.
   <h1>快速开始</h1>
 
 <h3 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr_onnxruntime
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr
 </span></code></pre></div></td></tr></table></div>
 <h3 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">命令行使用</label><label for="__tabbed_1_2">Python使用</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>rapidocr_onnxruntime<span class="w"> </span>-img<span class="w"> </span>tests/test_files/ch_en_num.jpg
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>rapidocr<span class="w"> </span>-img<span class="w"> </span>tests/test_files/ch_en_num.jpg<span class="w"> </span>--vis_res
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr_onnxruntime</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span><span class="p">,</span> <span class="n">VisRes</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">()</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">&#39;tests/test_files/ch_en_num.jpg&#39;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">result</span><span class="p">,</span> <span class="n">elapse</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s2">&quot;tests/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">vis</span> <span class="o">=</span> <span class="n">VisRes</span><span class="p">()</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="n">vis_img</span> <span class="o">=</span> <span class="n">vis</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">boxes</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">txts</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">&quot;vis.png&quot;</span><span class="p">,</span> <span class="n">vis_img</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
-<h3 id="3">3. 查看效果<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<h3 id="3-result">3. 返回<code>result</code>结果<a class="headerlink" href="#3-result" title="Permanent link">&para;</a></h3>
+<p>返回结果是一个<code>RapidOCROutput</code>数据类，可以直接通过<code>result.boxes</code>和<code>result.txts</code>来访问使用。</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -2019,28 +2028,180 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-3-16">16</a></span>
 <span class="normal"><a href="#__codelineno-3-17">17</a></span>
 <span class="normal"><a href="#__codelineno-3-18">18</a></span>
-<span class="normal"><a href="#__codelineno-3-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">[</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="p">[[[</span><span class="mf">9.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">321.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">318.0</span><span class="p">,</span> <span class="mf">102.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">93.0</span><span class="p">]],</span> <span class="s1">&#39;正品促销&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7986101984977723&#39;</span><span class="p">],</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="p">[[[</span><span class="mf">70.0</span><span class="p">,</span> <span class="mf">98.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">251.0</span><span class="p">,</span> <span class="mf">98.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">251.0</span><span class="p">,</span> <span class="mf">125.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">70.0</span><span class="p">,</span> <span class="mf">125.0</span><span class="p">]],</span> <span class="s1">&#39;大桶装更划算&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7368737288883754&#39;</span><span class="p">],</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="p">[[[</span><span class="mf">69.0</span><span class="p">,</span> <span class="mf">144.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">255.0</span><span class="p">,</span> <span class="mf">144.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">255.0</span><span class="p">,</span> <span class="mf">164.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">69.0</span><span class="p">,</span> <span class="mf">164.0</span><span class="p">]],</span> <span class="s1">&#39;强力去污符合国标&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8172478278477987&#39;</span><span class="p">],</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="p">[[[</span><span class="mf">107.0</span><span class="p">,</span> <span class="mf">170.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">219.0</span><span class="p">,</span> <span class="mf">170.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">219.0</span><span class="p">,</span> <span class="mf">182.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">107.0</span><span class="p">,</span> <span class="mf">182.0</span><span class="p">]],</span> <span class="s1">&#39;-40深度防冻不结冰&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8655969283797524&#39;</span><span class="p">],</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="p">[[[</span><span class="mf">35.0</span><span class="p">,</span> <span class="mf">227.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">63.0</span><span class="p">,</span> <span class="mf">227.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">63.0</span><span class="p">,</span> <span class="mf">236.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">35.0</span><span class="p">,</span> <span class="mf">236.0</span><span class="p">]],</span> <span class="s1">&#39;日常价?&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6502826035022735&#39;</span><span class="p">],</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="p">[[[</span><span class="mf">141.0</span><span class="p">,</span> <span class="mf">223.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">187.0</span><span class="p">,</span> <span class="mf">225.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">185.0</span><span class="p">,</span> <span class="mf">249.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">139.0</span><span class="p">,</span> <span class="mf">247.0</span><span class="p">]],</span> <span class="s1">&#39;直击&#39;</span><span class="p">,</span> <span class="s1">&#39;0.596031109491984&#39;</span><span class="p">],</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="p">[[[</span><span class="mf">34.0</span><span class="p">,</span> <span class="mf">234.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">81.0</span><span class="p">,</span> <span class="mf">236.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">254.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">33.0</span><span class="p">,</span> <span class="mf">252.0</span><span class="p">]],</span> <span class="s1">&#39;10.0起&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8231529593467712&#39;</span><span class="p">],</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>    <span class="p">[[[</span><span class="mf">257.0</span><span class="p">,</span> <span class="mf">234.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">304.0</span><span class="p">,</span> <span class="mf">236.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">303.0</span><span class="p">,</span> <span class="mf">253.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">256.0</span><span class="p">,</span> <span class="mf">251.0</span><span class="p">]],</span> <span class="s1">&#39;10.0起&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8304102122783661&#39;</span><span class="p">],</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="p">[[[</span><span class="mf">258.0</span><span class="p">,</span> <span class="mf">227.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">287.0</span><span class="p">,</span> <span class="mf">226.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">287.0</span><span class="p">,</span> <span class="mf">236.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">258.0</span><span class="p">,</span> <span class="mf">237.0</span><span class="p">]],</span> <span class="s1">&#39;日常价?&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5725070595741272&#39;</span><span class="p">],</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>    <span class="p">[[[</span><span class="mf">140.0</span><span class="p">,</span> <span class="mf">245.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">186.0</span><span class="p">,</span> <span class="mf">246.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">186.0</span><span class="p">,</span> <span class="mf">272.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">139.0</span><span class="p">,</span> <span class="mf">271.0</span><span class="p">]],</span> <span class="s1">&#39;底价&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5142453710238138&#39;</span><span class="p">],</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="p">[[[</span><span class="mf">129.0</span><span class="p">,</span> <span class="mf">290.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">207.0</span><span class="p">,</span> <span class="mf">292.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">206.0</span><span class="p">,</span> <span class="mf">339.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">128.0</span><span class="p">,</span> <span class="mf">337.0</span><span class="p">]],</span> <span class="s1">&#39;5.8&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6341951936483383&#39;</span><span class="p">],</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="p">[[[</span><span class="mf">98.0</span><span class="p">,</span> <span class="mf">320.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">129.0</span><span class="p">,</span> <span class="mf">320.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">129.0</span><span class="p">,</span> <span class="mf">331.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">98.0</span><span class="p">,</span> <span class="mf">331.0</span><span class="p">]],</span> <span class="s1">&#39;券后价?&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6209247708320618&#39;</span><span class="p">],</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="p">[[[</span><span class="mf">114.0</span><span class="p">,</span> <span class="mf">343.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">210.0</span><span class="p">,</span> <span class="mf">343.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">210.0</span><span class="p">,</span> <span class="mf">355.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">114.0</span><span class="p">,</span> <span class="mf">355.0</span><span class="p">]],</span> <span class="s1">&#39;惊喜福利不容错过&#39;</span><span class="p">,</span> <span class="s1">&#39;0.8640043867958916&#39;</span><span class="p">],</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="p">[[[</span><span class="mf">69.0</span><span class="p">,</span> <span class="mf">363.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">151.0</span><span class="p">,</span> <span class="mf">363.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">151.0</span><span class="p">,</span> <span class="mf">383.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">69.0</span><span class="p">,</span> <span class="mf">383.0</span><span class="p">]],</span> <span class="s1">&#39;极速发货&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7552512288093567&#39;</span><span class="p">],</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a>    <span class="p">[[[</span><span class="mf">201.0</span><span class="p">,</span> <span class="mf">363.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">285.0</span><span class="p">,</span> <span class="mf">363.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">285.0</span><span class="p">,</span> <span class="mf">383.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">201.0</span><span class="p">,</span> <span class="mf">383.0</span><span class="p">]],</span> <span class="s1">&#39;冰点标准&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7194759607315063&#39;</span><span class="p">],</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="p">[[[</span><span class="mf">68.0</span><span class="p">,</span> <span class="mf">392.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">151.0</span><span class="p">,</span> <span class="mf">392.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">151.0</span><span class="p">,</span> <span class="mf">412.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">68.0</span><span class="p">,</span> <span class="mf">412.0</span><span class="p">]],</span> <span class="s1">&#39;破损就赔&#39;</span><span class="p">,</span> <span class="s1">&#39;0.7711991906166077&#39;</span><span class="p">],</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a>    <span class="p">[[[</span><span class="mf">202.0</span><span class="p">,</span> <span class="mf">391.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">285.0</span><span class="p">,</span> <span class="mf">391.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">285.0</span><span class="p">,</span> <span class="mf">413.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">202.0</span><span class="p">,</span> <span class="mf">413.0</span><span class="p">]],</span> <span class="s1">&#39;假一赔十&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6546663284301758&#39;</span><span class="p">]</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="p">]</span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span>
+<span class="normal"><a href="#__codelineno-3-42">42</a></span>
+<span class="normal"><a href="#__codelineno-3-43">43</a></span>
+<span class="normal"><a href="#__codelineno-3-44">44</a></span>
+<span class="normal"><a href="#__codelineno-3-45">45</a></span>
+<span class="normal"><a href="#__codelineno-3-46">46</a></span>
+<span class="normal"><a href="#__codelineno-3-47">47</a></span>
+<span class="normal"><a href="#__codelineno-3-48">48</a></span>
+<span class="normal"><a href="#__codelineno-3-49">49</a></span>
+<span class="normal"><a href="#__codelineno-3-50">50</a></span>
+<span class="normal"><a href="#__codelineno-3-51">51</a></span>
+<span class="normal"><a href="#__codelineno-3-52">52</a></span>
+<span class="normal"><a href="#__codelineno-3-53">53</a></span>
+<span class="normal"><a href="#__codelineno-3-54">54</a></span>
+<span class="normal"><a href="#__codelineno-3-55">55</a></span>
+<span class="normal"><a href="#__codelineno-3-56">56</a></span>
+<span class="normal"><a href="#__codelineno-3-57">57</a></span>
+<span class="normal"><a href="#__codelineno-3-58">58</a></span>
+<span class="normal"><a href="#__codelineno-3-59">59</a></span>
+<span class="normal"><a href="#__codelineno-3-60">60</a></span>
+<span class="normal"><a href="#__codelineno-3-61">61</a></span>
+<span class="normal"><a href="#__codelineno-3-62">62</a></span>
+<span class="normal"><a href="#__codelineno-3-63">63</a></span>
+<span class="normal"><a href="#__codelineno-3-64">64</a></span>
+<span class="normal"><a href="#__codelineno-3-65">65</a></span>
+<span class="normal"><a href="#__codelineno-3-66">66</a></span>
+<span class="normal"><a href="#__codelineno-3-67">67</a></span>
+<span class="normal"><a href="#__codelineno-3-68">68</a></span>
+<span class="normal"><a href="#__codelineno-3-69">69</a></span>
+<span class="normal"><a href="#__codelineno-3-70">70</a></span>
+<span class="normal"><a href="#__codelineno-3-71">71</a></span>
+<span class="normal"><a href="#__codelineno-3-72">72</a></span>
+<span class="normal"><a href="#__codelineno-3-73">73</a></span>
+<span class="normal"><a href="#__codelineno-3-74">74</a></span>
+<span class="normal"><a href="#__codelineno-3-75">75</a></span>
+<span class="normal"><a href="#__codelineno-3-76">76</a></span>
+<span class="normal"><a href="#__codelineno-3-77">77</a></span>
+<span class="normal"><a href="#__codelineno-3-78">78</a></span>
+<span class="normal"><a href="#__codelineno-3-79">79</a></span>
+<span class="normal"><a href="#__codelineno-3-80">80</a></span>
+<span class="normal"><a href="#__codelineno-3-81">81</a></span>
+<span class="normal"><a href="#__codelineno-3-82">82</a></span>
+<span class="normal"><a href="#__codelineno-3-83">83</a></span>
+<span class="normal"><a href="#__codelineno-3-84">84</a></span>
+<span class="normal"><a href="#__codelineno-3-85">85</a></span>
+<span class="normal"><a href="#__codelineno-3-86">86</a></span>
+<span class="normal"><a href="#__codelineno-3-87">87</a></span>
+<span class="normal"><a href="#__codelineno-3-88">88</a></span>
+<span class="normal"><a href="#__codelineno-3-89">89</a></span>
+<span class="normal"><a href="#__codelineno-3-90">90</a></span>
+<span class="normal"><a href="#__codelineno-3-91">91</a></span>
+<span class="normal"><a href="#__codelineno-3-92">92</a></span>
+<span class="normal"><a href="#__codelineno-3-93">93</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">RapidOCROutput</span><span class="p">(</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="n">boxes</span><span class="o">=</span><span class="n">array</span><span class="p">([[[</span>  <span class="mf">6.</span><span class="p">,</span>   <span class="mf">2.</span><span class="p">],</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>        <span class="p">[</span><span class="mf">322.</span><span class="p">,</span>   <span class="mf">9.</span><span class="p">],</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>        <span class="p">[</span><span class="mf">320.</span><span class="p">,</span> <span class="mf">104.</span><span class="p">],</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>        <span class="p">[</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">97.</span><span class="p">]],</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>       <span class="p">[[</span> <span class="mf">70.</span><span class="p">,</span>  <span class="mf">98.</span><span class="p">],</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>        <span class="p">[</span><span class="mf">252.</span><span class="p">,</span>  <span class="mf">98.</span><span class="p">],</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>        <span class="p">[</span><span class="mf">252.</span><span class="p">,</span> <span class="mf">125.</span><span class="p">],</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>        <span class="p">[</span> <span class="mf">70.</span><span class="p">,</span> <span class="mf">125.</span><span class="p">]],</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>       <span class="p">[[</span> <span class="mf">68.</span><span class="p">,</span> <span class="mf">144.</span><span class="p">],</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>        <span class="p">[</span><span class="mf">256.</span><span class="p">,</span> <span class="mf">144.</span><span class="p">],</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a>        <span class="p">[</span><span class="mf">256.</span><span class="p">,</span> <span class="mf">165.</span><span class="p">],</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a>        <span class="p">[</span> <span class="mf">68.</span><span class="p">,</span> <span class="mf">165.</span><span class="p">]],</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a>       <span class="p">[[</span><span class="mf">108.</span><span class="p">,</span> <span class="mf">170.</span><span class="p">],</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a>        <span class="p">[</span><span class="mf">217.</span><span class="p">,</span> <span class="mf">170.</span><span class="p">],</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a>        <span class="p">[</span><span class="mf">217.</span><span class="p">,</span> <span class="mf">182.</span><span class="p">],</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a>        <span class="p">[</span><span class="mf">108.</span><span class="p">,</span> <span class="mf">182.</span><span class="p">]],</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a>       <span class="p">[[</span> <span class="mf">35.</span><span class="p">,</span> <span class="mf">227.</span><span class="p">],</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a>        <span class="p">[</span> <span class="mf">62.</span><span class="p">,</span> <span class="mf">227.</span><span class="p">],</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a>        <span class="p">[</span> <span class="mf">62.</span><span class="p">,</span> <span class="mf">236.</span><span class="p">],</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a>        <span class="p">[</span> <span class="mf">35.</span><span class="p">,</span> <span class="mf">236.</span><span class="p">]],</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26"></a>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27"></a>       <span class="p">[[</span><span class="mf">139.</span><span class="p">,</span> <span class="mf">223.</span><span class="p">],</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28"></a>        <span class="p">[</span><span class="mf">187.</span><span class="p">,</span> <span class="mf">223.</span><span class="p">],</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29"></a>        <span class="p">[</span><span class="mf">187.</span><span class="p">,</span> <span class="mf">251.</span><span class="p">],</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30"></a>        <span class="p">[</span><span class="mf">139.</span><span class="p">,</span> <span class="mf">251.</span><span class="p">]],</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32"></a>       <span class="p">[[</span> <span class="mf">35.</span><span class="p">,</span> <span class="mf">233.</span><span class="p">],</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33"></a>        <span class="p">[</span> <span class="mf">81.</span><span class="p">,</span> <span class="mf">236.</span><span class="p">],</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34"></a>        <span class="p">[</span> <span class="mf">80.</span><span class="p">,</span> <span class="mf">255.</span><span class="p">],</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35"></a>        <span class="p">[</span> <span class="mf">33.</span><span class="p">,</span> <span class="mf">252.</span><span class="p">]],</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36"></a>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37"></a>       <span class="p">[[</span><span class="mf">257.</span><span class="p">,</span> <span class="mf">234.</span><span class="p">],</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38"></a>        <span class="p">[</span><span class="mf">304.</span><span class="p">,</span> <span class="mf">236.</span><span class="p">],</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39"></a>        <span class="p">[</span><span class="mf">303.</span><span class="p">,</span> <span class="mf">254.</span><span class="p">],</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40"></a>        <span class="p">[</span><span class="mf">257.</span><span class="p">,</span> <span class="mf">253.</span><span class="p">]],</span>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41"></a>
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42"></a>       <span class="p">[[</span><span class="mf">259.</span><span class="p">,</span> <span class="mf">227.</span><span class="p">],</span>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43"></a>        <span class="p">[</span><span class="mf">286.</span><span class="p">,</span> <span class="mf">226.</span><span class="p">],</span>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44"></a>        <span class="p">[</span><span class="mf">287.</span><span class="p">,</span> <span class="mf">236.</span><span class="p">],</span>
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45"></a>        <span class="p">[</span><span class="mf">259.</span><span class="p">,</span> <span class="mf">237.</span><span class="p">]],</span>
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46"></a>
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47"></a>       <span class="p">[[</span><span class="mf">140.</span><span class="p">,</span> <span class="mf">243.</span><span class="p">],</span>
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48"></a>        <span class="p">[</span><span class="mf">186.</span><span class="p">,</span> <span class="mf">245.</span><span class="p">],</span>
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49"></a>        <span class="p">[</span><span class="mf">186.</span><span class="p">,</span> <span class="mf">272.</span><span class="p">],</span>
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50"></a>        <span class="p">[</span><span class="mf">139.</span><span class="p">,</span> <span class="mf">271.</span><span class="p">]],</span>
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51"></a>
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52"></a>       <span class="p">[[</span><span class="mf">129.</span><span class="p">,</span> <span class="mf">289.</span><span class="p">],</span>
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53"></a>        <span class="p">[</span><span class="mf">207.</span><span class="p">,</span> <span class="mf">290.</span><span class="p">],</span>
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54"></a>        <span class="p">[</span><span class="mf">206.</span><span class="p">,</span> <span class="mf">340.</span><span class="p">],</span>
+</span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55"></a>        <span class="p">[</span><span class="mf">128.</span><span class="p">,</span> <span class="mf">338.</span><span class="p">]],</span>
+</span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56"></a>
+</span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57"></a>       <span class="p">[[</span> <span class="mf">98.</span><span class="p">,</span> <span class="mf">320.</span><span class="p">],</span>
+</span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58"></a>        <span class="p">[</span><span class="mf">129.</span><span class="p">,</span> <span class="mf">320.</span><span class="p">],</span>
+</span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59"></a>        <span class="p">[</span><span class="mf">129.</span><span class="p">,</span> <span class="mf">330.</span><span class="p">],</span>
+</span><span id="__span-3-60"><a id="__codelineno-3-60" name="__codelineno-3-60"></a>        <span class="p">[</span> <span class="mf">98.</span><span class="p">,</span> <span class="mf">330.</span><span class="p">]],</span>
+</span><span id="__span-3-61"><a id="__codelineno-3-61" name="__codelineno-3-61"></a>
+</span><span id="__span-3-62"><a id="__codelineno-3-62" name="__codelineno-3-62"></a>       <span class="p">[[</span><span class="mf">205.</span><span class="p">,</span> <span class="mf">316.</span><span class="p">],</span>
+</span><span id="__span-3-63"><a id="__codelineno-3-63" name="__codelineno-3-63"></a>        <span class="p">[</span><span class="mf">223.</span><span class="p">,</span> <span class="mf">316.</span><span class="p">],</span>
+</span><span id="__span-3-64"><a id="__codelineno-3-64" name="__codelineno-3-64"></a>        <span class="p">[</span><span class="mf">223.</span><span class="p">,</span> <span class="mf">335.</span><span class="p">],</span>
+</span><span id="__span-3-65"><a id="__codelineno-3-65" name="__codelineno-3-65"></a>        <span class="p">[</span><span class="mf">205.</span><span class="p">,</span> <span class="mf">335.</span><span class="p">]],</span>
+</span><span id="__span-3-66"><a id="__codelineno-3-66" name="__codelineno-3-66"></a>
+</span><span id="__span-3-67"><a id="__codelineno-3-67" name="__codelineno-3-67"></a>       <span class="p">[[</span><span class="mf">114.</span><span class="p">,</span> <span class="mf">342.</span><span class="p">],</span>
+</span><span id="__span-3-68"><a id="__codelineno-3-68" name="__codelineno-3-68"></a>        <span class="p">[</span><span class="mf">210.</span><span class="p">,</span> <span class="mf">342.</span><span class="p">],</span>
+</span><span id="__span-3-69"><a id="__codelineno-3-69" name="__codelineno-3-69"></a>        <span class="p">[</span><span class="mf">210.</span><span class="p">,</span> <span class="mf">355.</span><span class="p">],</span>
+</span><span id="__span-3-70"><a id="__codelineno-3-70" name="__codelineno-3-70"></a>        <span class="p">[</span><span class="mf">114.</span><span class="p">,</span> <span class="mf">355.</span><span class="p">]],</span>
+</span><span id="__span-3-71"><a id="__codelineno-3-71" name="__codelineno-3-71"></a>
+</span><span id="__span-3-72"><a id="__codelineno-3-72" name="__codelineno-3-72"></a>       <span class="p">[[</span> <span class="mf">68.</span><span class="p">,</span> <span class="mf">362.</span><span class="p">],</span>
+</span><span id="__span-3-73"><a id="__codelineno-3-73" name="__codelineno-3-73"></a>        <span class="p">[</span><span class="mf">151.</span><span class="p">,</span> <span class="mf">362.</span><span class="p">],</span>
+</span><span id="__span-3-74"><a id="__codelineno-3-74" name="__codelineno-3-74"></a>        <span class="p">[</span><span class="mf">151.</span><span class="p">,</span> <span class="mf">384.</span><span class="p">],</span>
+</span><span id="__span-3-75"><a id="__codelineno-3-75" name="__codelineno-3-75"></a>        <span class="p">[</span> <span class="mf">68.</span><span class="p">,</span> <span class="mf">384.</span><span class="p">]],</span>
+</span><span id="__span-3-76"><a id="__codelineno-3-76" name="__codelineno-3-76"></a>
+</span><span id="__span-3-77"><a id="__codelineno-3-77" name="__codelineno-3-77"></a>       <span class="p">[[</span><span class="mf">202.</span><span class="p">,</span> <span class="mf">362.</span><span class="p">],</span>
+</span><span id="__span-3-78"><a id="__codelineno-3-78" name="__codelineno-3-78"></a>        <span class="p">[</span><span class="mf">286.</span><span class="p">,</span> <span class="mf">362.</span><span class="p">],</span>
+</span><span id="__span-3-79"><a id="__codelineno-3-79" name="__codelineno-3-79"></a>        <span class="p">[</span><span class="mf">286.</span><span class="p">,</span> <span class="mf">384.</span><span class="p">],</span>
+</span><span id="__span-3-80"><a id="__codelineno-3-80" name="__codelineno-3-80"></a>        <span class="p">[</span><span class="mf">202.</span><span class="p">,</span> <span class="mf">384.</span><span class="p">]],</span>
+</span><span id="__span-3-81"><a id="__codelineno-3-81" name="__codelineno-3-81"></a>
+</span><span id="__span-3-82"><a id="__codelineno-3-82" name="__codelineno-3-82"></a>       <span class="p">[[</span> <span class="mf">68.</span><span class="p">,</span> <span class="mf">391.</span><span class="p">],</span>
+</span><span id="__span-3-83"><a id="__codelineno-3-83" name="__codelineno-3-83"></a>        <span class="p">[</span><span class="mf">151.</span><span class="p">,</span> <span class="mf">391.</span><span class="p">],</span>
+</span><span id="__span-3-84"><a id="__codelineno-3-84" name="__codelineno-3-84"></a>        <span class="p">[</span><span class="mf">151.</span><span class="p">,</span> <span class="mf">413.</span><span class="p">],</span>
+</span><span id="__span-3-85"><a id="__codelineno-3-85" name="__codelineno-3-85"></a>        <span class="p">[</span> <span class="mf">68.</span><span class="p">,</span> <span class="mf">413.</span><span class="p">]],</span>
+</span><span id="__span-3-86"><a id="__codelineno-3-86" name="__codelineno-3-86"></a>
+</span><span id="__span-3-87"><a id="__codelineno-3-87" name="__codelineno-3-87"></a>       <span class="p">[[</span><span class="mf">202.</span><span class="p">,</span> <span class="mf">391.</span><span class="p">],</span>
+</span><span id="__span-3-88"><a id="__codelineno-3-88" name="__codelineno-3-88"></a>        <span class="p">[</span><span class="mf">287.</span><span class="p">,</span> <span class="mf">391.</span><span class="p">],</span>
+</span><span id="__span-3-89"><a id="__codelineno-3-89" name="__codelineno-3-89"></a>        <span class="p">[</span><span class="mf">287.</span><span class="p">,</span> <span class="mf">413.</span><span class="p">],</span>
+</span><span id="__span-3-90"><a id="__codelineno-3-90" name="__codelineno-3-90"></a>        <span class="p">[</span><span class="mf">202.</span><span class="p">,</span> <span class="mf">413.</span><span class="p">]]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">),</span>
+</span><span id="__span-3-91"><a id="__codelineno-3-91" name="__codelineno-3-91"></a>    <span class="n">txts</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;正品促销&#39;</span><span class="p">,</span> <span class="s1">&#39;大桶装更划算&#39;</span><span class="p">,</span> <span class="s1">&#39;强力去污符合国标&#39;</span><span class="p">,</span> <span class="s1">&#39;40°C深度防冻不结冰&#39;</span><span class="p">,</span> <span class="s1">&#39;日常价￥&#39;</span><span class="p">,</span> <span class="s1">&#39;真击&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0起&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0起&#39;</span><span class="p">,</span> <span class="s1">&#39;日常价￥&#39;</span><span class="p">,</span> <span class="s1">&#39;底价&#39;</span><span class="p">,</span> <span class="s1">&#39;5.8&#39;</span><span class="p">,</span> <span class="s1">&#39;券后价￥&#39;</span><span class="p">,</span> <span class="s1">&#39;起&#39;</span><span class="p">,</span> <span class="s1">&#39;惊喜福利不容错过&#39;</span><span class="p">,</span> <span class="s1">&#39;极速发货&#39;</span><span class="p">,</span> <span class="s1">&#39;冰点标准&#39;</span><span class="p">,</span> <span class="s1">&#39;破损就赔&#39;</span><span class="p">,</span> <span class="s1">&#39;假一赔十&#39;</span><span class="p">),</span>
+</span><span id="__span-3-92"><a id="__codelineno-3-92" name="__codelineno-3-92"></a>    <span class="n">scores</span><span class="o">=</span><span class="p">(</span><span class="mf">0.99893</span><span class="p">,</span> <span class="mf">0.9843</span><span class="p">,</span> <span class="mf">0.97842</span><span class="p">,</span> <span class="mf">0.93412</span><span class="p">,</span> <span class="mf">0.81418</span><span class="p">,</span> <span class="mf">0.66226</span><span class="p">,</span> <span class="mf">0.99243</span><span class="p">,</span> <span class="mf">0.99849</span><span class="p">,</span> <span class="mf">0.81369</span><span class="p">,</span> <span class="mf">0.99633</span><span class="p">,</span> <span class="mf">0.9999</span><span class="p">,</span> <span class="mf">0.83907</span><span class="p">,</span> <span class="mf">0.99993</span><span class="p">,</span> <span class="mf">0.99782</span><span class="p">,</span> <span class="mf">0.99813</span><span class="p">,</span> <span class="mf">0.99786</span><span class="p">,</span> <span class="mf">0.92679</span><span class="p">,</span> <span class="mf">0.99717</span><span class="p">),</span>
+</span><span id="__span-3-93"><a id="__codelineno-3-93" name="__codelineno-3-93"></a>    <span class="n">word_results</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">elapse_list</span><span class="o">=</span><span class="p">[</span><span class="mf">0.16008154186420143</span><span class="p">,</span> <span class="mf">0.017705917358398438</span><span class="p">,</span> <span class="mf">0.35501312371343374</span><span class="p">],</span> <span class="n">elapse</span><span class="o">=</span><span class="mf">0.5328005829360336</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
+<h3 id="4">4. 查看可视化结果<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<div align="center">
+    <img src="./static/images/ch_en_num_vis.png" alt="Demo" width="100%">
+</div>
+
 <h3 id="_1">推荐阅读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<h4 id="api"><a href="./install_usage/api/RapidOCR.md">API</a><a class="headerlink" href="#api" title="Permanent link">&para;</a></h4>
 <h4 id="_2"><a href="../blog/2022/08/20/%E5%85%B6%E4%BB%96%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81/">其他编程语言支持</a><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 
 
@@ -2064,7 +2225,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月10日 01:40:30">2025年3月10日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月11日 00:00:24">2025年3月11日</span>
   </span>
 
     
@@ -2074,7 +2235,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月10日 01:40:30">2025年3月10日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月11日 00:00:24">2025年3月11日</span>
   </span>
 
     

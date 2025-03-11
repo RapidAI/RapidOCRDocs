@@ -132,7 +132,7 @@ extra:
     - icon: fontawesome/brands/weixin
       link: https://raw.githubusercontent.com/RapidAI/.github/main/assets/RapidAI_poster_compose.png
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/rapidocr-onnxruntime/
+      link: https://pypi.org/project/rapidocr/
   version:
     provider: mike
 
@@ -143,18 +143,12 @@ nav:
   - 效果展示: visualization.md
   - 模型列表: model_list.md
   - 安装及使用:
-    - API:
-      - install_usage/api/RapidOCR.md
-      - install_usage/api/VisRes.md
-    - rapidocr_onnxruntime:
+    - rapidocr:
       - 安装: install_usage/rapidocr/install.md
       - 使用说明: install_usage/rapidocr/usage.md
-      - 参数解释: install_usage/rapidocr/config_yaml.md
-      - 命令行工具: install_usage/rapidocr/cli.md
-      - 更新日志: install_usage/rapidocr/changelog.md
-    - rapidocr_paddle:
-      - 安装及使用: install_usage/rapidocr_paddle/usage.md
-      - 更新日志: install_usage/rapidocr_paddle/changelog.md
+      - API Reference:
+        - RapidOCR: install_usage/rapidocr/API/RapidOCR.md
+        - VisRes: install_usage/rapidocr/API/VisRes.md
     - rapidocr_web:
       - 安装及使用: install_usage/rapidocr_web/usage.md
       - 更新日志: install_usage/rapidocr_web/changelog.md

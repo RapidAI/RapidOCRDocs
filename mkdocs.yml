@@ -140,7 +140,6 @@ nav:
   - 概览: index.md
   - 快速开始: quickstart.md
   - 在线demo: online_demo.md
-  - 效果展示: visualization.md
   - 模型列表: model_list.md
   - 安装及使用:
     - rapidocr:

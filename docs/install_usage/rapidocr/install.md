@@ -1,5 +1,7 @@
 ---
 comments: true
+hide:
+  - toc
 ---
 
 <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.13-aff.svg"></a>
@@ -19,27 +21,31 @@ comments: true
 
 #### 安装
 
-顺利的话，一行命令即可。包大小约为14M左右，包含了三个模型（文本检测、文本行方向分类和文本识别）。因为其中mobile版模型较小，因此将相关模型都已打到whl包，可直接pip安装使用。
-
-!!! info
-
-    请使用Python3.6及以上版本。<br/> `rapidocr_onnxruntime`系列库目前仅在CPU上支持较好，GPU上推理很慢，这一点可参考[link](https://rapidai.github.io/RapidOCRDocs/docs/inference_engine/onnxruntime/onnxruntime-gpu/)。因此不建议用`onnxruntime-gpu`版推理。<br/>GPU端推理推荐用[`rapidocr_paddle`](../rapidocr_paddle.md)
+顺利的话，一行命令即可。包大小约为15M左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中mobile版模型较小，因此将相关模型都已打到whl包，可直接pip安装使用。
 
 ```bash linenums="1"
 pip install rapidocr
 ```
 
-安装速度慢的话，可以指定国内的安装源，如使用清华源：
+国内安装速度慢的话，可以指定国内的安装源，如使用清华源：
 
 ```bash linenums="1"
 pip install rapidocr-i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
-依赖的包如下：
+#### 验证安装是否成功
+
+运行以下代码，终端可以打印出文字内容，即安装成功。
+
+```bash linenums="1"
+rapidocr -img "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true" --vis_res
+```
 
 !!! info
 
     如果在安装过程中，出现某个依赖包不能正确安装时，可先单独安装某个依赖包，之后再安装`rapidocr`即可。
+
+依赖的包如下：
 
 ```txt linenums="1"
 pyclipper>=1.2.0

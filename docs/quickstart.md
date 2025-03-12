@@ -22,8 +22,7 @@ pip install rapidocr
 === "Python使用"
 
     ```python linenums="1"
-    import cv2
-    from rapidocr import RapidOCR, VisRes
+    from rapidocr import RapidOCR
 
     engine = RapidOCR()
 

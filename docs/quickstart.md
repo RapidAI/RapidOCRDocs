@@ -16,7 +16,7 @@ pip install rapidocr
 === "命令行使用"
 
     ```bash linenums="1"
-    rapidocr -img tests/test_files/ch_en_num.jpg --vis_res
+    rapidocr -img "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true" --vis_res
     ```
 
 === "Python使用"
@@ -27,13 +27,11 @@ pip install rapidocr
 
     engine = RapidOCR()
 
-    img_path = "tests/test_files/ch_en_num.jpg"
+    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
     result = engine(img_path)
     print(result)
 
-    vis = VisRes()
-    vis_img = vis(img, result.boxes, result.txts, result.scores)
-    cv2.imwrite("vis.png", vis_img)
+    result.vis()
     ```
 
 ### 3. 查看可视化结果

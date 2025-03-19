@@ -9,15 +9,15 @@ hide:
 <a href="https://pepy.tech/project/rapidocr"><img src="https://static.pepy.tech/personalized-badge/rapidocr?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=🔥%20Downloads%20rapidocr"></a>
 <a href="https://pypi.org/project/rapidocr/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr"></a>
 
+!!! warning
+
+    `rapidocr_onnxruntime`, `rapidocr_openvino`, `rapidocr_paddle`三个库逐渐不再维护，后续会以`rapidocr`为主。
+
 #### 简介
 
 `rapidocr`是合并了`rapidocr_onnxruntime`、`rapidocr_openvino`、`rapidocr_paddle`以及支持PyTorch推理的版本。
 
 `rapidocr`默认支采用ONNXRuntime CPU版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用GPU推理。该部分请参见后续文档。
-
-!!! note
-
-    `rapidocr_onnxruntime`, `rapidocr_openvino`, `rapidocr_paddle`三个库逐渐不再维护，后续会以`rapidocr`为主。
 
 #### 安装
 

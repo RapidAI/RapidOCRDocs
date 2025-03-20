@@ -35,7 +35,7 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 #### 验证安装是否成功
 
-=== `rapidocr>=2.0.3`验证方式
+=== "`rapidocr>=2.0.3`验证方式"
 
     ```bash linenums="1"
     $ rapidocr check
@@ -51,7 +51,7 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
     Success! rapidocr is installed correctly!
     ```
 
-=== `rapidocr>=2.0.0,<2.0.2`验证方式
+=== "`rapidocr>=2.0.0,<2.0.2`验证方式"
 
     运行以下代码，终端可以打印出文字内容，即安装成功。
 

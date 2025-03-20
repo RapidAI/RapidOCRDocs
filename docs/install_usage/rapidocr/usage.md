@@ -32,11 +32,12 @@ result.vis()
 
 === "传入`config.yaml`使用"
 
-    自定义`config.yaml`配置，
-
-    ```bash linenums="1"
-    rapidocr -img "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true" --vis_res
-    ```
+    1. 生成`default_rapidocr.yaml`的配置文件
+       ```bash linenums="1"
+       $ rapidocr config
+       ```
+    2. 根据自己的需要更改YAML相应的值
+    3. 传入到`RapidOCR`中使用
 
 === "直接传入参数"
 

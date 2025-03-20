@@ -30,16 +30,34 @@ pip install rapidocr
 国内安装速度慢的话，可以指定国内的安装源，如使用清华源：
 
 ```bash linenums="1"
-pip install rapidocr-i https://pypi.tuna.tsinghua.edu.cn/simple/
+pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
 #### 验证安装是否成功
 
-运行以下代码，终端可以打印出文字内容，即安装成功。
+=== `rapidocr>=2.0.3`验证方式
 
-```bash linenums="1"
-rapidocr -img "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true" --vis_res
-```
+    ```bash linenums="1"
+    $ rapidocr check
+
+    # 输出以下内容即证明安装成功
+    [INFO] 2025-03-20 21:46:47,854 base.py:30: Using engine_name: onnxruntime
+    [INFO] 2025-03-20 21:46:47,886 utils.py:35: File already exists in /Users/jiahuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
+    [INFO] 2025-03-20 21:46:47,931 base.py:30: Using engine_name: onnxruntime
+    [INFO] 2025-03-20 21:46:47,931 utils.py:35: File already exists in /Users/jiahuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+    [INFO] 2025-03-20 21:46:47,949 base.py:30: Using engine_name: onnxruntime
+    [INFO] 2025-03-20 21:46:47,949 utils.py:35: File already exists in /Users/jiahuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
+
+    Success! rapidocr is installed correctly!
+    ```
+
+=== `rapidocr>=2.0.0,<2.0.2`验证方式
+
+    运行以下代码，终端可以打印出文字内容，即安装成功。
+
+    ```bash linenums="1"
+    rapidocr -img "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true" --vis_res
+    ```
 
 !!! info
 

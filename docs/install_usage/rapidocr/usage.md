@@ -103,14 +103,34 @@ result.vis()
     ```
 
     其他参数传入方式，基本就是参考`config.yaml`，关键字之间用点分割，直接写就可以了。例如：
-    ```python linenums="1"
-    {
-      "Global.with_openvino": True,
-      "Global.use_det": True,
-      "EngineConfig.torch.use_cuda", True,  # 使用torch GPU版推理
-      "EngineConfig.torch.gpu_id": 1,  # 指定GPU id
-    }
-    ```
+
+    <div class="grid" markdown>
+
+   === "`config.yaml`"
+
+      ```yaml linenums="1"
+      Global:
+         with_openvino: true
+         use_det: true
+
+      EngineConfig:
+         torch:
+            use_cuda: true
+            gpu_id: 0
+      ```
+
+   ```title="对应参数写法"
+   ```python linenums="1"
+   {
+   "Global.with_openvino": True,
+   "Global.use_det": True,
+   "EngineConfig.torch.use_cuda", True,  # 使用torch GPU版推理
+   "EngineConfig.torch.gpu_id": 1,  # 指定GPU id
+   }
+   ```
+
+   ```
+   </div>
 
 #### 输出
 

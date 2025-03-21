@@ -39,7 +39,7 @@ result.vis()
        # The config file has saved in ./default_rapidocr.yaml
        ```
 
-    2. 根据自己的需要更改YAML相应的值。例如使用openvino作为推理引擎，更改如下：
+    2. 根据自己的需要更改YAML相应的值。例如使用OpenVINO作为推理引擎，更改如下：
 
        ```yaml linenums="1"
        # 该配置文件命名为1.yaml
@@ -65,8 +65,7 @@ result.vis()
            with_torch: false
 
            font_path: null
-      ... ...
-      ```
+       ```
 
     3. 传入到`RapidOCR`中使用。
 

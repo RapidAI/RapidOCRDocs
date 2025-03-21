@@ -194,6 +194,14 @@ def __call__(
 
 #### 输出
 
+##### `TextDetOutput`：仅有检测
+
+##### `TextClsOutput`: 仅有文本行方向分类
+
+##### `TextRecOutput`: 仅有识别
+
+##### `RapidOCROutput`: 检测+方向分类+识别
+
 RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分，不同的参数决定了不同的输出。
 
 如果图像中未检测到有效文字信息，则返回`Tuple[None, None]`。详细搭配如下：

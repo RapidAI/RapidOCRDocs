@@ -32,14 +32,14 @@ result.vis()
 
 === "方法一：传入配置文件"
 
-    1. 生成`default_rapidocr.yaml`的配置文件。终端执行以下代码，即可在当前目录下生成默认的`default_rapidocr.yaml`文件。
+    1.生成`default_rapidocr.yaml`的配置文件。终端执行以下代码，即可在当前目录下生成默认的`default_rapidocr.yaml`文件。
 
        ```bash linenums="1"
        $ rapidocr config
        # The config file has saved in ./default_rapidocr.yaml
        ```
 
-    2. 根据自己的需要更改YAML相应的值。例如使用OpenVINO作为推理引擎，更改如下：
+    2.根据自己的需要更改YAML相应的值。例如使用OpenVINO作为推理引擎，更改如下：
 
        ```yaml linenums="1"
        # 该配置文件命名为1.yaml
@@ -67,7 +67,7 @@ result.vis()
            font_path: null
        ```
 
-    3. 传入到`RapidOCR`中使用。
+    3.传入到`RapidOCR`中使用。
 
        ```python linenums="1"
        from rapidocr import RapidOCR

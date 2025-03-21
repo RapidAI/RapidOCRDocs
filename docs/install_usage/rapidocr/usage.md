@@ -33,11 +33,14 @@ result.vis()
 === "方法一：传入配置文件"
 
     1. 生成`default_rapidocr.yaml`的配置文件。终端执行以下代码，即可在当前目录下生成默认的`default_rapidocr.yaml`文件。
+
        ```bash linenums="1"
        $ rapidocr config
        # The config file has saved in ./default_rapidocr.yaml
        ```
+
     2. 根据自己的需要更改YAML相应的值。例如使用openvino作为推理引擎，更改如下：
+
        ```yaml linenums="1"
        # 该配置文件命名为1.yaml
        Global:
@@ -64,7 +67,9 @@ result.vis()
            font_path: null
       ... ...
       ```
+
     3. 传入到`RapidOCR`中使用。
+
        ```python linenums="1"
        from rapidocr import RapidOCR
 
@@ -124,10 +129,13 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 === "使用OpenVINO"
 
     1. 安装openvino
+
        ```bash linenums="1"
        pip install openvino
        ```
+
     2. 指定openvino作为推理引擎
+
        ```python linenums="1"
        from rapidocr import RapidOCR
 
@@ -139,7 +147,9 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
        result.vis()
        ```
+
     3. 查看输出日志。下面日志中打印出了**Using engine_name: openvino**，则证明使用的推理引擎是OpenVINO。
+
       ```bash linenums="1"
       [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: openvino
       [INFO] 2025-03-21 09:28:03,553 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.onnx

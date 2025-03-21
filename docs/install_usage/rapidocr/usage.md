@@ -105,34 +105,33 @@ result.vis()
 
    <div class="grid cards" markdown>
 
-   - __`config.yaml`__
+      - **`config.yaml`**
 
-     ---
+         ---
 
-      ```yaml linenums="1"
-      Global:
-         with_openvino: true
-         use_det: true
+         ```yaml linenums="1"
+         Global:
+            with_openvino: true
+            use_det: true
 
-      EngineConfig:
-         torch:
-            use_cuda: true
-            gpu_id: 0
-      ```
+         EngineConfig:
+            torch:
+               use_cuda: true
+               gpu_id: 0
+         ```
 
-   - __对应参数写法__
+      - **对应参数写法**
 
-     ---
+         ---
 
-     ```python linenums="1"
-     {
-     "Global.with_openvino": True,
-     "Global.use_det": True,
-     "EngineConfig.torch.use_cuda", True,  # 使用torch GPU版推理
-     "EngineConfig.torch.gpu_id": 1,  # 指定GPU id
-     }
-     ```
-
+         ```python linenums="1"
+         {
+         "Global.with_openvino": True,
+         "Global.use_det": True,
+         "EngineConfig.torch.use_cuda", True,  # 使用torch GPU版推理
+         "EngineConfig.torch.gpu_id": 1,  # 指定GPU id
+         }
+         ```
    </div>
 
 #### 输出

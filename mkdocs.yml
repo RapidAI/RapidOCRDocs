@@ -101,6 +101,7 @@ markdown_extensions:
   - footnotes
   - def_list
   - md_in_html
+  - tables
   - pymdownx.tasklist:
       custom_checkbox: true
   - toc:

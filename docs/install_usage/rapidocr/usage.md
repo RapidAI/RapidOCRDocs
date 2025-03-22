@@ -270,7 +270,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 默认使用的是**mobile**的中英文检测识别模型，通过`lang_det`和`lang_rec`来指定。
 
-```python linenums=1
+```python linenums="1"
 from rapidocr import RapidOCR
 
 engine = RapidOCR(
@@ -280,7 +280,7 @@ engine = RapidOCR(
 
 如果想要使用**server**版默认模型，则直接更改参数为`ch_server`即可。
 
-```python linenums=1
+```python linenums="1"
 from rapidocr import RapidOCR
 
 engine = RapidOCR(

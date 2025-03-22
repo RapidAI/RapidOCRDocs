@@ -4,11 +4,11 @@ hide:
   - toc
 ---
 
-#### 引言
+### 引言
 
 该部分涉及如何使用`rapidocr`库来进行图像文字识别工作。
 
-#### 最简单的使用
+### 最简单的使用
 
 一切都使用默认值。默认使用来自PP-OCRv4的DBNet中文轻量检测，来自PP-OCRv4的SVTR_LCNet中文识别模型。默认使用ONNXRuntime CPU版作为推理引擎。
 
@@ -26,7 +26,7 @@ print(result)
 result.vis()
 ```
 
-#### 初始化RapidOCR实例输入
+### 初始化RapidOCR实例输入
 
 输入支持传入YAML格式的配置文件，同时支持参数直接传入使用。
 
@@ -127,11 +127,11 @@ result.vis()
     )
     ```
 
-#### 输出
+### 输出
 
 RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOutput, RapidOCROutput]`。这4种类型均是Dataclasses类，可以直接访问对应的键值。
 
-#### 选择不同推理引擎
+### 选择不同推理引擎
 
 `rapidocr`支持4种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch**），默认使用**ONNXRuntime CPU**版。
 
@@ -253,20 +253,43 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
          result.vis()
          ```
 
-    3. 查看输出日志。下面日志中打印出了**Using engine_name: paddlepaddle**，则证明使用的推理引擎是PaddlePaddle。
+    3. 查看输出日志。下面日志中打印出了**Using engine_name: torch**，则证明使用的推理引擎是PyTorch。
 
          ```bash linenums="1"
-         [INFO] 2025-03-22 15:20:45,528 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdmodel
-         [INFO] 2025-03-22 15:20:45,529 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdiparams
-         [INFO] 2025-03-22 15:20:45,746 base.py:30: Using engine_name: paddlepaddle
-         [INFO] 2025-03-22 15:20:45,746 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdmodel
-         [INFO] 2025-03-22 15:20:45,746 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdiparams
-         [INFO] 2025-03-22 15:20:45,903 base.py:30: Using engine_name: paddlepaddle
-         [INFO] 2025-03-22 15:20:45,904 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdmodel
-         [INFO] 2025-03-22 15:20:45,904 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdiparams
+         [INFO] 2025-03-22 15:39:13,241 base.py:30: Using engine_name: torch
+         [INFO] 2025-03-22 15:39:13,956 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.pth
+         [INFO] 2025-03-22 15:39:14,136 base.py:30: Using engine_name: torch
+         [INFO] 2025-03-22 15:39:14,136 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ptocr_mobile_v2.0_cls_infer.pth
+         [INFO] 2025-03-22 15:39:14,168 base.py:30: Using engine_name: torch
+         [INFO] 2025-03-22 15:39:14,168 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.pth
          ```
 
-#### 使用默认mobiel或server模型
+### 使用默认mobiel或server模型
 
+`rapidocr`库基本集成了PaddleOCR发布的所有模型，其中中英文检测识别模型仅集成最新的版本。同时只有中英文检测识别模型分为**mobile**和**server**两个版本，分别侧重速度和精度。
 
-#### 选择自定义的模型推理
+默认使用的是**mobile**的中英文检测识别模型，通过`lang_det`和`lang_rec`来指定。
+
+```python linenums=1
+from rapidocr import RapidOCR
+
+engine = RapidOCR(
+    params={"Global.lang_det": "ch_mobile", "Global.lang_rec": "ch_mobile"}
+)
+```
+
+如果想要使用**server**版默认模型，则直接更改参数为`ch_server`即可。
+
+```python linenums=1
+from rapidocr import RapidOCR
+
+engine = RapidOCR(
+    params={"Global.lang_det": "ch_server", "Global.lang_rec": "ch_server"}
+)
+```
+
+!!! note
+
+    并不是所有的模型都有**server**版本，具体哪个有，可以参见：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/a9bb7c1f44b6e00556ada90ac588f020d7637c4b/python/rapidocr/default_models.yaml)。配置文件中带有server字样的即是有server版本。
+
+### 目前支持哪些模型的使用？

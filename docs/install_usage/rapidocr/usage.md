@@ -32,14 +32,14 @@ result.vis()
 
 === "方法一：传入配置文件"
 
-    1. 生成`default_rapidocr.yaml`的配置文件。终端执行以下代码，即可在当前目录下生成默认的`default_rapidocr.yaml`文件。
+    1. 生成**default_rapidocr.yaml**的配置文件。终端执行以下代码，即可在当前目录下生成默认的**default_rapidocr.yaml**文件。
 
          ```bash linenums="1"
          $ rapidocr config
          # The config file has saved in ./default_rapidocr.yaml
          ```
 
-    2. 根据自己的需要更改YAML相应的值。例如使用OpenVINO作为推理引擎，更改如下：
+    2. 根据自己的需要更改**default_rapidocr.yaml**相应的值。例如使用OpenVINO作为推理引擎，更改如下：
 
          ```yaml linenums="1"
          # 该配置文件命名为1.yaml
@@ -76,7 +76,7 @@ result.vis()
          config_path = "1.yaml"
          engine = RapidOCR(config_path=config_path)
 
-         img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
+         img_url = "https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516"
          result = engine(img_url)
          print(result)
 
@@ -87,7 +87,7 @@ result.vis()
 
     由于rapidocr中涉及可调节的参数众多，为了便于维护，引入[omageconf](https://github.com/omry/omegaconf)库来更新参数。这样带来的代价是传入参数没有1.x系列中直观一些。但是现阶段方式也容易理解和使用。
 
-    例如，我想使用openvino作为推理引擎，可以通过下面这种方式使用：
+    例如，我想使用OpenVINO作为推理引擎，可以通过下面这种方式使用：
 
     ```python linenums="1"
     from rapidocr import RapidOCR
@@ -119,12 +119,14 @@ result.vis()
     **对应参数写法**
 
     ```python linenums="1"
-    {
-      "Global.with_openvino": True,
-      "Global.use_det": True,
-      "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
-      "EngineConfig.torch.gpu_id": 1,  # 指定GPU id
-    }
+    engine = RapidOCR(
+       params={
+          "Global.with_openvino": True,
+          "Global.use_det": True,
+          "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
+          "EngineConfig.torch.gpu_id": 1,  # 指定GPU id
+       }
+    )
     ```
 
 #### 输出
@@ -143,13 +145,13 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 === "使用OpenVINO"
 
-    1. 安装openvino
+    1. 安装OpenVINO
 
          ```bash linenums="1"
          pip install openvino
          ```
 
-    2. 指定openvino作为推理引擎
+    2. 指定OpenVINO作为推理引擎
 
          ```python linenums="1"
          from rapidocr import RapidOCR

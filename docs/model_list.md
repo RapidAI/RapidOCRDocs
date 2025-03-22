@@ -21,23 +21,14 @@ hide:
 以上模型可直接通过字段指定，程序会自动下载使用。
 
 ```python linenums="1"
-import cv2
-
 from rapidocr import RapidOCR, VisRes
 
 engine = RapidOCR(
     params={"Global.lang_det": "ch_mobile", "Global.lang_rec": "ch_mobile"}
 )
-vis = VisRes()
-
-image_path = "tests/test_files/ch_en_num.jpg"
-with open(image_path, "rb") as f:
-    img = f.read()
-
-result = engine(img)
+img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+result = engine(img_url)
 print(result)
-print(result.elapse)
 
-vis_img = vis(img, result.boxes, result.txts, result.scores)
-cv2.imwrite("vis.png", vis_img)
+result.vis()
 ```

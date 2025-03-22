@@ -32,56 +32,56 @@ result.vis()
 
 === "方法一：传入配置文件"
 
-    1.生成`default_rapidocr.yaml`的配置文件。终端执行以下代码，即可在当前目录下生成默认的`default_rapidocr.yaml`文件。
+    1. 生成`default_rapidocr.yaml`的配置文件。终端执行以下代码，即可在当前目录下生成默认的`default_rapidocr.yaml`文件。
 
-       ```bash linenums="1"
-       $ rapidocr config
-       # The config file has saved in ./default_rapidocr.yaml
-       ```
+         ```bash linenums="1"
+         $ rapidocr config
+         # The config file has saved in ./default_rapidocr.yaml
+         ```
 
-    2.根据自己的需要更改YAML相应的值。例如使用OpenVINO作为推理引擎，更改如下：
+    2. 根据自己的需要更改YAML相应的值。例如使用OpenVINO作为推理引擎，更改如下：
 
-       ```yaml linenums="1"
-       # 该配置文件命名为1.yaml
-       Global:
-           lang_det: "ch_mobile" # ch_server
-           lang_rec: "ch_mobile"
-           text_score: 0.5
+         ```yaml linenums="1"
+         # 该配置文件命名为1.yaml
+         Global:
+            lang_det: "ch_mobile" # ch_server
+            lang_rec: "ch_mobile"
+            text_score: 0.5
 
-           use_det: true
-           use_cls: true
-           use_rec: true
+            use_det: true
+            use_cls: true
+            use_rec: true
 
-           min_height: 30
-           width_height_ratio: 8
-           max_side_len: 2000
-           min_side_len: 30
+            min_height: 30
+            width_height_ratio: 8
+            max_side_len: 2000
+            min_side_len: 30
 
-           return_word_box: false
+            return_word_box: false
 
-           with_onnx: false
-           with_openvino: true   # 更改这里为true
-           with_paddle: false
-           with_torch: false
+            with_onnx: false
+            with_openvino: true   # 更改这里为true
+            with_paddle: false
+            with_torch: false
 
-           font_path: null
-       ```
+            font_path: null
+         ```
 
-    3.传入到`RapidOCR`中使用。
+    3. 传入到`RapidOCR`中使用。
 
-       ```python linenums="1"
-       from rapidocr import RapidOCR
+         ```python linenums="1"
+         from rapidocr import RapidOCR
 
-       # 步骤2中的1.yaml
-       config_path = "1.yaml"
-       engine = RapidOCR(config_path=config_path)
+         # 步骤2中的1.yaml
+         config_path = "1.yaml"
+         engine = RapidOCR(config_path=config_path)
 
-       img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
-       result = engine(img_url)
-       print(result)
+         img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
+         result = engine(img_url)
+         print(result)
 
-       result.vis()
-       ```
+         result.vis()
+         ```
 
 === "方法二：直接传入相应参数"
 
@@ -103,36 +103,29 @@ result.vis()
 
     其他参数传入方式，基本就是参考`config.yaml`，关键字之间用点分割，直接写就可以了。例如：
 
-   <div class="grid cards" markdown>
+    `config.yaml`部分参数示例：
 
-      - **`config.yaml`**
+    ```yaml linenums="1"
+    Global:
+       with_openvino: true
+       use_det: true
 
-         ---
+    EngineConfig:
+       torch:
+          use_cuda: true
+          gpu_id: 0
+    ```
 
-         ```yaml linenums="1"
-         Global:
-            with_openvino: true
-            use_det: true
+    **对应参数写法**
 
-         EngineConfig:
-            torch:
-               use_cuda: true
-               gpu_id: 0
-         ```
-
-      - **对应参数写法**
-
-         ---
-
-         ```python linenums="1"
-         {
-         "Global.with_openvino": True,
-         "Global.use_det": True,
-         "EngineConfig.torch.use_cuda", True,  # 使用torch GPU版推理
-         "EngineConfig.torch.gpu_id": 1,  # 指定GPU id
-         }
-         ```
-   </div>
+    ```python linenums="1"
+    {
+      "Global.with_openvino": True,
+      "Global.use_det": True,
+      "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
+      "EngineConfig.torch.gpu_id": 1,  # 指定GPU id
+    }
+    ```
 
 #### 输出
 
@@ -152,34 +145,34 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     1. 安装openvino
 
-       ```bash linenums="1"
-       pip install openvino
-       ```
+         ```bash linenums="1"
+         pip install openvino
+         ```
 
     2. 指定openvino作为推理引擎
 
-       ```python linenums="1"
-       from rapidocr import RapidOCR
+         ```python linenums="1"
+         from rapidocr import RapidOCR
 
-       engine = RapidOCR(params={"Global.with_openvino": True})
+         engine = RapidOCR(params={"Global.with_openvino": True})
 
-       img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/ test_files/ch_en_num.jpg?raw=true"
-       result = engine(img_url)
-       print(result)
+         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/ test_files/ch_en_num.jpg?raw=true"
+         result = engine(img_url)
+         print(result)
 
-       result.vis()
-       ```
+         result.vis()
+         ```
 
     3. 查看输出日志。下面日志中打印出了**Using engine_name: openvino**，则证明使用的推理引擎是OpenVINO。
 
-      ```bash linenums="1"
-      [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: openvino
-      [INFO] 2025-03-21 09:28:03,553 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
-      [INFO] 2025-03-21 09:28:03,767 base.py:30: Using engine_name: openvino
-      [INFO] 2025-03-21 09:28:03,768 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
-      [INFO] 2025-03-21 09:28:03,861 base.py:30: Using engine_name: openvino
-      [INFO] 2025-03-21 09:28:03,862 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
-      ```
+         ```bash linenums="1"
+         [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: openvino
+         [INFO] 2025-03-21 09:28:03,553 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
+         [INFO] 2025-03-21 09:28:03,767 base.py:30: Using engine_name: openvino
+         [INFO] 2025-03-21 09:28:03,768 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+         [INFO] 2025-03-21 09:28:03,861 base.py:30: Using engine_name: openvino
+         [INFO] 2025-03-21 09:28:03,862 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
+         ```
 
 === "使用PaddlePaddle"
 === "使用PyTorch"

@@ -263,33 +263,3 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
          [INFO] 2025-03-22 15:39:14,168 base.py:30: Using engine_name: torch
          [INFO] 2025-03-22 15:39:14,168 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.pth
          ```
-
-### 使用默认mobiel或server模型
-
-`rapidocr`库基本集成了PaddleOCR发布的所有模型，其中中英文检测识别模型仅集成最新的版本。同时只有中英文检测识别模型分为**mobile**和**server**两个版本，分别侧重速度和精度。
-
-默认使用的是**mobile**的中英文检测识别模型，通过`lang_det`和`lang_rec`来指定。
-
-```python linenums="1"
-from rapidocr import RapidOCR
-
-engine = RapidOCR(
-    params={"Global.lang_det": "ch_mobile", "Global.lang_rec": "ch_mobile"}
-)
-```
-
-如果想要使用**server**版默认模型，则直接更改参数为`ch_server`即可。
-
-```python linenums="1"
-from rapidocr import RapidOCR
-
-engine = RapidOCR(
-    params={"Global.lang_det": "ch_server", "Global.lang_rec": "ch_server"}
-)
-```
-
-!!! note
-
-    并不是所有的模型都有**server**版本，具体哪个有，可以参见：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/a9bb7c1f44b6e00556ada90ac588f020d7637c4b/python/rapidocr/default_models.yaml)。配置文件中带有server字样的即是有server版本。
-
-### 目前支持哪些模型的使用？

@@ -154,10 +154,10 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
     ```
 
     返回值为`TextDetOutput`类，可以通过`result.boxes`直接访问。主要包含以下4个字段：
-    - `TextDetOutput.img`: `np.ndarray`, 传入的原始图像
-    - `TextDetOutput.boxes`: `np.ndarray`, 文本行坐标，4个点组成，依次是`[左上，右上，右下，左下]`
-    - `TextDetOutput.scores`: `List[float]`, 每个文本行对应的置信度。
-    - `TextDetOutput.elapse`: `float`, 文本检测整体耗时，单位为秒。
+        - `TextDetOutput.img`: `np.ndarray`, 传入的原始图像
+        - `TextDetOutput.boxes`: `np.ndarray`, 文本行坐标，4个点组成，依次是`[左上，右上，右下，左下]`
+        - `TextDetOutput.scores`: `List[float]`, 每个文本行对应的置信度。
+        - `TextDetOutput.elapse`: `float`, 文本检测整体耗时，单位为秒。
 
     <details>
       <summary>点击展开</summary>
@@ -191,21 +191,22 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
             [202., 413.]]], dtype=float32),
         scores=[0.8829081288294226, 0.8744070886972952, 0.8937022144061125],
         elapse=0.15039170801173896)
-      ```
+        ```
       </details>
 
 === "只有分类"
 
     ```python linenums="1"
-    from rapidocr_onnxruntime import RapidOCR
+    from rapidocr import RapidOCR
 
     engine = RapidOCR()
 
-    img_path = 'tests/test_files/ch_en_num.jpg'
-    result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=False)
+    img_url = "https://raw.githubusercontent.com/RapidAI/RapidOCR/refs/heads/main/python/tests/test_files/text_rec.jpg"
+    result = engine(img_url, use_det=False, use_cls=True, use_rec=False)
     print(result)
-    print(elapse)
+    result.vis("vis_only_cls.jpg")
     ```
+
     返回值`result`: `List[List[str, float]]` (`[方向0或180, 置信度]`)
     ```python
     [

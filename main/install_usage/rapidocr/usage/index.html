@@ -1938,12 +1938,14 @@ You're not viewing the latest version.
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_only_det.jpg&#39;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="" src="../../../images/vis_onle_det.jpg" /></p>
-<p>返回值为<code>TextDetOutput</code>类，可以通过<code>result.boxes</code>直接访问。主要包含以下字段：
-- <code>TextDetOutput.img</code>: <code>np.ndarray</code>, 传入的原始图像
-- <code>TextDetOutput.boxes</code>: <code>np.ndarray</code>, 文本行坐标，4个点组成，依次是<code>[左上，右上，右下，左下]</code>
-- <code>TextDetOutput.scores</code>: <code>List[float]</code>, 每个文本行对应的置信度。
-- <code>TextDetOutput.elapse</code>: <code>float</code>, 文本检测整体耗时，单位为秒。</p>
+<p><img alt="" src="../../../images/vis_only_det.jpg" /></p>
+<p>返回值为<code>TextDetOutput</code>类，可以通过<code>result.boxes</code>直接访问。主要包含以下字段：</p>
+<ul>
+<li><code>TextDetOutput.img (np.ndarray)</code>: 传入的原始图像</li>
+<li><code>TextDetOutput.boxes (np.ndarray)</code>: 文本行坐标，4个点组成，依次是<code>[左上，右上，右下，左下]</code></li>
+<li><code>TextDetOutput.scores (List[float])</code>: 每个文本行对应的置信度。</li>
+<li>`TextDetOutput.elapse (float): 文本检测整体耗时，单位为秒。</li>
+</ul>
 <details class="info">
 <summary>详细返回值示例</summary>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
@@ -2019,9 +2021,13 @@ You're not viewing the latest version.
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_only_cls.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="" src="../../images/vis_onle_cls.jpg" /></p>
+<p><img alt="" src="../../../images/vis_only_cls.jpg" /></p>
 <p>返回值为<code>TextClsOutput</code>类，主要包含以下字段：</p>
-<p><code>result</code>: <code>List[List[str, float]]</code> (<code>[方向0或180, 置信度]</code>)</p>
+<ul>
+<li><code>TextClsOutput.img_list (List[np.ndarray])</code>: 多个文本行图像组成的列表。</li>
+<li><code>TextClsOutput.cls_res (List[Tuple(str, float)])</code>: 每个文本行对应的方向及置信度。</li>
+<li><code>TextClsOutput.elapse (float)</code>: 识别耗时，单位为秒。</li>
+</ul>
 <details class="info">
 <summary>详细返回值示例</summary>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
@@ -2044,24 +2050,50 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-11-5">5</a></span>
 <span class="normal"><a href="#__codelineno-11-6">6</a></span>
 <span class="normal"><a href="#__codelineno-11-7">7</a></span>
-<span class="normal"><a href="#__codelineno-11-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr_onnxruntime</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
+<span class="normal"><a href="#__codelineno-11-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">()</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">&#39;tests/test_files/ch_en_num.jpg&#39;</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="n">result</span><span class="p">,</span> <span class="n">elapse</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/RapidAI/RapidOCR/refs/heads/main/python/tests/test_files/text_rec.jpg&quot;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">elapse</span><span class="p">)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_only_rec.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>返回值<code>result</code>: <code>List[List[str, float]]</code> (<code>[识别的文本, 置信度]</code>)
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">[</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="p">[</span><span class="s1">&#39;韩国小馆&#39;</span><span class="p">,</span> <span class="mf">0.7992169380187988</span><span class="p">],</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="o">...</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="p">]</span>
-</span></code></pre></div></td></tr></table></div></p>
+<p><img alt="" src="../../../images/vis_only_rec.jpg" /></p>
+<p>返回值为<code>TextRecOutput</code>类，主要包含以下字段：</p>
+<ul>
+<li><code>TextRecOutput.imgs (List[np.ndarray])</code>: 多个文本行图像组成的列表。</li>
+<li><code>TextRecOutput.txts (List[Tuple(str, float)])</code>: 每个文本行对应的识别结果。</li>
+<li><code>TextRecOutput.scores (float)</code>: 每个文本行识别结果。</li>
+<li><code>TextRecOutput.word_results (Tuple[None])</code>: 仅在指定<code>return_word_box=True</code>时，有值。</li>
+</ul>
+<details class="info">
+<summary>详细返回值示例</summary>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">TextRecOutput</span><span class="p">(</span><span class="n">imgs</span><span class="o">=</span><span class="p">[</span><span class="n">array</span><span class="p">([[[</span><span class="mi">123</span><span class="p">,</span>  <span class="mi">56</span><span class="p">,</span>   <span class="mi">1</span><span class="p">],</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>        <span class="p">[</span><span class="mi">124</span><span class="p">,</span>  <span class="mi">55</span><span class="p">,</span>   <span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>        <span class="p">[</span><span class="mi">131</span><span class="p">,</span>  <span class="mi">55</span><span class="p">,</span>   <span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>        <span class="o">...</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>        <span class="p">[</span><span class="mi">128</span><span class="p">,</span>  <span class="mi">54</span><span class="p">,</span>   <span class="mi">6</span><span class="p">],</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>        <span class="p">[</span><span class="mi">127</span><span class="p">,</span>  <span class="mi">51</span><span class="p">,</span>   <span class="mi">2</span><span class="p">],</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>        <span class="p">[</span><span class="mi">126</span><span class="p">,</span>  <span class="mi">50</span><span class="p">,</span>   <span class="mi">1</span><span class="p">]]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">uint8</span><span class="p">)],</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="n">txts</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;韩国小馆&#39;</span><span class="p">,),</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="n">scores</span><span class="o">=</span><span class="p">(</span><span class="mf">0.99916</span><span class="p">,),</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="n">word_results</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,),</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="n">elapse</span><span class="o">=</span><span class="mf">0.024397416971623898</span><span class="p">,</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="n">lang_rec</span><span class="o">=</span><span class="s1">&#39;ch_mobile&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
 </div>
 <div class="tabbed-block">
 <p><div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
@@ -2677,7 +2709,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月28日 01:28:31">2025年3月28日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月28日 01:38:46">2025年3月28日</span>
   </span>
 
     
@@ -2687,7 +2719,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月28日 01:28:31">2025年3月28日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月28日 01:38:46">2025年3月28日</span>
   </span>
 
     

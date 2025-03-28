@@ -158,14 +158,15 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
     result.vis('vis_only_det.jpg')
     ```
 
-    ![](../../images/vis_onle_det.jpg)
+    ![](../../images/vis_only_det.jpg)
 
 
     返回值为`TextDetOutput`类，可以通过`result.boxes`直接访问。主要包含以下字段：
-    - `TextDetOutput.img`: `np.ndarray`, 传入的原始图像
-    - `TextDetOutput.boxes`: `np.ndarray`, 文本行坐标，4个点组成，依次是`[左上，右上，右下，左下]`
-    - `TextDetOutput.scores`: `List[float]`, 每个文本行对应的置信度。
-    - `TextDetOutput.elapse`: `float`, 文本检测整体耗时，单位为秒。
+
+    - `TextDetOutput.img (np.ndarray)`: 传入的原始图像
+    - `TextDetOutput.boxes (np.ndarray)`: 文本行坐标，4个点组成，依次是`[左上，右上，右下，左下]`
+    - `TextDetOutput.scores (List[float])`: 每个文本行对应的置信度。
+    - `TextDetOutput.elapse (float): 文本检测整体耗时，单位为秒。
 
     ??? info "详细返回值示例"
 
@@ -212,13 +213,13 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
     result.vis("vis_only_cls.jpg")
     ```
 
-    ![](../../images/vis_onle_cls.jpg)
+    ![](../../images/vis_only_cls.jpg)
 
     返回值为`TextClsOutput`类，主要包含以下字段：
 
-    `result`: `List[List[str, float]]` (`[方向0或180, 置信度]`)
-
-
+    - `TextClsOutput.img_list (List[np.ndarray])`: 多个文本行图像组成的列表。
+    - `TextClsOutput.cls_res (List[Tuple(str, float)])`: 每个文本行对应的方向及置信度。
+    - `TextClsOutput.elapse (float)`: 识别耗时，单位为秒。
 
     ??? info "详细返回值示例"
 
@@ -233,23 +234,41 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
 === "只有识别"
 
     ```python linenums="1"
-    from rapidocr_onnxruntime import RapidOCR
+    from rapidocr import RapidOCR
 
     engine = RapidOCR()
 
-    img_path = 'tests/test_files/ch_en_num.jpg'
-    result, elapse = engine(img_path, use_det=False, use_cls=False, use_rec=True)
+    img_url = "https://raw.githubusercontent.com/RapidAI/RapidOCR/refs/heads/main/python/tests/test_files/text_rec.jpg"
+    result = engine(img_url, use_det=False, use_cls=False, use_rec=True)
     print(result)
-    print(elapse)
+    result.vis("vis_only_rec.jpg")
     ```
 
-    返回值`result`: `List[List[str, float]]` (`[识别的文本, 置信度]`)
-    ```python linenums="1"
-    [
-        ['韩国小馆', 0.7992169380187988],
-        ...
-    ]
-    ```
+    ![](../../images/vis_only_rec.jpg)
+
+    返回值为`TextRecOutput`类，主要包含以下字段：
+
+    - `TextRecOutput.imgs (List[np.ndarray])`: 多个文本行图像组成的列表。
+    - `TextRecOutput.txts (List[Tuple(str, float)])`: 每个文本行对应的识别结果。
+    - `TextRecOutput.scores (float)`: 每个文本行识别结果。
+    - `TextRecOutput.word_results (Tuple[None])`: 仅在指定`return_word_box=True`时，有值。
+
+    ??? info "详细返回值示例"
+
+        ```python linenums="1"
+        TextRecOutput(imgs=[array([[[123,  56,   1],
+                [124,  55,   0],
+                [131,  55,   0],
+                ...,
+                [128,  54,   6],
+                [127,  51,   2],
+                [126,  50,   1]]], dtype=uint8)],
+        txts=('韩国小馆',),
+        scores=(0.99916,),
+        word_results=(None,),
+        elapse=0.024397416971623898,
+        lang_rec='ch_mobile')
+        ```
 
 === "检测 + 识别"
 

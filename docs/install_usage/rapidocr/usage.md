@@ -142,6 +142,11 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
 
 === "只有检测"
 
+    - `TextDetOutput.img`: `np.ndarray`, 传入的原始图像
+    - `TextDetOutput.boxes`: `np.ndarray`, 文本行坐标，4个点组成，依次是`[左上，右上，右下，左下]`
+    - `TextDetOutput.scores`: `List[float]`, 每个文本行对应的置信度。
+    - `TextDetOutput.elapse`: `float`, 文本检测整体耗时，单位为秒。
+
     ```python linenums="1"
     from rapidocr import RapidOCR
 
@@ -153,12 +158,14 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
     result.vis('vis_only_det.jpg')
     ```
 
-    返回值为`TextDetOutput`类，可以通过`result.boxes`直接访问。主要包含以下字段：
+    ![](../../images/vis_onle_det.jpg)
 
-        - `TextDetOutput.img`: `np.ndarray`, 传入的原始图像
-        - `TextDetOutput.boxes`: `np.ndarray`, 文本行坐标，4个点组成，依次是`[左上，右上，右下，左下]`
-        - `TextDetOutput.scores`: `List[float]`, 每个文本行对应的置信度。
-        - `TextDetOutput.elapse`: `float`, 文本检测整体耗时，单位为秒。
+
+    返回值为`TextDetOutput`类，可以通过`result.boxes`直接访问。主要包含以下字段：
+    - `TextDetOutput.img`: `np.ndarray`, 传入的原始图像
+    - `TextDetOutput.boxes`: `np.ndarray`, 文本行坐标，4个点组成，依次是`[左上，右上，右下，左下]`
+    - `TextDetOutput.scores`: `List[float]`, 每个文本行对应的置信度。
+    - `TextDetOutput.elapse`: `float`, 文本检测整体耗时，单位为秒。
 
     ??? info "详细返回值示例"
 
@@ -173,8 +180,7 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
             ...,
             [187,  11, 135],
             [187,  11, 135],
-            [186,  10, 134]],
-        ], dtype=uint8),
+            [186,  10, 134]]], dtype=uint8),
         boxes=array([[[  6.,   2.],
             [322.,   9.],
             [320., 104.],
@@ -206,17 +212,23 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
     result.vis("vis_only_cls.jpg")
     ```
 
+    ![](../../images/vis_onle_cls.jpg)
+
     返回值为`TextClsOutput`类，主要包含以下字段：
 
     `result`: `List[List[str, float]]` (`[方向0或180, 置信度]`)
-    ```python
-    [
-        ['0', 0.9998784],
-        ...
-    ]
-    ```
 
-    ![](../../images/vis_onle_det.jpg)
+
+
+    ??? info "详细返回值示例"
+
+        ```python linenums="1"
+        TextClsOutput(img_list=[array([[[123,  56,   1],
+                [124,  55,   0],
+                [131,  55,   0],], dtype=uint8)],
+        cls_res=[('0', 0.9998784)],
+        elapse=0.004718780517578125)
+        ```
 
 === "只有识别"
 

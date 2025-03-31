@@ -22,8 +22,6 @@ hide:
 
 默认使用的是**mobile**的中英文检测识别模型，通过`lang_det`和`lang_rec`来指定。
 
-ONNXRuntime、OpenVINO和PaddlePaddle三个推理引擎下，模型一致，PyTorch推理引擎下仅有`ch`系列。
-
 ```python linenums="1"
 from rapidocr import RapidOCR
 

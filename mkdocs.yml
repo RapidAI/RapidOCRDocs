@@ -148,7 +148,6 @@ nav:
       - 使用说明: install_usage/rapidocr/usage.md
       - API Reference:
         - RapidOCR: install_usage/rapidocr/API/RapidOCR.md
-        - VisRes: install_usage/rapidocr/API/VisRes.md
     - rapidocr_web:
       - 安装及使用: install_usage/rapidocr_web/usage.md
       - 更新日志: install_usage/rapidocr_web/changelog.md

@@ -54,7 +54,7 @@ engine = RapidOCR(
 |---:|:---|:---:|:---:|:---:|:---:|:---:|
 |中英|`ch`|`ch_mobile` `ch_server`|✅|✅|✅|✅|
 |英语和拉丁语|`en`|`en_mobile` `en_server`|✅|✅|✅|✅|
-|多语种|`Multilingual`|`Multilingual_mobile`|✅|✅|✅|🚧|
+|多语种|`Multilingual`|`multi_mobile`|✅|✅|✅|✅|
 
 文本识别模型：
 
@@ -62,16 +62,16 @@ engine = RapidOCR(
 |---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
 |中文|Chinese & English|`ch`|`ch_mobile` `ch_server`|✅|✅|✅|✅|
 |中文繁体|Chinese (Traditional)|`chinese_cht`|`chinese_cht`|✅|✅|✅|✅|
-<!-- |英文|English|`en`|
-|阿拉伯文|Arabic|`ar`|
-|塞尔维亚文（cyrillic)|Serbian(cyrillic)|`cyrillic`|
-|梵文|Devanagari|`devanagari`|
-|日文|Japan|`japan`|
-|卡纳达语|kannaḍa|`ka`|
-|韩文|Koran|`korean`|
-|拉丁文|Latin|`latin`|
-|泰米尔文|Tamil |`ta`|
-|泰卢固文|Telugu |`te`| -->
+|英文|English|`en`|`en_mobile`|✅|✅|✅|✅|
+|阿拉伯文|Arabic|`ar`|`ar_mobile`|✅|✅|✅|✅|
+|塞尔维亚文（cyrillic)|Serbian(cyrillic)|`cyrillic`|`cyrillic_mobile`|✅|✅|✅|✅|
+|梵文|Devanagari|`devanagari`|`devanagari_mobile`|✅|✅|✅|✅|
+|日文|Japan|`japan`|`japan_mobile`|✅|✅|✅|✅|
+|卡纳达语|kannaḍa|`ka`|`ka_mobile`|✅|✅|✅|✅|
+|韩文|Koran|`korean`|`korean_mobile`|✅|✅|✅|✅|
+|拉丁文|Latin|`latin`|`latin_mobile`|✅|✅|✅|✅|
+|泰米尔文|Tamil |`ta`|`ta_mobile`|✅|✅|✅|✅|
+|泰卢固文|Telugu |`te`|`te_mobile`|✅|✅|✅|✅|
 
 ### 使用方式
 

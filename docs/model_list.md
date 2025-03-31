@@ -49,15 +49,15 @@ engine = RapidOCR(
 文本检测模型：
 
 |语种类型名称|程序使用字段|支持模型类型(`lang_det`)|ONNXRuntime| OpenVINO| PaddlePaddle | PyTorch|
-|---:|:---|:---:|:---:|:---:|:---:|:---:|
+|---:|:---|:---|:---:|:---:|:---:|:---:|
 |中英|`ch`|`ch_mobile` `ch_server`|✅|✅|✅|✅|
 |英语和拉丁语|`en`|`en_mobile` `en_server`|✅|✅|✅|✅|
-|多语种|`Multilingual`|`multi_mobile`|✅|✅|✅|✅|
+|多语种|`multi`|`multi_mobile`|✅|✅|✅|✅|
 
 文本识别模型：
 
 |语种|描述|程序使用字段|支持模型类型(`lang_rec`)|ONNXRuntime| OpenVINO| PaddlePaddle | PyTorch|
-|---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
+|---:|:---|:---|:---|:---:|:---:|:---:|:---:|
 |中文|Chinese & English|`ch`|`ch_mobile` `ch_server`|✅|✅|✅|✅|
 |中文繁体|Chinese (Traditional)|`chinese_cht`|`chinese_cht`|✅|✅|✅|✅|
 |英文|English|`en`|`en_mobile`|✅|✅|✅|✅|

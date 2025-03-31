@@ -30,7 +30,7 @@ pip install rapidocr
     result = engine(img_url)
     print(result)
 
-    result.vis()
+    result.vis("vis_result.jpg")
     ```
 
 ### 3. 查看可视化结果

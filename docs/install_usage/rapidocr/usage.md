@@ -23,7 +23,7 @@ img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files
 result = engine(img_url)
 print(result)
 
-result.vis()
+result.vis("vis_result.jpg")
 ```
 
 ### 初始化RapidOCR实例输入
@@ -80,7 +80,7 @@ result.vis()
          result = engine(img_url)
          print(result)
 
-         result.vis()
+         result.vis("vis_result.jpg")
          ```
 
 === "方法二：直接传入相应参数"
@@ -98,7 +98,7 @@ result.vis()
     result = engine(img_url)
     print(result)
 
-    result.vis()
+    result.vis("vis_result.jpg")
     ```
 
     其他参数传入方式，基本就是参考`config.yaml`，关键字之间用点分割，直接写就可以了。例如：
@@ -413,7 +413,7 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
     img_url = "<https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/ch_en_num.jpg>"
     result = engine(img_url, return_word_box=True)
     print(result)
-    result.vis("1.jpg")
+    result.vis("vis_return_words.jpg")
     ```
 
     ![](../../images/vis_sinlge_words.jpg)
@@ -596,7 +596,7 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
     result = engine(img_url)
     print(result)
 
-    result.vis()
+    result.vis('vis_result.jpg')
     ```
 
 === "使用OpenVINO"
@@ -618,7 +618,7 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
          result = engine(img_url)
          print(result)
 
-         result.vis()
+         result.vis('vis_result.jpg')
          ```
 
     3. 查看输出日志。下面日志中打印出了**Using engine_name: openvino**，则证明使用的推理引擎是OpenVINO。
@@ -661,7 +661,7 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
          result = engine(img_url)
          print(result)
 
-         result.vis()
+         result.vis('vis_result.jpg')
          ```
 
     3. 查看输出日志。下面日志中打印出了**Using engine_name: paddlepaddle**，则证明使用的推理引擎是PaddlePaddle。
@@ -706,7 +706,7 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
          result = engine(img_url)
          print(result)
 
-         result.vis()
+         result.vis('vis_result.jpg')
          ```
 
     3. 查看输出日志。下面日志中打印出了**Using engine_name: torch**，则证明使用的推理引擎是PyTorch。

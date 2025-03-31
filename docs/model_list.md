@@ -85,5 +85,5 @@ img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files
 result = engine(img_url)
 print(result)
 
-result.vis()
+result.vis("vis_result.jpg")
 ```

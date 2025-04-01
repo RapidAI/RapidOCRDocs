@@ -145,9 +145,8 @@ nav:
   - 安装及使用:
     - rapidocr:
       - 安装: install_usage/rapidocr/install.md
-      - 使用说明: install_usage/rapidocr/usage.md
-      - API Reference:
-        - RapidOCR: install_usage/rapidocr/API/RapidOCR.md
+      - 使用: install_usage/rapidocr/usage.md
+      - 参数介绍: install_usage/rapidocr/parameters.md
     - rapidocr_web:
       - 安装及使用: install_usage/rapidocr_web/usage.md
       - 更新日志: install_usage/rapidocr_web/changelog.md

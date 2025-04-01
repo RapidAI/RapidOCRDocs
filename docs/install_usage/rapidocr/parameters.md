@@ -39,7 +39,39 @@ Global:
     font_path: null
 ```
 
-**text_score** (*float, optional*): 文本识别结果置信度，值越大，把握越大。取值范围：`[0, 1]`, 默认值是0.5。
+`lang_det (str)`: 文本检测使用模型。默认值是`ch_mobile`，意思是使用中文轻量模型。取值为`[ch_mobile, ch_server]`。
+
+`lang_rec (str)`: 文本识别使用模型。默认值是`ch_mobile`, 意思是使用中文轻量模型。取值为`[ch_mobile, ch_server]`。
+
+`text_score (float)`: 文本识别结果置信度，值越大，把握越大。取值范围：`[0, 1]`, 默认值是0.5。
+
+`use_det (bool)`: 是否使用文本检测。默认为`True`。
+
+`use_cls (bool)`: 是否使用文本行方向分类。默认为`True`。
+
+`use_rec (bool)`: 是否使用文本行识别。默认为`True`。
+
+`min_height (int)` : 图像最小高度（单位是像素），低于这个值，会跳过文本检测阶段，直接进行后续识别。默认值为30。`min_height`是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
+
+![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
+
+`width_height_ratio (float)`**: 如果输入图像的宽高比大于`width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1时：不用这个参数. 默认值为8。
+
+`max_side_len (int)`: 如果输入图像的最大边大于`max_side_len`，则会按宽高比，将最大边缩放到`max_side_len`。默认为2000px。
+
+`min_side_len (int)`: 如果输入图像的最小边小于`min_side_len`，则会按宽高比，将最小边缩放到`min_side_len`。默认为30px。
+
+`return_word_box (bool)`: 是否返回文字的单字坐标。默认为`False`。在`rapidocr_onnxruntime==1.4.0`中，汉字会返回单字坐标，英语返回单词坐标。在`rapidocr_onnxruntime>=1.4.1`中，汉字返回单字坐标，英语返回单字母坐标。
+
+`with_onnx (bool)`: 是否使用[ONNXRuntime](https://github.com/microsoft/onnxruntime)推理引擎。默认为`False`。注意：在所有推理引擎都为`False`时，会默认采用ONNXRuntime。
+
+`with_openvino (bool)`: 是否使用[OpenVINO](https://github.com/openvinotoolkit/openvino)推理引擎，默认为`False`。
+
+`with_paddle (bool)`: 是否使用[PaddlePaddle](https://www.paddlepaddle.org.cn/install/quick)推理引擎，默认为`False`。
+
+`with_torch (bool)`: 是否使用[PyTorch](https://pytorch.org/)推理引擎，默认为`False`。
+
+`font_path (str)`: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为`null`。
 
 #### EngineConfig
 
@@ -110,17 +142,6 @@ Rec:
     rec_batch_num: 6
 ```
 
-**print_verbose** (*bool, optional*): 是否打印各个部分耗时信息。 默认为`False`。
-
-**min_height** (*int, optional*): 图像最小高度（单位是像素），低于这个值，会跳过文本检测阶段，直接进行后续识别。默认值为30。`min_height`是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
-
-![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
-
-**width_height_ratio** (*float, optional*): 如果输入图像的宽高比大于`width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1时：不用这个参数. 默认值为8。
-
-- **max_side_len** (*int, optional*): 如果输入图像的最大边大于`max_side_len`，则会按宽高比，将最大边缩放到`max_side_len`。默认为2000px。
-- **min_side_len** (*int, optional*): 如果输入图像的最小边小于`min_side_len`，则会按宽高比，将最小边缩放到`min_side_len`。默认为30px。
-- **return_word_box** (*bool, optional*): 是否返回文字的单字坐标。默认为`False`。在`rapidocr_onnxruntime==1.4.0`中，汉字会返回单字坐标，英语返回单词坐标。在`rapidocr_onnxruntime>=1.4.1`中，汉字返回单字坐标，英语返回单字母坐标。
 - **det_use_cuda** (*bool, optional*): 是否使用CUDA加速推理。默认值为`False`。
 - **det_use_dml** (*bool, optional*): 是否使用DirectML加速推理(仅限于Window10及以上)。默认值为`False`。详细参见 → [link](../../blog/posts/how_to_use_directml.md) 。
 - **det_model_path** (*Optional[str], optional*): 文本检测模型路径，仅限于基于PaddleOCR训练所得DBNet文本检测模型。默认值为`None`。

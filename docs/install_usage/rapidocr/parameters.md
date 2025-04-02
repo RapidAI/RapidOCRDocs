@@ -14,6 +14,8 @@ rapidocr config
 
 #### Global
 
+该部分为全局配置。
+
 ```yaml linenums="1"
 Global:
     lang_det: "ch_mobile" # ch_server
@@ -55,7 +57,7 @@ Global:
 
 ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
 
-`width_height_ratio (float)`**: 如果输入图像的宽高比大于`width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1时：不用这个参数. 默认值为8。
+`width_height_ratio (float)`: 如果输入图像的宽高比大于`width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1时：不用这个参数. 默认值为8。
 
 `max_side_len (int)`: 如果输入图像的最大边大于`max_side_len`，则会按宽高比，将最大边缩放到`max_side_len`。默认为2000px。
 
@@ -74,6 +76,8 @@ Global:
 `font_path (str)`: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为`null`。
 
 #### EngineConfig
+
+该部分为相关推理引擎的配置文件，大家可按需配置。该部分后面可能会增删部分关键字，如果有需求，可以在文档下面评论区指出。
 
 ```yaml linenums="1"
 EngineConfig:
@@ -97,6 +101,14 @@ EngineConfig:
         gpu_id: 0
 ```
 
+ONNXRuntime Python API 参见：[Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)
+
+OpenVINO Python API 参见：[OpenVINO Python API](https://docs.openvino.ai/2025/api/ie_python_api/api.html)
+
+PaddlePaddle API 参见：[API 文档](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/index_cn.html)
+
+PyTorch API 参见：[PyTorch documentation](https://pytorch.org/docs/stable/index.html)
+
 #### Det
 
 ```yaml linenums="1"
@@ -117,6 +129,24 @@ Det:
     score_mode: fast
 ```
 
+`model_path (str)`: 文本检测模型路径，仅限于基于PaddleOCR训练所得DBNet文本检测模型。默认值为`null`。
+
+`limit_side_len (float)`: 限制图像边的长度的像素值。默认值为736。
+
+`limit_type (str)`: 限制图像的最小边长度还是最大边为`limit_side_len` <br/> 示例解释：当`limit_type=min`和`limit_side_len=736`时，图像最小边小于736时，<br/>会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 取值范围为：`[min, max]`，默认值为`min`。
+
+`thresh (float)`: 图像中文字部分和背景部分分割阈值。值越大，文字部分会越小。取值范围：`[0, 1]`，默认值为0.3。
+
+`box_thresh (float)`: 文本检测所得框是否保留的阈值，值越大，召回率越低。取值范围：`[0, 1]`，默认值为0.5。
+
+`max_candidates (int)`: 最大候选框数目。默认是1000。
+
+`unclip_ratio (float)`: 控制文本检测框的大小，值越大，检测框整体越大。取值范围：`[1.6, 2.0]`，默认值为1.6。
+
+`use_dilation (bool)`: 是否使用膨胀。默认为`true`。该参数用于将检测到的文本区域做形态学的膨胀处理。
+
+`score_mode (str)`: 计算文本框得分的方式。取值范围为：`[slow, fast]`，默认值为`fast`。
+
 #### Cls
 
 ```yaml linenums="1"
@@ -130,6 +160,18 @@ Cls:
     label_list: ['0', '180']
 ```
 
+`model_path (str)`: 文本行方向分类模型路径，仅限于PaddleOCR训练所得二分类分类模型。默认值为`None`。
+
+`model_dir (str)`: 占位参数，暂时无效。
+
+`cls_image_shape (List[int]): 输入方向分类模型的图像Shape(CHW)。默认值为`[3, 48, 192]`。
+
+`cls_batch_num (int)`: 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为6。
+
+`cls_thresh (float)`: 方向分类结果的置信度。取值范围：`[0, 1]`，默认值为0.9。
+
+`label_list (List[str])`: 方向分类的标签，0°或者180°，**该参数不能动**。默认值为`["0", "180"]`。
+
 #### Rec
 
 ```yaml linenums="1"
@@ -142,28 +184,12 @@ Rec:
     rec_batch_num: 6
 ```
 
-- **det_use_cuda** (*bool, optional*): 是否使用CUDA加速推理。默认值为`False`。
-- **det_use_dml** (*bool, optional*): 是否使用DirectML加速推理(仅限于Window10及以上)。默认值为`False`。详细参见 → [link](../../blog/posts/how_to_use_directml.md) 。
-- **det_model_path** (*Optional[str], optional*): 文本检测模型路径，仅限于基于PaddleOCR训练所得DBNet文本检测模型。默认值为`None`。
-- **det_limit_side_len** (*float, optional*): 限制图像边的长度的像素值。默认值为736。
-- **det_limit_type** (*str, optional*): 限制图像的最小边长度还是最大边为`limit_side_len` <br/> 示例解释：当`limit_type=min`和`limit_side_len=736`时，图像最小边小于736时，<br/>会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 取值范围为：`[min, max]`，默认值为`min`。
-- **det_thresh** (*float, optional*): 图像中文字部分和背景部分分割阈值。值越大，文字部分会越小。取值范围：`[0, 1]`，默认值为0.3。
-- **det_box_thresh** (*float, optional*): 文本检测所得框是否保留的阈值，值越大，召回率越低。取值范围：`[0, 1]`，默认值为0.5。
-- **det_unclip_ratio** (*float, optional*): 控制文本检测框的大小，值越大，检测框整体越大。取值范围：`[1.6, 2.0]`，默认值为1.6。
-- **det_donot_use_dilation** (*bool, optional*): 不使用膨胀操作。默认值为`False`。
-- **det_score_mode** (*str, optional*): 计算文本框得分的方式。取值范围为：`[slow, fast]`，默认值为`fast`。
-- **cls_use_cuda** (*bool, optional*): 是否使用CUDA加速推理。默认值为`False`。
-- **cls_use_dml** (*bool, optional*): 是否使用DirectML加速推理(仅限于Window10及以上)。默认值为`False`。详细参见 → [link](../../blog/posts/how_to_use_directml.md) 。
-- **cls_model_path** (*Optional[str], optional*): 文本行方向分类模型路径，仅限于PaddleOCR训练所得二分类分类模型。默认值为`None`。
-- **cls_image_shape** (*List[int], optional*): 输入方向分类模型的图像Shape(CHW)。默认值为`[3, 48, 192]`。
-- **cls_label_list** (*List[str], optional*): 方向分类的标签，0°或者180°，**该参数不能动**。默认值为`["0", "180"]`。
-- **cls_batch_num** (*int, optional*): 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为6。
-- **cls_thresh** (*float, optional*): 方向分类结果的置信度。取值范围：`[0, 1]`，默认值为0.9。
-- **rec_use_cuda** (*bool, optional*): 是否使用CUDA加速推理。默认值为`False`。
-- **rec_use_dml** (*bool, optional*): 是否使用DirectML加速推理(仅限于Window10及以上)。默认值为`False`。详细参见 → [link](../../blog/posts/how_to_use_directml.md) 。
-- **rec_keys_path** (*bool, optional*): 文本识别模型对应的字典文件，默认为`None`。
-- **rec_model_path** (*Optional[str], optional*): 文本识别模型路径，仅限于PaddleOCR训练文本识别模型。默认值为`None`。
-- **rec_img_shape** (*List[int], optional*): 输入文本识别模型的图像Shape(CHW)。默认值为`[3, 48, 320]`。
-- **rec_batch_num** (*int, optional*): 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为6。
-- **intra_op_num_threads** (*int, optional*): 参见[docs](https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.inter_op_num_threads)。默认值为-1.
-- **inter_op_num_threads** (*int, optional*): 参见[docs](https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.intra_op_num_threads)。默认值为-1.
+`model_path (str)`: 文本识别模型路径，仅限于PaddleOCR训练文本识别模型。默认值为`None`。
+
+`model_dir (str)`: 模型存放路径或目录。如果是PaddlePaddle，该参数则对应模型存在目录。其余推理引擎对应模型地址。
+
+`rec_keys_path (str)`: 文本识别模型对应的字典文件，默认为`None`。
+
+`rec_img_shape (List[int])`: 输入文本识别模型的图像Shape(CHW)。默认值为`[3, 48, 320]`。
+
+`rec_batch_num (int)`: 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为6。

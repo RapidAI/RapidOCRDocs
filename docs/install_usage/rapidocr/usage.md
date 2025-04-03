@@ -15,7 +15,7 @@ hide:
 推荐可以先使用ONNXRuntime CPU版作为推理引擎。
 
 ```bash linenums="1"
-pip install onnxruntimeß
+pip install onnxruntime
 ```
 
 其他默认值的详细参数设置参见：[`config.yaml`](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/config.yaml)

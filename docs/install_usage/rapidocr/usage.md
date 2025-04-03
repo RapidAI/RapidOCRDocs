@@ -583,21 +583,36 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
 
 === "使用ONNXRuntime"
 
-    CPU版在安装`rapidocr`时，已经自动安装好了，无需配置，可直接使用。
+    1. 安装ONNXRuntime。推荐用CPU版的ONNXRuntime，GPU版不推荐在`rapidocr`中使用，相关原因参见：[ONNXRuntime GPU推理](../../blog/posts/inference_engine/onnxruntime/onnxruntime-gpu.md)
 
-    GPU版不推荐在`rapidocr`中使用，相关原因参见：[ONNXRuntime GPU推理](../../blog/posts/inference_engine/onnxruntime/onnxruntime-gpu.md)
+         ```bash linenums="1"
+         pip install onnxruntime
+         ```
 
-    ```python linenums="1"
-    from rapidocr import RapidOCR
+    2. ONNXRuntime作为默认推理引擎，无需显式指定即可使用。
 
-    engine = RapidOCR(params={"Global.with_openvino": True})
+         ```python linenums="1"
+         from rapidocr import RapidOCR
 
-    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/ test_files/ch_en_num.jpg?raw=true"
-    result = engine(img_url)
-    print(result)
+         engine = RapidOCR()
 
-    result.vis('vis_result.jpg')
-    ```
+         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/ test_files/ch_en_num.jpg?raw=true"
+         result = engine(img_url)
+         print(result)
+
+         result.vis('vis_result.jpg')
+         ```
+
+    3. 查看输出日志。下面日志中打印出了**Using engine_name: onnxruntime**，则证明使用的推理引擎是ONNXRuntime。
+
+         ```bash linenums="1"
+         [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: onnxruntime
+         [INFO] 2025-03-21 09:28:03,553 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
+         [INFO] 2025-03-21 09:28:03,767 base.py:30: Using engine_name: onnxruntime
+         [INFO] 2025-03-21 09:28:03,768 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+         [INFO] 2025-03-21 09:28:03,861 base.py:30: Using engine_name: onnxruntime
+         [INFO] 2025-03-21 09:28:03,862 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
+         ```
 
 === "使用OpenVINO"
 
@@ -664,15 +679,15 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
          result.vis('vis_result.jpg')
          ```
 
-    3. 查看输出日志。下面日志中打印出了**Using engine_name: paddlepaddle**，则证明使用的推理引擎是PaddlePaddle。
+    3. 查看输出日志。下面日志中打印出了**Using engine_name: paddle**，则证明使用的推理引擎是PaddlePaddle。
 
          ```bash linenums="1"
          [INFO] 2025-03-22 15:20:45,528 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdmodel
          [INFO] 2025-03-22 15:20:45,529 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdiparams
-         [INFO] 2025-03-22 15:20:45,746 base.py:30: Using engine_name: paddlepaddle
+         [INFO] 2025-03-22 15:20:45,746 base.py:30: Using engine_name: paddle
          [INFO] 2025-03-22 15:20:45,746 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdmodel
          [INFO] 2025-03-22 15:20:45,746 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdiparams
-         [INFO] 2025-03-22 15:20:45,903 base.py:30: Using engine_name: paddlepaddle
+         [INFO] 2025-03-22 15:20:45,903 base.py:30: Using engine_name: paddle
          [INFO] 2025-03-22 15:20:45,904 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdmodel
          [INFO] 2025-03-22 15:20:45,904 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdiparams
          ```

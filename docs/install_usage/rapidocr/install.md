@@ -17,13 +17,16 @@ hide:
 
 `rapidocr`是合并了`rapidocr_onnxruntime`、`rapidocr_openvino`、`rapidocr_paddle`以及支持PyTorch推理的版本。
 
-`rapidocr`默认支采用ONNXRuntime CPU版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用GPU推理。该部分请参见后续文档。
+`rapidocr>=2.0.0,<=2.0.5`中，默认采用ONNXRuntime CPU版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用GPU推理。该部分请参见后续文档。
+
+`rapidocr>=2.0.6`中不再将ONNXRuntime CPU作为默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。这样做是经过充分考虑了的。
 
 #### 安装
 
-顺利的话，一行命令即可。包大小约为15M左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中mobile版模型较小，因此将相关模型都已打到whl包，可直接pip安装使用。
+顺利的话，两行命令即可使用上。`rapidocr`包大小约为15M左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中mobile版模型较小，因此将相关模型都已打到whl包，可直接pip安装使用。
 
 ```bash linenums="1"
+pip install onnxruntime
 pip install rapidocr
 ```
 
@@ -73,7 +76,6 @@ six>=1.15.0
 Shapely>=1.7.1,!=2.0.4  # python3.12 2.0.4 bug
 PyYAML
 Pillow
-onnxruntime>=1.7.0
 tqdm
 omegaconf
 ```

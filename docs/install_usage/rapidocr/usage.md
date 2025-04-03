@@ -10,7 +10,13 @@ hide:
 
 ### 最简单的使用
 
-一切都使用默认值。默认使用来自PP-OCRv4的DBNet中文轻量检测，来自PP-OCRv4的SVTR_LCNet中文识别模型。默认使用ONNXRuntime CPU版作为推理引擎。
+一切都使用默认值。默认使用来自PP-OCRv4的DBNet中文轻量检测，来自PP-OCRv4的SVTR_LCNet中文识别模型。
+
+推荐可以先使用ONNXRuntime CPU版作为推理引擎。
+
+```bash linenums="1"
+pip install onnxruntimeß
+```
 
 其他默认值的详细参数设置参见：[`config.yaml`](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/config.yaml)
 

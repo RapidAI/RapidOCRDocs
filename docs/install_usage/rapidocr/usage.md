@@ -142,9 +142,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 - `TextRecOutput`: 仅有识别
 - `RapidOCROutput`: 检测+方向分类+识别
 
-RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控制是否使用检测、方向分类和识别这三部分，不同的参数决定了不同的输出。
-
-如果图像中未检测到有效文字信息，则返回`Tuple[None, None]`。详细搭配如下：
+详细搭配如下：
 
 === "检测 + 分类 + 识别"
 
@@ -583,7 +581,7 @@ RapidOCR在调用时，有三个参数`use_det | use_cls | use_rec`，可以控�
 
 ### 选择不同推理引擎
 
-`rapidocr`支持4种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch**），默认使用**ONNXRuntime CPU**版。
+`rapidocr`支持4种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch**），推荐首先使用**ONNXRuntime CPU**版。
 
 `rapidocr`是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。
 

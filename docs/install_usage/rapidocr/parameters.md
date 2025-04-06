@@ -90,7 +90,7 @@ EngineConfig:
     openvino:
         inference_num_threads: -1
 
-    paddlepaddle:
+    paddle:
         cpu_math_library_num_threads: -1
         use_cuda: false
         gpu_id: 0

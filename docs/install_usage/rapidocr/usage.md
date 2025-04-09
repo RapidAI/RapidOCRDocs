@@ -261,7 +261,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     - `TextClsOutput.cls_res (List[Tuple(str, float)])`: 每个文本行对应的方向及置信度。
     - `TextClsOutput.elapse (float)`: 识别耗时，单位为秒。
 
-    ??? example "详细返回值示例"
+    ???+ example "详细返回值示例"
 
         ```python linenums="1"
         TextRecOutput(imgs=[array([[[123,  56,   1],
@@ -304,7 +304,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     - `TextDetOutput.scores (List[float])`: 每个文本行对应的置信度。
     - `TextDetOutput.elapse (float): 文本检测整体耗时，单位为秒。
 
-    ??? example "详细返回值示例"
+    ???+ example "详细返回值示例"
 
         ```python linenums="1"
         TextDetOutput(img=array([[[120,   3,  52],
@@ -357,7 +357,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     - `TextClsOutput.cls_res (List[Tuple(str, float)])`: 每个文本行对应的方向及置信度。
     - `TextClsOutput.elapse (float)`: 识别耗时，单位为秒。
 
-    ??? example "详细返回值示例"
+    ???+ example "详细返回值示例"
 
         ```python linenums="1"
         TextClsOutput(img_list=[array([[[123,  56,   1],
@@ -389,7 +389,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     - `TextRecOutput.scores (float)`: 每个文本行识别结果。
     - `TextRecOutput.word_results (Tuple[None])`: 仅在指定`return_word_box=True`时，有值。
 
-    ??? example "详细返回值示例"
+    ???+ example "详细返回值示例"
 
         ```python linenums="1"
         TextRecOutput(imgs=[array([[[123,  56,   1],
@@ -722,6 +722,8 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
          [INFO] 2025-03-22 15:39:14,168 base.py:30: Using engine_name: torch
          [INFO] 2025-03-22 15:39:14,168 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.pth
          ```
+
+### 使用本地已下载模型
 
 ### 推荐阅读
 

@@ -47,7 +47,7 @@ result.vis("vis_result.jpg")
 
     2. 根据自己的需要更改**default_rapidocr.yaml**相应的值。例如使用OpenVINO作为推理引擎，更改如下：
 
-         ```yaml linenums="1"
+         ```yaml linenums="1" hl_lines="19"
          # 该配置文件命名为1.yaml
          Global:
             lang_det: "ch_mobile" # ch_server
@@ -75,7 +75,7 @@ result.vis("vis_result.jpg")
 
     3. 传入到`RapidOCR`中使用。
 
-         ```python linenums="1"
+         ```python linenums="1" hl_lines="4-5"
          from rapidocr import RapidOCR
 
          # 步骤2中的1.yaml
@@ -95,7 +95,7 @@ result.vis("vis_result.jpg")
 
     例如，我想使用OpenVINO作为推理引擎，可以通过下面这种方式使用：
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="3"
     from rapidocr import RapidOCR
 
     engine = RapidOCR(params={"Global.with_openvino": True})
@@ -146,7 +146,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 === "检测 + 分类 + 识别"
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="8"
     from rapidocr import RapidOCR
 
     engine = RapidOCR()
@@ -225,7 +225,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
         只有文本检测和文本识别的组合可以正常使用的前提是：确保传入图像中文字都是正的。
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="6"
     from rapidocr import RapidOCR
 
     engine = RapidOCR()
@@ -242,7 +242,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 === "分类 + 识别"
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="6"
     from rapidocr_onnxruntime import RapidOCR
 
     engine = RapidOCR()
@@ -284,7 +284,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 === "只有检测"
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="6"
     from rapidocr import RapidOCR
 
     engine = RapidOCR()
@@ -338,7 +338,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 === "只有分类"
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="6"
     from rapidocr import RapidOCR
 
     engine = RapidOCR()
@@ -369,7 +369,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 === "只有识别"
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="6"
     from rapidocr import RapidOCR
 
     engine = RapidOCR()
@@ -408,12 +408,12 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 === "返回单字坐标"
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="6"
     from rapidocr import RapidOCR
 
     engine = RapidOCR()
 
-    img_url = "<https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/ch_en_num.jpg>"
+    img_url = "https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/ch_en_num.jpg"
     result = engine(img_url, return_word_box=True)
     print(result)
     result.vis("vis_return_words.jpg")
@@ -593,7 +593,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     3. 查看输出日志。下面日志中打印出了**Using engine_name: onnxruntime**，则证明使用的推理引擎是ONNXRuntime。
 
-         ```bash linenums="1"
+         ```bash linenums="1" hl_lines="1 3 5"
          [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: onnxruntime
          [INFO] 2025-03-21 09:28:03,553 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
          [INFO] 2025-03-21 09:28:03,767 base.py:30: Using engine_name: onnxruntime
@@ -612,7 +612,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     2. 指定OpenVINO作为推理引擎
 
-         ```python linenums="1"
+         ```python linenums="1" hl_lines="3"
          from rapidocr import RapidOCR
 
          engine = RapidOCR(params={"Global.with_openvino": True})
@@ -626,7 +626,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     3. 查看输出日志。下面日志中打印出了**Using engine_name: openvino**，则证明使用的推理引擎是OpenVINO。
 
-         ```bash linenums="1"
+         ```bash linenums="1" hl_lines="1 3 5"
          [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: openvino
          [INFO] 2025-03-21 09:28:03,553 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
          [INFO] 2025-03-21 09:28:03,767 base.py:30: Using engine_name: openvino
@@ -645,7 +645,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     2. 指定PaddlePaddle作为推理引擎
 
-         ```python linenums="1"
+         ```python linenums="1" hl_lines="4"
          from rapidocr import RapidOCR
 
          # CPU版直接使用
@@ -669,7 +669,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     3. 查看输出日志。下面日志中打印出了**Using engine_name: paddle**，则证明使用的推理引擎是PaddlePaddle。
 
-         ```bash linenums="1"
+         ```bash linenums="1" hl_lines="3 6"
          [INFO] 2025-03-22 15:20:45,528 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdmodel
          [INFO] 2025-03-22 15:20:45,529 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdiparams
          [INFO] 2025-03-22 15:20:45,746 base.py:30: Using engine_name: paddle
@@ -690,7 +690,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     2. 指定PyTorch作为推理引擎
 
-         ```python linenums="1"
+         ```python linenums="1" hl_lines="4"
          from rapidocr import RapidOCR
 
          # CPU版直接使用
@@ -714,7 +714,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     3. 查看输出日志。下面日志中打印出了**Using engine_name: torch**，则证明使用的推理引擎是PyTorch。
 
-         ```bash linenums="1"
+         ```bash linenums="1" hl_lines="1 3 5"
          [INFO] 2025-03-22 15:39:13,241 base.py:30: Using engine_name: torch
          [INFO] 2025-03-22 15:39:13,956 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.pth
          [INFO] 2025-03-22 15:39:14,136 base.py:30: Using engine_name: torch

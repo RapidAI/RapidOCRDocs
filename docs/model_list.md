@@ -22,7 +22,7 @@ hide:
 
 默认使用的是**mobile**的中英文检测识别模型，通过`lang_det`和`lang_rec`来指定。
 
-```python linenums="1"
+```python linenums="1" hl_lines="4"
 from rapidocr import RapidOCR
 
 engine = RapidOCR(
@@ -32,7 +32,7 @@ engine = RapidOCR(
 
 如果想要使用**server**版默认模型，则直接更改参数为`ch_server`即可。
 
-```python linenums="1"
+```python linenums="1" hl_lines="4"
 from rapidocr import RapidOCR
 
 engine = RapidOCR(
@@ -75,7 +75,7 @@ engine = RapidOCR(
 
 以上模型可直接通过字段指定，程序会自动下载使用。
 
-```python linenums="1"
+```python linenums="1" hl_lines="4"
 from rapidocr import RapidOCR, VisRes
 
 engine = RapidOCR(

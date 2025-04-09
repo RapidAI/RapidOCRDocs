@@ -40,7 +40,7 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 === "`rapidocr>=2.0.3`验证方式"
 
-    ```bash linenums="1"
+    ```bash linenums="1" hl_lines="11"
     $ rapidocr check
 
     # 输出以下内容即证明安装成功

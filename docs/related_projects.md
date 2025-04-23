@@ -80,6 +80,7 @@ hide:
 |🏗️Project|⭐️Stars|📝Description|
 |:---|:---|:---|
 |[TextDetMetric](https://github.com/SWHL/TextDetMetric)|![GitHub Repo stars](https://img.shields.io/github/stars/SWHL/TextDetMetric?style=flat-square)|计算文本检测算法评测指标|
+|[TextRecMetric](https://github.com/SWHL/TextRecMetric)|![GitHub Repo stars](https://img.shields.io/github/stars/SWHL/TextRecMetric?style=flat-square)|计算文本检测算法评测指标|
 |[TableRecognitionMetric](https://github.com/SWHL/TableRecognitionMetric)|![GitHub Repo stars](https://img.shields.io/github/stars/SWHL/TableRecognitionMetric?style=flat-square)|计算表格识别算法评测指标|
 
 ### 📱 场景应用

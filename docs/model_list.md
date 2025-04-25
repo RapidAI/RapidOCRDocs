@@ -50,7 +50,7 @@ engine = RapidOCR(
 
 |语种类型名称|程序使用字段|支持模型类型(`lang_det`)|ONNXRuntime| OpenVINO| PaddlePaddle | PyTorch|
 |---:|:---|:---|:---:|:---:|:---:|:---:|
-|中英|`ch`|`ch_mobile` `ch_server`|✅|✅|✅|✅|
+|中英|`ch`|`ch_mobile` `ch_server`|✅|`ch_mobile`✅ `ch_server` ❌([link](https://github.com/RapidAI/RapidOCR/issues/395))|✅|✅|
 |英语和拉丁语|`en`|`en_mobile` `en_server`|✅|✅|✅|✅|
 |多语种|`multi`|`multi_mobile`|✅|✅|✅|✅|
 

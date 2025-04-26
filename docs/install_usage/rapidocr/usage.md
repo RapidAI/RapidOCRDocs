@@ -584,7 +584,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
          engine = RapidOCR()
 
-         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/ test_files/ch_en_num.jpg?raw=true"
+         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
          result = engine(img_url)
          print(result)
 
@@ -617,7 +617,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
          engine = RapidOCR(params={"Global.with_openvino": True})
 
-         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/ test_files/ch_en_num.jpg?raw=true"
+         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
          result = engine(img_url)
          print(result)
 
@@ -660,7 +660,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
             }
          )
 
-         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/ test_files/ch_en_num.jpg?raw=true"
+         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
          result = engine(img_url)
          print(result)
 
@@ -705,7 +705,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
             }
          )
 
-         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/ test_files/ch_en_num.jpg?raw=true"
+         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
          result = engine(img_url)
          print(result)
 

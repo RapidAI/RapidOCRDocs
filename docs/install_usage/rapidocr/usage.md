@@ -645,7 +645,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     2. 指定PaddlePaddle作为推理引擎
 
-        === CPU版
+        - CPU版
 
             ```python linenums="1" hl_lines="4"
             from rapidocr import RapidOCR
@@ -660,7 +660,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
             result.vis('vis_result.jpg')
             ```
 
-        === GPU版
+        - GPU版
 
             ```python linenums="1" hl_lines="4"
             from rapidocr import RapidOCR
@@ -669,7 +669,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
             engine = RapidOCR(
                 params={
                 "Global.with_paddle": True,
-                "EngineConfig.paddlepaddle.use_cuda": True,  # 使用torch GPU版推理
+                "EngineConfig.paddlepaddle.use_cuda": True,  # 使用PaddlePaddle GPU版推理
                 "EngineConfig.paddlepaddle.gpu_id": 0,  # 指定GPU id
                 }
             )

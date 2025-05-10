@@ -34,17 +34,19 @@ theme:
     - toc.follow # 目录跟踪-页面右侧的小目录
 
   palette:
-    - media: "(prefers-color-scheme: light)" # 浅色
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)" # 深色
+
+    - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
-      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to system preference

@@ -12,11 +12,13 @@
         <meta name="author" content="RapidAI">
       
       
-        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2024/12/08/guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-stands-out/">
+        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/27/rapidocr%E9%9B%86%E6%88%90pp-ocrv4_server_rec_doc%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/">
       
       
-        <link rel="prev" href="../../../09/03/2024-bjos/">
+        <link rel="prev" href="../%E8%BD%AC%E6%8D%A2paddleocr%E6%A8%A1%E5%9E%8B%E4%B8%BAonnx/">
       
+      
+        <link rel="next" href="../../28/%E6%94%AF%E6%8C%81%E8%AF%86%E5%88%AB%E8%AF%AD%E8%A8%80/">
       
       
       <link rel="icon" href="../../../../../static/images/logo.jpg">
@@ -24,7 +26,7 @@
     
     
       
-        <title>广州软件院开箱测评12款开源OCR，RapidOCR表现优异 - RapidOCR 文档</title>
+        <title>rapidocr集成PP-OCRv4_server_rec_doc模型记录 - RapidOCR 文档</title>
       
     
     
@@ -139,6 +141,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#0" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -203,7 +210,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              广州软件院开箱测评12款开源OCR，RapidOCR表现优异
+              rapidocr集成PP-OCRv4_server_rec_doc模型记录
             
           </span>
         </div>
@@ -1565,6 +1572,59 @@ You're not viewing the latest version.
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. 模型跑通
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 模型转换
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 模型推理验证
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 模型精度测试
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rapidocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 集成到rapidocr中
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1619,7 +1679,7 @@ You're not viewing the latest version.
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2024-12-08 00:00:00+00:00" class="md-ellipsis">2024/12/8</time>
+                        <time datetime="2022-09-27 00:00:00+00:00" class="md-ellipsis">2022/9/27</time>
                       </div>
                     </li>
                     
@@ -1630,7 +1690,7 @@ You're not viewing the latest version.
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/general/">General</a></span>
+                              <a href="../../../../category/%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/">模型相关</a></span>
                         </div>
                       </li>
                     
@@ -1641,7 +1701,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 2 分钟阅读时间
+                              需要 1 分钟阅读时间
                             
                           </span>
                         </div>
@@ -1668,34 +1728,20 @@ You're not viewing the latest version.
   
 
 
-  <h1>广州软件院开箱测评12款开源OCR，RapidOCR表现优异</h1>
+  <h1>rapidocr集成PP-OCRv4_server_rec_doc模型记录</h1>
 
-<p>RapidOCR在12款开源OCR中表现优异</p>
+<blockquote>
+<p>该文章主要记录rapidocr如何集成PP-OCRv4_server_rec_doc模型的，涉及模型转换，模型精度测试等步骤。</p>
+</blockquote>
 <!-- more -->
 
-<p>前几天，Joker告诉我看到一篇OCR测评的文章，并说咱家RapidOCR整体表现很不错。我特地去看了一下，发现是广州软件院发起的OCR测评，算是一个比较公允的测评方了。这篇文章是今年6月份写的，也不算太老，还是有一点参考意义的。</p>
-<p>RapidOCR在12款开源OCR中也算得上可圈可点了。完整的测评报告，请移步 <a href="https://mp.weixin.qq.com/s?__biz=MzA5MjU2NjYxNQ==&amp;mid=2449494038&amp;idx=1&amp;sn=f144be7182839e22a421e0df9e9609f0&amp;scene=21#wechat_redirect">AI测评 | 十二款开源OCR开箱测评，文字识别哪家强</a> 获取。因为测评的文章没有开启原创，不能转载，因此就在这里给出了链接，在此感谢广州软件院的测评工作，为大家选择合适的OCR模型提供了参考。</p>
-<p>⚠️注意：下面的图文均是摘自<a href="https://mp.weixin.qq.com/s?__biz=MzA5MjU2NjYxNQ==&amp;mid=2449494038&amp;idx=1&amp;sn=f144be7182839e22a421e0df9e9609f0&amp;scene=21#wechat_redirect">AI测评 | 十二款开源OCR开箱测评，文字识别哪家强</a> 中，如有侵权，请告知我删除。</p>
-<p>我在这里只放一些关键的测评结论：
- (1)印刷中文的综合测评结果为：</p>
-<p><img alt="image-20241208103232900" src="../../../../images/image-20241208103232900.png" /></p>
-<p>（2）印刷英文的综合测评结果为：</p>
-<p><img alt="image-20241208103310417" src="../../../../images/image-20241208103310417.png" /></p>
-<p>（3）变形字体的艺术字测评结果为：</p>
-<p><img alt="image-20241208103329977" src="../../../../images/image-20241208103329977.png" /></p>
-<p>（4）自然场景的街景图片测评结果为：</p>
-<p><img alt="image-20241208103344517" src="../../../../images/image-20241208103344517.png" /></p>
-<p>（5）手写中文的综合测评结果为：</p>
-<p><img alt="image-20241208103400365" src="../../../../images/image-20241208103400365.png" /></p>
-<p>测评总结：</p>
-<p><img alt="图片" src="../../../../images/640-20241208103523542" /></p>
-<p><strong>RapidOCR虽然基于PaddleOCR，但做了⼀定预处理和参数优化，因此在⾓度旋转180度和低对⽐度两个数据集中拉开了与PaddleOCR的差距；并且基于onnx推理格式的版本，在识别的速度上也较PaddleOCR有明显提升。</strong>各个⼯具在中⽂印刷⽂字正常扫描、拍照图⽚中识别的准确度都很⾼。其中，扫描⽂档数据集，前三名的綜合评分都在99%以上，照⽚⽂档数据集中，前三名的综合评分都在98%以上。</p>
-<p><img alt="图片" src="../../../../images/640-20241208103536368" /></p>
-<p><img alt="图片" src="../../../../images/640-20241208103541160" /></p>
-<p><img alt="图片" src="../../../../images/640-20241208103546381" /></p>
-<p><img alt="图片" src="../../../../images/640-20241208103550187" /></p>
-<p><img alt="图片" src="../../../../images/640-20241208103554131" /></p>
-<p>完整测评报告：<a href="https://pan.baidu.com/s/1DgFZfKw5PxQuyy1PIX8thg?pwd=0527">https://pan.baidu.com/s/1DgFZfKw5PxQuyy1PIX8thg?pwd=0527</a></p>
+<h4 id="0">0. 模型跑通<a class="headerlink" href="#0" title="Permanent link">&para;</a></h4>
+<p>该步骤主要先基于PaddleX可以正确使用PP-OCRv4_server_rec_doc模型得到正确结果。</p>
+<h4 id="1">1. 模型转换<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<h4 id="2">2. 模型推理验证<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<h4 id="3">3. 模型精度测试<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p><code>{'ExactMatch': 0.8097, 'CharMatch': 0.9444, 'avg_elapse': 0.0818}</code></p>
+<h4 id="4-rapidocr">4. 集成到rapidocr中<a class="headerlink" href="#4-rapidocr" title="Permanent link">&para;</a></h4>
 
 
 
@@ -1838,7 +1884,7 @@ You're not viewing the latest version.
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../../09/03/2024-bjos/" class="md-footer__link md-footer__link--prev" aria-label="上一页: RapidOCR获得2024中国互联网发展创新与投资大赛（开源）二等奖">
+          <a href="../%E8%BD%AC%E6%8D%A2paddleocr%E6%A8%A1%E5%9E%8B%E4%B8%BAonnx/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 转换PaddleOCR模型为ONNX">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -1848,11 +1894,27 @@ You're not viewing the latest version.
                 上一页
               </span>
               <div class="md-ellipsis">
-                RapidOCR获得2024中国互联网发展创新与投资大赛（开源）二等奖
+                转换PaddleOCR模型为ONNX
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../../28/%E6%94%AF%E6%8C%81%E8%AF%86%E5%88%AB%E8%AF%AD%E8%A8%80/" class="md-footer__link md-footer__link--next" aria-label="下一页: 支持识别语言">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                支持识别语言
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

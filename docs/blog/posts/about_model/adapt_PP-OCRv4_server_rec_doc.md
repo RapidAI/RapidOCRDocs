@@ -211,4 +211,3 @@ result.vis("vis_result.jpg")
     t = ONNXMetaOp.get_meta(new_model_path, key="character")
     print(t)
     ```
-<details>

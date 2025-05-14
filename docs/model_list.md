@@ -58,6 +58,7 @@ engine = RapidOCR(
 
 |语种|描述|程序使用字段|支持模型类型(`lang_rec`)|ONNXRuntime| OpenVINO| PaddlePaddle | PyTorch|
 |---:|:---|:---|:---|:---:|:---:|:---:|:---:|
+|中文文档、部分繁体、日文|-|`ch`|`ch_doc_server`|✅|✅|✅|🚧|
 |中文|Chinese & English|`ch`|`ch_mobile` `ch_server`|✅|✅|✅|✅|
 |中文繁体|Chinese (Traditional)|`chinese_cht`|`chinese_cht`|✅|✅|✅|✅|
 |英文|English|`en`|`en_mobile`|✅|✅|✅|✅|

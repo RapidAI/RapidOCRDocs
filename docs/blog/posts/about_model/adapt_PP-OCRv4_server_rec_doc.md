@@ -1,14 +1,16 @@
 ---
-title: rapidocr集成PP-OCRv4_server_rec_doc模型记录
+title: RapidOCR集成PP-OCRv4_server_rec_doc模型记录
 date: 2022-09-27
 authors: [SWHL]
 categories:
   - 模型相关
 comments: true
+hide:
+  - toc
 ---
 
 
-> 该文章主要记录rapidocr如何集成PP-OCRv4_server_rec_doc模型的，涉及模型转换，模型精度测试等步骤。
+> 该文章主要记录RapidOCR如何集成PP-OCRv4_server_rec_doc模型的，涉及模型转换，模型精度测试等步骤。
 
 <!-- more -->
 
@@ -128,7 +130,9 @@ result.vis("vis_result.jpg")
 
 #### 字典文件写入ONNX模型
 
-!!! info "代码"
+该步骤仅存在文本识别模型中，文本检测模型没有这个步骤。
+
+<details>
 
     ```python linenums="1"
     from pathlib import Path
@@ -193,3 +197,4 @@ result.vis("vis_result.jpg")
     t = ONNXMetaOp.get_meta(new_model_path, key="character")
     print(t)
     ```
+<details>

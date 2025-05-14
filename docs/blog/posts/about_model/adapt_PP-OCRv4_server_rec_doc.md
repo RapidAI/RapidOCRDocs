@@ -14,6 +14,20 @@ hide:
 
 <!-- more -->
 
+### 引言
+
+来自PaddleX[官方文档](https://paddlepaddle.github.io/PaddleX/latest/module_usage/tutorials/ocr_modules/text_recognition.html#_2)：
+
+> PP-OCRv4_server_rec_doc是在PP-OCRv4_server_rec的基础上，在更多中文文档数据和PP-OCR训练数据的混合数据训练而成，增加了部分繁体字、日文、特殊字符的识别能力，可支持识别的字符为1.5万+，除文档相关的文字识别能力提升外，也同时提升了通用文字的识别能力。
+
+来自[MinerU](https://github.com/opendatalab/MinerU/blob/master/README_zh-CN.md)的官方测试，对该模型的评价：
+
+> 经验证，PP-OCRv4_server_rec_doc模型在中英日繁单种语言或多种语言混合场景均有明显精度提升，且速度与PP-OCRv4_server_rec相当，适合绝大部分场景使用。
+>
+> PP-OCRv4_server_rec_doc在小部分纯英文场景可能会发生单词粘连问题，PP-OCRv4_server_rec则在此场景下表现更好。
+
+综上所述，该模型在各个场景下均有明显精度提升，尤其是生僻字和一些特殊符号。值得说明的是该模型为server版，因此推理速度不是那么快。
+
 ### 以下代码运行环境
 
 - OS: macOS Sequois 15.4.1
@@ -132,7 +146,7 @@ result.vis("vis_result.jpg")
 
 该步骤仅存在文本识别模型中，文本检测模型没有这个步骤。
 
-<details>
+??? info "详细代码"
 
     ```python linenums="1"
     from pathlib import Path

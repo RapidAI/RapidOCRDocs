@@ -108,6 +108,8 @@ markdown_extensions:
       custom_checkbox: true
   - toc:
       permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -126,7 +128,6 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
 
 extra:
   social:

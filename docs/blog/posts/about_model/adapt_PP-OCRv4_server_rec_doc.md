@@ -108,7 +108,7 @@ result.vis("vis_result.jpg")
 
 ![alt text](../images/vis_result.jpg)
 
-#### 4. 模型精度测试
+### 4. 模型精度测试
 
 该部分主要使用[TextRecMetric](https://github.com/SWHL/TextRecMetric)和测试集[text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)来评测。
 
@@ -122,72 +122,74 @@ result.vis("vis_result.jpg")
 {'ExactMatch': 0.8097, 'CharMatch': 0.9444, 'avg_elapse': 0.0818}
 ```
 
-### 4. 集成到rapidocr中
+### 5. 集成到rapidocr中
 
 该部分主要包括将字典文件写入到ONNX模型中、托管模型到魔搭、更改rapidocr中模型配置文件、编写对应单元测试等。
 
 #### 字典文件写入ONNX模型
 
-```python linenums="1"
-from pathlib import Path
-from typing import List, Union
+!!! info "代码"
 
-import onnx
-import onnxruntime as ort
-from onnx import ModelProto
+    ```python linenums="1"
+    from pathlib import Path
+    from typing import List, Union
 
-
-def read_txt(txt_path: Union[Path, str]) -> List[str]:
-    with open(txt_path, "r", encoding="utf-8") as f:
-        data = [v.rstrip("\n") for v in f]
-    return data
+    import onnx
+    import onnxruntime as ort
+    from onnx import ModelProto
 
 
-class ONNXMetaOp:
-    @classmethod
-    def add_meta(
-        cls,
-        model_path: Union[str, Path],
-        key: str,
-        value: List[str],
-        delimiter: str = "\n",
-    ) -> ModelProto:
-        model = onnx.load_model(model_path)
-        meta = model.metadata_props.add()
-        meta.key = key
-        meta.value = delimiter.join(value)
-        return model
-
-    @classmethod
-    def get_meta(
-        cls, model_path: Union[str, Path], key: str, split_sym: str = "\n"
-    ) -> List[str]:
-        sess = ort.InferenceSession(model_path)
-        meta_map = sess.get_modelmeta().custom_metadata_map
-        key_content = meta_map.get(key)
-        key_list = key_content.split(split_sym)
-        return key_list
-
-    @classmethod
-    def del_meta(cls, model_path: Union[str, Path]) -> ModelProto:
-        model = onnx.load_model(model_path)
-        del model.metadata_props[:]
-        return model
-
-    @classmethod
-    def save_model(cls, save_path: Union[str, Path], model: ModelProto):
-        onnx.save_model(model, save_path)
+    def read_txt(txt_path: Union[Path, str]) -> List[str]:
+        with open(txt_path, "r", encoding="utf-8") as f:
+            data = [v.rstrip("\n") for v in f]
+        return data
 
 
-dicts = read_txt(
-    "/Users/joshuawang/projects/_self/tmp/RapidOCR/paddle/PP-OCRv4/rec/ch_PP-OCRv4_rec_server_doc/ppocrv4_doc_dict.txt"
-)
-model_path = "models/PP-OCRv4_server_rec_doc.onnx"
-model = ONNXMetaOp.add_meta(model_path, key="character", value=dicts)
+    class ONNXMetaOp:
+        @classmethod
+        def add_meta(
+            cls,
+            model_path: Union[str, Path],
+            key: str,
+            value: List[str],
+            delimiter: str = "\n",
+        ) -> ModelProto:
+            model = onnx.load_model(model_path)
+            meta = model.metadata_props.add()
+            meta.key = key
+            meta.value = delimiter.join(value)
+            return model
 
-new_model_path = "models/PP-OCRv4_server_rec_doc_with_dict.onnx"
-ONNXMetaOp.save_model(new_model_path, model)
+        @classmethod
+        def get_meta(
+            cls, model_path: Union[str, Path], key: str, split_sym: str = "\n"
+        ) -> List[str]:
+            sess = ort.InferenceSession(model_path)
+            meta_map = sess.get_modelmeta().custom_metadata_map
+            key_content = meta_map.get(key)
+            key_list = key_content.split(split_sym)
+            return key_list
 
-t = ONNXMetaOp.get_meta(new_model_path, key="character")
-print(t)
-```
+        @classmethod
+        def del_meta(cls, model_path: Union[str, Path]) -> ModelProto:
+            model = onnx.load_model(model_path)
+            del model.metadata_props[:]
+            return model
+
+        @classmethod
+        def save_model(cls, save_path: Union[str, Path], model: ModelProto):
+            onnx.save_model(model, save_path)
+
+
+    dicts = read_txt(
+        "models/ppocrv4_doc_dict.txt"
+    )
+    model_path = "models/PP-OCRv4_server_rec_doc.onnx"
+    model = ONNXMetaOp.add_meta(model_path, key="character", value=dicts)
+
+    new_model_path = "models/PP-OCRv4_server_rec_doc_with_dict.onnx"
+    ONNXMetaOp.save_model(new_model_path, model)
+
+    t = ONNXMetaOp.get_meta(new_model_path, key="character")
+    print(t)
+    ```

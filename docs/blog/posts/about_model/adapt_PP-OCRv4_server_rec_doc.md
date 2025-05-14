@@ -12,7 +12,15 @@ comments: true
 
 <!-- more -->
 
-#### 0. 模型跑通
+### 以下代码运行环境
+
+- OS: macOS Sequois 15.4.1
+- Python: 3.10.14
+- PaddlePaddle: 3.0.0
+- paddle2onnx: 2.0.1
+- rapidocr: 2.0.7
+
+### 1. 模型跑通
 
 该步骤主要先基于PaddleX可以正确使用PP-OCRv4_server_rec_doc模型得到正确结果。
 
@@ -48,7 +56,7 @@ for res in output:
 # {'res': {'input_path': 'images/1.jpg', 'page_index': None, 'rec_text': '绿洲仕格维花园公寓', 'rec_score': 0.9839767813682556}}
 ```
 
-#### 1. 模型转换
+### 2. 模型转换
 
 该部分主要参考文档： [docs](https://paddlepaddle.github.io/PaddleX/latest/pipeline_deploy/paddle2onnx.html?h=paddle2onnx#22)
 
@@ -74,10 +82,46 @@ Paddle2ONNX conversion succeeded
 Done
 ```
 
-#### 2. 模型推理验证
+### 3. 模型推理验证
 
-#### 3. 模型精度测试
+该部分主要是在RapidOCR项目中测试能否直接使用onnx模型。要点主要是确定模型前后处理是否兼容。从PaddleX[官方文档](https://paddlepaddle.github.io/PaddleX/latest/module_usage/tutorials/ocr_modules/text_recognition.html#_2)中可以看到：
 
-`{'ExactMatch': 0.8097, 'CharMatch': 0.9444, 'avg_elapse': 0.0818}`
+> PP-OCRv4_server_rec_doc是在PP-OCRv4_server_rec的基础上，在更多中文文档数据和PP-OCR训练数据的混合数据训练而成，增加了部分繁体字、日文、特殊字符的识别能力，可支持识别的字符为1.5万+，除文档相关的文字识别能力提升外，也同时提升了通用文字的识别能力
+
+以上说明了该模型与PP-OCRv4_server_rec模型结构相同，前后处理也相同。唯一做的就是添加了更多数据，扩展了字典个数，从6623扩展到15630个。
+
+因此，可以直接使用RapidOCR来快速推理验证。代码如下：
+
+```python linenums="1"
+from rapidocr import RapidOCR
+
+model_path = "models/PP-OCRv4_server_rec_doc/inference.onnx"
+key_path = "models/ppocrv4_doc_dict.txt"
+engine = RapidOCR(params={"Rec.model_path": model_path, "Rec.rec_keys_path": key_path})
+
+img_url = "https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516"
+result = engine(img_path)
+print(result)
+
+result.vis("vis_result.jpg")
+```
+
+![alt text](../images/vis_result.jpg)
+
+#### 4. 模型精度测试
+
+该部分主要使用[TextRecMetric](https://github.com/SWHL/TextRecMetric)和测试集[text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)来评测。
+
+需要注意的是，**PP-OCRv4_server_rec_doc模型更加侧重生僻字和一些符号识别。** 当前测试集并未着重收集生僻字和一些符号的数据，因此以下指标会有些偏低。
+
+如需自己使用，请在自己场景下测试效果。
+
+相关测试步骤请参见[TextRecMetric](https://github.com/SWHL/TextRecMetric)的README，一步一步来就行。我这里测试最终精度如下：
+
+```json
+{'ExactMatch': 0.8097, 'CharMatch': 0.9444, 'avg_elapse': 0.0818}
+```
 
 #### 4. 集成到rapidocr中
+
+该部分主要包括将字典文件写入到ONNX模型中、托管模型到魔搭、更改rapidocr中模型配置文件、编写对应单元测试等。

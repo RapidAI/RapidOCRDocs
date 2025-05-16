@@ -1,6 +1,6 @@
 ---
 title: RapidOCR集成PP-OCRv4_server_rec_doc模型记录
-date: 2022-09-27
+date: 2025-05-16
 authors: [SWHL]
 categories:
   - 模型相关

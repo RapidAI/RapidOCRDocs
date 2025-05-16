@@ -1651,6 +1651,24 @@ You're not viewing the latest version.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      托管模型到魔搭
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rapidocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      更改rapidocr代码适配
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1798,7 +1816,7 @@ You're not viewing the latest version.
 <p><img alt="alt text" src="../../../../images/1.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>运行以下代码时，模型会自动下载到**/Users/用户名/.paddlex/official_models**下。</p>
+<p>运行以下代码时，模型会自动下载到 <strong>/Users/用户名/.paddlex/official_models</strong> 下。</p>
 </div>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -1827,7 +1845,7 @@ You're not viewing the latest version.
 <p>PaddleX官方集成了paddle2onnx的转换代码：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>paddlex<span class="w"> </span>--paddle2onnx<span class="w"> </span>--paddle_model_dir<span class="w"> </span>models/PP-OCRv4_server_rec_doc<span class="w"> </span>--onnx_model_dir<span class="w"> </span>models/PP-OCRv4_server_rec_doc
 </span></code></pre></div></td></tr></table></div>
-<p>输出日志如下，表明成功：</p>
+<p>输出日志如下，表明转换成功：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -1855,8 +1873,7 @@ You're not viewing the latest version.
 <blockquote>
 <p>PP-OCRv4_server_rec_doc是在PP-OCRv4_server_rec的基础上，在更多中文文档数据和PP-OCR训练数据的混合数据训练而成，增加了部分繁体字、日文、特殊字符的识别能力，可支持识别的字符为1.5万+，除文档相关的文字识别能力提升外，也同时提升了通用文字的识别能力</p>
 </blockquote>
-<p>以上说明了该模型与PP-OCRv4_server_rec模型结构相同，前后处理也相同。唯一做的就是添加了更多数据，扩展了字典个数，从6623扩展到15630个。</p>
-<p>因此，可以直接使用RapidOCR来快速推理验证。代码如下：</p>
+<p>以上说明了该模型与PP-OCRv4_server_rec模型结构相同，前后处理也相同。唯一做的就是添加了更多数据，扩展了字典个数，从6623扩展到15630个。因此，可以直接使用RapidOCR来快速推理验证。代码如下：</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1882,13 +1899,12 @@ You're not viewing the latest version.
 <p><img alt="alt text" src="../../../../images/vis_result.jpg" /></p>
 <h3 id="4">4. 模型精度测试<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>该部分主要使用<a href="https://github.com/SWHL/TextRecMetric">TextRecMetric</a>和测试集<a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">text_rec_test_dataset</a>来评测。</p>
-<p>需要注意的是，<strong>PP-OCRv4_server_rec_doc模型更加侧重生僻字和一些符号识别。</strong> 当前测试集并未着重收集生僻字和一些符号的数据，因此以下指标会有些偏低。</p>
-<p>如需自己使用，请在自己场景下测试效果。</p>
+<p>需要注意的是，<strong>PP-OCRv4_server_rec_doc模型更加侧重生僻字和一些符号识别。</strong> 当前测试集并未着重收集生僻字和一些符号的数据，因此以下指标会有些偏低。如需自己使用，请在自己场景下测试效果。</p>
 <p>相关测试步骤请参见<a href="https://github.com/SWHL/TextRecMetric">TextRecMetric</a>的README，一步一步来就行。我这里测试最终精度如下：</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="err">&#39;Exac</span><span class="kc">t</span><span class="err">Ma</span><span class="kc">t</span><span class="err">ch&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8097</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;CharMa</span><span class="kc">t</span><span class="err">ch&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9444</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;avg_elapse&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0818</span><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="5-rapidocr">5. 集成到rapidocr中<a class="headerlink" href="#5-rapidocr" title="Permanent link">&para;</a></h3>
-<p>该部分主要包括将字典文件写入到ONNX模型中、托管模型到魔搭、更改rapidocr中模型配置文件、编写对应单元测试等。</p>
+<p>该部分主要包括将字典文件写入到ONNX模型中、托管模型到魔搭、更改rapidocr代码适配等。</p>
 <h4 id="onnx">字典文件写入ONNX模型<a class="headerlink" href="#onnx" title="Permanent link">&para;</a></h4>
 <p>该步骤仅存在文本识别模型中，文本检测模型没有这个步骤。</p>
 <details class="info">
@@ -2016,6 +2032,11 @@ You're not viewing the latest version.
 </span><span id="__span-6-61"><a id="__codelineno-6-61" name="__codelineno-6-61"></a><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </details>
+<h4 id="_3">托管模型到魔搭<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>该部分主要是涉及模型上传到对应位置，并合理命名。注意上传完成后，需要打Tag，避免后续rapidocr whl包中找不到模型下载路径。</p>
+<p>我这里已经上传到了魔搭上，详细链接参见：<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files?version=v2.1.0">link</a></p>
+<h4 id="rapidocr">更改rapidocr代码适配<a class="headerlink" href="#rapidocr" title="Permanent link">&para;</a></h4>
+<p>该部分主要涉及到更改</p>
 
 
 
@@ -2038,7 +2059,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月14日 14:18:27">2025年5月14日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月16日 01:27:36">2025年5月16日</span>
   </span>
 
     
@@ -2048,7 +2069,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月14日 14:18:27">2025年5月14日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月16日 01:27:36">2025年5月16日</span>
   </span>
 
     

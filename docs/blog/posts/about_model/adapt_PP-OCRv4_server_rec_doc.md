@@ -56,7 +56,7 @@ pip install "paddlex[ocr]==3.0.0rc1"
 
 !!! tip
 
-    运行以下代码时，模型会自动下载到**/Users/用户名/.paddlex/official_models**下。
+    运行以下代码时，模型会自动下载到 **/Users/用户名/.paddlex/official_models** 下。
 
 ```python linenums="1"
 from paddlex import create_model
@@ -82,7 +82,7 @@ PaddleX官方集成了paddle2onnx的转换代码：
 paddlex --paddle2onnx --paddle_model_dir models/PP-OCRv4_server_rec_doc --onnx_model_dir models/PP-OCRv4_server_rec_doc
 ```
 
-输出日志如下，表明成功：
+输出日志如下，表明转换成功：
 
 ```bash linenums="1"
 Input dir: models/PP-OCRv4_server_rec_doc
@@ -104,9 +104,7 @@ Done
 
 > PP-OCRv4_server_rec_doc是在PP-OCRv4_server_rec的基础上，在更多中文文档数据和PP-OCR训练数据的混合数据训练而成，增加了部分繁体字、日文、特殊字符的识别能力，可支持识别的字符为1.5万+，除文档相关的文字识别能力提升外，也同时提升了通用文字的识别能力
 
-以上说明了该模型与PP-OCRv4_server_rec模型结构相同，前后处理也相同。唯一做的就是添加了更多数据，扩展了字典个数，从6623扩展到15630个。
-
-因此，可以直接使用RapidOCR来快速推理验证。代码如下：
+以上说明了该模型与PP-OCRv4_server_rec模型结构相同，前后处理也相同。唯一做的就是添加了更多数据，扩展了字典个数，从6623扩展到15630个。因此，可以直接使用RapidOCR来快速推理验证。代码如下：
 
 ```python linenums="1"
 from rapidocr import RapidOCR
@@ -128,9 +126,7 @@ result.vis("vis_result.jpg")
 
 该部分主要使用[TextRecMetric](https://github.com/SWHL/TextRecMetric)和测试集[text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)来评测。
 
-需要注意的是，**PP-OCRv4_server_rec_doc模型更加侧重生僻字和一些符号识别。** 当前测试集并未着重收集生僻字和一些符号的数据，因此以下指标会有些偏低。
-
-如需自己使用，请在自己场景下测试效果。
+需要注意的是，**PP-OCRv4_server_rec_doc模型更加侧重生僻字和一些符号识别。** 当前测试集并未着重收集生僻字和一些符号的数据，因此以下指标会有些偏低。如需自己使用，请在自己场景下测试效果。
 
 相关测试步骤请参见[TextRecMetric](https://github.com/SWHL/TextRecMetric)的README，一步一步来就行。我这里测试最终精度如下：
 
@@ -140,7 +136,7 @@ result.vis("vis_result.jpg")
 
 ### 5. 集成到rapidocr中
 
-该部分主要包括将字典文件写入到ONNX模型中、托管模型到魔搭、更改rapidocr中模型配置文件、编写对应单元测试等。
+该部分主要包括将字典文件写入到ONNX模型中、托管模型到魔搭、更改rapidocr代码适配等。
 
 #### 字典文件写入ONNX模型
 
@@ -211,3 +207,13 @@ result.vis("vis_result.jpg")
     t = ONNXMetaOp.get_meta(new_model_path, key="character")
     print(t)
     ```
+
+#### 托管模型到魔搭
+
+该部分主要是涉及模型上传到对应位置，并合理命名。注意上传完成后，需要打Tag，避免后续rapidocr whl包中找不到模型下载路径。
+
+我这里已经上传到了魔搭上，详细链接参见：[link](https://www.modelscope.cn/models/RapidAI/RapidOCR/files?version=v2.1.0)
+
+#### 更改rapidocr代码适配
+
+该部分主要涉及到更改

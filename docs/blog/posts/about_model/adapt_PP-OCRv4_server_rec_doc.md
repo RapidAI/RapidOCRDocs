@@ -216,4 +216,18 @@ result.vis("vis_result.jpg")
 
 #### 更改rapidocr代码适配
 
-该部分主要涉及到更改
+该部分主要涉及到更改[default_models.yaml](https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/default_models.yaml)和[paddle.py](https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/inference_engine/paddle.py)的代码来适配。
+
+同时，需要添加对应的单元测试，在保证之前单测成功的同时，新的针对性该模型的单测也能通过。
+
+我这里已经做完了，小伙伴们感兴趣可以去看看源码。
+
+#### 发布新版本
+
+因为这次算是功能新增，按照语义化版本号来看，我们版本号需要从v2.0.7 → v2.1.0。
+
+我只需要在github仓库中，打一个v2.1.0的tag，Github Action会自动跑所有单元测试，自动发版到pypi。
+
+### 写在最后
+
+至此，集成工作就基本完成了。

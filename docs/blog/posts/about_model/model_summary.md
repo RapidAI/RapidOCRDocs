@@ -1,6 +1,8 @@
 ---
 title: 开源OCR模型对比
-date: 2022-04-16
+date:
+  created: 2022-04-16
+  updated: 2025-05-17
 authors: [SWHL]
 categories:
   - 模型相关
@@ -89,6 +91,7 @@ comments: true
 |ch_PP-OCRv4_rec_infer.onnx | release/v2.7      |       10M        |      0.8323      |     0.9355  |  0.6836 |
 |ch_PP-OCRv3_rec_infer.onnx | release/v2.6      |       11M        |      0.7097      |     0.8919  |  0.6362 |
 |ch_PP-OCRv4_rec_server_infer.onnx | release/v2.7      |       86M        |      0.7968      |     0.9381  |  0.6967 |
+|ch_doc_PP-OCRv4_rec_server.onnx | release/v2.10      |       94.93M        |      0.8097      |     0.9444  |  0.6836 |
 |ch_PP-OCRv2_rec_infer.onnx | release/v2.3     |      8.0M        |       0.6387      |     0.8398      | 0.6138|
 |ch_ppocr_mobile_v2.0_rec_infer.onnx  |  release/v2.0    |  4.3M  |       0.5323      |     0.7823     | 0.5575|
 |[读光-文字识别-行识别模型-中英-文档印刷体文本领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-document_damo/summary)  |  -    |  73M  |       0.5968      |     0.7705     | - |

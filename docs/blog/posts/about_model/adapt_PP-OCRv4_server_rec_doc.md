@@ -30,7 +30,7 @@ hide:
 
 ### 以下代码运行环境
 
-- OS: macOS Sequois 15.4.1
+- OS: macOS Sequoia 15.4.1
 - Python: 3.10.14
 - PaddlePaddle: 3.0.0
 - paddle2onnx: 2.0.1
@@ -133,6 +133,8 @@ result.vis("vis_result.jpg")
 ```json
 {'ExactMatch': 0.8097, 'CharMatch': 0.9444, 'avg_elapse': 0.0818}
 ```
+
+该结果已经更新到[开源OCR模型对比](./model_summary.md)中。
 
 ### 5. 集成到rapidocr中
 

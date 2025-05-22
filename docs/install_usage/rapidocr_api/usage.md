@@ -1,8 +1,11 @@
 ---
 comments: true
+hide:
+  - toc
 ---
 
 <p>
+    <a href="https://github.com/RapidAI/RapidOCRAPI"><img src="https://img.shields.io/badge/源码-Github-pink.svg"></a>
     <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.13-aff.svg"></a>
     <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
     <a href="https://pypi.org/project/rapidocr-api/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr-api"></a>
@@ -13,6 +16,8 @@ comments: true
 
     OCR API的输出结果为最原始结果，大家可按需进一步扩展。
 
+    `rapidocr_api>=0.2.0`版本是适配了`rapidocr>=2.0.0`版本的。
+
 ### 简介
 
 - 该包是将[rapidocr_onnxruntime](./rapidocr/install.md)库做了API封装，采用[FastAPI](https://fastapi.tiangolo.com/) + [uvicorn](https://www.uvicorn.org/)实现。
@@ -20,17 +25,8 @@ comments: true
 
 ### 安装
 
-可以选择依赖哪个推理引擎的RapidOCR，按需安装。
-
-需要注意的是：`rapidocr_api[paddle]`对应的是`rapidocr_paddle` 版本，该版本支持GPU推理，需要安装对应的PaddlePaddle GPU版本。详情请参见：[link](../rapidocr_paddle/usage.md)
-
 ```bash linenums="1"
-# CPU
-pip install rapidocr_api[onnx]
-pip install rapidocr_api[openvino]
-
-# GPU
-pip install rapidocr_api[paddle]
+pip install rapidocr_api
 ```
 
 ### 启动服务端

@@ -63,7 +63,12 @@ Global:
 
 `min_side_len (int)`: 如果输入图像的最小边小于`min_side_len`，则会按宽高比，将最小边缩放到`min_side_len`。默认为30px。
 
-`return_word_box (bool)`: 是否返回文字的单字坐标。默认为`False`。在`rapidocr_onnxruntime==1.4.0`中，汉字会返回单字坐标，英语返回单词坐标。在`rapidocr_onnxruntime>=1.4.1`中，汉字返回单字坐标，英语返回单字母坐标。
+`return_word_box (bool)`: 是否返回文字的单字坐标。默认为`False`。
+
+- 在`rapidocr>=2.1.0`中，纯中文、中英文混合返回单字坐标，纯英文返回单词坐标。
+- 在`rapidocr<=2.0.7`中，纯中文、中英文混合和纯英文均返回单字坐标。
+- 在`rapidocr_onnxruntime>=1.4.1`中，汉字返回单字坐标，英语返回单字母坐标。
+- 在`rapidocr_onnxruntime==1.4.0`中，汉字会返回单字坐标，英语返回单词坐标。
 
 `with_onnx (bool)`: 是否使用[ONNXRuntime](https://github.com/microsoft/onnxruntime)推理引擎。默认为`False`。注意：在所有推理引擎都为`False`时，会默认采用ONNXRuntime。
 

@@ -1600,15 +1600,6 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#onnx" class="md-nav__link">
-    <span class="md-ellipsis">
-      字典文件写入ONNX模型
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       托管模型到魔搭
@@ -1727,7 +1718,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 3 分钟阅读时间
+                              需要 5 分钟阅读时间
                             
                           </span>
                         </div>
@@ -1778,8 +1769,6 @@ You're not viewing the latest version.
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;paddlex[ocr]==3.0.0rc1&quot;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>测试PP-OCRv5_mobile_det模型能否正常识别：</p>
-<p>测试用图：</p>
-<p><img alt="alt text" src="../../../../images/1.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>运行以下代码时，模型会自动下载到 <strong>/Users/用户名/.paddlex/official_models</strong> 下。</p>
@@ -1823,9 +1812,9 @@ You're not viewing the latest version.
 <h3 id="2">2. 模型转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>该部分主要参考文档： <a href="https://paddlepaddle.github.io/PaddleX/latest/pipeline_deploy/paddle2onnx.html?h=paddle2onnx#22">docs</a></p>
 <p>PaddleX官方集成了paddle2onnx的转换代码：</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>paddlex<span class="w"> </span>--paddle2onnx<span class="w"> </span>--paddle_model_dir<span class="w"> </span>models/PP-OCRv5_mobile_det<span class="w"> </span>--onnx_model_dir<span class="w"> </span>models/PP-OCRv5_mobile_det
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>paddle2onnx<span class="w"> </span>--model_dir<span class="w"> </span>models/official_models/PP-OCRv5_mobile_det<span class="w"> </span>--model_filename<span class="w"> </span>inference.json<span class="w"> </span>--params_filename<span class="w"> </span>inference.pdiparams<span class="w"> </span>--save_file<span class="w"> </span>models/PP-OCRv5_mobile_det/inference.onnx
 </span></code></pre></div></td></tr></table></div>
-<p>输出日志如下，表明转换成功：</p>
+<p>输出日志如下，日志中存在报错信息，但是最终ONNX模型仍然生成了：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -1836,24 +1825,33 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Input<span class="w"> </span>dir:<span class="w"> </span>models/PP-OCRv5_mobile_det
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>Output<span class="w"> </span>dir:<span class="w"> </span>models/PP-OCRv5_mobile_det
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>Paddle2ONNX<span class="w"> </span>conversion<span class="w"> </span>starting...
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">  </span>warnings.warn<span class="o">(</span>warning_message<span class="o">)</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="o">[</span>Paddle2ONNX<span class="o">]</span><span class="w"> </span>Start<span class="w"> </span>parsing<span class="w"> </span>the<span class="w"> </span>Paddle<span class="w"> </span>model<span class="w"> </span>file...
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="o">[</span>Paddle2ONNX<span class="o">]</span><span class="w"> </span>Use<span class="w"> </span><span class="nv">opset_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>ONNX<span class="w"> </span>export.
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="o">[</span>Paddle2ONNX<span class="o">]</span><span class="w"> </span>PaddlePaddle<span class="w"> </span>model<span class="w"> </span>is<span class="w"> </span>exported<span class="w"> </span>as<span class="w"> </span>ONNX<span class="w"> </span>format<span class="w"> </span>now.
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="m">2025</span>-05-14<span class="w"> </span><span class="m">08</span>:21:23<span class="w"> </span><span class="o">[</span>INFO<span class="o">]</span><span class="w">      </span>Try<span class="w"> </span>to<span class="w"> </span>perform<span class="w"> </span>optimization<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>ONNX<span class="w"> </span>model<span class="w"> </span>with<span class="w"> </span>onnxoptimizer.
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="m">2025</span>-05-14<span class="w"> </span><span class="m">08</span>:21:23<span class="w"> </span><span class="o">[</span>INFO<span class="o">]</span><span class="w">      </span>ONNX<span class="w"> </span>model<span class="w"> </span>saved<span class="w"> </span><span class="k">in</span><span class="w"> </span>models/PP-OCRv5_mobile_det/inference.onnx.
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>Paddle2ONNX<span class="w"> </span>conversion<span class="w"> </span>succeeded
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>Done
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>/Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:711:<span class="w"> </span>UserWarning:<span class="w"> </span>No<span class="w"> </span>ccache<span class="w"> </span>found.<span class="w"> </span>Please<span class="w"> </span>be<span class="w"> </span>aware<span class="w"> </span>that<span class="w"> </span>recompiling<span class="w"> </span>all<span class="w"> </span><span class="nb">source</span><span class="w"> </span>files<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>required.<span class="w"> </span>You<span class="w"> </span>can<span class="w"> </span>download<span class="w"> </span>and<span class="w"> </span>install<span class="w"> </span>ccache<span class="w"> </span>from:<span class="w"> </span>https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span>warnings.warn<span class="o">(</span>warning_message<span class="o">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="o">[</span>Paddle2ONNX<span class="o">]</span><span class="w"> </span>Start<span class="w"> </span>parsing<span class="w"> </span>the<span class="w"> </span>Paddle<span class="w"> </span>model<span class="w"> </span>file...
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="o">[</span>Paddle2ONNX<span class="o">]</span><span class="w"> </span>Use<span class="w"> </span><span class="nv">opset_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>ONNX<span class="w"> </span>export.
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="o">[</span>Paddle2ONNX<span class="o">]</span><span class="w"> </span>PaddlePaddle<span class="w"> </span>model<span class="w"> </span>is<span class="w"> </span>exported<span class="w"> </span>as<span class="w"> </span>ONNX<span class="w"> </span>format<span class="w"> </span>now.
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="m">2025</span>-05-26<span class="w"> </span><span class="m">11</span>:20:46<span class="w"> </span><span class="o">[</span>INFO<span class="o">]</span><span class="w">      </span>Try<span class="w"> </span>to<span class="w"> </span>perform<span class="w"> </span>constant<span class="w"> </span>folding<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>ONNX<span class="w"> </span>model<span class="w"> </span>with<span class="w"> </span>Polygraphy.
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="o">[</span>W<span class="o">]</span><span class="w"> </span><span class="s1">&#39;colored&#39;</span><span class="w"> </span>module<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>installed,<span class="w"> </span>will<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>colors<span class="w"> </span>when<span class="w"> </span>logging.<span class="w"> </span>To<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>colors,<span class="w"> </span>please<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;colored&#39;</span><span class="w"> </span>module:<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>colored
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="o">[</span>I<span class="o">]</span><span class="w"> </span>Folding<span class="w"> </span>Constants<span class="w"> </span><span class="p">|</span><span class="w"> </span>Pass<span class="w"> </span><span class="m">1</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="o">[</span>W<span class="o">]</span><span class="w"> </span>colored<span class="w"> </span>module<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>installed,<span class="w"> </span>will<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>colors<span class="w"> </span>when<span class="w"> </span>logging.<span class="w"> </span>To<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>colors,<span class="w"> </span>please<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>colored<span class="w"> </span>module:<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>colored
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="o">[</span>W<span class="o">]</span><span class="w"> </span>Inference<span class="w"> </span>failed.<span class="w"> </span>You<span class="w"> </span>may<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>try<span class="w"> </span>enabling<span class="w"> </span>partitioning<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span>better<span class="w"> </span>results.<span class="w"> </span>Note:<span class="w"> </span>Error<span class="w"> </span>was:
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="hll"><span class="o">[</span>ONNXRuntimeError<span class="o">]</span><span class="w"> </span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>:<span class="w"> </span>FAIL<span class="w"> </span>:<span class="w"> </span>/Users/runner/work/1/s/onnxruntime/core/graph/model.cc:182<span class="w"> </span>onnxruntime::Model::Model<span class="o">(</span>ModelProto<span class="w"> </span><span class="o">&amp;&amp;</span>,<span class="w"> </span>const<span class="w"> </span>PathString<span class="w"> </span><span class="p">&amp;</span>,<span class="w"> </span>const<span class="w"> </span>IOnnxRuntimeOpSchemaRegistryList<span class="w"> </span>*,<span class="w"> </span>const<span class="w"> </span>logging::Logger<span class="w"> </span><span class="p">&amp;</span>,<span class="w"> </span>const<span class="w"> </span>ModelOptions<span class="w"> </span><span class="p">&amp;</span><span class="o">)</span><span class="w"> </span>Unsupported<span class="w"> </span>model<span class="w"> </span>IR<span class="w"> </span>version:<span class="w"> </span><span class="m">11</span>,<span class="w"> </span>max<span class="w"> </span>supported<span class="w"> </span>IR<span class="w"> </span>version:<span class="w"> </span><span class="m">10</span>
+</span></span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="o">[</span>I<span class="o">]</span><span class="w">     </span>Total<span class="w"> </span>Nodes<span class="w"> </span><span class="p">|</span><span class="w"> </span>Original:<span class="w">   </span><span class="m">925</span>,<span class="w"> </span>After<span class="w"> </span>Folding:<span class="w">   </span><span class="m">612</span><span class="w"> </span><span class="p">|</span><span class="w">   </span><span class="m">313</span><span class="w"> </span>Nodes<span class="w"> </span>Folded
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="o">[</span>I<span class="o">]</span><span class="w"> </span>Folding<span class="w"> </span>Constants<span class="w"> </span><span class="p">|</span><span class="w"> </span>Pass<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="o">[</span>W<span class="o">]</span><span class="w"> </span>colored<span class="w"> </span>module<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>installed,<span class="w"> </span>will<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>colors<span class="w"> </span>when<span class="w"> </span>logging.<span class="w"> </span>To<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>colors,<span class="w"> </span>please<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>colored<span class="w"> </span>module:<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>colored
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="o">[</span>W<span class="o">]</span><span class="w"> </span>Inference<span class="w"> </span>failed.<span class="w"> </span>You<span class="w"> </span>may<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>try<span class="w"> </span>enabling<span class="w"> </span>partitioning<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span>better<span class="w"> </span>results.<span class="w"> </span>Note:<span class="w"> </span>Error<span class="w"> </span>was:
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="hll"><span class="o">[</span>ONNXRuntimeError<span class="o">]</span><span class="w"> </span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>:<span class="w"> </span>FAIL<span class="w"> </span>:<span class="w"> </span>/Users/runner/work/1/s/onnxruntime/core/graph/model.cc:182<span class="w"> </span>onnxruntime::Model::Model<span class="o">(</span>ModelProto<span class="w"> </span><span class="o">&amp;&amp;</span>,<span class="w"> </span>const<span class="w"> </span>PathString<span class="w"> </span><span class="p">&amp;</span>,<span class="w"> </span>const<span class="w"> </span>IOnnxRuntimeOpSchemaRegistryList<span class="w"> </span>*,<span class="w"> </span>const<span class="w"> </span>logging::Logger<span class="w"> </span><span class="p">&amp;</span>,<span class="w"> </span>const<span class="w"> </span>ModelOptions<span class="w"> </span><span class="p">&amp;</span><span class="o">)</span><span class="w"> </span>Unsupported<span class="w"> </span>model<span class="w"> </span>IR<span class="w"> </span>version:<span class="w"> </span><span class="m">11</span>,<span class="w"> </span>max<span class="w"> </span>supported<span class="w"> </span>IR<span class="w"> </span>version:<span class="w"> </span><span class="m">10</span>
+</span></span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="o">[</span>I<span class="o">]</span><span class="w">     </span>Total<span class="w"> </span>Nodes<span class="w"> </span><span class="p">|</span><span class="w"> </span>Original:<span class="w">   </span><span class="m">612</span>,<span class="w"> </span>After<span class="w"> </span>Folding:<span class="w">   </span><span class="m">612</span><span class="w"> </span><span class="p">|</span><span class="w">     </span><span class="m">0</span><span class="w"> </span>Nodes<span class="w"> </span>Folded
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="m">2025</span>-05-26<span class="w"> </span><span class="m">11</span>:20:52<span class="w"> </span><span class="o">[</span>INFO<span class="o">]</span><span class="w">      </span>ONNX<span class="w"> </span>model<span class="w"> </span>saved<span class="w"> </span><span class="k">in</span><span class="w"> </span>models/PP-OCRv5_mobile_det/inference.onnx.
 </span></code></pre></div></td></tr></table></div>
-<h3 id="3">3. 模型推理验证<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>该部分主要是在RapidOCR项目中测试能否直接使用onnx模型。要点主要是确定模型前后处理是否兼容。从PaddleX<a href="https://paddlepaddle.github.io/PaddleX/latest/module_usage/tutorials/ocr_modules/text_recognition.html#_2">官方文档</a>中可以看到：</p>
-<blockquote>
-<p>PP-OCRv5_mobile_det是在PP-OCRv4_server_rec的基础上，在更多中文文档数据和PP-OCR训练数据的混合数据训练而成，增加了部分繁体字、日文、特殊字符的识别能力，可支持识别的字符为1.5万+，除文档相关的文字识别能力提升外，也同时提升了通用文字的识别能力</p>
-</blockquote>
-<p>以上说明了该模型与PP-OCRv4_server_rec模型结构相同，前后处理也相同。唯一做的就是添加了更多数据，扩展了字典个数，从6623扩展到15630个。因此，可以直接使用RapidOCR来快速推理验证。代码如下：</p>
+<p>此时得到的模型，直接用<code>rapidocr</code>推理会报错：</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1863,33 +1861,49 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv5_mobile_det/inference.onnx&quot;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">key_path</span> <span class="o">=</span> <span class="s2">&quot;models/ppocrv4_doc_dict.txt&quot;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Rec.model_path&quot;</span><span class="p">:</span> <span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;Rec.rec_keys_path&quot;</span><span class="p">:</span> <span class="n">key_path</span><span class="p">})</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516&quot;</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Det.model_path&quot;</span><span class="p">:</span> <span class="n">model_path</span><span class="p">})</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516&quot;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="alt text" src="../../../../images/vis_result.jpg" /></p>
-<h3 id="4">4. 模型精度测试<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<p>该部分主要使用<a href="https://github.com/SWHL/TextRecMetric">TextRecMetric</a>和测试集<a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">text_rec_test_dataset</a>来评测。</p>
-<p>需要注意的是，<strong>PP-OCRv5_mobile_det模型更加侧重生僻字和一些符号识别。</strong> 当前测试集并未着重收集生僻字和一些符号的数据，因此以下指标会有些偏低。如需自己使用，请在自己场景下测试效果。</p>
-<p>相关测试步骤请参见<a href="https://github.com/SWHL/TextRecMetric">TextRecMetric</a>的README，一步一步来就行。我这里测试最终精度如下：</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="err">&#39;Exac</span><span class="kc">t</span><span class="err">Ma</span><span class="kc">t</span><span class="err">ch&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8097</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;CharMa</span><span class="kc">t</span><span class="err">ch&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9444</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;avg_elapse&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0818</span><span class="p">}</span>
-</span></code></pre></div>
-<p>该结果已经更新到<a href="../../../../2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/">开源OCR模型对比</a>中。</p>
-<h3 id="5-rapidocr">5. 集成到rapidocr中<a class="headerlink" href="#5-rapidocr" title="Permanent link">&para;</a></h3>
-<p>该部分主要包括将字典文件写入到ONNX模型中、托管模型到魔搭、更改rapidocr代码适配等。</p>
-<h4 id="onnx">字典文件写入ONNX模型<a class="headerlink" href="#onnx" title="Permanent link">&para;</a></h4>
-<p>该步骤仅存在文本识别模型中，文本检测模型没有这个步骤。</p>
-<details class="info">
-<summary>详细代码</summary>
+<p>报错信息如下：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-05-26<span class="w"> </span><span class="m">11</span>:21:27,698<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:41:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/xxxx/projects/RapidOCR/python/demo.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="nv">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>RapidOCR<span class="o">(</span><span class="nv">params</span><span class="o">={</span><span class="s2">&quot;Det.model_path&quot;</span>:<span class="w"> </span>model_path<span class="o">})</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/xxxx/projects/RapidOCR/python/rapidocr/main.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">60</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>__init__
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span>self.text_det<span class="w"> </span><span class="o">=</span><span class="w"> </span>TextDetector<span class="o">(</span>config.Det<span class="o">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/xxxx/projects/RapidOCR/python/rapidocr/ch_ppocr_det/main.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">45</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>__init__
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span>self.session<span class="w"> </span><span class="o">=</span><span class="w"> </span>get_engine<span class="o">(</span>config.engine_name<span class="o">)(</span>config<span class="o">)</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/xxxx/projects/RapidOCR/python/rapidocr/inference_engine/onnxruntime.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">60</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>__init__
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span>self.session<span class="w"> </span><span class="o">=</span><span class="w"> </span>InferenceSession<span class="o">(</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">472</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>__init__
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span>self._create_inference_session<span class="o">(</span>providers,<span class="w"> </span>provider_options,<span class="w"> </span>disabled_optimizers<span class="o">)</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">550</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>_create_inference_session
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="nv">sess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>C.InferenceSession<span class="o">(</span>session_options,<span class="w"> </span>self._model_path,<span class="w"> </span>True,<span class="w"> </span>self._read_config_from_model<span class="o">)</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="hll">onnxruntime.capi.onnxruntime_pybind11_state.Fail:<span class="w"> </span><span class="o">[</span>ONNXRuntimeError<span class="o">]</span><span class="w"> </span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>:<span class="w"> </span>FAIL<span class="w"> </span>:<span class="w"> </span>Load<span class="w"> </span>model<span class="w"> </span>from<span class="w"> </span>/Users/xxxx/projects/LittleCode/models/PP-OCRv5_mobile_det/inference.onnx<span class="w"> </span>failed:/Users/runner/work/1/s/onnxruntime/core/graph/model.cc:182<span class="w"> </span>onnxruntime::Model::Model<span class="o">(</span>ModelProto<span class="w"> </span><span class="o">&amp;&amp;</span>,<span class="w"> </span>const<span class="w"> </span>PathString<span class="w"> </span><span class="p">&amp;</span>,<span class="w"> </span>const<span class="w"> </span>IOnnxRuntimeOpSchemaRegistryList<span class="w"> </span>*,<span class="w"> </span>const<span class="w"> </span>logging::Logger<span class="w"> </span><span class="p">&amp;</span>,<span class="w"> </span>const<span class="w"> </span>ModelOptions<span class="w"> </span><span class="p">&amp;</span><span class="o">)</span><span class="w"> </span>Unsupported<span class="w"> </span>model<span class="w"> </span>IR<span class="w"> </span>version:<span class="w"> </span><span class="m">11</span>,<span class="w"> </span>max<span class="w"> </span>supported<span class="w"> </span>IR<span class="w"> </span>version:<span class="w"> </span><span class="m">10</span>
+</span></span></code></pre></div></td></tr></table></div>
+<p>经过一系列的查阅资料，终于在onnxruntime issue <a href="https://github.com/microsoft/onnxruntime/issues/23602#issuecomment-2642348849">#23602</a> 中发现了解决方案。运行下面代码，将上一步所得模型重新指定一下**IR_VERSION**，就可以用<code>rapidocr</code>加载推理了。</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1902,117 +1916,52 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-6-10">10</a></span>
 <span class="normal"><a href="#__codelineno-6-11">11</a></span>
 <span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span>
-<span class="normal"><a href="#__codelineno-6-14">14</a></span>
-<span class="normal"><a href="#__codelineno-6-15">15</a></span>
-<span class="normal"><a href="#__codelineno-6-16">16</a></span>
-<span class="normal"><a href="#__codelineno-6-17">17</a></span>
-<span class="normal"><a href="#__codelineno-6-18">18</a></span>
-<span class="normal"><a href="#__codelineno-6-19">19</a></span>
-<span class="normal"><a href="#__codelineno-6-20">20</a></span>
-<span class="normal"><a href="#__codelineno-6-21">21</a></span>
-<span class="normal"><a href="#__codelineno-6-22">22</a></span>
-<span class="normal"><a href="#__codelineno-6-23">23</a></span>
-<span class="normal"><a href="#__codelineno-6-24">24</a></span>
-<span class="normal"><a href="#__codelineno-6-25">25</a></span>
-<span class="normal"><a href="#__codelineno-6-26">26</a></span>
-<span class="normal"><a href="#__codelineno-6-27">27</a></span>
-<span class="normal"><a href="#__codelineno-6-28">28</a></span>
-<span class="normal"><a href="#__codelineno-6-29">29</a></span>
-<span class="normal"><a href="#__codelineno-6-30">30</a></span>
-<span class="normal"><a href="#__codelineno-6-31">31</a></span>
-<span class="normal"><a href="#__codelineno-6-32">32</a></span>
-<span class="normal"><a href="#__codelineno-6-33">33</a></span>
-<span class="normal"><a href="#__codelineno-6-34">34</a></span>
-<span class="normal"><a href="#__codelineno-6-35">35</a></span>
-<span class="normal"><a href="#__codelineno-6-36">36</a></span>
-<span class="normal"><a href="#__codelineno-6-37">37</a></span>
-<span class="normal"><a href="#__codelineno-6-38">38</a></span>
-<span class="normal"><a href="#__codelineno-6-39">39</a></span>
-<span class="normal"><a href="#__codelineno-6-40">40</a></span>
-<span class="normal"><a href="#__codelineno-6-41">41</a></span>
-<span class="normal"><a href="#__codelineno-6-42">42</a></span>
-<span class="normal"><a href="#__codelineno-6-43">43</a></span>
-<span class="normal"><a href="#__codelineno-6-44">44</a></span>
-<span class="normal"><a href="#__codelineno-6-45">45</a></span>
-<span class="normal"><a href="#__codelineno-6-46">46</a></span>
-<span class="normal"><a href="#__codelineno-6-47">47</a></span>
-<span class="normal"><a href="#__codelineno-6-48">48</a></span>
-<span class="normal"><a href="#__codelineno-6-49">49</a></span>
-<span class="normal"><a href="#__codelineno-6-50">50</a></span>
-<span class="normal"><a href="#__codelineno-6-51">51</a></span>
-<span class="normal"><a href="#__codelineno-6-52">52</a></span>
-<span class="normal"><a href="#__codelineno-6-53">53</a></span>
-<span class="normal"><a href="#__codelineno-6-54">54</a></span>
-<span class="normal"><a href="#__codelineno-6-55">55</a></span>
-<span class="normal"><a href="#__codelineno-6-56">56</a></span>
-<span class="normal"><a href="#__codelineno-6-57">57</a></span>
-<span class="normal"><a href="#__codelineno-6-58">58</a></span>
-<span class="normal"><a href="#__codelineno-6-59">59</a></span>
-<span class="normal"><a href="#__codelineno-6-60">60</a></span>
-<span class="normal"><a href="#__codelineno-6-61">61</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnx</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">onnx</span><span class="w"> </span><span class="kn">import</span> <span class="n">version_converter</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnx</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnxruntime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ort</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">onnx</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelProto</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">read_txt</span><span class="p">(</span><span class="n">txt_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">txt_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a>    <span class="k">return</span> <span class="n">data</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="k">class</span><span class="w"> </span><span class="nc">ONNXMetaOp</span><span class="p">:</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a>    <span class="nd">@classmethod</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add_meta</span><span class="p">(</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a>        <span class="bp">cls</span><span class="p">,</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a>        <span class="n">model_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a>        <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a>        <span class="n">value</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a>        <span class="n">delimiter</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelProto</span><span class="p">:</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a>        <span class="n">model</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a>        <span class="n">meta</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata_props</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a>        <span class="n">meta</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a>        <span class="n">meta</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">delimiter</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a>        <span class="k">return</span> <span class="n">model</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a>
-</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30"></a>    <span class="nd">@classmethod</span>
-</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_meta</span><span class="p">(</span>
-</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32"></a>        <span class="bp">cls</span><span class="p">,</span> <span class="n">model_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">split_sym</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34"></a>        <span class="n">sess</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">InferenceSession</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
-</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35"></a>        <span class="n">meta_map</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">get_modelmeta</span><span class="p">()</span><span class="o">.</span><span class="n">custom_metadata_map</span>
-</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36"></a>        <span class="n">key_content</span> <span class="o">=</span> <span class="n">meta_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37"></a>        <span class="n">key_list</span> <span class="o">=</span> <span class="n">key_content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">split_sym</span><span class="p">)</span>
-</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38"></a>        <span class="k">return</span> <span class="n">key_list</span>
-</span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39"></a>
-</span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40"></a>    <span class="nd">@classmethod</span>
-</span><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">del_meta</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">model_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ModelProto</span><span class="p">:</span>
-</span><span id="__span-6-42"><a id="__codelineno-6-42" name="__codelineno-6-42"></a>        <span class="n">model</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
-</span><span id="__span-6-43"><a id="__codelineno-6-43" name="__codelineno-6-43"></a>        <span class="k">del</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata_props</span><span class="p">[:]</span>
-</span><span id="__span-6-44"><a id="__codelineno-6-44" name="__codelineno-6-44"></a>        <span class="k">return</span> <span class="n">model</span>
-</span><span id="__span-6-45"><a id="__codelineno-6-45" name="__codelineno-6-45"></a>
-</span><span id="__span-6-46"><a id="__codelineno-6-46" name="__codelineno-6-46"></a>    <span class="nd">@classmethod</span>
-</span><span id="__span-6-47"><a id="__codelineno-6-47" name="__codelineno-6-47"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">save_model</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">save_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">model</span><span class="p">:</span> <span class="n">ModelProto</span><span class="p">):</span>
-</span><span id="__span-6-48"><a id="__codelineno-6-48" name="__codelineno-6-48"></a>        <span class="n">onnx</span><span class="o">.</span><span class="n">save_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">save_path</span><span class="p">)</span>
-</span><span id="__span-6-49"><a id="__codelineno-6-49" name="__codelineno-6-49"></a>
-</span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50"></a>
-</span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51"></a><span class="n">dicts</span> <span class="o">=</span> <span class="n">read_txt</span><span class="p">(</span>
-</span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52"></a>    <span class="s2">&quot;models/ppocrv4_doc_dict.txt&quot;</span>
-</span><span id="__span-6-53"><a id="__codelineno-6-53" name="__codelineno-6-53"></a><span class="p">)</span>
-</span><span id="__span-6-54"><a id="__codelineno-6-54" name="__codelineno-6-54"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv5_mobile_det.onnx&quot;</span>
-</span><span id="__span-6-55"><a id="__codelineno-6-55" name="__codelineno-6-55"></a><span class="n">model</span> <span class="o">=</span> <span class="n">ONNXMetaOp</span><span class="o">.</span><span class="n">add_meta</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;character&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">dicts</span><span class="p">)</span>
-</span><span id="__span-6-56"><a id="__codelineno-6-56" name="__codelineno-6-56"></a>
-</span><span id="__span-6-57"><a id="__codelineno-6-57" name="__codelineno-6-57"></a><span class="n">new_model_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv5_mobile_det_with_dict.onnx&quot;</span>
-</span><span id="__span-6-58"><a id="__codelineno-6-58" name="__codelineno-6-58"></a><span class="n">ONNXMetaOp</span><span class="o">.</span><span class="n">save_model</span><span class="p">(</span><span class="n">new_model_path</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
-</span><span id="__span-6-59"><a id="__codelineno-6-59" name="__codelineno-6-59"></a>
-</span><span id="__span-6-60"><a id="__codelineno-6-60" name="__codelineno-6-60"></a><span class="n">t</span> <span class="o">=</span> <span class="n">ONNXMetaOp</span><span class="o">.</span><span class="n">get_meta</span><span class="p">(</span><span class="n">new_model_path</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;character&quot;</span><span class="p">)</span>
-</span><span id="__span-6-61"><a id="__codelineno-6-61" name="__codelineno-6-61"></a><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">OPT_VERSION</span> <span class="o">=</span> <span class="mi">14</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">IR_VERSION</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">source_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv5_mobile_det/inference.onnx&quot;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="n">dist_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv5_mobile_det/inference_v2.onnx&quot;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">model</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">source_path</span><span class="p">)</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="n">model</span><span class="o">.</span><span class="n">ir_version</span> <span class="o">=</span> <span class="n">IR_VERSION</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="n">model</span> <span class="o">=</span> <span class="n">version_converter</span><span class="o">.</span><span class="n">convert_version</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">OPT_VERSION</span><span class="p">)</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="n">onnx</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dist_path</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-</details>
+<h3 id="3">3. 模型推理验证<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>该部分主要是在RapidOCR项目中测试能否直接使用onnx模型。要点主要是确定模型前后处理是否兼容。从PaddleOCR config文件中比较<a href="https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv4/PP-OCRv4_mobile_det.yml">PP-OCRv4</a>和<a href="https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv5/PP-OCRv5_mobile_det.yml">PP-OCRv5 mobile det</a>文件差异：</p>
+<p><img alt="alt text" src="../../../../images/v4_v5_mobile_det.png" /></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv5_mobile_det/inference.onnx&quot;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Det.model_path&quot;</span><span class="p">:</span> <span class="n">model_path</span><span class="p">})</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516&quot;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><img alt="alt text" src="../../../../images/v5_mobile_det_vis_result.jpg" /></p>
+<h3 id="4">4. 模型精度测试<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>该部分主要使用<a href="https://github.com/SWHL/TextDetMetric">TextDetMetric</a>和测试集<a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">text_det_test_dataset</a>来评测。</p>
+<p>相关测试步骤请参见<a href="https://github.com/SWHL/TextRecMetric">TextDetMetric</a>的README，一步一步来就行。我这里测试最终精度如下：</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="err">&#39;precisio</span><span class="kc">n</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7861</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;recall&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8266</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;hmea</span><span class="kc">n</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8058</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;avg_elapse&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1499</span><span class="p">}</span>
+</span></code></pre></div>
+<p>该结果已经更新到<a href="../../../../2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/">开源OCR模型对比</a>中。</p>
+<h3 id="5-rapidocr">5. 集成到rapidocr中<a class="headerlink" href="#5-rapidocr" title="Permanent link">&para;</a></h3>
+<p>该部分主要包括将字典文件写入到ONNX模型中、托管模型到魔搭、更改rapidocr代码适配等。</p>
 <h4 id="_3">托管模型到魔搭<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>该部分主要是涉及模型上传到对应位置，并合理命名。注意上传完成后，需要打Tag，避免后续rapidocr whl包中找不到模型下载路径。</p>
 <p>我这里已经上传到了魔搭上，详细链接参见：<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files?version=v2.1.0">link</a></p>
@@ -2047,7 +1996,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月26日 01:44:41 UTC">2025年5月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月26日 06:18:57 UTC">2025年5月26日</span>
   </span>
 
     
@@ -2057,7 +2006,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月26日 01:44:41 UTC">2025年5月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月26日 06:18:57 UTC">2025年5月26日</span>
   </span>
 
     

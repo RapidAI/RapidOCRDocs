@@ -1903,36 +1903,35 @@ You're not viewing the latest version.
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="nv">sess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>C.InferenceSession<span class="o">(</span>session_options,<span class="w"> </span>self._model_path,<span class="w"> </span>True,<span class="w"> </span>self._read_config_from_model<span class="o">)</span>
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="hll">onnxruntime.capi.onnxruntime_pybind11_state.Fail:<span class="w"> </span><span class="o">[</span>ONNXRuntimeError<span class="o">]</span><span class="w"> </span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>:<span class="w"> </span>FAIL<span class="w"> </span>:<span class="w"> </span>Load<span class="w"> </span>model<span class="w"> </span>from<span class="w"> </span>/Users/xxxx/projects/LittleCode/models/PP-OCRv5_mobile_det/inference.onnx<span class="w"> </span>failed:/Users/runner/work/1/s/onnxruntime/core/graph/model.cc:182<span class="w"> </span>onnxruntime::Model::Model<span class="o">(</span>ModelProto<span class="w"> </span><span class="o">&amp;&amp;</span>,<span class="w"> </span>const<span class="w"> </span>PathString<span class="w"> </span><span class="p">&amp;</span>,<span class="w"> </span>const<span class="w"> </span>IOnnxRuntimeOpSchemaRegistryList<span class="w"> </span>*,<span class="w"> </span>const<span class="w"> </span>logging::Logger<span class="w"> </span><span class="p">&amp;</span>,<span class="w"> </span>const<span class="w"> </span>ModelOptions<span class="w"> </span><span class="p">&amp;</span><span class="o">)</span><span class="w"> </span>Unsupported<span class="w"> </span>model<span class="w"> </span>IR<span class="w"> </span>version:<span class="w"> </span><span class="m">11</span>,<span class="w"> </span>max<span class="w"> </span>supported<span class="w"> </span>IR<span class="w"> </span>version:<span class="w"> </span><span class="m">10</span>
 </span></span></code></pre></div></td></tr></table></div>
-<p>经过一系列的查阅资料，终于在onnxruntime issue <a href="https://github.com/microsoft/onnxruntime/issues/23602#issuecomment-2642348849">#23602</a> 中发现了解决方案。运行下面代码，将上一步所得模型重新指定一下**IR_VERSION**，就可以用<code>rapidocr</code>加载推理了。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span>
-<span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnx</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">onnx</span><span class="w"> </span><span class="kn">import</span> <span class="n">version_converter</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">OPT_VERSION</span> <span class="o">=</span> <span class="mi">14</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">IR_VERSION</span> <span class="o">=</span> <span class="mi">10</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">source_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv5_mobile_det/inference.onnx&quot;</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="n">dist_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv5_mobile_det/inference_v2.onnx&quot;</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">model</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">source_path</span><span class="p">)</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="n">model</span><span class="o">.</span><span class="n">ir_version</span> <span class="o">=</span> <span class="n">IR_VERSION</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="n">model</span> <span class="o">=</span> <span class="n">version_converter</span><span class="o">.</span><span class="n">convert_version</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">OPT_VERSION</span><span class="p">)</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="n">onnx</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dist_path</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
+<p>经过一系列的查阅资料，发现了两种解决方案，经过测试，精度一样。</p>
+<p>=== 方案一</p>
+<div class="language-text highlight"><pre><span></span><code>安装`onnx==1.16.0`，然后再次尝试转换。我这里实际测过，的确可以成功转换。
+</code></pre></div>
+<p>=== 方案二</p>
+<div class="language-text highlight"><pre><span></span><code>方案来自：onnxruntime issue [#23602](https://github.com/microsoft/onnxruntime/issues/23602#issuecomment-2642348849)
+
+运行下面代码，将上一步所得模型重新指定一下**IR_VERSION**，就可以用`rapidocr`加载推理了。
+
+```python linenums=&quot;1&quot;
+import onnx
+from onnx import version_converter
+
+OPT_VERSION = 14
+IR_VERSION = 10
+
+source_path = &quot;models/PP-OCRv5_mobile_det/inference.onnx&quot;
+dist_path = &quot;models/PP-OCRv5_mobile_det/inference_v2.onnx&quot;
+
+model = onnx.load(source_path)
+model.ir_version = IR_VERSION
+model = version_converter.convert_version(model, OPT_VERSION)
+onnx.save(model, dist_path)
+```
+</code></pre></div>
 <h3 id="3">3. 模型推理验证<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>该部分主要是在RapidOCR项目中测试能否直接使用onnx模型。要点主要是确定模型前后处理是否兼容。从PaddleOCR config文件中比较<a href="https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv4/PP-OCRv4_mobile_det.yml">PP-OCRv4</a>和<a href="https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv5/PP-OCRv5_mobile_det.yml">PP-OCRv5 mobile det</a>文件差异：</p>
 <p><img alt="alt text" src="../../../../images/v4_v5_mobile_det.png" /></p>
+<p>从上图中可以看出，配置基本一模一样，因为现有<code>rapidocr</code>前后推理代码可以直接使用。</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -1955,6 +1954,11 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 <p><img alt="alt text" src="../../../../images/v5_mobile_det_vis_result.jpg" /></p>
 <h3 id="4">4. 模型精度测试<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>测试集<a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">text_det_test_dataset</a>包括卡证类、文档类和自然场景三大类。其中卡证类有82张，文档类有75张，自然场景类有55张。缺少手写体、繁体、日文、古籍文本、拼音、艺术字等数据。因此，该基于该测评集的结果仅供参考。</p>
+<p>欢迎有兴趣的小伙伴，可以和我们一起共建更加完整的测评集。</p>
+</div>
 <p>该部分主要使用<a href="https://github.com/SWHL/TextDetMetric">TextDetMetric</a>和测试集<a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">text_det_test_dataset</a>来评测。</p>
 <p>相关测试步骤请参见<a href="https://github.com/SWHL/TextRecMetric">TextDetMetric</a>的README，一步一步来就行。我这里测试最终精度如下：</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="err">&#39;precisio</span><span class="kc">n</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7861</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;recall&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8266</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;hmea</span><span class="kc">n</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8058</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;avg_elapse&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1499</span><span class="p">}</span>
@@ -1996,7 +2000,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月26日 06:18:57 UTC">2025年5月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月26日 10:51:26 UTC">2025年5月26日</span>
   </span>
 
     
@@ -2006,7 +2010,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月26日 06:18:57 UTC">2025年5月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月26日 10:51:26 UTC">2025年5月26日</span>
   </span>
 
     

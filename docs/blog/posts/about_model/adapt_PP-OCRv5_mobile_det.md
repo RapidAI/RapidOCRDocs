@@ -136,29 +136,41 @@ Traceback (most recent call last):
 onnxruntime.capi.onnxruntime_pybind11_state.Fail: [ONNXRuntimeError] : 1 : FAIL : Load model from /Users/xxxx/projects/LittleCode/models/PP-OCRv5_mobile_det/inference.onnx failed:/Users/runner/work/1/s/onnxruntime/core/graph/model.cc:182 onnxruntime::Model::Model(ModelProto &&, const PathString &, const IOnnxRuntimeOpSchemaRegistryList *, const logging::Logger &, const ModelOptions &) Unsupported model IR version: 11, max supported IR version: 10
 ```
 
-经过一系列的查阅资料，终于在onnxruntime issue [#23602](https://github.com/microsoft/onnxruntime/issues/23602#issuecomment-2642348849) 中发现了解决方案。运行下面代码，将上一步所得模型重新指定一下**IR_VERSION**，就可以用`rapidocr`加载推理了。
+经过一系列的查阅资料，发现了两种解决方案，经过测试，精度一样。
 
-```python linenums="1"
-import onnx
-from onnx import version_converter
+=== 方案一
 
-OPT_VERSION = 14
-IR_VERSION = 10
+    安装`onnx==1.16.0`，然后再次尝试转换。我这里实际测过，的确可以成功转换。
 
-source_path = "models/PP-OCRv5_mobile_det/inference.onnx"
-dist_path = "models/PP-OCRv5_mobile_det/inference_v2.onnx"
+=== 方案二
 
-model = onnx.load(source_path)
-model.ir_version = IR_VERSION
-model = version_converter.convert_version(model, OPT_VERSION)
-onnx.save(model, dist_path)
-```
+    方案来自：onnxruntime issue [#23602](https://github.com/microsoft/onnxruntime/issues/23602#issuecomment-2642348849)
+
+    运行下面代码，将上一步所得模型重新指定一下**IR_VERSION**，就可以用`rapidocr`加载推理了。
+
+    ```python linenums="1"
+    import onnx
+    from onnx import version_converter
+
+    OPT_VERSION = 14
+    IR_VERSION = 10
+
+    source_path = "models/PP-OCRv5_mobile_det/inference.onnx"
+    dist_path = "models/PP-OCRv5_mobile_det/inference_v2.onnx"
+
+    model = onnx.load(source_path)
+    model.ir_version = IR_VERSION
+    model = version_converter.convert_version(model, OPT_VERSION)
+    onnx.save(model, dist_path)
+    ```
 
 ### 3. 模型推理验证
 
 该部分主要是在RapidOCR项目中测试能否直接使用onnx模型。要点主要是确定模型前后处理是否兼容。从PaddleOCR config文件中比较[PP-OCRv4](https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv4/PP-OCRv4_mobile_det.yml)和[PP-OCRv5 mobile det](https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv5/PP-OCRv5_mobile_det.yml)文件差异：
 
 ![alt text](../images/v4_v5_mobile_det.png)
+
+从上图中可以看出，配置基本一模一样，因为现有`rapidocr`前后推理代码可以直接使用。
 
 ```python linenums="1"
 from rapidocr import RapidOCR
@@ -176,6 +188,13 @@ result.vis("vis_result.jpg")
 ![alt text](../images/v5_mobile_det_vis_result.jpg)
 
 ### 4. 模型精度测试
+
+!!! warning
+
+    测试集[text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)包括卡证类、文档类和自然场景三大类。其中卡证类有82张，文档类有75张，自然场景类有55张。缺少手写体、繁体、日文、古籍文本、拼音、艺术字等数据。因此，该基于该测评集的结果仅供参考。
+
+    欢迎有兴趣的小伙伴，可以和我们一起共建更加完整的测评集。
+
 
 该部分主要使用[TextDetMetric](https://github.com/SWHL/TextDetMetric)和测试集[text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)来评测。
 

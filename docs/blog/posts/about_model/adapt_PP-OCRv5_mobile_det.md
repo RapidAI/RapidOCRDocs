@@ -159,7 +159,7 @@ for res in output:
 
     ![alt text](../images/v5_mobile_det_vis_result.jpg)
 
-==== "验证PP-OCRv5_server_det模型"
+=== "验证PP-OCRv5_server_det模型"
 
     该部分主要是在RapidOCR项目中测试能否直接使用onnx模型。要点主要是确定模型前后处理是否兼容。从PaddleOCR config文件中比较[PP-OCRv4_server_det](https://github.com/PaddlePaddle/PaddleOCR/blob/b0b31c38aef135617a98fbf89c92efd8b2eebd73/configs/det/PP-OCRv4/PP-OCRv4_server_det.yml)和[PP-OCRv5_server_det](https://github.com/PaddlePaddle/PaddleOCR/blob/b0b31c38aef135617a98fbf89c92efd8b2eebd73/configs/det/PP-OCRv5/PP-OCRv5_server_det.yml)文件差异：
 
@@ -194,8 +194,16 @@ for res in output:
 
 相关测试步骤请参见[TextDetMetric](https://github.com/SWHL/TextRecMetric)的README，一步一步来就行。我这里测试最终精度如下：
 
+PP-OCRv5_mobile_det
+
 ```json
 {'precision': 0.7861, 'recall': 0.8266, 'hmean': 0.8058, 'avg_elapse': 0.1499}
+```
+
+PP-OCRv5_server_det
+
+```json
+{'precision': 0.7394, 'recall': 0.8442, 'hmean': 0.7883, 'avg_elapse': 2.1106}
 ```
 
 该结果已经更新到[开源OCR模型对比](./model_summary.md)中。
@@ -217,12 +225,6 @@ for res in output:
 同时，需要添加对应的单元测试，在保证之前单测成功的同时，新的针对性该模型的单测也能通过。
 
 我这里已经做完了，小伙伴们感兴趣可以去看看源码。
-
-#### 发布新版本
-
-因为这次算是功能新增，按照语义化版本号来看，我们版本号需要从v2.0.7 → v2.1.0。
-
-我只需要在github仓库中，打一个v2.1.0的tag，Github Action会自动跑所有单元测试，自动发版到pypi。
 
 ### 写在最后
 

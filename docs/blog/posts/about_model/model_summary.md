@@ -62,11 +62,12 @@ hide:
 
 |  模型  | 模型大小| Precision | Recall | H-mean   | Speed(s/img) |
 | :---------------------------- | :----------------: | :-------: | :----: | :----: | :------ |
-|     ch_PP-OCRv5_mobile_det_infer.onnx      |     4.6M      |  0.7861   | 0.8266 | 0.8058 |   0.1482   |
+|     ch_PP-OCRv5_mobile_det.onnx      |     4.6M      |  0.7861   | 0.8266 | 0.8058 |   -   |
 |     ch_PP-OCRv4_det_infer.onnx      |     4.5M      |  0.8301   | 0.8659 | 0.8476 |   0.2256   |
 |     ch_PP-OCRv3_det_infer.onnx      |     2.3M      |  0.8021   | 0.8457 | 0.8234 |   0.1660  |
 |     ch_PP-OCRv2_det_infer.onnx      |     2.2M      |  0.7579   | 0.8010 | 0.7788 |   0.1570   |
 ||||||
+| ch_PP-OCRv5_server_det.onnx |    84M      |  0.7394   | 0.8442 | 0.7883 |   -   |
 | ch_PP-OCRv4_det_server_infer.onnx |    108M      |  0.7922   | 0.8533 | 0.8216 |   3.9093   |
 | ch_ppocr_server_v2.0_det_infer.onnx |     47M      |  0.7298   | 0.8128 | 0.7691 |   0.7419   |
 ||||||

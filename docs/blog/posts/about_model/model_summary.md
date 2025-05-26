@@ -2,11 +2,13 @@
 title: 开源OCR模型对比
 date:
   created: 2022-04-16
-  updated: 2025-05-17
+  updated: 2025-05-26
 authors: [SWHL]
 categories:
   - 模型相关
 comments: true
+hide:
+  - toc
 ---
 
 > 本文主要给出了常见开源文本检测和文本识别模型的对比和评测，给大家一个使用参考。

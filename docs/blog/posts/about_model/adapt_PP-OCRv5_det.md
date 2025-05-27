@@ -285,15 +285,16 @@ print(metric)
 
 指标汇总如下（以下指标均为CPU下计算所得）：
 
-|模型|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|PP-OCRv5_mobile_det|ONNXRuntime|0.7861|0.8266|0.8058|0.1499|
-|PP-OCRv5_mobile_det|PaddlePaddle|0.7864|0.8018|0.794|0.1954|
-|PP-OCRv4_mobile_det|ONNXRuntime|0.8301|0.8659|0.8476|-|
-|||||||
-|PP-OCRv5_server_det|ONNXRuntime|0.7394|0.8442|0.7883|2.1106|
-|PP-OCRv5_server_det|PaddlePaddle|0.8347|0.8583|0.8463|2.1450|
-|PP-OCRv4_server_det|ONNXRuntime|0.7922|0.8128|0.7691|-|
+|模型|推理代码|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
+|:---|:---|:---|:---:|:---:|:---:|:---:|
+|PP-OCRv5_mobile_det|RapidOCR| ONNXRuntime|0.7861|0.8266|0.8058|0.1499|
+|PP-OCRv5_mobile_det|PaddleX |PaddlePaddle|0.7864|0.8018|0.794|0.1954|
+|PP-OCRv4_mobile_det|RapidOCR |ONNXRuntime|0.8301|0.8659|0.8476|-|
+||||||||
+|PP-OCRv5_server_det|RapidOCR| ONNXRuntime|0.7394|0.8442|0.7883|2.1106|
+|PP-OCRv5_server_det|RapidOCR |PaddlePaddle|||||
+|PP-OCRv5_server_det|PaddleX |PaddlePaddle|0.8347|0.8583|0.8463|2.1450|
+|PP-OCRv4_server_det|RapidOCR |ONNXRuntime|0.7922|0.8128|0.7691|-|
 
 从以上结果来看，可以得到以下结论：
 

@@ -13,12 +13,11 @@ def on_page_markdown(markdown, **kwargs):
     if not include.match(page.url):
         return markdown
 
-    page_url = config.site_url + page.url
+    page_url = f"{config.site_url}/{page.url}"
     page_title = urllib.parse.quote(page.title + "\n")
 
     return markdown + dedent(
         f"""
     [Share on :simple-x:]({x_intent}?text={page_title}&url={page_url}){{ .md-button }}
-    [Share on :simple-facebook:]({fb_sharer}?u={page_url}){{ .md-button }}
     """
     )

@@ -199,7 +199,7 @@ for res in output:
 
 其中，计算 **pred.txt** 代码如下：
 
-=== "基于ONNXRuntime获得 **pred.txt** 文本文件"
+=== "基于RapidOCR ONNXRuntime获得 **pred.txt** 文本文件"
 
     ```python linenums="1"
     import cv2
@@ -232,6 +232,10 @@ for res in output:
         for v in content:
             f.write(f"{v}\n")
     ```
+
+=== "基于RapidOCR Paddle格式模型获得 **pred.txt** 文本文件"
+
+    TODO
 
 === "基于PaddleX获得 **pred.txt** 文本文件"
 

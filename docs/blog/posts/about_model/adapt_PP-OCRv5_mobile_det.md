@@ -7,6 +7,9 @@ categories:
 comments: true
 hide:
   - toc
+links:
+  - 开源OCR模型对比: blog/posts/about_model/model_summary.md
+  - RapidOCR集成PP-OCRv4_server_rec_doc模型记录: git blog/posts/about_model/adapt_PP-OCRv4_server_rec_doc.md
 ---
 
 

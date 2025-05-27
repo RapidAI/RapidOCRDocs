@@ -140,6 +140,9 @@ extra:
   version:
     provider: mike
 
+hooks:
+  - hooks/socialmedia.py
+
 nav:
   - 概览: index.md
   - 快速开始: quickstart.md

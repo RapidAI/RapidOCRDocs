@@ -4,7 +4,7 @@ from textwrap import dedent
 
 x_intent = "https://x.com/intent/tweet"
 fb_sharer = "https://www.facebook.com/sharer/sharer.php"
-include = re.compile(r"blog/[1-9].*")
+include = re.compile(r"blog/.*")
 
 
 def on_page_markdown(markdown, **kwargs):

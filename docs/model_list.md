@@ -18,9 +18,9 @@ hide:
 
 ### 使用默认mobile或server模型
 
-`rapidocr`库基本集成了PaddleOCR发布的所有模型，其中中英文检测识别模型仅集成最新的版本。同时只有中英文检测识别模型分为**mobile**和**server**两个版本，分别侧重速度和精度。
+`rapidocr`库基本集成了PaddleOCR发布的所有模型，其中中英文检测识别模型仅集成最新的版本。同时只有中英文检测识别模型分为 **mobile** 和 **server** 两个版本，分别侧重速度和精度。
 
-默认使用的是**mobile**的中英文检测识别模型，通过`lang_det`和`lang_rec`来指定。
+默认使用的是 **mobile** 的中英文检测识别模型，通过`lang_det`和`lang_rec`来指定。
 
 ```python linenums="1" hl_lines="4"
 from rapidocr import RapidOCR
@@ -42,7 +42,7 @@ engine = RapidOCR(
 
 !!! note
 
-    并不是所有的模型都有**server**版本，具体哪个有，可以参见：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/a9bb7c1f44b6e00556ada90ac588f020d7637c4b/python/rapidocr/default_models.yaml)。配置文件中带有server字样的即是有server版本。
+    并不是所有的模型都有 **server** 版本，具体哪个有，可以参见：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/a9bb7c1f44b6e00556ada90ac588f020d7637c4b/python/rapidocr/default_models.yaml)。配置文件中带有server字样的即是有server版本。
 
 ### 具体字段对应
 

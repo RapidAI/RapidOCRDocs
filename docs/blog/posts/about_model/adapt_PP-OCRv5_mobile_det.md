@@ -9,7 +9,7 @@ hide:
   - toc
 links:
   - 开源OCR模型对比: blog/posts/about_model/model_summary.md
-  - RapidOCR集成PP-OCRv4_server_rec_doc模型记录: git blog/posts/about_model/adapt_PP-OCRv4_server_rec_doc.md
+  - RapidOCR集成PP-OCRv4_server_rec_doc模型记录: blog/posts/about_model/adapt_PP-OCRv4_server_rec_doc.md
 ---
 
 
@@ -195,21 +195,109 @@ for res in output:
 
 该部分主要使用[TextDetMetric](https://github.com/SWHL/TextDetMetric)和测试集[text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)来评测。
 
-相关测试步骤请参见[TextDetMetric](https://github.com/SWHL/TextRecMetric)的README，一步一步来就行。我这里测试最终精度如下：
+相关测试步骤请参见[TextDetMetric](https://github.com/SWHL/TextRecMetric)的README，一步一步来就行。我这里简单给出关键代码：
 
-PP-OCRv5_mobile_det
+其中，计算 **pred.txt** 代码如下：
 
-```json
-{'precision': 0.7861, 'recall': 0.8266, 'hmean': 0.8058, 'avg_elapse': 0.1499}
+=== "基于ONNXRuntime获得 **pred.txt** 文本文件"
+
+    ```python linenums="1"
+    import cv2
+    import numpy as np
+    from datasets import load_dataset
+    from rapidocr import RapidOCR
+    from tqdm import tqdm
+
+    model_path = "models/PP-OCRv5_mobile_det/inference.onnx"
+    engine = RapidOCR(params={"Det.model_path": model_path})
+
+    dataset = load_dataset("SWHL/text_det_test_dataset")
+    test_data = dataset["test"]
+
+    content = []
+    for i, one_data in enumerate(tqdm(test_data)):
+        img = np.array(one_data.get("image"))
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+        ocr_results = engine(img, use_det=True, use_cls=False, use_rec=False)
+        dt_boxes = ocr_results.boxes
+
+        dt_boxes = [] if dt_boxes is None else dt_boxes.tolist()
+        elapse = ocr_results.elapse
+
+        gt_boxes = [v["points"] for v in one_data["shapes"]]
+        content.append(f"{dt_boxes}\t{gt_boxes}\t{elapse}")
+
+    with open("pred.txt", "w", encoding="utf-8") as f:
+        for v in content:
+            f.write(f"{v}\n")
+    ```
+
+=== "基于PaddleX获得 **pred.txt** 文本文件"
+
+    ```python linenums="1"
+    import time
+    import cv2
+    import numpy as np
+    from datasets import load_dataset
+    from tqdm import tqdm
+
+    from paddlex import create_model
+
+    model = create_model(model_name="PP-OCRv5_mobile_det")
+
+    dataset = load_dataset("SWHL/text_det_test_dataset")
+    test_data = dataset["test"]
+
+    content = []
+    for i, one_data in enumerate(tqdm(test_data)):
+        img = np.array(one_data.get("image"))
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+        t0 = time.perf_counter()
+        ocr_results = next(model.predict(input=img, batch_size=1))
+        dt_boxes = ocr_results["dt_polys"].tolist()
+
+        elapse = time.perf_counter() - t0
+
+        gt_boxes = [v["points"] for v in one_data["shapes"]]
+        content.append(f"{dt_boxes}\t{gt_boxes}\t{elapse}")
+
+    with open("pred.txt", "w", encoding="utf-8") as f:
+        for v in content:
+            f.write(f"{v}\n")
+    ```
+
+计算指标代码：
+
+```python linenums="1"
+from text_det_metric import TextDetMetric
+
+metric = TextDetMetric()
+pred_path = "pred.txt"
+metric = metric(pred_path)
+print(metric)
 ```
 
-PP-OCRv5_server_det
+指标汇总如下：
 
-```json
-{'precision': 0.7394, 'recall': 0.8442, 'hmean': 0.7883, 'avg_elapse': 2.1106}
-```
+|模型|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|PP-OCRv5_mobile_det|ONNXRuntime|0.7861|0.8266|0.8058|0.1499|
+|PP-OCRv5_mobile_det|PaddlePaddle|0.7864|0.8018|0.794|0.1954|
+|PP-OCRv4_mobile_det|ONNXRuntime|0.8301|0.8659|0.8476|-|
+|||||||
+|PP-OCRv5_server_det|ONNXRuntime|0.7394|0.8442|0.7883|2.1106|
+|PP-OCRv5_server_det|PaddlePaddle|0.8347|0.8583|0.8463|2.1450|
+|PP-OCRv4_server_det|ONNXRuntime|0.7922|0.8128|0.7691|-|
 
-该结果已经更新到[开源OCR模型对比](./model_summary.md)中。
+从以上结果来看，可以得到以下结论：
+
+1. mobile模型转换为ONNX格式后，指标有小幅提升，推理速度也有提升。
+2. mobile整体指标弱于PP-OCRv4的，应该是测评集覆盖不全导致的。
+3. v5 server模型转换为ONNX格式后，H-mean下降了5.8%。转换方式和mobile的相同，具体原因需要进一步排查。
+
+上述表格中基于ONNXRuntimde的结果已经更新到[开源OCR模型对比](./model_summary.md)中。
 
 ### 5. 集成到rapidocr中
 
@@ -219,7 +307,7 @@ PP-OCRv5_server_det
 
 该部分主要是涉及模型上传到对应位置，并合理命名。注意上传完成后，需要打Tag，避免后续rapidocr whl包中找不到模型下载路径。
 
-我这里已经上传到了魔搭上，详细链接参见：[link](https://www.modelscope.cn/models/RapidAI/RapidOCR/files?version=v2.1.0)
+我这里已经上传到了魔搭上，详细链接参见：[link](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)
 
 #### 更改rapidocr代码适配
 

@@ -7,6 +7,8 @@ categories:
 comments: true
 hide:
   - toc
+links:
+  - 开源OCR模型对比: blog/posts/about_model/model_summary.md
 ---
 
 

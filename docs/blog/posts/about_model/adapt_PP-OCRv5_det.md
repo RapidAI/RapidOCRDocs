@@ -283,7 +283,7 @@ metric = metric(pred_path)
 print(metric)
 ```
 
-指标汇总如下：
+指标汇总如下（以下指标均为CPU下计算所得）：
 
 |模型|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
 |:---:|:---:|:---:|:---:|:---:|:---:|

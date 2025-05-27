@@ -30,7 +30,7 @@ engine = RapidOCR(
 )
 ```
 
-如果想要使用**server**版默认模型，则直接更改参数为`ch_server`即可。
+如果想要使用 **server** 版默认模型，则直接更改参数为`ch_server`即可。
 
 ```python linenums="1" hl_lines="4"
 from rapidocr import RapidOCR

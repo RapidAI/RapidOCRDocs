@@ -201,7 +201,7 @@ for res in output:
 
 === "(Exp1)RapidOCR框架+ONNXRuntime格式模型"
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="11"
     import cv2
     import numpy as np
     from datasets import load_dataset
@@ -241,7 +241,7 @@ for res in output:
 
 === "(Exp2)RapidOCR框架+Paddle格式模型"
 
-    ```python linenus="1"
+    ```python linenums="1" hl_lines="11"
     import cv2
     import numpy as np
     from datasets import load_dataset
@@ -281,7 +281,7 @@ for res in output:
 
 === "(Exp3) PaddleX框架+Paddle格式模型"
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="9"
     import time
     import cv2
     import numpy as np
@@ -344,7 +344,7 @@ print(metric)
 1. Exp1和Exp2相比，H-mean差异不大，说明文本检测 **前后处理代码可以共用** 。
 2. Exp2和Exp3相比，mobile模型转换为ONNX格式后，指标几乎一致，说明 **模型转换前后，误差较小，推理速度也有提升** 。
 3. Exp3和Exp4相比，mobile整体指标弱于PP-OCRv4的。因为测评集集中在中英文的印刷体，手写体少些，因此仅供参考。
-4. Exp6直接跑，会报以下错误，暂时没有找到原因。
+4. Exp6直接跑，会报以下错误，暂时没有找到原因。如有知道的小伙伴，欢迎留言告知。
 
     ```bash linenums="1"
     5%|████████▏                                                                                                                                                     | 11/212 [00:42<13:11,  3.94s/it][1]    61275 bus error  python t.py
@@ -353,7 +353,7 @@ print(metric)
     warnings.warn('resource_tracker: There appear to be %d '
     ```
 
-5. 因为Exp6暂时没有找到原因，粗略将Exp5和Exp7相比，可以看到PP-OCRv5 server模型转换为ONNX格式后，**H-mean下降了5.8%** ，但是转换方式和mobile的相同，具体原因需要进一步排查。
+5. 因为Exp6暂时没有找到原因，粗略将Exp5和Exp7相比，可以看到PP-OCRv5 server模型转换为ONNX格式后，**H-mean下降了5.8%** ，但是转换方式和mobile的相同，具体原因需要进一步排查。如有知道的小伙伴，欢迎留言告知。
 6. Exp7和Exp8相比，PP-OCRv5 server模型提升很大（H-mean提升7.72%）。不排除用到了测评集数据。
 
 !!! tip
@@ -385,4 +385,4 @@ print(metric)
 
 至此，该部分集成工作就基本完成了。这部分代码会集成到`rapidocr==3.0.0`中。版本号之所以从v2.1.0到v3.0.0，原因是：语义化版本号。
 
-我在集成过程中，发现v2.1.0中字段不太合理，于是做了一些改进，动了外部API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ [docs](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/) 。
+我在集成过程中，发现v2.1.0中字段不太合理，做了一些改进，动了外部API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ [docs](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/) 。

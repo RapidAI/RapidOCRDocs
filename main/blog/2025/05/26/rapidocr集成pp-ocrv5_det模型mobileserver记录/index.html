@@ -1709,7 +1709,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 5 分钟阅读时间
+                              需要 6 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2012,7 +2012,7 @@ You're not viewing the latest version.
 <p>该部分主要使用<a href="https://github.com/SWHL/TextDetMetric">TextDetMetric</a>和测试集<a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">text_det_test_dataset</a>来评测。</p>
 <p>相关测试步骤请参见<a href="https://github.com/SWHL/TextRecMetric">TextDetMetric</a>的README，一步一步来就行。我这里简单给出关键代码：</p>
 <p>其中，计算 <strong>pred.txt</strong> 代码如下：</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">基于RapidOCR ONNXRuntime获得 <strong>pred.txt</strong> 文本文件</label><label for="__tabbed_3_2">基于RapidOCR Paddle格式模型获得 <strong>pred.txt</strong> 文本文件</label><label for="__tabbed_3_3">基于PaddleX获得 <strong>pred.txt</strong> 文本文件</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">（Exp1）基于RapidOCR框架ONNXRuntime模型获得 <strong>pred.txt</strong> 文本文件</label><label for="__tabbed_3_2">（Exp2）基于RapidOCR框架Paddle格式模型获得 <strong>pred.txt</strong> 文本文件 → Exp2</label><label for="__tabbed_3_3">（Exp3）基于PaddleX框架Paddle格式获得 <strong>pred.txt</strong> 文本文件</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
@@ -2043,39 +2043,82 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-8-26">26</a></span>
 <span class="normal"><a href="#__codelineno-8-27">27</a></span>
 <span class="normal"><a href="#__codelineno-8-28">28</a></span>
-<span class="normal"><a href="#__codelineno-8-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="normal"><a href="#__codelineno-8-29">29</a></span>
+<span class="normal"><a href="#__codelineno-8-30">30</a></span>
+<span class="normal"><a href="#__codelineno-8-31">31</a></span>
+<span class="normal"><a href="#__codelineno-8-32">32</a></span>
+<span class="normal"><a href="#__codelineno-8-33">33</a></span>
+<span class="normal"><a href="#__codelineno-8-34">34</a></span>
+<span class="normal"><a href="#__codelineno-8-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv5_mobile_det/inference.onnx&quot;</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Det.model_path&quot;</span><span class="p">:</span> <span class="n">model_path</span><span class="p">})</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;SWHL/text_det_test_dataset&quot;</span><span class="p">)</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="n">test_data</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">one_data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="n">test_data</span><span class="p">)):</span>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">one_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">))</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">)</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17"></a>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18"></a>    <span class="n">ocr_results</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">boxes</span>
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20"></a>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">dt_boxes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">dt_boxes</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22"></a>    <span class="n">elapse</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">elapse</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">ModelType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a>        <span class="s2">&quot;Det.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV5</span><span class="p">,</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a>        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">ONNXRUNTIME</span><span class="p">,</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a>        <span class="s2">&quot;Det.model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">MOBILE</span><span class="p">,</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="p">}</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="p">)</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;SWHL/text_det_test_dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="n">test_data</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">one_data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="n">test_data</span><span class="p">)):</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">one_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">))</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">)</span>
 </span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23"></a>
-</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24"></a>    <span class="n">gt_boxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">one_data</span><span class="p">[</span><span class="s2">&quot;shapes&quot;</span><span class="p">]]</span>
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25"></a>    <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">gt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">elapse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24"></a>    <span class="n">ocr_results</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">boxes</span>
 </span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26"></a>
-</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pred.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28"></a>    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
-</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">dt_boxes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">dt_boxes</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28"></a>    <span class="n">elapse</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">elapse</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29"></a>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30"></a>    <span class="n">gt_boxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">one_data</span><span class="p">[</span><span class="s2">&quot;shapes&quot;</span><span class="p">]]</span>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31"></a>    <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">gt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">elapse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32"></a>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pred.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34"></a>    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<p>TODO</p>
+<p>```python linenus="1"
+import cv2
+import numpy as np
+from datasets import load_dataset
+from tqdm import tqdm</p>
+<p>from rapidocr import EngineType, ModelType, OCRVersion, RapidOCR</p>
+<p>engine = RapidOCR(
+    params={
+        "Det.ocr_version": OCRVersion.PPOCRV5,
+        "Det.engine_type": EngineType.PADDLE,
+        "Det.model_type": ModelType.MOBILE,
+    }
+)</p>
+<p>dataset = load_dataset("SWHL/text_det_test_dataset")
+test_data = dataset["test"]</p>
+<p>content = []
+for i, one_data in enumerate(tqdm(test_data)):
+    img = np.array(one_data.get("image"))
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)</p>
+<div class="language-text highlight"><pre><span></span><code>ocr_results = engine(img, use_det=True, use_cls=False, use_rec=False)
+dt_boxes = ocr_results.boxes
+
+dt_boxes = [] if dt_boxes is None else dt_boxes.tolist()
+elapse = ocr_results.elapse
+
+gt_boxes = [v[&quot;points&quot;] for v in one_data[&quot;shapes&quot;]]
+content.append(f&quot;{dt_boxes}\t{gt_boxes}\t{elapse}&quot;)
+</code></pre></div>
+<p>with open("pred.txt", "w", encoding="utf-8") as f:
+    for v in content:
+        f.write(f"{v}\n")
+```</p>
 </div>
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
@@ -2158,6 +2201,7 @@ You're not viewing the latest version.
 <table>
 <thead>
 <tr>
+<th style="text-align: center;">Exp</th>
 <th style="text-align: left;">模型</th>
 <th style="text-align: left;">推理代码</th>
 <th style="text-align: left;">推理引擎</th>
@@ -2169,24 +2213,37 @@ You're not viewing the latest version.
 </thead>
 <tbody>
 <tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">PaddleX</td>
+<td style="text-align: left;">PaddlePaddle</td>
+<td style="text-align: center;">0.7864</td>
+<td style="text-align: center;">0.8018</td>
+<td style="text-align: center;">0.7940</td>
+<td style="text-align: center;">0.1956</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">PaddlePaddle</td>
+<td style="text-align: center;">0.7861</td>
+<td style="text-align: center;">0.8266</td>
+<td style="text-align: center;">0.8058</td>
+<td style="text-align: center;">0.5328</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
 <td style="text-align: left;">PP-OCRv5_mobile_det</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNXRuntime</td>
 <td style="text-align: center;">0.7861</td>
 <td style="text-align: center;">0.8266</td>
 <td style="text-align: center;">0.8058</td>
-<td style="text-align: center;">0.1499</td>
+<td style="text-align: center;">0.1653</td>
 </tr>
 <tr>
-<td style="text-align: left;">PP-OCRv5_mobile_det</td>
-<td style="text-align: left;">PaddleX</td>
-<td style="text-align: left;">PaddlePaddle</td>
-<td style="text-align: center;">0.7864</td>
-<td style="text-align: center;">0.8018</td>
-<td style="text-align: center;">0.794</td>
-<td style="text-align: center;">0.1954</td>
-</tr>
-<tr>
+<td style="text-align: center;">4</td>
 <td style="text-align: left;">PP-OCRv4_mobile_det</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNXRuntime</td>
@@ -2196,6 +2253,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">-</td>
 </tr>
 <tr>
+<td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -2205,24 +2263,7 @@ You're not viewing the latest version.
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: left;">PP-OCRv5_server_det</td>
-<td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
-<td style="text-align: center;">0.7394</td>
-<td style="text-align: center;">0.8442</td>
-<td style="text-align: center;">0.7883</td>
-<td style="text-align: center;">2.1106</td>
-</tr>
-<tr>
-<td style="text-align: left;">PP-OCRv5_server_det</td>
-<td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">PaddlePaddle</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
+<td style="text-align: center;">5</td>
 <td style="text-align: left;">PP-OCRv5_server_det</td>
 <td style="text-align: left;">PaddleX</td>
 <td style="text-align: left;">PaddlePaddle</td>
@@ -2232,6 +2273,27 @@ You're not viewing the latest version.
 <td style="text-align: center;">2.1450</td>
 </tr>
 <tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">PP-OCRv5_server_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">PaddlePaddle</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">PP-OCRv5_server_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: center;">0.7394</td>
+<td style="text-align: center;">0.8442</td>
+<td style="text-align: center;">0.7883</td>
+<td style="text-align: center;">2.0628</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
 <td style="text-align: left;">PP-OCRv4_server_det</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNXRuntime</td>
@@ -2244,11 +2306,33 @@ You're not viewing the latest version.
 </table>
 <p>从以上结果来看，可以得到以下结论：</p>
 <ol>
-<li>mobile模型转换为ONNX格式后，指标有小幅提升，推理速度也有提升。</li>
-<li>mobile整体指标弱于PP-OCRv4的，应该是测评集覆盖不全导致的。</li>
-<li>v5 server模型转换为ONNX格式后，H-mean下降了5.8%。转换方式和mobile的相同，具体原因需要进一步排查。</li>
+<li>Exp1和Exp2相比，H-mean差异不大，说明文本检测 <strong>前后处理代码可以共用</strong> 。</li>
+<li>Exp2和Exp3相比，mobile模型转换为ONNX格式后，指标几乎一致，说明 <strong>模型转换前后，误差较小，推理速度也有提升</strong> 。</li>
+<li>Exp3和Exp4相比，mobile整体指标弱于PP-OCRv4的。因为测评集集中在中英文的印刷体，手写体少些，因此仅供参考。</li>
+<li>
+<p>Exp6直接跑，会报以下错误，暂时没有找到原因。</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="m">5</span>%<span class="p">|</span>████████▏<span class="w">                                                                                                                                                     </span><span class="p">|</span><span class="w"> </span><span class="m">11</span>/212<span class="w"> </span><span class="o">[</span><span class="m">00</span>:42&lt;<span class="m">13</span>:11,<span class="w">  </span><span class="m">3</span>.94s/it<span class="o">][</span><span class="m">1</span><span class="o">]</span><span class="w">    </span><span class="m">61275</span><span class="w"> </span>bus<span class="w"> </span>error<span class="w">  </span>python<span class="w"> </span>t.py
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a>/Users/xxxxx/miniconda3/envs/py310/lib/python3.10/multiprocessing/resource_tracker.py:224:<span class="w"> </span>UserWarning:<span class="w"> </span>resource_tracker:<span class="w"> </span>There<span class="w"> </span>appear<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span><span class="m">1</span><span class="w"> </span>leaked<span class="w"> </span>semaphore<span class="w"> </span>objects<span class="w"> </span>to<span class="w"> </span>clean<span class="w"> </span>up<span class="w"> </span>at<span class="w"> </span>shutdown
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a>warnings.warn<span class="o">(</span><span class="s1">&#39;resource_tracker: There appear to be %d &#39;</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>因为Exp6暂时没有找到原因，粗略将Exp5和Exp7相比，可以看到PP-OCRv5 server模型转换为ONNX格式后，<strong>H-mean下降了5.8%</strong> ，但是转换方式和mobile的相同，具体原因需要进一步排查。</p>
+</li>
+<li>Exp7和Exp8相比，PP-OCRv5 server模型提升很大（H-mean提升7.72%）。不排除用到了测评集数据。</li>
 </ol>
-<p>上述表格中基于ONNXRuntimde的结果已经更新到<a href="../../../../2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/">开源OCR模型对比</a>中。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>如果是单一中英文场景，建议用PP-OCRv4系列</li>
+<li>如果是中英日、印刷和手写体混合场景，建议用PP-OCRv5系列</li>
+</ul>
+</div>
+<p>上述表格中基于ONNXRuntime的结果已经更新到<a href="../../../../2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/">开源OCR模型对比</a>中。</p>
 <h3 id="5-rapidocr">5. 集成到rapidocr中<a class="headerlink" href="#5-rapidocr" title="Permanent link">&para;</a></h3>
 <p>该部分主要包括将托管模型到魔搭、更改rapidocr代码适配等。</p>
 <h4 id="_3">托管模型到魔搭<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
@@ -2259,7 +2343,8 @@ You're not viewing the latest version.
 <p>同时，需要添加对应的单元测试，在保证之前单测成功的同时，新的针对性该模型的单测也能通过。</p>
 <p>我这里已经做完了，小伙伴们感兴趣可以去看看源码。</p>
 <h3 id="_4">写在最后<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>至此，集成工作就基本完成了。</p>
+<p>至此，该部分集成工作就基本完成了。这部分代码会集成到<code>rapidocr==3.0.0</code>中。版本号之所以从v2.1.0到v3.0.0，原因是：语义化版本号。</p>
+<p>我在集成过程中，发现v2.1.0中字段不太合理，于是做了一些改进，动了外部API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ <a href="https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/">docs</a> 。</p>
 <p><a class="md-button" href="https://x.com/intent/tweet?text=RapidOCR%E9%9B%86%E6%88%90PP-OCRv5_det%E6%A8%A1%E5%9E%8B%28mobile/server%29%E8%AE%B0%E5%BD%95%0A&amp;url=https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr%E9%9B%86%E6%88%90pp-ocrv5_det%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span></a></p>
 
 
@@ -2283,7 +2368,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月27日 05:53:25 UTC">2025年5月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月29日 13:48:49 UTC">2025年5月29日</span>
   </span>
 
     
@@ -2293,7 +2378,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月27日 05:53:25 UTC">2025年5月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月29日 13:48:49 UTC">2025年5月29日</span>
   </span>
 
     

@@ -199,17 +199,23 @@ for res in output:
 
 其中，计算 **pred.txt** 代码如下：
 
-=== "基于RapidOCR ONNXRuntime获得 **pred.txt** 文本文件"
+=== "（Exp1）基于RapidOCR框架ONNXRuntime模型获得 **pred.txt** 文本文件"
 
     ```python linenums="1"
     import cv2
     import numpy as np
     from datasets import load_dataset
-    from rapidocr import RapidOCR
     from tqdm import tqdm
 
-    model_path = "models/PP-OCRv5_mobile_det/inference.onnx"
-    engine = RapidOCR(params={"Det.model_path": model_path})
+    from rapidocr import EngineType, ModelType, OCRVersion, RapidOCR
+
+    engine = RapidOCR(
+        params={
+            "Det.ocr_version": OCRVersion.PPOCRV5,
+            "Det.engine_type": EngineType.ONNXRUNTIME,
+            "Det.model_type": ModelType.MOBILE,
+        }
+    )
 
     dataset = load_dataset("SWHL/text_det_test_dataset")
     test_data = dataset["test"]
@@ -233,11 +239,47 @@ for res in output:
             f.write(f"{v}\n")
     ```
 
-=== "基于RapidOCR Paddle格式模型获得 **pred.txt** 文本文件"
+=== "（Exp2）基于RapidOCR框架Paddle格式模型获得 **pred.txt** 文本文件 → Exp2"
 
-    TODO
+    ```python linenus="1"
+    import cv2
+    import numpy as np
+    from datasets import load_dataset
+    from tqdm import tqdm
 
-=== "基于PaddleX获得 **pred.txt** 文本文件"
+    from rapidocr import EngineType, ModelType, OCRVersion, RapidOCR
+
+    engine = RapidOCR(
+        params={
+            "Det.ocr_version": OCRVersion.PPOCRV5,
+            "Det.engine_type": EngineType.PADDLE,
+            "Det.model_type": ModelType.MOBILE,
+        }
+    )
+
+    dataset = load_dataset("SWHL/text_det_test_dataset")
+    test_data = dataset["test"]
+
+    content = []
+    for i, one_data in enumerate(tqdm(test_data)):
+        img = np.array(one_data.get("image"))
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+        ocr_results = engine(img, use_det=True, use_cls=False, use_rec=False)
+        dt_boxes = ocr_results.boxes
+
+        dt_boxes = [] if dt_boxes is None else dt_boxes.tolist()
+        elapse = ocr_results.elapse
+
+        gt_boxes = [v["points"] for v in one_data["shapes"]]
+        content.append(f"{dt_boxes}\t{gt_boxes}\t{elapse}")
+
+    with open("pred.txt", "w", encoding="utf-8") as f:
+        for v in content:
+            f.write(f"{v}\n")
+    ```
+
+=== "（Exp3）基于PaddleX框架Paddle格式获得 **pred.txt** 文本文件"
 
     ```python linenums="1"
     import time
@@ -285,24 +327,41 @@ print(metric)
 
 指标汇总如下（以下指标均为CPU下计算所得）：
 
-|模型|推理代码|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
-|:---|:---|:---|:---:|:---:|:---:|:---:|
-|PP-OCRv5_mobile_det|RapidOCR| ONNXRuntime|0.7861|0.8266|0.8058|0.1499|
-|PP-OCRv5_mobile_det|PaddleX |PaddlePaddle|0.7864|0.8018|0.794|0.1954|
-|PP-OCRv4_mobile_det|RapidOCR |ONNXRuntime|0.8301|0.8659|0.8476|-|
-||||||||
-|PP-OCRv5_server_det|RapidOCR| ONNXRuntime|0.7394|0.8442|0.7883|2.1106|
-|PP-OCRv5_server_det|RapidOCR |PaddlePaddle|||||
-|PP-OCRv5_server_det|PaddleX |PaddlePaddle|0.8347|0.8583|0.8463|2.1450|
-|PP-OCRv4_server_det|RapidOCR |ONNXRuntime|0.7922|0.8128|0.7691|-|
+|Exp|模型|推理代码|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
+|:---:|:---|:---|:---|:---:|:---:|:---:|:---:|
+|1|PP-OCRv5_mobile_det|PaddleX |PaddlePaddle|0.7864|0.8018|0.7940|0.1956|
+|2|PP-OCRv5_mobile_det|RapidOCR| PaddlePaddle|0.7861|0.8266|0.8058|0.5328|
+|3|PP-OCRv5_mobile_det|RapidOCR| ONNXRuntime|0.7861|0.8266|0.8058|0.1653|
+|4|PP-OCRv4_mobile_det|RapidOCR |ONNXRuntime|0.8301|0.8659|0.8476|-|
+|||||||||
+|5|PP-OCRv5_server_det|PaddleX |PaddlePaddle|0.8347|0.8583|0.8463|2.1450|
+|6|PP-OCRv5_server_det|RapidOCR |PaddlePaddle|||||
+|7|PP-OCRv5_server_det|RapidOCR| ONNXRuntime|0.7394|0.8442|0.7883|2.0628|
+|8|PP-OCRv4_server_det|RapidOCR |ONNXRuntime|0.7922|0.8128|0.7691|-|
 
 从以上结果来看，可以得到以下结论：
 
-1. mobile模型转换为ONNX格式后，指标有小幅提升，推理速度也有提升。
-2. mobile整体指标弱于PP-OCRv4的，应该是测评集覆盖不全导致的。
-3. v5 server模型转换为ONNX格式后，H-mean下降了5.8%。转换方式和mobile的相同，具体原因需要进一步排查。
+1. Exp1和Exp2相比，H-mean差异不大，说明文本检测 **前后处理代码可以共用** 。
+2. Exp2和Exp3相比，mobile模型转换为ONNX格式后，指标几乎一致，说明 **模型转换前后，误差较小，推理速度也有提升** 。
+3. Exp3和Exp4相比，mobile整体指标弱于PP-OCRv4的。因为测评集集中在中英文的印刷体，手写体少些，因此仅供参考。
+4. Exp6直接跑，会报以下错误，暂时没有找到原因。
 
-上述表格中基于ONNXRuntimde的结果已经更新到[开源OCR模型对比](./model_summary.md)中。
+    ```bash linenums="1"
+    5%|████████▏                                                                                                                                                     | 11/212 [00:42<13:11,  3.94s/it][1]    61275 bus error  python t.py
+
+    /Users/xxxxx/miniconda3/envs/py310/lib/python3.10/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+    warnings.warn('resource_tracker: There appear to be %d '
+    ```
+
+5. 因为Exp6暂时没有找到原因，粗略将Exp5和Exp7相比，可以看到PP-OCRv5 server模型转换为ONNX格式后，**H-mean下降了5.8%** ，但是转换方式和mobile的相同，具体原因需要进一步排查。
+6. Exp7和Exp8相比，PP-OCRv5 server模型提升很大（H-mean提升7.72%）。不排除用到了测评集数据。
+
+!!! tip
+
+    - 如果是单一中英文场景，建议用PP-OCRv4系列
+    - 如果是中英日、印刷和手写体混合场景，建议用PP-OCRv5系列
+
+上述表格中基于ONNXRuntime的结果已经更新到[开源OCR模型对比](./model_summary.md)中。
 
 ### 5. 集成到rapidocr中
 
@@ -324,4 +383,6 @@ print(metric)
 
 ### 写在最后
 
-至此，集成工作就基本完成了。
+至此，该部分集成工作就基本完成了。这部分代码会集成到`rapidocr==3.0.0`中。版本号之所以从v2.1.0到v3.0.0，原因是：语义化版本号。
+
+我在集成过程中，发现v2.1.0中字段不太合理，于是做了一些改进，动了外部API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ [docs](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/) 。

@@ -199,7 +199,7 @@ for res in output:
 
 其中，计算 **pred.txt** 代码如下：
 
-=== "（Exp1）基于RapidOCR框架ONNXRuntime模型获得 **pred.txt** 文本文件"
+=== "(Exp1)RapidOCR框架+ONNXRuntime格式模型"
 
     ```python linenums="1"
     import cv2
@@ -239,7 +239,7 @@ for res in output:
             f.write(f"{v}\n")
     ```
 
-=== "（Exp2）基于RapidOCR框架Paddle格式模型获得 **pred.txt** 文本文件 → Exp2"
+=== "(Exp2)RapidOCR框架+Paddle格式模型"
 
     ```python linenus="1"
     import cv2
@@ -279,7 +279,7 @@ for res in output:
             f.write(f"{v}\n")
     ```
 
-=== "（Exp3）基于PaddleX框架Paddle格式获得 **pred.txt** 文本文件"
+=== "(Exp3) PaddleX框架+Paddle格式模型"
 
     ```python linenums="1"
     import time
@@ -327,7 +327,7 @@ print(metric)
 
 指标汇总如下（以下指标均为CPU下计算所得）：
 
-|Exp|模型|推理代码|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
+|Exp|模型|推理框架|模型格式|Precision↑|Recall↑|H-mean↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|:---:|
 |1|PP-OCRv5_mobile_det|PaddleX |PaddlePaddle|0.7864|0.8018|0.7940|0.1956|
 |2|PP-OCRv5_mobile_det|RapidOCR| PaddlePaddle|0.7861|0.8266|0.8058|0.5328|

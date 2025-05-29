@@ -40,67 +40,73 @@ result.vis("vis_result.jpg")
 
     1. 生成**default_rapidocr.yaml**的配置文件。终端执行以下代码，即可在当前目录下生成默认的**default_rapidocr.yaml**文件。
 
-         ```bash linenums="1"
-         $ rapidocr config
-         # The config file has saved in ./default_rapidocr.yaml
-         ```
+        ```bash linenums="1"
+        $ rapidocr config
+        # The config file has saved in ./default_rapidocr.yaml
+        ```
 
-    2. 根据自己的需要更改 **default_rapidocr.yaml** 相应的值。例如使用OpenVINO作为推理引擎，更改如下：
+    2. 根据自己的需要更改 **default_rapidocr.yaml** 相应的值。例如使用OpenVINO作为文本检测的推理引擎，更改如下：
 
-         ```yaml linenums="1" hl_lines="19"
-         # 该配置文件命名为1.yaml
-         Global:
-            lang_det: "ch_mobile" # ch_server
-            lang_rec: "ch_mobile"
-            text_score: 0.5
+        ```yaml linenums="1" hl_lines="3"
+        # 该配置文件命名为1.yaml
+        Det:
+            engine_type: 'openvino'
+            lang_type: 'ch'
+            model_type: 'mobile'
+            ocr_version: 'PP-OCRv4'
 
-            use_det: true
-            use_cls: true
-            use_rec: true
+            task_type: 'det'
 
-            min_height: 30
-            width_height_ratio: 8
-            max_side_len: 2000
-            min_side_len: 30
+            model_path: null
+            model_dir: null
 
-            return_word_box: false
+            limit_side_len: 736
+            limit_type: min
+            std: [ 0.5, 0.5, 0.5 ]
+            mean: [ 0.5, 0.5, 0.5 ]
 
-            with_onnx: false
-            with_openvino: true   # 更改这里为true
-            with_paddle: false
-            with_torch: false
-
-            font_path: null
-         ```
+            thresh: 0.3
+            box_thresh: 0.5
+            max_candidates: 1000
+            unclip_ratio: 1.6
+            use_dilation: true
+            score_mode: fast
+        ```
 
     3. 传入到`RapidOCR`中使用。
 
-         ```python linenums="1" hl_lines="4-5"
-         from rapidocr import RapidOCR
+        ```python linenums="1" hl_lines="4-5"
+        from rapidocr import RapidOCR
 
-         # 步骤2中的1.yaml
-         config_path = "1.yaml"
-         engine = RapidOCR(config_path=config_path)
+        # 步骤2中的1.yaml
+        config_path = "1.yaml"
+        engine = RapidOCR(config_path=config_path)
 
-         img_url = "https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516"
-         result = engine(img_url)
-         print(result)
+        img_url = "https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516"
+        result = engine(img_url)
+        print(result)
 
-         result.vis("vis_result.jpg")
-         ```
+        result.vis("vis_result.jpg")
+        ```
 
 === "方法二：直接传入相应参数"
 
     由于rapidocr中涉及可调节的参数众多，为了便于维护，引入[omageconf](https://github.com/omry/omegaconf)库来更新参数。这样带来的代价是传入参数没有1.x系列中直观一些。但是现阶段方式也容易理解和使用。
 
-    例如，我想使用OpenVINO作为推理引擎，可以通过下面这种方式使用：
+    例如，我想使用OpenVINO作为各个流程的推理引擎，可以通过下面这种方式使用：
 
-    ```python linenums="1" hl_lines="3"
-    from rapidocr import RapidOCR
+    ```python linenums="1" hl_lines="5-7"
+    from rapidocr import EngineType, ModelType, OCRVersion, RapidOCR
 
-    engine = RapidOCR(params={"Global.with_openvino": True})
+    engine = RapidOCR(
+        params={
+            "Det.engine_type": EngineType.OPENVINO,
+            "Cls.engine_type": EngineType.OPENVINO,
+            "Rec.engine_type": EngineType.OPENVINO,
+        }
+    )
 
-    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+    img_url = "<https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true>"
     result = engine(img_url)
     print(result)
 
@@ -112,8 +118,8 @@ result.vis("vis_result.jpg")
     `config.yaml`部分参数示例：
 
     ```yaml linenums="1"
-    Global:
-       with_torch: true
+    Det:
+        engine_type: 'torch'
 
     EngineConfig:
        torch:
@@ -123,10 +129,12 @@ result.vis("vis_result.jpg")
 
     **对应参数写法**
 
-    ```python linenums="1"
+    ```python linenums="1" hl_lines="5-7"
+    from rapidocr import EngineType, RapidOCR
+
     engine = RapidOCR(
        params={
-          "Global.with_torch": True,
+          "Det.engine_type": EngineType.TORCH,
           "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
           "EngineConfig.torch.gpu_id": 0,  # 指定GPU id
        }
@@ -565,9 +573,13 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 ### 选择不同推理引擎
 
-`rapidocr`支持4种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch**），推荐首先使用**ONNXRuntime CPU**版。
+`rapidocr`支持4种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch**），推荐首先使用 **ONNXRuntime CPU** 版。默认为ONNXRuntie。
 
 `rapidocr`是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。
+
+!!! info
+
+    `rapidocr>=3.0.0`版本，可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。例如：文本检测使用ONNXRuntime，文本识别使用Paddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。同时，不同版本的OCR也可以通过`Det.ocr_version`灵活指定。
 
 === "使用ONNXRuntime"
 
@@ -612,17 +624,23 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
     2. 指定OpenVINO作为推理引擎
 
-         ```python linenums="1" hl_lines="3"
-         from rapidocr import RapidOCR
+        ```python linenums="1" hl_lines="5-7"
+        from rapidocr import RapidOCR, EngineType
 
-         engine = RapidOCR(params={"Global.with_openvino": True})
+        engine = RapidOCR(
+            params={
+                "Det.engine_type": EngineType.OPENVINO,
+                "Cls.engine_type": EngineType.OPENVINO,
+                "Rec.engine_type": EngineType.OPENVINO,
+            }
+        )
 
-         img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
-         result = engine(img_url)
-         print(result)
+        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+        result = engine(img_url)
+        print(result)
 
-         result.vis('vis_result.jpg')
-         ```
+        result.vis('vis_result.jpg')
+        ```
 
     3. 查看输出日志。下面日志中打印出了**Using engine_name: openvino**，则证明使用的推理引擎是OpenVINO。
 
@@ -647,10 +665,16 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
         - CPU版
 
-            ```python linenums="1" hl_lines="3"
-            from rapidocr import RapidOCR
+            ```python linenums="1" hl_lines="5-7"
+            from rapidocr import EngineType, RapidOCR
 
-            engine = RapidOCR(params={"Global.with_paddle": True})
+            engine = RapidOCR(
+                params={
+                    "Det.engine_type": EngineType.PADDLE,
+                    "Cls.engine_type": EngineType.PADDLE,
+                    "Rec.engine_type": EngineType.PADDLE,
+                }
+            )
 
             img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
             result = engine(img_url)
@@ -662,11 +686,11 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
         - GPU版
 
             ```python linenums="1" hl_lines="3-9"
-            from rapidocr import RapidOCR
+            from rapidocr import EngineType, RapidOCR
 
             engine = RapidOCR(
                 params={
-                "Global.with_paddle": True,
+                "Det.engine_type": EngineType.PADDLE,
                 "EngineConfig.paddlepaddle.use_cuda": True,  # 使用PaddlePaddle GPU版推理
                 "EngineConfig.paddlepaddle.gpu_id": 0,  # 指定GPU id
                 }
@@ -719,13 +743,13 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
         - GPU版
 
             ```python linenums="1" hl_lines="3-9"
-            from rapidocr import RapidOCR
+            from rapidocr import EngineType, RapidOCR
 
             engine = RapidOCR(
                 params={
-                "Global.with_torch": True,
-                "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
-                "EngineConfig.torch.gpu_id": 0,  # 指定GPU id
+                    "Det.engine_type": EngineType.TORCH,
+                    "Cls.engine_type": EngineType.TORCH,
+                    "Rec.engine_type": EngineType.TORCH,
                 }
             )
 

@@ -93,8 +93,11 @@ hide:
 
 |                模型                  | 对应PaddleOCR分支|  模型大小  |    Exact Match   |   Char Match     |Speed(s/img)  |
 | :----- |:---- | :-----| :-------: | :--- | :--|
+|ch_PP-OCRv5_rec_infer.onnx | release/v3.0      |       16M        |      0.7355      |     0.9177  |  - |
 |ch_PP-OCRv4_rec_infer.onnx | release/v2.7      |       10M        |      0.8323      |     0.9355  |  0.6836 |
 |ch_PP-OCRv3_rec_infer.onnx | release/v2.6      |       11M        |      0.7097      |     0.8919  |  0.6362 |
+|||||||
+|ch_PP-OCRv5_rec_server_infer.onnx | release/v3.0      |       81M        |      0.8129      |     0.9431  |  - |
 |ch_PP-OCRv4_rec_server_infer.onnx | release/v2.7      |       86M        |      0.7968      |     0.9381  |  0.6967 |
 |ch_doc_PP-OCRv4_rec_server.onnx | release/v2.10      |       94.93M        |      0.8097      |     0.9444  |  0.6836 |
 |ch_PP-OCRv2_rec_infer.onnx | release/v2.3     |      8.0M        |       0.6387      |     0.8398      | 0.6138|

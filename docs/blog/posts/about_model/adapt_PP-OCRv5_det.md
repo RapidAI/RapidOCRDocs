@@ -23,7 +23,6 @@ links:
 
 > PP-OCRv5 是PP-OCR新一代文字识别解决方案，该方案聚焦于多场景、多文字类型的文字识别。在文字类型方面，PP-OCRv5支持简体中文、中文拼音、繁体中文、英文、日文5大主流文字类型，在场景方面，PP-OCRv5升级了中英复杂手写体、竖排文本、生僻字等多种挑战性场景的识别能力。在内部多场景复杂评估集上，PP-OCRv5较PP-OCRv4端到端提升13个百分点。
 
-
 ### 以下代码运行环境
 
 - OS: macOS Sequoia 15.5
@@ -200,27 +199,22 @@ for res in output:
 
 该部分主要使用[TextDetMetric](https://github.com/SWHL/TextDetMetric)和测试集[text_det_test_dataset](https://huggingface.co/datasets/SWHL/text_det_test_dataset)来评测。
 
-相关测试步骤请参见[TextDetMetric](https://github.com/SWHL/TextRecMetric)的README，一步一步来就行。我这里简单给出关键代码：
+⚠️注意：以下代码基于`rapidocr==3.0.0`版本测试
 
-其中，计算 **pred.txt** 代码如下：
+相关测试步骤请参见[TextDetMetric](https://github.com/SWHL/TextRecMetric)的README，一步一步来就行。其中，计算 **pred.txt** 代码如下：
 
-=== "(Exp1)RapidOCR框架+ONNXRuntime格式模型"
+=== "(Exp1) PaddleX框架+Paddle格式模型"
 
-    ```python linenums="1" hl_lines="11"
+    ```python linenums="1" hl_lines="9"
+    import time
     import cv2
     import numpy as np
     from datasets import load_dataset
     from tqdm import tqdm
 
-    from rapidocr import EngineType, ModelType, OCRVersion, RapidOCR
+    from paddlex import create_model
 
-    engine = RapidOCR(
-        params={
-            "Det.ocr_version": OCRVersion.PPOCRV5,
-            "Det.engine_type": EngineType.ONNXRUNTIME,
-            "Det.model_type": ModelType.MOBILE,
-        }
-    )
+    model = create_model(model_name="PP-OCRv5_mobile_det")
 
     dataset = load_dataset("SWHL/text_det_test_dataset")
     test_data = dataset["test"]
@@ -230,11 +224,11 @@ for res in output:
         img = np.array(one_data.get("image"))
         img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
-        ocr_results = engine(img, use_det=True, use_cls=False, use_rec=False)
-        dt_boxes = ocr_results.boxes
+        t0 = time.perf_counter()
+        ocr_results = next(model.predict(input=img, batch_size=1))
+        dt_boxes = ocr_results["dt_polys"].tolist()
 
-        dt_boxes = [] if dt_boxes is None else dt_boxes.tolist()
-        elapse = ocr_results.elapse
+        elapse = time.perf_counter() - t0
 
         gt_boxes = [v["points"] for v in one_data["shapes"]]
         content.append(f"{dt_boxes}\t{gt_boxes}\t{elapse}")
@@ -284,18 +278,23 @@ for res in output:
             f.write(f"{v}\n")
     ```
 
-=== "(Exp3) PaddleX框架+Paddle格式模型"
+=== "(Exp3)RapidOCR框架+ONNXRuntime格式模型"
 
-    ```python linenums="1" hl_lines="9"
-    import time
+    ```python linenums="1" hl_lines="11"
     import cv2
     import numpy as np
     from datasets import load_dataset
     from tqdm import tqdm
 
-    from paddlex import create_model
+    from rapidocr import EngineType, ModelType, OCRVersion, RapidOCR
 
-    model = create_model(model_name="PP-OCRv5_mobile_det")
+    engine = RapidOCR(
+        params={
+            "Det.ocr_version": OCRVersion.PPOCRV5,
+            "Det.engine_type": EngineType.ONNXRUNTIME,
+            "Det.model_type": ModelType.MOBILE,
+        }
+    )
 
     dataset = load_dataset("SWHL/text_det_test_dataset")
     test_data = dataset["test"]
@@ -305,11 +304,11 @@ for res in output:
         img = np.array(one_data.get("image"))
         img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
-        t0 = time.perf_counter()
-        ocr_results = next(model.predict(input=img, batch_size=1))
-        dt_boxes = ocr_results["dt_polys"].tolist()
+        ocr_results = engine(img, use_det=True, use_cls=False, use_rec=False)
+        dt_boxes = ocr_results.boxes
 
-        elapse = time.perf_counter() - t0
+        dt_boxes = [] if dt_boxes is None else dt_boxes.tolist()
+        elapse = ocr_results.elapse
 
         gt_boxes = [v["points"] for v in one_data["shapes"]]
         content.append(f"{dt_boxes}\t{gt_boxes}\t{elapse}")
@@ -359,7 +358,7 @@ print(metric)
     ```
 
 5. 因为Exp6暂时没有找到原因，粗略将Exp5和Exp7相比，可以看到PP-OCRv5 server模型转换为ONNX格式后，**H-mean下降了5.8%** ，但是转换方式和mobile的相同，具体原因需要进一步排查。如有知道的小伙伴，欢迎留言告知。
-6. Exp7和Exp8相比，PP-OCRv5 server模型提升很大（H-mean提升7.72%）。不排除用到了测评集数据。
+6. Exp7和Exp8相比，PP-OCRv5 server模型提升很大（H-mean提升7.72%）。当然，不排除训练用到了测评集数据。
 
 !!! tip
 

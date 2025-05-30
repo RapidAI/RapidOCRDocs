@@ -389,7 +389,76 @@ print(metric)
 
 ### 5. 集成到rapidocr中
 
-该部分主要包括将托管模型到魔搭、更改rapidocr代码适配等。
+该部分主要包括将字典文件写入ONNX模型、托管模型到魔搭和更改rapidocr代码适配等。
+
+#### 字典文件写入ONNX模型
+
+该步骤仅存在文本识别模型中，文本检测模型没有这个步骤。
+
+??? info "详细代码"
+
+    ```python linenums="1"
+    from pathlib import Path
+    from typing import List, Union
+
+    import onnx
+    import onnxruntime as ort
+    from onnx import ModelProto
+
+
+    def read_txt(txt_path: Union[Path, str]) -> List[str]:
+        with open(txt_path, "r", encoding="utf-8") as f:
+            data = [v.rstrip("\n") for v in f]
+        return data
+
+
+    class ONNXMetaOp:
+        @classmethod
+        def add_meta(
+            cls,
+            model_path: Union[str, Path],
+            key: str,
+            value: List[str],
+            delimiter: str = "\n",
+        ) -> ModelProto:
+            model = onnx.load_model(model_path)
+            meta = model.metadata_props.add()
+            meta.key = key
+            meta.value = delimiter.join(value)
+            return model
+
+        @classmethod
+        def get_meta(
+            cls, model_path: Union[str, Path], key: str, split_sym: str = "\n"
+        ) -> List[str]:
+            sess = ort.InferenceSession(model_path)
+            meta_map = sess.get_modelmeta().custom_metadata_map
+            key_content = meta_map.get(key)
+            key_list = key_content.split(split_sym)
+            return key_list
+
+        @classmethod
+        def del_meta(cls, model_path: Union[str, Path]) -> ModelProto:
+            model = onnx.load_model(model_path)
+            del model.metadata_props[:]
+            return model
+
+        @classmethod
+        def save_model(cls, save_path: Union[str, Path], model: ModelProto):
+            onnx.save_model(model, save_path)
+
+
+    dicts = read_txt("models/PP-OCRv5_mobile_rec/ppocrv5_dict.txt")
+    model_path = "models/PP-OCRv5_server_rec/inference.onnx"
+    model = ONNXMetaOp.add_meta(model_path, key="character", value=dicts)
+
+    new_model_path = Path(model_path).parent / "ch_PP-OCRv5_rec_server_infer.onnx"
+    ONNXMetaOp.save_model(new_model_path, model)
+
+    t = ONNXMetaOp.get_meta(new_model_path, key="character")
+    print(t)
+    print(len(t))
+    ```
 
 #### 托管模型到魔搭
 

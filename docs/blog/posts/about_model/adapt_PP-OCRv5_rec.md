@@ -204,7 +204,7 @@ for res in output:
 
 该部分主要使用[TextRecMetric](https://github.com/SWHL/TextRecMetric)和测试集[text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)来评测。
 
-需要注意的是，**PP-OCRv5_rec系列模型更加侧重简体中文、中文拼音、繁体中文、英文、日文5大主流文字类型，在场景方面，PP-OCRv5升级了中英复杂手写体、竖排文本、生僻字等多种挑战性场景。** 当前测试集并未着重收集中文拼音、繁体中文和日文数据。因此以下指标会有些偏低。如需自己使用，请在自己场景下测试效果。
+需要注意的是，**PP-OCRv5_rec系列模型更加侧重一个模型解决简体中文、中文拼音、繁体中文、英文、日文5大主流文字类型，在场景方面，PP-OCRv5升级了中英复杂手写体、竖排文本、生僻字等多种挑战性场景。** 当前测试集并未着重收集以上场景。因此以下指标会有些偏低。如需自己使用，请在自己场景下测试效果。
 
 相关测试步骤请参见[TextRecMetric](https://github.com/SWHL/TextRecMetric)的README，一步一步来就行。
 
@@ -476,6 +476,6 @@ print(metric)
 
 ### 写在最后
 
-至此，该部分集成工作就基本完成了。这部分代码会集成到`rapidocr==3.0.0`中。版本号之所以从v2.1.0到v3.0.0，原因是：语义化版本号。
+至此，该部分集成工作就基本完成了。这部分代码会集成到`rapidocr==3.0.0`中。
 
-我在集成过程中，发现v2.1.0中字段不太合理，做了一些改进，动了外部API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ [docs](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/) 。
+版本号之所以从v2.1.0到v3.0.0，原因是：语义化版本号。我在集成过程中，发现v2.1.0中字段不太合理，做了一些改进，动了外部API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ [docs](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/) 。

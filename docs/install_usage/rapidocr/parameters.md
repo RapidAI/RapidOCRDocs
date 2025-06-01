@@ -96,6 +96,18 @@ PaddlePaddle API 参见：[API 文档](https://www.paddlepaddle.org.cn/documenta
 
 PyTorch API 参见：[PyTorch documentation](https://pytorch.org/docs/stable/index.html)
 
+!!! tip
+
+    以下三部分前4个参数基本类似，对应关系如下表：
+
+    | YAML 参数       | 对应枚举类       | 可用枚举值（示例）                 |导入方式 | 备注                                |
+    |-----------------|------------------|------------------|-------------------|-------------------------------------|
+    | `engine_type`   | `EngineType`     | `ONNXRUNTIME`（onnxruntime）<br>`OPENVINO`（openvino）<br>`PADDLE`（paddle）<br>`TORCH`（torch） | `from rapidocr import EngineType`|推理引擎类型         |
+    | `lang_type`     |  `LangDet`<br> `LangCls`<br> `LangRec` | **检测（Det）**：`CH`/`EN`/`MULTI`<br>**分类（Cls）**：`CH`<br>**识别（Rec）**：`CH`/`CH_DOC`/`EN`/`ARABIC`/... |`from rapidocr import LangDet`<br/> `from rapidocr import LangCls` <br/>`from rapidocr import LangRec`| 根据OCR处理阶段选择不同枚举值 |
+    | `model_type`    | `ModelType`      | `MOBILE`（mobile）<br>`SERVER`（server） |`from rapidocr import ModelType`| 模型大小与性能级别      |
+    | `ocr_version`   | `OCRVersion`     | `PPOCRV4`（PP-OCRv4）<br>`PPOCRV5`（PP-OCRv5） |`from rapidocr import OCRVersion`| 模型版本    |
+
+
 #### Det
 
 ```yaml linenums="1"

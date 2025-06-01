@@ -45,11 +45,12 @@ result.vis("vis_result.jpg")
         # The config file has saved in ./default_rapidocr.yaml
         ```
 
-    2. 根据自己的需要更改 **default_rapidocr.yaml** 相应的值。例如使用OpenVINO作为文本检测的推理引擎，更改如下：
+    2. 根据自己的需要更改 **default_rapidocr.yaml** 相应的值。例如使用OpenVINO作为作为文本检测的推理引擎，同时使用`ch_mobile`，PP-OCRv4版本的模型，更改如下：
 
         ```yaml linenums="1" hl_lines="3"
         # 该配置文件命名为1.yaml
         Det:
+            # 以下4个值可以查看https://github.com/RapidAI/RapidOCR/blob/123a129c613ca99c3b007f0591a3587cc01a4c32/python/rapidocr/utils/typings.py来查看
             engine_type: 'openvino'
             lang_type: 'ch'
             model_type: 'mobile'
@@ -91,6 +92,10 @@ result.vis("vis_result.jpg")
 
 === "方法二：直接传入相应参数"
 
+    !!! tip
+
+        `rapidocr>=3.0.0`版本之后，将`engine_type`、`lang_type`、`model_type`和`ocr_version`三个参数的设置下放到了文本检测、文本行方向分类和文本识别三个阶段中。这样更加灵活。可以为不同阶段中，指定不同的推理引擎， 不同的模型type。
+
     由于rapidocr中涉及可调节的参数众多，为了便于维护，引入[omageconf](https://github.com/omry/omegaconf)库来更新参数。这样带来的代价是传入参数没有1.x系列中直观一些。但是现阶段方式也容易理解和使用。
 
     例如，我想使用OpenVINO作为各个流程的推理引擎，可以通过下面这种方式使用：
@@ -119,7 +124,10 @@ result.vis("vis_result.jpg")
 
     ```yaml linenums="1"
     Det:
-        engine_type: 'torch'
+        engine_type: 'openvino'
+        lang_type: 'ch'
+        model_type: 'mobile'
+        ocr_version: 'PP-OCRv4'
 
     EngineConfig:
        torch:
@@ -130,14 +138,17 @@ result.vis("vis_result.jpg")
     **对应参数写法**
 
     ```python linenums="1" hl_lines="5-7"
-    from rapidocr import EngineType, RapidOCR
+    from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
 
     engine = RapidOCR(
-       params={
-          "Det.engine_type": EngineType.TORCH,
-          "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
-          "EngineConfig.torch.gpu_id": 0,  # 指定GPU id
-       }
+        params={
+            "Det.engine_type": EngineType.TORCH,
+            "Det.lang_type": LangDet.CH,
+            "Det.model_type": ModelType.MOBILE,
+            "Det.ocr_version": OCRVersion.PPOCRV5,
+            "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
+            "EngineConfig.torch.gpu_id": 0,  # 指定GPU id
+        }
     )
     ```
 

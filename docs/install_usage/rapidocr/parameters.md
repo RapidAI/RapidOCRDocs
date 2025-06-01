@@ -135,7 +135,7 @@ Det:
 
 `limit_side_len (float)`: 限制图像边的长度的像素值。默认值为736。
 
-`limit_type (str)`: 限制图像的最小边长度还是最大边为`limit_side_len` <br/> 示例解释：当`limit_type=min`和`limit_side_len=736`时，图像最小边小于736时，<br/>会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 取值范围为：`[min, max]`，默认值为`min`。
+`limit_type (str)`: 限制图像的最小边长度还是最大边为`limit_side_len`。 示例解释：当`limit_type=min`和`limit_side_len=736`时，图像最小边小于736时，<br/>会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 取值范围为：`[min, max]`，默认值为`min`。
 
 `thresh (float)`: 图像中文字部分和背景部分分割阈值。值越大，文字部分会越小。取值范围：`[0, 1]`，默认值为0.3。
 
@@ -181,13 +181,13 @@ Cls:
 
 `model_dir (str)`: 占位参数，暂时无效。
 
-`cls_image_shape (List[int]): 输入方向分类模型的图像Shape(CHW)。默认值为`[3, 48, 192]`。
+`cls_image_shape (List[int])`: 输入方向分类模型的图像Shape(CHW)。默认值为`[3, 48, 192]`。
 
 `cls_batch_num (int)`: 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为6。
 
 `cls_thresh (float)`: 方向分类结果的置信度。取值范围：`[0, 1]`，默认值为0.9。
 
-`label_list (List[str])`: 方向分类的标签，0°或者180°，**该参数不能动**。默认值为`["0", "180"]`。
+`label_list (List[str])`: 方向分类的标签，0°或者180°，**该参数不能动** 。默认值为`["0", "180"]`。
 
 #### Rec
 

@@ -38,7 +38,7 @@ result.vis("vis_result.jpg")
 
 === "方法一：传入配置文件"
 
-    1. 生成**default_rapidocr.yaml**的配置文件。终端执行以下代码，即可在当前目录下生成默认的**default_rapidocr.yaml**文件。
+    1. 生成 **default_rapidocr.yaml** 的配置文件。终端执行以下代码，即可在当前目录下生成默认的 **default_rapidocr.yaml** 文件。
 
         ```bash linenums="1"
         $ rapidocr config

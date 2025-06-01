@@ -18,8 +18,6 @@ rapidocr config
 
 ```yaml linenums="1"
 Global:
-    lang_det: "ch_mobile" # ch_server
-    lang_rec: "ch_mobile"
     text_score: 0.5
 
     use_det: true
@@ -33,17 +31,8 @@ Global:
 
     return_word_box: false
 
-    with_onnx: false
-    with_openvino: false
-    with_paddle: false
-    with_torch: false
-
     font_path: null
 ```
-
-`lang_det (str)`: 文本检测使用模型。默认值是`ch_mobile`，意思是使用中文轻量模型。取值为`[ch_mobile, ch_server]`。
-
-`lang_rec (str)`: 文本识别使用模型。默认值是`ch_mobile`, 意思是使用中文轻量模型。取值为`[ch_mobile, ch_server]`。
 
 `text_score (float)`: 文本识别结果置信度，值越大，把握越大。取值范围：`[0, 1]`, 默认值是0.5。
 
@@ -70,14 +59,6 @@ Global:
 - 在`rapidocr_onnxruntime>=1.4.1`中，汉字返回单字坐标，英语返回单字母坐标。
 - 在`rapidocr_onnxruntime==1.4.0`中，汉字会返回单字坐标，英语返回单词坐标。
 
-`with_onnx (bool)`: 是否使用[ONNXRuntime](https://github.com/microsoft/onnxruntime)推理引擎。默认为`False`。注意：在所有推理引擎都为`False`时，会默认采用ONNXRuntime。
-
-`with_openvino (bool)`: 是否使用[OpenVINO](https://github.com/openvinotoolkit/openvino)推理引擎，默认为`False`。
-
-`with_paddle (bool)`: 是否使用[PaddlePaddle](https://www.paddlepaddle.org.cn/install/quick)推理引擎，默认为`False`。
-
-`with_torch (bool)`: 是否使用[PyTorch](https://pytorch.org/)推理引擎，默认为`False`。
-
 `font_path (str)`: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为`null`。
 
 #### EngineConfig
@@ -89,6 +70,7 @@ EngineConfig:
     onnxruntime:
         intra_op_num_threads: -1
         inter_op_num_threads: -1
+        enable_cpu_mem_arena: false
         use_cuda: false
         use_dml: false
 
@@ -118,6 +100,13 @@ PyTorch API 参见：[PyTorch documentation](https://pytorch.org/docs/stable/ind
 
 ```yaml linenums="1"
 Det:
+    engine_type: 'onnxruntime'
+    lang_type: 'ch'
+    model_type: 'mobile'
+    ocr_version: 'PP-OCRv4'
+
+    task_type: 'det'
+
     model_path: null
     model_dir: null
 
@@ -133,6 +122,14 @@ Det:
     use_dilation: true
     score_mode: fast
 ```
+
+`engine_type (str)`: 选定推理引擎。支持`onnxruntime`、`openvino`、`paddle`和`torch`四个值。默认为`onnxruntime`。
+
+`lang_type (str)`: 支持检测的语种类型。这里指的是`LangDet`，具体支持`ch`、`en`和`multi`3个值。`ch`可以识别中文和中英文混合文本检测。`en`支持英文文字检测。`multi`支持多语言文本检测。默认为`ch`。
+
+`model_type (str)`: 模型量级选择，支持`mobile`（轻量型）和`server`（服务型）。默认为`mobile`。
+
+`ocr_version (str)`: ocr版本的选择，支持`PP-OCRv4`和`PP-OCRv5`，默认为`PP-OCRv4`。
 
 `model_path (str)`: 文本检测模型路径，仅限于基于PaddleOCR训练所得DBNet文本检测模型。默认值为`null`。
 
@@ -156,6 +153,13 @@ Det:
 
 ```yaml linenums="1"
 Cls:
+    engine_type: 'onnxruntime'
+    lang_type: 'ch'
+    model_type: 'mobile'
+    ocr_version: 'PP-OCRv4'
+
+    task_type: 'cls'
+
     model_path: null
     model_dir: null
 
@@ -164,6 +168,14 @@ Cls:
     cls_thresh: 0.9
     label_list: ['0', '180']
 ```
+
+`engine_type (str)`: 同Det部分介绍。
+
+`lang_type (str)`: 支持检测的语种类型。这里指的是`LangCls`，目前只有一种选项：`ch`。默认为`ch`。
+
+`model_type (str)`: 同Det部分介绍。
+
+`ocr_version (str)`: 同Det部分介绍。
 
 `model_path (str)`: 文本行方向分类模型路径，仅限于PaddleOCR训练所得二分类分类模型。默认值为`None`。
 
@@ -181,6 +193,13 @@ Cls:
 
 ```yaml linenums="1"
 Rec:
+    engine_type: 'onnxruntime'
+    lang_type: 'ch'
+    model_type: 'mobile'
+    ocr_version: 'PP-OCRv4'
+
+    task_type: 'rec'
+
     model_path: null
     model_dir: null
 
@@ -188,6 +207,31 @@ Rec:
     rec_img_shape: [3, 48, 320]
     rec_batch_num: 6
 ```
+
+`engine_type (str)`: 同Det部分介绍。
+
+`lang_type (str)`: 支持检测的语种类型。这里指的是`LangRec`，目前支持以下几种：
+
+```python linenums="1"
+class LangRec(Enum):
+    CH = "ch"
+    CH_DOC = "ch_doc"
+    EN = "en"
+    ARABIC = "arabic"
+    CHINESE_CHT = "chinese_cht"
+    CYRILLIC = "cyrillic"
+    DEVANAGARI = "devanagari"
+    JAPAN = "japan"
+    KOREAN = "korean"
+    KA = "ka"
+    LATIN = "latin"
+    TA = "ta"
+    TE = "te"
+```
+
+`model_type (str)`: 同Det部分介绍。
+
+`ocr_version (str)`: 同Det部分介绍。
 
 `model_path (str)`: 文本识别模型路径，仅限于PaddleOCR训练文本识别模型。默认值为`None`。
 

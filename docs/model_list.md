@@ -77,7 +77,7 @@ engine = RapidOCR(
 
 以上模型可直接通过字段指定，程序会自动下载使用。
 
-```python linenums="1" hl_lines="4"
+```python linenums="1" hl_lines="5-7"
 from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
 
 engine = RapidOCR(

@@ -794,7 +794,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 使用方法同样也是有两种：一是通过配置文件传入；二是通过初始化参数传入。
 
-⚠️注意：Paddle格式模型需要传入`model_dir`来传入
+⚠️注意：Paddle格式模型需要使用`model_dir`来传入。原因是Paddle格式模型为多个文件组成，需要在程序中拼接为对应完整路径。
 
 下面以通过初始化参数传入为例：
 

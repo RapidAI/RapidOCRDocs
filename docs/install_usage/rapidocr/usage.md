@@ -137,7 +137,7 @@ result.vis("vis_result.jpg")
 
     **对应参数写法**
 
-    ```python linenums="1" hl_lines="5-7"
+    ```python linenums="1" hl_lines="5-10"
     from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
 
     engine = RapidOCR(

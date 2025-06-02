@@ -37,7 +37,7 @@ hide:
 
     `lang_type`字段对应Det模块下的`LangDet`
 
-```python
+```python linenums="1" hl_lines="5-8"
 from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
 
 engine = RapidOCR(

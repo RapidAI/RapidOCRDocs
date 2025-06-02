@@ -16,72 +16,75 @@ hide:
 
 [default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/a9bb7c1f44b6e00556ada90ac588f020d7637c4b/python/rapidocr/default_models.yaml)
 
-### 使用默认mobile或server模型
-
-`rapidocr`库基本集成了PaddleOCR发布的所有模型，其中中英文检测识别模型仅集成最新的版本。同时只有中英文检测识别模型分为 **mobile** 和 **server** 两个版本，分别侧重速度和精度。
-
-默认使用的是 **mobile** 的中英文检测识别模型，通过`lang_det`和`lang_rec`来指定。
-
-```python linenums="1" hl_lines="4"
-from rapidocr import RapidOCR
-
-engine = RapidOCR(
-    params={"Global.lang_det": "ch_mobile", "Global.lang_rec": "ch_mobile"}
-)
-```
-
-如果想要使用 **server** 版默认模型，则直接更改参数为`ch_server`即可。
-
-```python linenums="1" hl_lines="4"
-from rapidocr import RapidOCR
-
-engine = RapidOCR(
-    params={"Global.lang_det": "ch_server", "Global.lang_rec": "ch_server"}
-)
-```
 
 !!! note
 
     并不是所有的模型都有 **server** 版本，具体哪个有，可以参见：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/a9bb7c1f44b6e00556ada90ac588f020d7637c4b/python/rapidocr/default_models.yaml)。配置文件中带有server字样的即是有server版本。
 
-### 具体字段对应
+### 具体配置文件中字段对应
 
 文本检测模型：
 
-|语种类型名称|程序使用字段|支持模型类型(`lang_det`)|ONNXRuntime| OpenVINO| PaddlePaddle | PyTorch|
-|---:|:---|:---|:---:|:---:|:---:|:---:|
-|中英|`ch`|`ch_mobile` `ch_server`|✅|`ch_mobile`✅ `ch_server` ❌([link](https://github.com/RapidAI/RapidOCR/issues/395))|✅|✅|
-|英语和拉丁语|`en`|`en_mobile` `en_server`|✅|✅|✅|✅|
-|多语种|`multi`|`multi_mobile`|✅|✅|✅|✅|
+|语种类型|engine_type| lang_type|model_type|ocr_version|
+|:---|:---|:---|:---|:---|
+|简体中文、中文拼音、繁体中文、英文、日文|`onnxruntime` <br/> `openvino` <br/> `paddle`|`ch`|`mobile`<br/> `server`|`PP-OCRv5`|
+|中英|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`|`ch`|`mobile`<br/> `server`|`PP-OCRv4`|
+|英语和拉丁语|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`|`en`|`mobile`<br/> `server`|`PP-OCRv4`<br/>|
+|多语种|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`|`multi`|`mobile`|`PP-OCRv4`<br/>|
+
+对应使用方法：
+
+!!! note
+
+    `lang_type`字段对应Det模块下的`LangDet`
+
+```python
+from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
+
+engine = RapidOCR(
+    params={
+        "Det.engine_type": EngineType.TORCH,
+        "Det.lang_type": LangDet.CH,
+        "Det.model_type": ModelType.MOBILE,
+        "Det.ocr_version": OCRVersion.PPOCRV5
+    }
+)
+```
 
 文本识别模型：
 
-|语种|描述|程序使用字段|支持模型类型(`lang_rec`)|ONNXRuntime| OpenVINO| PaddlePaddle | PyTorch|
-|---:|:---|:---|:---|:---:|:---:|:---:|:---:|
-|中文文档、部分繁体、日文|-|`ch`|`ch_doc_server`|✅|✅|✅|🚧|
-|中文|Chinese & English|`ch`|`ch_mobile` `ch_server`|✅|✅|✅|✅|
-|中文繁体|Chinese (Traditional)|`chinese_cht`|`chinese_cht`|✅|✅|✅|✅|
-|英文|English|`en`|`en_mobile`|✅|✅|✅|✅|
-|阿拉伯文|Arabic|`ar`|`ar_mobile`|✅|✅|✅|✅|
-|塞尔维亚文（cyrillic)|Serbian(cyrillic)|`cyrillic`|`cyrillic_mobile`|✅|✅|✅|✅|
-|梵文|Devanagari|`devanagari`|`devanagari_mobile`|✅|✅|✅|✅|
-|日文|Japan|`japan`|`japan_mobile`|✅|✅|✅|✅|
-|卡纳达语|kannaḍa|`ka`|`ka_mobile`|✅|✅|✅|✅|
-|韩文|Koran|`korean`|`korean_mobile`|✅|✅|✅|✅|
-|拉丁文|Latin|`latin`|`latin_mobile`|✅|✅|✅|✅|
-|泰米尔文|Tamil |`ta`|`ta_mobile`|✅|✅|✅|✅|
-|泰卢固文|Telugu |`te`|`te_mobile`|✅|✅|✅|✅|
+| 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
+|----------------|---------------------------|-------------------|-----------------|-------------------|
+| 简体中文、中文拼音、繁体中文、英文、日文 | `onnxruntime`<br>`openvino`<br>`paddle` | `ch`            | `mobile`<br>`server` | `PP-OCRv5` |
+| 中文文档       | `onnxruntime`<br>`openvino`<br>`paddle` | `ch`            | `server` | `PP-OCRv4` |
+| 中文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ch`            | `mobile`<br>`server` | `PP-OCRv4` |
+| 中文繁体       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `chinese_cht`   | `mobile`<br>`server`   | `PP-OCRv4` |
+| 英文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `en`            | `en_mobile`     | `PP-OCRv4` |
+| 阿拉伯文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ar`            | `ar_mobile`     | `PP-OCRv4` |
+| 塞尔维亚文     | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `cyrillic`      | `cyrillic_mobile` | `PP-OCRv4` |
+| 梵文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `devanagari`    | `devanagari_mobile` | `PP-OCRv4` |
+| 日文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `japan`         | `japan_mobile`  | `PP-OCRv4` |
+| 卡纳达语       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ka`            | `ka_mobile`     | `PP-OCRv4` |
+| 韩文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `korean`        | `korean_mobile` | `PP-OCRv4` |
+| 拉丁文         | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `latin`         | `latin_mobile`  | `PP-OCRv4` |
+| 泰米尔文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ta`            | `ta_mobile`     | `PP-OCRv4` |
+| 泰卢固文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `te`            | `te_mobile`     | `PP-OCRv4` |
 
 ### 使用方式
 
 以上模型可直接通过字段指定，程序会自动下载使用。
 
 ```python linenums="1" hl_lines="4"
-from rapidocr import RapidOCR, VisRes
+from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
 
 engine = RapidOCR(
-    params={"Global.lang_det": "ch_mobile", "Global.lang_rec": "ch_mobile"}
+    params={
+        "Rec.ocr_version": OCRVersion.PPOCRV5,
+        "Rec.engine_type": EngineType.PADDLE,
+        "Rec.model_type": ModelType.MOBILE,
+    }
 )
+
 img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
 result = engine(img_url)
 print(result)

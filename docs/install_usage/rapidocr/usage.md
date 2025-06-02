@@ -742,7 +742,13 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
             ```python linenums="1" hl_lines="3"
             from rapidocr import RapidOCR
 
-            engine = RapidOCR(params={"Global.with_torch": True})
+            engine = RapidOCR(
+                params={
+                    "Det.engine_type": EngineType.TORCH,
+                    "Cls.engine_type": EngineType.TORCH,
+                    "Rec.engine_type": EngineType.TORCH,
+                }
+            )
 
             img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
             result = engine(img_url)
@@ -761,6 +767,8 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
                     "Det.engine_type": EngineType.TORCH,
                     "Cls.engine_type": EngineType.TORCH,
                     "Rec.engine_type": EngineType.TORCH,
+                    "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
+                    "EngineConfig.torch.gpu_id": 0,  # 指定GPU id
                 }
             )
 
@@ -784,7 +792,11 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 
 ### 使用本地已下载模型
 
-使用方法同样也是有两种：一是通过配置文件传入；二是通过初始化参数传入。下面以通过初始化参数传入为例：
+使用方法同样也是有两种：一是通过配置文件传入；二是通过初始化参数传入。
+
+⚠️注意：Paddle格式模型需要传入`model_dir`来传入
+
+下面以通过初始化参数传入为例：
 
 ```python linenums="1" hl_lines="4"
 from rapidocr import RapidOCR

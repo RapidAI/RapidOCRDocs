@@ -52,6 +52,10 @@ engine = RapidOCR(
 
 文本识别模型：
 
+!!! note
+
+    `lang_type`字段对应Det模块下的`LangRec`
+
 | 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
 |----------------|---------------------------|-------------------|-----------------|-------------------|
 | 简体中文、中文拼音、繁体中文、英文、日文 | `onnxruntime`<br>`openvino`<br>`paddle` | `ch`            | `mobile`<br>`server` | `PP-OCRv5` |

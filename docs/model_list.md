@@ -59,7 +59,7 @@ engine = RapidOCR(
 | 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
 |----------------|---------------------------|-------------------|-----------------|-------------------|
 | 简体中文、中文拼音、繁体中文、英文、日文 | `onnxruntime`<br>`openvino`<br>`paddle` | `ch`            | `mobile`<br>`server` | `PP-OCRv5` |
-| 中文文档       | `onnxruntime`<br>`openvino`<br>`paddle` | `ch`            | `server` | `PP-OCRv4` |
+| 中文文档       | `onnxruntime`<br>`openvino`<br>`paddle` | `ch_doc`            | `server` | `PP-OCRv4` |
 | 中文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ch`            | `mobile`<br>`server` | `PP-OCRv4` |
 | 中文繁体       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `chinese_cht`   | `mobile`<br>`server`   | `PP-OCRv4` |
 | 英文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `en`            | `en_mobile`     | `PP-OCRv4` |

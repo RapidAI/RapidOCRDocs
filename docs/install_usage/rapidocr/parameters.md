@@ -144,6 +144,8 @@ Det:
 
 `model_path (str)`: 文本检测模型路径，仅限于基于PaddleOCR训练所得DBNet文本检测模型。默认值为`null`。
 
+`model_dir (str)`: 模型存放路径或目录。如果是PaddlePaddle，该参数则对应模型存在目录。其余推理引擎请使用`model_path`参数。
+
 `limit_side_len (float)`: 限制图像边的长度的像素值。默认值为736。
 
 `limit_type (str)`: 限制图像的最小边长度还是最大边为`limit_side_len`。 示例解释：当`limit_type=min`和`limit_side_len=736`时，图像最小边小于736时，会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 取值范围为：`[min, max]`，默认值为`min`。
@@ -246,7 +248,7 @@ class LangRec(Enum):
 
 `model_path (str)`: 文本识别模型路径，仅限于PaddleOCR训练文本识别模型。默认值为`None`。
 
-`model_dir (str)`: 模型存放路径或目录。如果是PaddlePaddle，该参数则对应模型存在目录。其余推理引擎对应模型地址。
+`model_dir (str)`: 模型存放路径或目录。如果是PaddlePaddle，该参数则对应模型存在目录。其余推理引擎请使用`model_path`参数。
 
 `rec_keys_path (str)`: 文本识别模型对应的字典文件，默认为`None`。
 

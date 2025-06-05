@@ -20,13 +20,18 @@ Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于[streamlit](
 
 对应`rapidocr` v3.x 版本
 
+<p align="left">
+    <a href="https://huggingface.co/spaces/RapidAI/RapidOCRv3" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo%20v3-blue"></a>
+    <a href="https://www.modelscope.cn/studios/RapidAI/RapidOCRv3.0.0" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo%20v3-blue"></a>
+</p>
+
 ### RapidOCR v2
 
 对应`rapidocr` v2.x 版本
 
 <p align="left">
-    <a href="https://huggingface.co/spaces/RapidAI/RapidOCRv2" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo%20v1-blue"></a>
-    <a href="https://www.modelscope.cn/studios/RapidAI/RapidOCRv2" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo%20v1-blue"></a>
+    <a href="https://huggingface.co/spaces/RapidAI/RapidOCRv2" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo%20v2-blue"></a>
+    <a href="https://www.modelscope.cn/studios/RapidAI/RapidOCRv2" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo%20v2-blue"></a>
 </p>
 
 ### RapidOCR v1

@@ -64,7 +64,7 @@ flowchart LR
     click F "https://github.com/RapidAI/PaddleOCRModelConverter" _blank
 ```
 
-### 效果展示（[more](./visualization.md)）
+### 效果展示
 
 <div align="center">
     <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/demo.gif" alt="Demo" width="60%">

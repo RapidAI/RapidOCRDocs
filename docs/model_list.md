@@ -6,23 +6,20 @@ hide:
 
 ---
 
-针对PaddleOCR已经发布的常用模型，我们这里已经做了统一转换和汇总，包括PaddlePaddle格式、ONNX格式和PyTorch格式。
+
+## 引言
+
+针对PaddleOCR已经发布的常用模型，我们这里已经做了统一转换和汇总，包括PP-OCRv4和PP-OCRv5系列的PaddlePaddle格式、ONNX格式和PyTorch格式。
 
 所有模型目前托管在[魔搭社区](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)上。
 
-### 所有模型汇总
+`rapidocr` v3 版本已经集成了托管的所有模型，通过下面参数指定可以自动下载。对应的配置文件：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml)
 
-请移步以下链接查看：
+当然，小伙伴们也可以自己去上述链接自己下载。
 
-[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml)
+## 配置文件字段对应
 
-!!! note
-
-    并不是所有的模型都有 **server** 版本，具体哪个有，可以参见：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/a9bb7c1f44b6e00556ada90ac588f020d7637c4b/python/rapidocr/default_models.yaml)。配置文件中带有server字样的即是有server版本。
-
-### 具体配置文件中字段对应
-
-文本检测模型：
+### 文本检测模型
 
 |语种类型|engine_type| lang_type|model_type|ocr_version|
 |:---|:---|:---|:---|:---|
@@ -50,7 +47,7 @@ engine = RapidOCR(
 )
 ```
 
-文本识别模型：
+### 文本识别模型
 
 !!! note
 

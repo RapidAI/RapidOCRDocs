@@ -1,5 +1,5 @@
 site_name: RapidOCR 文档
-site_url: https://rapidai.github.io/RapidOCRDocs/main/
+site_url: https://rapidai.github.io/RapidOCRDocs/
 site_author: RapidAI
 site_description:
   Awesome OCR multiple programing languages toolkits based on ONNXRuntime, OpenVION and PaddlePaddle.

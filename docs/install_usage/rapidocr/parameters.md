@@ -30,6 +30,7 @@ Global:
     min_side_len: 30
 
     return_word_box: false
+    return_single_char_box: false
 
     font_path: null
 ```
@@ -59,6 +60,14 @@ Global:
 - 在`rapidocr_onnxruntime>=1.4.1`中，汉字返回单字坐标，英语返回单字母坐标。
 - 在`rapidocr_onnxruntime==1.4.0`中，汉字会返回单字坐标，英语返回单词坐标。
 
+`return_single_char_box (bool)`: 文本内容只有英文和数字情况下，是否返回单字坐标。默认为`False`。
+
+- 在`rapidocr>=3.1.0`中添加该参数，该参数只有在`return_word_box=True`时，才能生效。举例说明：
+
+    ```python
+    result = engine(img_url, return_word_box=True, return_single_char_box=True)
+    ```
+
 `font_path (str)`: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为`null`。
 
 #### EngineConfig
@@ -71,8 +80,28 @@ EngineConfig:
         intra_op_num_threads: -1
         inter_op_num_threads: -1
         enable_cpu_mem_arena: false
+
+        cpu_ep_cfg:
+            arena_extend_strategy: "kSameAsRequested"
+
         use_cuda: false
+        cuda_ep_cfg:
+            device_id: 0
+            arena_extend_strategy: "kNextPowerOfTwo"
+            cudnn_conv_algo_search: "EXHAUSTIVE"
+            do_copy_in_default_stream: true
+
         use_dml: false
+        dm_ep_cfg: null
+
+        use_cann: false
+        cann_ep_cfg:
+            device_id: 0
+            arena_extend_strategy: "kNextPowerOfTwo"
+            npu_mem_limit: 20 * 1024 * 1024 * 1024
+            op_select_impl_mode: "high_performance"
+            optypelist_for_implmode: "Gelu"
+            enable_cann_graph: true
 
     openvino:
         inference_num_threads: -1

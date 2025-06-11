@@ -55,18 +55,21 @@ Global:
 
 `return_word_box (bool)`: 是否返回文字的单字坐标。默认为`False`。
 
-- 在`rapidocr>=2.1.0`中，纯中文、中英文混合返回单字坐标，纯英文返回单词坐标。
-- 在`rapidocr<=2.0.7`中，纯中文、中英文混合和纯英文均返回单字坐标。
-- 在`rapidocr_onnxruntime>=1.4.1`中，汉字返回单字坐标，英语返回单字母坐标。
-- 在`rapidocr_onnxruntime==1.4.0`中，汉字会返回单字坐标，英语返回单词坐标。
+> 在`rapidocr>=2.1.0`中，纯中文、中英文混合返回单字坐标，纯英文返回单词坐标。
+
+> 在`rapidocr<=2.0.7`中，纯中文、中英文混合和纯英文均返回单字坐标。
+
+> 在`rapidocr_onnxruntime>=1.4.1`中，汉字返回单字坐标，英语返回单字母坐标。
+
+> 在`rapidocr_onnxruntime==1.4.0`中，汉字会返回单字坐标，英语返回单词坐标。
 
 `return_single_char_box (bool)`: 文本内容只有英文和数字情况下，是否返回单字坐标。默认为`False`。
 
-- 在`rapidocr>=3.1.0`中添加该参数，该参数只有在`return_word_box=True`时，才能生效。举例说明：
+> 在`rapidocr>=3.1.0`中添加该参数，该参数只有在`return_word_box=True`时，才能生效。
 
-    ```python
-    result = engine(img_url, return_word_box=True, return_single_char_box=True)
-    ```
+```python
+result = engine(img_url, return_word_box=True, return_single_char_box=True)
+```
 
 `font_path (str)`: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为`null`。
 

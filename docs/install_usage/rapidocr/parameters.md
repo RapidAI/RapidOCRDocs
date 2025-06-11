@@ -120,6 +120,58 @@ EngineConfig:
         gpu_id: 0
 ```
 
+=== "ONNXRuntime DirectML使用"
+
+    !!! tip
+
+        DirectML仅能Windows 10 Build 18362及以上使用
+
+    1. 安装
+
+        ```bash linenums="1"
+        pip install rapidocr onnxruntime-directml
+        ```
+
+    2. 使用
+
+        ```python linenums="1"
+        from rapidocr import RapidOCR
+
+        engine = RapidOCR(params={"EngineConfig.onnxruntime.use_dml": True})
+
+        img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
+        result = engine(img_url)
+        print(result)
+
+        result.vis("vis_result.jpg")
+        ```
+
+=== "ONNXRuntime NPU使用"
+
+    !!! tip
+
+        ONNXRuntime中相关文档参考：[link](https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html)
+
+    1. 安装
+
+        ```bash linenums="1"
+        pip install rapidocr onnxruntime-cann
+        ```
+
+    2. 使用
+
+        ```python linenums="1"
+        from rapidocr import RapidOCR
+
+        engine = RapidOCR(params={"EngineConfig.onnxruntime.use_cann": True})
+
+        img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
+        result = engine(img_url)
+        print(result)
+
+        result.vis("vis_result.jpg")
+        ```
+
 ONNXRuntime Python API 参见：[Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)
 
 OpenVINO Python API 参见：[OpenVINO Python API](https://docs.openvino.ai/2025/api/ie_python_api/api.html)

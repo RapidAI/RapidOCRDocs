@@ -802,7 +802,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
 from rapidocr import RapidOCR
 
 engine = RapidOCR(
-    params={"Det.model_path": "rapidocr/models/ch_PP-OCRv4_det_infer.onnx"}
+    params={"Det.model_path": "models/ch_PP-OCRv4_det_infer.onnx"}
 )
 
 img_url = "https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516"

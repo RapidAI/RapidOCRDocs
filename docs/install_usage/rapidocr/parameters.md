@@ -101,7 +101,7 @@ EngineConfig:
         cann_ep_cfg:
             device_id: 0
             arena_extend_strategy: "kNextPowerOfTwo"
-            npu_mem_limit: 20 * 1024 * 1024 * 1024
+            npu_mem_limit:  21474836480 # 20 * 1024 * 1024 * 1024
             op_select_impl_mode: "high_performance"
             optypelist_for_implmode: "Gelu"
             enable_cann_graph: true
@@ -143,12 +143,12 @@ PyTorch API 参见：[PyTorch documentation](https://pytorch.org/docs/stable/ind
 
 ```yaml linenums="1"
 Det:
-    engine_type: 'onnxruntime'
-    lang_type: 'ch'
-    model_type: 'mobile'
-    ocr_version: 'PP-OCRv4'
+    engine_type: "onnxruntime"
+    lang_type: "ch"
+    model_type: "mobile"
+    ocr_version: "PP-OCRv4"
 
-    task_type: 'det'
+    task_type: "det"
 
     model_path: null
     model_dir: null
@@ -198,12 +198,12 @@ Det:
 
 ```yaml linenums="1"
 Cls:
-    engine_type: 'onnxruntime'
-    lang_type: 'ch'
-    model_type: 'mobile'
-    ocr_version: 'PP-OCRv4'
+    engine_type: "onnxruntime"
+    lang_type: "ch"
+    model_type: "mobile"
+    ocr_version: "PP-OCRv4"
 
-    task_type: 'cls'
+    task_type: "cls"
 
     model_path: null
     model_dir: null
@@ -211,7 +211,7 @@ Cls:
     cls_image_shape: [3, 48, 192]
     cls_batch_num: 6
     cls_thresh: 0.9
-    label_list: ['0', '180']
+    label_list: ["0", "180"]
 ```
 
 `engine_type (str)`: 同Det部分介绍。
@@ -238,12 +238,12 @@ Cls:
 
 ```yaml linenums="1"
 Rec:
-    engine_type: 'onnxruntime'
-    lang_type: 'ch'
-    model_type: 'mobile'
-    ocr_version: 'PP-OCRv4'
+    engine_type: "onnxruntime"
+    lang_type: "ch"
+    model_type: "mobile"
+    ocr_version: "PP-OCRv4"
 
-    task_type: 'rec'
+    task_type: "rec"
 
     model_path: null
     model_dir: null

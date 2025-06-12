@@ -124,7 +124,8 @@ EngineConfig:
 
     !!! tip
 
-        DirectML仅能Windows 10 Build 18362及以上使用
+        DirectML仅能Windows 10 Build 18362及以上使用。
+        ONNXRuntime官方相关文档：[link](https://onnxruntime.ai/docs/execution-providers/DirectML-ExecutionProvider.html)
 
     1. 安装
 
@@ -150,7 +151,7 @@ EngineConfig:
 
     !!! tip
 
-        ONNXRuntime中相关文档参考：[link](https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html)
+        ONNXRuntime官方相关文档：[link](https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html)
 
     1. 安装
 

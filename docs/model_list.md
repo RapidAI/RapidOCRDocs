@@ -23,10 +23,10 @@ hide:
 
 |语种类型|engine_type| lang_type|model_type|ocr_version|
 |:---|:---|:---|:---|:---|
-|简体中文、中文拼音、繁体中文、英文、日文|`onnxruntime` <br/> `openvino` <br/> `paddle`|`ch`|`mobile`<br/> `server`|`PP-OCRv5`|
+|简体中文、中文拼音、繁体中文、英文、日文|`onnxruntime` <br/> `openvino` <br/> `paddle`<br>❎`torch`|`ch`|`mobile`<br/> `server`|`PP-OCRv5`|
 |中英|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`|`ch`|`mobile`<br/> `server`|`PP-OCRv4`|
 |英语和拉丁语|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`|`en`|`mobile`<br/> `server`|`PP-OCRv4`<br/>|
-|多语种|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`|`multi`|`mobile`|`PP-OCRv4`<br/>|
+|多语种|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`|`multi`|`mobile`<br>❎`server` |`PP-OCRv4`<br/>|
 
 对应使用方法：
 
@@ -55,20 +55,20 @@ engine = RapidOCR(
 
 | 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
 |----------------|---------------------------|-------------------|-----------------|-------------------|
-| 简体中文、中文拼音、繁体中文、英文、日文 | `onnxruntime`<br>`openvino`<br>`paddle` | `ch`            | `mobile`<br>`server` | `PP-OCRv5` |
-| 中文文档       | `onnxruntime`<br>`openvino`<br>`paddle` | `ch_doc`            | `server` | `PP-OCRv4` |
+| 简体中文、中文拼音、繁体中文、英文、日文 | `onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `ch`            | `mobile`<br>`server` | `PP-OCRv5` |
+| 中文文档       | `onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `ch_doc`            | ❎`mobile`<br>`server` | `PP-OCRv4` |
 | 中文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ch`            | `mobile`<br>`server` | `PP-OCRv4` |
 | 中文繁体       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `chinese_cht`   | `mobile`<br>`server`   | `PP-OCRv4` |
-| 英文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `en`            | `en_mobile`     | `PP-OCRv4` |
-| 阿拉伯文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ar`            | `ar_mobile`     | `PP-OCRv4` |
-| 塞尔维亚文     | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `cyrillic`      | `cyrillic_mobile` | `PP-OCRv4` |
-| 梵文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `devanagari`    | `devanagari_mobile` | `PP-OCRv4` |
-| 日文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `japan`         | `japan_mobile`  | `PP-OCRv4` |
-| 卡纳达语       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ka`            | `ka_mobile`     | `PP-OCRv4` |
-| 韩文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `korean`        | `korean_mobile` | `PP-OCRv4` |
-| 拉丁文         | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `latin`         | `latin_mobile`  | `PP-OCRv4` |
-| 泰米尔文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ta`            | `ta_mobile`     | `PP-OCRv4` |
-| 泰卢固文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `te`            | `te_mobile`     | `PP-OCRv4` |
+| 英文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `en`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 阿拉伯文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ar`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 塞尔维亚文     | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `cyrillic`      | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 梵文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `devanagari`    | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 日文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `japan`         | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 卡纳达语       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ka`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 韩文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `korean`        | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 拉丁文         | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `latin`         | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 泰米尔文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ta`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 泰卢固文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `te`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
 
 ### 使用方式
 

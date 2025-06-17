@@ -702,8 +702,8 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
             engine = RapidOCR(
                 params={
                 "Det.engine_type": EngineType.PADDLE,
-                "EngineConfig.paddlepaddle.use_cuda": True,  # 使用PaddlePaddle GPU版推理
-                "EngineConfig.paddlepaddle.gpu_id": 0,  # 指定GPU id
+                "EngineConfig.paddle.use_cuda": True,  # 使用PaddlePaddle GPU版推理
+                "EngineConfig.paddle.gpu_id": 0,  # 指定GPU id
                 }
             )
 

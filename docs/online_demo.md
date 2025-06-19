@@ -7,7 +7,7 @@ hide:
 
 ## 引言
 
-Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于[streamlit](https://streamlit.io/)或者Gradio搭建而来的。Demo都是开源的，在demo平台都能找到对应源码。
+Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于[streamlit](https://streamlit.io/)或者[Gradio](https://www.gradio.app/guides/quickstart)搭建而来的。Demo都是开源的，在demo平台都能找到对应源码。
 
 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。
 

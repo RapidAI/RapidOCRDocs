@@ -151,6 +151,8 @@ EngineConfig:
 
     !!! tip
 
+        仅在`rapidocr>=3.1.0`中支持。
+
         ONNXRuntime官方相关文档：[link](https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html)
 
     1. 安装

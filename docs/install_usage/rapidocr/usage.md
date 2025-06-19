@@ -111,7 +111,7 @@ result.vis("vis_result.jpg")
         }
     )
 
-    img_url = "<https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true>"
+    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
     result = engine(img_url)
     print(result)
 

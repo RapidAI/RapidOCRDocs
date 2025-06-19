@@ -1,14 +1,9 @@
 ---
 title: 常见问题 (FAQ)
-date: 2022-10-02
-authors: [SWHL]
-categories:
-  - FQA
 comments: true
 ---
 
 
-<!-- more -->
 
 #### Q: 为什么我的模型在ONNXRuntime GPU版上比在CPU上还要慢？
 

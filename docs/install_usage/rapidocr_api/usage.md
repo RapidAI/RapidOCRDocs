@@ -15,7 +15,7 @@ hide:
 !!! note
 
     OCR API的输出结果为最原始结果，大家可按需进一步扩展。
-
+    
     `rapidocr_api>=0.2.0`版本是适配了`rapidocr>=2.0.0`版本的。
 
 ### 简介
@@ -58,53 +58,87 @@ rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
 
 #### Docker方式使用
 
-[Dockerfile源码](https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile)
+##### 快速体验
 
-Build镜像:
+###### 直接拉取构建好的
+
+```bash
+docker run -itd --restart=always --name rapidocr_api -p 9005:9005 qingchen0607/rapid-ocr-api:v20250619 
+```
+> [!NOTE]
+>
+> 镜像大小700MB左右，建议使用网络代理以减少拉取、构建镜像的时间。
+>
+> 此镜像是为了快速体验rapid-ocr，若您有其他额外的配置或者需求需要自行构建。
+
+###### 本地自行构建镜像运行
 
 ```bash linenums="1"
 git clone https://github.com/RapidAI/RapidOCR.git
-cd api
+cd docker
 
+# 脚本赋权
+#chmod +x docker_build&run.sh docker_stop&clean.sh
+
+# build image and run 构建镜像并运行容器
+./docker_build&run.sh
+
+# stop and rm image 停止、删除容器和镜像
+./docker_stop&clean.sh
+```
+
+##### Dockerfile
+
+```dockerfile
+FROM python:3.10.11-slim-buster
+ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /app
+RUN pip install --no-cache-dir onnxruntime rapidocr_api -i https://mirrors.aliyun.com/pypi/simple
+RUN pip uninstall -y opencv-python && \
+    pip install --no-cache-dir opencv-python-headless -i https://mirrors.aliyun.com/pypi/simple
+EXPOSE 9005
+CMD ["bash", "-c", "rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2"]
+```
+
+##### 构建镜像
+
+```bash
 # build方式1：使用宿主机的网络
-docker build -t="rapidocr_api:0.1.4" --network host .
+docker build -t rapidocr_api --network host .
 
 # build方式2：使用宿主机上的代理
-docker build -t rapidocr_api:0.1.4 --network host --build-arg HTTP_PROXY=http://127.0.0.1:8888 --build-arg HTTPS_PROXY=http://127.0.0.1:8888 .
+docker build -t rapidocr_api --network host --build-arg HTTP_PROXY=http://127.0.0.1:8888 --build-arg HTTPS_PROXY=http://127.0.0.1:8888 .
 ```
 
-调试运行:
+##### 测试
 
 ```bash linenums="1"
-docker run --rm -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
+# 运行停止后会自动清理容器
+docker run --rm -p 9005:9005 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api
 ```
 
-运行:
+##### 运行
 
 ```bash linenums="1"
-docker run -d -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
+docker run -itd --restart=always --name rapidocr_api -p 9005:9005  -e TZ=Asia/Shanghai rapidocr_api
 ```
 
-接口web界面：
+##### API Docs
 
 ```bash linenums="1"
-http://<ip>:9003/docs
+http://<ip>:9005/docs
 ```
 
 #### Docker 临时修改并验证的方法
 
-```bash linenums="1"
-docker run -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
-```
-
-进入container修改python源文件，Dockerfile最好加上apt-get install vim安装
+进入container修改python源文件，Dockerfile最好加上`apt-get update && apt-get install vim -y`安装
 
 ```bash linenums="1"
 docker exec -it rapidocr_api /bin/bash
 cd /usr/local/lib/python3.10/site-packages/rapidocr_api
 ...
 # 修改参数文件
-vi /usr/local/lib/python3.10/site-packages/rapidocr_onnxruntime/config.yaml
+vim /usr/local/lib/python3.10/site-packages/rapidocr_onnxruntime/config.yaml
 # 改好后exit退出
 ```
 
@@ -129,7 +163,7 @@ docker logs -f rapidocr_api
 #### Curl调用
 
 ```bash linenums="1"
-curl -F image_file=@1.png http://0.0.0.0:9003/ocr
+curl -F image_file=@1.png http://0.0.0.0:9005/ocr
 ```
 
 #### Python调用
@@ -138,14 +172,14 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 
     ```python linenums="1"
     import requests
-
-    url = 'http://localhost:9003/ocr'
+    
+    url = 'http://localhost:9005/ocr'
     img_path = 'tests/test_files/ch_en_num.jpg'
-
+    
     with open(img_path, 'rb') as f:
         file_dict = {'image_file': (img_path, f, 'image/png')}
         response = requests.post(url, files=file_dict, timeout=60)
-
+    
     print(response.json())
     ```
 
@@ -154,16 +188,16 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
     ```python linenums="1"
     import base64
     import requests
-
-    url = 'http://localhost:9003/ocr'
+    
+    url = 'http://localhost:9005/ocr'
     img_path = 'tests/test_files/ch_en_num.jpg'
-
+    
     with open(img_path, 'rb') as fa:
         img_str = base64.b64encode(fa.read())
-
+    
     payload = {'image_data': img_str}
     response = requests.post(url, data=payload, timeout=60)
-
+    
     print(response.json())
     ```
 
@@ -171,10 +205,10 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 
     ```python linenums="1"
     import requests
-
-    url = 'http://localhost:9003/ocr'
+    
+    url = 'http://localhost:9005/ocr'
     img_path = 'tests/test_files/ch_en_num.jpg'
-
+    
     with open(img_path, 'rb') as f:
         data = {"use_det": False, "use_cls": True, "use_rec": True}
         response = requests.post(url, files=file_dict, data=data, timeout=60)

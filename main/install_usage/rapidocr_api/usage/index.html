@@ -1165,48 +1165,6 @@ You're not viewing the latest version.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="启动服务端">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Windows下使用
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linux下使用
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker方式使用
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker 临时修改并验证的方法
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1713,48 +1671,6 @@ You're not viewing the latest version.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="启动服务端">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Windows下使用
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linux下使用
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker方式使用
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker 临时修改并验证的方法
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1854,14 +1770,17 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_3">启动服务端<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>在<code>rapidocr_api&gt;=0.1.0</code>中，可通过环境变量传递模型参数：det_model_path, cls_model_path, rec_model_path；接口中可传入参数，控制是否使用检测、方向分类和识别这三部分的模型；具体调用可参见下面文档。</p>
-<h4 id="windows">Windows下使用<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows下使用</label><label for="__tabbed_1_2">Linux下使用</label><label for="__tabbed_1_3">Docker方式使用</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">set</span><span class="w"> </span><span class="nv">det_model_path</span><span class="o">=</span>I:<span class="se">\m</span>odels<span class="se">\图</span>像相关<span class="se">\O</span>CR<span class="se">\R</span>apidOCR<span class="se">\P</span>P-OCRv4<span class="se">\c</span>h_PP-OCRv4_det_server_infer.onnx
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nb">set</span><span class="w"> </span><span class="nv">rec_model_path</span><span class="o">=</span>I:<span class="se">\m</span>odels<span class="se">\图</span>像相关<span class="se">\O</span>CR<span class="se">\R</span>apidOCR<span class="se">\P</span>P-OCRv4<span class="se">\c</span>h_PP-OCRv4_rec_server_infer.onnx
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>rapidocr_api
 </span></code></pre></div></td></tr></table></div>
-<h4 id="linux">Linux下使用<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h4>
+</div>
+<div class="tabbed-block">
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -1882,7 +1801,8 @@ You're not viewing the latest version.
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">rec_model_path</span><span class="o">=</span>/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_rec_server_infer.onnx
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>rapidocr_api<span class="w"> </span>-ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-p<span class="w"> </span><span class="m">9005</span><span class="w"> </span>-workers<span class="w"> </span><span class="m">2</span>
 </span></code></pre></div></td></tr></table></div>
-<h4 id="docker">Docker方式使用<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h4>
+</div>
+<div class="tabbed-block">
 <p><a href="https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile">Dockerfile源码</a></p>
 <p>Build镜像:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -1910,7 +1830,8 @@ You're not viewing the latest version.
 <p>接口web界面：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>http://&lt;ip&gt;:9003/docs
 </span></code></pre></div></td></tr></table></div>
-<h4 id="docker_1">Docker 临时修改并验证的方法<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h4>
+<hr />
+<p>Docker 临时修改并验证的方法</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>:9003<span class="w"> </span>--name<span class="w"> </span>rapidocr_api<span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>rapidocr_api:0.1.4
 </span></code></pre></div></td></tr></table></div>
 <p>进入container修改python源文件，Dockerfile最好加上apt-get install vim安装</p>
@@ -1932,6 +1853,9 @@ You're not viewing the latest version.
 <p>查看日志：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>rapidocr_api
 </span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <h3 id="_4">调用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1941,7 +1865,7 @@ You're not viewing the latest version.
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>curl<span class="w"> </span>-F<span class="w"> </span><span class="nv">image_file</span><span class="o">=</span>@1.png<span class="w"> </span>http://0.0.0.0:9003/ocr
 </span></code></pre></div></td></tr></table></div>
 <h4 id="python">Python调用<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">以文件方式发送POST请求</label><label for="__tabbed_1_2">以base64方式发送POST请求</label><label for="__tabbed_1_3">控制使用检测、方向分类和识别模型</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">以文件方式发送POST请求</label><label for="__tabbed_2_2">以base64方式发送POST请求</label><label for="__tabbed_2_3">控制使用检测、方向分类和识别模型</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
@@ -2149,7 +2073,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月20日 00:12:34 UTC">2025年6月20日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月25日 00:08:19 UTC">2025年6月25日</span>
   </span>
 
     
@@ -2159,7 +2083,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月20日 00:12:34 UTC">2025年6月20日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月25日 00:08:19 UTC">2025年6月25日</span>
   </span>
 
     

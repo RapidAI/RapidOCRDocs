@@ -33,92 +33,94 @@ pip install rapidocr_api
 
 在`rapidocr_api>=0.1.0`中，可通过环境变量传递模型参数：det_model_path, cls_model_path, rec_model_path；接口中可传入参数，控制是否使用检测、方向分类和识别这三部分的模型；具体调用可参见下面文档。
 
-#### Windows下使用
+=== "Windows下使用"
 
-```bash linenums="1"
-set det_model_path=I:\models\图像相关\OCR\RapidOCR\PP-OCRv4\ch_PP-OCRv4_det_server_infer.onnx
-set rec_model_path=I:\models\图像相关\OCR\RapidOCR\PP-OCRv4\ch_PP-OCRv4_rec_server_infer.onnx
-rapidocr_api
-```
+    ```bash linenums="1"
+    set det_model_path=I:\models\图像相关\OCR\RapidOCR\PP-OCRv4\ch_PP-OCRv4_det_server_infer.onnx
+    set rec_model_path=I:\models\图像相关\OCR\RapidOCR\PP-OCRv4\ch_PP-OCRv4_rec_server_infer.onnx
+    rapidocr_api
+    ```
 
-#### Linux下使用
+=== "Linux下使用"
 
-```bash linenums="1"
-# 默认参数启动
-rapidocr_api
+    ```bash linenums="1"
+    # 默认参数启动
+    rapidocr_api
 
-# 指定参数：端口与进程数量；
-rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
+    # 指定参数：端口与进程数量；
+    rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
 
-# 指定模型
-export det_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_det_server_infer.onnx
-export rec_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_rec_server_infer.onnx
-rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
-```
+    # 指定模型
+    export det_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_det_server_infer.onnx
+    export rec_model_path=/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_rec_server_infer.onnx
+    rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
+    ```
 
-#### Docker方式使用
+=== "Docker方式使用"
 
-[Dockerfile源码](https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile)
+    [Dockerfile源码](https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile)
 
-Build镜像:
+    Build镜像:
 
-```bash linenums="1"
-git clone https://github.com/RapidAI/RapidOCR.git
-cd api
+    ```bash linenums="1"
+    git clone https://github.com/RapidAI/RapidOCR.git
+    cd api
 
-# build方式1：使用宿主机的网络
-docker build -t="rapidocr_api:0.1.4" --network host .
+    # build方式1：使用宿主机的网络
+    docker build -t="rapidocr_api:0.1.4" --network host .
 
-# build方式2：使用宿主机上的代理
-docker build -t rapidocr_api:0.1.4 --network host --build-arg HTTP_PROXY=http://127.0.0.1:8888 --build-arg HTTPS_PROXY=http://127.0.0.1:8888 .
-```
+    # build方式2：使用宿主机上的代理
+    docker build -t rapidocr_api:0.1.4 --network host --build-arg HTTP_PROXY=http://127.0.0.1:8888 --build-arg HTTPS_PROXY=http://127.0.0.1:8888 .
+    ```
 
-调试运行:
+    调试运行:
 
-```bash linenums="1"
-docker run --rm -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
-```
+    ```bash linenums="1"
+    docker run --rm -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
+    ```
 
-运行:
+    运行:
 
-```bash linenums="1"
-docker run -d -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
-```
+    ```bash linenums="1"
+    docker run -d -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
+    ```
 
-接口web界面：
+    接口web界面：
 
-```bash linenums="1"
-http://<ip>:9003/docs
-```
+    ```bash linenums="1"
+    http://<ip>:9003/docs
+    ```
 
-#### Docker 临时修改并验证的方法
+    ---
 
-```bash linenums="1"
-docker run -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
-```
+    Docker 临时修改并验证的方法
 
-进入container修改python源文件，Dockerfile最好加上apt-get install vim安装
+    ```bash linenums="1"
+    docker run -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
+    ```
 
-```bash linenums="1"
-docker exec -it rapidocr_api /bin/bash
-cd /usr/local/lib/python3.10/site-packages/rapidocr_api
-...
-# 修改参数文件
-vi /usr/local/lib/python3.10/site-packages/rapidocr_onnxruntime/config.yaml
-# 改好后exit退出
-```
+    进入container修改python源文件，Dockerfile最好加上apt-get install vim安装
 
-重启container
+    ```bash linenums="1"
+    docker exec -it rapidocr_api /bin/bash
+    cd /usr/local/lib/python3.10/site-packages/rapidocr_api
+    ...
+    # 修改参数文件
+    vi /usr/local/lib/python3.10/site-packages/rapidocr_onnxruntime/config.yaml
+    # 改好后exit退出
+    ```
 
-```bash linenums="1"
-docker restart rapidocr_api
-```
+    重启container
 
-查看日志：
+    ```bash linenums="1"
+    docker restart rapidocr_api
+    ```
 
-```bash linenums="1"
-docker logs -f rapidocr_api
-```
+    查看日志：
+
+    ```bash linenums="1"
+    docker logs -f rapidocr_api
+    ```
 
 ### 调用
 

@@ -1,6 +1,8 @@
 ---
 title: RapidOCR集成PP-OCRv5_det模型(mobile/server)记录
-date: 2025-05-26
+date:
+  created: 2025-05-26
+  updated: 2025-07-22
 authors: [SWHL]
 categories:
   - 模型相关
@@ -336,12 +338,14 @@ print(metric)
 |1|PP-OCRv5_mobile_det|PaddleX |PaddlePaddle|0.7864|0.8018|0.7940|0.1956|
 |2|PP-OCRv5_mobile_det|RapidOCR| PaddlePaddle|0.7861|0.8266|0.8058|0.5328|
 |3|PP-OCRv5_mobile_det|RapidOCR| ONNXRuntime|0.7861|0.8266|0.8058|0.1653|
+|-|PP-OCRv5_mobile_det|RapidOCR| PyTorch|0.7861|0.8266|0.8058|0.8861|
 |4|PP-OCRv4_mobile_det|RapidOCR |ONNXRuntime|0.8301|0.8659|0.8476|-|
 |||||||||
 |5|PP-OCRv5_server_det|PaddleX |PaddlePaddle|0.8347|0.8583|0.8463|2.1450|
 |6|PP-OCRv5_server_det|RapidOCR |PaddlePaddle|||||
 |7|PP-OCRv5_server_det|RapidOCR| ONNXRuntime|0.7394|0.8442|0.7883|2.0628|
 |8|PP-OCRv4_server_det|RapidOCR |ONNXRuntime|0.7922|0.8128|0.7691|-|
+|9|PP-OCRv4_server_det|RapidOCR |PyTorch|0.7394|0.8442|0.7883|5.9122|
 
 从以上结果来看，可以得到以下结论：
 

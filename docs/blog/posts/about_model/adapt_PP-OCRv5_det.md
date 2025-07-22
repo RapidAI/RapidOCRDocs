@@ -338,7 +338,7 @@ print(metric)
 |1|PP-OCRv5_mobile_det|PaddleX |PaddlePaddle|0.7864|0.8018|0.7940|0.1956|
 |2|PP-OCRv5_mobile_det|RapidOCR| PaddlePaddle|0.7861|0.8266|0.8058|0.5328|
 |3|PP-OCRv5_mobile_det|RapidOCR| ONNXRuntime|0.7861|0.8266|0.8058|0.1653|
-|-|PP-OCRv5_mobile_det|RapidOCR| PyTorch|0.7861|0.8266|0.8058|0.8861|
+|10|PP-OCRv5_mobile_det|RapidOCR| PyTorch|0.7861|0.8266|0.8058|0.8861|
 |4|PP-OCRv4_mobile_det|RapidOCR |ONNXRuntime|0.8301|0.8659|0.8476|-|
 |||||||||
 |5|PP-OCRv5_server_det|PaddleX |PaddlePaddle|0.8347|0.8583|0.8463|2.1450|
@@ -363,6 +363,7 @@ print(metric)
 
 5. 因为Exp6暂时没有找到原因，粗略将Exp5和Exp7相比，可以看到PP-OCRv5 server模型转换为ONNX格式后，**H-mean下降了5.8%** ，但是转换方式和mobile的相同，具体原因需要进一步排查。如有知道的小伙伴，欢迎留言告知。
 6. Exp7和Exp8相比，PP-OCRv5 server模型提升很大（H-mean提升7.72%）。当然，不排除训练用到了测评集数据。
+7. Exp10为新增的PyTorch模型，其精度与Paddle模型几乎一致，但推理速度稍微有些下降。
 
 !!! tip
 

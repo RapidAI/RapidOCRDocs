@@ -1,6 +1,8 @@
 ---
 title: RapidOCR集成PP-OCRv5_rec模型(mobile/server)记录
-date: 2025-05-30
+date:
+  created: 2025-05-30
+  updated: 2025-07-23
 authors: [SWHL]
 categories:
   - 模型相关
@@ -364,11 +366,13 @@ print(metric)
 |1|PP-OCRv5_mobile_rec|PaddleX |PaddlePaddle|0.7323|0.9161|0.0778|
 |2|PP-OCRv5_mobile_rec|RapidOCR| PaddlePaddle|0.7355|0.9177|0.0772|
 |3|PP-OCRv5_mobile_rec|RapidOCR| ONNXRuntime|0.7355|0.9177|0.0174|
+|10|PP-OCRv5_mobile_rec|RapidOCR| PyTorch|0.7355|0.9177|0.094|
 |4|PP-OCRv4_mobile_rec|RapidOCR |ONNXRuntime|**0.8323**|**0.9355**|-|
 ||||||||
 |5|PP-OCRv5_server_rec|PaddleX |PaddlePaddle|0.8097|0.9424|0.0777|
 |6|PP-OCRv5_server_rec|RapidOCR |PaddlePaddle|0.8129|0.9431|0.0775|
 |7|PP-OCRv5_server_rec|RapidOCR| ONNXRuntime|**0.8129**|**0.9431**|0.0655|
+|11|PP-OCRv5_server_rec|RapidOCR| PyTorch|**0.8129**|**0.9431**|0.0725|
 |8|PP-OCRv4_server_rec|RapidOCR |ONNXRuntime|0.7968|0.9381|-|
 |9|PP-OCRv4_doc_server_rec|RapidOCR |ONNXRuntime|0.8098|0.9444|-|
 
@@ -379,6 +383,7 @@ print(metric)
 3. Exp3和Exp4相比，mobile整体指标弱于PP-OCRv4的。因为测评集集中在中英文的印刷体，手写体少些，因此仅供参考。
 4. Exp6和Exp7相比，指标差异不大，说明更换backbone后的文本识别模型转换为ONNX格式，精度没有影响。Paddle2ONNX工具太强了！
 5. Exp7和Exp8相比，PP-OCRv5 server模型有很大提升。当然，不排除训练用到了测评集数据。
+6. Exp10和Exp11两个实验均说明PyTorch格式模型精度与原本模型，误差较小，可以放心使用。
 
 !!! tip
 

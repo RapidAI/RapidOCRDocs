@@ -8,8 +8,7 @@ hide:
 ### 1. 安装
 
 ```bash linenums="1"
-pip install onnxruntime
-pip install rapidocr
+pip install rapidocr onnxruntime
 ```
 
 ### 2. 使用

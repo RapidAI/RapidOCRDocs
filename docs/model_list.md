@@ -55,6 +55,9 @@ engine = RapidOCR(
 
 | 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
 |----------------|---------------------------|-------------------|-----------------|-------------------|
+| 🚀 英文、法文、德文、南非荷兰文、意大利文、西班牙文、波斯尼亚文、葡萄牙文、捷克文、威尔士文、丹麦文、爱沙尼亚文、爱尔兰文、克罗地亚文、乌兹别克文、匈牙利文、塞尔维亚文（latin）、印度尼西亚文、欧西坦文、冰岛文、立陶宛文、毛利文、马来文、荷兰文、挪威文、波兰文、斯洛伐克文、斯洛文尼亚文、阿尔巴尼亚文、瑞典文、西瓦希里文、塔加洛文、土耳其文、拉丁文 | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `latin`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 🚀 俄罗斯文、白俄罗斯文、乌克兰文 | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`| `eslav`            | `mobile`<br>`server` | `PP-OCRv5` |
+| 🚀 韩文v5           | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `korean`        | `mobile`<br>❎`server`     | `PP-OCRv5` |
 | 简体中文、中文拼音、繁体中文、英文、日文 | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`(`rapidocr>=3.3.0`) | `ch`            | `mobile`<br>`server` | `PP-OCRv5` |
 | 中文文档       | `onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `ch_doc`            | ❎`mobile`<br>`server` | `PP-OCRv4` |
 | 中文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ch`            | `mobile`<br>`server` | `PP-OCRv4` |
@@ -65,7 +68,7 @@ engine = RapidOCR(
 | 梵文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `devanagari`    | `mobile`<br>❎`server`     | `PP-OCRv4` |
 | 日文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `japan`         | `mobile`<br>❎`server`     | `PP-OCRv4` |
 | 卡纳达语       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ka`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
-| 韩文           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `korean`        | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 韩文v4           | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `korean`        | `mobile`<br>❎`server`     | `PP-OCRv4` |
 | 拉丁文         | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `latin`         | `mobile`<br>❎`server`     | `PP-OCRv4` |
 | 泰米尔文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ta`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
 | 泰卢固文       | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `te`            | `mobile`<br>❎`server`     | `PP-OCRv4` |

@@ -3,11 +3,13 @@ comments: true
 ---
 
 #### 引言
+
 - 说明：桌面版指的是可以直接解压，双击即可运行的版本。
 - 通俗来说，对`rapidocr_web`做了打包，将相关依赖全部放到一个zip包中，不需要本地有额外的环境，降低使用门槛。
 - 下面会以Windows版为例，作简要说明。
 
 #### 使用步骤
+
 1. 下载对应的zip包
     - 目前已有的zip包如下：
          ![image](https://github.com/RapidAI/RapidOCR/assets/28639377/e60a6411-7d3d-4063-9e0a-6d85df78de7a)
@@ -97,6 +99,7 @@ comments: true
       ├── VCRUNTIME140.dll
       └── yaml
       ```
+
     </details>
 
 3. 双击`RapidOCRWeb.exe`运行，界面如下图所示：
@@ -108,5 +111,3 @@ comments: true
     !!! note
 
         如果遇到浏览器不显示界面的情况，可以尝试在黑框上按`Ctrl + C`
-
-

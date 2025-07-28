@@ -9,8 +9,8 @@ comments: true
     <a href="https://pepy.tech/project/rapidocr_web"><img src="https://static.pepy.tech/personalized-badge/rapidocr_web?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
 
-
 ### 简介
+
 - 该库是`rapidocr_onnxruntime`的web版本，依赖最新版本的[`rapidocr_onnxruntime`](../rapidocr/rapidocr_onnxruntime.md)库。
 - 如果想要离线部署，可以先手动下载[`rapidocr_onnxruntime`](https://pypi.org/project/rapidocr-onnxruntime/#files) whl包，再手动安装[`rapidocr_web`](https://pypi.org/project/rapidocr-web/#files) whl包来使用。
 - 网页上显示的推理时间具体解释如下：
@@ -20,12 +20,15 @@ comments: true
     </div>
 
 ### 安装
+
 ```bash linenums="1"
 pip install rapidocr_web
 ```
 
 ### 使用
-#### 用法:
+
+#### 用法
+
 ```bash linenums="1"
 $ rapidocr_web -h
 usage: rapidocr_web [-h] [-ip IP] [-p PORT]
@@ -35,12 +38,14 @@ optional arguments:
 -ip IP, --ip IP       IP Address
 -p PORT, --port PORT  IP port
 ```
-#### 运行:
+
+#### 运行
+
 ```bash linenums="1"
 rapidocr_web -ip 0.0.0.0 -p 9003
 ```
 
-#### 浏览器打开 http://localhost:9003/，enjoy it!
+#### 浏览器打开 <http://localhost:9003/，enjoy> it
 
 !!! info
 
@@ -49,4 +54,3 @@ rapidocr_web -ip 0.0.0.0 -p 9003
 <div align="center">
             <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/rapidocr_web_demo.gif" width="100%" height="100%">
 </div>
-

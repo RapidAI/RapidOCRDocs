@@ -20,11 +20,3 @@ hide:
 <div align="left">
     <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/qq_group6.jpg" width="25%" height="25%" align="center">
 </div>
-
-### 知识星球RapidAI私享群
-
-这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。
-
-<div align="left">
-    <img src="https://raw.githubusercontent.com/RapidAI/.github/main/assets/KnowledgePlanet.jpg" width="15%" height="15%">
-</div>

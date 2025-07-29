@@ -26,6 +26,7 @@ hide:
 |C++|[RapidOcrOnnx](https://github.com/RapidAI/RapidOcrOnnx)|![GitHub Repo stars](https://img.shields.io/github/stars/RapidAi/RapidOcrOnnx?style=flat-square)|rapidocr onnx cpp|
 |C++|[RapidOcrNcnn](https://github.com/RapidAI/RapidOcrNcnn)|![GitHub Repo stars](https://img.shields.io/github/stars/RapidAi/RapidOcrNcnn?style=flat-square)|RapidOCR ncnn 推理|
 |Java|[RapidOcr—Java](https://github.com/MyMonsterCat/RapidOcr-Java)|![GitHub Repo stars](https://img.shields.io/github/stars/MyMonsterCat/RapidOcr-Java?style=flat-square)|Java代码实现调用RapidOCR(基于PaddleOCR)，适配Mac、Win、Linux，支持最新PP-OCRv4|
+|Java|[RapidOCR4j](https://github.com/hzkitty/RapidOCR4j)|![GitHub Repo stars](https://img.shields.io/github/stars/hzkitty/RapidOCR4j?style=flat-square)|多平台OCR工具，RapidOCR的Java移植版本(ONNXRuntime + OpenCV)|
 |Java|[RapidOcrOnnxJvm](https://github.com/RapidAI/RapidOcrOnnxJvm)|![GitHub Repo stars](https://img.shields.io/github/stars/RapidAi/RapidOcrOnnxJvm?style=flat-square)|RapidOcr onnx java kotlin jni test|
 |Java|[RapidOcrNcnnJvm](https://github.com/RapidAI/RapidOcrNcnnJvm)|![GitHub Repo stars](https://img.shields.io/github/stars/RapidAi/RapidOcrNcnnJvm?style=flat-square)|RapidOcr ncnn java kotlin jni|
 |C#|[RapidOCRCSharp](https://github.com/RapidAI/RapidOCRCSharp)|![GitHub Repo stars](https://img.shields.io/github/stars/RapidAi/RapidOCRCSharp?style=flat-square)|本项目为Windows平台C# WinForm范例|

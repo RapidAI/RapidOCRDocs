@@ -152,6 +152,8 @@ result.vis("vis_result.jpg")
     )
     ```
 
+由于采用Pillow库来打开图像，因此支持传入图像格式与Pillow保持一致，详情参见[image-file-formats](https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html)
+
 ### 输出
 
 RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOutput, RapidOCROutput]`。这4种类型均是Dataclasses类，可以直接访问对应的键值。

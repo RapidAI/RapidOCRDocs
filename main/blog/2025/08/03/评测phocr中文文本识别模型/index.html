@@ -12,13 +12,11 @@
         <meta name="author" content="RapidAI">
       
       
-        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/03/optim-tutorial/">
+        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8Bphocr%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/">
       
       
-        <link rel="prev" href="../../01/inference-summary/">
+        <link rel="prev" href="../../../05/30/rapidocr%E9%9B%86%E6%88%90pp-ocrv5_rec%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/">
       
-      
-        <link rel="next" href="../../04/which-inference/">
       
       
       <link rel="icon" href="../../../../../static/images/logo.jpg">
@@ -26,7 +24,7 @@
     
     
       
-        <title>调优尝试教程 - RapidOCR 文档</title>
+        <title>评测PHOCR中文文本识别模型 - RapidOCR 文档</title>
       
     
     
@@ -169,7 +167,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              调优尝试教程
+              评测PHOCR中文文本识别模型
             
           </span>
         </div>
@@ -1512,7 +1510,7 @@ You're not viewing the latest version.
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1540,7 +1538,7 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      常见错例种类
+      以下代码运行环境
     </span>
   </a>
   
@@ -1549,35 +1547,26 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      个别字丢失调优篇
+      评测
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="评测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      测试集结果识别
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      个别字识别错误调优篇
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="个别字识别错误调优篇">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      情况一：轻量中英文模型识别对个别汉字识别错误
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      情况二：轻量中英文模型对个别英文或数字识别错误
+      计算评测指标
     </span>
   </a>
   
@@ -1585,6 +1574,15 @@ You're not viewing the latest version.
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
   
 </li>
       
@@ -1644,7 +1642,7 @@ You're not viewing the latest version.
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2022-10-03 00:00:00+00:00" class="md-ellipsis">2022/10/3</time>
+                        <time datetime="2025-08-03 00:00:00+00:00" class="md-ellipsis">2025/8/3</time>
                       </div>
                     </li>
                     
@@ -1655,7 +1653,7 @@ You're not viewing the latest version.
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/general/">General</a></span>
+                              <a href="../../../../category/%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/">模型相关</a></span>
                         </div>
                       </li>
                     
@@ -1666,7 +1664,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 1 分钟阅读时间
+                              需要 2 分钟阅读时间
                             
                           </span>
                         </div>
@@ -1676,6 +1674,43 @@ You're not viewing the latest version.
                 </nav>
               </li>
             </ul>
+            
+              <ul class="md-post__meta md-nav__list">
+                <li class="md-nav__item md-nav__item--section">
+                  <div class="md-post__title">
+                    <span class="md-ellipsis">
+                      相关链接
+                    </span>
+                  </div>
+                  <nav class="md-nav">
+                    <ul class="md-nav__list">
+                      
+                        
+                        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开源OCR模型对比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                      
+                    </ul>
+                  </nav>
+                </li>
+              </ul>
             
           </nav>
           
@@ -1693,36 +1728,36 @@ You're not viewing the latest version.
   
 
 
-  <h1>调优尝试教程</h1>
+  <h1>评测PHOCR中文文本识别模型</h1>
 
+<blockquote>
+<p>该文章主要评测PHOCRv1的中文识别模型效果。</p>
+</blockquote>
 <!-- more -->
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>以下尝试情况，均已经在<a href="https://huggingface.co/spaces/SWHL/RapidOCRDemo">在线demo</a>中实现，看完之后，可移步那里去尝试。</p>
-</div>
 <h3 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>PHOCR 是一个高性能的开源光学字符识别（OCR）工具包，专为多语种文本识别任务设计，支持包括中文、日文、韩文、俄文、越南文和泰文在内的多种语言。PHOCR 搭载了我们完全自研的识别模型 PH-OCRv1，在准确率上显著优于现有解决方案。</p>
+<p>-- <a href="https://github.com/puhuilab/phocr/tree/main">PHOCR</a></p>
+</blockquote>
+<p>最近，有个社区小伙伴新建立了一个PHOCR，里面的文本识别模型据说效果超越PP-OCRv5:</p>
+<p><img alt="alt text" src="../../../../images/image.png" /></p>
+<p>至于真实效果如何呢？还需要自己来看一下。</p>
+<h3 id="_2">以下代码运行环境<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>由于小伙伴们使用OCR的场景多种多样，单一的参数配置往往不能满足要求，这就涉及到基于现有模型，通过调节参数来达到正确识别的目的。</li>
-<li>基本的原则是尽量不去动模型内部，降低使用成本。</li>
-<li>本篇文章就来说说在识别效果不好时，如何去调优。</li>
-<li>因此博客为一家之言，难免会挂一漏万，希望小伙伴多多指出，共同维护这份教程。</li>
+<li>OS: macOS Sequoia 15.6</li>
+<li>Python: 3.10.14</li>
+<li>phocr: 1.0.3</li>
+<li>datasets</li>
+<li>text_rec_metric</li>
 </ul>
-<h3 id="_2">常见错例种类<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>本地使用过程中，识别结果：</p>
-<ul>
-<li>个别字丢失</li>
-<li>个别字识别错误</li>
-</ul>
-<h3 id="_3">个别字丢失调优篇<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>查看图像是否<code>shape</code>太小，导致文本检测丢失。</p>
-<ul>
-<li>对于长度较长，高度较小的图像，可尝试对该图像高度做上下补充，来减小文字在原始图像中比例，利于文本检测。类似下图这种，左侧一条为原始图像，右侧为上下补边的图像。
-<img alt="Snipaste_2023-04-09_14-01-45" src="https://user-images.githubusercontent.com/28639377/230757239-3aad8686-4fbd-4f1a-abff-f7e1cb90f3aa.png" /></li>
-<li>padding代码参考：</li>
-</ul>
+<h3 id="_3">评测<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>由于评测数据集的限制，以下评测结果不完全代表模型能力，支持给出一个基本参考。小伙伴们还需要在自己场景下真实评测来看哈。</p>
+</div>
+<p>该部分主要使用<a href="https://github.com/SWHL/TextRecMetric">TextRecMetric</a>和测试集<a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">text_rec_test_dataset</a>来评测。</p>
+<h4 id="_4">测试集结果识别<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1745,68 +1780,107 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-0-20">20</a></span>
 <span class="normal"><a href="#__codelineno-0-21">21</a></span>
 <span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tuple</span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">padding_img</span><span class="p">(</span><span class="n">img</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>                <span class="n">padding_value</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>                <span class="n">padding_color</span><span class="p">:</span> <span class="n">Tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="n">padded_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">copyMakeBorder</span><span class="p">(</span><span class="n">img</span><span class="p">,</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>                                    <span class="n">padding_value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>                                    <span class="n">padding_value</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>                                    <span class="n">padding_value</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>                                    <span class="n">padding_value</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>                                    <span class="n">cv2</span><span class="o">.</span><span class="n">BORDER_CONSTANT</span><span class="p">,</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>                                    <span class="n">value</span><span class="o">=</span><span class="n">padding_color</span><span class="p">)</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="k">return</span> <span class="n">padded_img</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;xxx.jpg&#39;</span><span class="p">)</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="c1"># padding_value: (top, bottom, left, right)</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="c1"># 对该图像上下各补充10像素的白边</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="n">padded_img</span> <span class="o">=</span> <span class="n">padding_img</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">phocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">PHOCR</span><span class="p">,</span> <span class="n">LangRec</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">PHOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Rec.lang_type&quot;</span><span class="p">:</span> <span class="n">LangRec</span><span class="o">.</span><span class="n">CH</span><span class="p">})</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;SWHL/text_rec_test_dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="n">test_data</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">one_data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="n">test_data</span><span class="p">)):</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">one_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">))</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">)</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="n">elapse</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="n">rec_text</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">txts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rec_text</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="n">rec_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="n">elapse</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>    <span class="n">gt</span> <span class="o">=</span> <span class="n">one_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rec_text</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">gt</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">elapse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pred.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。</p>
-</li>
-<li>
-<p>将该图像上传到<a href="https://huggingface.co/spaces/SWHL/RapidOCRDemo">在线demo</a>中，查看能否复现问题？</p>
-</li>
-<li>如不能复现，着重比对环境是否与在线demo中相关包使用版本不一致情况？</li>
-<li>
-<p>在线demo所用的各个包版本情况：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Python: 3.8
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>onnxruntime: 1.14.1
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>rapidocr_onnxruntime: 1.2.5
+<h4 id="_5">计算评测指标<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">text_rec_metric</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextRecMetric</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">metric</span> <span class="o">=</span> <span class="n">TextRecMetric</span><span class="p">()</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">pred_path</span> <span class="o">=</span> <span class="s2">&quot;pred.txt&quot;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">metric</span> <span class="o">=</span> <span class="n">metric</span><span class="p">(</span><span class="n">pred_path</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="err">&#39;Exac</span><span class="kc">t</span><span class="err">Ma</span><span class="kc">t</span><span class="err">ch&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6452</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;CharMa</span><span class="kc">t</span><span class="err">ch&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7648</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;avg_elapse&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0613</span><span class="p">}</span>
 </span></code></pre></div>
-</li>
-<li>
-<p>如能复现，尝试调节在线demo中的三个参数，注意控制变量调节参数</p>
-</li>
-<li>首先调节<code>box_thresh</code>参数，该参数用来控制文本检测部分检测所得框是文本的概率。个别字丢失，一般是单独的字丢失，很大可能是文本检测模型没有检测到该独立的文字。尝试调低<code>box_thresh</code>值，查看是否可以检出丢失的文字。（没有找到合适的例子）</li>
-<li>固定<code>box_thresh</code>，调节<code>text_score</code>参数。该参数是控制识别文本结果正确的概率。尝试调低<code>text_score</code>值，查看是否可以识别出丢失的文字。</li>
-<li>固定<code>box_thresh</code>和<code>text_score</code>两个参数，调节<code>unclip_ratio</code>参数。该参数用来控制文本检测所得文本框的大小。尝试调大<code>unclip_ratio</code>值，查看是否可以识别出丢失的文字。</li>
-<li>如果调节三个参数也不能解决问题，只能尝试<code>server</code>版的文本检测和文本识别模型了。</li>
-<li>首先更换<code>server</code>版的文本检测模型，查看是否解决问题</li>
-<li>在第1步基础上，更换<code>server</code>版的文本识别模型，查看是否解决问题</li>
-<li>尝试更换不同版本模型，来查看效果。具体可在<a href="https://huggingface.co/spaces/SWHL/RapidOCRDemo">在线demo</a>中尝试</li>
-</ol>
-<h3 id="_4">个别字识别错误调优篇<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>个别字错误的情况，例如：<strong>成**识别为**戍</strong>，这种一般是文本识别模型的问题。</p>
-<h4 id="_5">情况一：轻量中英文模型识别对个别汉字识别错误<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<ol>
-<li>尝试padding图像，再重新识别</li>
-<li>更换不同版本的识别模型，包括<code>v2</code>、<code>v3</code>和<code>server</code>版尝试</li>
-</ol>
-<h4 id="_6">情况二：轻量中英文模型对个别英文或数字识别错误<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<ol>
-<li>更换不同版本的识别模型，包括<code>v2</code>、<code>v3</code>和<code>server</code>版尝试</li>
-<li>如果是只识别英文单词和数字，可以更换英文和数字专有模型（<code>en_PP-OCRv3_rec_infer.onnx</code>和<code>en_number_mobile_v2.0_rec_infer.onnx</code>）</li>
-</ol>
+<h3 id="_6">结论<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模型</th>
+<th style="text-align: left;">模型大小</th>
+<th style="text-align: center;">Exact Match</th>
+<th style="text-align: left;">Char Match</th>
+<th style="text-align: left;">Speed(s/img)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">PHOCR v1.0.3</td>
+<td style="text-align: left;">224M</td>
+<td style="text-align: center;">0.6452</td>
+<td style="text-align: left;">0.7648</td>
+<td style="text-align: left;">0.0613</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_rec_infer.onnx</td>
+<td style="text-align: left;">16M</td>
+<td style="text-align: center;">0.7355</td>
+<td style="text-align: left;">0.9177</td>
+<td style="text-align: left;">0.0713</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer.onnx</td>
+<td style="text-align: left;">81M</td>
+<td style="text-align: center;">0.8129</td>
+<td style="text-align: left;">0.9431</td>
+<td style="text-align: left;">0.1133</td>
+</tr>
+</tbody>
+</table>
+<p>上面结果和PP-OCRv5比较来看，差距还是不小的。可能是测试集的不同，导致指标差距明显。但是速度的确快一些。⚠️注意：仅供参考哈。</p>
+<p>RapidOCR这里暂时不做集成，后续会持续关注PHOCR这里。</p>
+<p>完整的评测结果比较：<a href="../../../../2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/#文本识别模型">文本识别模型比较</a></p>
 
 
 
@@ -1949,7 +2023,7 @@ You're not viewing the latest version.
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../01/inference-summary/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 垂直项目(偏学术)">
+          <a href="../../../05/30/rapidocr%E9%9B%86%E6%88%90pp-ocrv5_rec%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/" class="md-footer__link md-footer__link--prev" aria-label="上一页: RapidOCR集成PP-OCRv5_rec模型(mobile/server)记录">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -1959,27 +2033,11 @@ You're not viewing the latest version.
                 上一页
               </span>
               <div class="md-ellipsis">
-                垂直项目(偏学术)
+                RapidOCR集成PP-OCRv5_rec模型(mobile/server)记录
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../04/which-inference/" class="md-footer__link md-footer__link--next" aria-label="下一页: OCR推理引擎选择指南">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                OCR推理引擎选择指南
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-            </div>
-          </a>
         
       </nav>
     

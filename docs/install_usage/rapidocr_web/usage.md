@@ -2,7 +2,6 @@
 comments: true
 ---
 
-
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RapidAI/RapidOCRWeb/releases/download/v0.0.0/RapidOCR_Web_LOGO_white_font.png"  width="40%">
@@ -21,7 +20,7 @@ comments: true
 
 </div>
 
-### 📖 简介
+### 简介
 
 `rapidocr_web`是基于`rapidocr`库封装的web版OCR程序。它可以让小伙们快速在本地启动OCR服务，支持剪贴板、拖拽和选择图像文件上传识别，同时具有一键复制识别文本功能。
 
@@ -32,19 +31,27 @@ comments: true
 
 UI来自Cursor，自适应移动端和PC端。相比于旧有版本（v0.x），现在版本（v1.x）更加现代化。
 
-### 🛠️ 安装
+### 安装
 
-```bash
+```bash linenums="1"
 pip install rapidocr_web
 ```
 
-### 🚀 使用
+### 使用
 
-```bash
+#### 用法
+
+```bash linenums="1"
 rapidocr_web -ip 0.0.0.0 -p 9003
 ```
 
-#### 浏览器打开 <http://localhost:9003/> ，enjoy it
+#### 运行
+
+```bash linenums="1"
+rapidocr_web -ip 0.0.0.0 -p 9003
+```
+
+#### 浏览器打开 <http://localhost:9003/，enjoy> it
 
 > [!NOTE]
 >

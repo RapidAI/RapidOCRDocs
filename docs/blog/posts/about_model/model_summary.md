@@ -93,21 +93,23 @@ hide:
 
 |                模型                  | 对应PaddleOCR分支|  模型大小  |    Exact Match   |   Char Match     |Speed(s/img)  |
 | :----- |:---- | :-----| :-------: | :--- | :--|
-|ch_PP-OCRv5_rec_infer.onnx | release/v3.0      |       16M        |      0.7355      |     0.9177  |  - |
+|ch_PP-OCRv5_rec_infer.onnx | release/v3.0      |       16M        |      0.7355      |     0.9177  |  0.0713 |
 |ch_PP-OCRv4_rec_infer.onnx | release/v2.7      |       10M        |      0.8323      |     0.9355  |  0.6836 |
 |ch_PP-OCRv3_rec_infer.onnx | release/v2.6      |       11M        |      0.7097      |     0.8919  |  0.6362 |
 |||||||
-|ch_PP-OCRv5_rec_server_infer.onnx | release/v3.0      |       81M        |      0.8129      |     0.9431  |  - |
+|ch_PP-OCRv5_rec_server_infer.onnx | release/v3.0      |       81M        |      0.8129      |     0.9431  |  0.1133 |
 |ch_PP-OCRv4_rec_server_infer.onnx | release/v2.7      |       86M        |      0.7968      |     0.9381  |  0.6967 |
 |ch_doc_PP-OCRv4_rec_server.onnx | release/v2.10      |       94.93M        |      0.8097      |     0.9444  |  0.6836 |
 |ch_PP-OCRv2_rec_infer.onnx | release/v2.3     |      8.0M        |       0.6387      |     0.8398      | 0.6138|
 |ch_ppocr_mobile_v2.0_rec_infer.onnx  |  release/v2.0    |  4.3M  |       0.5323      |     0.7823     | 0.5575|
+|其他OCR |  版本    |  模型大小  |    Exact Match   |   Char Match     |Speed(s/img)  |
 |[读光-文字识别-行识别模型-中英-文档印刷体文本领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-document_damo/summary)  |  -    |  73M  |       0.5968      |     0.7705     | - |
 |[读光-文字识别-行识别模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-general_damo/summary)  |  -    |  73M  |       0.5839      |     0.7615     | - |
 |[读光-文字识别-行识别模型-中英-自然场景文本领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-scene_damo/summary)  |  -    |  73M  |       0.5903      |     0.7779     | - |
 |[读光-文字识别-轻量化端侧识别模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_LightweightEdge_ocr-recognitoin-general_damo/summary)  |  -    |  7.4M  |       0.5484      |     0.7515     | - |
 |[读光-文字识别-CRNN模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_crnn_ocr-recognition-general_damo/summary)  |  -    |  46M  |       0.5935      |     0.7671     | - |
 |[OFA文字识别-中文-通用场景-base](https://www.modelscope.cn/models/iic/ofa_ocr-recognition_general_base_zh/summary) 未跑通 |  -    |  -  |       -      | -  | - |
+|[PHOCRv1](https://github.com/puhuilab/phocr/tree/main)  |  v1.0.3   |  224M  |       0.6452      | 0.7648  | 0.0613 |
 
 不同推理引擎下，效果比较：
 

@@ -2,7 +2,7 @@
 title: 开源OCR模型对比
 date:
   created: 2022-04-16
-  updated: 2025-05-26
+  updated: 2025-08-03
 authors: [SWHL]
 categories:
   - 模型相关

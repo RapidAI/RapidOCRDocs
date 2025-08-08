@@ -6,7 +6,7 @@ hide:
 ---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/RapidAI/RapidOCR/main/assets/RapidOCR_LOGO.png" width="50%">
+  <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/Logov2_white.png" width="50%">
 
 <div align="center">
     <b><font size="4"><i>信创级开源OCR - 为世界内容安全贡献力量</i></font></b>

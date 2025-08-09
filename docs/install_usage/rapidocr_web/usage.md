@@ -22,6 +22,8 @@ comments: true
 
 ### 简介
 
+源码：<https://github.com/RapidAI/RapidOCRWeb>
+
 `rapidocr_web`是基于`rapidocr`库封装的web版OCR程序。它可以让小伙们快速在本地启动OCR服务，支持剪贴板、拖拽和选择图像文件上传识别，同时具有一键复制识别文本功能。
 
 整体项目采用前后端分离设计：

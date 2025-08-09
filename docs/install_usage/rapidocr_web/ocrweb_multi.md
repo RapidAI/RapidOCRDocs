@@ -15,7 +15,7 @@ comments: true
 1. 克隆项目到本地
 
     ```bash linenums="1"
-    git clone -b main https://github.com/RapidAI/RapidOCR.git
+    git clone -b main https://github.com/RapidAI/RapidOCRWeb.git
     ```
 
 2. 安装运行所需环境

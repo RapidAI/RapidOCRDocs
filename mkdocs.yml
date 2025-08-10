@@ -11,8 +11,8 @@ copyright: Copyright &copy; 2025 Maintained by SWHL.
 
 theme:
   name: material
-  logo: ./static/images/logo.jpg
-  favicon: ./static/images/logo.jpg
+  logo: ./static/images/logov2.png
+  favicon: ./static/images/logov2.png
   language: zh
   custom_dir: overrides
   features:

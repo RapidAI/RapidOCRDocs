@@ -30,3 +30,4 @@ jobs:
           git fetch origin gh-pages --depth=1
           mike set-default main
           mike deploy --push --update-aliases main latest
+          mike alias main --push

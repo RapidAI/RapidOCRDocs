@@ -53,7 +53,7 @@ If you are not in mainland China, you can also support the me through:
 |Sponsors|Application|Introduction|
 |:---:|:---:|:---|
 |<img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/Quicker.jpg" width=65 height=65>|[Quicker](https://getquicker.net/)|您的指尖工作箱|
-|<img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/Comshare.png" width=65 height=65>|[优云智算](https://www.compshare.cn/?ytag=GPU_YY-gh_rapidOCR)|万卡RTX40系GPU+海内外主流模型API服务，秒级响应，按量计费，新客免费用|
+|<img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/Comshare.png" width=65 height=65>|[优云智算](https://www.compshare.cn/images/vzDrOcdaK3m7?ytag=GPU_YY-gh_rapidOCR)|万卡RTX40系GPU+海内外主流模型API服务，秒级响应，按量计费，新客免费用|
 
 #### 支持者
 

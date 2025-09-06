@@ -55,10 +55,14 @@ engine = RapidOCR(
 
 | 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
 |----------------|---------------------------|-------------------|-----------------|-------------------|
-| 🚀 拉丁语种混合[^1] | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `latin`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-| 🚀 俄罗斯文、白俄罗斯文、乌克兰文 | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`| `eslav`            | `mobile`<br>`server` | `PP-OCRv5` |
+| 英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `en`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 泰文、英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `th`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 希腊文、英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `el`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 拉丁语种混合[^1] | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `latin`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 俄罗斯文、白俄罗斯文、乌克兰文 | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`| `eslav`            | `mobile`<br>`server` | `PP-OCRv5` |
 | 中英日混合[^2] | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`(`rapidocr>=3.3.0`) | `ch`            | `mobile`<br>`server` | `PP-OCRv5` |
-| 🚀 韩文v5   | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `korean`        | `mobile`<br>❎`server`     | `PP-OCRv5` |
+| 韩文v5   | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `korean`        | `mobile`<br>❎`server`     | `PP-OCRv5` |
+||||||
 | 韩文v4      | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `korean`        | `mobile`<br>❎`server`     | `PP-OCRv4` |
 | 中文文档    | `onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `ch_doc`            | ❎`mobile`<br>`server` | `PP-OCRv4` |
 | 中文        | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` | `ch`            | `mobile`<br>`server` | `PP-OCRv4` |

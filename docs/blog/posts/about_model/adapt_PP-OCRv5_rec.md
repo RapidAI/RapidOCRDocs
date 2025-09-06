@@ -185,7 +185,7 @@ for res in output:
     from rapidocr import RapidOCR
 
     model_path = "models/PP-OCRv5_server_rec/inference.onnx"
-    engine = RapidOCR(params={"Det.model_path": model_path})
+    engine = RapidOCR(params={"Rec.model_path": model_path})
 
     img_url = "https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516"
     result = engine(img_url)

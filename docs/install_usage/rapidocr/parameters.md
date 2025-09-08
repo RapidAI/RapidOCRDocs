@@ -33,6 +33,7 @@ Global:
     return_single_char_box: false
 
     font_path: null
+    log_level: "info" # debug / info / warning / error / critical
 ```
 
 `text_score (float)`: 文本识别结果置信度，值越大，把握越大。取值范围：`[0, 1]`, 默认值是0.5。
@@ -72,6 +73,10 @@ result = engine(img_url, return_word_box=True, return_single_char_box=True)
 ```
 
 `font_path (str)`: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为`null`。
+
+`log_level (str)`: 日志级别设置。可选择的有`debug / info / warning / error / critical`，默认为`info`，会打印加载模型等日志。如果设置`critical`，则不会打印任何日志。
+
+> 在`rapidocr==3.4.0`中，才添加此参数。
 
 #### EngineConfig
 
@@ -327,7 +332,12 @@ class LangRec(Enum):
     LATIN = "latin"
     TA = "ta"
     TE = "te"
+    ESLAV = "eslav"
+    TH = "th"
+    EL = "el"
 ```
+
+> `TH`和`EL`在`rapidocr>=3.4.0`中才支持
 
 `model_type (str)`: 同Det部分介绍。
 

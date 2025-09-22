@@ -5,12 +5,15 @@ hide:
   - toc
 ---
 
+!!! warning
+
+  文章发布较早，内容可能过时，阅读注意甄别。
 
 #### Q: 为什么我的模型在ONNXRuntime GPU版上比在CPU上还要慢？
 
 **A:** 因为OCR任务中输入图像Shape是动态的。每次GPU上都需要重新清空上一次不同Shape的缓存结果。如果输入图像Shape不变的情况下，ONNXRuntime GPU版一般都要比CPU快的。该问题已经提了相关issue（[issue #13198](https://github.com/microsoft/onnxruntime/issues/13198)）。
 
-推荐CPU端推理用`rapidocr_onnxruntime`或者`rapidocr_openvino`，GPU端用`rapidocr_paddle`。关于`rapidocr_onnxruntime`和`rapidocr_paddle`两者之间推理，可参见：[docs](../../install_usage/rapidocr_paddle.md#推理速度比较)
+推荐CPU端推理用`rapidocr_onnxruntime`或者`rapidocr_openvino`，GPU端用`rapidocr_paddle`。关于`rapidocr_onnxruntime`和`rapidocr_paddle`两者之间推理，可参见：[docs](.https://rapidai.github.io/RapidOCRDocs/v1.4.4/install_usage/rapidocr_paddle/usage/#_4)
 
 #### Q: 请问这个能在32位C#中用嘛?
 
@@ -58,7 +61,7 @@ hide:
 
 #### Q: 您好，我想部署下咱们的ocr识别，有提供linux版本的ocr部署包吗?
 
-**A:** linux版本的自己编译即可, 可以参考我们的action中的脚本；其实编译非常容易，安装个opencv后，在cmakelists.txt中修改一下onnxruntime的路径即可，具体参考这个： <https://github.com/RapidOCR/RapidOCR/blob/main/.github/workflows/make-linux.yml>
+**A:** linux版本的自己编译即可, 可以参考我们的action中的脚本；其实编译非常容易，安装个opencv后，在cmakelists.txt中修改一下onnxruntime的路径即可，具体参考这个： <https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml>
 
 #### Q: onnxruntime编译好的C++库，哪里可以下载到？
 

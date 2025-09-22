@@ -57,7 +57,7 @@ $ pip install openvino-dev
 ### OpenVINO与ONNXRuntime性能对比
 
 - 推理设备：`Windows 64位 Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz   2.59 GHz`
-- [测试图像宽高](https://drive.google.com/file/d/1iJcGvOVIdUlyOS52bBdvO8uzx8QORo5M/view?usp=sharing): `12119x810`
+- 测试图像宽高: `12119x810`
 
 | 测试模型                             | 推理框架             | 占用内存(3次平均) | 推理时间(3次平均) |
 | ------------------------------------ | -------------------- | ----------------- | ----------------- |

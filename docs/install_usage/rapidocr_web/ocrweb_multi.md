@@ -77,4 +77,4 @@ comments: true
 
 3. 打开 <http://127.0.0.1:8001> 即可， enjoy it!
 
-   ![ocr_web_multi_demo](https://raw.githubusercontent.com/RapidAI/RapidOCR/main/ocrweb_multi/assets/ocr_web_multi.jpg)
+   ![ocr_web_multi_demo](https://raw.githubusercontent.com/RapidAI/RapidOCR/refs/tags/v1.4.1/ocrweb_multi/assets/ocr_web_multi.jpg)

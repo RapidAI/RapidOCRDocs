@@ -13,9 +13,9 @@ comments: true
 
 #### [RapidStructure](https://github.com/RapidAI/RapidStructure) ：版面分析
 
-- [含文本的图像方向分类](https://github.com/RapidAI/RapidStructure/blob/main/docs/README_Orientation.md)
-- [版面分析](https://github.com/RapidAI/RapidStructure/blob/main/docs/README_Layout.md)
-- [表格还原](https://github.com/RapidAI/RapidStructure/blob/main/docs/README_Table.md)
+- [含文本的图像方向分类](https://github.com/RapidAI/RapidOrientation)
+- [版面分析](https://github.com/RapidAI/RapidLayout)
+- [表格还原](https://github.com/RapidAI/RapidTable)
 
 #### [RapidOCRServer](https://github.com/Physton/RapidOCRServer)：RapidOCR HTTP服务/win32程序/易语言编写
 

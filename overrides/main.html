@@ -24,7 +24,8 @@ You're not viewing the latest version.
 {# {% set last_modified = now - 90000 %} #}
 
 {% set days_since_update = ((now - last_modified) / 86400) | int %}
-{% set stale_after_days = 1 # 设为1天，方便测试 %}
+{# 设为1天，方便测试 #}
+{% set stale_after_days = 1 %}
 
 {% if days_since_update > stale_after_days %}
 <div class="md-banner">

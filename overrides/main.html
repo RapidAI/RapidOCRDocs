@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-<!-- {% block announce %}
+{% block announce %}
     <p>🎉 评测PHOCR中文文本识别模型 → <a href="https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8Bphocr%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/" target="_blank">link</a></p>
 {% endblock %}
 
@@ -9,36 +9,5 @@ You're not viewing the latest version.
 <a href="{{ '../' ~ base_url }}">
     <strong>Click here to go to latest.</strong>
 </a>
-{% endblock %} -->
-
-{% block content %}
-    {% if page and page.meta.last_updated %}
-        {# 获取当前时间戳（秒）- 需要确保环境支持now变量 #}
-        {% set now = now | int %}
-
-        {# 从页面元数据获取最后修改时间 #}
-        {% set last_modified = page.meta.last_updated | int %}
-
-        {# 计算距离上次修改的天数 #}
-        {% set days_since_update = (now - last_modified) / 86400 %}
-
-        {# 设置过期阈值（天） #}
-        {% set stale_after_days = 1 %}
-
-        {# 判断是否过期 #}
-        {% if days_since_update > stale_after_days %}
-            <div class="md-banner">
-                ⚠️【测试】本文档最后更新于
-                <strong>{{ page.meta.last_updated | date('%Y-%m-%d %H:%M:%S') }}</strong>，
-                已超过 {{ stale_after_days }} 天未更新，内容可能已过时。
-            </div>
-        {% else %}
-            <div class="md-banner" style="background-color:#d4edda; color:#155724; border-color:#c3e6cb;">
-                ✅【测试】文档更新于 <strong>{{ page.meta.last_updated | date('%H:%M:%S') }}</strong>，
-                尚未过期（{{ ((now - last_modified)/60) | round(1) }} 分钟前）。
-            </div>
-        {% endif %}
-    {% endif %}
-
-{{ super() }}
 {% endblock %}
+

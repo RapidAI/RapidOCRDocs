@@ -41,24 +41,3 @@ You're not viewing the latest version.
 
 {{ super() }}
 {% endblock %}
-
-<!-- {% block content %}
-{# --- 过期检测逻辑 --- #}
-{% if page and page.meta.revision_date %}
-{% set now = (none).timestamp() | int %}
-{% set last_modified = page.meta.revision_date.timestamp() | int %}
-{% set days_since_update = ((now - last_modified) / 86400) | int %}
-
-{% set stale_after_days = 365 %} {# 可自定义阈值 #}
-
-{% if days_since_update > stale_after_days %}
-<div class="md-banner">
-    ⚠️ 本文档最后更新于 {{ page.meta.revision_date | date('%Y-%m-%d') }}，
-    已超过 {{ stale_after_days }} 天未更新，内容可能已过时，请注意核实。
-</div>
-{% endif %}
-{% endif %}
-
-{# 继续原始内容 #}
-{{ super() }}
-{% endblock %} -->

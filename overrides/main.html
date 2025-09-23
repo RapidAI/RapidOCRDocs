@@ -11,7 +11,37 @@ You're not viewing the latest version.
 </a>
 {% endblock %}
 
+
 {% block content %}
+{# --- 测试：强制设置一个“很久以前”的修改时间 --- #}
+{% if page %}
+{% set now = (none).timestamp() | int %}
+
+{# 手动设置：当前时间减去 10 分钟（即 600 秒）作为“最后修改时间” #}
+{% set last_modified = now - 600 %}
+
+{# 如果你想测试“未过期”，可以把 600 改成 30（30秒前） #}
+{# {% set last_modified = now - 90000 %} #}
+
+{% set days_since_update = ((now - last_modified) / 86400) | int %}
+{% set stale_after_days = 1 # 设为1天，方便测试 #}
+
+{% if days_since_update > stale_after_days %}
+<div class="md-banner">
+    ⚠️【测试】本文档最后更新于 {{ (last_modified * 1000) | date('%Y-%m-%d %H:%M:%S') }}，
+    已超过 {{ stale_after_days }} 天未更新，内容可能已过时。
+</div>
+{% else %}
+<div class="md-banner" style="background-color:#d4edda; color:#155724; border-color:#c3e6cb;">
+    ✅【测试】文档更新于 {{ (last_modified * 1000) | date('%H:%M:%S') }}，尚未过期（{{ '%.1f'|format((now - last_modified)/60) }} 分钟前）。
+</div>
+{% endif %}
+{% endif %}
+
+{{ super() }}
+{% endblock %}
+
+<!-- {% block content %}
 {# --- 过期检测逻辑 --- #}
 {% if page and page.meta.revision_date %}
 {% set now = (none).timestamp() | int %}
@@ -30,4 +60,4 @@ You're not viewing the latest version.
 
 {# 继续原始内容 #}
 {{ super() }}
-{% endblock %}
+{% endblock %} -->

@@ -15,7 +15,7 @@ You're not viewing the latest version.
 {% block content %}
 {# --- 测试：强制设置一个“很久以前”的修改时间 --- #}
     {% if page %}
-        {% set now = timestamp() | int %}
+        {% set now = "now" | time %}
 
         {# 手动设置：当前时间减去 10 分钟（即 600 秒）作为“最后修改时间” #}
         {% set last_modified = now - 600 %}

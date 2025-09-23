@@ -10,3 +10,29 @@ You're not viewing the latest version.
     <strong>Click here to go to latest.</strong>
 </a>
 {% endblock %}
+
+{% block content %}
+<!-- 先渲染原始内容 -->
+{{ super() }}
+
+<!-- 添加过时警告逻辑 -->
+{% if page and page.meta.date %}
+{% set doc_date = page.meta.date %}
+{% set today = "" | as_datetime("%Y-%m-%d") %}
+{% set diff_days = (today | date("%s") - doc_date | date("%s")) // 86400 %}
+
+{% if diff_days > 365 %}
+<div class="md-typeset">
+    <div class="md-admonition warning outdated-warning">
+        <p class="md-admonition__title">
+            ⚠️ 文档过时提醒
+        </p>
+        <p>
+            本文档最后更新于 <strong>{{ doc_date }}</strong>（{{ diff_days }} 天前），
+            可能包含过时信息，请结合最新文档参考使用。
+        </p>
+    </div>
+</div>
+{% endif %}
+{% endif %}
+{% endblock %}

@@ -63,6 +63,7 @@ theme:
 
 plugins:
   - tags
+  - meta
   - blog:
       archive: false
       post_date_format: short

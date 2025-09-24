@@ -9,7 +9,7 @@ hide:
 
 ### 微信交流群
 
-微信扫描以下二维码，关注**RapidAI公众号**，回复 OCR 即可加入RapidOCR微信交流群：
+微信扫描以下二维码，关注 **RapidAI公众号**，回复 OCR 即可加入RapidOCR微信交流群：
 <div align="left">
     <img src="https://raw.githubusercontent.com/RapidAI/.github/main/assets/RapidAI_WeChatAccount.jpg" width="15%" height="15%" align="center">
 </div>

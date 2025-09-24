@@ -80,6 +80,20 @@ plugins:
       timezone: Asia/Shanghai
       type: iso_datetime
 
+hooks:
+  - hooks/expiry.py
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/RapidAI
+    - icon: fontawesome/brands/weixin
+      link: https://raw.githubusercontent.com/RapidAI/.github/main/assets/RapidAI_poster_compose.png
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/rapidocr/
+  version:
+    provider: mike
+  expiry_days: 180
 
 markdown_extensions:
   - abbr
@@ -118,17 +132,6 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/RapidAI
-    - icon: fontawesome/brands/weixin
-      link: https://raw.githubusercontent.com/RapidAI/.github/main/assets/RapidAI_poster_compose.png
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/rapidocr/
-  version:
-    provider: mike
 
 nav:
   - 概览: index.md

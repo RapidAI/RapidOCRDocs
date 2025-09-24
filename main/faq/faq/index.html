@@ -1887,17 +1887,51 @@ You're not viewing the latest version.
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+                  <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
   
 
 
 
+<!-- Actions -->
+
   
   
 
 
-  <h1>常见问题</h1>
+<!--
+  Hack: check whether the content contains a h1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
 
+<h1>常见问题</h1>
+
+
+
+
+<!-- Page content -->
 <h4 id="q-onnxruntime-gpucpu">Q: 为什么我的模型在ONNXRuntime GPU版上比在CPU上还要慢？<a class="headerlink" href="#q-onnxruntime-gpucpu" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 因为OCR任务中输入图像Shape是动态的。每次GPU上都需要重新清空上一次不同Shape的缓存结果。如果输入图像Shape不变的情况下，ONNXRuntime GPU版一般都要比CPU快的。该问题已经提了相关issue（<a href="https://github.com/microsoft/onnxruntime/issues/13198">issue #13198</a>）。</p>
 <p>推荐CPU端推理用<code>rapidocr_onnxruntime</code>或者<code>rapidocr_openvino</code>，GPU端用<code>rapidocr_paddle</code>。关于<code>rapidocr_onnxruntime</code>和<code>rapidocr_paddle</code>两者之间推理，可参见：<a href="https://rapidai.github.io/RapidOCRDocs/v1.4.4/install_usage/rapidocr_paddle/usage/#_4">docs</a></p>
@@ -1937,6 +1971,8 @@ You're not viewing the latest version.
 <p><strong>A:</strong> 由于模型只支持<code>onnxruntime=1.5.0</code>导致，请更新模型,下载地址见<code>Q3</code></p>
 <h4 id="q_1">Q: 边缘总有一行文字无法识别，怎么办？<a class="headerlink" href="#q_1" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 在 padding 参数中添加一个值 ，默认是0,你可以添加5或10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。</p>
+
+<!-- Source file information -->
 
 
 
@@ -2001,10 +2037,14 @@ You're not viewing the latest version.
   </aside>
 
 
+<!-- Was this page helpful? -->
+
 
   
 
 
+
+<!-- Comment system -->
 
 <h2 id="__comments">评论</h2>
 <!-- Insert generated snippet here -->

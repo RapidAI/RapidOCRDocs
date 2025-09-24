@@ -77,6 +77,8 @@ plugins:
       token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
   - git-revision-date-localized:
       enable_creation_date: true
+      timezone: Asia/Shanghai
+      type: iso_datetime
 
 
 markdown_extensions:

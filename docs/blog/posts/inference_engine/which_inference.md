@@ -10,10 +10,6 @@ categories:
 comments: true
 ---
 
-!!! warning
-
-    文章发布较早，内容可能过时，阅读注意甄别。
-
 介绍在CPU端和GPU端，OCR模型的推理引擎选择问题。
 
 <!-- more -->

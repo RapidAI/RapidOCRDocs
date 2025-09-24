@@ -26,13 +26,6 @@ def on_page_context(context, page, config, nav):
                     pass
         return is_expired, last_update
 
-    if "blog/" in page.url or page.url.startswith("blog"):
-        page.is_expired, page.last_update = compute_expiry(page.meta)
-        context["is_expired"] = page.is_expired
-        context["last_update"] = page.last_update
-        context["expiry_days"] = expiry_days
-        return context
-
     page.is_expired, page.last_update = compute_expiry(page.meta)
     context["is_expired"] = page.is_expired
     context["last_update"] = page.last_update

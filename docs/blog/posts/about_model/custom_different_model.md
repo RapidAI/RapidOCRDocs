@@ -60,7 +60,7 @@ pip install rapidocr_onnxruntime
 
 !!! note
 
-    检测模型，对应模型路径参数为`det_model_path`<br/>识别模型，对应模型路径参数为`rec_model_path` <br/> 详细说明参见：[link](../../../install_usage/api/RapidOCR.md)
+    检测模型，对应模型路径参数为`det_model_path`<br/>识别模型，对应模型路径参数为`rec_model_path` <br/> 详细说明参见：[link](../../../install_usage/rapidocr/parameters.md)
 
 如果得到的识别模型，没有将字典文件写入到ONNX模型中，可以通过初始化RapidOCR类时，通过`rec_keys_path`来指定对应的字典文件。
 

@@ -79,6 +79,16 @@ plugins:
       enable_creation_date: true
       timezone: Asia/Shanghai
       type: iso_datetime
+      exclude:
+        - "index.md"
+        - "business_support.md"
+        - "communicate.md"
+        - "quickstart.md"
+        - "online_demo.md"
+        - "related_projects.md"
+        - "model_list.md"
+        - "sponsor.md"
+        - "install_usage/**"
 
 hooks:
   - hooks/expiry.py

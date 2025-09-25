@@ -323,7 +323,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     - `TextDetOutput.img (np.ndarray)`: 传入的原始图像
     - `TextDetOutput.boxes (np.ndarray)`: 文本行坐标，4个点组成，依次是`[左上，右上，右下，左下]`
     - `TextDetOutput.scores (List[float])`: 每个文本行对应的置信度。
-    - `TextDetOutput.elapse (float): 文本检测整体耗时，单位为秒。
+    - `TextDetOutput.elapse (float)`: 文本检测整体耗时，单位为秒。
 
     ???+ example "详细返回值示例"
 

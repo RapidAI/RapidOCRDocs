@@ -9,6 +9,10 @@ comments: true
     <a href="https://pepy.tech/project/rapidocr_api"><img src="https://static.pepy.tech/personalized-badge/rapidocr_api?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
 
+!!! warning
+
+    因RapidOCR API有了自己的仓库，该更新日志不再更新。最新日志请移步：[link](https://github.com/RapidAI/RapidOCRAPI/releases)
+
 #### 2025-01-01 v0.1.5 update
 
 Merge PR[#309](https://github.com/RapidAI/RapidOCR/pull/309)

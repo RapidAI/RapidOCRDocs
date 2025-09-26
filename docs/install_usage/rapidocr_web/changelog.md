@@ -9,6 +9,10 @@ comments: true
     <a href="https://pepy.tech/project/rapidocr_web"><img src="https://static.pepy.tech/personalized-badge/rapidocr_web?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
 </p>
 
+!!! warning
+
+    因RapidOCR Web有了自己的仓库，该更新日志不再更新。最新日志请移步：[link](https://github.com/RapidAI/RapidOCRWeb/releases)
+
 #### 2024-07-08 v0.1.10 update
 
 - 修复issue [#197](https://github.com/RapidAI/RapidOCR/issues/197)

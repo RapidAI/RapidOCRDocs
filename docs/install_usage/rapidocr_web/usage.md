@@ -20,7 +20,7 @@ comments: true
 
 </div>
 
-### 简介
+## 简介
 
 源码：<https://github.com/RapidAI/RapidOCRWeb>
 
@@ -33,31 +33,31 @@ comments: true
 
 UI来自Cursor，自适应移动端和PC端。相比于旧有版本（v0.x），现在版本（v1.x）更加现代化。
 
-### 安装
+## 安装
 
 ```bash linenums="1"
 pip install rapidocr_web
 ```
 
-### 使用
+## 使用
 
-#### 用法
-
-```bash linenums="1"
-rapidocr_web -ip 0.0.0.0 -p 9003
-```
-
-#### 运行
+### 用法
 
 ```bash linenums="1"
 rapidocr_web -ip 0.0.0.0 -p 9003
 ```
 
-#### 浏览器打开 <http://localhost:9003/，enjoy> it
+### 运行
 
-> [!NOTE]
->
-> 浏览器打开的网址是`http`的，不是`https`。
+```bash linenums="1"
+rapidocr_web -ip 0.0.0.0 -p 9003
+```
+
+### 浏览器打开 <http://localhost:9003/> ，enjoy it
+
+!!! note
+
+    浏览器打开的网址是`http`的，不是`https`。
 
 <div align="center">
     <img src="https://github.com/RapidAI/RapidOCRWeb/releases/download/v0.0.0/demo.gif" width="100%" height="100%">

@@ -155,11 +155,11 @@ nav:
       - 参数介绍: install_usage/rapidocr/parameters.md
     - rapidocr_web:
       - 安装及使用: install_usage/rapidocr_web/usage.md
-      - 更新日志: install_usage/rapidocr_web/changelog.md
       - 桌面版使用教程: install_usage/rapidocr_web/desktop_usage.md
       - Nuitka打包: install_usage/rapidocr_web/nuitka_package.md
       - PyInstaller打包: install_usage/rapidocr_web/pyinstaller.md
       - 多语言版本部署: install_usage/rapidocr_web/ocrweb_multi.md
+      - 更新日志: install_usage/rapidocr_web/changelog.md
     - rapidocr_api:
       - 安装及使用: install_usage/rapidocr_api/usage.md
       - 更新日志: install_usage/rapidocr_api/changelog.md

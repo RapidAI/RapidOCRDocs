@@ -24,30 +24,32 @@ hide:
 
 </div>
 
-### 📖 简介
+## 📖 简介
 
 !!! note
 
     OCR API的输出结果为最原始结果，大家可按需进一步扩展。
 
+源码仓库：<https://github.com/RapidAI/RapidOCRAPI>
+
 该包是将[rapidocr](../rapidocr/install.md)库做了API封装，采用[FastAPI](https://fastapi.tiangolo.com/) + [uvicorn](https://www.uvicorn.org/)实现。
 
 定位是一个快速调用`rapidocr`的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看[gunicorn](https://gunicorn.org/)等。
 
-### 📌 版本依赖关系
+## 📌 版本依赖关系
 
 |`rapidocr_api`|`rapidocr`|
 |:---|:---|
 |`v0.2.x`|`rapidocr>1.0.0,<3.0.0`|
 |`v0.1.x`|`rapidocr_onnxruntime`|
 
-### 安装
+## 安装
 
 ```bash linenums="1"
 pip install rapidocr_api
 ```
 
-### 启动服务端
+## 启动服务端
 
 在`rapidocr_api>=0.1.0`中，可通过环境变量传递模型参数：det_model_path, cls_model_path, rec_model_path；接口中可传入参数，控制是否使用检测、方向分类和识别这三部分的模型；具体调用可参见下面文档。
 
@@ -140,19 +142,19 @@ pip install rapidocr_api
     docker logs -f rapidocr_api
     ```
 
-### 调用
+## 调用
 
 !!! info
 
     调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。
 
-#### Curl调用
+### Curl调用
 
 ```bash linenums="1"
 curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 ```
 
-#### Python调用
+### Python调用
 
 === "以文件方式发送POST请求"
 
@@ -201,7 +203,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
     print(response.json())
     ```
 
-### 输出结果说明
+## 输出结果说明
 
 如果图像中存在文字，则会输出字典格式，具体介绍如下：
 
@@ -222,7 +224,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 
 如果没有检测到文字，则会输出空字典(`{}`)。
 
-### 示例结果
+## 示例结果
 
 ```json linenums="1"
 {

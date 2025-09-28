@@ -4,15 +4,15 @@ hide:
   - toc
 ---
 
-## 如何使用不同推理引擎？
-
 `rapidocr`支持4种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch**），推荐首先使用 **ONNXRuntime CPU** 版。默认为ONNXRuntime。
 
 `rapidocr`是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。
 
 !!! info
 
-    `rapidocr>=3.0.0`版本，可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。例如：文本检测使用ONNXRuntime，文本识别使用Paddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。同时，不同版本的OCR也可以通过`Det.ocr_version`灵活指定。
+    `rapidocr>=3.0.0`版本，可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。
+    例如：文本检测使用ONNXRuntime，文本识别使用Paddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。
+    同时，不同版本的OCR也可以通过`Det.ocr_version`灵活指定。
 
 ### 使用ONNXRuntime
 
@@ -36,7 +36,7 @@ hide:
     result.vis('vis_result.jpg')
     ```
 
-3. 查看输出日志。下面日志中打印出了**Using engine_name: onnxruntime**，则证明使用的推理引擎是ONNXRuntime。
+3. 查看输出日志。下面日志中打印出了 **Using engine_name: onnxruntime**，则证明使用的推理引擎是ONNXRuntime。
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: onnxruntime
@@ -75,7 +75,7 @@ hide:
     result.vis('vis_result.jpg')
     ```
 
-3. 查看输出日志。下面日志中打印出了**Using engine_name: openvino**，则证明使用的推理引擎是OpenVINO。
+3. 查看输出日志。下面日志中打印出了 **Using engine_name: openvino**，则证明使用的推理引擎是OpenVINO。
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: openvino
@@ -96,47 +96,66 @@ hide:
 
 2. 指定PaddlePaddle作为推理引擎
 
-    CPU版
+    === "CPU"
 
-    ```python linenums="1" hl_lines="5-7"
-    from rapidocr import EngineType, RapidOCR
+        ```python linenums="1" hl_lines="5-7"
+        from rapidocr import EngineType, RapidOCR
 
-    engine = RapidOCR(
-        params={
+        engine = RapidOCR(
+            params={
+                "Det.engine_type": EngineType.PADDLE,
+                "Cls.engine_type": EngineType.PADDLE,
+                "Rec.engine_type": EngineType.PADDLE,
+            }
+        )
+
+        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+        result = engine(img_url)
+        print(result)
+
+        result.vis('vis_result.jpg')
+        ```
+
+    === "GPU"
+
+        ```python linenums="1" hl_lines="3-9"
+        from rapidocr import EngineType, RapidOCR
+
+        engine = RapidOCR(
+            params={
             "Det.engine_type": EngineType.PADDLE,
-            "Cls.engine_type": EngineType.PADDLE,
-            "Rec.engine_type": EngineType.PADDLE,
-        }
-    )
+            "EngineConfig.paddle.use_cuda": True,  # 使用PaddlePaddle GPU版推理
+            "EngineConfig.paddle.gpu_id": 0,  # 指定GPU id
+            }
+        )
 
-    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
-    result = engine(img_url)
-    print(result)
+        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+        result = engine(img_url)
+        print(result)
 
-    result.vis('vis_result.jpg')
-    ```
+        result.vis('vis_result.jpg')
+        ```
 
-    GPU版
+    === "NPU"
 
-    ```python linenums="1" hl_lines="3-9"
-    from rapidocr import EngineType, RapidOCR
+        ```python linenums="1" hl_lines="3-9"
+        from rapidocr import EngineType, RapidOCR
 
-    engine = RapidOCR(
-        params={
-        "Det.engine_type": EngineType.PADDLE,
-        "EngineConfig.paddle.use_cuda": True,  # 使用PaddlePaddle GPU版推理
-        "EngineConfig.paddle.gpu_id": 0,  # 指定GPU id
-        }
-    )
+        engine = RapidOCR(
+            params={
+            "Det.engine_type": EngineType.PADDLE,
+            "EngineConfig.paddle.use_npu": True,  # 使用PaddlePaddle NPU版推理
+            "EngineConfig.paddle.npu_id": 0,  # 指定NPU id
+            }
+        )
 
-    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
-    result = engine(img_url)
-    print(result)
+        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+        result = engine(img_url)
+        print(result)
 
-    result.vis('vis_result.jpg')
-    ```
-
-3. 查看输出日志。下面日志中打印出了**Using engine_name: paddle**，则证明使用的推理引擎是PaddlePaddle。
+        result.vis('vis_result.jpg')
+        ```
+3. 查看输出日志。下面日志中打印出了 **Using engine_name: paddle**，则证明使用的推理引擎是PaddlePaddle。
 
     ```bash linenums="1" hl_lines="3 6"
     [INFO] 2025-03-22 15:20:45,528 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdmodel
@@ -159,49 +178,71 @@ hide:
 
 2. 指定PyTorch作为推理引擎
 
-    CPU版
+    === "CPU"
 
-    ```python linenums="1" hl_lines="3"
-    from rapidocr import RapidOCR
+        ```python linenums="1" hl_lines="3"
+        from rapidocr import RapidOCR
 
-    engine = RapidOCR(
-        params={
-            "Det.engine_type": EngineType.TORCH,
-            "Cls.engine_type": EngineType.TORCH,
-            "Rec.engine_type": EngineType.TORCH,
-        }
-    )
+        engine = RapidOCR(
+            params={
+                "Det.engine_type": EngineType.TORCH,
+                "Cls.engine_type": EngineType.TORCH,
+                "Rec.engine_type": EngineType.TORCH,
+            }
+        )
 
-    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
-    result = engine(img_url)
-    print(result)
+        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+        result = engine(img_url)
+        print(result)
 
-    result.vis('vis_result.jpg')
-    ```
+        result.vis('vis_result.jpg')
+        ```
 
-    GPU版
+    === "GPU"
 
-    ```python linenums="1" hl_lines="3-9"
-    from rapidocr import EngineType, RapidOCR
+        ```python linenums="1" hl_lines="3-9"
+        from rapidocr import EngineType, RapidOCR
 
-    engine = RapidOCR(
-        params={
-            "Det.engine_type": EngineType.TORCH,
-            "Cls.engine_type": EngineType.TORCH,
-            "Rec.engine_type": EngineType.TORCH,
-            "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
-            "EngineConfig.torch.gpu_id": 0,  # 指定GPU id
-        }
-    )
+        engine = RapidOCR(
+            params={
+                "Det.engine_type": EngineType.TORCH,
+                "Cls.engine_type": EngineType.TORCH,
+                "Rec.engine_type": EngineType.TORCH,
+                "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
+                "EngineConfig.torch.gpu_id": 0,  # 指定GPU id
+            }
+        )
 
-    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
-    result = engine(img_url)
-    print(result)
+        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+        result = engine(img_url)
+        print(result)
 
-    result.vis('vis_result.jpg')
-    ```
+        result.vis('vis_result.jpg')
+        ```
 
-3. 查看输出日志。下面日志中打印出了**Using engine_name: torch**，则证明使用的推理引擎是PyTorch。
+    === "NPU"
+
+        ```python linenums="1" hl_lines="3-9"
+        from rapidocr import EngineType, RapidOCR
+
+        engine = RapidOCR(
+            params={
+                "Det.engine_type": EngineType.TORCH,
+                "Cls.engine_type": EngineType.TORCH,
+                "Rec.engine_type": EngineType.TORCH,
+                "EngineConfig.torch.use_npu": True,  # 使用torch NPU版推理
+                "EngineConfig.torch.npu_id": 0,  # 指定NPU id
+            }
+        )
+
+        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+        result = engine(img_url)
+        print(result)
+
+        result.vis('vis_result.jpg')
+        ```
+
+3. 查看输出日志。下面日志中打印出了 **Using engine_name: torch**，则证明使用的推理引擎是PyTorch。
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-22 15:39:13,241 base.py:30: Using engine_name: torch

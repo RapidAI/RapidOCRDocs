@@ -24,4 +24,4 @@ print(result)
 result.vis("vis_result.jpg")
 ```
 
-上面第4行通过`Det.model_path`指定了本地已经下载好的文本检测模型。文本方向分类和文本识别模型也可同样指定。(`Cls.model_path`和`Rec.model_path`)
+上面第4行通过`Det.model_path`指定了本地已经下载好的文本检测模型。文本方向分类和文本识别模型也可同样指定。(`Cls.model_path`和`Rec.model_path`同理)

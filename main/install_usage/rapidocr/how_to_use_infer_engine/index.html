@@ -107,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#onnxruntime" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -893,6 +893,15 @@ You're not viewing the latest version.
       目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      引言
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#onnxruntime" class="md-nav__link">
@@ -1711,6 +1720,15 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      引言
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#onnxruntime" class="md-nav__link">
     <span class="md-ellipsis">
       使用ONNXRuntime
@@ -1803,14 +1821,11 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
+<h3 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>在<code>rapidocr&gt;=3.0.0</code>版本之后，<code>rapidocr</code>可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。</p>
+<p>例如：文本检测使用ONNXRuntime，文本识别使用Paddle（<code>params={"Rec.engine_type": EngineType.PADDLE}</code>）。同时，不同版本的OCR也可以通过<code>Det.ocr_version</code>灵活指定。</p>
 <p><code>rapidocr</code>支持4种推理引擎（<strong>ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch</strong>），推荐首先使用 <strong>ONNXRuntime CPU</strong> 版。默认为ONNXRuntime。</p>
 <p><code>rapidocr</code>是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><code>rapidocr&gt;=3.0.0</code>版本，可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。
-例如：文本检测使用ONNXRuntime，文本识别使用Paddle（<code>params={"Rec.engine_type": EngineType.PADDLE}</code>）。
-同时，不同版本的OCR也可以通过<code>Det.ocr_version</code>灵活指定。</p>
-</div>
 <h3 id="onnxruntime">使用ONNXRuntime<a class="headerlink" href="#onnxruntime" title="Permanent link">&para;</a></h3>
 <ol>
 <li>

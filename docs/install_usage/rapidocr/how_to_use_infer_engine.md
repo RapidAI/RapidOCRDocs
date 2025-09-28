@@ -4,15 +4,15 @@ hide:
   - toc
 ---
 
+### 引言
+
+在`rapidocr>=3.0.0`版本之后，`rapidocr`可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。
+
+例如：文本检测使用ONNXRuntime，文本识别使用Paddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。同时，不同版本的OCR也可以通过`Det.ocr_version`灵活指定。
+
 `rapidocr`支持4种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch**），推荐首先使用 **ONNXRuntime CPU** 版。默认为ONNXRuntime。
 
 `rapidocr`是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。
-
-!!! info
-
-    `rapidocr>=3.0.0`版本，可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。
-    例如：文本检测使用ONNXRuntime，文本识别使用Paddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。
-    同时，不同版本的OCR也可以通过`Det.ocr_version`灵活指定。
 
 ### 使用ONNXRuntime
 

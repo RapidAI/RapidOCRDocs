@@ -212,6 +212,7 @@ hide:
 
         result.vis('vis_result.jpg')
         ```
+
 3. 查看输出日志。下面日志中打印出了 **Using engine_name: paddle**，则证明使用的推理引擎是PaddlePaddle。
 
     ```bash linenums="1" hl_lines="3 6"
@@ -279,25 +280,35 @@ hide:
 
     === "NPU"
 
-        ```python linenums="1" hl_lines="3-9"
-        from rapidocr import EngineType, RapidOCR
+        !!! tip
 
-        engine = RapidOCR(
-            params={
-                "Det.engine_type": EngineType.TORCH,
-                "Cls.engine_type": EngineType.TORCH,
-                "Rec.engine_type": EngineType.TORCH,
-                "EngineConfig.torch.use_npu": True,  # 使用torch NPU版推理
-                "EngineConfig.torch.npu_id": 0,  # 指定NPU id
-            }
-        )
+            仅在`rapidocr>3.4.0`中支持。
 
-        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
-        result = engine(img_url)
-        print(result)
+            `torch_npu`官方相关文档：[link](https://github.com/Ascend/pytorch)
 
-        result.vis('vis_result.jpg')
-        ```
+        1. 安装`torch_npu`，参见：[docs](https://github.com/Ascend/pytorch#installation)
+
+        2. 使用
+
+            ```python linenums="1" hl_lines="3-11"
+            from rapidocr import EngineType, RapidOCR
+
+            engine = RapidOCR(
+                params={
+                    "Det.engine_type": EngineType.TORCH,
+                    "Cls.engine_type": EngineType.TORCH,
+                    "Rec.engine_type": EngineType.TORCH,
+                    "EngineConfig.torch.use_npu": True,  # 使用torch NPU版推理
+                    "EngineConfig.torch.npu_id": 0,  # 指定NPU id
+                }
+            )
+
+            img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+            result = engine(img_url)
+            print(result)
+
+            result.vis('vis_result.jpg')
+            ```
 
 3. 查看输出日志。下面日志中打印出了 **Using engine_name: torch**，则证明使用的推理引擎是PyTorch。
 

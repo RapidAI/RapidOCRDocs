@@ -24,17 +24,74 @@ hide:
 
 2. ONNXRuntime作为默认推理引擎，无需显式指定即可使用。
 
-    ```python linenums="1"
-    from rapidocr import RapidOCR
+    === "CPU"
 
-    engine = RapidOCR()
+        ```python linenums="1"
+        from rapidocr import RapidOCR
 
-    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
-    result = engine(img_url)
-    print(result)
+        engine = RapidOCR()
 
-    result.vis('vis_result.jpg')
-    ```
+        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+        result = engine(img_url)
+        print(result)
+
+        result.vis('vis_result.jpg')
+        ```
+
+    === "NPU"
+
+        !!! tip
+
+            仅在`rapidocr>=3.1.0`中支持。
+
+            ONNXRuntime官方相关文档：[link](https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html)
+
+        1. 安装
+
+            ```bash linenums="1"
+            pip install rapidocr onnxruntime-cann
+            ```
+
+        2. 使用
+
+            ```python linenums="1"
+            from rapidocr import RapidOCR
+
+            engine = RapidOCR(params={"EngineConfig.onnxruntime.use_cann": True})
+
+            img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
+            result = engine(img_url)
+            print(result)
+
+            result.vis("vis_result.jpg")
+            ```
+
+    === "DirectML"
+
+        !!! tip
+
+            DirectML仅能Windows 10 Build 18362及以上使用。
+            ONNXRuntime官方相关文档：[link](https://onnxruntime.ai/docs/execution-providers/DirectML-ExecutionProvider.html)
+
+        1. 安装
+
+            ```bash linenums="1"
+            pip install rapidocr onnxruntime-directml
+            ```
+
+        2. 使用
+
+            ```python linenums="1"
+            from rapidocr import RapidOCR
+
+            engine = RapidOCR(params={"EngineConfig.onnxruntime.use_dml": True})
+
+            img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
+            result = engine(img_url)
+            print(result)
+
+            result.vis("vis_result.jpg")
+            ```
 
 3. 查看输出日志。下面日志中打印出了 **Using engine_name: onnxruntime**，则证明使用的推理引擎是ONNXRuntime。
 

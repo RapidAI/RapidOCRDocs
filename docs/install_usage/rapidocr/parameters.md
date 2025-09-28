@@ -76,7 +76,7 @@ result = engine(img_url, return_word_box=True, return_single_char_box=True)
 
 `log_level (str)`: 日志级别设置。可选择的有`debug / info / warning / error / critical`，默认为`info`，会打印加载模型等日志。如果设置`critical`，则不会打印任何日志。
 
-> 在`rapidocr==3.4.0`中，才添加此参数。
+> 在`rapidocr>=3.4.0`中，才添加此参数。
 
 #### EngineConfig
 
@@ -116,6 +116,8 @@ EngineConfig:
 
     paddle:
         cpu_math_library_num_threads: -1
+        use_npu: false  # rapidocr>=3.3.0
+        npu_id: 0  # rapidocr>=3.3.0
         use_cuda: false
         gpu_id: 0
         gpu_mem: 500
@@ -123,62 +125,9 @@ EngineConfig:
     torch:
         use_cuda: false
         gpu_id: 0
+        use_npu: false  # rapidocr>3.4.1
+        npu_id: 0  # rapidocr>3.4.1
 ```
-
-=== "ONNXRuntime DirectML使用"
-
-    !!! tip
-
-        DirectML仅能Windows 10 Build 18362及以上使用。
-        ONNXRuntime官方相关文档：[link](https://onnxruntime.ai/docs/execution-providers/DirectML-ExecutionProvider.html)
-
-    1. 安装
-
-        ```bash linenums="1"
-        pip install rapidocr onnxruntime-directml
-        ```
-
-    2. 使用
-
-        ```python linenums="1"
-        from rapidocr import RapidOCR
-
-        engine = RapidOCR(params={"EngineConfig.onnxruntime.use_dml": True})
-
-        img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
-        result = engine(img_url)
-        print(result)
-
-        result.vis("vis_result.jpg")
-        ```
-
-=== "ONNXRuntime NPU使用"
-
-    !!! tip
-
-        仅在`rapidocr>=3.1.0`中支持。
-
-        ONNXRuntime官方相关文档：[link](https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html)
-
-    1. 安装
-
-        ```bash linenums="1"
-        pip install rapidocr onnxruntime-cann
-        ```
-
-    2. 使用
-
-        ```python linenums="1"
-        from rapidocr import RapidOCR
-
-        engine = RapidOCR(params={"EngineConfig.onnxruntime.use_cann": True})
-
-        img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
-        result = engine(img_url)
-        print(result)
-
-        result.vis("vis_result.jpg")
-        ```
 
 ONNXRuntime Python API 参见：[Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)
 
@@ -188,16 +137,14 @@ PaddlePaddle API 参见：[API 文档](https://www.paddlepaddle.org.cn/documenta
 
 PyTorch API 参见：[PyTorch documentation](https://pytorch.org/docs/stable/index.html)
 
-!!! tip
+以下三部分前4个参数基本类似，对应关系如下表，具体请参见[模型列表](../../model_list.md)文档：
 
-    以下三部分前4个参数基本类似，对应关系如下表，具体请参见[模型列表](../../model_list.md)文档：
-
-    | YAML 参数       | 对应枚举类       | 可用枚举值（示例）                 |导入方式 | 备注                                |
-    |-----------------|------------------|------------------|-------------------|-------------------------------------|
-    | `engine_type`   | `EngineType`     | `ONNXRUNTIME`（onnxruntime）<br>`OPENVINO`（openvino）<br>`PADDLE`（paddle）<br>`TORCH`（torch） | `from rapidocr import EngineType`|推理引擎类型         |
-    | `lang_type`     |  `LangDet`<br> `LangCls`<br> `LangRec` | **检测（Det）**：`CH`/`EN`/`MULTI`<br>**分类（Cls）**：`CH`<br>**识别（Rec）**：`CH`/`CH_DOC`/`EN`/`ARABIC`/... |`from rapidocr import LangDet`<br/> `from rapidocr import LangCls` <br/>`from rapidocr import LangRec`| 根据OCR处理阶段选择不同枚举值 |
-    | `model_type`    | `ModelType`      | `MOBILE`（mobile）<br>`SERVER`（server） |`from rapidocr import ModelType`| 模型大小与性能级别      |
-    | `ocr_version`   | `OCRVersion`     | `PPOCRV4`（PP-OCRv4）<br>`PPOCRV5`（PP-OCRv5） |`from rapidocr import OCRVersion`| 模型版本    |
+| YAML 参数       | 对应枚举类       | 可用枚举值（示例）                 |导入方式 | 备注                                |
+|-----------------|------------------|------------------|-------------------|-------------------------------------|
+| `engine_type`   | `EngineType`     | `ONNXRUNTIME`（onnxruntime）<br>`OPENVINO`（openvino）<br>`PADDLE`（paddle）<br>`TORCH`（torch） | `from rapidocr import EngineType`|推理引擎类型         |
+| `lang_type`     |  `LangDet`<br> `LangCls`<br> `LangRec` | **检测（Det）**：`CH`/`EN`/`MULTI`<br>**分类（Cls）**：`CH`<br>**识别（Rec）**：`CH`/`CH_DOC`/`EN`/`ARABIC`/... |`from rapidocr import LangDet`<br/> `from rapidocr import LangCls` <br/>`from rapidocr import LangRec`| 根据OCR处理阶段选择不同枚举值 |
+| `model_type`    | `ModelType`      | `MOBILE`（mobile）<br>`SERVER`（server） |`from rapidocr import ModelType`| 模型大小与性能级别      |
+| `ocr_version`   | `OCRVersion`     | `PPOCRV4`（PP-OCRv4）<br>`PPOCRV5`（PP-OCRv5） |`from rapidocr import OCRVersion`| 模型版本    |
 
 #### Det
 
@@ -315,29 +262,7 @@ Rec:
 
 `engine_type (str)`: 同Det部分介绍。
 
-`lang_type (str)`: 支持检测的语种类型。这里指的是`LangRec`，目前支持以下几种：
-
-```python linenums="1"
-class LangRec(Enum):
-    CH = "ch"
-    CH_DOC = "ch_doc"
-    EN = "en"
-    ARABIC = "arabic"
-    CHINESE_CHT = "chinese_cht"
-    CYRILLIC = "cyrillic"
-    DEVANAGARI = "devanagari"
-    JAPAN = "japan"
-    KOREAN = "korean"
-    KA = "ka"
-    LATIN = "latin"
-    TA = "ta"
-    TE = "te"
-    ESLAV = "eslav"
-    TH = "th"
-    EL = "el"
-```
-
-> `TH`和`EL`在`rapidocr>=3.4.0`中才支持
+`lang_type (str)`: 支持检测的语种类型。这里指的是`LangRec`，具体支持的语种参见：[model_list](../../model_list.md).
 
 `model_type (str)`: 同Det部分介绍。
 

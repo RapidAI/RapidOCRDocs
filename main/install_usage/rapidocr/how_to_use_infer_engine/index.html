@@ -2096,9 +2096,9 @@ ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-p
 </div>
 </div>
 </div>
-<ol>
-<li>查看输出日志。下面日志中打印出了 <strong>Using engine_name: paddle</strong>，则证明使用的推理引擎是PaddlePaddle。</li>
-</ol>
+</li>
+<li>
+<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: paddle</strong>，则证明使用的推理引擎是PaddlePaddle。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
@@ -2197,6 +2197,17 @@ ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-p
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>仅在<code>rapidocr&gt;3.4.0</code>中支持。</p>
+<p><code>torch_npu</code>官方相关文档：<a href="https://github.com/Ascend/pytorch">link</a></p>
+</div>
+<ol>
+<li>
+<p>安装<code>torch_npu</code>，参见：<a href="https://github.com/Ascend/pytorch#installation">docs</a></p>
+</li>
+<li>
+<p>使用</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
@@ -2222,15 +2233,17 @@ ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-p
 </span></span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
 </span></span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.use_npu&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用torch NPU版推理</span>
 </span></span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.npu_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定NPU id</span>
-</span></span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a>    <span class="p">}</span>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="p">)</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a>
+</span></span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="hll">    <span class="p">}</span>
+</span></span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="hll"><span class="p">)</span>
+</span></span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a>
 </span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true&quot;</span>
 </span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16"></a>
 </span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
+</li>
+</ol>
 </div>
 </div>
 </div>

@@ -153,6 +153,10 @@ nav:
       - 安装: install_usage/rapidocr/install.md
       - 使用: install_usage/rapidocr/usage.md
       - 参数介绍: install_usage/rapidocr/parameters.md
+      - 如何使用不同推理引擎？: install_usage/rapidocr/how_to_use_infer_engine.md
+      - 如何使用本地已下载模型推理？: install_usage/rapidocr/how_to_use_offline_model.md
+      - 如何使用PP-OCRv5模型？: install_usage/rapidocr/how_to_use_ppocrv5.md
+      - 如何将识别结果导出为markdown格式？: install_usage/rapidocr/how_to_convert_to_markdown.md
     - rapidocr_web:
       - 安装及使用: install_usage/rapidocr_web/usage.md
       - 桌面版使用教程: install_usage/rapidocr_web/desktop_usage.md

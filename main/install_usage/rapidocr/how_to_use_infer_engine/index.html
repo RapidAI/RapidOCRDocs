@@ -107,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#onnxruntime" class="md-skip">
           跳转至
         </a>
       
@@ -895,16 +895,6 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      如何使用不同推理引擎？
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="如何使用不同推理引擎？">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#onnxruntime" class="md-nav__link">
     <span class="md-ellipsis">
       使用ONNXRuntime
@@ -912,8 +902,8 @@ You're not viewing the latest version.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#openvino" class="md-nav__link">
     <span class="md-ellipsis">
       使用OpenVINO
@@ -921,8 +911,8 @@ You're not viewing the latest version.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#paddlepaddle" class="md-nav__link">
     <span class="md-ellipsis">
       使用PaddlePaddle
@@ -930,18 +920,13 @@ You're not viewing the latest version.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#pytorch" class="md-nav__link">
     <span class="md-ellipsis">
       使用PyTorch
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1726,16 +1711,6 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      如何使用不同推理引擎？
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="如何使用不同推理引擎？">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#onnxruntime" class="md-nav__link">
     <span class="md-ellipsis">
       使用ONNXRuntime
@@ -1743,8 +1718,8 @@ You're not viewing the latest version.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#openvino" class="md-nav__link">
     <span class="md-ellipsis">
       使用OpenVINO
@@ -1752,8 +1727,8 @@ You're not viewing the latest version.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#paddlepaddle" class="md-nav__link">
     <span class="md-ellipsis">
       使用PaddlePaddle
@@ -1761,18 +1736,13 @@ You're not viewing the latest version.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#pytorch" class="md-nav__link">
     <span class="md-ellipsis">
       使用PyTorch
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1833,12 +1803,13 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<h2 id="_1">如何使用不同推理引擎？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><code>rapidocr</code>支持4种推理引擎（<strong>ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch</strong>），推荐首先使用 <strong>ONNXRuntime CPU</strong> 版。默认为ONNXRuntime。</p>
 <p><code>rapidocr</code>是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p><code>rapidocr&gt;=3.0.0</code>版本，可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。例如：文本检测使用ONNXRuntime，文本识别使用Paddle（<code>params={"Rec.engine_type": EngineType.PADDLE}</code>）。同时，不同版本的OCR也可以通过<code>Det.ocr_version</code>灵活指定。</p>
+<p><code>rapidocr&gt;=3.0.0</code>版本，可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。
+例如：文本检测使用ONNXRuntime，文本识别使用Paddle（<code>params={"Rec.engine_type": EngineType.PADDLE}</code>）。
+同时，不同版本的OCR也可以通过<code>Det.ocr_version</code>灵活指定。</p>
 </div>
 <h3 id="onnxruntime">使用ONNXRuntime<a class="headerlink" href="#onnxruntime" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1869,7 +1840,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>查看输出日志。下面日志中打印出了**Using engine_name: onnxruntime**，则证明使用的推理引擎是ONNXRuntime。</p>
+<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: onnxruntime</strong>，则证明使用的推理引擎是ONNXRuntime。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -1925,7 +1896,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>查看输出日志。下面日志中打印出了**Using engine_name: openvino**，则证明使用的推理引擎是OpenVINO。</p>
+<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: openvino</strong>，则证明使用的推理引擎是OpenVINO。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
@@ -1949,7 +1920,9 @@ You're not viewing the latest version.
 </li>
 <li>
 <p>指定PaddlePaddle作为推理引擎</p>
-<p>CPU版</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CPU</label><label for="__tabbed_1_2">GPU</label><label for="__tabbed_1_3">NPU</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1980,7 +1953,8 @@ You're not viewing the latest version.
 </span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a>
 </span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>GPU版</p>
+</div>
+<div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -2011,24 +1985,59 @@ You're not viewing the latest version.
 </span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a>
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>查看输出日志。下面日志中打印出了**Using engine_name: paddle**，则证明使用的推理引擎是PaddlePaddle。</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span>
-<span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span>
-<span class="normal"><a href="#__codelineno-8-6">6</a></span>
-<span class="normal"><a href="#__codelineno-8-7">7</a></span>
-<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,528<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdmodel
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,529<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdiparams
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,746<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>paddle
-</span></span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,746<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdmodel
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,746<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdiparams
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,903<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>paddle
-</span></span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,904<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdmodel
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,904<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdiparams
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">RapidOCR</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span></span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span></span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="hll">    <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span></span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="hll">    <span class="s2">&quot;EngineConfig.paddle.use_npu&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用PaddlePaddle NPU版推理</span>
+</span></span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="hll">    <span class="s2">&quot;EngineConfig.paddle.npu_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定NPU id</span>
+</span></span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="hll">    <span class="p">}</span>
+</span></span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="hll"><span class="p">)</span>
+</span></span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true&quot;</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<ol>
+<li>查看输出日志。下面日志中打印出了 <strong>Using engine_name: paddle</strong>，则证明使用的推理引擎是PaddlePaddle。</li>
+</ol>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,528<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdmodel
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,529<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdiparams
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,746<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>paddle
+</span></span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,746<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdmodel
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,746<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdiparams
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,903<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>paddle
+</span></span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,904<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdmodel
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:20:45,904<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdiparams
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -2041,38 +2050,9 @@ You're not viewing the latest version.
 </li>
 <li>
 <p>指定PyTorch作为推理引擎</p>
-<p>CPU版</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-9-10">10</a></span>
-<span class="normal"><a href="#__codelineno-9-11">11</a></span>
-<span class="normal"><a href="#__codelineno-9-12">12</a></span>
-<span class="normal"><a href="#__codelineno-9-13">13</a></span>
-<span class="normal"><a href="#__codelineno-9-14">14</a></span>
-<span class="normal"><a href="#__codelineno-9-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
-</span></span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a>        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a>        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a>        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a>    <span class="p">}</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="p">)</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true&quot;</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-<p>GPU版</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">CPU</label><label for="__tabbed_2_2">GPU</label><label for="__tabbed_2_3">NPU</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
@@ -2087,40 +2067,111 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-10-12">12</a></span>
 <span class="normal"><a href="#__codelineno-10-13">13</a></span>
 <span class="normal"><a href="#__codelineno-10-14">14</a></span>
-<span class="normal"><a href="#__codelineno-10-15">15</a></span>
-<span class="normal"><a href="#__codelineno-10-16">16</a></span>
-<span class="normal"><a href="#__codelineno-10-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">RapidOCR</span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
-</span></span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span></span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.use_cuda&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用torch GPU版推理</span>
-</span></span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.gpu_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定GPU id</span>
-</span></span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a>    <span class="p">}</span>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="p">)</span>
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a>
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true&quot;</span>
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
-</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a>
-</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span></span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a>        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a>        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a>        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a>    <span class="p">}</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">)</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true&quot;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">RapidOCR</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span></span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span></span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.use_cuda&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用torch GPU版推理</span>
+</span></span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.gpu_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定GPU id</span>
+</span></span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a>    <span class="p">}</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="p">)</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true&quot;</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16"></a>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">RapidOCR</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span></span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span></span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.use_npu&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用torch NPU版推理</span>
+</span></span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.npu_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定NPU id</span>
+</span></span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a>    <span class="p">}</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="p">)</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true&quot;</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16"></a>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 </li>
 <li>
-<p>查看输出日志。下面日志中打印出了**Using engine_name: torch**，则证明使用的推理引擎是PyTorch。</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span>
-<span class="normal"><a href="#__codelineno-11-3">3</a></span>
-<span class="normal"><a href="#__codelineno-11-4">4</a></span>
-<span class="normal"><a href="#__codelineno-11-5">5</a></span>
-<span class="normal"><a href="#__codelineno-11-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:13,241<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>torch
-</span></span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:13,956<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.pth
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:14,136<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>torch
-</span></span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:14,136<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ptocr_mobile_v2.0_cls_infer.pth
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:14,168<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>torch
-</span></span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:14,168<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.pth
+<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: torch</strong>，则证明使用的推理引擎是PyTorch。</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:13,241<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>torch
+</span></span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:13,956<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.pth
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:14,136<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>torch
+</span></span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:14,136<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ptocr_mobile_v2.0_cls_infer.pth
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:14,168<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>torch
+</span></span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-22<span class="w"> </span><span class="m">15</span>:39:14,168<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.pth
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>

@@ -92,7 +92,7 @@ hide:
 
     参见PaddlePaddle官方安装文档 → [快速安装](https://www.paddlepaddle.org.cn/install/quick?docurl=undefined)
 
-    大家可以根据实际情况，选择安装CPU版、GPU版。
+    大家可以根据实际情况，选择安装需要的版本。
 
 2. 指定PaddlePaddle作为推理引擎
 
@@ -174,7 +174,7 @@ hide:
 
     参见PyTorch官方安装文档 → [Install PyTorch](https://pytorch.org/#:~:text=and%20easy%20scaling.-,INSTALL%20PYTORCH,-Select%20your%20preferences)
 
-    大家可以根据实际情况，选择安装CPU版、GPU版。
+    大家可以根据实际情况，选择安装需要的版本。
 
 2. 指定PyTorch作为推理引擎
 

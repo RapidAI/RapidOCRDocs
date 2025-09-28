@@ -92,6 +92,7 @@ plugins:
 
 hooks:
   - hooks/expiry.py
+  - hooks/change_copyright.py
 
 extra:
   social:

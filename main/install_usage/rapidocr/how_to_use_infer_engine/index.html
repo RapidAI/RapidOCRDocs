@@ -960,7 +960,7 @@ You're not viewing the latest version.
   
   
   <span class="md-ellipsis">
-    如何使用本地已下载模型推理？
+    如何使用本地模型推理？
     
   </span>
   
@@ -1823,13 +1823,13 @@ You're not viewing the latest version.
 <!-- Page content -->
 <h3 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>在<code>rapidocr&gt;=3.0.0</code>版本之后，<code>rapidocr</code>可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。</p>
-<p>例如：文本检测使用ONNXRuntime，文本识别使用Paddle（<code>params={"Rec.engine_type": EngineType.PADDLE}</code>）。同时，不同版本的OCR也可以通过<code>Det.ocr_version</code>灵活指定。</p>
+<p>例如：文本检测使用ONNXRuntime，文本识别使用PaddlePaddle（<code>params={"Rec.engine_type": EngineType.PADDLE}</code>）。同时，不同版本的OCR也可以通过<code>Det.ocr_version</code>灵活指定。</p>
 <p><code>rapidocr</code>支持4种推理引擎（<strong>ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch</strong>），推荐首先使用 <strong>ONNXRuntime CPU</strong> 版。默认为ONNXRuntime。</p>
 <p><code>rapidocr</code>是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。</p>
 <h3 id="onnxruntime">使用ONNXRuntime<a class="headerlink" href="#onnxruntime" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>安装ONNXRuntime。推荐用CPU版的ONNXRuntime，GPU版不推荐在<code>rapidocr</code>中使用，相关原因参见：<a href="../../../blog/2022/09/24/onnxruntime-gpu%E6%8E%A8%E7%90%86/">ONNXRuntime GPU推理</a></p>
+<p>安装ONNXRuntime。推荐用CPU版的ONNXRuntime，GPU版不推荐在<code>rapidocr</code>中使用，相关原因参见：<a href="../../../blog/2022/09/24/onnxruntime-gpu%E6%8E%A8%E7%90%86/">ONNXRuntime GPU推理</a>。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>onnxruntime
 </span></code></pre></div></td></tr></table></div>
 </li>
@@ -1860,8 +1860,7 @@ You're not viewing the latest version.
 <div class="tabbed-block">
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>仅在<code>rapidocr&gt;=3.1.0</code>中支持。</p>
-<p>ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html">link</a></p>
+<p>仅在<code>rapidocr&gt;=3.1.0</code>中支持。ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html">link</a></p>
 </div>
 <ol>
 <li>
@@ -1949,12 +1948,12 @@ ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-p
 <h3 id="openvino">使用OpenVINO<a class="headerlink" href="#openvino" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>安装OpenVINO</p>
+<p>安装OpenVINO。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>pip<span class="w"> </span>install<span class="w"> </span>openvino
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>指定OpenVINO作为推理引擎</p>
+<p>指定OpenVINO作为推理引擎。</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -2010,7 +2009,7 @@ ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-p
 <p>大家可以根据实际情况，选择安装需要的版本。</p>
 </li>
 <li>
-<p>指定PaddlePaddle作为推理引擎</p>
+<p>指定PaddlePaddle作为推理引擎。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">CPU</label><label for="__tabbed_2_2">GPU</label><label for="__tabbed_2_3">NPU</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2078,6 +2077,10 @@ ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-p
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>仅在<code>rapidocr&gt;=3.3.0</code>中支持。对应版本的PaddlePaddle安装文档：<a href="https://www.paddlepaddle.org.cn/install/quick?docurl=undefined">link</a></p>
+</div>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
@@ -2136,11 +2139,11 @@ ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-p
 <ol>
 <li>
 <p>安装PyTorch。</p>
-<p>参见PyTorch官方安装文档 → <a href="https://pytorch.org/#:~:text=and%20easy%20scaling.-,INSTALL%20PYTORCH,-Select%20your%20preferences">Install PyTorch</a></p>
+<p>参见PyTorch官方安装文档 → <a href="https://pytorch.org/#:~:text=and%20easy%20scaling.-,INSTALL%20PYTORCH,-Select%20your%20preferences">Install PyTorch</a>。</p>
 <p>大家可以根据实际情况，选择安装需要的版本。</p>
 </li>
 <li>
-<p>指定PyTorch作为推理引擎</p>
+<p>指定PyTorch作为推理引擎。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">CPU</label><label for="__tabbed_3_2">GPU</label><label for="__tabbed_3_3">NPU</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2214,12 +2217,11 @@ ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-p
 <div class="tabbed-block">
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>仅在<code>rapidocr&gt;3.4.0</code>中支持。</p>
-<p><code>torch_npu</code>官方相关文档：<a href="https://github.com/Ascend/pytorch">link</a></p>
+<p>仅在<code>rapidocr&gt;3.4.0</code>中支持。<code>torch_npu</code>官方相关文档：<a href="https://github.com/Ascend/pytorch">link</a></p>
 </div>
 <ol>
 <li>
-<p>安装<code>torch_npu</code>，参见：<a href="https://github.com/Ascend/pytorch#installation">docs</a></p>
+<p>安装<code>torch_npu</code>，参见：<a href="https://github.com/Ascend/pytorch#installation">docs</a>。</p>
 </li>
 <li>
 <p>使用</p>
@@ -2422,13 +2424,13 @@ ONNXRuntime官方相关文档：<a href="https://onnxruntime.ai/docs/execution-p
         
         
           
-          <a href="../how_to_use_offline_model/" class="md-footer__link md-footer__link--next" aria-label="下一页: 如何使用本地已下载模型推理？">
+          <a href="../how_to_use_offline_model/" class="md-footer__link md-footer__link--next" aria-label="下一页: 如何使用本地模型推理？">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                如何使用本地已下载模型推理？
+                如何使用本地模型推理？
               </div>
             </div>
             <div class="md-footer__button md-icon">

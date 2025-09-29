@@ -62,7 +62,6 @@ theme:
       software-tag: fontawesome/solid/laptop-code
 
 plugins:
-  - tags
   - blog:
       archive: false
       post_date_format: short

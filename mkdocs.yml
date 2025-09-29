@@ -168,6 +168,7 @@ nav:
     - rapidocr_api:
       - 安装及使用: install_usage/rapidocr_api/usage.md
       - 更新日志: install_usage/rapidocr_api/changelog.md
+  - 更新日志: changelog.md
   - 常见问题: faq/faq.md
   - 周边项目: related_projects.md
   - 博客:

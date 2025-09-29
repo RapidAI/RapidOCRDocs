@@ -8,7 +8,7 @@ hide:
 
 在`rapidocr>=3.0.0`版本之后，`rapidocr`可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。
 
-例如：文本检测使用ONNXRuntime，文本识别使用Paddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。同时，不同版本的OCR也可以通过`Det.ocr_version`灵活指定。
+例如：文本检测使用ONNXRuntime，文本识别使用PaddlePaddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。同时，不同版本的OCR也可以通过`Det.ocr_version`灵活指定。
 
 `rapidocr`支持4种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch**），推荐首先使用 **ONNXRuntime CPU** 版。默认为ONNXRuntime。
 
@@ -16,7 +16,7 @@ hide:
 
 ### 使用ONNXRuntime
 
-1. 安装ONNXRuntime。推荐用CPU版的ONNXRuntime，GPU版不推荐在`rapidocr`中使用，相关原因参见：[ONNXRuntime GPU推理](../../blog/posts/inference_engine/onnxruntime/onnxruntime-gpu.md)
+1. 安装ONNXRuntime。推荐用CPU版的ONNXRuntime，GPU版不推荐在`rapidocr`中使用，相关原因参见：[ONNXRuntime GPU推理](../../blog/posts/inference_engine/onnxruntime/onnxruntime-gpu.md)。
 
     ```bash linenums="1"
     pip install onnxruntime
@@ -42,9 +42,7 @@ hide:
 
         !!! tip
 
-            仅在`rapidocr>=3.1.0`中支持。
-
-            ONNXRuntime官方相关文档：[link](https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html)
+            仅在`rapidocr>=3.1.0`中支持。ONNXRuntime官方相关文档：[link](https://onnxruntime.ai/docs/execution-providers/community-maintained/CANN-ExecutionProvider.html)
 
         1. 安装
 
@@ -106,13 +104,13 @@ hide:
 
 ### 使用OpenVINO
 
-1. 安装OpenVINO
+1. 安装OpenVINO。
 
     ```bash linenums="1"
     pip install openvino
     ```
 
-2. 指定OpenVINO作为推理引擎
+2. 指定OpenVINO作为推理引擎。
 
     ```python linenums="1" hl_lines="5-7"
     from rapidocr import RapidOCR, EngineType
@@ -151,7 +149,7 @@ hide:
 
     大家可以根据实际情况，选择安装需要的版本。
 
-2. 指定PaddlePaddle作为推理引擎
+2. 指定PaddlePaddle作为推理引擎。
 
     === "CPU"
 
@@ -195,6 +193,10 @@ hide:
 
     === "NPU"
 
+        !!! tip
+
+            仅在`rapidocr>=3.3.0`中支持。对应版本的PaddlePaddle安装文档：[link](https://www.paddlepaddle.org.cn/install/quick?docurl=undefined)
+
         ```python linenums="1" hl_lines="3-9"
         from rapidocr import EngineType, RapidOCR
 
@@ -230,11 +232,11 @@ hide:
 
 1. 安装PyTorch。
 
-    参见PyTorch官方安装文档 → [Install PyTorch](https://pytorch.org/#:~:text=and%20easy%20scaling.-,INSTALL%20PYTORCH,-Select%20your%20preferences)
+    参见PyTorch官方安装文档 → [Install PyTorch](https://pytorch.org/#:~:text=and%20easy%20scaling.-,INSTALL%20PYTORCH,-Select%20your%20preferences)。
 
     大家可以根据实际情况，选择安装需要的版本。
 
-2. 指定PyTorch作为推理引擎
+2. 指定PyTorch作为推理引擎。
 
     === "CPU"
 
@@ -282,11 +284,9 @@ hide:
 
         !!! tip
 
-            仅在`rapidocr>3.4.0`中支持。
+            仅在`rapidocr>3.4.0`中支持。`torch_npu`官方相关文档：[link](https://github.com/Ascend/pytorch)
 
-            `torch_npu`官方相关文档：[link](https://github.com/Ascend/pytorch)
-
-        1. 安装`torch_npu`，参见：[docs](https://github.com/Ascend/pytorch#installation)
+        1. 安装`torch_npu`，参见：[docs](https://github.com/Ascend/pytorch#installation)。
 
         2. 使用
 

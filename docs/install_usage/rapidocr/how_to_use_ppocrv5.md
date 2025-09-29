@@ -8,7 +8,7 @@ hide:
 
 值得说明的是，得益于解耦的设计，现在可以组合不同推理引擎、不同版本模型来灵活搭配使用。大家可以按需搭配哈。
 
-```python linenums="1"
+```python linenums="1" hl_lines="3-14"
 from rapidocr import EngineType, LangDet, LangRec, ModelType, OCRVersion, RapidOCR
 
 engine = RapidOCR(

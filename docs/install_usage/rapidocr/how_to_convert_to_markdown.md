@@ -6,7 +6,7 @@ hide:
 
 在`rapidocr>=3.2.0`中粗略支持了导出markdown格式排版，后续会逐步优化。使用方法：
 
-```python linenums="1"
+```python linenums="1" hl_lines="10"
 from rapidocr import RapidOCR
 
 engine = RapidOCR()

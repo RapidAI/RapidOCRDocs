@@ -9,6 +9,8 @@ repo_url: https://github.com/RapidAI/RapidOCR
 
 copyright: Copyright &copy; 2025 Maintained by SWHL.
 
+edit_uri: https://github.com/RapidAI/RapidOCRDocs/blob/main/docs
+
 theme:
   name: material
   logo: ./static/images/logov2.png
@@ -20,6 +22,8 @@ theme:
     - content.tooltips
     - content.code.copy
     - content.tabs.link
+    - content.action.edit  # 显示编辑按钮
+    - content.action.view  # 显示查看源码按钮
     - content.footnote.tooltips
     - navigation.expand  # 默认打开所有的子节
     - navigation.tabs # 顶级索引被作为tab
@@ -56,6 +60,8 @@ theme:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
     repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
     tag:
       default-tag: fontawesome/solid/tag
       hardware-tag: fontawesome/solid/microchip

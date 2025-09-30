@@ -2145,7 +2145,7 @@ You're not viewing the latest version.
 
 <!-- Page content -->
 <h4 id="q-onnxruntime-gpucpu">Q: 为什么我的模型在ONNXRuntime GPU版上比在CPU上还要慢？<a class="headerlink" href="#q-onnxruntime-gpucpu" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 因为OCR任务中输入图像Shape是动态的。每次GPU上都需要重新清空上一次不同Shape的缓存结果。如果输入图像Shape不变的情况下，ONNXRuntime GPU版一般都要比CPU快的。该问题已经提了相关issue（<a href="https://github.com/microsoft/onnxruntime/issues/13198">issue #13198</a>）。</p>
+<p><strong>A:</strong> 因为OCR任务中输入图像Shape是动态的。每次GPU上都需要重新清空上一次不同Shape的缓存结果。如果输入图像Shape不变的情况下，ONNXRuntime GPU版一般都要比CPU快的。该问题已经提了相关issue（<a href="https://github.com/microsoft/onnxruntime/issues/13198">issue [#13198](https://github.com/RapidAI/RapidOCR/issues/13198)</a>）。</p>
 <p>推荐CPU端推理用<code>rapidocr_onnxruntime</code>或者<code>rapidocr_openvino</code>，GPU端用<code>rapidocr_paddle</code>。关于<code>rapidocr_onnxruntime</code>和<code>rapidocr_paddle</code>两者之间推理，可参见：<a href="https://rapidai.github.io/RapidOCRDocs/v1.4.4/install_usage/rapidocr_paddle/usage/#_4">docs</a></p>
 <h4 id="q-32c">Q: 请问这个能在32位C#中用嘛?<a class="headerlink" href="#q-32c" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> C#可以32位，要用32位的dll，但nuget上的onnxruntime不支持win7。</p>

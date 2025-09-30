@@ -101,7 +101,7 @@ hooks:
   - hooks/link.py
 
 link_pages:
-  - chagnelog/*.md
+  - changelog/*.md
   - faq/*.md
 
 extra:

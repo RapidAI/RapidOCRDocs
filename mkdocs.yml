@@ -98,6 +98,11 @@ plugins:
 hooks:
   - hooks/expiry.py
   - hooks/change_copyright.py
+  - hooks/link.py
+
+link_pages:
+  - chagnelog/*.md
+  - faq/*.md
 
 extra:
   social:

@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/changelog/v3.4.1/">
       
       
-        <link rel="prev" href="../../install_usage/rapidocr_api/changelog/">
+        <link rel="prev" href="../v3.4.2/">
       
       
-        <link rel="next" href="../v3.4.2/">
+        <link rel="next" href="../../faq/faq/">
       
       
       <link rel="icon" href="../../static/images/logov2.png">
@@ -409,7 +409,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../v3.4.2/" class="md-tabs__link">
           
   
   
@@ -1328,6 +1328,29 @@ You're not viewing the latest version.
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../v3.4.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    v3.4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1479,29 +1502,6 @@ You're not viewing the latest version.
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../v3.4.2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    v3.4.2
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -2064,8 +2064,8 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<h2 id="_1">新增功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="paddleocrv320pp-ocrv5-issue-530">支持PaddleOCR在v3.2.0中发布的PP-OCRv5 英文/泰文/希腊文三个文本识别模型(issue <a href="https://github.com/RapidAI/RapidOCR/issues/530">#530</a>)<a class="headerlink" href="#paddleocrv320pp-ocrv5-issue-530" title="Permanent link">&para;</a></h3>
+<h3 id="_1">新增功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="paddleocrv320pp-ocrv5-issue-530">支持PaddleOCR在v3.2.0中发布的PP-OCRv5 英文/泰文/希腊文三个文本识别模型(issue <a href="https://github.com/RapidAI/RapidOCR/issues/530">#530</a>)<a class="headerlink" href="#paddleocrv320pp-ocrv5-issue-530" title="Permanent link">&para;</a></h4>
 <p>这三个语种默认对应<code>LangRec.EN</code>、<code>LangRec.TH</code>和<code>LangRec.EL</code>。具体可参见官方文档中<a href="https://rapidai.github.io/RapidOCRDocs/main/model_list/#_4">模型列表</a>一节。</p>
 <p>下面给出希腊文识别示例：</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -2096,12 +2096,12 @@ You're not viewing the latest version.
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="_2">改进优化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="detclsrecissue-544">统一det、cls和rec各个阶段统计运行时间的范围(issue <a href="https://github.com/RapidAI/RapidOCR/issues/544">#544</a>)<a class="headerlink" href="#detclsrecissue-544" title="Permanent link">&para;</a></h3>
+<h3 id="_2">改进优化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="detclsrecissue-544">统一det、cls和rec各个阶段统计运行时间的范围(issue <a href="https://github.com/RapidAI/RapidOCR/issues/544">#544</a>)<a class="headerlink" href="#detclsrecissue-544" title="Permanent link">&para;</a></h4>
 <p>都统一改为从前处理、模型推理和后处理都算上。</p>
-<h3 id="_3">重构单元测试部分<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="_3">重构单元测试部分<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>主要是拆分原有的<code>test_main.py</code>文件，利于后续维护</p>
-<h3 id="issue-531">添加日志打印开关(issue <a href="https://github.com/RapidAI/RapidOCR/issues/531">#531</a>)<a class="headerlink" href="#issue-531" title="Permanent link">&para;</a></h3>
+<h4 id="issue-531">添加日志打印开关(issue <a href="https://github.com/RapidAI/RapidOCR/issues/531">#531</a>)<a class="headerlink" href="#issue-531" title="Permanent link">&para;</a></h4>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -2122,9 +2122,9 @@ You're not viewing the latest version.
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="bug">Bug修复<a class="headerlink" href="#bug" title="Permanent link">&para;</a></h2>
-<h3 id="issue-528">修复保存中文路径乱码问题(issue <a href="https://github.com/RapidAI/RapidOCR/issues/528">#528</a>)<a class="headerlink" href="#issue-528" title="Permanent link">&para;</a></h3>
-<h3 id="pytorch26issue-527">修复PyTorch&gt;=2.6时，加载模型权重问题(issue <a href="https://github.com/RapidAI/RapidOCR/issues/527">#527</a>)<a class="headerlink" href="#pytorch26issue-527" title="Permanent link">&para;</a></h3>
+<h3 id="bug">Bug修复<a class="headerlink" href="#bug" title="Permanent link">&para;</a></h3>
+<h4 id="issue-528">修复保存中文路径乱码问题(issue <a href="https://github.com/RapidAI/RapidOCR/issues/528">#528</a>)<a class="headerlink" href="#issue-528" title="Permanent link">&para;</a></h4>
+<h4 id="pytorch26issue-527">修复PyTorch&gt;=2.6时，加载模型权重问题(issue <a href="https://github.com/RapidAI/RapidOCR/issues/527">#527</a>)<a class="headerlink" href="#pytorch26issue-527" title="Permanent link">&para;</a></h4>
 
 <!-- Source file information -->
 
@@ -2149,7 +2149,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2025年10月12日 09:44:43 CST">2025-10-12 09:44:43</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2025年10月12日 10:12:45 CST">2025-10-12 10:12:45</span>
   </span>
 
     
@@ -2273,7 +2273,7 @@ You're not viewing the latest version.
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../install_usage/rapidocr_api/changelog/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 更新日志">
+          <a href="../v3.4.2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: v3.4.2">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2283,20 +2283,20 @@ You're not viewing the latest version.
                 上一页
               </span>
               <div class="md-ellipsis">
-                更新日志
+                v3.4.2
               </div>
             </div>
           </a>
         
         
           
-          <a href="../v3.4.2/" class="md-footer__link md-footer__link--next" aria-label="下一页: v3.4.2">
+          <a href="../../faq/faq/" class="md-footer__link md-footer__link--next" aria-label="下一页: 常见问题">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                v3.4.2
+                常见问题
               </div>
             </div>
             <div class="md-footer__button md-icon">

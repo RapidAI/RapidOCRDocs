@@ -284,7 +284,7 @@ hide:
 
         !!! tip
 
-            仅在`rapidocr>3.4.0`中支持。`torch_npu`官方相关文档：[link](https://github.com/Ascend/pytorch)
+            仅在`rapidocr>=3.4.2`中支持。`torch_npu`官方相关文档：[link](https://github.com/Ascend/pytorch)
 
         1. 安装`torch_npu`，参见：[docs](https://github.com/Ascend/pytorch#installation)。
 

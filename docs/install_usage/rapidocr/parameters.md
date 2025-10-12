@@ -129,13 +129,14 @@ EngineConfig:
         npu_id: 0  # rapidocr>3.4.1
 ```
 
-ONNXRuntime Python API 参见：[Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)
+该部分的详细使用，请参见：[如何使用不同推理引擎？](./how_to_use_infer_engine.md)
 
-OpenVINO Python API 参见：[OpenVINO Python API](https://docs.openvino.ai/2025/api/ie_python_api/api.html)
+各个推理引擎的API：
 
-PaddlePaddle API 参见：[API 文档](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/index_cn.html)
-
-PyTorch API 参见：[PyTorch documentation](https://pytorch.org/docs/stable/index.html)
+- ONNXRuntime Python API 参见：[Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)
+- OpenVINO Python API 参见：[OpenVINO Python API](https://docs.openvino.ai/2025/api/ie_python_api/api.html)
+- PaddlePaddle API 参见：[API 文档](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/index_cn.html)
+- PyTorch API 参见：[PyTorch documentation](https://pytorch.org/docs/stable/index.html)
 
 以下三部分前4个参数基本类似，对应关系如下表，具体请参见[模型列表](../../model_list.md)文档：
 

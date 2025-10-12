@@ -179,6 +179,7 @@ nav:
       - 更新日志: install_usage/rapidocr_api/changelog.md
   - 更新日志:
     - v3.4.1: changelog/v3.4.1.md
+    - v3.4.2: changelog/v3.4.2.md
   - 常见问题: faq/faq.md
   - 周边项目: related_projects.md
   - 博客:

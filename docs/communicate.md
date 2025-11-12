@@ -24,8 +24,9 @@ hide:
 - 4群：419196348 已满
 - 5群：1032382811 已满
 - 6群：910202308 已满
-- 7群：953714814
+- 7群：953714814 已满
+- 8群: 1070419729
 
 <div align="left">
-    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/qq_group7.jpg" width="25%" height="25%" align="center">
+    <img src="https://github.com/RapidAI/RapidOCRDocs/releases/download/assets/qq_group8.jpg" width="25%" height="25%" align="center">
 </div>

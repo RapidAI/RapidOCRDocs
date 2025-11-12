@@ -46,7 +46,7 @@ TODO
 
 这一块的工作，breezedeus做得比较好，详情可以参见其博客：[Pix2Text (P2T) 新版公式检测模型](https://www.breezedeus.com/article/p2t-mfd-20230613)。
 
-有关数据集：[IBEM](https://zenodo.org/record/4757865) 和中文 [CnMFD_Dataset](https://github.com/breezedeus/CnMFD_Dataset)
+有关数据集：[IBEM](https://zenodo.org/records/4757865) 和中文 [CnMFD_Dataset](https://github.com/breezedeus/CnMFD_Dataset)
 
 ### 发票识别
 
@@ -58,12 +58,12 @@ TODO
 
 ### 文档增强
 
-- [DocDiff](https://arxiv.org/pdf/2305.03892.pdf)（[Github](https://github.com/Royalvice/DocDiff)）: 文档增强模型，可以用于文档去模糊、文档去噪、文档二值化、文档去水印和印章等任务。
+- [DocDiff](https://arxiv.org/pdf/2305.03892)（[Github](https://github.com/Royalvice/DocDiff)）: 文档增强模型，可以用于文档去模糊、文档去噪、文档二值化、文档去水印和印章等任务。
 
 ### 文档图像矫正
 
 - [PaperEdge](https://github.com/cvlab-stonybrook/PaperEdge)：文档图像矫正 | [Demo](https://huggingface.co/spaces/SWHL/PaperEdgeDemo)
-- [DocTr++](https://arxiv.org/pdf/2304.08796.pdf) | [Demo](https://demo.doctrp.top/) | [Code](https://github.com/fh2019ustc/DocTr-Plus)
+- [DocTr++](https://arxiv.org/pdf/2304.08796) | [Demo](https://demo.doctrp.top/) | [Code](https://github.com/fh2019ustc/DocTr-Plus)
 - [DocRes](https://github.com/ZZZHANG-jx/DocRes)： 统一文档图像恢复任务的广义模型
 
 ### 版面分析
@@ -77,7 +77,7 @@ TODO
     - 英文版面分析数据集：
         - [PubLayNet](https://github.com/ibm-aur-nlp/PubLayNet): IBM构建，34万张图像，分为5类：text, title list table figure。
         - [DocBank](https://doc-analysis.github.io/docbank-page/index.html)：微软亚洲研究院构建，50万英文文档图像，分为12类：摘要、作者、标题、公式、图形、页脚、列表、段落、参考、节标题、表格和文章标题。
-        - [D4LA](https://modelscope.cn/datasets/iic/D4LA/summary): 阿里通义实验室构建，11092张图像，12个文档种类，27个类别，手工标注。详情可参见论文[Vision Grid Transformer for Document Layout Analysis](https://arxiv.org/pdf/2308.14978.pdf)
+        - [D4LA](https://modelscope.cn/datasets/iic/D4LA/summary): 阿里通义实验室构建，11092张图像，12个文档种类，27个类别，手工标注。详情可参见论文[Vision Grid Transformer for Document Layout Analysis](https://arxiv.org/pdf/2308.14978)
 
     - 中文版面分析数据集：
         - [CDLA](https://github.com/buptlihang/CDLA)：中文文档版面分析数据集，面向中文文献类（论文）场景，总共6000张（5000训练，1000测试），分为10类：正文、标题、图片、图片标题、表格、表格标题、页眉、页脚、注释和公式。
@@ -122,10 +122,10 @@ TODO
 - 相关论文和帖子：
     - [来也智能文档处理系统中的印章识别实践](https://laiye.com/tech-blog/2613)
     - [【技术新趋势】合合信息：复杂环境下ocr与印章识别技术理解及研发趋势](https://blog.csdn.net/INTSIG/article/details/125203307)
-    - [基于文字分割的印章识别技术](https://hanspub.org/journal/PaperInformation.aspx?paperID=40945)
+    - [基于文字分割的印章识别技术](https://pdf.hanspub.org/CSA20210300000_33555311.pdf)
 - 相关工程：
     - [JS生成印章](https://github.com/niezhiliang/canvas-draw-seal)
-    - [Python绘制透明背景印章](https://www.bilibili.com/read/cv15847481/)
+    - [Python绘制透明背景印章](https://www.bilibili.com/opus/641999668409008129)
     - [在线印章合成大全网站](http://www.395.net.cn/)
     - [TrOCR-Seal-Recognition](https://github.com/Gmgge/TrOCR-Seal-Recognition)
 - 数据集汇总：

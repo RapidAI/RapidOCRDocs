@@ -18,7 +18,7 @@ comments: true
 
 ### 简介
 
-- PaddleOCR项目模型转换，主要借助[`paddle2onnx`](https://github.com/PaddlePaddle/Paddle2ONNX)库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了[PaddleOCRModelConverter](https://github.com/RapidAI/PaddleOCRModelConverter)转换工具。
+- PaddleOCR项目模型转换，主要借助[`paddle2onnx`](https://github.com/PaddlePaddle/Paddle2ONNX)库实现。针对PaddleOCR中涉及到的相关模型，直接转换并不太方便。因此，推出了[PaddleOCRModelConverter](https://github.com/RapidAI/PaddleOCRModelConvert)转换工具。
 
 ### 在线转换
 
@@ -29,4 +29,4 @@ comments: true
     <iframe src="https://swhl-paddleocrmodelconverter.hf.space" frameborder="0" width="1550" height="850"></iframe>
 </div>
 
-### [离线转换](https://github.com/RapidAI/PaddleOCRModelConverter)
+### [离线转换](https://github.com/RapidAI/PaddleOCRModelConvert)

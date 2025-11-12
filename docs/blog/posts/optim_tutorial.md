@@ -13,7 +13,7 @@ comments: true
 
 !!! note
 
-    以下尝试情况，均已经在[在线demo](https://huggingface.co/spaces/SWHL/RapidOCRDemo)中实现，看完之后，可移步那里去尝试。
+    以下尝试情况，均已经在[在线demo](https://www.modelscope.cn/studios/RapidAI/RapidOCRv3.0.0)中实现，看完之后，可移步那里去尝试。
 
 ### 引言
 
@@ -64,7 +64,7 @@ comments: true
 
    - 将padding之后的图像再次送入RapidOCR中尝试，查看是否仍然出现上述问题。
 
-2. 将该图像上传到[在线demo](https://huggingface.co/spaces/SWHL/RapidOCRDemo)中，查看能否复现问题？
+2. 将该图像上传到[在线demo](https://www.modelscope.cn/studios/RapidAI/RapidOCRv3.0.0)中，查看能否复现问题？
    - 如不能复现，着重比对环境是否与在线demo中相关包使用版本不一致情况？
    - 在线demo所用的各个包版本情况：
 
@@ -81,7 +81,7 @@ comments: true
 4. 如果调节三个参数也不能解决问题，只能尝试`server`版的文本检测和文本识别模型了。
    1. 首先更换`server`版的文本检测模型，查看是否解决问题
    2. 在第1步基础上，更换`server`版的文本识别模型，查看是否解决问题
-5. 尝试更换不同版本模型，来查看效果。具体可在[在线demo](https://huggingface.co/spaces/SWHL/RapidOCRDemo)中尝试
+5. 尝试更换不同版本模型，来查看效果。具体可在[在线demo](https://www.modelscope.cn/studios/RapidAI/RapidOCRv3.0.0)中尝试
 
 ### 个别字识别错误调优篇
 

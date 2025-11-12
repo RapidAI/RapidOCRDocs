@@ -43,7 +43,7 @@ RapidOCR产品开源免费，并且将持续提供免费的技术支持。但是
 If you are not in mainland China, you can also support the me through:
 
 <div align="left">
-    <a href="https://www.buymeacoffee.com/SWHL"><img src="https://raw.githubusercontent.com/RapidAI/.github/main/assets/buymeacoffe.png" width="25%"></a>
+    <a href="https://buymeacoffee.com/swhl"><img src="https://raw.githubusercontent.com/RapidAI/.github/main/assets/buymeacoffe.png" width="25%"></a>
 </div>
 
 ### 当前赞助商

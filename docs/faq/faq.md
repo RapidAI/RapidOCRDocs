@@ -21,7 +21,7 @@ hide:
 
 #### Q: Linux部署python的程序时，`import cv2`时会报`ImportError: ligGL.so.1: cannot open shared object file: No such file or directory`?
 
-**A:** [解决方法](https://stackoverflow.com/a/63978454/3335415
+**A:** [解决方法](https://stackoverflow.com/questions/63977422/error-trying-to-import-cv2opencv-python-package/63978454
 ) 有两个(来自群友ddeef)：
 
   1. 安装`opencv-python-headless`取代`opencv-python`;
@@ -61,7 +61,7 @@ hide:
 
 #### Q: onnxruntime编译好的C++库，哪里可以下载到？
 
-**A:** 从这里：<https://github.com/RapidOCR/OnnxruntimeBuilder/releases/tag/1.7.0>
+**A:** 从这里：<https://github.com/RapidAI/OnnxruntimeBuilder/releases/tag/1.7.0>
 
 #### Q: 目前简单测试环境是  Win10 + Cygwin + gcc + 纯C编程，可以在C程序中直接接入简单OCR功能吗？
 

@@ -11,7 +11,7 @@ comments: true
 
 <!-- more -->
 
-#### [RapidStructure](https://github.com/RapidAI/RapidStructure) ：版面分析
+#### [RapidStructure](https://github.com/RapidAI/RapidDoc) ：版面分析
 
 - [含文本的图像方向分类](https://github.com/RapidAI/RapidOrientation)
 - [版面分析](https://github.com/RapidAI/RapidLayout)

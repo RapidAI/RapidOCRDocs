@@ -47,7 +47,7 @@ hide:
 - [CnOCR](https://github.com/breezedeus/cnocr)
 - [DAVAR-Lab-OCR](https://github.com/hikopensource/DAVAR-Lab-OCR)
 - [mindocr](https://github.com/mindspore-lab/mindocr)
-- [surya](https://github.com/VikParuchuri/surya)
+- [surya](https://github.com/datalab-to/surya)
 
 #### 文本检测模型
 

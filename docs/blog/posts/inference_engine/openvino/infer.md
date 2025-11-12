@@ -41,7 +41,7 @@ $ pip install openvino-dev
 - OpenVINO可以直接推理IR、ONNX和PaddlePaddle模型，具体如下(图来源:[link](https://docs.openvino.ai/latest/openvino_docs_OV_UG_OV_Runtime_User_Guide.html#doxid-openvino-docs-o-v-u-g-o-v-runtime-user-guide))：
 
     <div align="center">
-        <img src="https://docs.openvino.ai/latest/_images/BASIC_FLOW_IE_C.svg">
+        <img src="https://docs.openvino.ai/archives/index.html">
     </div>
 
 - 和ONNXRuntime同时推理同一个ONNX模型，OpenVINO推理速度更快

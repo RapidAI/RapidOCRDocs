@@ -47,6 +47,10 @@ hide:
 
 如果您发现本仓库对您的项目或学习有所助益，恳请您慷慨地给个小星星⭐，给予我们支持与鼓励！
 
+### 最近动态
+
+- 2025-12-06：加入AtomGit → [link](https://atomgit.com/RapidAI/RapidOCR)
+
 ### 整体框架
 
 ```mermaid

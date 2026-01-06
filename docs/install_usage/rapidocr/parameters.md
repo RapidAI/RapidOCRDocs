@@ -176,7 +176,7 @@ Det:
 
 `engine_type (str)`: 选定推理引擎。支持`onnxruntime`、`openvino`、`paddle`和`torch`四个值。默认为`onnxruntime`。
 
-`lang_type (str)`: 支持检测的语种类型。这里指的是`LangDet`，具体支持`ch`、`en`和`multi`3个值。`ch`可以识别中文和中英文混合文本检测。`en`支持英文文字检测。`multi`支持多语言文本检测。默认为`ch`。
+`lang_type (str)`: 支持检测的语种类型。这里指的是`LangDet`，具体支持`ch`、`en`和`multi`3个值。`ch`可以识别中文和中英文混合文本检测。`en`支持英文文字检测。`multi`支持多语言文本检测。默认为`ch`。详细参见：[docs](https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1)
 
 `model_type (str)`: 模型量级选择，支持`mobile`（轻量型）和`server`（服务型）。默认为`mobile`。
 

@@ -2,7 +2,7 @@
 comments: true
 hide:
   - navigation
-  - toc
+#   - toc
 ---
 
 
@@ -54,6 +54,12 @@ engine = RapidOCR(
 
 | 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
 |----------------|---------------------------|-------------------|-----------------|-------------------|
+| 🆕 俄罗斯文[^3] | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `cyrillic`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 🆕 阿拉伯文[^4] | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `arabic`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 🆕 梵文等[^5] | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `devanagari`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 🆕 泰米尔文、英文 | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `ta`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 🆕 泰卢固文、英文 | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `te`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+
 | 英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `en`            | `mobile`<br>❎`server` | `PP-OCRv5` |
 | 泰文、英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `th`            | `mobile`<br>❎`server` | `PP-OCRv5` |
 | 希腊文、英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `el`            | `mobile`<br>❎`server` | `PP-OCRv5` |
@@ -100,3 +106,6 @@ result.vis("vis_result.jpg")
 
 [^1]: 英文、法文、德文、南非荷兰文、意大利文、西班牙文、波斯尼亚文、葡萄牙文、捷克文、威尔士文、丹麦文、爱沙尼亚文、爱尔兰文、克罗地亚文、乌兹别克文、匈牙利文、塞尔维亚文（latin）、印度尼西亚文、欧西坦文、冰岛文、立陶宛文、毛利文、马来文、荷兰文、挪威文、波兰文、斯洛伐克文、斯洛文尼亚文、阿尔巴尼亚文、瑞典文、西瓦希里文、塔加洛文、土耳其文、拉丁文
 [^2]: 简体中文、中文拼音、繁体中文、英文、日文
+[^3]: 俄罗斯文、白俄罗斯文、乌克兰文、塞尔维亚文（cyrillic）、保加利亚文、蒙古文、阿布哈兹文、阿迪赫文、卡巴尔达文、阿瓦尔文、达尔格瓦文、印古什文、车臣文、拉克文、列兹金文、塔巴萨兰文、哈萨克文、吉尔吉斯文、塔吉克文、马其顿文、鞑靼文、楚瓦什文、巴什基尔文、马里文、莫尔多瓦文、乌德穆尔特文、科米文、奥塞梯文、布里亚特文、卡尔梅克文、图瓦文、萨哈文、卡拉卡尔帕克文、英文
+[^4]: 阿拉伯文、波斯文、维吾尔文、乌尔都文、普什图文、库尔德文、信德文、俾路支文、英文
+[^5]: 印地文，马拉地文，尼泊尔文，比哈尔文，迈蒂利文，古英文，博杰普尔文，马加希文，萨达里文，尼瓦尔文，孔卡尼文，梵文，哈里亚纳文、英文

@@ -80,6 +80,10 @@ result = engine(img_url, return_word_box=True, return_single_char_box=True)
 
 #### EngineConfig
 
+!!! note
+
+    下面显示的为最新版本配置。如果遇到某些字段未找到等问题。请切换为对应版本的当前文档查看。
+
 该部分为相关推理引擎的配置文件，大家可按需配置。该部分后面可能会增删部分关键字，如果有需求，可以在文档下面评论区指出。
 
 ```yaml linenums="1"
@@ -113,20 +117,40 @@ EngineConfig:
 
     openvino:
         inference_num_threads: -1
+        performance_hint: null
+        performance_num_requests: -1
+        enable_cpu_pinning: null
+        num_streams: -1
+        enable_hyper_threading: null
+        scheduling_core_type: null
 
     paddle:
         cpu_math_library_num_threads: -1
-        use_npu: false  # rapidocr>=3.3.0
-        npu_id: 0  # rapidocr>=3.3.0
+
+        use_npu: false
+        npu_ep_cfg:
+            device_id: 0
+            envs:
+                FLAGS_npu_jit_compile: 0
+                FLAGS_use_stride_kernel: 0
+                FLAGS_allocator_strategy: "auto_growth"
+                CUSTOM_DEVICE_BLACK_LIST: "pad3d,pad3d_grad,set_value,set_value_with_tensor"
+                FLAGS_npu_scale_aclnn: "True"
+                FLAGS_npu_split_aclnn: "True"
+
         use_cuda: false
-        gpu_id: 0
-        gpu_mem: 500
+        cuda_ep_cfg:
+            device_id: 0
+            gpu_mem: 500
 
     torch:
         use_cuda: false
-        gpu_id: 0
-        use_npu: false  # rapidocr>3.4.1
-        npu_id: 0  # rapidocr>3.4.1
+        cuda_ep_cfg:
+            device_id: 0
+
+        use_npu: false
+        npu_ep_cfg:
+            device_id: 0
 ```
 
 该部分的详细使用，请参见：[如何使用不同推理引擎？](./how_to_use_infer_engine.md)

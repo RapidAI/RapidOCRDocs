@@ -59,7 +59,7 @@ engine = RapidOCR(
 | 🆕 梵文等[^5] | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `devanagari`            | `mobile`<br>❎`server` | `PP-OCRv5` |
 | 🆕 泰米尔文、英文 | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `ta`            | `mobile`<br>❎`server` | `PP-OCRv5` |
 | 🆕 泰卢固文、英文 | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `te`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-
+||||||
 | 英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `en`            | `mobile`<br>❎`server` | `PP-OCRv5` |
 | 泰文、英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `th`            | `mobile`<br>❎`server` | `PP-OCRv5` |
 | 希腊文、英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` | `el`            | `mobile`<br>❎`server` | `PP-OCRv5` |

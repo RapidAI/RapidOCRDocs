@@ -2534,7 +2534,29 @@ You're not viewing the latest version.
         
       </main>
       
-        <!-- Footer -->
+        <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Footer -->
 <footer class="md-footer">
 
     <!-- Link to previous and/or next page -->
@@ -2560,7 +2582,6 @@ You're not viewing the latest version.
                     Competition
                 </div>
             </div>
-
         </a>
         
 
@@ -2604,21 +2625,23 @@ You're not viewing the latest version.
   
 </div>
 
-            <font color="#B9B9B9">
-                <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;">
-                    本站访问量：
-                    <script async src="//finicounter.eu.org/finicounter.js"></script>
-                    <span id="finicount_views"></span> &nbsp;|&nbsp;
-                </div>
-            </font>
-
+            <!-- Site Visits 访客统计 -->
             <style>
-                .footer-visit-count {
-                    height: fit-content;
-                    min-height: 55px;
-                    /* 根据实际情况调整此高度 */
+                .site-visit-count {
+                    padding: 0 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 0.85rem;
+                    /* color: black; */
                 }
             </style>
+            <script async src="//finicounter.eu.org/finicounter.js"></script>
+            <div class="site-visit-count">
+                <span>本站访问量：</span><span id="finicount_views"></span>
+            </div>
+
+            <!-- Social links -->
             
             
 <div class="md-social">

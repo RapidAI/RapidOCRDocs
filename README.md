@@ -4,7 +4,7 @@
 
 <https://rapidai.github.io/RapidOCRDocs/>
 
-## 鸣谢仓库
+### 鸣谢仓库
 
 - [giscus-theme-with-font](https://github.com/L33Z22L11/giscus-theme-with-font)
 - [Mkdocs教程](https://wcowin.work/Mkdocs-Wcowin/)

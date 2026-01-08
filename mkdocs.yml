@@ -13,8 +13,8 @@ edit_uri: https://github.com/RapidAI/RapidOCRDocs/blob/main/docs
 
 theme:
   name: material
-  logo: ./static/images/logov2.png
-  favicon: ./static/images/logov2.png
+  # logo: ./static/images/logov2.png
+  # favicon: ./static/images/logov2.png
   language: zh
   custom_dir: overrides
   features:

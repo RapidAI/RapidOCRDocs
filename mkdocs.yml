@@ -57,7 +57,7 @@ theme:
         icon: material/weather-night
         name: 暗黑主题
 
-  favicon: favicon-lightning.svg
+  favicon: ./static/images/favicon-lightning.svg
   icon:
     logo: material/bolt
     previous: fontawesome/solid/angle-left

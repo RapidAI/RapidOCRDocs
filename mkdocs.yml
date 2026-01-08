@@ -13,8 +13,8 @@ edit_uri: https://github.com/RapidAI/RapidOCRDocs/blob/main/docs
 
 theme:
   name: material
-  logo: material/bolt
-  favicon: material/bolt
+  # logo: material/bolt
+  favicon: ./static/images/favicon-lightning.svg
   language: zh
   custom_dir: overrides
   features:

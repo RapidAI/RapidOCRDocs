@@ -59,7 +59,7 @@ theme:
 
   favicon: ./static/images/favicon-lightning.svg
   icon:
-    logo: material/bolt
+    logo: ./static/images/favicon-lightning.svg
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
     repo: fontawesome/brands/github

@@ -13,8 +13,8 @@ edit_uri: https://github.com/RapidAI/RapidOCRDocs/blob/main/docs
 
 theme:
   name: material
-  logo: ./static/images/favicon-lightning.svg
-  favicon: ./static/images/favicon-lightning.svg
+  logo: material/bolt
+  favicon: material/bolt
   language: zh
   custom_dir: overrides
   features:
@@ -58,7 +58,7 @@ theme:
         name: 暗黑主题
 
   icon:
-    logo: ./static/images/favicon-lightning.svg
+    logo: material/bolt
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
     repo: fontawesome/brands/github

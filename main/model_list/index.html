@@ -2478,7 +2478,7 @@ You're not viewing the latest version.
 <p>所有模型目前托管在<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭社区</a>上。</p>
 <p><code>rapidocr</code> v3 版本已经集成了托管的所有模型，通过下面参数指定可以自动下载。对应的配置文件：<a href="https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml">default_model.yaml</a>。当然，小伙伴们也可以自己去上述链接下载。</p>
 <h2 id="_2">默认配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>直接通过pip安装rapidocr，使用时，可以不用指定任何参数，直接使用。因为指定了默认配置参数，下面写法：</p>
+<p>直接通过pip安装<code>rapidocr</code>使用时，可以不用指定任何参数，直接使用。因为设置了默认配置参数，下面写法：</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -2529,7 +2529,7 @@ You're not viewing the latest version.
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>        <span class="s2">&quot;Det.lang_type&quot;</span><span class="p">:</span> <span class="n">LangDet</span><span class="o">.</span><span class="n">CH</span><span class="p">,</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>        <span class="s2">&quot;Det.model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">MOBILE</span><span class="p">,</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>        <span class="s2">&quot;Det.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV4</span><span class="p">,</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">ONNXRUNTIME</span><span class="p">,</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>        <span class="s2">&quot;Rec.lang_type&quot;</span><span class="p">:</span> <span class="n">LangRec</span><span class="o">.</span><span class="n">CH</span><span class="p">,</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="s2">&quot;Rec.model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">MOBILE</span><span class="p">,</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="s2">&quot;Rec.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV5</span><span class="p">,</span>

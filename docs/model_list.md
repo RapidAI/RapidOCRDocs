@@ -16,7 +16,7 @@ hide:
 
 ## 默认配置
 
-直接通过pip安装rapidocr，使用时，可以不用指定任何参数，直接使用。因为指定了默认配置参数，下面写法：
+直接通过pip安装`rapidocr`使用时，可以不用指定任何参数，直接使用。因为设置了默认配置参数，下面写法：
 
 ```python linenums="1"
 from rapidocr import RapidOCR
@@ -41,7 +41,7 @@ engine = RapidOCR(
         "Det.lang_type": LangDet.CH,
         "Det.model_type": ModelType.MOBILE,
         "Det.ocr_version": OCRVersion.PPOCRV4,
-        "Rec.engine_type": EngineType.PADDLE,
+        "Rec.engine_type": EngineType.ONNXRUNTIME,
         "Rec.lang_type": LangRec.CH,
         "Rec.model_type": ModelType.MOBILE,
         "Rec.ocr_version": OCRVersion.PPOCRV5,

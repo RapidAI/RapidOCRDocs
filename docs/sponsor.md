@@ -68,7 +68,7 @@ If you are not in mainland China, you can also support the me through:
       <a href="https://github.com/youzzhang">
         <img src="https://avatars.githubusercontent.com/u/49047676?v=4" width="60" />
       </a><br />
-      <sub><a href="https://github.com/youzzhang">@your-sponsor2</a></sub>
+      <sub><a href="https://github.com/youzzhang">@youzzhang</a></sub>
     </td>
   </tr>
 </table>

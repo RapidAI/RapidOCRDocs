@@ -120,3 +120,9 @@
     transition: border-radius 0.4s cubic-bezier(.4, 2, .6, 1), box-shadow 0.3s;
     overflow: hidden;
 }
+
+/*图像圆角*/
+img.img1 {
+  border-radius: 25px;
+
+}

@@ -126,7 +126,6 @@ TODO
 - 相关工程：
     - [JS生成印章](https://github.com/niezhiliang/canvas-draw-seal)
     - [Python绘制透明背景印章](https://www.bilibili.com/opus/641999668409008129)
-    - [在线印章合成大全网站](http://www.395.net.cn/)
     - [TrOCR-Seal-Recognition](https://github.com/Gmgge/TrOCR-Seal-Recognition)
 - 数据集汇总：
     - [DocDiff](https://github.com/Royalvice/DocDiff)

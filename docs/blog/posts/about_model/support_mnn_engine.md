@@ -68,9 +68,11 @@ MNNConvert -f ONNX --modelFile rapidocr/models/ch_PP-OCRv4_det_infer.onnx --MNNM
 
 #### 运行推理代码
 
-首先运行`rapidocr`推理`ch_PP-OCRv4_det_infer.onnx`检测模型（默认）
+两者对比的模型为`ch_PP-OCRv4_det_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式推理, Exp2基于`RapidOCR框架+MNN`格式推理。
 
-=== "(Exp1) RapidOCR框架+ONNXRuntime格式模型"
+两次实验除模型不一样外，其余均相同。
+
+=== "(Exp1) RapidOCR+ONNXRuntime格式模型"
 
     Step 1: 获得推理结果
 
@@ -117,7 +119,7 @@ MNNConvert -f ONNX --modelFile rapidocr/models/ch_PP-OCRv4_det_infer.onnx --MNNM
     print(metric)
     ```
 
-=== "(Exp2) RapidOCR框架+MNN格式模型"
+=== "(Exp2) RapidOCR+MNN格式模型"
 
     Step 1: 获得推理结果
 

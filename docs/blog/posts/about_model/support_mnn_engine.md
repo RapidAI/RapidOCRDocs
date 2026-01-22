@@ -68,7 +68,7 @@ MNNConvert -f ONNX --modelFile rapidocr/models/ch_PP-OCRv4_det_infer.onnx --MNNM
 
 #### 运行推理代码
 
-两者对比的模型为`ch_PP-OCRv4_det_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式推理, Exp2基于`RapidOCR框架+MNN`格式推理。
+两者对比的模型为`ch_PP-OCRv4_det_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。
 
 两次实验除模型不一样外，其余均相同。
 

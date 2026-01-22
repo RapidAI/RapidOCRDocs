@@ -51,7 +51,7 @@ pip install MNN
 MNNConvert -f ONNX --modelFile rapidocr/models/ch_PP-OCRv4_det_infer.onnx --MNNModel mnn/ch_PP-OCRv4_det_infer.mnn --bizCode MNN
 ```
 
-输出下面类似日志，即为转换成功：
+输出以下内容，表示转换成功：
 
 ```bash linenums="1"
 The device supports: i8sdot:1, fp16:1, i8mm: 1, sve2: 0, sme2: 0

@@ -51,6 +51,20 @@ pip install MNN
 MNNConvert -f ONNX --modelFile rapidocr/models/ch_PP-OCRv4_det_infer.onnx --MNNModel mnn/ch_PP-OCRv4_det_infer.mnn --bizCode MNN
 ```
 
+输出下面类似日志，即为转换成功：
+
+```bash linenums="1"
+The device supports: i8sdot:1, fp16:1, i8mm: 1, sve2: 0, sme2: 0
+Start to Convert Other Model Format To MNN Model..., target version: 3.2
+[09:38:49] :46: ONNX Model ir version: 10
+[09:38:49] :47: ONNX Model opset version: 14
+Start to Optimize the MNN Net...
+caution: some weight absolute values are not zero and smaller than float min:1.175494e-38, please check your training process. op name:Add.119
+inputTensors : [ x, ]
+outputTensors: [ fetch_name_0, ]
+Converted Success!
+```
+
 ### 比较转化前后推理精度差异
 
 #### 运行环境

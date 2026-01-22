@@ -188,7 +188,17 @@ Converted Success!
 
 ### 结果对比
 
+!!! tip
+
+    其他版本的模型，我这里就直接给出对比结果了。因为教程都是一样的，仅换了一个模型而已。
+
 |Exp|模型|推理框架|模型格式|Precision↑|Recall↑|H-mean↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|:---:|
-|1|PP-OCRv4_mobile_det|RapidOCR |ONNXRuntime|0.8595|0.8434|0.8514|0.182|
-|2|PP-OCRv4_mobile_det|RapidOCR| MNN|0.8595|0.8434|0.8514|0.159|
+|1|ch_PP-OCRv4_det_infer|RapidOCR|ONNXRuntime|0.8595|0.8434|0.8514|0.182|
+|2|ch_PP-OCRv4_det_infer|RapidOCR|MNN|0.8595|0.8434|0.8514|0.159|
+|||||||||
+|3|ch_PP-OCRv5_mobile_det|RapidOCR|ONNXRuntime|0.7861|0.8266|0.8058|0.1835|
+|4|ch_PP-OCRv5_mobile_det|RapidOCR|MNN|0.7861|0.8266|0.8058|0.1526|
+|||||||||
+|5|ch_PP-OCRv4_det_server_infer|RapidOCR|ONNXRuntime|0.7713|0.8579|0.8123|2.8449|
+|6|ch_PP-OCRv4_det_server_infer|RapidOCR|MNN|0.7713|0.8579|0.8123|1.889|

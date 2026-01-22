@@ -15,7 +15,7 @@ hide:
 
 ## 引言
 
-首先感谢[narc1ssus1](https://github.com/narc1ssus1)小伙伴的PR [#613](https://github.com/RapidAI/RapidOCR/pull/613)。有了这个PR，我这也有了着手来推动支持MNN作为推理引擎的动力。
+首先感谢[narc1ssus1](https://github.com/narc1ssus1)小伙伴的PR [#613](https://github.com/RapidAI/RapidOCR/pull/613)。有了这个PR，我这也有了抓手来推动支持MNN作为推理引擎。
 
 ## 运行环境¶
 
@@ -190,7 +190,8 @@ Converted Success!
 
 !!! tip
 
-    其他版本的模型，我这里就直接给出对比结果了。因为教程都是一样的，仅换了一个模型而已。
+    1. 其他版本的模型，我这里就直接给出对比结果了。因为教程都是一样的，仅换了一个模型而已。
+    2.下面指标仅作为转换前后，比较模型精度差异使用哈！
 
 |Exp|模型|推理框架|模型格式|Precision↑|Recall↑|H-mean↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|:---:|
@@ -202,3 +203,9 @@ Converted Success!
 |||||||||
 |5|ch_PP-OCRv4_det_server_infer|RapidOCR|ONNXRuntime|0.7713|0.8579|0.8123|2.8449|
 |6|ch_PP-OCRv4_det_server_infer|RapidOCR|MNN|0.7713|0.8579|0.8123|1.889|
+|||||||||
+|7|en_PP-OCRv3_det_infer|RapidOCR|ONNXRuntime|0.8066|0.8380|0.8220|0.1463|
+|8|en_PP-OCRv3_det_infer|RapidOCR|MNN|0.8066|0.8380|0.8220|0.1262|
+|||||||||
+|9|Multilingual_PP-OCRv3_det_infer|RapidOCR|ONNXRuntime|0.4228|0.6921|0.5249|0.1681|
+|10|Multilingual_PP-OCRv3_det_infer|RapidOCR|MNN|0.4228|0.6921|0.5249|0.1282|

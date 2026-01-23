@@ -209,3 +209,6 @@ Converted Success!
 |||||||||
 |9|Multilingual_PP-OCRv3_det_infer|RapidOCR|ONNXRuntime|0.4228|0.6921|0.5249|0.1681|
 |10|Multilingual_PP-OCRv3_det_infer|RapidOCR|MNN|0.4228|0.6921|0.5249|0.1282|
+|||||||||
+|11|ch_PP-OCRv5_server_det|RapidOCR|ONNXRuntime|0.7394|0.8442|0.7883|2.0193|
+|12|ch_PP-OCRv5_server_det|RapidOCR|MNN|0.7394|0.8442|0.7883|1.6048|

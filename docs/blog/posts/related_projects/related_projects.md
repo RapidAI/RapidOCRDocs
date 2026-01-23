@@ -121,7 +121,7 @@ TODO
 
 - 相关论文和帖子：
     - [来也智能文档处理系统中的印章识别实践](https://laiye.com/tech-blog/2613)
-    - [【技术新趋势】合合信息：复杂环境下ocr与印章识别技术理解及研发趋势](https://blog.csdn.net/INTSIG/article/details/125203307)
+    - [【技术新趋势】合合信息：复杂环境下ocr与印章识别技术理解及研发趋势](https://www.cnblogs.com/intsig/p/17098265.html)
     - [基于文字分割的印章识别技术](https://pdf.hanspub.org/CSA20210300000_33555311.pdf)
 - 相关工程：
     - [JS生成印章](https://github.com/niezhiliang/canvas-draw-seal)

@@ -352,3 +352,21 @@ Converted Success!
 ||||||||
 |9|ch_PP-OCRv5_rec_server_infer|RapidOCR|ONNXRuntime|0.8129|0.9431|0.0582|
 |10|ch_PP-OCRv5_rec_server_infer|RapidOCR|MNN|0.8129|0.9431|0.0724|
+
+### 其他单独校验模型
+
+#### PP-OCRv4
+
+- [x] arabic_PP-OCRv4_rec_infer
+- [ ] chinese_cht_PP-OCRv3_rec_infer
+- [ ] cyrillic_PP-OCRv3_rec_infer
+- [ ] devanagari_PP-OCRv4_rec_infer
+- [ ] en_PP-OCRv4_rec_infer
+- [ ] japan_PP-OCRv4_rec_infer
+- [ ] ka_PP-OCRv4_rec_infer
+- [ ] korean_PP-OCRv4_rec_infer
+- [ ] latin_PP-OCRv3_rec_infer
+- [ ] ta_PP-OCRv4_rec_infer
+- [ ] te_PP-OCRv4_rec_infer
+
+#### PP-OCRv5

@@ -200,3 +200,155 @@ Converted Success!
 |12|ch_PP-OCRv5_server_det|RapidOCR|MNN|0.7394|0.8442|0.7883|1.6048|
 
 ## 支持Rec模型
+
+### 比较转化前后推理精度差异
+
+两者对比的模型为`ch_PP-OCRv4_rec_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。
+
+两次实验除模型不一样外，其余均相同。
+
+=== "(Exp1) RapidOCR+ONNXRuntime格式模型"
+
+    Step 1: 获得推理结果
+
+    ```python linenums="1"
+    import time
+
+    import cv2
+    import numpy as np
+    from datasets import load_dataset
+    from tqdm import tqdm
+
+    from rapidocr import EngineType, OCRVersion, RapidOCR
+
+    model_path = "rapidocr/models/ch_PP-OCRv4_rec_infer.onnx"
+    dict_path = "rapidocr/models/ppocr_keys_v1.txt"
+    engine = RapidOCR(
+        params={
+            "Rec.model_path": model_path,
+            "Rec.rec_keys_path": dict_path,
+        }
+    )
+
+    dataset = load_dataset("SWHL/text_rec_test_dataset")
+    test_data = dataset["test"]
+
+    content = []
+    for i, one_data in enumerate(tqdm(test_data)):
+        img = np.array(one_data.get("image"))
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+        t0 = time.perf_counter()
+        result = engine(img, use_rec=True, use_cls=False, use_det=False)
+        elapse = time.perf_counter() - t0
+
+        rec_text = result.txts[0]
+        if len(rec_text) <= 0:
+            rec_text = ""
+            elapse = 0
+
+        gt = one_data.get("label", None)
+        content.append(f"{rec_text}\t{gt}\t{elapse}")
+
+    with open("pred.txt", "w", encoding="utf-8") as f:
+        for v in content:
+            f.write(f"{v}\n")
+
+    ```
+
+    Step 2: 计算指标
+
+    ```python linenums="1"
+    from text_det_metric import TextDetMetric
+
+    metric = TextDetMetric()
+    pred_path = "pred.txt"
+    metric = metric(pred_path)
+    print(metric)
+    ```
+
+=== "(Exp2) RapidOCR+MNN格式模型"
+
+    Step 1: 获得推理结果
+
+    ```python linenums="1"
+    import time
+
+    import cv2
+    import numpy as np
+    from datasets import load_dataset
+    from tqdm import tqdm
+
+    from rapidocr import EngineType, OCRVersion, RapidOCR
+
+    model_path = "mnn/rec/PP-OCRv4/ch_PP-OCRv4_rec_infer.onnx"
+    dict_path = "rapidocr/models/ppocr_keys_v1.txt"
+    engine = RapidOCR(
+        params={
+            "Rec.model_path": model_path,
+            "Rec.rec_keys_path": dict_path,
+            "Rec.engine_type": EngineType.MNN,
+        }
+    )
+
+    dataset = load_dataset("SWHL/text_rec_test_dataset")
+    test_data = dataset["test"]
+
+    content = []
+    for i, one_data in enumerate(tqdm(test_data)):
+        img = np.array(one_data.get("image"))
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+        t0 = time.perf_counter()
+        result = engine(img, use_rec=True, use_cls=False, use_det=False)
+        elapse = time.perf_counter() - t0
+
+        rec_text = result.txts[0]
+        if len(rec_text) <= 0:
+            rec_text = ""
+            elapse = 0
+
+        gt = one_data.get("label", None)
+        content.append(f"{rec_text}\t{gt}\t{elapse}")
+
+    with open("pred.txt", "w", encoding="utf-8") as f:
+        for v in content:
+            f.write(f"{v}\n")
+
+    ```
+
+    Step 2: 计算指标
+
+    ```python linenums="1"
+    from text_rec_metric import TextRecMetric
+
+    metric = TextRecMetric()
+
+    pred_path = "pred.txt"
+    metric = metric(pred_path)
+    print(metric)
+    ```
+
+### 结果对比
+
+!!! tip
+
+    1. 仅测试了中文相关的识别模型，其他语言的模型，因为没有对应评测集，就不测试指标了。
+    2.下面指标仅作为转换前后，比较模型精度差异使用哈！
+
+|Exp|模型|推理框架|模型格式|ExactMatch↑|CharMatch↑|Elapse↓|
+|:---:|:---|:---|:---|:---:|:---:|:---:|
+|1|ch_PP-OCRv4_rec_infer|RapidOCR|ONNXRuntime|0.829|0.9432|0.0176|
+|2|ch_PP-OCRv4_rec_infer|RapidOCR|MNN|0.829|0.9432|0.0213|
+||||||||
+|3|ch_PP-OCRv4_rec_server_infer|RapidOCR|ONNXRuntime|0.8065|0.9375|0.0811|
+|4|ch_PP-OCRv4_rec_server_infer|RapidOCR|MNN|0.8065|0.9375|0.0639|
+||||||||
+|5|ch_doc_PP-OCRv4_rec_server_infer|RapidOCR|ONNXRuntime|0.8097|0.9444|0.0809|
+|6|ch_doc_PP-OCRv4_rec_server_infer|RapidOCR|MNN|0.8065|0.9375|0.0763|
+||||||||
+|7|ch_PP-OCRv5_rec_mobile_infer|RapidOCR|ONNXRuntime|0.7355|0.9177|0.0196|
+|8|ch_PP-OCRv5_rec_mobile_infer|RapidOCR|MNN|0.7355|0.9177|0.0373|
+||||||||
+|9|ch_PP-OCRv5_rec_server_infer|RapidOCR|ONNXRuntime|0.8129|0.9431|0.0582|
+|10|ch_PP-OCRv5_rec_server_infer|RapidOCR|MNN|0.8129|0.9431|0.0724|

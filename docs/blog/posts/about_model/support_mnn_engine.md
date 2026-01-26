@@ -28,22 +28,21 @@ hide:
   rapidocr==3.5.0
   mnn==3.2.0
   text_det_metric==0.0.8
+  text_rec_metric==0.0.1
   datasets==3.6.0
   ```
 
-## 支持Det模型
+## 安装MNN
 
 !!! note
 
     MNN部分主要参考官方文档：https://mnn-docs.readthedocs.io/en/latest/tools/convert.html
 
-### 安装MNN
-
 ```bash linenums="1"
 pip install MNN
 ```
 
-### 转换ONNX模型
+## 转换ONNX模型
 
 转换命令：
 
@@ -65,22 +64,9 @@ outputTensors: [ fetch_name_0, ]
 Converted Success!
 ```
 
+## 支持Det模型
+
 ### 比较转化前后推理精度差异
-
-#### 运行环境
-
-- 操作系统：macOS Tahoe 26.2
-- 硬件：MacBookPro M2
-- Python环境：
-
-  ```bash linenums="1"
-  rapidocr==3.5.0
-  mnn==3.2.0
-  text_det_metric==0.0.8
-  datasets==3.6.0
-  ```
-
-#### 运行推理代码
 
 两者对比的模型为`ch_PP-OCRv4_det_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。
 
@@ -212,3 +198,5 @@ Converted Success!
 |||||||||
 |11|ch_PP-OCRv5_server_det|RapidOCR|ONNXRuntime|0.7394|0.8442|0.7883|2.0193|
 |12|ch_PP-OCRv5_server_det|RapidOCR|MNN|0.7394|0.8442|0.7883|1.6048|
+
+## 支持Rec模型

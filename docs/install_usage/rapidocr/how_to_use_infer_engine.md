@@ -180,7 +180,7 @@ hide:
             params={
             "Det.engine_type": EngineType.PADDLE,
             "EngineConfig.paddle.use_cuda": True,  # 使用PaddlePaddle GPU版推理
-            "EngineConfig.paddle.gpu_id": 0,  # 指定GPU id
+            "EngineConfig.paddle.cuda_ep_cfg.device_id": 0,  # 指定GPU id
             }
         )
 
@@ -204,7 +204,7 @@ hide:
             params={
             "Det.engine_type": EngineType.PADDLE,
             "EngineConfig.paddle.use_npu": True,  # 使用PaddlePaddle NPU版推理
-            "EngineConfig.paddle.npu_id": 0,  # 指定NPU id
+            "EngineConfig.paddle.npu_ep_cfg.device_id": 0,  # 指定NPU id
             }
         )
 
@@ -269,7 +269,7 @@ hide:
                 "Cls.engine_type": EngineType.TORCH,
                 "Rec.engine_type": EngineType.TORCH,
                 "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
-                "EngineConfig.torch.gpu_id": 0,  # 指定GPU id
+                "EngineConfig.torch.cuda_ep_cfg.device_id": 0,  # 指定GPU id
             }
         )
 
@@ -299,7 +299,7 @@ hide:
                     "Cls.engine_type": EngineType.TORCH,
                     "Rec.engine_type": EngineType.TORCH,
                     "EngineConfig.torch.use_npu": True,  # 使用torch NPU版推理
-                    "EngineConfig.torch.npu_id": 0,  # 指定NPU id
+                    "EngineConfig.torch.npu_ep_cfg.device_id": 0,  # 指定NPU id
                 }
             )
 

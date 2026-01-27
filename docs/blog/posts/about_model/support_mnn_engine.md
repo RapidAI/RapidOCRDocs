@@ -176,8 +176,10 @@ Converted Success!
 
 !!! tip
 
+    ```markdwon
     1. 其他版本的模型，我这里就直接给出对比结果了。因为教程都是一样的，仅换了一个模型而已。
-    2.下面指标仅作为转换前后，比较模型精度差异使用哈！
+    2. 下面指标仅作为转换前后，比较模型精度差异使用哈！
+    ```
 
 |Exp|模型|推理框架|模型格式|Precision↑|Recall↑|H-mean↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|:---:|
@@ -203,9 +205,7 @@ Converted Success!
 
 ### 比较转化前后推理精度差异
 
-两者对比的模型为`ch_PP-OCRv4_rec_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。
-
-两次实验除模型不一样外，其余均相同。
+两者对比的模型为`ch_PP-OCRv4_rec_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。两次实验除模型不一样外，其余均相同。
 
 === "(Exp1) RapidOCR+ONNXRuntime格式模型"
 
@@ -333,8 +333,10 @@ Converted Success!
 
 !!! tip
 
+    ```markdwon
     1. 仅测试了中文相关的识别模型，其他语言的模型，因为没有对应评测集，就不测试指标了。
-    2.下面指标仅作为转换前后，比较模型精度差异使用哈！
+    2. 下面指标仅作为转换前后，比较模型精度差异使用哈！
+    ```
 
 |Exp|模型|推理框架|模型格式|ExactMatch↑|CharMatch↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|
@@ -371,16 +373,18 @@ Converted Success!
 
 #### PP-OCRv5
 
-- [x] en_PP-OCRv5_rec_mobile_infer
-- [x] korean_PP-OCRv5_rec_mobile_infer
 - [x] arabic_PP-OCRv5_rec_mobile_infer
-- [x] ta_PP-OCRv5_rec_mobile_infer
-- [x] eslav_PP-OCRv5_rec_mobile_infer
-- [x] th_PP-OCRv5_rec_mobile_infer
-- [x] el_PP-OCRv5_rec_mobile_infer
-- [x] latin_PP-OCRv5_rec_mobile_infer
-- [x] devanagari_PP-OCRv5_rec_mobile_infer
-- [x] te_PP-OCRv5_rec_mobile_infer
 - [x] cyrillic_PP-OCRv5_rec_mobile_infer
+- [x] devanagari_PP-OCRv5_rec_mobile_infer
+- [x] en_PP-OCRv5_rec_mobile_infer
+- [x] el_PP-OCRv5_rec_mobile_infer
+- [x] eslav_PP-OCRv5_rec_mobile_infer
+- [x] korean_PP-OCRv5_rec_mobile_infer
+- [x] latin_PP-OCRv5_rec_mobile_infer
+- [x] ta_PP-OCRv5_rec_mobile_infer
+- [x] te_PP-OCRv5_rec_mobile_infer
+- [x] th_PP-OCRv5_rec_mobile_infer
 
 相关MNN模型会上传到[魔搭模型库](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)中。
+
+## 写在最后

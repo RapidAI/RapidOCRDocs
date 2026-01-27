@@ -358,15 +358,29 @@ Converted Success!
 #### PP-OCRv4
 
 - [x] arabic_PP-OCRv4_rec_infer
-- [ ] chinese_cht_PP-OCRv3_rec_infer
-- [ ] cyrillic_PP-OCRv3_rec_infer
-- [ ] devanagari_PP-OCRv4_rec_infer
-- [ ] en_PP-OCRv4_rec_infer
-- [ ] japan_PP-OCRv4_rec_infer
-- [ ] ka_PP-OCRv4_rec_infer
-- [ ] korean_PP-OCRv4_rec_infer
-- [ ] latin_PP-OCRv3_rec_infer
-- [ ] ta_PP-OCRv4_rec_infer
-- [ ] te_PP-OCRv4_rec_infer
+- [x] chinese_cht_PP-OCRv3_rec_infer
+- [x] cyrillic_PP-OCRv3_rec_infer
+- [x] devanagari_PP-OCRv4_rec_infer
+- [x] en_PP-OCRv4_rec_infer
+- [x] japan_PP-OCRv4_rec_infer
+- [x] ka_PP-OCRv4_rec_infer
+- [x] korean_PP-OCRv4_rec_infer
+- [x] latin_PP-OCRv3_rec_infer
+- [x] ta_PP-OCRv4_rec_infer
+- [x] te_PP-OCRv4_rec_infer
 
 #### PP-OCRv5
+
+- [x] en_PP-OCRv5_rec_mobile_infer
+- [x] korean_PP-OCRv5_rec_mobile_infer
+- [x] arabic_PP-OCRv5_rec_mobile_infer
+- [x] ta_PP-OCRv5_rec_mobile_infer
+- [x] eslav_PP-OCRv5_rec_mobile_infer
+- [x] th_PP-OCRv5_rec_mobile_infer
+- [x] el_PP-OCRv5_rec_mobile_infer
+- [x] latin_PP-OCRv5_rec_mobile_infer
+- [x] devanagari_PP-OCRv5_rec_mobile_infer
+- [x] te_PP-OCRv5_rec_mobile_infer
+- [x] cyrillic_PP-OCRv5_rec_mobile_infer
+
+相关MNN模型会上传到[魔搭模型库](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)中。

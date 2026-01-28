@@ -32,7 +32,7 @@ result.vis("vis_result.jpg")
 
 等价于下面：
 
-```python linenums="1"
+```python linenums="1" hl_lines="5-16"
 from rapidocr import EngineType, LangDet, LangRec, ModelType, OCRVersion, RapidOCR
 
 engine = RapidOCR(

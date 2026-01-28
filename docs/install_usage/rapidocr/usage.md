@@ -120,9 +120,7 @@ result.vis("vis_result.jpg")
 
     其他参数传入方式，基本就是参考`config.yaml`，关键字之间用点分割，直接写就可以了。例如：
 
-    `config.yaml`部分参数示例：
-
-    ```yaml linenums="1"
+    ```yaml linenums="1" title="`config.yaml`部分参数示例"
     Det:
         engine_type: 'openvino'
         lang_type: 'ch'
@@ -136,9 +134,7 @@ result.vis("vis_result.jpg")
                 device_id: 0
     ```
 
-    **对应参数写法**
-
-    ```python linenums="1" hl_lines="5-10"
+    ```python linenums="1" hl_lines="5-10"  title="对应参数写法"
     from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
 
     engine = RapidOCR(
@@ -152,40 +148,6 @@ result.vis("vis_result.jpg")
         }
     )
     ```
-
-    <div class="grid" markdown>
-        config.yaml部分参数示例：
-        ```yaml linenums="1"
-        Det:
-            engine_type: 'openvino'
-            lang_type: 'ch'
-            model_type: 'mobile'
-            ocr_version: 'PP-OCRv4'
-
-        EngineConfig:
-            torch:
-                use_cuda: false
-                cuda_ep_cfg:
-                    device_id: 0
-        ```
-
-        对应参数写法
-        ```python linenums="1" hl_lines="5-10"
-        from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
-
-        engine = RapidOCR(
-            params={
-                "Det.engine_type": EngineType.TORCH,
-                "Det.lang_type": LangDet.CH,
-                "Det.model_type": ModelType.MOBILE,
-                "Det.ocr_version": OCRVersion.PPOCRV5,
-                "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
-                "EngineConfig.torch.cuda_ep_cfg.device_id": 0,  # 指定GPU id
-            }
-        )
-        ```
-
-    </div>
 
 由于采用Pillow库来打开图像，因此支持传入图像格式与Pillow保持一致，详情参见[image-file-formats](https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html)
 

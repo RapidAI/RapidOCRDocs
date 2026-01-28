@@ -2456,7 +2456,7 @@ You're not viewing the latest version.
 <h2 id="mnn">安装MNN<a class="headerlink" href="#mnn" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>MNN部分主要参考官方文档：https://mnn-docs.readthedocs.io/en/latest/tools/convert.html</p>
+<p>该部分主要参考官方文档：https://mnn-docs.readthedocs.io/en/latest/tools/convert.html</p>
 </div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>MNN
 </span></code></pre></div></td></tr></table></div>
@@ -3226,8 +3226,10 @@ You're not viewing the latest version.
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> te_PP-OCRv5_rec_mobile_infer</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> th_PP-OCRv5_rec_mobile_infer</li>
 </ul>
-<p>相关MNN模型会上传到<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭模型库</a>中。</p>
+<p>相关MNN模型已经上传到<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭模型库</a>中。</p>
 <h2 id="_8">写在最后<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>从以上基准比较来看，MNN推理引擎整体推理速度要比ONNXRuntime更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。</p>
+<p><code>rapidocr</code>将在下一个版本（<code>v3.5.1</code> or <code>v3.6.0</code>）集成以上模型。敬请期待！</p>
 
 <!-- Source file information -->
 
@@ -3252,7 +3254,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年1月27日 14:00:34 CST">2026-01-27 14:00:34</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年1月28日 08:31:12 CST">2026-01-28 08:31:12</span>
   </span>
 
     

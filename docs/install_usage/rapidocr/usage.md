@@ -120,7 +120,7 @@ result.vis("vis_result.jpg")
 
     其他参数传入方式，基本就是参考`config.yaml`，关键字之间用点分割，直接写就可以了。例如：
 
-    ```yaml linenums="1" title="`config.yaml`部分参数示例"
+    ```yaml linenums="1" title="config.yaml部分参数示例"
     Det:
         engine_type: 'openvino'
         lang_type: 'ch'

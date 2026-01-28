@@ -130,9 +130,10 @@ result.vis("vis_result.jpg")
         ocr_version: 'PP-OCRv4'
 
     EngineConfig:
-       torch:
-          use_cuda: true
-          gpu_id: 0
+        torch:
+            use_cuda: false
+            cuda_ep_cfg:
+                device_id: 0
     ```
 
     **对应参数写法**
@@ -147,10 +148,46 @@ result.vis("vis_result.jpg")
             "Det.model_type": ModelType.MOBILE,
             "Det.ocr_version": OCRVersion.PPOCRV5,
             "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
-            "EngineConfig.torch.gpu_id": 0,  # 指定GPU id
+            "EngineConfig.torch.cuda_ep_cfg.device_id": 0,  # 指定GPU id
         }
     )
     ```
+
+    <div class="grid" markdown>
+    `config.yaml`部分参数示例：
+
+    ```yaml linenums="1"
+    Det:
+        engine_type: 'openvino'
+        lang_type: 'ch'
+        model_type: 'mobile'
+        ocr_version: 'PP-OCRv4'
+
+    EngineConfig:
+        torch:
+            use_cuda: false
+            cuda_ep_cfg:
+                device_id: 0
+    ```
+
+    **对应参数写法**
+
+    ```python linenums="1" hl_lines="5-10"
+    from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
+
+    engine = RapidOCR(
+        params={
+            "Det.engine_type": EngineType.TORCH,
+            "Det.lang_type": LangDet.CH,
+            "Det.model_type": ModelType.MOBILE,
+            "Det.ocr_version": OCRVersion.PPOCRV5,
+            "EngineConfig.torch.use_cuda": True,  # 使用torch GPU版推理
+            "EngineConfig.torch.cuda_ep_cfg.device_id": 0,  # 指定GPU id
+        }
+    )
+    ```
+
+    </div>
 
 由于采用Pillow库来打开图像，因此支持传入图像格式与Pillow保持一致，详情参见[image-file-formats](https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html)
 

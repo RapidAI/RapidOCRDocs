@@ -37,7 +37,7 @@ hide:
 
 !!! note
 
-    MNN部分主要参考官方文档：https://mnn-docs.readthedocs.io/en/latest/tools/convert.html
+    该部分主要参考官方文档：https://mnn-docs.readthedocs.io/en/latest/tools/convert.html
 
 ```bash linenums="1"
 pip install MNN
@@ -386,6 +386,10 @@ Converted Success!
 - [x] te_PP-OCRv5_rec_mobile_infer
 - [x] th_PP-OCRv5_rec_mobile_infer
 
-相关MNN模型会上传到[魔搭模型库](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)中。
+相关MNN模型已经上传到[魔搭模型库](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)中。
 
 ## 写在最后
+
+从以上基准比较来看，MNN推理引擎整体推理速度要比ONNXRuntime更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。
+
+`rapidocr`将在下一个版本（`v3.5.1` or `v3.6.0`）集成以上模型。敬请期待！

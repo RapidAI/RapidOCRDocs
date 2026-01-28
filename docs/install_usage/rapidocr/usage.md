@@ -154,7 +154,7 @@ result.vis("vis_result.jpg")
     ```
 
     <div class="grid" markdown>
-        `config.yaml`部分参数示例：
+        config.yaml部分参数示例：
         ```yaml linenums="1"
         Det:
             engine_type: 'openvino'
@@ -169,7 +169,7 @@ result.vis("vis_result.jpg")
                     device_id: 0
         ```
 
-        **对应参数写法**
+        对应参数写法
         ```python linenums="1" hl_lines="5-10"
         from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
 

@@ -8,6 +8,8 @@ categories:
 comments: true
 hide:
   - toc
+links:
+  - 如何使用不同推理引擎？: install_usage/rapidocr/how_to_use_infer_engine.md#使用MNN
 ---
 
 记录支持MNN推理引擎的过程文档。

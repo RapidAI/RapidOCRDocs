@@ -10,7 +10,7 @@ hide:
 
 例如：文本检测使用ONNXRuntime，文本识别使用PaddlePaddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。同时，不同版本的OCR也可以通过`Det.ocr_version`灵活指定。
 
-`rapidocr`支持4种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch**），推荐首先使用 **ONNXRuntime CPU** 版。默认为ONNXRuntime。
+`rapidocr`支持5种推理引擎（**ONNXRuntime / OpenVINO / PaddlePaddle / PyTorch / MNN (`rapidocr>=3.6.0`)**），推荐首先使用 **ONNXRuntime CPU** 版。默认为ONNXRuntime。
 
 `rapidocr`是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。
 
@@ -139,6 +139,55 @@ hide:
     [INFO] 2025-03-21 09:28:03,768 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
     [INFO] 2025-03-21 09:28:03,861 base.py:30: Using engine_name: openvino
     [INFO] 2025-03-21 09:28:03,862 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
+    ```
+
+### 使用MNN
+
+!!! tip
+
+    `rapidocr>=3.6.0`支持。
+
+1. 安装MNN
+
+    ```bash linenums="1"
+    pip install MNN
+    ```
+
+2. 指定MNN作为推理引擎。
+
+    === "CPU"
+
+        ```python linenums="1" hl_lines="5-7"
+        from rapidocr import EngineType, RapidOCR
+
+        engine = RapidOCR(
+            params={
+                "Det.engine_type": EngineType.MNN,
+                "Cls.engine_type": EngineType.MNN,
+                "Rec.engine_type": EngineType.MNN,
+            }
+        )
+
+        img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+        result = engine(img_url)
+        print(result)
+
+        result.vis('vis_result.jpg')
+        ```
+
+    === "GPU"
+
+        敬请期待！
+
+3. 查看输出日志。下面日志中打印出了 **Using engine_name: mnn**，则证明使用的推理引擎是MNN。
+
+    ```bash linenums="1" hl_lines="1 3 5"
+    [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: mnn
+    [INFO] 2025-03-21 09:28:03,553 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.mnn
+    [INFO] 2025-03-21 09:28:03,767 base.py:30: Using engine_name: mnn
+    [INFO] 2025-03-21 09:28:03,768 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.mnn
+    [INFO] 2025-03-21 09:28:03,861 base.py:30: Using engine_name: mnn
+    [INFO] 2025-03-21 09:28:03,862 utils.py:35: File already exists in /Users/joshuawang/projects/_self/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.mnn
     ```
 
 ### 使用PaddlePaddle

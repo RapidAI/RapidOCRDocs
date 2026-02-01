@@ -164,7 +164,7 @@ for res in output:
     dict_path = "models/PP-OCRv5_mobile_rec/ppocrv5_dict.txt"
     engine = RapidOCR(params={"Rec.model_path": model_path, "Rec.rec_keys_path": dict_path})
 
-    img_url = "<https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516>"
+    img_url = "https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516"
     result = engine(img_url)
     print(result)
 

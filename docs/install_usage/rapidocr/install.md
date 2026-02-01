@@ -59,7 +59,7 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
     运行以下代码，终端可以打印出文字内容，即安装成功。
 
     ```bash linenums="1"
-    rapidocr -img "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true" --vis_res
+    rapidocr -img "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg" --vis_res
     ```
 
 !!! info

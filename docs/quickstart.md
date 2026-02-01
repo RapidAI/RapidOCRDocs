@@ -16,7 +16,7 @@ pip install rapidocr onnxruntime
 === "命令行使用"
 
     ```bash linenums="1"
-    rapidocr -img "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true" --vis_res
+    rapidocr -img "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg" --vis_res
     ```
 
 === "Python使用"
@@ -26,7 +26,7 @@ pip install rapidocr onnxruntime
 
     engine = RapidOCR()
 
-    img_url = "https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/ch_en_num.jpg?raw=true"
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
     result = engine(img_url)
     print(result)
 

@@ -76,7 +76,7 @@ FastDeploy是一款全场景、易用灵活、极致高效的AI推理部署工�
 
 总结来说就是，将各个场景下的推理引擎做了集成，更加方便易用，大而全。
 
-### [PaddleX](https://ai.baidu.com/ai-doc/AISTUDIO/Zlisojzjs)
+### [PaddleX](https://paddlepaddle.github.io/PaddleX/latest/)
 
 PaddleX 集成飞桨智能视觉领域图像分类、目标检测、语义分割、实例分割任务能力，将深度学习开发全流程从数据准备、模型训练与优化到多端部署端到端打通，并提供统一任务API接口及图形化开发界面Demo。开发者无需分别安装不同套件，以低代码的形式即可快速完成飞桨全流程开发。
 

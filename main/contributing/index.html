@@ -2669,7 +2669,7 @@ You're not viewing the latest version.
 <!-- Page content -->
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>本文与 <a href="https://github.com/RapidAI/RapidOCR/blob/main/docs/CONTRIBUTING-CN.md">GitHub 仓库 CONTRIBUTING.md</a> 同步，<strong>主仓库为准</strong>。文档站副本可能非最新，请以 GitHub 版本为准。</p>
+<p>本文与 <a href="https://github.com/RapidAI/RapidOCR/blob/main/docs/CONTRIBUTING-CN.md">GitHub 仓库 CONTRIBUTING.md</a> 同步， <strong>主仓库为准</strong> 。文档站副本可能非最新，请以 GitHub 版本为准。</p>
 </div>
 <p>感谢你对 RapidOCR Python 部分的关注！本文档说明如何参与 Python 目录下的代码开发与贡献，包括环境准备、开发流程和提交流程。</p>
 <h2 id="_1">前置要求<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -2708,7 +2708,7 @@ You're not viewing the latest version.
 <p>如需使用 ONNX Runtime 等推理后端，请按 <a href="https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/">文档</a> 安装对应依赖（如 <code>rapidocr_onnxruntime</code> 等）。</p>
 <hr />
 <h2 id="pre-commit">三、安装代码格式化与 pre-commit 钩子<a class="headerlink" href="#pre-commit" title="Permanent link">&para;</a></h2>
-<p>在**开发者环境**下安装 pre-commit，并启用 Git 提交前钩子，以便自动做代码格式检查与整理（如 black、autoflake 等）：</p>
+<p>在 <strong>开发者环境</strong> 下安装 pre-commit，并启用 Git 提交前钩子，以便自动做代码格式检查与整理（如 black、autoflake 等）：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 在 python 目录下、已激活的虚拟环境中安装</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -2722,7 +2722,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <hr />
 <h2 id="_3">四、运行单元测试<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>在 **<code>python</code> 目录下**执行：</p>
+<p>在 <strong><code>python</code> 目录下</strong> 执行：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 运行全部测试</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>-v
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
@@ -2781,7 +2781,7 @@ You're not viewing the latest version.
 </span></code></pre></div>
 <hr />
 <h2 id="_7">七、运行所有单元测试<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>在 **<code>python</code> 目录下**再次全量跑测，确保无回归：</p>
+<p>在 <strong><code>python</code> 目录下</strong> 再次全量跑测，确保无回归：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>-v
 </span></code></pre></div>
 <p>若有测试被跳过（如缺少某推理引擎），请确认你修改或新增的测试在现有环境下已执行并通过。</p>
@@ -2809,7 +2809,7 @@ You're not viewing the latest version.
 </span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1"># 推送到你的 fork</span>
 </span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>git<span class="w"> </span>push<span class="w"> </span>myfork<span class="w"> </span>fix/xxx
 </span></code></pre></div>
-<p><strong>请按约定式提交规范（Conventional Commits）书写 commit 信息</strong>，便于维护者阅读与自动生成 Changelog。格式为：</p>
+<p><strong>请按约定式提交规范（Conventional Commits）书写 commit 信息</strong> ，便于维护者阅读与自动生成 Changelog。格式为：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&lt;类型&gt;[可选范围]: &lt;简短描述&gt;
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>[可选正文]
@@ -2858,8 +2858,8 @@ You're not viewing the latest version.
 <h3 id="83-rapidocr-pull-requestpr">8.3 向 RapidOCR 主仓库提交 Pull Request（PR）<a class="headerlink" href="#83-rapidocr-pull-requestpr" title="Permanent link">&para;</a></h3>
 <ol>
 <li>打开你 fork 后的仓库页面（如 <code>https://github.com/你的用户名/RapidOCR</code>）。</li>
-<li>若刚推送分支，页面上通常会出现 <strong>Compare &amp; pull request</strong>，点击即可；否则在 <strong>Branches</strong> 里选择你刚推送的分支，再点 <strong>New pull request</strong>。</li>
-<li>确认 **base 仓库**为 <code>RapidAI/RapidOCR</code>、**base 分支**为 <code>main</code>（或仓库默认主分支），**head 仓库**为你的 fork、**head 分支**为你的分支（如 <code>fix/xxx</code>）。</li>
+<li>若刚推送分支，页面上通常会出现 <strong>Compare &amp; pull request</strong>，点击即可；否则在 <strong>Branches</strong> 里选择你刚推送的分支，再点 <strong>New pull request</strong> 。</li>
+<li>确认 <strong>base 仓库</strong> 为 <code>RapidAI/RapidOCR</code>、<strong>base 分支</strong> 为 <code>main</code>（或仓库默认主分支），<strong>head 仓库</strong> 为你的 fork、<strong>head 分支</strong> 为你的分支（如 <code>fix/xxx</code>）。</li>
 <li>填写 PR 标题和说明：</li>
 <li>标题：简要概括修改内容（如「Fix: 修复 Python 下 xxx 问题」）。</li>
 <li>说明中建议包含：<ul>
@@ -2925,9 +2925,9 @@ You're not viewing the latest version.
 <hr />
 <h2 id="_10">其他说明<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>代码风格</strong>：项目采用 <a href="https://github.com/psf/black">black</a>、autoflake 等规范，已通过 pre-commit 钩子在提交时自动检查；也可在仓库根目录执行 <code>pre-commit run --all-files</code> 手动跑一遍。</li>
-<li><strong>文档</strong>：更多安装与使用说明见 <a href="https://rapidai.github.io/RapidOCRDocs/">RapidOCR 文档</a>。</li>
-<li><strong>问题与讨论</strong>：Bug 与功能建议可通过 <a href="https://github.com/RapidAI/RapidOCR/issues">GitHub Issues</a> 反馈。</li>
+<li><strong>代码风格</strong> ：项目采用 <a href="https://github.com/psf/black">black</a>、autoflake 等规范，已通过 pre-commit 钩子在提交时自动检查；也可在仓库根目录执行 <code>pre-commit run --all-files</code> 手动跑一遍。</li>
+<li><strong>文档</strong> ：更多安装与使用说明见 <a href="https://rapidai.github.io/RapidOCRDocs/">RapidOCR 文档</a>。</li>
+<li><strong>问题与讨论</strong> ：Bug 与功能建议可通过 <a href="https://github.com/RapidAI/RapidOCR/issues">GitHub Issues</a> 反馈。</li>
 </ul>
 <p>再次感谢你的贡献！</p>
 
@@ -2954,7 +2954,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月6日 18:53:02 CST">2026-02-06 18:53:02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月6日 20:08:02 CST">2026-02-06 20:08:02</span>
   </span>
 
     

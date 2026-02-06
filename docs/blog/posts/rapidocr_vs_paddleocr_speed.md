@@ -14,23 +14,25 @@ comments: true
 
 ## 引言
 
-一直想做一个benchmark，类似于YOLO仓库下那种，一键可以快速比较不同推理引擎在同一环境下的表现。还没来得及。
+我一直想做一个类似 YOLO 仓库那样的 benchmark 工具——只需一键，就能在相同环境下快速比较不同推理引擎的性能表现。可惜一直没抽出时间来实现。
 
-这不这几天又有小伙伴问到推理速度问题，我想着想写一篇简单评测的博客吧！
+最近又有小伙伴问起 OCR 推理速度的问题，索性先写一篇简单的评测博客吧！
 
-评测的最基本要求是：保持变量单一。最起码要用相同环境，明确的所用的各个库的版本，方便他人复现。
+做性能评测最基本的原则是：**控制变量**。至少要确保运行环境一致，并明确列出所用各依赖库的具体版本，以便他人能够轻松复现结果。
 
 ## 运行环境
 
-本来我尝试在百度星河社区，新建一个项目来评测的。无奈于星河社区中网速是在不给力，下载模型都是问题。
+最初我尝试在百度星河社区新建一个项目来进行评测，但无奈其网络环境实在不太理想，连模型下载都成了问题。
 
-后来我尝试在Google Colab上评测，遇到了一个更加奇怪的问题：`RuntimeError: PDX has already been initialized. Reinitialization is not supported.`。网上搜索好久，尝试更改Colab版本，也没能成功。
+随后我又转战 Google Colab，却遇到了一个更奇怪的报错：
+`RuntimeError: PDX has already been initialized. Reinitialization is not supported.`
+我在网上查了很久，也尝试切换了不同的 Colab 运行时版本，但始终没能解决。
 
-因此，先在自己笔记本上跑一下了。
+于是，这次就先在自己的笔记本上跑一遍吧。
 
-- 操作系统：macOS Tahoe 26.2 (Apple M2)
-- Python: 3.10.0
-- 其他依赖包：
+- **操作系统**：macOS Tahoe 26.2（Apple M2）
+- **Python 版本**：3.10.0
+- **其他依赖包**：
 
     ```bash linenums="1"
     rapidocr==3.6.0
@@ -101,20 +103,20 @@ $ python test_ocr.py
 
 Checking connectivity to the model hosters, this may take a while. To bypass this check, set `PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK` to `True`.
 Creating model: ('PP-OCRv5_mobile_det', None)
-Model files already exist. Using cached files. To redownload, please delete the directory manually: `/Users/joshuawang/.paddlex/official_models/PP-OCRv5_mobile_det`.
-/Users/joshuawang/miniconda3/envs/py310/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:715: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+Model files already exist. Using cached files. To redownload, please delete the directory manually: `/Users/xxxx/.paddlex/official_models/PP-OCRv5_mobile_det`.
+/Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:715: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
   warnings.warn(warning_message)
 Creating model: ('PP-OCRv5_mobile_rec', None)
-Model files already exist. Using cached files. To redownload, please delete the directory manually: `/Users/joshuawang/.paddlex/official_models/PP-OCRv5_mobile_rec`.
+Model files already exist. Using cached files. To redownload, please delete the directory manually: `/Users/xxxx/.paddlex/official_models/PP-OCRv5_mobile_rec`.
 [INFO] 2026-02-06 09:24:17,252 [RapidOCR] base.py:22: Using engine_name: onnxruntime
-[INFO] 2026-02-06 09:24:17,313 [RapidOCR] download_file.py:60: File exists and is valid: /Users/joshuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv5_mobile_det.onnx
-[INFO] 2026-02-06 09:24:17,313 [RapidOCR] main.py:53: Using /Users/joshuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv5_mobile_det.onnx
+[INFO] 2026-02-06 09:24:17,313 [RapidOCR] download_file.py:60: File exists and is valid: /Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv5_mobile_det.onnx
+[INFO] 2026-02-06 09:24:17,313 [RapidOCR] main.py:53: Using /Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv5_mobile_det.onnx
 [INFO] 2026-02-06 09:24:17,363 [RapidOCR] base.py:22: Using engine_name: onnxruntime
-[INFO] 2026-02-06 09:24:17,365 [RapidOCR] download_file.py:60: File exists and is valid: /Users/joshuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
-[INFO] 2026-02-06 09:24:17,365 [RapidOCR] main.py:53: Using /Users/joshuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+[INFO] 2026-02-06 09:24:17,365 [RapidOCR] download_file.py:60: File exists and is valid: /Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+[INFO] 2026-02-06 09:24:17,365 [RapidOCR] main.py:53: Using /Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
 [INFO] 2026-02-06 09:24:17,383 [RapidOCR] base.py:22: Using engine_name: onnxruntime
-[INFO] 2026-02-06 09:24:17,395 [RapidOCR] download_file.py:60: File exists and is valid: /Users/joshuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv5_rec_mobile_infer.onnx
-[INFO] 2026-02-06 09:24:17,395 [RapidOCR] main.py:53: Using /Users/joshuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv5_rec_mobile_infer.onnx
+[INFO] 2026-02-06 09:24:17,395 [RapidOCR] download_file.py:60: File exists and is valid: /Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv5_rec_mobile_infer.onnx
+[INFO] 2026-02-06 09:24:17,395 [RapidOCR] main.py:53: Using /Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv5_rec_mobile_infer.onnx
 rapidocr + onnxruntime: 1.2242828749585897 seconds
 paddleocr: 1.929985583992675 seconds
 ------------------------------
@@ -147,6 +149,9 @@ paddleocr: 1.762385250069201 seconds
 ------------------------------
 ```
 
+从结果来看，在当前测试条件下，**RapidOCR + ONNX Runtime 的推理速度整体优于 PaddleOCR（CPU 模式）**。
+
 ## 写在最后
 
-以上还是太粗糙，仅供参考哈！后续我这会搞个更加严谨一些的。没有捧谁踩谁意思哈！
+以上测试还比较粗糙，仅供初步参考！后续我会整理一个更严谨、更系统的 benchmark 方案。
+另外强调一下：**本文无意“捧一踩一”**，只是客观记录一次简单的对比实验。欢迎大家交流指正！

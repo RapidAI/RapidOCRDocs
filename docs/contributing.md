@@ -8,7 +8,7 @@ hide:
 
 !!! tip
 
-  本文与 [GitHub 仓库 CONTRIBUTING.md](https://github.com/RapidAI/RapidOCR/blob/main/docs/CONTRIBUTING-CN.md) 同步，**主仓库为准**。文档站副本可能非最新，请以 GitHub 版本为准。
+    本文与 [GitHub 仓库 CONTRIBUTING.md](https://github.com/RapidAI/RapidOCR/blob/main/docs/CONTRIBUTING-CN.md) 同步，**主仓库为准**。文档站副本可能非最新，请以 GitHub 版本为准。
 
 感谢你对 RapidOCR Python 部分的关注！本文档说明如何参与 Python 目录下的代码开发与贡献，包括环境准备、开发流程和提交流程。
 

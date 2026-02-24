@@ -73,9 +73,9 @@ Converted Success!
 
 两者对比的模型为`ch_PP-OCRv4_det_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。
 
-两次实验除模型不一样外，其余均相同。
+两次实验除模型不一样外，其余均相同。其余未列出的实验均只换了模型。
 
-=== "(Exp1) RapidOCR+ONNXRuntime格式模型"
+=== "(Exp1) RapidOCR + ONNXRuntime"
 
     Step 1: 获得推理结果
 
@@ -122,7 +122,7 @@ Converted Success!
     print(metric)
     ```
 
-=== "(Exp2) RapidOCR+MNN格式模型"
+=== "(Exp2) RapidOCR + MNN"
 
     Step 1: 获得推理结果
 
@@ -184,7 +184,7 @@ Converted Success!
     2. 下面指标仅作为转换前后，比较模型精度差异使用哈！
     ```
 
-|Exp|模型|推理框架|模型格式|Precision↑|Recall↑|H-mean↑|Elapse↓|
+|Exp|模型|推理框架|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|:---:|
 |1|ch_PP-OCRv4_det_infer|RapidOCR|ONNXRuntime|0.8595|0.8434|0.8514|0.182|
 |2|ch_PP-OCRv4_det_infer|RapidOCR|MNN|0.8595|0.8434|0.8514|0.159|
@@ -210,7 +210,7 @@ Converted Success!
 
 两者对比的模型为`ch_PP-OCRv4_rec_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。两次实验除模型不一样外，其余均相同。
 
-=== "(Exp1) RapidOCR+ONNXRuntime格式模型"
+=== "(Exp1) RapidOCR + ONNXRuntime"
 
     Step 1: 获得推理结果
 
@@ -270,7 +270,7 @@ Converted Success!
     print(metric)
     ```
 
-=== "(Exp2) RapidOCR+MNN格式模型"
+=== "(Exp2) RapidOCR + MNN"
 
     Step 1: 获得推理结果
 
@@ -341,7 +341,7 @@ Converted Success!
     2. 下面指标仅作为转换前后，比较模型精度差异使用哈！
     ```
 
-|Exp|模型|推理框架|模型格式|ExactMatch↑|CharMatch↑|Elapse↓|
+|Exp|模型|推理框架|推理引擎|ExactMatch↑|CharMatch↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|
 |1|ch_PP-OCRv4_rec_infer|RapidOCR|ONNXRuntime|0.829|0.9432|0.0176|
 |2|ch_PP-OCRv4_rec_infer|RapidOCR|MNN|0.829|0.9432|0.0213|
@@ -394,4 +394,4 @@ Converted Success!
 
 从以上基准比较来看，MNN推理引擎整体推理速度要比ONNXRuntime更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。
 
-`rapidocr`将在下一个版本（`v3.6.0`）集成以上模型。敬请期待！
+`rapidocr`已经在`>=v3.6.0`集成以上模型，欢迎使用和反馈。

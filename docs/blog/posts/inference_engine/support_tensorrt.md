@@ -1,11 +1,13 @@
 ---
-title: 支持TensorRT推理引擎
+title: RapidOCR支持TensorRT推理引擎
 authors: [SWHL]
 slug: support-tensorrt-engine
 date: 2026-02-13
 categories:
   - 推理引擎
 comments: true
+hide:
+  - toc
 ---
 
 记录支持TensorRT推理引擎的过程文档。
@@ -18,7 +20,7 @@ comments: true
 
 大部分代码都已经在小伙伴提的 PR 中实现，很完善的实现，包括单元测试和 benchmark。我做的只是过一遍代码，看看怎么做的。
 
-本来我以为 TensorRT 也可以像其他推理引擎一样，将 ONNX 模型预先转为指定格式，然后直接分发，像 TensorRT 格式。但是随着我看源码的过程中，逐渐发现不是这么简单。 TensorRT 的 engine 格式模型都是根据当前设备来动态生成的。因此，用户在使用前，需要先生成符合当前机器的engine格式模型文件，之后再直接使用。
+本来我以为 TensorRT 也可以像其他推理引擎一样，将 ONNX 模型预先转为指定格式，然后直接分发。但是随着我看源码的过程中，逐渐发现不是这么简单。 TensorRT 的 engine 格式模型都是根据当前设备来动态生成的。因此，用户在使用前，需要先生成符合当前机器的 engine 格式模型文件，之后再直接使用。
 
 当前代码在指定使用 TensorRT 作为推理引擎后，程序会自动启动构建 engine 格式的模型文件。构建耗时依当前设备而有所不同。
 
@@ -42,7 +44,7 @@ comments: true
 
 ### 比较转化前后推理精度差异
 
-这里主要采用@[LocNgoXuan23](https://github.com/LocNgoXuan23)给出的benchmark脚本来批量测试。
+这里主要采用@[LocNgoXuan23](https://github.com/LocNgoXuan23)给出的 benchmark 脚本来批量测试。
 
 === "(Exp1) RapidOCR + ONNXRuntime"
 
@@ -218,8 +220,33 @@ comments: true
 |12|en_PP-OCRv3_det_infer|RapidOCR|TensorRT FP32|0.8153|0.8346|0.8248|0.04|
 |||||||||
 |13|Multilingual_PP-OCRv3_det_infer|RapidOCR|ONNXRuntime|0.4228|0.6921|0.5249|0.1681|
-|14|Multilingual_PP-OCRv3_det_infer|RapidOCR|TensorRT FP16|0.8147|0.8346|0.8245|0.0384|
-|15|Multilingual_PP-OCRv3_det_infer|RapidOCR|TensorRT FP32|0.8153|0.8346|0.8248|0.04|
+|14|Multilingual_PP-OCRv3_det_infer|RapidOCR|TensorRT FP16|0.4221|0.6906|0.5240|0.0447|
+|15|Multilingual_PP-OCRv3_det_infer|RapidOCR|TensorRT FP32|0.4223|0.6906|0.5241|0.0452|
 |||||||||
-|11|ch_PP-OCRv5_server_det|RapidOCR|ONNXRuntime|0.7394|0.8442|0.7883|2.0193|
-|12|ch_PP-OCRv5_server_det|RapidOCR|TensorRT|0.7394|0.8442|0.7883|1.6048|
+|16|ch_PP-OCRv5_server_det|RapidOCR|ONNXRuntime|0.7394|0.8442|0.7883|2.0193|
+|17|ch_PP-OCRv5_server_det|RapidOCR|TensorRT FP16|0.4143|0.2059|0.2751|0.0387|
+|18|ch_PP-OCRv5_server_det|RapidOCR|TensorRT FP32|0.7394|0.8442|0.7883|1.6048|
+
+## 支持Rec模型
+
+| Exp | 模型 | 推理框架 | 推理引擎 | ExactMatch↑ | CharMatch↑ | Elapse↓ |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | ch_PP-OCRv4_rec_infer | RapidOCR | ONNXRuntime | 0.8290 | 0.9432 | 0.0081 |
+| 2 | ch_PP-OCRv4_rec_infer | RapidOCR | TensorRT FP16 | 0.8290 | 0.9428 | 0.0016 |
+| 3 | ch_PP-OCRv4_rec_infer | RapidOCR | TensorRT FP32 | 0.8290 | 0.9432 | 0.0020 |
+| | | | | | | |
+| 4 | ch_PP-OCRv4_rec_server_infer | RapidOCR | ONNXRuntime | 0.8065 | 0.9375 | 4.9997 |
+| 5 | ch_PP-OCRv4_rec_server_infer | RapidOCR | TensorRT FP16 | 0.8097 | 0.9383 | 0.0029 |
+| 6 | ch_PP-OCRv4_rec_server_infer | RapidOCR | TensorRT FP32 | 0.8065 | 0.9375 | 0.0060 |
+| | | | | | | |
+| 7 | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR | ONNXRuntime | 0.8097 | 0.9444 | 5.2886 |
+| 8 | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR | TensorRT FP16 | 0.8065 | 0.9439 | 0.0033 |
+| 9 | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR | TensorRT FP32 | 0.8097 | 0.9444 | 0.0063 |
+| | | | | | | |
+| 10 | ch_PP-OCRv5_rec_mobile_infer | RapidOCR | ONNXRuntime | 0.7355 | 0.9177 | 0.0064 |
+| 11 | ch_PP-OCRv5_rec_mobile_infer | RapidOCR | TensorRT FP16 | 0.7387 | 0.9190 | 0.0026 |
+| 12 | ch_PP-OCRv5_rec_mobile_infer | RapidOCR | TensorRT FP32 | 0.7355 | 0.9178 | 0.0036 |
+| | | | | | | |
+| 13 | ch_PP-OCRv5_rec_server_infer | RapidOCR | ONNXRuntime | 0.8129 | 0.9431 | 1.2137 |
+| 14 | ch_PP-OCRv5_rec_server_infer | RapidOCR | TensorRT FP16 | 0.8129 | 0.9431 | 0.0042 |
+| 15 | ch_PP-OCRv5_rec_server_infer | RapidOCR | TensorRT FP32 | 0.8129 | 0.9431 | 0.0052 |

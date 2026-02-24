@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../../static/images/favicon-lightning.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -2419,7 +2419,7 @@ You're not viewing the latest version.
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/">模型相关</a></span>
+                              <a href="../../../../category/%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E/">推理引擎</a></span>
                         </div>
                       </li>
                     
@@ -2521,7 +2521,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/about_model/support_mnn_engine.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/inference_engine/support_mnn_engine.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2530,7 +2530,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/about_model/support_mnn_engine.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/inference_engine/support_mnn_engine.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2606,8 +2606,8 @@ You're not viewing the latest version.
 <h2 id="det">支持Det模型<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
 <h3 id="_3">比较转化前后推理精度差异<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>两者对比的模型为<code>ch_PP-OCRv4_det_infer</code>模型，Exp1基于<code>RapidOCR+ONNXRuntime</code>格式模型推理, Exp2基于<code>RapidOCR+MNN</code>格式模型推理。</p>
-<p>两次实验除模型不一样外，其余均相同。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(Exp1) RapidOCR+ONNXRuntime格式模型</label><label for="__tabbed_1_2">(Exp2) RapidOCR+MNN格式模型</label></div>
+<p>两次实验除模型不一样外，其余均相同。其余未列出的实验均只换了模型。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(Exp1) RapidOCR + ONNXRuntime</label><label for="__tabbed_1_2">(Exp2) RapidOCR + MNN</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Step 1: 获得推理结果</p>
@@ -2782,7 +2782,7 @@ You're not viewing the latest version.
 <th style="text-align: center;">Exp</th>
 <th style="text-align: left;">模型</th>
 <th style="text-align: left;">推理框架</th>
-<th style="text-align: left;">模型格式</th>
+<th style="text-align: left;">推理引擎</th>
 <th style="text-align: center;">Precision↑</th>
 <th style="text-align: center;">Recall↑</th>
 <th style="text-align: center;">H-mean↑</th>
@@ -2965,7 +2965,7 @@ You're not viewing the latest version.
 <h2 id="rec">支持Rec模型<a class="headerlink" href="#rec" title="Permanent link">&para;</a></h2>
 <h3 id="_5">比较转化前后推理精度差异<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>两者对比的模型为<code>ch_PP-OCRv4_rec_infer</code>模型，Exp1基于<code>RapidOCR+ONNXRuntime</code>格式模型推理, Exp2基于<code>RapidOCR+MNN</code>格式模型推理。两次实验除模型不一样外，其余均相同。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">(Exp1) RapidOCR+ONNXRuntime格式模型</label><label for="__tabbed_2_2">(Exp2) RapidOCR+MNN格式模型</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">(Exp1) RapidOCR + ONNXRuntime</label><label for="__tabbed_2_2">(Exp2) RapidOCR + MNN</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Step 1: 获得推理结果</p>
@@ -3182,7 +3182,7 @@ You're not viewing the latest version.
 <th style="text-align: center;">Exp</th>
 <th style="text-align: left;">模型</th>
 <th style="text-align: left;">推理框架</th>
-<th style="text-align: left;">模型格式</th>
+<th style="text-align: left;">推理引擎</th>
 <th style="text-align: center;">ExactMatch↑</th>
 <th style="text-align: center;">CharMatch↑</th>
 <th style="text-align: center;">Elapse↓</th>
@@ -3349,7 +3349,7 @@ You're not viewing the latest version.
 <p>相关MNN模型已经上传到<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭模型库</a>中。</p>
 <h2 id="_8">写在最后<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>从以上基准比较来看，MNN推理引擎整体推理速度要比ONNXRuntime更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。</p>
-<p><code>rapidocr</code>将在下一个版本（<code>v3.6.0</code>）集成以上模型。敬请期待！</p>
+<p><code>rapidocr</code>已经在<code>&gt;=v3.6.0</code>集成以上模型，欢迎使用和反馈。</p>
 
 <!-- Source file information -->
 
@@ -3374,7 +3374,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年1月29日 10:56:22 CST">2026-01-29 10:56:22</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月24日 17:49:16 CST">2026-02-24 17:49:16</span>
   </span>
 
     

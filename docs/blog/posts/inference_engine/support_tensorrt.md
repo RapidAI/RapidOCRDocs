@@ -206,6 +206,12 @@ links:
     print(metric)
     ```
 
+### 转换耗时参考
+
+|ONNX 模型| TensorRT Engine 格式 | 硬件设备 | 耗时(s) |
+|:---:|:---:|:---:|:---:|
+| ch_PP-OCRv4_det_infer.onnx | ch_PP-OCRv4_det_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 518s |
+
 ### 结果对比
 
 !!! tip

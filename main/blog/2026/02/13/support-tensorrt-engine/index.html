@@ -2356,7 +2356,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 8 分钟阅读时间
+                              需要 13 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2436,13 +2436,14 @@ You're not viewing the latest version.
 <!-- more -->
 
 <h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>首先感谢Github @<a href="https://github.com/LocNgoXuan23">LocNgoXuan23</a>小伙伴的PR <a href="https://github.com/RapidAI/RapidOCR/pull/623">#623</a>。有了这个PR，我这也有了抓手来推动支持TensorRT作为推理引擎。</p>
+<p>首先感谢Github @<a href="https://github.com/LocNgoXuan23">LocNgoXuan23</a>小伙伴的 PR <a href="https://github.com/RapidAI/RapidOCR/pull/623">#623</a> 。有了这个PR，我这也有了抓手来推动支持TensorRT作为推理引擎。</p>
 <p>大部分代码都已经在小伙伴提的 PR 中实现，很完善的实现，包括单元测试和 benchmark。我做的只是过一遍代码，看看怎么做的。</p>
 <p>本来我以为 TensorRT 也可以像其他推理引擎一样，将 ONNX 模型预先转为指定格式，然后直接分发。但是随着我看源码的过程中，逐渐发现不是这么简单。 TensorRT 的 engine 格式模型都是根据当前设备来动态生成的。因此，用户在使用前，需要先生成符合当前机器的 engine 格式模型文件，之后再直接使用。</p>
 <p>当前代码在指定使用 TensorRT 作为推理引擎后，程序会自动启动构建 engine 格式的模型文件。构建耗时依当前设备而有所不同。</p>
+<p>我在下面的对比结果中，将 @<a href="https://github.com/LocNgoXuan23">LocNgoXuan23</a> 在 PR <a href="https://github.com/RapidAI/RapidOCR/pull/623">#623</a> 中测试结果也一同列在了下面，添加了 <strong>硬件设备</strong> 一列，便于比较。</p>
 <h2 id="_2">运行环境¶<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Docker镜像：@<a href="https://github.com/LocNgoXuan23">LocNgoXuan23</a>在<a href="https://discord.com/channels/1143707958690189373/1143707958690189376/1468529402118672512">Discord</a>中给出的镜像：<a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream?version=7.0-gc-triton-devel">7.0-gc-triton-devel</a></li>
+<li>Docker镜像：@<a href="https://github.com/LocNgoXuan23">LocNgoXuan23</a> 在 <a href="https://discord.com/channels/1143707958690189373/1143707958690189376/1468529402118672512">Discord</a> 中给出的镜像：<a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream?version=7.0-gc-triton-devel">7.0-gc-triton-devel</a></li>
 <li>NVIDIA环境：(详细参见：<a href="https://gist.github.com/SWHL/0efe902ee469d49fc63d50e297d7fd98">link</a> )<ul>
 <li>cuda: 12.2</li>
 <li>tensorrt: 8.6.1</li>
@@ -2454,14 +2455,24 @@ You're not viewing the latest version.
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">rapidocr</span><span class="o">==</span><span class="m">3</span>.5.0
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">rapidocr</span><span class="o">==</span><span class="m">3</span>.5.0
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nv">text_det_metric</span><span class="o">==</span><span class="m">0</span>.0.8
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nv">text_rec_metric</span><span class="o">==</span><span class="m">0</span>.0.1
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nv">datasets</span><span class="o">==</span><span class="m">3</span>.6.0
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nv">onnxruntime</span><span class="o">==</span><span class="m">1</span>.23.2
 </span></code></pre></div></td></tr></table></div>
+<p>@<a href="https://github.com/LocNgoXuan23">LocNgoXuan23</a> 运行环境：</p>
+<ul>
+<li>GPU: NVIDIA GeForce RTX 3060 (12GB, Compute Capability 8.6)</li>
+<li>Driver: 570.211.01</li>
+<li>TensorRT: 8.6.1</li>
+<li>Python: 3.10.12</li>
+<li>ONNX Runtime: 1.18.0</li>
+</ul>
 <h2 id="det">支持Det模型<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
 <h3 id="_3">比较转化前后推理精度差异<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>这里主要采用@<a href="https://github.com/LocNgoXuan23">LocNgoXuan23</a>给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。</p>
+<p>这里主要采用 @<a href="https://github.com/LocNgoXuan23">LocNgoXuan23</a> 给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(Exp1) RapidOCR + ONNXRuntime</label><label for="__tabbed_1_2">(Exp2) RapidOCR + TensorRT + FP16</label><label for="__tabbed_1_3">(Exp3) RapidOCR + TensorRT + FP32</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2597,8 +2608,8 @@ You're not viewing the latest version.
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">LangDet</span><span class="p">,</span> <span class="n">ModelType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">engine_config</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>    <span class="s2">&quot;EngineConfig.tensorrt.use_fp16&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>    <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="hll">    <span class="s2">&quot;EngineConfig.tensorrt.use_fp16&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span></span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>    <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="s2">&quot;Det.lang_type&quot;</span><span class="p">:</span> <span class="n">LangDet</span><span class="o">.</span><span class="n">CH</span><span class="p">,</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>    <span class="s2">&quot;Det.model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">MOBILE</span><span class="p">,</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>    <span class="s2">&quot;Det.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV4</span><span class="p">,</span>
@@ -2691,8 +2702,8 @@ You're not viewing the latest version.
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">LangDet</span><span class="p">,</span> <span class="n">ModelType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="n">engine_config</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="s2">&quot;EngineConfig.tensorrt.use_fp16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>    <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="hll">    <span class="s2">&quot;EngineConfig.tensorrt.use_fp16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>    <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="s2">&quot;Det.lang_type&quot;</span><span class="p">:</span> <span class="n">LangDet</span><span class="o">.</span><span class="n">CH</span><span class="p">,</span>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="s2">&quot;Det.model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">MOBILE</span><span class="p">,</span>
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="s2">&quot;Det.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV4</span><span class="p">,</span>
@@ -2735,9 +2746,9 @@ You're not viewing the latest version.
 <h3 id="_4">结果对比<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1. 仅测试了中文相关的识别模型，其他语言的模型，因为没有对应评测集，就不测试指标了。
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1. 其他版本的模型，我这里就直接给出对比结果了。因为教程都是一样的，仅换了一个模型而已。
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>2. 下面指标仅作为转换前后，比较模型精度差异使用哈！
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>3. TensorRT 下的耗时是GPU的，ONNXRuntime 是 CPU 的。
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>3. TensorRT FP32 和 FP16 精度对比。
 </span></code></pre></div>
 </div>
 <table>
@@ -2768,21 +2779,21 @@ You're not viewing the latest version.
 <td style="text-align: center;">2</td>
 <td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">TensorRT FP16</td>
-<td style="text-align: center;">0.8667</td>
-<td style="text-align: center;">0.8396</td>
-<td style="text-align: center;">0.8529</td>
-<td style="text-align: center;">0.0406</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
-<td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">TensorRT FP32</td>
 <td style="text-align: center;">0.8677</td>
 <td style="text-align: center;">0.8396</td>
 <td style="text-align: center;">0.8534</td>
 <td style="text-align: center;">0.0402</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: center;">0.8667</td>
+<td style="text-align: center;">0.8396</td>
+<td style="text-align: center;">0.8529</td>
+<td style="text-align: center;">0.0406</td>
 </tr>
 <tr>
 <td style="text-align: center;"></td>
@@ -2808,21 +2819,21 @@ You're not viewing the latest version.
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">TensorRT FP16</td>
-<td style="text-align: center;">0.7943</td>
-<td style="text-align: center;">0.8216</td>
-<td style="text-align: center;">0.8077</td>
-<td style="text-align: center;">0.0415</td>
-</tr>
-<tr>
-<td style="text-align: center;">6</td>
-<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
-<td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">TensorRT FP32</td>
 <td style="text-align: center;">0.7938</td>
 <td style="text-align: center;">0.8220</td>
 <td style="text-align: center;">0.8077</td>
 <td style="text-align: center;">0.0402</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: center;">0.7943</td>
+<td style="text-align: center;">0.8216</td>
+<td style="text-align: center;">0.8077</td>
+<td style="text-align: center;">0.0415</td>
 </tr>
 <tr>
 <td style="text-align: center;"></td>
@@ -2848,21 +2859,21 @@ You're not viewing the latest version.
 <td style="text-align: center;">8</td>
 <td style="text-align: left;">ch_PP-OCRv4_det_server_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">TensorRT FP16</td>
-<td style="text-align: center;">0.3689</td>
-<td style="text-align: center;">0.0516</td>
-<td style="text-align: center;">0.0905</td>
-<td style="text-align: center;">0.0415</td>
-</tr>
-<tr>
-<td style="text-align: center;">9</td>
-<td style="text-align: left;">ch_PP-OCRv4_det_server_infer</td>
-<td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">TensorRT FP32</td>
 <td style="text-align: center;">0.7811</td>
 <td style="text-align: center;">0.8545</td>
 <td style="text-align: center;">0.8161</td>
 <td style="text-align: center;">0.0579</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: left;"><strong>ch_PP-OCRv4_det_server_infer</strong></td>
+<td style="text-align: left;"><strong>RapidOCR</strong></td>
+<td style="text-align: left;"><strong>TensorRT FP16</strong></td>
+<td style="text-align: center;"><strong>0.3689</strong></td>
+<td style="text-align: center;"><strong>0.0516</strong></td>
+<td style="text-align: center;"><strong>0.0905</strong></td>
+<td style="text-align: center;"><strong>0.0415</strong></td>
 </tr>
 <tr>
 <td style="text-align: center;"></td>
@@ -2888,21 +2899,21 @@ You're not viewing the latest version.
 <td style="text-align: center;">11</td>
 <td style="text-align: left;">en_PP-OCRv3_det_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">TensorRT FP16</td>
-<td style="text-align: center;">0.8147</td>
-<td style="text-align: center;">0.8346</td>
-<td style="text-align: center;">0.8245</td>
-<td style="text-align: center;">0.0384</td>
-</tr>
-<tr>
-<td style="text-align: center;">12</td>
-<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
-<td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">TensorRT FP32</td>
 <td style="text-align: center;">0.8153</td>
 <td style="text-align: center;">0.8346</td>
 <td style="text-align: center;">0.8248</td>
 <td style="text-align: center;">0.04</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: center;">0.8147</td>
+<td style="text-align: center;">0.8346</td>
+<td style="text-align: center;">0.8245</td>
+<td style="text-align: center;">0.0384</td>
 </tr>
 <tr>
 <td style="text-align: center;"></td>
@@ -2928,21 +2939,21 @@ You're not viewing the latest version.
 <td style="text-align: center;">14</td>
 <td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">TensorRT FP16</td>
-<td style="text-align: center;">0.4221</td>
-<td style="text-align: center;">0.6906</td>
-<td style="text-align: center;">0.5240</td>
-<td style="text-align: center;">0.0447</td>
-</tr>
-<tr>
-<td style="text-align: center;">15</td>
-<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
-<td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">TensorRT FP32</td>
 <td style="text-align: center;">0.4223</td>
 <td style="text-align: center;">0.6906</td>
 <td style="text-align: center;">0.5241</td>
 <td style="text-align: center;">0.0452</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: center;">0.4221</td>
+<td style="text-align: center;">0.6906</td>
+<td style="text-align: center;">0.5240</td>
+<td style="text-align: center;">0.0447</td>
 </tr>
 <tr>
 <td style="text-align: center;"></td>
@@ -2965,17 +2976,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">2.0193</td>
 </tr>
 <tr>
-<td style="text-align: center;">17</td>
-<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
-<td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">TensorRT FP16</td>
-<td style="text-align: center;">0.4143</td>
-<td style="text-align: center;">0.2059</td>
-<td style="text-align: center;">0.2751</td>
-<td style="text-align: center;">0.0387</td>
-</tr>
-<tr>
-<td style="text-align: center;">18<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">17[^1]</td>
 <td style="text-align: left;">ch_PP-OCRv5_server_det</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">TensorRT FP32</td>
@@ -2984,9 +2985,555 @@ You're not viewing the latest version.
 <td style="text-align: center;">0.7931</td>
 <td style="text-align: center;">0.1238</td>
 </tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: center;">0.4143</td>
+<td style="text-align: center;">0.2059</td>
+<td style="text-align: center;">0.2751</td>
+<td style="text-align: center;">0.0387</td>
+</tr>
 </tbody>
 </table>
-<p>在 Exp 18 中，在我当前设备上，构建对应的 engine 模型没有成功，暂时还未解决，具体报错日志如下：</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Exp</th>
+<th style="text-align: left;">模型</th>
+<th style="text-align: left;">推理框架</th>
+<th style="text-align: left;">推理引擎</th>
+<th style="text-align: left;">硬件</th>
+<th style="text-align: center;">Precision↑</th>
+<th style="text-align: center;">Recall↑</th>
+<th style="text-align: center;">H-mean↑</th>
+<th style="text-align: center;">Elapse↓</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8595</td>
+<td style="text-align: center;">0.8434</td>
+<td style="text-align: center;">0.8514</td>
+<td style="text-align: center;">0.182</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8677</td>
+<td style="text-align: center;">0.8396</td>
+<td style="text-align: center;">0.8534</td>
+<td style="text-align: center;">0.0402</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8667</td>
+<td style="text-align: center;">0.8396</td>
+<td style="text-align: center;">0.8529</td>
+<td style="text-align: center;">0.0406</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8595</td>
+<td style="text-align: center;">0.8434</td>
+<td style="text-align: center;">0.8514</td>
+<td style="text-align: center;">0.1044</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8685</td>
+<td style="text-align: center;">0.8403</td>
+<td style="text-align: center;">0.8542</td>
+<td style="text-align: center;">0.0288</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8677</td>
+<td style="text-align: center;">0.8396</td>
+<td style="text-align: center;">0.8534</td>
+<td style="text-align: center;">0.0266</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.7861</td>
+<td style="text-align: center;">0.8266</td>
+<td style="text-align: center;">0.8058</td>
+<td style="text-align: center;">0.1835</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.7938</td>
+<td style="text-align: center;">0.8220</td>
+<td style="text-align: center;">0.8077</td>
+<td style="text-align: center;">0.0402</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.7943</td>
+<td style="text-align: center;">0.8216</td>
+<td style="text-align: center;">0.8077</td>
+<td style="text-align: center;">0.0415</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7858</td>
+<td style="text-align: center;">0.8266</td>
+<td style="text-align: center;">0.8057</td>
+<td style="text-align: center;">0.1296</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7938</td>
+<td style="text-align: center;">0.8220</td>
+<td style="text-align: center;">0.8077</td>
+<td style="text-align: center;">0.0341</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7950</td>
+<td style="text-align: center;">0.8220</td>
+<td style="text-align: center;">0.8083</td>
+<td style="text-align: center;">0.0333</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.7713</td>
+<td style="text-align: center;">0.8579</td>
+<td style="text-align: center;">0.8123</td>
+<td style="text-align: center;">2.8449</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.7811</td>
+<td style="text-align: center;">0.8545</td>
+<td style="text-align: center;">0.8161</td>
+<td style="text-align: center;">0.0579</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>15</strong></td>
+<td style="text-align: left;"><strong>ch_PP-OCRv4_det_server_infer</strong></td>
+<td style="text-align: left;"><strong>RapidOCR</strong></td>
+<td style="text-align: left;"><strong>TensorRT FP16</strong></td>
+<td style="text-align: left;"><strong>NVIDIA A800-SXM4-80GB</strong></td>
+<td style="text-align: center;"><strong>0.3689</strong></td>
+<td style="text-align: center;"><strong>0.0516</strong></td>
+<td style="text-align: center;"><strong>0.0905</strong></td>
+<td style="text-align: center;"><strong>0.0415</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7710</td>
+<td style="text-align: center;">0.8579</td>
+<td style="text-align: center;">0.8121</td>
+<td style="text-align: center;">7.2283</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7805</td>
+<td style="text-align: center;">0.8545</td>
+<td style="text-align: center;">0.8158</td>
+<td style="text-align: center;">0.1167</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.3757</td>
+<td style="text-align: center;">0.0519</td>
+<td style="text-align: center;">0.0913</td>
+<td style="text-align: center;">0.0184</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8066</td>
+<td style="text-align: center;">0.8380</td>
+<td style="text-align: center;">0.8220</td>
+<td style="text-align: center;">0.1463</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8153</td>
+<td style="text-align: center;">0.8346</td>
+<td style="text-align: center;">0.8248</td>
+<td style="text-align: center;">0.04</td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
+<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8147</td>
+<td style="text-align: center;">0.8346</td>
+<td style="text-align: center;">0.8245</td>
+<td style="text-align: center;">0.0384</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">22</td>
+<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8066</td>
+<td style="text-align: center;">0.8380</td>
+<td style="text-align: center;">0.8220</td>
+<td style="text-align: center;">0.0839</td>
+</tr>
+<tr>
+<td style="text-align: center;">23</td>
+<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8144</td>
+<td style="text-align: center;">0.8346</td>
+<td style="text-align: center;">0.8244</td>
+<td style="text-align: center;">0.0283</td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8144</td>
+<td style="text-align: center;">0.8346</td>
+<td style="text-align: center;">0.8244</td>
+<td style="text-align: center;">0.0269</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
+<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.4228</td>
+<td style="text-align: center;">0.6921</td>
+<td style="text-align: center;">0.5249</td>
+<td style="text-align: center;">0.1681</td>
+</tr>
+<tr>
+<td style="text-align: center;">26</td>
+<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.4223</td>
+<td style="text-align: center;">0.6906</td>
+<td style="text-align: center;">0.5241</td>
+<td style="text-align: center;">0.0452</td>
+</tr>
+<tr>
+<td style="text-align: center;">27</td>
+<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.4221</td>
+<td style="text-align: center;">0.6906</td>
+<td style="text-align: center;">0.5240</td>
+<td style="text-align: center;">0.0447</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">28</td>
+<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.4161</td>
+<td style="text-align: center;">0.6841</td>
+<td style="text-align: center;">0.5175</td>
+<td style="text-align: center;">0.1638</td>
+</tr>
+<tr>
+<td style="text-align: center;">29</td>
+<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.4223</td>
+<td style="text-align: center;">0.6906</td>
+<td style="text-align: center;">0.5241</td>
+<td style="text-align: center;">0.0348</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.4220</td>
+<td style="text-align: center;">0.6906</td>
+<td style="text-align: center;">0.5239</td>
+<td style="text-align: center;">0.0329</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">31</td>
+<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.7394</td>
+<td style="text-align: center;">0.8442</td>
+<td style="text-align: center;">0.7883</td>
+<td style="text-align: center;">2.0193</td>
+</tr>
+<tr>
+<td style="text-align: center;">32</td>
+<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: center;">33</td>
+<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.4143</td>
+<td style="text-align: center;">0.2059</td>
+<td style="text-align: center;">0.2751</td>
+<td style="text-align: center;">0.0387</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">34</td>
+<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7394</td>
+<td style="text-align: center;">0.8442</td>
+<td style="text-align: center;">0.7883</td>
+<td style="text-align: center;">5.7514</td>
+</tr>
+<tr>
+<td style="text-align: center;">35</td>
+<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7503</td>
+<td style="text-align: center;">0.8411</td>
+<td style="text-align: center;">0.7931</td>
+<td style="text-align: center;">0.0976</td>
+</tr>
+<tr>
+<td style="text-align: center;">36</td>
+<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.4163</td>
+<td style="text-align: center;">0.2070</td>
+<td style="text-align: center;">0.2765</td>
+<td style="text-align: center;">0.0453</td>
+</tr>
+</tbody>
+</table>
+<p>在 Exp 9 中， 模型转为 TensorRT FP16 engine格式后，各项指标均有大幅度下降，原因暂未查明，小伙伴们使用时注意。</p>
+<p>在 Exp 17 中，在我当前设备上，构建对应的 engine 模型没有成功，暂时还未解决，具体报错日志如下：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -3014,8 +3561,8 @@ You're not viewing the latest version.
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-02-25<span class="w"> </span><span class="m">08</span>:11:03,888<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>engine_builder.py:55:<span class="w"> </span>Using<span class="w"> </span>FP32<span class="w"> </span>precision
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-02-25<span class="w"> </span><span class="m">08</span>:11:03,889<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>engine_builder.py:119:<span class="w"> </span>Set<span class="w"> </span>optimization<span class="w"> </span>profile<span class="w"> </span><span class="k">for</span><span class="w"> </span>x:<span class="w"> </span><span class="nv">min</span><span class="o">=[</span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">32</span>,<span class="w"> </span><span class="m">32</span><span class="o">]</span>,<span class="w"> </span><span class="nv">opt</span><span class="o">=[</span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">736</span>,<span class="w"> </span><span class="m">736</span><span class="o">]</span>,<span class="w"> </span><span class="nv">max</span><span class="o">=[</span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">2048</span>,<span class="w"> </span><span class="m">2048</span><span class="o">]</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-02-25<span class="w"> </span><span class="m">08</span>:11:03,889<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>engine_builder.py:67:<span class="w"> </span>Building<span class="w"> </span>TensorRT<span class="w"> </span>engine<span class="w"> </span><span class="o">(</span>this<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>a<span class="w"> </span>few<span class="w"> </span>minutes<span class="o">)</span>...
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="o">[</span><span class="m">02</span>/25/2026-08:13:28<span class="o">]</span><span class="w"> </span><span class="o">[</span>TRT<span class="o">]</span><span class="w"> </span><span class="o">[</span>E<span class="o">]</span><span class="w"> </span><span class="m">1</span>:<span class="w"> </span>No<span class="w"> </span>Myelin<span class="w"> </span>Error<span class="w"> </span>exists
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="o">[</span><span class="m">02</span>/25/2026-08:13:28<span class="o">]</span><span class="w"> </span><span class="o">[</span>TRT<span class="o">]</span><span class="w"> </span><span class="o">[</span>E<span class="o">]</span><span class="w"> </span><span class="m">1</span>:<span class="w"> </span><span class="o">[</span>runnerBuilderBase.cpp::buildAndSerializeMyelinGraph::326<span class="o">]</span><span class="w"> </span>Error<span class="w"> </span>Code<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Myelin<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>Myelin<span class="w"> </span>Error<span class="w"> </span>exists<span class="o">)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="hll"><span class="o">[</span><span class="m">02</span>/25/2026-08:13:28<span class="o">]</span><span class="w"> </span><span class="o">[</span>TRT<span class="o">]</span><span class="w"> </span><span class="o">[</span>E<span class="o">]</span><span class="w"> </span><span class="m">1</span>:<span class="w"> </span>No<span class="w"> </span>Myelin<span class="w"> </span>Error<span class="w"> </span>exists
+</span></span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="o">[</span><span class="m">02</span>/25/2026-08:13:28<span class="o">]</span><span class="w"> </span><span class="o">[</span>TRT<span class="o">]</span><span class="w"> </span><span class="o">[</span>E<span class="o">]</span><span class="w"> </span><span class="m">1</span>:<span class="w"> </span><span class="o">[</span>runnerBuilderBase.cpp::buildAndSerializeMyelinGraph::326<span class="o">]</span><span class="w"> </span>Error<span class="w"> </span>Code<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Myelin<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>Myelin<span class="w"> </span>Error<span class="w"> </span>exists<span class="o">)</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a>Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/xxxxx/RapidOCR/python/test_det.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">25</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="nv">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>RapidOCR<span class="o">(</span><span class="nv">params</span><span class="o">=</span>engine_config<span class="o">)</span>
@@ -3178,8 +3725,8 @@ You're not viewing the latest version.
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">LangRec</span><span class="p">,</span> <span class="n">ModelType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
 </span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="n">engine_config</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a>    <span class="s2">&quot;EngineConfig.tensorrt.use_fp16&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a>    <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="hll">    <span class="s2">&quot;EngineConfig.tensorrt.use_fp16&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span></span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a>    <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
 </span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a>    <span class="s2">&quot;Rec.lang_type&quot;</span><span class="p">:</span> <span class="n">LangRec</span><span class="o">.</span><span class="n">CH</span><span class="p">,</span>
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a>    <span class="s2">&quot;Rec.model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">MOBILE</span><span class="p">,</span>
 </span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a>    <span class="s2">&quot;Rec.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV4</span><span class="p">,</span>
@@ -3282,8 +3829,8 @@ You're not viewing the latest version.
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">LangRec</span><span class="p">,</span> <span class="n">ModelType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a>
 </span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="n">engine_config</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a>    <span class="s2">&quot;EngineConfig.tensorrt.use_fp16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="hll">    <span class="s2">&quot;EngineConfig.tensorrt.use_fp16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># 默认为FP32</span>
+</span></span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
 </span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a>    <span class="s2">&quot;Rec.lang_type&quot;</span><span class="p">:</span> <span class="n">LangRec</span><span class="o">.</span><span class="n">CH</span><span class="p">,</span>
 </span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a>    <span class="s2">&quot;Rec.model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">MOBILE</span><span class="p">,</span>
 </span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a>    <span class="s2">&quot;Rec.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV4</span><span class="p">,</span>
@@ -3327,6 +3874,13 @@ You're not viewing the latest version.
 </div>
 </div>
 <h3 id="_6">结果对比<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>1. 仅测试了中文相关的识别模型，其他语言的模型，因为没有对应评测集，就不测试指标了。
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>2. 下面指标仅作为转换前后，比较模型精度差异使用哈！
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>3. TensorRT 下的耗时是GPU的，ONNXRuntime 是 CPU 的。
+</span></code></pre></div>
+</div>
 <table>
 <thead>
 <tr>
@@ -3353,19 +3907,19 @@ You're not viewing the latest version.
 <td>2</td>
 <td>ch_PP-OCRv4_rec_infer</td>
 <td>RapidOCR</td>
-<td>TensorRT FP16</td>
+<td>TensorRT FP32</td>
 <td>0.8290</td>
-<td>0.9430</td>
-<td>0.0023</td>
+<td>0.9432</td>
+<td>0.0022</td>
 </tr>
 <tr>
 <td>3</td>
 <td>ch_PP-OCRv4_rec_infer</td>
 <td>RapidOCR</td>
-<td>TensorRT FP32</td>
+<td>TensorRT FP16</td>
 <td>0.8290</td>
-<td>0.9432</td>
-<td>0.0022</td>
+<td>0.9430</td>
+<td>0.0023</td>
 </tr>
 <tr>
 <td></td>
@@ -3389,19 +3943,19 @@ You're not viewing the latest version.
 <td>5</td>
 <td>ch_PP-OCRv4_rec_server_infer</td>
 <td>RapidOCR</td>
-<td>TensorRT FP16</td>
-<td>0.8097</td>
+<td>TensorRT FP32</td>
+<td>0.8065</td>
 <td>0.9376</td>
-<td>0.0025</td>
+<td>0.0047</td>
 </tr>
 <tr>
 <td>6</td>
 <td>ch_PP-OCRv4_rec_server_infer</td>
 <td>RapidOCR</td>
-<td>TensorRT FP32</td>
-<td>0.8065</td>
+<td>TensorRT FP16</td>
+<td>0.8097</td>
 <td>0.9376</td>
-<td>0.0047</td>
+<td>0.0025</td>
 </tr>
 <tr>
 <td></td>
@@ -3425,19 +3979,19 @@ You're not viewing the latest version.
 <td>8</td>
 <td>ch_doc_PP-OCRv4_rec_server_infer</td>
 <td>RapidOCR</td>
-<td>TensorRT FP16</td>
+<td>TensorRT FP32</td>
 <td>0.8097</td>
 <td>0.9444</td>
-<td>0.0028</td>
+<td>0.0051</td>
 </tr>
 <tr>
 <td>9</td>
 <td>ch_doc_PP-OCRv4_rec_server_infer</td>
 <td>RapidOCR</td>
-<td>TensorRT FP32</td>
+<td>TensorRT FP16</td>
 <td>0.8097</td>
 <td>0.9444</td>
-<td>0.0051</td>
+<td>0.0028</td>
 </tr>
 <tr>
 <td></td>
@@ -3461,19 +4015,19 @@ You're not viewing the latest version.
 <td>11</td>
 <td>ch_PP-OCRv5_rec_mobile_infer</td>
 <td>RapidOCR</td>
-<td>TensorRT FP16</td>
-<td>0.7387</td>
-<td>0.9193</td>
-<td>0.0024</td>
+<td>TensorRT FP32</td>
+<td>0.7355</td>
+<td>0.9177</td>
+<td>0.0039</td>
 </tr>
 <tr>
 <td>12</td>
 <td>ch_PP-OCRv5_rec_mobile_infer</td>
 <td>RapidOCR</td>
-<td>TensorRT FP32</td>
-<td>0.7355</td>
-<td>0.9177</td>
-<td>0.0039</td>
+<td>TensorRT FP16</td>
+<td>0.7387</td>
+<td>0.9193</td>
+<td>0.0024</td>
 </tr>
 <tr>
 <td></td>
@@ -3497,30 +4051,429 @@ You're not viewing the latest version.
 <td>14</td>
 <td>ch_PP-OCRv5_rec_server_infer</td>
 <td>RapidOCR</td>
-<td>TensorRT FP16</td>
-<td>0.8129</td>
-<td>0.9431</td>
-<td>0.0039</td>
-</tr>
-<tr>
-<td>15</td>
-<td>ch_PP-OCRv5_rec_server_infer</td>
-<td>RapidOCR</td>
 <td>TensorRT FP32</td>
 <td>0.8161</td>
 <td>0.9439</td>
 <td>0.0049</td>
 </tr>
+<tr>
+<td>15</td>
+<td>ch_PP-OCRv5_rec_server_infer</td>
+<td>RapidOCR</td>
+<td>TensorRT FP16</td>
+<td>0.8129</td>
+<td>0.9431</td>
+<td>0.0039</td>
+</tr>
 </tbody>
 </table>
-<div class="footnote">
 <hr />
-<ol>
-<li id="fn:1">
-<p>该结果来自<a href="https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254">link</a>。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Exp</th>
+<th style="text-align: left;">模型</th>
+<th style="text-align: left;">推理框架</th>
+<th style="text-align: left;">推理引擎</th>
+<th style="text-align: left;">硬件</th>
+<th style="text-align: center;">ExactMatch↑</th>
+<th style="text-align: center;">CharMatch↑</th>
+<th style="text-align: center;">Elapse↓</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8290</td>
+<td style="text-align: center;">0.9432</td>
+<td style="text-align: center;">0.0176</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8290</td>
+<td style="text-align: center;">0.9432</td>
+<td style="text-align: center;">0.0022</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8290</td>
+<td style="text-align: center;">0.9430</td>
+<td style="text-align: center;">0.0023</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8290</td>
+<td style="text-align: center;">0.9432</td>
+<td style="text-align: center;">0.0081</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8290</td>
+<td style="text-align: center;">0.9432</td>
+<td style="text-align: center;">0.0019</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8290</td>
+<td style="text-align: center;">0.9428</td>
+<td style="text-align: center;">0.0015</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8065</td>
+<td style="text-align: center;">0.9375</td>
+<td style="text-align: center;">0.0811</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8065</td>
+<td style="text-align: center;">0.9376</td>
+<td style="text-align: center;">0.0047</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8097</td>
+<td style="text-align: center;">0.9376</td>
+<td style="text-align: center;">0.0025</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8065</td>
+<td style="text-align: center;">0.9375</td>
+<td style="text-align: center;">4.9997</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8065</td>
+<td style="text-align: center;">0.9375</td>
+<td style="text-align: center;">0.0063</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8097</td>
+<td style="text-align: center;">0.9376</td>
+<td style="text-align: center;">0.0028</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8097</td>
+<td style="text-align: center;">0.9444</td>
+<td style="text-align: center;">0.0809</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8097</td>
+<td style="text-align: center;">0.9444</td>
+<td style="text-align: center;">0.0051</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8097</td>
+<td style="text-align: center;">0.9444</td>
+<td style="text-align: center;">0.0028</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8097</td>
+<td style="text-align: center;">0.9444</td>
+<td style="text-align: center;">5.2886</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8097</td>
+<td style="text-align: center;">0.9444</td>
+<td style="text-align: center;">0.0062</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8065</td>
+<td style="text-align: center;">0.9439</td>
+<td style="text-align: center;">0.0032</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.7355</td>
+<td style="text-align: center;">0.9177</td>
+<td style="text-align: center;">0.0196</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.7355</td>
+<td style="text-align: center;">0.9177</td>
+<td style="text-align: center;">0.0039</td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.7387</td>
+<td style="text-align: center;">0.9193</td>
+<td style="text-align: center;">0.0024</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">22</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7355</td>
+<td style="text-align: center;">0.9177</td>
+<td style="text-align: center;">0.0064</td>
+</tr>
+<tr>
+<td style="text-align: center;">23</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7355</td>
+<td style="text-align: center;">0.9178</td>
+<td style="text-align: center;">0.0035</td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.7387</td>
+<td style="text-align: center;">0.9191</td>
+<td style="text-align: center;">0.0026</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8129</td>
+<td style="text-align: center;">0.9431</td>
+<td style="text-align: center;">0.0582</td>
+</tr>
+<tr>
+<td style="text-align: center;">26</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8161</td>
+<td style="text-align: center;">0.9439</td>
+<td style="text-align: center;">0.0049</td>
+</tr>
+<tr>
+<td style="text-align: center;">27</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: center;">0.8129</td>
+<td style="text-align: center;">0.9431</td>
+<td style="text-align: center;">0.0039</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">28</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8129</td>
+<td style="text-align: center;">0.9431</td>
+<td style="text-align: center;">1.2137</td>
+</tr>
+<tr>
+<td style="text-align: center;">29</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP32</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8129</td>
+<td style="text-align: center;">0.9431</td>
+<td style="text-align: center;">0.0051</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">TensorRT FP16</td>
+<td style="text-align: left;">NVIDIA GeForce RTX 3060</td>
+<td style="text-align: center;">0.8129</td>
+<td style="text-align: center;">0.9431</td>
+<td style="text-align: center;">0.0042</td>
+</tr>
+</tbody>
+</table>
 
 <!-- Source file information -->
 
@@ -3545,7 +4498,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月25日 08:31:11 CST">2026-02-25 08:31:11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月25日 09:55:39 CST">2026-02-25 09:55:39</span>
   </span>
 
     

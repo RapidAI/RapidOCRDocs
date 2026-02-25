@@ -59,7 +59,7 @@ links:
 
 ### 比较转化前后推理精度差异
 
-这里主要采用 [@LocNgoXuan23](https://github.com/LocNgoXuan23) 给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。
+这里主要采用 [@LocNgoXuan23](https://github.com/LocNgoXuan23) 给出的 [benchmark 脚本](https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254) 来批量测试。下面是测试单个模型的脚本。
 
 === "(Exp1) RapidOCR + ONNX Runtime"
 
@@ -266,9 +266,9 @@ links:
 | 35  | ch_PP-OCRv5_server_det       | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.7503     | 0.8411  | 0.7931  | 0.0976  |
 | 36  | ch_PP-OCRv5_server_det       | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.4163     | 0.2070  | 0.2765  | 0.0453  |
 
-在 Exp 15 和 Exp 18 中， 模型转为 TensorRT FP16 engine格式后，各项指标均有大幅度下降，原因暂未查明，小伙伴们使用时注意。
+在 Exp 15 和 Exp 18 中， 模型转为 TensorRT FP16 `.engine` 格式后，各项指标均有大幅度下降，原因暂未查明，小伙伴们使用时注意。
 
-在 Exp 32 中，在我当前设备上，构建对应的 engine 模型没有成功，暂时还未解决，具体报错日志如下：
+在 Exp 32 中，我在当前设备上尝试构建对应的 TensorRT `.engine` 模型时未能成功，问题目前尚未解决。具体的错误日志如下：
 
 ```bash linenums="1" hl_lines="6"
 [INFO] 2026-02-25 08:10:57,064 [RapidOCR] base.py:22: Using engine_name: tensorrt
@@ -300,7 +300,7 @@ RuntimeError: Failed to build TensorRT engine
 
 ### 比较转化前后推理精度差异
 
-这里主要采用[@LocNgoXuan23](https://github.com/LocNgoXuan23)给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。
+这里主要采用[@LocNgoXuan23](https://github.com/LocNgoXuan23)给出的 [benchmark 脚本](https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254)来批量测试。下面是测试单个模型的脚本。
 
 === "(Exp1) RapidOCR + ONNX Runtime"
 

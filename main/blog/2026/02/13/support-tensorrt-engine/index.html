@@ -2527,7 +2527,7 @@ You're not viewing the latest version.
 </ul>
 <h2 id="det">支持Det模型<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
 <h3 id="_3">比较转化前后推理精度差异<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>这里主要采用 <a href="https://github.com/LocNgoXuan23">@LocNgoXuan23</a> 给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。</p>
+<p>这里主要采用 <a href="https://github.com/LocNgoXuan23">@LocNgoXuan23</a> 给出的 <a href="https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254">benchmark 脚本</a> 来批量测试。下面是测试单个模型的脚本。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_1_2">(Exp2) RapidOCR + TensorRT + FP16</label><label for="__tabbed_1_3">(Exp3) RapidOCR + TensorRT + FP32</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3340,8 +3340,8 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p>在 Exp 15 和 Exp 18 中， 模型转为 TensorRT FP16 engine格式后，各项指标均有大幅度下降，原因暂未查明，小伙伴们使用时注意。</p>
-<p>在 Exp 32 中，在我当前设备上，构建对应的 engine 模型没有成功，暂时还未解决，具体报错日志如下：</p>
+<p>在 Exp 15 和 Exp 18 中， 模型转为 TensorRT FP16 <code>.engine</code> 格式后，各项指标均有大幅度下降，原因暂未查明，小伙伴们使用时注意。</p>
+<p>在 Exp 32 中，我在当前设备上尝试构建对应的 TensorRT <code>.engine</code> 模型时未能成功，问题目前尚未解决。具体的错误日志如下：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -3390,7 +3390,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 <h2 id="rec">支持Rec模型<a class="headerlink" href="#rec" title="Permanent link">&para;</a></h2>
 <h3 id="_5">比较转化前后推理精度差异<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>这里主要采用<a href="https://github.com/LocNgoXuan23">@LocNgoXuan23</a>给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。</p>
+<p>这里主要采用<a href="https://github.com/LocNgoXuan23">@LocNgoXuan23</a>给出的 <a href="https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254">benchmark 脚本</a>来批量测试。下面是测试单个模型的脚本。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_2_2">(Exp2) RapidOCR + TensorRT + FP16</label><label for="__tabbed_2_3">(Exp3) RapidOCR + TensorRT + FP32</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4123,7 +4123,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月25日 11:39:24 CST">2026-02-25 11:39:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月25日 11:44:18 CST">2026-02-25 11:44:18</span>
   </span>
 
     

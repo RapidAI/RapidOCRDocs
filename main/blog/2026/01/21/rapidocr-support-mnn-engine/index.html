@@ -2430,7 +2430,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 5 分钟阅读时间
+                              需要 6 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2552,7 +2552,7 @@ You're not viewing the latest version.
 <!-- more -->
 
 <h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>首先感谢Github @<a href="https://github.com/narc1ssus1">narc1ssus1</a>小伙伴的PR <a href="https://github.com/RapidAI/RapidOCR/pull/613">#613</a>。有了这个PR，我这也有了抓手来推动支持MNN作为推理引擎。</p>
+<p>首先感谢Github <a href="https://github.com/narc1ssus1">@narc1ssus1</a> 小伙伴的PR <a href="https://github.com/RapidAI/RapidOCR/pull/613">#613</a>。有了这个PR，我这也有了抓手来推动支持MNN作为推理引擎。</p>
 <h2 id="_2">运行环境¶<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>操作系统：macOS Tahoe 26.2</li>
@@ -2567,11 +2567,13 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">rapidocr</span><span class="o">==</span><span class="m">3</span>.5.0
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">rapidocr</span><span class="o">==</span><span class="m">3</span>.5.0
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nv">mnn</span><span class="o">==</span><span class="m">3</span>.2.0
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nv">text_det_metric</span><span class="o">==</span><span class="m">0</span>.0.8
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nv">text_rec_metric</span><span class="o">==</span><span class="m">0</span>.0.1
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nv">datasets</span><span class="o">==</span><span class="m">3</span>.6.0
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nv">onnxruntime</span><span class="o">==</span><span class="m">1</span>.23.2
 </span></code></pre></div></td></tr></table></div>
 <h2 id="mnn">安装MNN<a class="headerlink" href="#mnn" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
@@ -2605,9 +2607,9 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 <h2 id="det">支持Det模型<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
 <h3 id="_3">比较转化前后推理精度差异<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>两者对比的模型为<code>ch_PP-OCRv4_det_infer</code>模型，Exp1基于<code>RapidOCR+ONNXRuntime</code>格式模型推理, Exp2基于<code>RapidOCR+MNN</code>格式模型推理。</p>
+<p>两者对比的模型为<code>ch_PP-OCRv4_det_infer</code>模型，Exp1基于<code>RapidOCR+ONNX Runtime</code>格式模型推理, Exp2基于<code>RapidOCR+MNN</code>格式模型推理。</p>
 <p>两次实验除模型不一样外，其余均相同。其余未列出的实验均只换了模型。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(Exp1) RapidOCR + ONNXRuntime</label><label for="__tabbed_1_2">(Exp2) RapidOCR + MNN</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_1_2">(Exp2) RapidOCR + MNN</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Step 1: 获得推理结果</p>
@@ -2794,7 +2796,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">1</td>
 <td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8595</td>
 <td style="text-align: center;">0.8434</td>
 <td style="text-align: center;">0.8514</td>
@@ -2824,7 +2826,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.7861</td>
 <td style="text-align: center;">0.8266</td>
 <td style="text-align: center;">0.8058</td>
@@ -2854,7 +2856,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">ch_PP-OCRv4_det_server_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.7713</td>
 <td style="text-align: center;">0.8579</td>
 <td style="text-align: center;">0.8123</td>
@@ -2884,7 +2886,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">7</td>
 <td style="text-align: left;">en_PP-OCRv3_det_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8066</td>
 <td style="text-align: center;">0.8380</td>
 <td style="text-align: center;">0.8220</td>
@@ -2914,7 +2916,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">9</td>
 <td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.4228</td>
 <td style="text-align: center;">0.6921</td>
 <td style="text-align: center;">0.5249</td>
@@ -2944,7 +2946,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">11</td>
 <td style="text-align: left;">ch_PP-OCRv5_server_det</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.7394</td>
 <td style="text-align: center;">0.8442</td>
 <td style="text-align: center;">0.7883</td>
@@ -2964,8 +2966,8 @@ You're not viewing the latest version.
 </table>
 <h2 id="rec">支持Rec模型<a class="headerlink" href="#rec" title="Permanent link">&para;</a></h2>
 <h3 id="_5">比较转化前后推理精度差异<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>两者对比的模型为<code>ch_PP-OCRv4_rec_infer</code>模型，Exp1基于<code>RapidOCR+ONNXRuntime</code>格式模型推理, Exp2基于<code>RapidOCR+MNN</code>格式模型推理。两次实验除模型不一样外，其余均相同。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">(Exp1) RapidOCR + ONNXRuntime</label><label for="__tabbed_2_2">(Exp2) RapidOCR + MNN</label></div>
+<p>两者对比的模型为<code>ch_PP-OCRv4_rec_infer</code>模型，Exp1基于<code>RapidOCR+ONNX Runtime</code>格式模型推理, Exp2基于<code>RapidOCR+MNN</code>格式模型推理。两次实验除模型不一样外，其余均相同。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_2_2">(Exp2) RapidOCR + MNN</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Step 1: 获得推理结果</p>
@@ -3193,7 +3195,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">1</td>
 <td style="text-align: left;">ch_PP-OCRv4_rec_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.829</td>
 <td style="text-align: center;">0.9432</td>
 <td style="text-align: center;">0.0176</td>
@@ -3220,7 +3222,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">ch_PP-OCRv4_rec_server_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8065</td>
 <td style="text-align: center;">0.9375</td>
 <td style="text-align: center;">0.0811</td>
@@ -3247,7 +3249,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8097</td>
 <td style="text-align: center;">0.9444</td>
 <td style="text-align: center;">0.0809</td>
@@ -3274,7 +3276,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">7</td>
 <td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.7355</td>
 <td style="text-align: center;">0.9177</td>
 <td style="text-align: center;">0.0196</td>
@@ -3301,7 +3303,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">9</td>
 <td style="text-align: left;">ch_PP-OCRv5_rec_server_infer</td>
 <td style="text-align: left;">RapidOCR</td>
-<td style="text-align: left;">ONNXRuntime</td>
+<td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8129</td>
 <td style="text-align: center;">0.9431</td>
 <td style="text-align: center;">0.0582</td>
@@ -3348,7 +3350,7 @@ You're not viewing the latest version.
 </ul>
 <p>相关MNN模型已经上传到<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭模型库</a>中。</p>
 <h2 id="_8">写在最后<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>从以上基准比较来看，MNN推理引擎整体推理速度要比ONNXRuntime更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。</p>
+<p>从以上基准比较来看，MNN 推理引擎整体推理速度要比 ONNX Runtime 更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。</p>
 <p><code>rapidocr</code>已经在<code>&gt;=v3.6.0</code>集成以上模型，欢迎使用和反馈。</p>
 
 <!-- Source file information -->
@@ -3374,7 +3376,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月24日 17:49:16 CST">2026-02-24 17:49:16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月25日 11:39:24 CST">2026-02-25 11:39:24</span>
   </span>
 
     

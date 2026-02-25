@@ -8,6 +8,8 @@ categories:
 comments: true
 hide:
   - toc
+links:
+  - RapidOCR支持MNN推理引擎: blog/posts/inference_engine/support_mnn_engine.md
 ---
 
 记录支持TensorRT推理引擎的过程文档。
@@ -16,19 +18,21 @@ hide:
 
 ## 引言
 
-首先感谢Github @[LocNgoXuan23](https://github.com/LocNgoXuan23)小伙伴的 PR [#623](https://github.com/RapidAI/RapidOCR/pull/623) 。有了这个PR，我这也有了抓手来推动支持TensorRT作为推理引擎。
+首先，衷心感谢 GitHub 用户 [@LocNgoXuan23](https://github.com/LocNgoXuan23) 提交的 PR [#623](https://github.com/RapidAI/RapidOCR/pull/623)！
+正是有了这项贡献，我们才得以顺利推进 TensorRT 作为 RapidOCR 的推理引擎支持。
 
-大部分代码都已经在小伙伴提的 PR 中实现，很完善的实现，包括单元测试和 benchmark。我做的只是过一遍代码，看看怎么做的。
+该 PR 已经实现了非常完善的 TensorRT 集成，不仅包含完整的推理逻辑，还附带了单元测试和详尽的性能基准（benchmark）数据。我所做的主要是通读代码，理解其实现机制。
 
-本来我以为 TensorRT 也可以像其他推理引擎一样，将 ONNX 模型预先转为指定格式，然后直接分发。但是随着我看源码的过程中，逐渐发现不是这么简单。 TensorRT 的 engine 格式模型都是根据当前设备来动态生成的。因此，用户在使用前，需要先生成符合当前机器的 engine 格式模型文件，之后再直接使用。
+起初，我以为 TensorRT 可以像其他推理引擎（如 ONNX Runtime 或 MNN）一样，将 ONNX 模型预先转换为通用的目标格式后直接分发使用。但在深入阅读源码后，我才意识到事情并非如此简单：**TensorRT 的 `.engine` 模型文件是与具体硬件强绑定的**，必须根据当前设备的 GPU 架构（如 compute capability）动态生成。
 
-当前代码在指定使用 TensorRT 作为推理引擎后，程序会自动启动构建 engine 格式的模型文件。构建耗时依当前设备而有所不同。
+**因此，在实际使用中，用户首次指定 TensorRT 作为推理引擎时，程序会自动触发 `.engine` 文件的构建流程。这一过程的耗时取决于所用设备的性能——通常在桌面级或服务器级 GPU 上较快，在边缘设备（如 Jetson）上则可能稍长。**
 
-我在下面的对比结果中，将 @[LocNgoXuan23](https://github.com/LocNgoXuan23) 在 PR [#623](https://github.com/RapidAI/RapidOCR/pull/623) 中测试结果也一同列在了下面，添加了 **硬件设备** 一列，便于比较。
+为了便于横向对比，我在下方整理了 [@LocNgoXuan23](https://github.com/LocNgoXuan23) 在 PR 中提供的测试结果，并额外补充了 **硬件设备** 一列，方便大家结合自身环境参考性能表现。
 
 ## 运行环境¶
 
-- Docker镜像：@[LocNgoXuan23](https://github.com/LocNgoXuan23) 在 [Discord](https://discord.com/channels/1143707958690189373/1143707958690189376/1468529402118672512) 中给出的镜像：[7.0-gc-triton-devel](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream?version=7.0-gc-triton-devel)
+- Docker镜像：[@LocNgoXuan23](https://github.com/LocNgoXuan23) 在 [Discord](https://discord.com/channels/1143707958690189373/1143707958690189376/1468529402118672512) 中给出的镜像：[7.0-gc-triton-devel](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream?version=7.0-gc-triton-devel)
+- 设备配置：8 CPU / 256 GB
 - NVIDIA环境：(详细参见：[link](https://gist.github.com/SWHL/0efe902ee469d49fc63d50e297d7fd98) )
     - cuda: 12.2
     - tensorrt: 8.6.1
@@ -43,7 +47,7 @@ hide:
   onnxruntime==1.23.2
   ```
 
-@[LocNgoXuan23](https://github.com/LocNgoXuan23) 运行环境：
+[@LocNgoXuan23](https://github.com/LocNgoXuan23) 运行环境：
 
 - GPU: NVIDIA GeForce RTX 3060 (12GB, Compute Capability 8.6)
 - Driver: 570.211.01
@@ -55,9 +59,9 @@ hide:
 
 ### 比较转化前后推理精度差异
 
-这里主要采用 @[LocNgoXuan23](https://github.com/LocNgoXuan23) 给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。
+这里主要采用 [@LocNgoXuan23](https://github.com/LocNgoXuan23) 给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。
 
-=== "(Exp1) RapidOCR + ONNXRuntime"
+=== "(Exp1) RapidOCR + ONNX Runtime"
 
     ```python linenums="1"
     # Step 1: 获得推理结果
@@ -212,87 +216,59 @@ hide:
     3. TensorRT FP32 和 FP16 精度对比。
     ```
 
-| Exp | 模型                         | 推理框架  | 推理引擎       | Precision↑ | Recall↑ | H-mean↑ | Elapse↓ |
-|:---:|:---------------------------|:---------|:--------------|:----------:|:-------:|:-------:|:-------:|
-| 1   | ch_PP-OCRv4_det_infer      | RapidOCR | ONNXRuntime   | 0.8595     | 0.8434  | 0.8514  | 0.182   |
-| 2   | ch_PP-OCRv4_det_infer      | RapidOCR | TensorRT FP32 | 0.8677     | 0.8396  | 0.8534  | 0.0402  |
-| 3   | ch_PP-OCRv4_det_infer      | RapidOCR | TensorRT FP16 | 0.8667     | 0.8396  | 0.8529  | 0.0406  |
-|     |                           |          |               |            |         |         |         |
-| 4   | ch_PP-OCRv5_mobile_det     | RapidOCR | ONNXRuntime   | 0.7861     | 0.8266  | 0.8058  | 0.1835  |
-| 5   | ch_PP-OCRv5_mobile_det     | RapidOCR | TensorRT FP32 | 0.7938     | 0.8220  | 0.8077  | 0.0402  |
-| 6   | ch_PP-OCRv5_mobile_det     | RapidOCR | TensorRT FP16 | 0.7943     | 0.8216  | 0.8077  | 0.0415  |
-|     |                           |          |               |            |         |         |         |
-| 7   | ch_PP-OCRv4_det_server_infer | RapidOCR | ONNXRuntime   | 0.7713     | 0.8579  | 0.8123  | 2.8449  |
-| 8   | ch_PP-OCRv4_det_server_infer | RapidOCR | TensorRT FP32 | 0.7811     | 0.8545  | 0.8161  | 0.0579  |
-| **9** | **ch_PP-OCRv4_det_server_infer** | **RapidOCR** | **TensorRT FP16** | **0.3689** | **0.0516** | **0.0905** | **0.0415** |
-|     |                           |          |               |            |         |         |         |
-| 10  | en_PP-OCRv3_det_infer      | RapidOCR | ONNXRuntime   | 0.8066     | 0.8380  | 0.8220  | 0.1463  |
-| 11  | en_PP-OCRv3_det_infer      | RapidOCR | TensorRT FP32 | 0.8153     | 0.8346  | 0.8248  | 0.04    |
-| 12  | en_PP-OCRv3_det_infer      | RapidOCR | TensorRT FP16 | 0.8147     | 0.8346  | 0.8245  | 0.0384  |
-|     |                           |          |               |            |         |         |         |
-| 13  | Multilingual_PP-OCRv3_det_infer | RapidOCR | ONNXRuntime   | 0.4228     | 0.6921  | 0.5249  | 0.1681  |
-| 14  | Multilingual_PP-OCRv3_det_infer | RapidOCR | TensorRT FP32 | 0.4223     | 0.6906  | 0.5241  | 0.0452  |
-| 15  | Multilingual_PP-OCRv3_det_infer | RapidOCR | TensorRT FP16 | 0.4221     | 0.6906  | 0.5240  | 0.0447  |
-|     |                           |          |               |            |         |         |         |
-| 16  | ch_PP-OCRv5_server_det     | RapidOCR | ONNXRuntime   | 0.7394     | 0.8442  | 0.7883  | 2.0193  |
-| 17[^1] | ch_PP-OCRv5_server_det    | RapidOCR | TensorRT FP32 | 0.7503     | 0.8411  | 0.7931  | 0.1238  |
-| 18  | ch_PP-OCRv5_server_det     | RapidOCR | TensorRT FP16 | 0.4143     | 0.2059  | 0.2751  | 0.0387  |
-
-----
-
 | Exp | 模型                          | 推理框架  | 推理引擎       | 硬件                        | Precision↑ | Recall↑ | H-mean↑ | Elapse↓ |
 |:---:|:-----------------------------|:----------|:---------------|:----------------------------|:----------:|:-------:|:-------:|:-------:|
-| 1   | ch_PP-OCRv4_det_infer        | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.8595     | 0.8434  | 0.8514  | 0.182   |
+| 1   | ch_PP-OCRv4_det_infer        | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.8595     | 0.8434  | 0.8514  | 1.0932   |
 | 2   | ch_PP-OCRv4_det_infer        | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.8677     | 0.8396  | 0.8534  | 0.0402  |
 | 3   | ch_PP-OCRv4_det_infer        | RapidOCR  | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.8667     | 0.8396  | 0.8529  | 0.0406  |
 |     |                              |           |                |                             |            |         |         |         |
-| 4   | ch_PP-OCRv4_det_infer        | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.8595     | 0.8434  | 0.8514  | 0.1044  |
+| 4   | ch_PP-OCRv4_det_infer        | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.8595     | 0.8434  | 0.8514  | 0.1044  |
 | 5   | ch_PP-OCRv4_det_infer        | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.8685     | 0.8403  | 0.8542  | 0.0288  |
 | 6   | ch_PP-OCRv4_det_infer        | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.8677     | 0.8396  | 0.8534  | 0.0266  |
 |     |                              |           |                |                             |            |         |         |         |
-| 7   | ch_PP-OCRv5_mobile_det       | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.7861     | 0.8266  | 0.8058  | 0.1835  |
+| 7   | ch_PP-OCRv5_mobile_det       | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.7858     | 0.8266  | 0.8057  | 1.1108  |
 | 8   | ch_PP-OCRv5_mobile_det       | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.7938     | 0.8220  | 0.8077  | 0.0402  |
 | 9   | ch_PP-OCRv5_mobile_det       | RapidOCR  | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.7943     | 0.8216  | 0.8077  | 0.0415  |
 |     |                              |           |                |                             |            |         |         |         |
-| 10  | ch_PP-OCRv5_mobile_det       | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.7858     | 0.8266  | 0.8057  | 0.1296  |
+| 10  | ch_PP-OCRv5_mobile_det       | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.7858     | 0.8266  | 0.8057  | 0.1296  |
 | 11  | ch_PP-OCRv5_mobile_det       | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.7938     | 0.8220  | 0.8077  | 0.0341  |
 | 12  | ch_PP-OCRv5_mobile_det       | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.7950     | 0.8220  | 0.8083  | 0.0333  |
 |     |                              |           |                |                             |            |         |         |         |
-| 13  | ch_PP-OCRv4_det_server_infer | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.7713     | 0.8579  | 0.8123  | 2.8449  |
+| 13  | ch_PP-OCRv4_det_server_infer | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.7710     | 0.8579  | 0.8121  | 5.4996  |
 | 14  | ch_PP-OCRv4_det_server_infer | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.7811     | 0.8545  | 0.8161  | 0.0579  |
 | **15** | **ch_PP-OCRv4_det_server_infer** | **RapidOCR** | **TensorRT FP16** | **NVIDIA A800-SXM4-80GB** | **0.3689** | **0.0516** | **0.0905** | **0.0415** |
 |     |                              |           |                |                             |            |         |         |         |
-| 16  | ch_PP-OCRv4_det_server_infer | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.7710     | 0.8579  | 0.8121  | 7.2283  |
+| 16  | ch_PP-OCRv4_det_server_infer | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.7710     | 0.8579  | 0.8121  | 7.2283  |
 | 17  | ch_PP-OCRv4_det_server_infer | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.7805     | 0.8545  | 0.8158  | 0.1167  |
-| 18  | ch_PP-OCRv4_det_server_infer | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.3757     | 0.0519  | 0.0913  | 0.0184  |
+| **18**  | **ch_PP-OCRv4_det_server_infer** | **RapidOCR**  | **TensorRT FP16**  | **NVIDIA GeForce RTX 3060**     | **0.3757**     | **0.0519**  | **0.0913**  | **0.0184**  |
 |     |                              |           |                |                             |            |         |         |         |
-| 19  | en_PP-OCRv3_det_infer        | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.8066     | 0.8380  | 0.8220  | 0.1463  |
+| 19  | en_PP-OCRv3_det_infer        | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.8066     | 0.8380  | 0.8220  | 0.7376  |
 | 20  | en_PP-OCRv3_det_infer        | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.8153     | 0.8346  | 0.8248  | 0.04    |
 | 21  | en_PP-OCRv3_det_infer        | RapidOCR  | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.8147     | 0.8346  | 0.8245  | 0.0384  |
 |     |                              |           |                |                             |            |         |         |         |
-| 22  | en_PP-OCRv3_det_infer        | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.8066     | 0.8380  | 0.8220  | 0.0839  |
+| 22  | en_PP-OCRv3_det_infer        | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.8066     | 0.8380  | 0.8220  | 0.0839  |
 | 23  | en_PP-OCRv3_det_infer        | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.8144     | 0.8346  | 0.8244  | 0.0283  |
 | 24  | en_PP-OCRv3_det_infer        | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.8144     | 0.8346  | 0.8244  | 0.0269  |
 |     |                              |           |                |                             |            |         |         |         |
-| 25  | Multilingual_PP-OCRv3_det_infer | RapidOCR | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.4228     | 0.6921  | 0.5249  | 0.1681  |
+| 25  | Multilingual_PP-OCRv3_det_infer | RapidOCR | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.4228     | 0.6921  | 0.5249  | 0.7334  |
 | 26  | Multilingual_PP-OCRv3_det_infer | RapidOCR | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.4223     | 0.6906  | 0.5241  | 0.0452  |
 | 27  | Multilingual_PP-OCRv3_det_infer | RapidOCR | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.4221     | 0.6906  | 0.5240  | 0.0447  |
 |     |                              |           |                |                             |            |         |         |         |
-| 28  | Multilingual_PP-OCRv3_det_infer | RapidOCR | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.4161     | 0.6841  | 0.5175  | 0.1638  |
+| 28  | Multilingual_PP-OCRv3_det_infer | RapidOCR | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.4161     | 0.6841  | 0.5175  | 0.1638  |
 | 29  | Multilingual_PP-OCRv3_det_infer | RapidOCR | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.4223     | 0.6906  | 0.5241  | 0.0348  |
 | 30  | Multilingual_PP-OCRv3_det_infer | RapidOCR | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.4220     | 0.6906  | 0.5239  | 0.0329  |
 |     |                              |           |                |                             |            |         |         |         |
-| 31  | ch_PP-OCRv5_server_det       | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.7394     | 0.8442  | 0.7883  | 2.0193  |
+| 31  | ch_PP-OCRv5_server_det       | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.7394     | 0.8442  | 0.7883  | 4.7435  |
 | 32 | ch_PP-OCRv5_server_det        | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | -          |   -     |  -      |  -  |
 | 33  | ch_PP-OCRv5_server_det       | RapidOCR  | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.4143     | 0.2059  | 0.2751  | 0.0387  |
 |     |                              |           |                |                             |            |         |         |         |
-| 34  | ch_PP-OCRv5_server_det       | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.7394     | 0.8442  | 0.7883  | 5.7514  |
+| 34  | ch_PP-OCRv5_server_det       | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.7394     | 0.8442  | 0.7883  | 5.7514  |
 | 35  | ch_PP-OCRv5_server_det       | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.7503     | 0.8411  | 0.7931  | 0.0976  |
 | 36  | ch_PP-OCRv5_server_det       | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.4163     | 0.2070  | 0.2765  | 0.0453  |
 
-在 Exp 9 中， 模型转为 TensorRT FP16 engine格式后，各项指标均有大幅度下降，原因暂未查明，小伙伴们使用时注意。
+在 Exp 15 和 Exp 18 中， 模型转为 TensorRT FP16 engine格式后，各项指标均有大幅度下降，原因暂未查明，小伙伴们使用时注意。
 
-在 Exp 17 中，在我当前设备上，构建对应的 engine 模型没有成功，暂时还未解决，具体报错日志如下：
+在 Exp 32 中，在我当前设备上，构建对应的 engine 模型没有成功，暂时还未解决，具体报错日志如下：
 
 ```bash linenums="1" hl_lines="6"
 [INFO] 2026-02-25 08:10:57,064 [RapidOCR] base.py:22: Using engine_name: tensorrt
@@ -324,9 +300,9 @@ RuntimeError: Failed to build TensorRT engine
 
 ### 比较转化前后推理精度差异
 
-这里主要采用@[LocNgoXuan23](https://github.com/LocNgoXuan23)给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。
+这里主要采用[@LocNgoXuan23](https://github.com/LocNgoXuan23)给出的 benchmark 脚本来批量测试。下面是测试单个模型的脚本。
 
-=== "(Exp1) RapidOCR + ONNXRuntime"
+=== "(Exp1) RapidOCR + ONNX Runtime"
 
     ```python linenums="1"
     # Step 1: 获得推理结果
@@ -488,71 +464,55 @@ RuntimeError: Failed to build TensorRT engine
     ```markdwon
     1. 仅测试了中文相关的识别模型，其他语言的模型，因为没有对应评测集，就不测试指标了。
     2. 下面指标仅作为转换前后，比较模型精度差异使用哈！
-    3. TensorRT 下的耗时是GPU的，ONNXRuntime 是 CPU 的。
+    3. TensorRT 下的耗时是GPU的，ONNX Runtime 是 CPU 的。
     ```
-
-| Exp | 模型 | 推理框架 | 推理引擎 | ExactMatch↑ | CharMatch↑ | Elapse↓ |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | ch_PP-OCRv4_rec_infer | RapidOCR | ONNXRuntime | 0.8290 | 0.9432 | 0.0176 |
-| 2 | ch_PP-OCRv4_rec_infer | RapidOCR | TensorRT FP32 | 0.8290 | 0.9432 | 0.0022 |
-| 3 | ch_PP-OCRv4_rec_infer | RapidOCR | TensorRT FP16 | 0.8290 | 0.9430 | 0.0023 |
-| | | | | | | |
-| 4 | ch_PP-OCRv4_rec_server_infer | RapidOCR | ONNXRuntime | 0.8065 | 0.9375 | 0.0811 |
-| 5 | ch_PP-OCRv4_rec_server_infer | RapidOCR | TensorRT FP32 | 0.8065 | 0.9376 | 0.0047 |
-| 6 | ch_PP-OCRv4_rec_server_infer | RapidOCR | TensorRT FP16 | 0.8097 | 0.9376 | 0.0025 |
-| | | | | | | |
-| 7 | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR | ONNXRuntime | 0.8097 | 0.9444 | 0.0809 |
-| 8 | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR | TensorRT FP32 | 0.8097 | 0.9444 | 0.0051 |
-| 9 | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR | TensorRT FP16 | 0.8097 | 0.9444 | 0.0028 |
-| | | | | | | |
-| 10 | ch_PP-OCRv5_rec_mobile_infer | RapidOCR | ONNXRuntime | 0.7355 | 0.9177 | 0.0196 |
-| 11 | ch_PP-OCRv5_rec_mobile_infer | RapidOCR | TensorRT FP32 | 0.7355 | 0.9177 | 0.0039 |
-| 12 | ch_PP-OCRv5_rec_mobile_infer | RapidOCR | TensorRT FP16 | 0.7387 | 0.9193 | 0.0024 |
-| | | | | | | |
-| 13 | ch_PP-OCRv5_rec_server_infer | RapidOCR | ONNXRuntime | 0.8129 | 0.9431 | 0.0582 |
-| 14 | ch_PP-OCRv5_rec_server_infer | RapidOCR | TensorRT FP32 | 0.8161 | 0.9439 | 0.0049 |
-| 15 | ch_PP-OCRv5_rec_server_infer | RapidOCR | TensorRT FP16 | 0.8129 | 0.9431 | 0.0039 |
-
----
 
 | Exp | 模型                              | 推理框架  | 推理引擎       | 硬件                        | ExactMatch↑ | CharMatch↑ | Elapse↓ |
 |:---:|:---------------------------------|:----------|:---------------|:----------------------------|:-----------:|:----------:|:-------:|
-| 1   | ch_PP-OCRv4_rec_infer            | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.8290      | 0.9432     | 0.0176  |
+| 1   | ch_PP-OCRv4_rec_infer            | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.8290      | 0.9432     | 0.1243  |
 | 2   | ch_PP-OCRv4_rec_infer            | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.8290      | 0.9432     | 0.0022  |
 | 3   | ch_PP-OCRv4_rec_infer            | RapidOCR  | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.8290      | 0.9430     | 0.0023  |
 |     |                                  |           |                |                             |             |            |         |
-| 4   | ch_PP-OCRv4_rec_infer            | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.8290      | 0.9432     | 0.0081  |
+| 4   | ch_PP-OCRv4_rec_infer            | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.8290      | 0.9432     | 0.0081  |
 | 5   | ch_PP-OCRv4_rec_infer            | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.8290      | 0.9432     | 0.0019  |
 | 6   | ch_PP-OCRv4_rec_infer            | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.8290      | 0.9428     | 0.0015  |
 |     |                                  |           |                |                             |             |            |         |
-| 7   | ch_PP-OCRv4_rec_server_infer     | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.8065      | 0.9375     | 0.0811  |
+| 7   | ch_PP-OCRv4_rec_server_infer     | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.8065      | 0.9375     | 3.3677  |
 | 8   | ch_PP-OCRv4_rec_server_infer     | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.8065      | 0.9376     | 0.0047  |
 | 9   | ch_PP-OCRv4_rec_server_infer     | RapidOCR  | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.8097      | 0.9376     | 0.0025  |
 |     |                                  |           |                |                             |             |            |         |
-| 10  | ch_PP-OCRv4_rec_server_infer     | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.8065      | 0.9375     | 4.9997  |
+| 10  | ch_PP-OCRv4_rec_server_infer     | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.8065      | 0.9375     | 4.9997  |
 | 11  | ch_PP-OCRv4_rec_server_infer     | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.8065      | 0.9375     | 0.0063  |
 | 12  | ch_PP-OCRv4_rec_server_infer     | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.8097      | 0.9376     | 0.0028  |
 |     |                                  |           |                |                             |             |            |         |
-| 13  | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.8097      | 0.9444     | 0.0809  |
+| 13  | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.8097      | 0.9444     | 3.3989  |
 | 14  | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.8097      | 0.9444     | 0.0051  |
 | 15  | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR  | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.8097      | 0.9444     | 0.0028  |
 |     |                                  |           |                |                             |             |            |         |
-| 16  | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.8097      | 0.9444     | 5.2886  |
+| 16  | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.8097      | 0.9444     | 5.2886  |
 | 17  | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.8097      | 0.9444     | 0.0062  |
 | 18  | ch_doc_PP-OCRv4_rec_server_infer | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.8065      | 0.9439     | 0.0032  |
 |     |                                  |           |                |                             |             |            |         |
-| 19  | ch_PP-OCRv5_rec_mobile_infer     | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.7355      | 0.9177     | 0.0196  |
+| 19  | ch_PP-OCRv5_rec_mobile_infer     | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.7355      | 0.9177     | 0.1035  |
 | 20  | ch_PP-OCRv5_rec_mobile_infer     | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.7355      | 0.9177     | 0.0039  |
 | 21  | ch_PP-OCRv5_rec_mobile_infer     | RapidOCR  | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.7387      | 0.9193     | 0.0024  |
 |     |                                  |           |                |                             |             |            |         |
-| 22  | ch_PP-OCRv5_rec_mobile_infer     | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.7355      | 0.9177     | 0.0064  |
+| 22  | ch_PP-OCRv5_rec_mobile_infer     | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.7355      | 0.9177     | 0.0064  |
 | 23  | ch_PP-OCRv5_rec_mobile_infer     | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.7355      | 0.9178     | 0.0035  |
 | 24  | ch_PP-OCRv5_rec_mobile_infer     | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.7387      | 0.9191     | 0.0026  |
 |     |                                  |           |                |                             |             |            |         |
-| 25  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | ONNXRuntime    | NVIDIA A800-SXM4-80GB       | 0.8129      | 0.9431     | 0.0582  |
+| 25  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | ONNX Runtime    | NVIDIA A800-SXM4-80GB       | 0.8129      | 0.9431     | 1.4705  |
 | 26  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | TensorRT FP32  | NVIDIA A800-SXM4-80GB       | 0.8161      | 0.9439     | 0.0049  |
 | 27  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | TensorRT FP16  | NVIDIA A800-SXM4-80GB       | 0.8129      | 0.9431     | 0.0039  |
 |     |                                  |           |                |                             |             |            |         |
-| 28  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | ONNXRuntime    | NVIDIA GeForce RTX 3060     | 0.8129      | 0.9431     | 1.2137  |
+| 28  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | ONNX Runtime    | NVIDIA GeForce RTX 3060     | 0.8129      | 0.9431     | 1.2137  |
 | 29  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.8129      | 0.9431     | 0.0051  |
 | 30  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.8129      | 0.9431     | 0.0042  |
+
+## 写在最后
+
+从以上基准比较来看，ONNX 模型在转换为 TensorRT 对应的 `.engine` 模型后， FP32 精度下，检测和识别模型均在误差范围内，推理速度有量级的提升。如果追求极致的推理速度，欢迎试用。
+
+值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。
+
+`rapidocr`将在 `>=v3.7.0` 集成，欢迎届时使用和反馈。

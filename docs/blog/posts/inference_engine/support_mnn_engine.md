@@ -18,7 +18,7 @@ links:
 
 ## 引言
 
-首先感谢Github @[narc1ssus1](https://github.com/narc1ssus1)小伙伴的PR [#613](https://github.com/RapidAI/RapidOCR/pull/613)。有了这个PR，我这也有了抓手来推动支持MNN作为推理引擎。
+首先感谢Github [@narc1ssus1](https://github.com/narc1ssus1) 小伙伴的PR [#613](https://github.com/RapidAI/RapidOCR/pull/613)。有了这个PR，我这也有了抓手来推动支持MNN作为推理引擎。
 
 ## 运行环境¶
 
@@ -33,6 +33,7 @@ links:
   text_det_metric==0.0.8
   text_rec_metric==0.0.1
   datasets==3.6.0
+  onnxruntime==1.23.2
   ```
 
 ## 安装MNN
@@ -71,11 +72,11 @@ Converted Success!
 
 ### 比较转化前后推理精度差异
 
-两者对比的模型为`ch_PP-OCRv4_det_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。
+两者对比的模型为`ch_PP-OCRv4_det_infer`模型，Exp1基于`RapidOCR+ONNX Runtime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。
 
 两次实验除模型不一样外，其余均相同。其余未列出的实验均只换了模型。
 
-=== "(Exp1) RapidOCR + ONNXRuntime"
+=== "(Exp1) RapidOCR + ONNX Runtime"
 
     Step 1: 获得推理结果
 
@@ -186,31 +187,31 @@ Converted Success!
 
 |Exp|模型|推理框架|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|:---:|
-|1|ch_PP-OCRv4_det_infer|RapidOCR|ONNXRuntime|0.8595|0.8434|0.8514|0.182|
+|1|ch_PP-OCRv4_det_infer|RapidOCR|ONNX Runtime|0.8595|0.8434|0.8514|0.182|
 |2|ch_PP-OCRv4_det_infer|RapidOCR|MNN|0.8595|0.8434|0.8514|0.159|
 |||||||||
-|3|ch_PP-OCRv5_mobile_det|RapidOCR|ONNXRuntime|0.7861|0.8266|0.8058|0.1835|
+|3|ch_PP-OCRv5_mobile_det|RapidOCR|ONNX Runtime|0.7861|0.8266|0.8058|0.1835|
 |4|ch_PP-OCRv5_mobile_det|RapidOCR|MNN|0.7861|0.8266|0.8058|0.1526|
 |||||||||
-|5|ch_PP-OCRv4_det_server_infer|RapidOCR|ONNXRuntime|0.7713|0.8579|0.8123|2.8449|
+|5|ch_PP-OCRv4_det_server_infer|RapidOCR|ONNX Runtime|0.7713|0.8579|0.8123|2.8449|
 |6|ch_PP-OCRv4_det_server_infer|RapidOCR|MNN|0.7713|0.8579|0.8123|1.889|
 |||||||||
-|7|en_PP-OCRv3_det_infer|RapidOCR|ONNXRuntime|0.8066|0.8380|0.8220|0.1463|
+|7|en_PP-OCRv3_det_infer|RapidOCR|ONNX Runtime|0.8066|0.8380|0.8220|0.1463|
 |8|en_PP-OCRv3_det_infer|RapidOCR|MNN|0.8066|0.8380|0.8220|0.1262|
 |||||||||
-|9|Multilingual_PP-OCRv3_det_infer|RapidOCR|ONNXRuntime|0.4228|0.6921|0.5249|0.1681|
+|9|Multilingual_PP-OCRv3_det_infer|RapidOCR|ONNX Runtime|0.4228|0.6921|0.5249|0.1681|
 |10|Multilingual_PP-OCRv3_det_infer|RapidOCR|MNN|0.4228|0.6921|0.5249|0.1282|
 |||||||||
-|11|ch_PP-OCRv5_server_det|RapidOCR|ONNXRuntime|0.7394|0.8442|0.7883|2.0193|
+|11|ch_PP-OCRv5_server_det|RapidOCR|ONNX Runtime|0.7394|0.8442|0.7883|2.0193|
 |12|ch_PP-OCRv5_server_det|RapidOCR|MNN|0.7394|0.8442|0.7883|1.6048|
 
 ## 支持Rec模型
 
 ### 比较转化前后推理精度差异
 
-两者对比的模型为`ch_PP-OCRv4_rec_infer`模型，Exp1基于`RapidOCR+ONNXRuntime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。两次实验除模型不一样外，其余均相同。
+两者对比的模型为`ch_PP-OCRv4_rec_infer`模型，Exp1基于`RapidOCR+ONNX Runtime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。两次实验除模型不一样外，其余均相同。
 
-=== "(Exp1) RapidOCR + ONNXRuntime"
+=== "(Exp1) RapidOCR + ONNX Runtime"
 
     Step 1: 获得推理结果
 
@@ -343,19 +344,19 @@ Converted Success!
 
 |Exp|模型|推理框架|推理引擎|ExactMatch↑|CharMatch↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|
-|1|ch_PP-OCRv4_rec_infer|RapidOCR|ONNXRuntime|0.829|0.9432|0.0176|
+|1|ch_PP-OCRv4_rec_infer|RapidOCR|ONNX Runtime|0.829|0.9432|0.0176|
 |2|ch_PP-OCRv4_rec_infer|RapidOCR|MNN|0.829|0.9432|0.0213|
 ||||||||
-|3|ch_PP-OCRv4_rec_server_infer|RapidOCR|ONNXRuntime|0.8065|0.9375|0.0811|
+|3|ch_PP-OCRv4_rec_server_infer|RapidOCR|ONNX Runtime|0.8065|0.9375|0.0811|
 |4|ch_PP-OCRv4_rec_server_infer|RapidOCR|MNN|0.8065|0.9375|0.0639|
 ||||||||
-|5|ch_doc_PP-OCRv4_rec_server_infer|RapidOCR|ONNXRuntime|0.8097|0.9444|0.0809|
+|5|ch_doc_PP-OCRv4_rec_server_infer|RapidOCR|ONNX Runtime|0.8097|0.9444|0.0809|
 |6|ch_doc_PP-OCRv4_rec_server_infer|RapidOCR|MNN|0.8065|0.9375|0.0763|
 ||||||||
-|7|ch_PP-OCRv5_rec_mobile_infer|RapidOCR|ONNXRuntime|0.7355|0.9177|0.0196|
+|7|ch_PP-OCRv5_rec_mobile_infer|RapidOCR|ONNX Runtime|0.7355|0.9177|0.0196|
 |8|ch_PP-OCRv5_rec_mobile_infer|RapidOCR|MNN|0.7355|0.9177|0.0373|
 ||||||||
-|9|ch_PP-OCRv5_rec_server_infer|RapidOCR|ONNXRuntime|0.8129|0.9431|0.0582|
+|9|ch_PP-OCRv5_rec_server_infer|RapidOCR|ONNX Runtime|0.8129|0.9431|0.0582|
 |10|ch_PP-OCRv5_rec_server_infer|RapidOCR|MNN|0.8129|0.9431|0.0724|
 
 ### 其他单独校验模型
@@ -392,6 +393,6 @@ Converted Success!
 
 ## 写在最后
 
-从以上基准比较来看，MNN推理引擎整体推理速度要比ONNXRuntime更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。
+从以上基准比较来看，MNN 推理引擎整体推理速度要比 ONNX Runtime 更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。
 
 `rapidocr`已经在`>=v3.6.0`集成以上模型，欢迎使用和反馈。

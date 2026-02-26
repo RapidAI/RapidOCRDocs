@@ -552,6 +552,10 @@ RuntimeError: Failed to build TensorRT engine
 | 29  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | TensorRT FP32  | NVIDIA GeForce RTX 3060     | 0.8129      | 0.9431     | 0.0051  |
 | 30  | ch_PP-OCRv5_rec_server_infer     | RapidOCR  | TensorRT FP16  | NVIDIA GeForce RTX 3060     | 0.8129      | 0.9431     | 0.0042  |
 
+### 其他模型
+
+其他文本识别模型未曾一一验证，问题应该不大。因为模型结构都是一样的。用到的小伙伴，自行跑一下吧！
+
 ## 写在最后
 
 从以上基准比较来看，ONNX 模型在转换为 TensorRT 对应的 `.engine` 模型后， FP32 精度下，检测和识别模型均在误差范围内，推理速度有量级的提升。如果追求极致的推理速度，欢迎试用。

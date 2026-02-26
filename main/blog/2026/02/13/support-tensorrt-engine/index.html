@@ -2198,6 +2198,51 @@ You're not viewing the latest version.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="运行环境¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        转换耗时参考
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="转换耗时参考">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文本检测模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文本识别模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2210,56 +2255,6 @@ You're not viewing the latest version.
   </a>
   
     <nav class="md-nav" aria-label="支持Det模型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        比较转化前后推理精度差异
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        转换耗时参考
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        结果对比
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rec" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        支持Rec模型
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="支持Rec模型">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2290,7 +2285,46 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
+  <a href="#rec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        支持Rec模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="支持Rec模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        比较转化前后推理精度差异
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结果对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         写在最后
@@ -2378,7 +2412,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 11 分钟阅读时间
+                              需要 12 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2536,8 +2570,221 @@ You're not viewing the latest version.
 <li>Python: 3.10.12</li>
 <li>ONNX Runtime: 1.18.0</li>
 </ul>
+<h3 id="_3">转换耗时参考<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="_4">文本检测模型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ONNX 模型</th>
+<th style="text-align: left;">TensorRT Engine 格式</th>
+<th style="text-align: left;">硬件设备</th>
+<th style="text-align: left;">耗时(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_mobile_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">521.02</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_mobile_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">315.53</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv5_det_mobile_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">1438.65</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv5_det_mobile_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">407.53</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">299.10</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">109.56</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">en_PP-OCRv3_det_infer.onnx</td>
+<td style="text-align: left;">en_PP-OCRv4_det_mobile_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">224.54</td>
+</tr>
+<tr>
+<td style="text-align: left;">en_PP-OCRv3_det_infer.onnx</td>
+<td style="text-align: left;">en_PP-OCRv4_det_mobile_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">87.11</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer.onnx</td>
+<td style="text-align: left;">multi_PP-OCRv4_det_mobile_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">122.11</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer.onnx</td>
+<td style="text-align: left;">multi_PP-OCRv4_det_mobile_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">52.64</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_server_det.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv5_det_server_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_server_det.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv5_det_server_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_5">文本识别模型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ONNX 模型</th>
+<th style="text-align: left;">TensorRT Engine 格式</th>
+<th style="text-align: left;">硬件设备</th>
+<th style="text-align: left;">耗时(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_mobile_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">603.08</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_mobile_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">480.52</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">175.15</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">77.45</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer.onnx</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">107.10</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer.onnx</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">45.46</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">1437.16</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">543.68</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_sm80_fp16.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">159.35</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer.onnx</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_sm80_fp32.engine</td>
+<td style="text-align: left;">NVIDIA A800-SXM4-80GB</td>
+<td style="text-align: left;">69.82</td>
+</tr>
+</tbody>
+</table>
 <h2 id="det">支持Det模型<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
-<h3 id="_3">比较转化前后推理精度差异<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_6">比较转化前后推理精度差异<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>这里主要采用 <a href="https://github.com/LocNgoXuan23">@LocNgoXuan23</a> 给出的 <a href="https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254">benchmark 脚本</a> 来批量测试。下面是测试单个模型的脚本。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_1_2">(Exp2) RapidOCR + TensorRT + FP16</label><label for="__tabbed_1_3">(Exp3) RapidOCR + TensorRT + FP32</label></div>
 <div class="tabbed-content">
@@ -2809,26 +3056,7 @@ You're not viewing the latest version.
 </div>
 </div>
 </div>
-<h3 id="_4">转换耗时参考<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">ONNX 模型</th>
-<th style="text-align: center;">TensorRT Engine 格式</th>
-<th style="text-align: center;">硬件设备</th>
-<th style="text-align: center;">耗时(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">ch_PP-OCRv4_det_infer.onnx</td>
-<td style="text-align: center;">ch_PP-OCRv4_det_mobile_sm80_fp16.engine</td>
-<td style="text-align: center;">NVIDIA A800-SXM4-80GB</td>
-<td style="text-align: center;">518s</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_5">结果对比<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_7">结果对比<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1. 其他版本的模型，我这里就直接给出对比结果了。因为教程都是一样的，仅换了一个模型而已。
@@ -3419,7 +3647,7 @@ You're not viewing the latest version.
 </span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a>RuntimeError:<span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>TensorRT<span class="w"> </span>engine
 </span></code></pre></div></td></tr></table></div>
 <h2 id="rec">支持Rec模型<a class="headerlink" href="#rec" title="Permanent link">&para;</a></h2>
-<h3 id="_6">比较转化前后推理精度差异<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_8">比较转化前后推理精度差异<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>这里主要采用<a href="https://github.com/LocNgoXuan23">@LocNgoXuan23</a>给出的 <a href="https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254">benchmark 脚本</a>来批量测试。下面是测试单个模型的脚本。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_2_2">(Exp2) RapidOCR + TensorRT + FP16</label><label for="__tabbed_2_3">(Exp3) RapidOCR + TensorRT + FP32</label></div>
 <div class="tabbed-content">
@@ -3711,7 +3939,7 @@ You're not viewing the latest version.
 </div>
 </div>
 </div>
-<h3 id="_7">结果对比<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_9">结果对比<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>1. 仅测试了中文相关的识别模型，其他语言的模型，因为没有对应评测集，就不测试指标了。
@@ -4125,7 +4353,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<h2 id="_8">写在最后<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_10">写在最后<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>从以上基准比较来看，ONNX 模型在转换为 TensorRT 对应的 <code>.engine</code> 模型后， FP32 精度下，检测和识别模型均在误差范围内，推理速度有量级的提升。如果追求极致的推理速度，欢迎试用。</p>
 <p>值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。</p>
 <p><code>rapidocr</code>将在 <code>&gt;=v3.7.0</code> 集成，欢迎届时使用和反馈。</p>
@@ -4153,7 +4381,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月25日 17:14:36 CST">2026-02-25 17:14:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月26日 11:27:28 CST">2026-02-26 11:27:28</span>
   </span>
 
     

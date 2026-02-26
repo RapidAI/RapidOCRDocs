@@ -55,6 +55,49 @@ links:
 - Python: 3.10.12
 - ONNX Runtime: 1.18.0
 
+### 转换耗时参考
+
+#### 文本检测模型
+
+|ONNX 模型| TensorRT Engine 格式 | 硬件设备 | 耗时(s) |
+|:---|:---|:---|:---|
+| ch_PP-OCRv4_det_infer.onnx | ch_PP-OCRv4_det_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 521.02 |
+| ch_PP-OCRv4_det_infer.onnx | ch_PP-OCRv4_det_mobile_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 315.53 |
+|||||
+| ch_PP-OCRv5_mobile_det.onnx  | ch_PP-OCRv5_det_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 1438.65 |
+| ch_PP-OCRv5_mobile_det.onnx  | ch_PP-OCRv5_det_mobile_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 407.53 |
+|||||
+| ch_PP-OCRv4_det_server_infer.onnx  | ch_PP-OCRv4_det_server_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 299.10 |
+| ch_PP-OCRv4_det_server_infer.onnx  | ch_PP-OCRv4_det_server_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 109.56 |
+|||||
+| en_PP-OCRv3_det_infer.onnx | en_PP-OCRv4_det_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 224.54 |
+| en_PP-OCRv3_det_infer.onnx | en_PP-OCRv4_det_mobile_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 87.11 |
+|||||
+| Multilingual_PP-OCRv3_det_infer.onnx  | multi_PP-OCRv4_det_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 122.11 |
+| Multilingual_PP-OCRv3_det_infer.onnx  | multi_PP-OCRv4_det_mobile_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 52.64 |
+|||||
+| ch_PP-OCRv5_server_det.onnx  | ch_PP-OCRv5_det_server_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | - |
+| ch_PP-OCRv5_server_det.onnx  | ch_PP-OCRv5_det_server_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | - |
+
+#### 文本识别模型
+
+|ONNX 模型| TensorRT Engine 格式 | 硬件设备 | 耗时(s) |
+|:---|:---|:---|:---|
+| ch_PP-OCRv4_rec_infer.onnx | ch_PP-OCRv4_rec_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 603.08 |
+| ch_PP-OCRv4_rec_infer.onnx | ch_PP-OCRv4_rec_mobile_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 480.52 |
+|||||
+| ch_PP-OCRv4_rec_server_infer.onnx | ch_PP-OCRv4_rec_server_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 175.15 |
+| ch_PP-OCRv4_rec_server_infer.onnx | ch_PP-OCRv4_rec_server_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 77.45 |
+|||||
+| ch_doc_PP-OCRv4_rec_server_infer.onnx | ch_doc_PP-OCRv4_rec_server_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 107.10 |
+| ch_doc_PP-OCRv4_rec_server_infer.onnx | ch_doc_PP-OCRv4_rec_server_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 45.46 |
+|||||
+| ch_PP-OCRv5_rec_mobile_infer.onnx | ch_PP-OCRv5_rec_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 1437.16 |
+| ch_PP-OCRv5_rec_mobile_infer.onnx | ch_PP-OCRv5_rec_mobile_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 543.68 |
+|||||
+| ch_PP-OCRv5_rec_server_infer.onnx | ch_PP-OCRv5_rec_server_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 159.35 |
+| ch_PP-OCRv5_rec_server_infer.onnx | ch_PP-OCRv5_rec_server_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 69.82 |
+
 ## 支持Det模型
 
 ### 比较转化前后推理精度差异
@@ -205,12 +248,6 @@ links:
     metric = metric(pred_path)
     print(metric)
     ```
-
-### 转换耗时参考
-
-|ONNX 模型| TensorRT Engine 格式 | 硬件设备 | 耗时(s) |
-|:---:|:---:|:---:|:---:|
-| ch_PP-OCRv4_det_infer.onnx | ch_PP-OCRv4_det_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 518s |
 
 ### 结果对比
 

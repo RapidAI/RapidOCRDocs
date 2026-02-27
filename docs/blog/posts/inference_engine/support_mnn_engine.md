@@ -1,5 +1,5 @@
 ---
-title: RapidOCR支持MNN推理引擎
+title: RapidOCR 支持 MNN 推理引擎
 date: 2026-01-21
 authors: [SWHL]
 slug: rapidocr-support-mnn-engine

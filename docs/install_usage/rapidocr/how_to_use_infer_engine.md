@@ -389,6 +389,8 @@ comments: true
 
     运行下面代码，程序会自动现在对应的 ONNX 模型，并转换为 `.engine` 格式。该转换仅在首次运行时执行。因此，首次运行速度会较慢，后面再次运行就快了。
 
+    详细模型的支持情况，请参见博客：[RapidOCR 支持 TensorRT 推理引擎](https://rapidai.github.io/RapidOCRDocs/latest/blog/2026/02/13/support-tensorrt-engine/)
+
     ```python linenums="1" hl_lines="3-9"
     from rapidocr import EngineType, RapidOCR
 

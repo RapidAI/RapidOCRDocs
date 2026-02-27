@@ -1,5 +1,5 @@
 ---
-title: RapidOCR支持TensorRT推理引擎
+title: RapidOCR 支持 TensorRT 推理引擎
 authors: [SWHL]
 slug: support-tensorrt-engine
 date: 2026-02-13

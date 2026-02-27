@@ -1,7 +1,7 @@
 ---
 comments: true
-hide:
-  - toc
+# hide:
+#   - toc
 ---
 
 ### 引言

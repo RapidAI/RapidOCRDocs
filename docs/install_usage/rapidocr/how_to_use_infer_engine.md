@@ -267,14 +267,14 @@ comments: true
 3. 查看输出日志。下面日志中打印出了 **Using engine_name: paddle**，则证明使用的推理引擎是 PaddlePaddle。
 
     ```bash linenums="1" hl_lines="3 6"
-    [INFO] 2025-03-22 15:20:45,528 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdmodel
-    [INFO] 2025-03-22 15:20:45,529 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdiparams
+    [INFO] 2025-03-22 15:20:45,528 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdmodel
+    [INFO] 2025-03-22 15:20:45,529 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdiparams
     [INFO] 2025-03-22 15:20:45,746 base.py:30: Using engine_name: paddle
-    [INFO] 2025-03-22 15:20:45,746 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdmodel
-    [INFO] 2025-03-22 15:20:45,746 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdiparams
+    [INFO] 2025-03-22 15:20:45,746 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdmodel
+    [INFO] 2025-03-22 15:20:45,746 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_ppocr_mobile_v2_cls_infer/inference.pdiparams
     [INFO] 2025-03-22 15:20:45,903 base.py:30: Using engine_name: paddle
-    [INFO] 2025-03-22 15:20:45,904 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdmodel
-    [INFO] 2025-03-22 15:20:45,904 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdiparams
+    [INFO] 2025-03-22 15:20:45,904 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdmodel
+    [INFO] 2025-03-22 15:20:45,904 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer/inference.pdiparams
     ```
 
 ### 使用 PyTorch
@@ -363,9 +363,59 @@ comments: true
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-22 15:39:13,241 base.py:30: Using engine_name: torch
-    [INFO] 2025-03-22 15:39:13,956 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.pth
+    [INFO] 2025-03-22 15:39:13,956 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.pth
     [INFO] 2025-03-22 15:39:14,136 base.py:30: Using engine_name: torch
-    [INFO] 2025-03-22 15:39:14,136 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_ptocr_mobile_v2.0_cls_infer.pth
+    [INFO] 2025-03-22 15:39:14,136 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_ptocr_mobile_v2.0_cls_infer.pth
     [INFO] 2025-03-22 15:39:14,168 base.py:30: Using engine_name: torch
-    [INFO] 2025-03-22 15:39:14,168 utils.py:35: File already exists in /Users/jiahuawang/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.pth
+    [INFO] 2025-03-22 15:39:14,168 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.pth
+    ```
+
+### 使用 TensorRT
+
+1. 安装 TensorRT 运行环境。
+
+    我在这里仅给出参考配置环境：
+
+    - Docker镜像：[@LocNgoXuan23](https://github.com/LocNgoXuan23) 在 [Discord](https://discord.com/channels/1143707958690189373/1143707958690189376/1468529402118672512) 中给出的镜像：[7.0-gc-triton-devel](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream?version=7.0-gc-triton-devel)
+    - 设备配置：8 CPU / 256 GB
+    - NVIDIA环境：(详细参见：[link](https://gist.github.com/SWHL/0efe902ee469d49fc63d50e297d7fd98) )
+        - cuda: 12.2
+        - tensorrt: 8.6.1
+        - cuda-python: 12.2.0
+
+    大家可以根据实际情况，选择安装需要的版本。
+
+2. 指定 TensorRT 作为推理引擎。
+
+    运行下面代码，程序会自动现在对应的 ONNX 模型，并转换为 `.engine` 格式。该转换仅在首次运行时执行。因此，首次运行速度会较慢，后面再次运行就快了。
+
+    ```python linenums="1" hl_lines="3-9"
+    from rapidocr import EngineType, RapidOCR
+
+    engine = RapidOCR(
+        params={
+            "Det.engine_type": EngineType.TENSORRT,
+            "Cls.engine_type": EngineType.TENSORRT,
+            "Rec.engine_type": EngineType.TENSORRT,
+            "EngineConfig.tensorrt.use_fp16": False,
+            "EngineConfig.tensorrt.device_id": 0,  # 指定GPU id
+        }
+    )
+
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+    result = engine(img_url)
+    print(result)
+
+    result.vis('vis_result.jpg')
+    ```
+
+3. 查看输出日志。下面日志中打印出了 **Using engine_name: tensorrt**，则证明使用的推理引擎是 PyTorch。
+
+    ```bash linenums="1" hl_lines="1 3 5"
+    [INFO] 2025-03-22 15:39:13,241 base.py:30: Using engine_name: tensorrt
+    [INFO] 2025-03-22 15:39:13,956 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_mobile_sm80_fp32.engine
+    [INFO] 2025-03-22 15:39:14,136 base.py:30: Using engine_name: tensorrt
+    [INFO] 2025-03-22 15:39:14,136 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_ptocr_mobile_v2.0_cls_sm80_fp32.engine
+    [INFO] 2025-03-22 15:39:14,168 base.py:30: Using engine_name: tensorrt
+    [INFO] 2025-03-22 15:39:14,168 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_mobile_sm80_fp32.engine
     ```

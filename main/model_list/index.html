@@ -129,7 +129,7 @@
               </button>
             
             
-    <p class="banner"> 👍️ RapidOCR支持TensorRT推理引擎 → <a href="https://rapidai.github.io/RapidOCRDocs/latest/blog/2026/02/13/support-tensorrt-engine/" target="_blank">link</a></p>
+    <p class="banner"> 👍️ RapidOCR 支持 TensorRT 推理引擎 → <a href="https://rapidai.github.io/RapidOCRDocs/latest/blog/2026/02/13/support-tensorrt-engine/" target="_blank">link</a></p>
 
           </div>
           
@@ -2548,11 +2548,11 @@ You're not viewing the latest version.
 
 <!-- Page content -->
 <h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>针对PaddleOCR已经发布的常用模型，我们这里已经做了统一转换和汇总，包括PP-OCRv4和PP-OCRv5系列的PaddlePaddle格式、ONNX格式和PyTorch格式。</p>
+<p>针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4 和 PP-OCRv5 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式和 PyTorch 格式。</p>
 <p>所有模型目前托管在<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭社区</a>上。</p>
 <p><code>rapidocr</code> v3 版本已经集成了托管的所有模型，通过下面参数指定可以自动下载。对应的配置文件：<a href="https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml">default_model.yaml</a>。当然，小伙伴们也可以自己去上述链接下载。</p>
 <h2 id="_2">默认配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>直接通过pip安装<code>rapidocr</code>使用时，可以不用指定任何参数，直接使用。因为设置了默认配置参数，下面写法：</p>
+<p>直接通过 pip 安装 <code>rapidocr</code> 使用时，可以直接使用，不用指定任何参数。下面写法：</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -2636,7 +2636,7 @@ You're not viewing the latest version.
 <tbody>
 <tr>
 <td style="text-align: left;">多语种<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></td>
-<td style="text-align: left;"><code>onnxruntime</code> <br/> <code>openvino</code> <br/> <code>paddle</code><br><code>torch</code>(<code>rapidocr&gt;=3.3.0</code>)<br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td style="text-align: left;"><code>onnxruntime</code> <br/> <code>openvino</code> <br/> <code>paddle</code><br><code>torch</code>(<code>rapidocr&gt;=3.3.0</code>)<br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)<br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td style="text-align: left;"><code>ch</code></td>
 <td style="text-align: left;"><code>mobile</code><br/> <code>server</code></td>
 <td style="text-align: left;"><code>PP-OCRv5</code></td>
@@ -2657,21 +2657,21 @@ You're not viewing the latest version.
 <tbody>
 <tr>
 <td style="text-align: left;">中英</td>
-<td style="text-align: left;"><code>onnxruntime</code> <br/> <code>openvino</code> <br/> <code>paddle</code> <br/> <code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td style="text-align: left;"><code>onnxruntime</code> <br/> <code>openvino</code> <br/> <code>paddle</code> <br/> <code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)<br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td style="text-align: left;"><code>ch</code></td>
 <td style="text-align: left;"><code>mobile</code><br/> <code>server</code></td>
 <td style="text-align: left;"><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">英语、拉丁语</td>
-<td style="text-align: left;"><code>onnxruntime</code> <br/> <code>openvino</code> <br/> <code>paddle</code> <br/> <code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td style="text-align: left;"><code>onnxruntime</code> <br/> <code>openvino</code> <br/> <code>paddle</code> <br/> <code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)<br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td style="text-align: left;"><code>en</code></td>
 <td style="text-align: left;"><code>mobile</code><br/> <code>server</code></td>
 <td style="text-align: left;"><code>PP-OCRv4</code><br/></td>
 </tr>
 <tr>
 <td style="text-align: left;">多语种</td>
-<td style="text-align: left;"><code>onnxruntime</code> <br/> <code>openvino</code> <br/> <code>paddle</code> <br/> <code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td style="text-align: left;"><code>onnxruntime</code> <br/> <code>openvino</code> <br/> <code>paddle</code> <br/> <code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)<br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td style="text-align: left;"><code>multi</code></td>
 <td style="text-align: left;"><code>mobile</code><br>❎<code>server</code></td>
 <td style="text-align: left;"><code>PP-OCRv4</code><br/></td>
@@ -2721,36 +2721,36 @@ You're not viewing the latest version.
 </thead>
 <tbody>
 <tr>
-<td>🚀 俄罗斯文<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
-<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code> <br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td>俄罗斯文<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code> <br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)<br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>cyrillic</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
 </tr>
 <tr>
-<td>🚀 阿拉伯文<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></td>
-<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td>阿拉伯文<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></td>
+<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>arabic</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
 </tr>
 <tr>
-<td>🚀 梵文等<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></td>
-<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td>梵文等<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></td>
+<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>devanagari</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
 </tr>
 <tr>
-<td>🚀 泰米尔文、英文</td>
-<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code> <br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td>泰米尔文、英文</td>
+<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code> <br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)<br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>ta</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
 </tr>
 <tr>
-<td>🚀 泰卢固文、英文</td>
-<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td>泰卢固文、英文</td>
+<td><code>rapidocr&gt;=3.5.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>te</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
@@ -2764,28 +2764,28 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td>英文</td>
-<td><code>rapidocr&gt;=3.4.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>rapidocr&gt;=3.4.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>en</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
 </tr>
 <tr>
 <td>泰文、英文</td>
-<td><code>rapidocr&gt;=3.4.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>rapidocr&gt;=3.4.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>th</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
 </tr>
 <tr>
 <td>希腊文、英文</td>
-<td><code>rapidocr&gt;=3.4.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>rapidocr&gt;=3.4.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>el</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
 </tr>
 <tr>
 <td>拉丁语种混合<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
-<td><code>rapidocr&gt;=3.3.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>rapidocr&gt;=3.3.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>latin</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
@@ -2799,14 +2799,14 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td>中英日混合<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code>(<code>rapidocr&gt;=3.3.0</code>)<br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code>(<code>rapidocr&gt;=3.3.0</code>)<br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>ch</code></td>
 <td><code>mobile</code><br><code>server</code></td>
 <td><code>PP-OCRv5</code></td>
 </tr>
 <tr>
 <td>韩文</td>
-<td><code>rapidocr&gt;=3.3.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>rapidocr&gt;=3.3.0支持</code><br/><br/><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>korean</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv5</code></td>
@@ -2827,35 +2827,35 @@ You're not viewing the latest version.
 <tbody>
 <tr>
 <td>韩文</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>korean</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>中文文档</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br>❎<code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>ch_doc</code></td>
 <td>❎<code>mobile</code><br><code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>中文</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>ch</code></td>
 <td><code>mobile</code><br><code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>中文繁体</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>chinese_cht</code></td>
 <td><code>mobile</code><br><code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>英文</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>en</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv4</code></td>
@@ -2869,49 +2869,49 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td>塞尔维亚文</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>cyrillic</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>梵文</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>devanagari</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>日文</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>japan</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>卡纳达语</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>ka</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>拉丁文</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>latin</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>泰米尔文</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>ta</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv4</code></td>
 </tr>
 <tr>
 <td>泰卢固文</td>
-<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>)</td>
+<td><code>onnxruntime</code><br><code>openvino</code><br><code>paddle</code><br><code>torch</code><br><code>mnn</code>(<code>rapidocr&gt;=3.6.0</code>) <br><code>tensorrt</code>(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>te</code></td>
 <td><code>mobile</code><br>❎<code>server</code></td>
 <td><code>PP-OCRv4</code></td>

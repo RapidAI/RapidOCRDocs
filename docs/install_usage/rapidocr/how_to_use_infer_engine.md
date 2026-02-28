@@ -91,6 +91,34 @@ comments: true
             result.vis("vis_result.jpg")
             ```
 
+    === ":material-experiment: CoreML"
+
+        !!! warning
+
+            仅在 `rapidocr>=3.7.0` 中 **实验性** 支持。ONNX Runtime 官方相关文档：[CoreML Execution Provider](https://onnxruntime.ai/docs/execution-providers/CoreML-ExecutionProvider.html)。详细 Benchmark 参见：[](../../blog/posts/inference_engine/compare_coreml_cpu_provider_perf.md)
+
+        1. 安装
+
+            从 `onnxruntime>=1.16` 开始， ONNX Runtime 本身已支持 macOS Apple Silicon（M1/M2/M3）的 CoreML 后端，无需额外安装 `coreml` 包。
+
+            ```bash linenums="1"
+            pip install onnxruntime
+            ```
+
+        2. 使用
+
+            ```python linenums="1"
+            from rapidocr import RapidOCR
+
+            engine = RapidOCR(params={"EngineConfig.onnxruntime.use_coreml": True})
+
+            img_url = "https://img1.baidu.com/it/u=3619974146,1266987475&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=516"
+            result = engine(img_url)
+            print(result)
+
+            result.vis("vis_result.jpg")
+            ```
+
 3. 查看输出日志。下面日志中打印出了 **Using engine_name: onnxruntime**，则证明使用的推理引擎是 ONNX Runtime。
 
     ```bash linenums="1" hl_lines="1 3 5"

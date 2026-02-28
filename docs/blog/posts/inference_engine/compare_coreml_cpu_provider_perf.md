@@ -24,6 +24,7 @@ links:
 Using the ModelFormat: "NeuralNetwork" yields performance improvements but results in significant accuracy loss.
 >
 > 由于某些型号的兼容性问题（与 PPOCRv5 不兼容），CoreML 支持应被视为实验性。使用模型格式：“NeuralNetwork”能带来性能提升，但会显著丢失准确性。
+> ---来源 [link](https://github.com/RapidAI/RapidOCR/pull/634#issuecomment-3830424296)
 
 下面的测试结果使用的是小伙伴在 PR 中给的默认配置：
 
@@ -76,7 +77,7 @@ coreml_ep_cfg:
 
 从表格可以看出：
 
-- **精度方面**：CoreMLProvider 和 CPUProvider 的精度**完全一致**，说明模型转换和推理过程没有损失精度
+- **精度方面**：CoreMLProvider 和 CPUProvider 的精度 **完全一致**，说明模型转换和推理过程没有损失精度
 - **速度方面**：
     - PP-OCRv4 Det: CPUProvider (172.63ms) vs CoreMLProvider (597.07ms) - **CoreML 慢 3.46 倍**
     - PP-OCRv5 Det Mobile: CPUProvider (163.04ms) vs CoreMLProvider (1100.35ms) - **CoreML 慢 6.75 倍**
@@ -92,7 +93,7 @@ coreml_ep_cfg:
 
 从表格可以看出：
 
-- **精度方面**：CoreMLProvider 和 CPUProvider 的精度**完全一致**
+- **精度方面**：CoreMLProvider 和 CPUProvider 的精度 **完全一致**
 - **速度方面**：
     - PP-OCRv4 Rec Mobile: CPUProvider (17.40ms) vs CoreMLProvider (55.00ms) - **CoreML 慢 3.16 倍**
     - PP-OCRv5 Rec Mobile: CPUProvider (18.50ms) vs CoreMLProvider (259.70ms) - **CoreML 慢 14.04 倍**
@@ -102,11 +103,14 @@ coreml_ep_cfg:
 通过上述测试可以得出以下结论：
 
 1. **精度保持**：CoreMLProvider 在所有测试模型上都能保持与 CPUProvider 完全相同的精度，没有任何精度损失
+
 2. **速度表现**：**出乎意料的是**，CoreMLProvider 的推理速度明显慢于 CPUProvider
    - 检测模型：CoreML 慢 3.46-6.75 倍
    - 识别模型：CoreML 慢 3.16-14.04 倍
    - PP-OCRv5 系列模型受影响最严重
+
 3. **性能分析**：CoreML 性能较差可能是由于以下原因：
+
    - 模型格式转换和缓存的开销
    - CoreML 对 PP-OCR 系列模型架构的优化不足
    - 首次推理的预热时间较长
@@ -116,7 +120,7 @@ coreml_ep_cfg:
 
 基于测试结果，我们给出以下建议：
 
-- **macOS 平台推荐**：目前在 macOS 平台上**推荐使用默认的 CPUProvider**，可以获得更好的推理性能
+- **macOS 平台推荐**：目前在 macOS 平台上 **推荐使用默认的 CPUProvider**，可以获得更好的推理性能
 - **保留 CoreML 支持**：虽然当前性能不佳，但 CoreML 能够保持精度，未来 Apple 可能会优化对这类模型的支持
 - **测试范围**：本次测试仅在 MacBook Pro M2 上进行，不同设备和 macOS 版本可能有不同表现
 
@@ -124,7 +128,7 @@ coreml_ep_cfg:
 
 如果你想尝试 CoreMLProvider，可以通过以下方式配置：
 
-```python
+```python linenums="1"
 from rapidocr import RapidOCR
 
 # 使用 CoreMLProvider
@@ -138,6 +142,6 @@ engine = RapidOCR()
 
 更多推理引擎的使用方法请参考：[使用不同推理引擎](install_usage/rapidocr/how_to_use_infer_engine.md)
 
-## 备注
+## 写在最后
 
-欢迎大家在不同的 macOS 设备和环境下进行测试，并反馈结果。如果你有任何问题或建议，欢迎在 [GitHub Issues](https://github.com/RapidAI/RapidOCR/issues) 中讨论。
+欢迎大家在不同的 macOS 设备和环境下进行测试，并反馈结果。如果你有任何问题或建议，欢迎在下方留言讨论。

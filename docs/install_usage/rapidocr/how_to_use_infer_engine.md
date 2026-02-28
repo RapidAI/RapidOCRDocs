@@ -91,7 +91,7 @@ comments: true
             result.vis("vis_result.jpg")
             ```
 
-    === ":material-symbols-outlined: CoreML"
+    === ":material-flask: CoreML"
 
         !!! warning
 

@@ -2270,7 +2270,7 @@ You're not viewing the latest version.
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        备注
+        写在最后
       
     </span>
   </a>
@@ -2481,7 +2481,8 @@ You're not viewing the latest version.
 <blockquote>
 <p>CoreML support should be considered experimental due to compatibility issues with certain models (incompatible with PPOCRv5).
 Using the ModelFormat: "NeuralNetwork" yields performance improvements but results in significant accuracy loss.</p>
-<p>由于某些型号的兼容性问题（与 PPOCRv5 不兼容），CoreML 支持应被视为实验性。使用模型格式：“NeuralNetwork”能带来性能提升，但会显著丢失准确性。</p>
+<p>由于某些型号的兼容性问题（与 PPOCRv5 不兼容），CoreML 支持应被视为实验性。使用模型格式：“NeuralNetwork”能带来性能提升，但会显著丢失准确性。
+---来源 <a href="https://github.com/RapidAI/RapidOCR/pull/634#issuecomment-3830424296">link</a></p>
 </blockquote>
 <p>下面的测试结果使用的是小伙伴在 PR 中给的默认配置：</p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -2585,7 +2586,7 @@ Using the ModelFormat: "NeuralNetwork" yields performance improvements but resul
 </table>
 <p>从表格可以看出：</p>
 <ul>
-<li><strong>精度方面</strong>：CoreMLProvider 和 CPUProvider 的精度**完全一致**，说明模型转换和推理过程没有损失精度</li>
+<li><strong>精度方面</strong>：CoreMLProvider 和 CPUProvider 的精度 <strong>完全一致</strong>，说明模型转换和推理过程没有损失精度</li>
 <li><strong>速度方面</strong>：<ul>
 <li>PP-OCRv4 Det: CPUProvider (172.63ms) vs CoreMLProvider (597.07ms) - <strong>CoreML 慢 3.46 倍</strong></li>
 <li>PP-OCRv5 Det Mobile: CPUProvider (163.04ms) vs CoreMLProvider (1100.35ms) - <strong>CoreML 慢 6.75 倍</strong></li>
@@ -2646,7 +2647,7 @@ Using the ModelFormat: "NeuralNetwork" yields performance improvements but resul
 </table>
 <p>从表格可以看出：</p>
 <ul>
-<li><strong>精度方面</strong>：CoreMLProvider 和 CPUProvider 的精度**完全一致**</li>
+<li><strong>精度方面</strong>：CoreMLProvider 和 CPUProvider 的精度 <strong>完全一致</strong></li>
 <li><strong>速度方面</strong>：<ul>
 <li>PP-OCRv4 Rec Mobile: CPUProvider (17.40ms) vs CoreMLProvider (55.00ms) - <strong>CoreML 慢 3.16 倍</strong></li>
 <li>PP-OCRv5 Rec Mobile: CPUProvider (18.50ms) vs CoreMLProvider (259.70ms) - <strong>CoreML 慢 14.04 倍</strong></li>
@@ -2656,13 +2657,23 @@ Using the ModelFormat: "NeuralNetwork" yields performance improvements but resul
 <h2 id="_4">测试结论<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>通过上述测试可以得出以下结论：</p>
 <ol>
-<li><strong>精度保持</strong>：CoreMLProvider 在所有测试模型上都能保持与 CPUProvider 完全相同的精度，没有任何精度损失</li>
-<li><strong>速度表现</strong>：<strong>出乎意料的是</strong>，CoreMLProvider 的推理速度明显慢于 CPUProvider</li>
+<li>
+<p><strong>精度保持</strong>：CoreMLProvider 在所有测试模型上都能保持与 CPUProvider 完全相同的精度，没有任何精度损失</p>
+</li>
+<li>
+<p><strong>速度表现</strong>：<strong>出乎意料的是</strong>，CoreMLProvider 的推理速度明显慢于 CPUProvider</p>
+</li>
 <li>检测模型：CoreML 慢 3.46-6.75 倍</li>
 <li>识别模型：CoreML 慢 3.16-14.04 倍</li>
-<li>PP-OCRv5 系列模型受影响最严重</li>
-<li><strong>性能分析</strong>：CoreML 性能较差可能是由于以下原因：</li>
-<li>模型格式转换和缓存的开销</li>
+<li>
+<p>PP-OCRv5 系列模型受影响最严重</p>
+</li>
+<li>
+<p><strong>性能分析</strong>：CoreML 性能较差可能是由于以下原因：</p>
+</li>
+<li>
+<p>模型格式转换和缓存的开销</p>
+</li>
 <li>CoreML 对 PP-OCR 系列模型架构的优化不足</li>
 <li>首次推理的预热时间较长</li>
 <li>Apple Silicon 的 Neural Engine 可能对这类 OCR 模型架构支持不够优化</li>
@@ -2670,25 +2681,33 @@ Using the ModelFormat: "NeuralNetwork" yields performance improvements but resul
 <h2 id="_5">使用建议<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>基于测试结果，我们给出以下建议：</p>
 <ul>
-<li><strong>macOS 平台推荐</strong>：目前在 macOS 平台上**推荐使用默认的 CPUProvider**，可以获得更好的推理性能</li>
+<li><strong>macOS 平台推荐</strong>：目前在 macOS 平台上 <strong>推荐使用默认的 CPUProvider</strong>，可以获得更好的推理性能</li>
 <li><strong>保留 CoreML 支持</strong>：虽然当前性能不佳，但 CoreML 能够保持精度，未来 Apple 可能会优化对这类模型的支持</li>
 <li><strong>测试范围</strong>：本次测试仅在 MacBook Pro M2 上进行，不同设备和 macOS 版本可能有不同表现</li>
 </ul>
 <h2 id="_6">配置方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>如果你想尝试 CoreMLProvider，可以通过以下方式配置：</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># 使用 CoreMLProvider</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="s2">&quot;EngineConfig.onnxruntime.use_coreml&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">})</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># 使用默认 CPUProvider（推荐）</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">()</span>
-</span></code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># 使用 CoreMLProvider</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="s2">&quot;EngineConfig.onnxruntime.use_coreml&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">})</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="c1"># 使用默认 CPUProvider（推荐）</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
 <p>更多推理引擎的使用方法请参考：<a href="install_usage/rapidocr/how_to_use_infer_engine.md">使用不同推理引擎</a></p>
-<h2 id="_7">备注<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>欢迎大家在不同的 macOS 设备和环境下进行测试，并反馈结果。如果你有任何问题或建议，欢迎在 <a href="https://github.com/RapidAI/RapidOCR/issues">GitHub Issues</a> 中讨论。</p>
+<h2 id="_7">写在最后<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>欢迎大家在不同的 macOS 设备和环境下进行测试，并反馈结果。如果你有任何问题或建议，欢迎在下方留言讨论。</p>
 
 <!-- Source file information -->
 
@@ -2713,7 +2732,7 @@ Using the ModelFormat: "NeuralNetwork" yields performance improvements but resul
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月28日 18:32:00 CST">2026-02-28 18:32:00</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月28日 18:39:06 CST">2026-02-28 18:39:06</span>
   </span>
 
     

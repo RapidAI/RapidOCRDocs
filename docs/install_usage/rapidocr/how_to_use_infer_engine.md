@@ -91,11 +91,11 @@ comments: true
             result.vis("vis_result.jpg")
             ```
 
-    === ":material-experiment: CoreML"
+    === ":material-symbols-outlined: CoreML"
 
         !!! warning
 
-            仅在 `rapidocr>=3.7.0` 中 **实验性** 支持。ONNX Runtime 官方相关文档：[CoreML Execution Provider](https://onnxruntime.ai/docs/execution-providers/CoreML-ExecutionProvider.html)。详细 Benchmark 参见：[](../../blog/posts/inference_engine/compare_coreml_cpu_provider_perf.md)
+            仅在 `rapidocr>=3.7.0` 中 **实验性** 支持。ONNX Runtime 官方相关文档：[CoreML Execution Provider](https://onnxruntime.ai/docs/execution-providers/CoreML-ExecutionProvider.html)。详细 Benchmark 参见：[基于 ONNX Runtime 来看 CoreML Provider 和 CPU Provider 在 RapidOCR 表现](../../blog/posts/inference_engine/compare_coreml_cpu_provider_perf.md)
 
         1. 安装
 

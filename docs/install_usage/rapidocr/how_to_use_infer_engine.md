@@ -173,7 +173,7 @@ comments: true
 
 !!! tip
 
-    `rapidocr>=3.6.0`支持。
+    `rapidocr>=3.6.0` 支持。
 
 1. 安装 MNN
 
@@ -399,6 +399,10 @@ comments: true
     ```
 
 ### 使用 TensorRT
+
+!!! tip
+
+    `rapidocr>=3.7.0` 支持。
 
 1. 安装 TensorRT 运行环境。
 

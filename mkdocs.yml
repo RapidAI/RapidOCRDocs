@@ -106,8 +106,6 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/font.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css
-  - https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap
-  - https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap
 
 link_pages:
   - changelog/*.md

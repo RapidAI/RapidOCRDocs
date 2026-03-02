@@ -2186,7 +2186,7 @@ You're not viewing the latest version.
   <a href="#onnxruntime-gpu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        onnxruntime-gpu版相关说明
+        onnxruntime-gpu 版相关说明
       
     </span>
   </a>
@@ -2197,7 +2197,7 @@ You're not viewing the latest version.
   <a href="#onnxruntime-gpu_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        有关onnxruntime-gpu推理慢的相关帖子
+        有关 onnxruntime-gpu 推理慢的相关帖子
       
     </span>
   </a>
@@ -2389,48 +2389,40 @@ You're not viewing the latest version.
 
 
 
-    <div class="admonition warning">
-        <p class="admonition-title">Warning</p>
-        <p>
-            本文档最后更新于 2024-07-11，
-            已超过 180 天未更新，内容可能已经过时，阅读注意甄别。
-        </p>
-    </div>
-
 
 <!-- Page content -->
 <!-- more -->
 
-<h3 id="onnxruntime-gpu">onnxruntime-gpu版相关说明<a class="headerlink" href="#onnxruntime-gpu" title="Permanent link">&para;</a></h3>
+<h3 id="onnxruntime-gpu">onnxruntime-gpu 版相关说明<a class="headerlink" href="#onnxruntime-gpu" title="Permanent link">&para;</a></h3>
 <ul>
-<li>目前已知在onnxruntime-gpu上测试过的小伙伴，反映都是GPU推理速度比在CPU上慢很多。关于该问题，已经提了相关issue，具体可参见<a href="https://github.com/microsoft/onnxruntime/issues/13198">onnxruntime issue#13198</a></li>
+<li>目前已知在 onnxruntime-gpu 上测试过的小伙伴，反映都是 GPU 推理速度比在 CPU 上慢很多。关于该问题，已经提了相关 issue，具体可参见 <a href="https://github.com/microsoft/onnxruntime/issues/13198">onnxruntime issue#13198</a></li>
 </ul>
-<h3 id="onnxruntime-gpu_1">有关<code>onnxruntime-gpu</code>推理慢的相关帖子<a class="headerlink" href="#onnxruntime-gpu_1" title="Permanent link">&para;</a></h3>
+<h3 id="onnxruntime-gpu_1">有关 <code>onnxruntime-gpu</code> 推理慢的相关帖子<a class="headerlink" href="#onnxruntime-gpu_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://stackoverflow.com/questions/75553839/pre-allocating-dynamic-shaped-tensor-memory-for-onnx-runtime-inference">Pre-allocating dynamic shaped tensor memory for ONNX runtime inference?</a></li>
 </ul>
 <h3 id="_1">快速查看比较版本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>国外小伙伴可以基于<a href="https://colab.research.google.com/gist/SWHL/673c39bf07f4cc4ddcb0e196c3e378e6/testortinfer.ipynb">Google Colab</a>，国内的小伙伴可以基于百度的<a href="https://aistudio.baidu.com/aistudio/projectdetail/4634684?contributionType=1&amp;sUid=57084&amp;shared=1&amp;ts=1664700017761">AI Studio</a>来查看效果</li>
+<li>国外小伙伴可以基于 <a href="https://colab.research.google.com/gist/SWHL/673c39bf07f4cc4ddcb0e196c3e378e6/testortinfer.ipynb">Google Colab</a>，国内的小伙伴可以基于百度的 <a href="https://aistudio.baidu.com/aistudio/projectdetail/4634684?contributionType=1&amp;sUid=57084&amp;shared=1&amp;ts=1664700017761">AI Studio</a> 来查看效果</li>
 </ul>
 <h3 id="_2">结论<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>onnxruntime-gpu版在动态输入情况下，推理速度要比CPU慢很多。而OCR任务就是动态输入，因此不推荐使用onnxruntime-gpu版推理。</p>
-<p>目前一直在找寻GPU端，可以快速推理ONNX模型的推理引擎。</p>
+<p>onnxruntime-gpu 版在动态输入情况下，推理速度要比 CPU 慢很多。而 OCR 任务就是动态输入，因此不推荐使用 onnxruntime-gpu 版推理。</p>
+<p>目前一直在找寻 GPU 端，可以快速推理 ONNX 模型的推理引擎。</p>
 <h3 id="_3">相关对比表格<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">设备</th>
 <th style="text-align: center;">onnxruntime-gpu</th>
-<th style="text-align: center;">CPU总耗时(s)</th>
-<th style="text-align: center;">CPU平均耗时(s/img)</th>
-<th style="text-align: center;">GPU总耗时(s)</th>
-<th style="text-align: center;">GPU平均耗时(s/img)</th>
+<th style="text-align: center;">CPU 总耗时 (s)</th>
+<th style="text-align: center;">CPU 平均耗时 (s / img)</th>
+<th style="text-align: center;">GPU 总耗时 (s)</th>
+<th style="text-align: center;">GPU 平均耗时 (s / img)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">设备1<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">设备 1<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
 <td style="text-align: center;">1.11.0</td>
 <td style="text-align: center;">296.8841</td>
 <td style="text-align: center;">1.18282</td>
@@ -2438,7 +2430,7 @@ You're not viewing the latest version.
 <td style="text-align: center;">2.57429</td>
 </tr>
 <tr>
-<td style="text-align: center;">设备2<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: center;">设备 2<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
 <td style="text-align: center;">1.12.1</td>
 <td style="text-align: center;">149.35427</td>
 <td style="text-align: center;">0.50504</td>
@@ -2451,7 +2443,7 @@ You're not viewing the latest version.
 <hr />
 <ol>
 <li id="fn:1">
-<p>宏碁(Acer) 暗影骑士·威N50-N93游戏台式机 | Windows | 十代i5-10400F 16G 512G SSD | NVIDIA GeForce GTX 1660Super 6G&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>宏碁 (Acer) 暗影骑士·威 N50-N93 游戏台式机 | Windows | 十代 i5-10400F 16G 512G SSD | NVIDIA GeForce GTX 1660Super 6G&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
 <p>Linux | AMD R9 5950X | NVIDIA GeForce RTX 3090&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
@@ -2482,7 +2474,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2024年7月11日 18:59:08 CST">2024-07-11 18:59:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:32:24 CST">2026-03-02 14:32:24</span>
   </span>
 
     
@@ -2497,29 +2489,6 @@ You're not viewing the latest version.
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
-          
-          <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 

@@ -2710,7 +2710,7 @@ You're not viewing the latest version.
 <p>如需使用 ONNX Runtime 等推理后端，请按 <a href="https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/">文档</a> 安装对应依赖（如 <code>rapidocr_onnxruntime</code> 等）。</p>
 <hr />
 <h2 id="pre-commit">三、安装代码格式化与 pre-commit 钩子<a class="headerlink" href="#pre-commit" title="Permanent link">&para;</a></h2>
-<p>在 <strong>开发者环境</strong> 下安装 pre-commit，并启用 Git 提交前钩子，以便自动做代码格式检查与整理（如 black、autoflake 等）：</p>
+<p>在 <strong>开发者环境</strong> 下安装 pre-commit，并启用 Git 提交前钩子，以便自动做代码格式检查与整理（如 black, autoflake 等）：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 在 python 目录下、已激活的虚拟环境中安装</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -2742,20 +2742,20 @@ You're not viewing the latest version.
 <ol>
 <li>在 <a href="https://github.com/RapidAI/RapidOCR/issues">Issues</a> 中选定或创建对应 issue。</li>
 <li>根据 issue 描述与报错信息，在本地用 <code>python</code> 目录下的代码复现问题。</li>
-<li>在 <code>rapidocr/</code> 或 <code>tests/</code> 下定位并修改代码，直到问题消失。</li>
+<li>在 <code>rapidocr /</code> 或 <code>tests /</code> 下定位并修改代码，直到问题消失。</li>
 </ol>
 <h3 id="_5">增加新功能<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
 <li>与 maintainer 或现有 issue 讨论需求与实现方式（可选但推荐）。</li>
-<li>在 <code>rapidocr/</code> 下实现新逻辑，保持与现有代码风格一致（项目使用 <a href="https://github.com/psf/black">black</a> 等规范）。</li>
+<li>在 <code>rapidocr /</code> 下实现新逻辑，保持与现有代码风格一致（项目使用 <a href="https://github.com/psf/black">black</a> 等规范）。</li>
 <li>新功能应有对应单元测试覆盖。</li>
 </ol>
 <hr />
 <h2 id="_6">六、编写对应单元测试<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>测试文件放在 <strong><code>python/tests/</code></strong> 下，命名建议 <code>test_*.py</code>。</li>
-<li>使用 <strong>pytest</strong> 编写用例，可参考现有 <code>test_input.py</code>、<code>test_det_cls_rec.py</code>、<code>test_cli.py</code> 等。</li>
-<li>测试用图片等资源放在 <code>tests/test_files/</code>。</li>
+<li>使用 <strong>pytest</strong> 编写用例，可参考现有 <code>test_input.py</code>, <code>test_det_cls_rec.py</code>, <code>test_cli.py</code> 等。</li>
+<li>测试用图片等资源放在 <code>tests / test_files /</code>。</li>
 <li>新增测试应：<ul>
 <li>能稳定复现你要验证的行为（Bug 修复或新功能）；</li>
 <li>不依赖未在仓库或文档中说明的外部服务（必要时用 mock 或跳过）。</li>
@@ -2792,7 +2792,7 @@ You're not viewing the latest version.
 <h3 id="81-fork-rapidocr">8.1 Fork RapidOCR 主仓库到个人账号<a class="headerlink" href="#81-fork-rapidocr" title="Permanent link">&para;</a></h3>
 <ol>
 <li>打开 <a href="https://github.com/RapidAI/RapidOCR">RapidOCR 主仓库</a>。</li>
-<li>点击右上角 <strong>Fork</strong>，将仓库 fork 到你自己的 GitHub 账号下（例如 <code>https://github.com/你的用户名/RapidOCR</code>）。</li>
+<li>点击右上角 <strong>Fork</strong>，将仓库 fork 到你自己的 GitHub 账号下（例如 <code>https://github.com/ 你的用户名 / RapidOCR</code>）。</li>
 </ol>
 <h3 id="82-fork">8.2 将代码提交到个人 Fork<a class="headerlink" href="#82-fork" title="Permanent link">&para;</a></h3>
 <p>若最初是克隆的主仓库，需要把远程改为你的 fork，并推送到 fork：</p>
@@ -2852,22 +2852,22 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td><code>chore</code></td>
-<td>构建/工具等</td>
+<td>构建 / 工具等</td>
 </tr>
 </tbody>
 </table>
-<p>示例：<code>fix(python): 修复某条件下识别结果为空</code>、<code>feat(python): 支持 xxx 输入格式</code>。</p>
+<p>示例：<code>fix(python): 修复某条件下识别结果为空</code>, <code>feat(python): 支持 xxx 输入格式</code>。</p>
 <h3 id="83-rapidocr-pull-requestpr">8.3 向 RapidOCR 主仓库提交 Pull Request（PR）<a class="headerlink" href="#83-rapidocr-pull-requestpr" title="Permanent link">&para;</a></h3>
 <ol>
-<li>打开你 fork 后的仓库页面（如 <code>https://github.com/你的用户名/RapidOCR</code>）。</li>
+<li>打开你 fork 后的仓库页面（如 <code>https://github.com/ 你的用户名 / RapidOCR</code>）。</li>
 <li>若刚推送分支，页面上通常会出现 <strong>Compare &amp; pull request</strong>，点击即可；否则在 <strong>Branches</strong> 里选择你刚推送的分支，再点 <strong>New pull request</strong> 。</li>
-<li>确认 <strong>base 仓库</strong> 为 <code>RapidAI/RapidOCR</code>、<strong>base 分支</strong> 为 <code>main</code>（或仓库默认主分支），<strong>head 仓库</strong> 为你的 fork、<strong>head 分支</strong> 为你的分支（如 <code>fix/xxx</code>）。</li>
+<li>确认 <strong>base 仓库</strong> 为 <code>RapidAI / RapidOCR</code>、<strong>base 分支</strong> 为 <code>main</code>（或仓库默认主分支），<strong>head 仓库</strong> 为你的 fork、<strong>head 分支</strong> 为你的分支（如 <code>fix / xxx</code>）。</li>
 <li>填写 PR 标题和说明：</li>
 <li>标题：简要概括修改内容（如「Fix: 修复 Python 下 xxx 问题」）。</li>
 <li>说明中建议包含：<ul>
 <li>对应 Issue 编号（若有）：<code>Fixes #123</code> 或 <code>Related to #123</code>。</li>
 <li>修改原因与主要改动。</li>
-<li>如何验证：例如「在 python 目录下执行 <code>pytest tests/ -v</code> 通过」。</li>
+<li>如何验证：例如「在 python 目录下执行 <code>pytest tests / -v</code> 通过」。</li>
 </ul>
 </li>
 <li>提交 PR，等待 maintainer 审查；根据反馈再在本地修改并推送同一分支，PR 会自动更新。</li>
@@ -2904,7 +2904,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td>6</td>
-<td>编写/补充对应单元测试</td>
+<td>编写 / 补充对应单元测试</td>
 </tr>
 <tr>
 <td>7</td>
@@ -2956,7 +2956,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月6日 20:08:02 CST">2026-02-06 20:08:02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:32:24 CST">2026-03-02 14:32:24</span>
   </span>
 
     
@@ -2971,34 +2971,6 @@ You're not viewing the latest version.
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
-          
-          <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
-        </a>
-      
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 

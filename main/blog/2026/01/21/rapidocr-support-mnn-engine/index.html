@@ -2208,7 +2208,7 @@ You're not viewing the latest version.
   <a href="#mnn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        安装MNN
+        安装 MNN
       
     </span>
   </a>
@@ -2219,7 +2219,7 @@ You're not viewing the latest version.
   <a href="#onnx" class="md-nav__link">
     <span class="md-ellipsis">
       
-        转换ONNX模型
+        转换 ONNX 模型
       
     </span>
   </a>
@@ -2230,12 +2230,12 @@ You're not viewing the latest version.
   <a href="#det" class="md-nav__link">
     <span class="md-ellipsis">
       
-        支持Det模型
+        支持 Det 模型
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="支持Det模型">
+    <nav class="md-nav" aria-label="支持 Det 模型">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2269,12 +2269,12 @@ You're not viewing the latest version.
   <a href="#rec" class="md-nav__link">
     <span class="md-ellipsis">
       
-        支持Rec模型
+        支持 Rec 模型
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="支持Rec模型">
+    <nav class="md-nav" aria-label="支持 Rec 模型">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2550,11 +2550,11 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<p>记录支持MNN推理引擎的过程文档。</p>
+<p>记录支持 MNN 推理引擎的过程文档。</p>
 <!-- more -->
 
 <h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>首先感谢Github <a href="https://github.com/narc1ssus1">@narc1ssus1</a> 小伙伴的PR <a href="https://github.com/RapidAI/RapidOCR/pull/613">#613</a>。有了这个PR，我这也有了抓手来推动支持MNN作为推理引擎。</p>
+<p>首先感谢 Github <a href="https://github.com/narc1ssus1">@narc1ssus1</a> 小伙伴的 PR <a href="https://github.com/RapidAI/RapidOCR/pull/613">#613</a>。有了这个 PR，我这也有了抓手来推动支持 MNN 作为推理引擎。</p>
 <h2 id="_2">运行环境¶<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>操作系统：macOS Tahoe 26.2</li>
@@ -2562,7 +2562,7 @@ You're not viewing the latest version.
 <p>硬件：MacBookPro M2</p>
 </li>
 <li>
-<p>Python环境（3.10.0）：</p>
+<p>Python 环境（3.10.0）：</p>
 </li>
 </ul>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -2577,14 +2577,14 @@ You're not viewing the latest version.
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nv">datasets</span><span class="o">==</span><span class="m">3</span>.6.0
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nv">onnxruntime</span><span class="o">==</span><span class="m">1</span>.23.2
 </span></code></pre></div></td></tr></table></div>
-<h2 id="mnn">安装MNN<a class="headerlink" href="#mnn" title="Permanent link">&para;</a></h2>
+<h2 id="mnn">安装 MNN<a class="headerlink" href="#mnn" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>该部分主要参考官方文档：https://mnn-docs.readthedocs.io/en/latest/tools/convert.html</p>
 </div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>MNN
 </span></code></pre></div></td></tr></table></div>
-<h2 id="onnx">转换ONNX模型<a class="headerlink" href="#onnx" title="Permanent link">&para;</a></h2>
+<h2 id="onnx">转换 ONNX 模型<a class="headerlink" href="#onnx" title="Permanent link">&para;</a></h2>
 <p>转换命令：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>MNNConvert<span class="w"> </span>-f<span class="w"> </span>ONNX<span class="w"> </span>--modelFile<span class="w"> </span>rapidocr/models/ch_PP-OCRv4_det_infer.onnx<span class="w"> </span>--MNNModel<span class="w"> </span>mnn/ch_PP-OCRv4_det_infer.mnn<span class="w"> </span>--bizCode<span class="w"> </span>MNN
 </span></code></pre></div></td></tr></table></div>
@@ -2607,9 +2607,9 @@ You're not viewing the latest version.
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>outputTensors:<span class="w"> </span><span class="o">[</span><span class="w"> </span>fetch_name_0,<span class="w"> </span><span class="o">]</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>Converted<span class="w"> </span>Success!
 </span></code></pre></div></td></tr></table></div>
-<h2 id="det">支持Det模型<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
+<h2 id="det">支持 Det 模型<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
 <h3 id="_3">比较转化前后推理精度差异<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>两者对比的模型为<code>ch_PP-OCRv4_det_infer</code>模型，Exp1基于<code>RapidOCR+ONNX Runtime</code>格式模型推理, Exp2基于<code>RapidOCR+MNN</code>格式模型推理。</p>
+<p>两者对比的模型为 <code>ch_PP-OCRv4_det_infer</code> 模型，Exp1 基于 <code>RapidOCR+ONNX Runtime</code> 格式模型推理, Exp2 基于 <code>RapidOCR+MNN</code> 格式模型推理。</p>
 <p>两次实验除模型不一样外，其余均相同。其余未列出的实验均只换了模型。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_1_2">(Exp2) RapidOCR + MNN</label></div>
 <div class="tabbed-content">
@@ -2966,9 +2966,9 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<h2 id="rec">支持Rec模型<a class="headerlink" href="#rec" title="Permanent link">&para;</a></h2>
+<h2 id="rec">支持 Rec 模型<a class="headerlink" href="#rec" title="Permanent link">&para;</a></h2>
 <h3 id="_5">比较转化前后推理精度差异<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>两者对比的模型为<code>ch_PP-OCRv4_rec_infer</code>模型，Exp1基于<code>RapidOCR+ONNX Runtime</code>格式模型推理, Exp2基于<code>RapidOCR+MNN</code>格式模型推理。两次实验除模型不一样外，其余均相同。</p>
+<p>两者对比的模型为 <code>ch_PP-OCRv4_rec_infer</code> 模型，Exp1 基于 <code>RapidOCR+ONNX Runtime</code> 格式模型推理, Exp2 基于 <code>RapidOCR+MNN</code> 格式模型推理。两次实验除模型不一样外，其余均相同。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_2_2">(Exp2) RapidOCR + MNN</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3350,10 +3350,10 @@ You're not viewing the latest version.
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> te_PP-OCRv5_rec_mobile_infer</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> th_PP-OCRv5_rec_mobile_infer</li>
 </ul>
-<p>相关MNN模型已经上传到<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭模型库</a>中。</p>
+<p>相关 MNN 模型已经上传到 <a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭模型库</a> 中。</p>
 <h2 id="_8">写在最后<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>从以上基准比较来看，MNN 推理引擎整体推理速度要比 ONNX Runtime 更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。</p>
-<p><code>rapidocr</code>已经在<code>&gt;=v3.6.0</code>集成以上模型，欢迎使用和反馈。</p>
+<p><code>rapidocr</code> 已经在 <code>&gt;=v3.6.0</code> 集成以上模型，欢迎使用和反馈。</p>
 
 <!-- Source file information -->
 
@@ -3378,7 +3378,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月27日 14:02:25 CST">2026-02-27 14:02:25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:32:24 CST">2026-03-02 14:32:24</span>
   </span>
 
     
@@ -3393,34 +3393,6 @@ You're not viewing the latest version.
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
-          
-          <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
-        </a>
-      
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 

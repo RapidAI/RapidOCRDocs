@@ -2252,12 +2252,12 @@ You're not viewing the latest version.
   <a href="#5-rapidocr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 集成到rapidocr中
+        5. 集成到 rapidocr 中
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. 集成到rapidocr中">
+    <nav class="md-nav" aria-label="5. 集成到 rapidocr 中">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2275,7 +2275,7 @@ You're not viewing the latest version.
   <a href="#rapidocr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        更改rapidocr代码适配
+        更改 rapidocr 代码适配
       
     </span>
   </a>
@@ -2529,14 +2529,14 @@ You're not viewing the latest version.
 
 <!-- Page content -->
 <blockquote>
-<p>该文章主要记录RapidOCR集成PP-OCRv5_mobile_det和PP-OCRv5_server_det模型记录的，涉及模型转换，模型精度测试等步骤。</p>
+<p>该文章主要记录 RapidOCR 集成 PP-OCRv5_mobile_det 和 PP-OCRv5_server_det 模型记录的，涉及模型转换，模型精度测试等步骤。</p>
 </blockquote>
 <!-- more -->
 
 <h3 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>来自PaddleOCR<a href="http://www.paddleocr.ai/latest/version3.x/algorithm/PP-OCRv5/PP-OCRv5.html">官方文档</a>：</p>
+<p>来自 PaddleOCR<a href="http://www.paddleocr.ai/latest/version3.x/algorithm/PP-OCRv5/PP-OCRv5.html">官方文档</a>：</p>
 <blockquote>
-<p>PP-OCRv5 是PP-OCR新一代文字识别解决方案，该方案聚焦于多场景、多文字类型的文字识别。在文字类型方面，PP-OCRv5支持简体中文、中文拼音、繁体中文、英文、日文5大主流文字类型，在场景方面，PP-OCRv5升级了中英复杂手写体、竖排文本、生僻字等多种挑战性场景的识别能力。在内部多场景复杂评估集上，PP-OCRv5较PP-OCRv4端到端提升13个百分点。</p>
+<p>PP-OCRv5 是 PP-OCR 新一代文字识别解决方案，该方案聚焦于多场景、多文字类型的文字识别。在文字类型方面，PP-OCRv5 支持简体中文、中文拼音、繁体中文、英文、日文 5 大主流文字类型，在场景方面，PP-OCRv5 升级了中英复杂手写体、竖排文本、生僻字等多种挑战性场景的识别能力。在内部多场景复杂评估集上，PP-OCRv5 较 PP-OCRv4 端到端提升 13 个百分点。</p>
 </blockquote>
 <h3 id="_2">以下代码运行环境<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2548,12 +2548,12 @@ You're not viewing the latest version.
 <li>rapidocr: 2.1.0</li>
 </ul>
 <h3 id="1">1. 模型跑通<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>该步骤主要先基于PaddleX可以正确使用PP-OCRv5_mobile_det模型得到正确结果。</p>
+<p>该步骤主要先基于 PaddleX 可以正确使用 PP-OCRv5_mobile_det 模型得到正确结果。</p>
 <p>该部分主要参考文档：<a href="https://paddlepaddle.github.io/PaddleX/latest/module_usage/tutorials/ocr_modules/text_recognition.html#_3">docs</a></p>
-<p>安装<code>paddlex</code>:</p>
+<p>安装 <code>paddlex</code>:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;paddlex[ocr]==3.0.0&quot;</span>
 </span></code></pre></div></td></tr></table></div>
-<p>测试PP-OCRv5_mobile_det模型能否正常识别：</p>
+<p>测试 PP-OCRv5_mobile_det 模型能否正常识别：</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>运行以下代码时，模型会自动下载到 <strong>/Users/用户名/.paddlex/official_models</strong> 下。</p>
@@ -2589,10 +2589,10 @@ You're not viewing the latest version.
 <p><img alt="alt text" src="../../../../images/general_ocr_001_res.png" /></p>
 <h3 id="2">2. 模型转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>该部分主要参考文档： <a href="https://paddlepaddle.github.io/PaddleX/latest/pipeline_deploy/paddle2onnx.html?h=paddle2onnx#22">docs</a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">转换PP-OCRv5_mobile_det</label><label for="__tabbed_1_2">转换PP-OCRv5_server_det</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">转换 PP-OCRv5_mobile_det</label><label for="__tabbed_1_2">转换 PP-OCRv5_server_det</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>PaddleX官方集成了paddle2onnx的转换代码：</p>
+<p>PaddleX 官方集成了 paddle2onnx 的转换代码：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -2636,7 +2636,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<p>PaddleX官方集成了paddle2onnx的转换代码：</p>
+<p>PaddleX 官方集成了 paddle2onnx 的转换代码：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
@@ -2682,12 +2682,12 @@ You're not viewing the latest version.
 </div>
 </div>
 <h3 id="3">3. 模型推理验证<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">验证PP-OCRv5_mobile_det模型</label><label for="__tabbed_2_2">验证PP-OCRv5_server_det模型</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">验证 PP-OCRv5_mobile_det 模型</label><label for="__tabbed_2_2">验证 PP-OCRv5_server_det 模型</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>该部分主要是在RapidOCR项目中测试能否直接使用onnx模型。要点主要是确定模型前后处理是否兼容。从PaddleOCR config文件中比较<a href="https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv4/PP-OCRv4_mobile_det.yml">PP-OCRv4</a>和<a href="https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv5/PP-OCRv5_mobile_det.yml">PP-OCRv5 mobile det</a>文件差异：</p>
+<p>该部分主要是在 RapidOCR 项目中测试能否直接使用 onnx 模型。要点主要是确定模型前后处理是否兼容。从 PaddleOCR config 文件中比较 <a href="https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv4/PP-OCRv4_mobile_det.yml">PP-OCRv4</a> 和 <a href="https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv5/PP-OCRv5_mobile_det.yml">PP-OCRv5 mobile det</a> 文件差异：</p>
 <p><img alt="alt text" src="../../../../images/v4_v5_mobile_det.png" /></p>
-<p>从上图中可以看出，配置基本一模一样，因此现有<code>rapidocr</code>前后推理代码可以直接使用。</p>
+<p>从上图中可以看出，配置基本一模一样，因此现有 <code>rapidocr</code> 前后推理代码可以直接使用。</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -2711,9 +2711,9 @@ You're not viewing the latest version.
 <p><img alt="alt text" src="../../../../images/v5_mobile_det_vis_result.jpg" /></p>
 </div>
 <div class="tabbed-block">
-<p>该部分主要是在RapidOCR项目中测试能否直接使用onnx模型。要点主要是确定模型前后处理是否兼容。从PaddleOCR config文件中比较<a href="https://github.com/PaddlePaddle/PaddleOCR/blob/b0b31c38aef135617a98fbf89c92efd8b2eebd73/configs/det/PP-OCRv4/PP-OCRv4_server_det.yml">PP-OCRv4_server_det</a>和<a href="https://github.com/PaddlePaddle/PaddleOCR/blob/b0b31c38aef135617a98fbf89c92efd8b2eebd73/configs/det/PP-OCRv5/PP-OCRv5_server_det.yml">PP-OCRv5_server_det</a>文件差异：</p>
+<p>该部分主要是在 RapidOCR 项目中测试能否直接使用 onnx 模型。要点主要是确定模型前后处理是否兼容。从 PaddleOCR config 文件中比较 <a href="https://github.com/PaddlePaddle/PaddleOCR/blob/b0b31c38aef135617a98fbf89c92efd8b2eebd73/configs/det/PP-OCRv4/PP-OCRv4_server_det.yml">PP-OCRv4_server_det</a> 和 <a href="https://github.com/PaddlePaddle/PaddleOCR/blob/b0b31c38aef135617a98fbf89c92efd8b2eebd73/configs/det/PP-OCRv5/PP-OCRv5_server_det.yml">PP-OCRv5_server_det</a> 文件差异：</p>
 <p><img alt="alt text" src="../../../../images/v4_v5_server_det.png" /></p>
-<p>从上图中可以看出，配置基本一模一样，backbone换了，但是前后处理配置是一样的。因此现有<code>rapidocr</code>前后推理代码可以直接使用。</p>
+<p>从上图中可以看出，配置基本一模一样，backbone 换了，但是前后处理配置是一样的。因此现有 <code>rapidocr</code> 前后推理代码可以直接使用。</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -2741,13 +2741,13 @@ You're not viewing the latest version.
 <h3 id="4">4. 模型精度测试<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>测试集<a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">text_det_test_dataset</a>包括卡证类、文档类和自然场景三大类。其中卡证类有82张，文档类有75张，自然场景类有55张。缺少手写体、繁体、日文、古籍文本、拼音、艺术字等数据。因此，该基于该测评集的结果仅供参考。</p>
+<p>测试集 <a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">text_det_test_dataset</a> 包括卡证类、文档类和自然场景三大类。其中卡证类有 82 张，文档类有 75 张，自然场景类有 55 张。缺少手写体、繁体、日文、古籍文本、拼音、艺术字等数据。因此，该基于该测评集的结果仅供参考。</p>
 <p>欢迎有兴趣的小伙伴，可以和我们一起共建更加全面的测评集。</p>
 </div>
-<p>该部分主要使用<a href="https://github.com/SWHL/TextDetMetric">TextDetMetric</a>和测试集<a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">text_det_test_dataset</a>来评测。</p>
-<p>⚠️注意：以下代码基于<code>rapidocr==3.0.0</code>版本测试</p>
-<p>相关测试步骤请参见<a href="https://github.com/SWHL/TextRecMetric">TextDetMetric</a>的README，一步一步来就行。其中，计算 <strong>pred.txt</strong> 代码如下：</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">(Exp1) PaddleX框架+Paddle格式模型</label><label for="__tabbed_3_2">(Exp2)RapidOCR框架+Paddle格式模型</label><label for="__tabbed_3_3">(Exp3)RapidOCR框架+ONNXRuntime格式模型</label></div>
+<p>该部分主要使用 <a href="https://github.com/SWHL/TextDetMetric">TextDetMetric</a> 和测试集 <a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">text_det_test_dataset</a> 来评测。</p>
+<p>⚠️注意：以下代码基于 <code>rapidocr==3.0.0</code> 版本测试</p>
+<p>相关测试步骤请参见 <a href="https://github.com/SWHL/TextRecMetric">TextDetMetric</a> 的 README，一步一步来就行。其中，计算 <strong>pred.txt</strong> 代码如下：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">(Exp1) PaddleX 框架+Paddle 格式模型</label><label for="__tabbed_3_2">(Exp2)RapidOCR 框架+Paddle 格式模型</label><label for="__tabbed_3_3">(Exp3)RapidOCR 框架+ONNXRuntime 格式模型</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
@@ -2970,7 +2970,7 @@ You're not viewing the latest version.
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">metric</span> <span class="o">=</span> <span class="n">metric</span><span class="p">(</span><span class="n">pred_path</span><span class="p">)</span>
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>指标汇总如下（以下指标均为CPU下计算所得）：</p>
+<p>指标汇总如下（以下指标均为 CPU 下计算所得）：</p>
 <table>
 <thead>
 <tr>
@@ -3099,11 +3099,11 @@ You're not viewing the latest version.
 </table>
 <p>从以上结果来看，可以得到以下结论：</p>
 <ol>
-<li>Exp1和Exp2相比，H-mean差异不大，说明文本检测 <strong>前后处理代码可以共用</strong> 。</li>
-<li>Exp2和Exp3相比，mobile模型转换为ONNX格式后，指标几乎一致，说明 <strong>模型转换前后，误差较小，推理速度也有提升</strong> 。</li>
-<li>Exp3和Exp4相比，mobile整体指标弱于PP-OCRv4的。因为测评集集中在中英文的印刷体，手写体少些，因此仅供参考。</li>
+<li>Exp1 和 Exp2 相比，H-mean 差异不大，说明文本检测 <strong>前后处理代码可以共用</strong> 。</li>
+<li>Exp2 和 Exp3 相比，mobile 模型转换为 ONNX 格式后，指标几乎一致，说明 <strong>模型转换前后，误差较小，推理速度也有提升</strong> 。</li>
+<li>Exp3 和 Exp4 相比，mobile 整体指标弱于 PP-OCRv4 的。因为测评集集中在中英文的印刷体，手写体少些，因此仅供参考。</li>
 <li>
-<p>Exp6直接跑，会报以下错误，暂时没有找到原因。如有知道的小伙伴，欢迎留言告知。</p>
+<p>Exp6 直接跑，会报以下错误，暂时没有找到原因。如有知道的小伙伴，欢迎留言告知。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
@@ -3114,31 +3114,31 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>因为Exp6暂时没有找到原因，粗略将Exp5和Exp7相比，可以看到PP-OCRv5 server模型转换为ONNX格式后，<strong>H-mean下降了5.8%</strong> ，但是转换方式和mobile的相同，具体原因需要进一步排查。如有知道的小伙伴，欢迎留言告知。</p>
+<p>因为 Exp6 暂时没有找到原因，粗略将 Exp5 和 Exp7 相比，可以看到 PP-OCRv5 server 模型转换为 ONNX 格式后，<strong>H-mean下降了5.8%</strong> ，但是转换方式和 mobile 的相同，具体原因需要进一步排查。如有知道的小伙伴，欢迎留言告知。</p>
 </li>
-<li>Exp7和Exp8相比，PP-OCRv5 server模型提升很大（H-mean提升7.72%）。当然，不排除训练用到了测评集数据。</li>
-<li>Exp10为新增的PyTorch模型，其精度与Paddle模型几乎一致，但推理速度稍微有些下降。</li>
+<li>Exp7 和 Exp8 相比，PP-OCRv5 server 模型提升很大（H-mean 提升 7.72%）。当然，不排除训练用到了测评集数据。</li>
+<li>Exp10 为新增的 PyTorch 模型，其精度与 Paddle 模型几乎一致，但推理速度稍微有些下降。</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>如果是单一中英文场景，建议用PP-OCRv4系列</li>
-<li>如果是中英日、印刷和手写体混合场景，建议用PP-OCRv5系列</li>
+<li>如果是单一中英文场景，建议用 PP-OCRv4 系列</li>
+<li>如果是中英日、印刷和手写体混合场景，建议用 PP-OCRv5 系列</li>
 </ul>
 </div>
-<p>上述表格中基于ONNXRuntime的结果已经更新到<a href="../../../../2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/">开源OCR模型对比</a>中。</p>
-<h3 id="5-rapidocr">5. 集成到rapidocr中<a class="headerlink" href="#5-rapidocr" title="Permanent link">&para;</a></h3>
-<p>该部分主要包括将托管模型到魔搭、更改rapidocr代码适配等。</p>
+<p>上述表格中基于 ONNXRuntime 的结果已经更新到 <a href="../../../../2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/">开源 OCR 模型对比</a> 中。</p>
+<h3 id="5-rapidocr">5. 集成到 rapidocr 中<a class="headerlink" href="#5-rapidocr" title="Permanent link">&para;</a></h3>
+<p>该部分主要包括将托管模型到魔搭、更改 rapidocr 代码适配等。</p>
 <h4 id="_3">托管模型到魔搭<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>该部分主要是涉及模型上传到对应位置，并合理命名。注意上传完成后，需要打Tag，避免后续rapidocr whl包中找不到模型下载路径。</p>
+<p>该部分主要是涉及模型上传到对应位置，并合理命名。注意上传完成后，需要打 Tag，避免后续 rapidocr whl 包中找不到模型下载路径。</p>
 <p>我这里已经上传到了魔搭上，详细链接参见：<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">link</a></p>
-<h4 id="rapidocr">更改rapidocr代码适配<a class="headerlink" href="#rapidocr" title="Permanent link">&para;</a></h4>
-<p>该部分主要涉及到更改<a href="https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/default_models.yaml">default_models.yaml</a>和<a href="https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/inference_engine/paddle.py">paddle.py</a>的代码来适配。</p>
+<h4 id="rapidocr">更改 rapidocr 代码适配<a class="headerlink" href="#rapidocr" title="Permanent link">&para;</a></h4>
+<p>该部分主要涉及到更改 <a href="https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/default_models.yaml">default_models.yaml</a> 和 <a href="https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/inference_engine/paddle.py">paddle.py</a> 的代码来适配。</p>
 <p>同时，需要添加对应的单元测试，在保证之前单测成功的同时，新的针对性该模型的单测也能通过。</p>
 <p>我这里已经做完了，小伙伴们感兴趣可以去看看源码。</p>
 <h3 id="_4">写在最后<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>至此，该部分集成工作就基本完成了。这部分代码会集成到<code>rapidocr==3.0.0</code>中。</p>
-<p>版本号之所以从v2.1.0到v3.0.0，原因是：语义化版本号。我在集成过程中，发现v2.1.0中字段不太合理，做了一些改进，动了外部API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ <a href="https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/">docs</a> 。</p>
+<p>至此，该部分集成工作就基本完成了。这部分代码会集成到 <code>rapidocr==3.0.0</code> 中。</p>
+<p>版本号之所以从 v2.1.0 到 v3.0.0，原因是：语义化版本号。我在集成过程中，发现 v2.1.0 中字段不太合理，做了一些改进，动了外部 API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ <a href="https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/">docs</a> 。</p>
 
 <!-- Source file information -->
 
@@ -3163,7 +3163,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2025年11月12日 08:28:29 CST">2025-11-12 08:28:29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:32:24 CST">2026-03-02 14:32:24</span>
   </span>
 
     
@@ -3178,34 +3178,6 @@ You're not viewing the latest version.
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
-          
-          <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
-        </a>
-      
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 

@@ -2186,7 +2186,7 @@ You're not viewing the latest version.
   <a href="#directml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DirectML是什么？
+        DirectML 是什么？
       
     </span>
   </a>
@@ -2194,10 +2194,10 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#rapidocrdirectml" class="md-nav__link">
+  <a href="#rapidocr-directml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        RapidOCR下如何使用DirectML加速呢？
+        RapidOCR 下如何使用 DirectML 加速呢？
       
     </span>
   </a>
@@ -2220,7 +2220,7 @@ You're not viewing the latest version.
   <a href="#rapidocr_onnxruntime1323" class="md-nav__link">
     <span class="md-ellipsis">
       
-        安装rapidocr_onnxruntime&gt;=1.3.23
+        安装 rapidocr_onnxruntime&gt;=1.3.23
       
     </span>
   </a>
@@ -2231,7 +2231,7 @@ You're not viewing the latest version.
   <a href="#onnxruntime-directml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        安装onnxruntime-directml
+        安装 onnxruntime-directml
       
     </span>
   </a>
@@ -2242,7 +2242,7 @@ You're not viewing the latest version.
   <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Python使用
+        Python 使用
       
     </span>
   </a>
@@ -2269,7 +2269,7 @@ You're not viewing the latest version.
   <a href="#directml_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        有关DirectML的讨论
+        有关 DirectML 的讨论
       
     </span>
   </a>
@@ -2435,38 +2435,30 @@ You're not viewing the latest version.
 
 
 
-    <div class="admonition warning">
-        <p class="admonition-title">Warning</p>
-        <p>
-            本文档最后更新于 2024-07-13，
-            已超过 180 天未更新，内容可能已经过时，阅读注意甄别。
-        </p>
-    </div>
-
 
 <!-- Page content -->
-<p>本篇文章主要介绍一下DirectML，以及它在OCR推理过程中是如何使用的。</p>
+<p>本篇文章主要介绍一下 DirectML，以及它在 OCR 推理过程中是如何使用的。</p>
 <!-- more -->
 
-<h3 id="directml">DirectML是什么？<sup id="fnref:microsoft"><a class="footnote-ref" href="#fn:microsoft">1</a></sup><a class="headerlink" href="#directml" title="Permanent link">&para;</a></h3>
-<p>直接机器学习 (DirectML) 是机器学习 (ML) 的低级 API。 API 具有常见的（本机 C++、nano-COM）编程接口和 DirectX 12 样式的工作流。 可将机器学习推断工作负荷集成到游戏、引擎、中间件、后端或其他应用程序中。 所有与 DirectX 12 兼容的硬件都支持 DirectML。</p>
+<h3 id="directml">DirectML 是什么？<sup id="fnref:microsoft"><a class="footnote-ref" href="#fn:microsoft">1</a></sup><a class="headerlink" href="#directml" title="Permanent link">&para;</a></h3>
+<p>直接机器学习 (DirectML) 是机器学习 (ML) 的低级 API。 API 具有常见的（本机 C++, nano-COM）编程接口和 DirectX 12 样式的工作流。 可将机器学习推断工作负荷集成到游戏、引擎、中间件、后端或其他应用程序中。 所有与 DirectX 12 兼容的硬件都支持 DirectML。</p>
 <p>硬件加速的机器学习基元（称为“运算符”）是 DirectML 的构建基块。 在这些构建基块中，可以开发纵向扩展、抗锯齿和样式转移等机器学习技术。 例如，使用噪声抑制和超解析度，可以实现令人印象深刻的光线跟踪效果且可以减少每个像素的光线。</p>
-<p>可将机器学习推断工作负荷集成到游戏、引擎、中间件、后端或其他应用程序中。 DirectML 提供用户熟悉的（本机C++、nano-COM）DirectX 12 式编程接口和工作流，且受所有 DirectX 12 兼容硬件的支持。 有关 DirectML 示例应用程序（包括精简 DirectML 应用程序的示例），请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/ai/directml/dml-min-app">DirectML 示例应用程序</a>。</p>
+<p>可将机器学习推断工作负荷集成到游戏、引擎、中间件、后端或其他应用程序中。 DirectML 提供用户熟悉的（本机 C++, nano-COM）DirectX 12 式编程接口和工作流，且受所有 DirectX 12 兼容硬件的支持。 有关 DirectML 示例应用程序（包括精简 DirectML 应用程序的示例），请参阅 <a href="https://learn.microsoft.com/zh-cn/windows/ai/directml/dml-min-app">DirectML 示例应用程序</a>。</p>
 <p><strong>DirectML 是在 Windows 10 版本 1903 和 Windows SDK 的相应版本中引入的。</strong></p>
-<h3 id="rapidocrdirectml">RapidOCR下如何使用DirectML加速呢？<a class="headerlink" href="#rapidocrdirectml" title="Permanent link">&para;</a></h3>
-<p>目前在<code>rapidocr_onnxruntime&gt;=1.3.23</code>中，配置了使用DirectML的开关。在满足一定条件后，可以正常使用DirectML加速推理OCR。</p>
-<p>要想使用DirectML加速，需要满足以下条件：</p>
+<h3 id="rapidocr-directml">RapidOCR 下如何使用 DirectML 加速呢？<a class="headerlink" href="#rapidocr-directml" title="Permanent link">&para;</a></h3>
+<p>目前在 <code>rapidocr_onnxruntime&gt;=1.3.23</code> 中，配置了使用 DirectML 的开关。在满足一定条件后，可以正常使用 DirectML 加速推理 OCR。</p>
+<p>要想使用 DirectML 加速，需要满足以下条件：</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 设备系统要大于等于Windows 10 版本 1903</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 安装<code>rapidocr_onnxruntime&gt;=1.3.23</code>版本</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 安装<code>onnxruntime-directml</code>包</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 设备系统要大于等于 Windows 10 版本 1903</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 安装 <code>rapidocr_onnxruntime&gt;=1.3.23</code> 版本</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 安装 <code>onnxruntime-directml</code> 包</li>
 </ul>
 <h3 id="_1">具体使用教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>首先需要确定自己设备是Windows系统，且版本要大于等于Window 10 1903</p>
-<h4 id="rapidocr_onnxruntime1323">安装<code>rapidocr_onnxruntime&gt;=1.3.23</code><a class="headerlink" href="#rapidocr_onnxruntime1323" title="Permanent link">&para;</a></h4>
+<p>首先需要确定自己设备是 Windows 系统，且版本要大于等于 Window 10 1903</p>
+<h4 id="rapidocr_onnxruntime1323">安装 <code>rapidocr_onnxruntime&gt;=1.3.23</code><a class="headerlink" href="#rapidocr_onnxruntime1323" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr_onnxruntime
 </span></code></pre></div></td></tr></table></div>
-<h4 id="onnxruntime-directml">安装<code>onnxruntime-directml</code><a class="headerlink" href="#onnxruntime-directml" title="Permanent link">&para;</a></h4>
+<h4 id="onnxruntime-directml">安装 <code>onnxruntime-directml</code><a class="headerlink" href="#onnxruntime-directml" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -2477,7 +2469,7 @@ You're not viewing the latest version.
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># 安装onnxruntime-directml</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>pip<span class="w"> </span>install<span class="w"> </span>onnxruntime-directml
 </span></code></pre></div></td></tr></table></div>
-<h4 id="python">Python使用<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
+<h4 id="python">Python 使用<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -2499,8 +2491,8 @@ You're not viewing the latest version.
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">elapse</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="benchmark">Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">&para;</a></h3>
-<p>由于自己手头没有Windows机器，暂时没有相关测评，可以参考下面Disscussions中评测。</p>
-<h3 id="directml_1">有关DirectML的讨论<a class="headerlink" href="#directml_1" title="Permanent link">&para;</a></h3>
+<p>由于自己手头没有 Windows 机器，暂时没有相关测评，可以参考下面 Disscussions 中评测。</p>
+<h3 id="directml_1">有关 DirectML 的讨论<a class="headerlink" href="#directml_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://github.com/RapidAI/RapidOCR/discussions/175">Discussions #175</a></li>
 </ul>
@@ -2536,7 +2528,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2024年7月13日 20:32:19 CST">2024-07-13 20:32:19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:32:24 CST">2026-03-02 14:32:24</span>
   </span>
 
     
@@ -2551,29 +2543,6 @@ You're not viewing the latest version.
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
-          
-          <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 

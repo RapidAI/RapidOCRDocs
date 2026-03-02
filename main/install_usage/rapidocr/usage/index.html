@@ -978,7 +978,7 @@ You're not viewing the latest version.
   <a href="#rapidocr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        初始化RapidOCR实例输入
+        初始化 RapidOCR 实例输入
       
     </span>
   </a>
@@ -2297,7 +2297,7 @@ You're not viewing the latest version.
   <a href="#rapidocr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        初始化RapidOCR实例输入
+        初始化 RapidOCR 实例输入
       
     </span>
   </a>
@@ -2387,10 +2387,10 @@ You're not viewing the latest version.
 
 <!-- Page content -->
 <h3 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>该部分涉及如何使用<code>rapidocr</code>库来进行图像文字识别工作。</p>
+<p>该部分涉及如何使用 <code>rapidocr</code> 库来进行图像文字识别工作。</p>
 <h3 id="_2">最简单的使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>一切都使用默认值。默认使用来自PP-OCRv4的DBNet中文轻量检测，来自PP-OCRv4的SVTR_LCNet中文识别模型。</p>
-<p>推荐可以先使用ONNXRuntime CPU版作为推理引擎。</p>
+<p>一切都使用默认值。默认使用来自 PP-OCRv4 的 DBNet 中文轻量检测，来自 PP-OCRv4 的 SVTR_LCNet 中文识别模型。</p>
+<p>推荐可以先使用 ONNXRuntime CPU 版作为推理引擎。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>onnxruntime
 </span></code></pre></div></td></tr></table></div>
 <p>其他默认值的详细参数设置参见：<a href="https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/config.yaml"><code>config.yaml</code></a></p>
@@ -2412,8 +2412,8 @@ You're not viewing the latest version.
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="rapidocr">初始化RapidOCR实例输入<a class="headerlink" href="#rapidocr" title="Permanent link">&para;</a></h3>
-<p>输入支持传入YAML格式的配置文件，同时支持参数直接传入使用。</p>
+<h3 id="rapidocr">初始化 RapidOCR 实例输入<a class="headerlink" href="#rapidocr" title="Permanent link">&para;</a></h3>
+<p>输入支持传入 YAML 格式的配置文件，同时支持参数直接传入使用。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">方法一：传入配置文件</label><label for="__tabbed_1_2">方法二：直接传入相应参数</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2426,7 +2426,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>根据自己的需要更改 <strong>default_rapidocr.yaml</strong> 相应的值。例如使用OpenVINO作为作为文本检测的推理引擎，同时使用<code>ch_mobile</code>，PP-OCRv4版本的模型，更改如下：</p>
+<p>根据自己的需要更改 <strong>default_rapidocr.yaml</strong> 相应的值。例如使用 OpenVINO 作为作为文本检测的推理引擎，同时使用 <code>ch_mobile</code>，PP-OCRv4 版本的模型，更改如下：</p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -2477,7 +2477,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>传入到<code>RapidOCR</code>中使用。</p>
+<p>传入到 <code>RapidOCR</code> 中使用。</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -2506,10 +2506,10 @@ You're not viewing the latest version.
 <div class="tabbed-block">
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><code>rapidocr&gt;=3.0.0</code>版本之后，将<code>engine_type</code>、<code>lang_type</code>、<code>model_type</code>和<code>ocr_version</code>三个参数的设置下放到了文本检测、文本行方向分类和文本识别三个阶段中。这样更加灵活。可以为不同阶段中，指定不同的推理引擎， 不同的模型type。</p>
+<p><code>rapidocr&gt;=3.0.0</code> 版本之后，将 <code>engine_type</code>, <code>lang_type</code>, <code>model_type</code> 和 <code>ocr_version</code> 三个参数的设置下放到了文本检测、文本行方向分类和文本识别三个阶段中。这样更加灵活。可以为不同阶段中，指定不同的推理引擎， 不同的模型 type。</p>
 </div>
-<p>由于rapidocr中涉及可调节的参数众多，为了便于维护，引入<a href="https://github.com/omry/omegaconf">omageconf</a>库来更新参数。这样带来的代价是传入参数没有1.x系列中直观一些。但是现阶段方式也容易理解和使用。</p>
-<p>例如，我想使用OpenVINO作为各个流程的推理引擎，可以通过下面这种方式使用：</p>
+<p>由于 rapidocr 中涉及可调节的参数众多，为了便于维护，引入 <a href="https://github.com/omry/omegaconf">omageconf</a> 库来更新参数。这样带来的代价是传入参数没有 1.x 系列中直观一些。但是现阶段方式也容易理解和使用。</p>
+<p>例如，我想使用 OpenVINO 作为各个流程的推理引擎，可以通过下面这种方式使用：</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -2540,7 +2540,7 @@ You're not viewing the latest version.
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a>
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>其他参数传入方式，基本就是参考<code>config.yaml</code>，关键字之间用点分割，直接写就可以了。例如：</p>
+<p>其他参数传入方式，基本就是参考 <code>config.yaml</code>，关键字之间用点分割，直接写就可以了。例如：</p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">config.yaml部分参数示例</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -2590,14 +2590,14 @@ You're not viewing the latest version.
 </div>
 </div>
 </div>
-<p>由于采用Pillow库来打开图像，因此支持传入图像格式与Pillow保持一致，详情参见<a href="https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html">image-file-formats</a></p>
+<p>由于采用 Pillow 库来打开图像，因此支持传入图像格式与 Pillow 保持一致，详情参见 <a href="https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html">image-file-formats</a></p>
 <h3 id="_3">输出<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>RapidOCR输出包括4种类型：<code>Union[TextDetOutput, TextClsOutput, TextRecOutput, RapidOCROutput]</code>。这4种类型均是Dataclasses类，可以直接访问对应的键值。</p>
+<p>RapidOCR 输出包括 4 种类型：<code>Union[TextDetOutput, TextClsOutput, TextRecOutput, RapidOCROutput]</code>。这 4 种类型均是 Dataclasses 类，可以直接访问对应的键值。</p>
 <ul>
 <li><code>TextDetOutput</code>：仅有检测</li>
 <li><code>TextClsOutput</code>: 仅有文本行方向分类</li>
 <li><code>TextRecOutput</code>: 仅有识别</li>
-<li><code>RapidOCROutput</code>: 检测+方向分类+识别</li>
+<li><code>RapidOCROutput</code>: 检测+ 方向分类+ 识别</li>
 </ul>
 <p>详细搭配如下：</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:7"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">检测 + 分类 + 识别</label><label for="__tabbed_2_2">检测 + 识别</label><label for="__tabbed_2_3">分类 + 识别</label><label for="__tabbed_2_4">只有检测</label><label for="__tabbed_2_5">只有分类</label><label for="__tabbed_2_6">只有识别</label><label for="__tabbed_2_7">返回单字坐标</label></div>
@@ -2623,14 +2623,14 @@ You're not viewing the latest version.
 </span></span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_det_cls_rec.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="" src="../../../images/vis_det_cls_rec.jpg" /></p>
-<p>返回值为<code>RapidOCROutput</code>，可以通过<code>result.xxxx</code>直接访问。主要包含以下字段：</p>
+<p><img alt="" src="../../ images / vis_det_cls_rec.jpg" /></p>
+<p>返回值为 <code>RapidOCROutput</code>，可以通过 <code>result.xxxx</code> 直接访问。主要包含以下字段：</p>
 <ul>
 <li><code>RapidOCROutput.img (np.ndarray)</code>: 传入的原始图像</li>
-<li><code>RapidOCROutput.boxes (np.ndarray)</code>: 图像中每行坐标框，shape为<code>(N, 4, 2)</code>。<code>N</code>表示有多少文本行。</li>
-<li><code>RapidOCROutput.txts (Tuple[str])</code>: 和<code>boxes</code>文本框对应识别到的文本内容。长度和<code>RapidOCROutput.boxes</code>长度一致。</li>
-<li><code>RapidOCROutput.scores (Tuple[float])</code>: 每行识别文本结果的置信度。长度和<code>RapidOCROutput.boxes</code>长度一致。</li>
-<li><code>RapidOCROutput.word_results (Tuple[Any])</code>: 该部分结果只有在<code>return_word_box=True</code>时，才会有值。</li>
+<li><code>RapidOCROutput.boxes (np.ndarray)</code>: 图像中每行坐标框，shape 为 <code>(N, 4, 2)</code>。<code>N</code> 表示有多少文本行。</li>
+<li><code>RapidOCROutput.txts (Tuple[str])</code>: 和 <code>boxes</code> 文本框对应识别到的文本内容。长度和 <code>RapidOCROutput.boxes</code> 长度一致。</li>
+<li><code>RapidOCROutput.scores (Tuple[float])</code>: 每行识别文本结果的置信度。长度和 <code>RapidOCROutput.boxes</code> 长度一致。</li>
+<li><code>RapidOCROutput.word_results (Tuple[Any])</code>: 该部分结果只有在 <code>return_word_box=True</code> 时，才会有值。</li>
 <li><code>RapidOCROutput.elapse_list (List[float])</code>: 文本检测，文本行方向分类和文本识别三部分各自推理耗时，单位为秒。</li>
 <li><code>RapidOCROutput.elapse (float)</code>: 三部分整体耗时，单位为秒。</li>
 </ul>
@@ -2745,7 +2745,7 @@ You're not viewing the latest version.
 </span></span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_det_rec.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="" src="../../../images/vis_det_rec.jpg" /></p>
+<p><img alt="" src="../../ images / vis_det_rec.jpg" /></p>
 <p>返回值类型同 <strong>检测 + 分类 + 识别</strong> 部分。</p>
 </div>
 <div class="tabbed-block">
@@ -2765,8 +2765,8 @@ You're not viewing the latest version.
 </span></span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">elapse</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="" src="../../../images/vis_cls_rec.jpg" /></p>
-<p>返回值为<code>TextClsOutput</code>类，主要包含以下字段：</p>
+<p><img alt="" src="../../ images / vis_cls_rec.jpg" /></p>
+<p>返回值为 <code>TextClsOutput</code> 类，主要包含以下字段：</p>
 <ul>
 <li><code>TextClsOutput.img_list (List[np.ndarray])</code>: 多个文本行图像组成的列表。</li>
 <li><code>TextClsOutput.cls_res (List[Tuple(str, float)])</code>: 每个文本行对应的方向及置信度。</li>
@@ -2825,11 +2825,11 @@ You're not viewing the latest version.
 </span></span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_only_det.jpg&#39;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="" src="../../../images/vis_only_det.jpg" /></p>
-<p>返回值为<code>TextDetOutput</code>类，主要包含以下字段：</p>
+<p><img alt="" src="../../ images / vis_only_det.jpg" /></p>
+<p>返回值为 <code>TextDetOutput</code> 类，主要包含以下字段：</p>
 <ul>
 <li><code>TextDetOutput.img (np.ndarray)</code>: 传入的原始图像</li>
-<li><code>TextDetOutput.boxes (np.ndarray)</code>: 文本行坐标，4个点组成，依次是<code>[左上，右上，右下，左下]</code></li>
+<li><code>TextDetOutput.boxes (np.ndarray)</code>: 文本行坐标，4 个点组成，依次是 <code>[左上，右上，右下，左下]</code></li>
 <li><code>TextDetOutput.scores (List[float])</code>: 每个文本行对应的置信度。</li>
 <li><code>TextDetOutput.elapse (float)</code>: 文本检测整体耗时，单位为秒。</li>
 </ul>
@@ -2908,8 +2908,8 @@ You're not viewing the latest version.
 </span></span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_only_cls.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="" src="../../../images/vis_only_cls.jpg" /></p>
-<p>返回值为<code>TextClsOutput</code>类，主要包含以下字段：</p>
+<p><img alt="" src="../../ images / vis_only_cls.jpg" /></p>
+<p>返回值为 <code>TextClsOutput</code> 类，主要包含以下字段：</p>
 <ul>
 <li><code>TextClsOutput.img_list (List[np.ndarray])</code>: 多个文本行图像组成的列表。</li>
 <li><code>TextClsOutput.cls_res (List[Tuple(str, float)])</code>: 每个文本行对应的方向及置信度。</li>
@@ -2946,13 +2946,13 @@ You're not viewing the latest version.
 </span></span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_only_rec.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="" src="../../../images/vis_only_rec.jpg" /></p>
-<p>返回值为<code>TextRecOutput</code>类，主要包含以下字段：</p>
+<p><img alt="" src="../../ images / vis_only_rec.jpg" /></p>
+<p>返回值为 <code>TextRecOutput</code> 类，主要包含以下字段：</p>
 <ul>
 <li><code>TextRecOutput.imgs (List[np.ndarray])</code>: 多个文本行图像组成的列表。</li>
 <li><code>TextRecOutput.txts (List[Tuple(str, float)])</code>: 每个文本行对应的识别结果。</li>
 <li><code>TextRecOutput.scores (float)</code>: 每个文本行识别结果。</li>
-<li><code>TextRecOutput.word_results (Tuple[None])</code>: 仅在指定<code>return_word_box=True</code>时，有值。</li>
+<li><code>TextRecOutput.word_results (Tuple[None])</code>: 仅在指定 <code>return_word_box=True</code> 时，有值。</li>
 </ul>
 <details class="example" open="open">
 <summary>详细返回值示例</summary>
@@ -2999,14 +2999,14 @@ You're not viewing the latest version.
 </span></span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_return_words.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="" src="../../../images/vis_sinlge_words.jpg" /></p>
-<p>返回值<code>RapidOCROutput</code>类，主要包含以下字段:</p>
+<p><img alt="" src="../../ images / vis_sinlge_words.jpg" /></p>
+<p>返回值 <code>RapidOCROutput</code> 类，主要包含以下字段:</p>
 <ul>
 <li><code>RapidOCROutput.img (np.ndarray)</code>: 传入的原始图像</li>
-<li><code>RapidOCROutput.boxes (np.ndarray)</code>: 图像中每行坐标框，shape为<code>(N, 4, 2)</code>。<code>N</code>表示有多少文本行。</li>
-<li><code>RapidOCROutput.txts (Tuple[str])</code>: 和<code>boxes</code>文本框对应识别到的文本内容。长度和<code>RapidOCROutput.boxes</code>长度一致。</li>
-<li><code>RapidOCROutput.scores (Tuple[float])</code>: 每行识别文本结果的置信度。长度和<code>RapidOCROutput.boxes</code>长度一致。</li>
-<li><code>RapidOCROutput.word_results (Tuple[Tuple[str, float, List[List[int]]]])</code>: 由<code>(识别内容，置信度，[[左上], [右上], [右下], [左下]])</code>构成。</li>
+<li><code>RapidOCROutput.boxes (np.ndarray)</code>: 图像中每行坐标框，shape 为 <code>(N, 4, 2)</code>。<code>N</code> 表示有多少文本行。</li>
+<li><code>RapidOCROutput.txts (Tuple[str])</code>: 和 <code>boxes</code> 文本框对应识别到的文本内容。长度和 <code>RapidOCROutput.boxes</code> 长度一致。</li>
+<li><code>RapidOCROutput.scores (Tuple[float])</code>: 每行识别文本结果的置信度。长度和 <code>RapidOCROutput.boxes</code> 长度一致。</li>
+<li><code>RapidOCROutput.word_results (Tuple[Tuple[str, float, List[List[int]]]])</code>: 由 <code>(识别内容，置信度，[[左上], [右上], [右下], [左下]])</code> 构成。</li>
 <li><code>RapidOCROutput.elapse_list (List[float])</code>: 文本检测，文本行方向分类和文本识别三部分各自推理耗时，单位为秒。</li>
 <li><code>RapidOCROutput.elapse (float)</code>: 三部分整体耗时，单位为秒。</li>
 </ul>
@@ -3282,41 +3282,6 @@ You're not viewing the latest version.
   
   
 
-
-  <aside class="md-source-file">
-    
-    
-    
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
-          
-          <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
-        </a>
-      
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
-    
-  </aside>
 
 
 <!-- Was this page helpful? -->

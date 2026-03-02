@@ -2370,21 +2370,21 @@ You're not viewing the latest version.
 <h4 id="_2">打包步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p>安装<code>Nuitka</code></p>
+<p>安装 <code>Nuitka</code></p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nuitka
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<p>注：第一次安装会自动下载mingw和ccache，也可以手动配置，自行某度。
-2. 修改<code>rapidocr-onnxruntime</code>源码（修改后可以将所有依赖打包进文件）
+<p>注：第一次安装会自动下载 mingw 和 ccache，也可以手动配置，自行某度。
+2. 修改 <code>rapidocr-onnxruntime</code> 源码（修改后可以将所有依赖打包进文件）
     !!! note
-        <code>rapidocr_onnxruntime&gt;=1.2.8</code>以后不用再手动修改下面代码，已经做了修改。可以跳过该步。"</p>
+        <code>rapidocr_onnxruntime&gt;=1.2.8</code> 以后不用再手动修改下面代码，已经做了修改。可以跳过该步。"</p>
 <ul>
-<li>进入<code>rapidocr-onnxruntime</code>安装位置，一般在<code>Lib\site-packages\rapidocr_onnxruntime</code>或者你设置的虚拟环境下。</li>
-<li>用编辑器打开<code>rapid_ocr_api.py</code>，对**39-52行**进行修改，如下图：
+<li>进入 <code>rapidocr-onnxruntime</code> 安装位置，一般在 <code>Lib\site-packages\rapidocr_onnxruntime</code> 或者你设置的虚拟环境下。</li>
+<li>用编辑器打开 <code>rapid_ocr_api.py</code>，对 <strong>39-52行</strong> 进行修改，如下图：
     <img alt="image" src="https://user-images.githubusercontent.com/28639377/227765049-357c6670-56cb-44a4-a32c-f2dde479838e.png" /></li>
 <li>
-<p><code>nuitka</code>打包</p>
+<p><code>nuitka</code> 打包</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>rapidocr_web
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>nuitka<span class="w"> </span>--mingw64<span class="w"> </span>--standalone<span class="w"> </span>--show-memory<span class="w"> </span>--show-progress<span class="w"> </span>--nofollow-import-to<span class="o">=</span>tkinter<span class="w"> </span>--output-dir<span class="o">=</span>out<span class="w"> </span>ocrweb.py
@@ -2395,15 +2395,15 @@ You're not viewing the latest version.
     <img alt="image" src="https://user-images.githubusercontent.com/28639377/227765149-4ba15340-6199-49df-be85-6ef3263f5d2c.png" /></p>
 </li>
 <li>拷贝静态文件<ul>
-<li>打包后的文件位于当前位置的<code>out\ocrweb.dist</code>目录下，需要将<code>web</code>项目和<code>rapidocr-onnxruntime</code>相关文件拷贝到此目录。
+<li>打包后的文件位于当前位置的 <code>out\ocrweb.dist</code> 目录下，需要将 <code>web</code> 项目和 <code>rapidocr-onnxruntime</code> 相关文件拷贝到此目录。
     <img alt="image" src="https://user-images.githubusercontent.com/28639377/227765238-f7015ebc-5d71-45bc-9482-9b38c9cc8835.png" /></li>
-<li>拷贝<code>rapidocr_web</code>目录<code>static</code>和<code>templates</code>两个文件夹全部拷贝到<code>out\ocrweb.dist</code>下</li>
-<li>在<code>out\ocrweb.dist</code>创建<code>rapidocr_onnxruntime</code>文件夹，将<code>Lib\site-packages\rapidocr_onnxruntime</code>目录下的<code>config.yaml</code>和<code>models</code>文件夹拷贝到<code>out\ocrweb.dist\rapidocr_onnxruntime</code>文件夹内</li>
+<li>拷贝 <code>rapidocr_web</code> 目录 <code>static</code> 和 <code>templates</code> 两个文件夹全部拷贝到 <code>out\ocrweb.dist</code> 下</li>
+<li>在 <code>out\ocrweb.dist</code> 创建 <code>rapidocr_onnxruntime</code> 文件夹，将 <code>Lib\site-packages\rapidocr_onnxruntime</code> 目录下的 <code>config.yaml</code> 和 <code>models</code> 文件夹拷贝到 <code>out\ocrweb.dist\rapidocr_onnxruntime</code> 文件夹内</li>
 </ul>
 </li>
-<li>运行程序。进入<code>out\ocrweb.dist</code>，直接双击<code>ocrweb.exe</code>运行。
+<li>运行程序。进入 <code>out\ocrweb.dist</code>，直接双击 <code>ocrweb.exe</code> 运行。
     <img alt="image" src="https://user-images.githubusercontent.com/28639377/227765308-c37eba5f-78e9-479e-a289-cbc3e3463618.png" /></li>
-<li>打包好的exe下载：<a href="https://pan.baidu.com/s/1nj_1rjuVu76drKBZDY9Bww?pwd=xnu7">百度网盘</a> | <a href="https://drive.google.com/drive/folders/1okQj22XxLUptyhjKQcRU25eI8Ya693gf?usp=share_link">Google Drive</a> | <a href="https://gitee.com/RapidAI/RapidOCR/releases/download/v1.2.0/ocrweb.dist.rar">Gitee</a></li>
+<li>打包好的 exe 下载：<a href="https://pan.baidu.com/s/1nj_1rjuVu76drKBZDY9Bww?pwd=xnu7">百度网盘</a> | <a href="https://drive.google.com/drive/folders/1okQj22XxLUptyhjKQcRU25eI8Ya693gf?usp=share_link">Google Drive</a> | <a href="https://gitee.com/RapidAI/RapidOCR/releases/download/v1.2.0/ocrweb.dist.rar">Gitee</a></li>
 </ul>
 <h4 id="_3">补充<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2427,36 +2427,6 @@ You're not viewing the latest version.
   
   
 
-
-  <aside class="md-source-file">
-    
-    
-    
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
-          
-          <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
-    
-  </aside>
 
 
 <!-- Was this page helpful? -->

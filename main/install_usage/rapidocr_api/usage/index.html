@@ -1488,7 +1488,7 @@ You're not viewing the latest version.
   <a href="#curl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Curl调用
+        Curl 调用
       
     </span>
   </a>
@@ -1499,7 +1499,7 @@ You're not viewing the latest version.
   <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Python调用
+        Python 调用
       
     </span>
   </a>
@@ -2392,7 +2392,7 @@ You're not viewing the latest version.
   <a href="#curl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Curl调用
+        Curl 调用
       
     </span>
   </a>
@@ -2403,7 +2403,7 @@ You're not viewing the latest version.
   <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Python调用
+        Python 调用
       
     </span>
   </a>
@@ -2531,11 +2531,11 @@ You're not viewing the latest version.
 <h2 id="_1">📖 简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>OCR API的输出结果为最原始结果，大家可按需进一步扩展。</p>
+<p>OCR API 的输出结果为最原始结果，大家可按需进一步扩展。</p>
 </div>
 <p>源码仓库：<a href="https://github.com/RapidAI/RapidOCRAPI">https://github.com/RapidAI/RapidOCRAPI</a></p>
-<p>该包是将<a href="../../rapidocr/install/">rapidocr</a>库做了API封装，采用<a href="https://fastapi.tiangolo.com/">FastAPI</a> + <a href="https://www.uvicorn.org/">uvicorn</a>实现。</p>
-<p>定位是一个快速调用<code>rapidocr</code>的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看<a href="https://gunicorn.org/">gunicorn</a>等。</p>
+<p>该包是将 <a href="../../rapidocr/install/">rapidocr</a> 库做了 API 封装，采用 <a href="https://fastapi.tiangolo.com/">FastAPI</a> + <a href="https://www.uvicorn.org/">uvicorn</a> 实现。</p>
+<p>定位是一个快速调用 <code>rapidocr</code> 的 API 接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看 <a href="https://gunicorn.org/">gunicorn</a> 等。</p>
 <h2 id="_2">📌 版本依赖关系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2559,8 +2559,8 @@ You're not viewing the latest version.
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr_api
 </span></code></pre></div></td></tr></table></div>
 <h2 id="_4">启动服务端<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>在<code>rapidocr_api&gt;=0.1.0</code>中，可通过环境变量传递模型参数：det_model_path, cls_model_path, rec_model_path；接口中可传入参数，控制是否使用检测、方向分类和识别这三部分的模型；具体调用可参见下面文档。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows下使用</label><label for="__tabbed_1_2">Linux下使用</label><label for="__tabbed_1_3">Docker方式使用</label></div>
+<p>在 <code>rapidocr_api&gt;=0.1.0</code> 中，可通过环境变量传递模型参数：det_model_path, cls_model_path, rec_model_path；接口中可传入参数，控制是否使用检测、方向分类和识别这三部分的模型；具体调用可参见下面文档。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 下使用</label><label for="__tabbed_1_2">Linux 下使用</label><label for="__tabbed_1_3">Docker 方式使用</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
@@ -2593,8 +2593,8 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<p><a href="https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile">Dockerfile源码</a></p>
-<p>Build镜像:</p>
+<p><a href="https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile">Dockerfile 源码</a></p>
+<p>Build 镜像:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -2617,14 +2617,14 @@ You're not viewing the latest version.
 <p>运行:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>:9003<span class="w"> </span>--name<span class="w"> </span>rapidocr_api<span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>rapidocr_api:0.1.4
 </span></code></pre></div></td></tr></table></div>
-<p>接口web界面：</p>
+<p>接口 web 界面：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>http://&lt;ip&gt;:9003/docs
 </span></code></pre></div></td></tr></table></div>
 <hr />
 <p>Docker 临时修改并验证的方法</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>:9003<span class="w"> </span>--name<span class="w"> </span>rapidocr_api<span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>rapidocr_api:0.1.4
 </span></code></pre></div></td></tr></table></div>
-<p>进入container修改python源文件，Dockerfile最好加上apt-get install vim安装</p>
+<p>进入 container 修改 python 源文件，Dockerfile 最好加上 apt-get install vim 安装</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
@@ -2637,7 +2637,7 @@ You're not viewing the latest version.
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>vi<span class="w"> </span>/usr/local/lib/python3.10/site-packages/rapidocr_onnxruntime/config.yaml
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c1"># 改好后exit退出</span>
 </span></code></pre></div></td></tr></table></div>
-<p>重启container</p>
+<p>重启 container</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a>docker<span class="w"> </span>restart<span class="w"> </span>rapidocr_api
 </span></code></pre></div></td></tr></table></div>
 <p>查看日志：</p>
@@ -2649,13 +2649,13 @@ You're not viewing the latest version.
 <h2 id="_5">调用<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。</p>
+<p>调用本质就是发送一个 POST 请求，以下给出 Curl 和 Python 的调用示例，其他编程语言同理。</p>
 </div>
-<h3 id="curl">Curl调用<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
+<h3 id="curl">Curl 调用<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>curl<span class="w"> </span>-F<span class="w"> </span><span class="nv">image_file</span><span class="o">=</span>@1.png<span class="w"> </span>http://0.0.0.0:9003/ocr
 </span></code></pre></div></td></tr></table></div>
-<h3 id="python">Python调用<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">以文件方式发送POST请求</label><label for="__tabbed_2_2">以base64方式发送POST请求</label><label for="__tabbed_2_3">控制使用检测、方向分类和识别模型</label></div>
+<h3 id="python">Python 调用<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">以文件方式发送 POST 请求</label><label for="__tabbed_2_2">以 base64 方式发送 POST 请求</label><label for="__tabbed_2_3">控制使用检测、方向分类和识别模型</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
@@ -2755,7 +2755,7 @@ You're not viewing the latest version.
 </span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<p>如果没有检测到文字，则会输出空字典(<code>{}</code>)。</p>
+<p>如果没有检测到文字，则会输出空字典 (<code>{}</code>)。</p>
 <h2 id="_7">示例结果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <div class="language-json highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
@@ -2853,41 +2853,6 @@ You're not viewing the latest version.
   
   
 
-
-  <aside class="md-source-file">
-    
-    
-    
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
-          
-          <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
-        </a>
-      
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
-    
-  </aside>
 
 
 <!-- Was this page helpful? -->

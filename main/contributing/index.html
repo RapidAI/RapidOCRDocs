@@ -86,8 +86,6 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../stylesheets/font.css">
-    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -2792,7 +2790,7 @@ You're not viewing the latest version.
 <h3 id="81-fork-rapidocr">8.1 Fork RapidOCR 主仓库到个人账号<a class="headerlink" href="#81-fork-rapidocr" title="Permanent link">&para;</a></h3>
 <ol>
 <li>打开 <a href="https://github.com/RapidAI/RapidOCR">RapidOCR 主仓库</a>。</li>
-<li>点击右上角 <strong>Fork</strong>，将仓库 fork 到你自己的 GitHub 账号下（例如 <code>https://github.com/ 你的用户名 / RapidOCR</code>）。</li>
+<li>点击右上角 <strong>Fork</strong>，将仓库 fork 到你自己的 GitHub 账号下（例如 <code>https://github.com/你的用户名/RapidOCR</code>）。</li>
 </ol>
 <h3 id="82-fork">8.2 将代码提交到个人 Fork<a class="headerlink" href="#82-fork" title="Permanent link">&para;</a></h3>
 <p>若最初是克隆的主仓库，需要把远程改为你的 fork，并推送到 fork：</p>
@@ -2859,15 +2857,15 @@ You're not viewing the latest version.
 <p>示例：<code>fix(python): 修复某条件下识别结果为空</code>, <code>feat(python): 支持 xxx 输入格式</code>。</p>
 <h3 id="83-rapidocr-pull-requestpr">8.3 向 RapidOCR 主仓库提交 Pull Request（PR）<a class="headerlink" href="#83-rapidocr-pull-requestpr" title="Permanent link">&para;</a></h3>
 <ol>
-<li>打开你 fork 后的仓库页面（如 <code>https://github.com/ 你的用户名 / RapidOCR</code>）。</li>
+<li>打开你 fork 后的仓库页面（如 <code>https://github.com/你的用户名/RapidOCR</code>）。</li>
 <li>若刚推送分支，页面上通常会出现 <strong>Compare &amp; pull request</strong>，点击即可；否则在 <strong>Branches</strong> 里选择你刚推送的分支，再点 <strong>New pull request</strong> 。</li>
-<li>确认 <strong>base 仓库</strong> 为 <code>RapidAI / RapidOCR</code>、<strong>base 分支</strong> 为 <code>main</code>（或仓库默认主分支），<strong>head 仓库</strong> 为你的 fork、<strong>head 分支</strong> 为你的分支（如 <code>fix / xxx</code>）。</li>
+<li>确认 <strong>base 仓库</strong> 为 <code>RapidAI/RapidOCR</code>、<strong>base 分支</strong> 为 <code>main</code>（或仓库默认主分支），<strong>head 仓库</strong> 为你的 fork、<strong>head 分支</strong> 为你的分支（如 <code>fix/xxx</code>）。</li>
 <li>填写 PR 标题和说明：</li>
 <li>标题：简要概括修改内容（如「Fix: 修复 Python 下 xxx 问题」）。</li>
 <li>说明中建议包含：<ul>
 <li>对应 Issue 编号（若有）：<code>Fixes #123</code> 或 <code>Related to #123</code>。</li>
 <li>修改原因与主要改动。</li>
-<li>如何验证：例如「在 python 目录下执行 <code>pytest tests / -v</code> 通过」。</li>
+<li>如何验证：例如「在 python 目录下执行 <code>pytest tests/ -v</code> 通过」。</li>
 </ul>
 </li>
 <li>提交 PR，等待 maintainer 审查；根据反馈再在本地修改并推送同一分支，PR 会自动更新。</li>
@@ -2956,7 +2954,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:32:24 CST">2026-03-02 14:32:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 22:54:51 CST">2026-03-02 22:54:51</span>
   </span>
 
     

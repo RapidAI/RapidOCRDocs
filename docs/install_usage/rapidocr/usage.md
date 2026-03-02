@@ -12,7 +12,7 @@ hide:
 
 一切都使用默认值。默认使用来自 PP-OCRv4 的 DBNet 中文轻量检测，来自 PP-OCRv4 的 SVTR_LCNet 中文识别模型。
 
-推荐可以先使用 ONNXRuntime CPU 版作为推理引擎。
+推荐可以先使用 ONNX Runtime CPU 版作为推理引擎。
 
 ```bash linenums="1"
 pip install onnxruntime

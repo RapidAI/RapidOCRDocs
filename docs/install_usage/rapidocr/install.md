@@ -17,9 +17,9 @@ hide:
 
 `rapidocr` 是合并了 `rapidocr_onnxruntime`, `rapidocr_openvino`, `rapidocr_paddle` 以及支持 PyTorch 推理的版本。
 
-`rapidocr>=2.0.0,<=2.0.5` 中，默认采用 ONNXRuntime CPU 版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用 GPU 推理。该部分请参见后续文档。
+`rapidocr>=2.0.0,<=2.0.5` 中，默认采用 ONNX Runtime CPU 版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用 GPU 推理。该部分请参见后续文档。
 
-`rapidocr>=2.0.6` 中不再将 ONNXRuntime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。这样做是经过充分考虑了的。
+`rapidocr>=2.0.6` 中不再将 ONNX Runtime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。这样做是经过充分考虑了的。
 
 #### 安装
 

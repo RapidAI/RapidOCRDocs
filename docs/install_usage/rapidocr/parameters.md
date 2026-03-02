@@ -198,7 +198,7 @@ EngineConfig:
 
 各个推理引擎的 API：
 
-- ONNXRuntime Python API 参见：[Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)
+- ONNX Runtime Python API 参见：[Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)
 - OpenVINO Python API 参见：[OpenVINO Python API](https://docs.openvino.ai/2025/api/ie_python_api/api.html)
 - PaddlePaddle API 参见：[API 文档](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/index_cn.html)
 - PyTorch API 参见：[PyTorch documentation](https://docs.pytorch.org/docs/stable/index.html)

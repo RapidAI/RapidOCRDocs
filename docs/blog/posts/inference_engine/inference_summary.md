@@ -28,11 +28,11 @@ comments: true
 
 ---
 
-### ONNXRuntime（微软）
+### ONNX Runtime（微软）
 
 - 目前仓库中已经在使用的推理引擎，CPU 端最好用的轻量推理引擎。支持动态输入。
 - 目前在 GPU 端，动态输入的情况下，速度比 CPU 上还要慢一些，暂时尚未解决。
-- ONNXRuntime + TensorRT 结合 → 尝试但未跑通
+- ONNX Runtime + TensorRT 结合 → 尝试但未跑通
 
 ### OpenVINO（英特尔）
 

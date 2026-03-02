@@ -301,7 +301,7 @@ for res in output:
             f.write(f"{v}\n")
     ```
 
-=== "(Exp3)RapidOCR 框架+ONNXRuntime 格式模型"
+=== "(Exp3)RapidOCR 框架+ONNX Runtime 格式模型"
 
     ```python linenums="1" hl_lines="10-17"
     import time
@@ -365,16 +365,16 @@ print(metric)
 |:---:|:---|:---|:---|:---:|:---:|:---:|
 |1|PP-OCRv5_mobile_rec|PaddleX |PaddlePaddle|0.7323|0.9161|0.0778|
 |2|PP-OCRv5_mobile_rec|RapidOCR| PaddlePaddle|0.7355|0.9177|0.0772|
-|3|PP-OCRv5_mobile_rec|RapidOCR| ONNXRuntime|0.7355|0.9177|0.0174|
+|3|PP-OCRv5_mobile_rec|RapidOCR| ONNX Runtime|0.7355|0.9177|0.0174|
 |10|PP-OCRv5_mobile_rec|RapidOCR| PyTorch|0.7355|0.9177|0.094|
-|4|PP-OCRv4_mobile_rec|RapidOCR |ONNXRuntime|**0.8323**|**0.9355**|-|
+|4|PP-OCRv4_mobile_rec|RapidOCR |ONNX Runtime|**0.8323**|**0.9355**|-|
 ||||||||
 |5|PP-OCRv5_server_rec|PaddleX |PaddlePaddle|0.8097|0.9424|0.0777|
 |6|PP-OCRv5_server_rec|RapidOCR |PaddlePaddle|0.8129|0.9431|0.0775|
-|7|PP-OCRv5_server_rec|RapidOCR| ONNXRuntime|**0.8129**|**0.9431**|0.0655|
+|7|PP-OCRv5_server_rec|RapidOCR| ONNX Runtime|**0.8129**|**0.9431**|0.0655|
 |11|PP-OCRv5_server_rec|RapidOCR| PyTorch|**0.8129**|**0.9431**|0.0725|
-|8|PP-OCRv4_server_rec|RapidOCR |ONNXRuntime|0.7968|0.9381|-|
-|9|PP-OCRv4_doc_server_rec|RapidOCR |ONNXRuntime|0.8098|0.9444|-|
+|8|PP-OCRv4_server_rec|RapidOCR |ONNX Runtime|0.7968|0.9381|-|
+|9|PP-OCRv4_doc_server_rec|RapidOCR |ONNX Runtime|0.8098|0.9444|-|
 
 从以上结果来看，可以得到以下结论：
 
@@ -390,7 +390,7 @@ print(metric)
     - 如果是单一中英文场景，建议用 PP-OCRv4 系列
     - 如果是中英日、印刷和手写体混合场景，建议用 PP-OCRv5 系列
 
-上述表格中基于 ONNXRuntime 的结果已经更新到 [开源 OCR 模型对比](./model_summary.md) 中。
+上述表格中基于 ONNX Runtime 的结果已经更新到 [开源 OCR 模型对比](./model_summary.md) 中。
 
 ### 5. 集成到 rapidocr 中
 

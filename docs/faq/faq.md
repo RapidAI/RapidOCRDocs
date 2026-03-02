@@ -5,9 +5,9 @@ hide:
   - toc
 ---
 
-#### Q: 为什么我的模型在 ONNXRuntime GPU 版上比在 CPU 上还要慢？
+#### Q: 为什么我的模型在 ONNX Runtime GPU 版上比在 CPU 上还要慢？
 
-**A:** 因为 OCR 任务中输入图像 Shape 是动态的。每次 GPU 上都需要重新清空上一次不同 Shape 的缓存结果。如果输入图像 Shape 不变的情况下，ONNXRuntime GPU 版一般都要比 CPU 快的。该问题已经提了相关 issue #13198。
+**A:** 因为 OCR 任务中输入图像 Shape 是动态的。每次 GPU 上都需要重新清空上一次不同 Shape 的缓存结果。如果输入图像 Shape 不变的情况下，ONNX Runtime GPU 版一般都要比 CPU 快的。该问题已经提了相关 issue #13198。
 
 推荐 CPU 端推理用 `rapidocr_onnxruntime` 或者 `rapidocr_openvino`，GPU 端用 `rapidocr_paddle`。关于 `rapidocr_onnxruntime` 和 `rapidocr_paddle` 两者之间推理，可参见：[docs](https://rapidai.github.io/RapidOCRDocs/v1.4.4/install_usage/rapidocr_paddle/usage/#_4)
 

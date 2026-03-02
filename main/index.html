@@ -2501,7 +2501,11 @@ You're not viewing the latest version.
 </ul>
 <p>如果您觉得本项目对您的工作或学习有所帮助，恳请您不吝赐予一颗 ⭐ Star，给予我们宝贵的支持与鼓励！</p>
 <h3 id="_2">整体框架<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>flowchart LR
+<pre class="mermaid"><code>---
+config:
+  fontFamily: "LXGW WenKai Screen"
+---
+flowchart LR
     subgraph Step
     direction TB
     C(Text Det) --&gt; D(Text Cls) --&gt; E(Text Rec)

@@ -140,7 +140,7 @@ engine = RapidOCR(params={
 engine = RapidOCR()
 ```
 
-更多推理引擎的使用方法请参考：[使用不同推理引擎](install_usage/rapidocr/how_to_use_infer_engine.md)
+更多推理引擎的使用方法请参考：[使用不同推理引擎](../../../install_usage/rapidocr/how_to_use_infer_engine.md)
 
 ## 写在最后
 

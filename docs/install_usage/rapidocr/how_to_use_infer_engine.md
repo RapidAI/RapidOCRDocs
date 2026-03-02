@@ -402,7 +402,7 @@ comments: true
 
 !!! tip
 
-    `rapidocr>=3.7.0` 支持。
+    `rapidocr>=3.7.0` 支持。相关博客：[RapidOCR 支持 TensorRT 推理引擎](../../blog/posts/inference_engine/support_tensorrt.md)。
 
 1. 安装 TensorRT 运行环境。
 

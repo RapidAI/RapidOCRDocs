@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/25/openvino-gpu%E6%8E%A8%E7%90%86/">
       
       
-        <link rel="prev" href="../../24/onnxruntime-gpu%E6%8E%A8%E7%90%86/">
+        <link rel="prev" href="../../24/onnx-runtime-gpu%E6%8E%A8%E7%90%86/">
       
       
         <link rel="next" href="../../26/openvino-cpu%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/">
@@ -2216,10 +2216,10 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#openvino-onnxruntime" class="md-nav__link">
+  <a href="#openvino-onnx-runtime" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OpenVINO 与 ONNXRuntime 性能对比
+        OpenVINO 与 ONNX Runtime 性能对比
       
     </span>
   </a>
@@ -2227,22 +2227,22 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#openvino-onnxruntime_1" class="md-nav__link">
+  <a href="#openvino-onnx-runtime_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OpenVINO 与 ONNXRuntime 推理代码写法对比
+        OpenVINO 与 ONNX Runtime 推理代码写法对比
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="OpenVINO 与 ONNXRuntime 推理代码写法对比">
+    <nav class="md-nav" aria-label="OpenVINO 与 ONNX Runtime 推理代码写法对比">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#onnxruntime" class="md-nav__link">
+  <a href="#onnx-runtime" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ONNXRuntime
+        ONNX Runtime
       
     </span>
   </a>
@@ -2460,7 +2460,7 @@ You're not viewing the latest version.
 </div></p>
 </li>
 <li>
-<p>和 ONNXRuntime 同时推理同一个 ONNX 模型，OpenVINO 推理速度更快</p>
+<p>和 ONNX Runtime 同时推理同一个 ONNX 模型，OpenVINO 推理速度更快</p>
 </li>
 <li>
 <p>但是从对比来看，OpenVINO 占用内存更大，其原因是拿空间换的时间</p>
@@ -2475,7 +2475,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ul>
-<h3 id="openvino-onnxruntime">OpenVINO 与 ONNXRuntime 性能对比<a class="headerlink" href="#openvino-onnxruntime" title="Permanent link">&para;</a></h3>
+<h3 id="openvino-onnx-runtime">OpenVINO 与 ONNX Runtime 性能对比<a class="headerlink" href="#openvino-onnx-runtime" title="Permanent link">&para;</a></h3>
 <ul>
 <li>推理设备：<code>Windows 64 位 Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz   2.59 GHz</code></li>
 <li>测试图像宽高: <code>12119x810</code></li>
@@ -2492,7 +2492,7 @@ You're not viewing the latest version.
 <tbody>
 <tr>
 <td><code>ch_PP-OCRv2_det_infer.onnx</code></td>
-<td><code>ONNXRuntime=1.10.0</code></td>
+<td><code>ONNX Runtime=1.10.0</code></td>
 <td>0.8G</td>
 <td>5.354s</td>
 </tr>
@@ -2510,12 +2510,12 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<h3 id="openvino-onnxruntime_1">OpenVINO 与 ONNXRuntime 推理代码写法对比<a class="headerlink" href="#openvino-onnxruntime_1" title="Permanent link">&para;</a></h3>
+<h3 id="openvino-onnx-runtime_1">OpenVINO 与 ONNX Runtime 推理代码写法对比<a class="headerlink" href="#openvino-onnx-runtime_1" title="Permanent link">&para;</a></h3>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>以 <code>ch_ppocr_mobile_v2_det</code> 中推理代码为例子</p>
 </div>
-<h4 id="onnxruntime">ONNXRuntime<a class="headerlink" href="#onnxruntime" title="Permanent link">&para;</a></h4>
+<h4 id="onnx-runtime">ONNX Runtime<a class="headerlink" href="#onnx-runtime" title="Permanent link">&para;</a></h4>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -2587,7 +2587,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:32:24 CST">2026-03-02 14:32:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:56:16 CST">2026-03-02 14:56:16</span>
   </span>
 
     
@@ -2724,8 +2724,8 @@ You're not viewing the latest version.
         <!-- Link to previous page -->
         
         
-        <a href="../../24/onnxruntime-gpu%E6%8E%A8%E7%90%86/" class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: ONNXRuntime GPU推理">
+        <a href="../../24/onnx-runtime-gpu%E6%8E%A8%E7%90%86/" class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: ONNX Runtime GPU推理">
             <div class="md-footer__button md-icon">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2735,7 +2735,7 @@ You're not viewing the latest version.
                     上一页
                 </span>
                 <div class="md-ellipsis">
-                    ONNXRuntime GPU推理
+                    ONNX Runtime GPU推理
                 </div>
             </div>
         </a>

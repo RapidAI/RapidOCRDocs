@@ -2374,8 +2374,8 @@ You're not viewing the latest version.
 </div>
 <h4 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p><code>rapidocr</code> 是合并了 <code>rapidocr_onnxruntime</code>, <code>rapidocr_openvino</code>, <code>rapidocr_paddle</code> 以及支持 PyTorch 推理的版本。</p>
-<p><code>rapidocr&gt;=2.0.0,&lt;=2.0.5</code> 中，默认采用 ONNXRuntime CPU 版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用 GPU 推理。该部分请参见后续文档。</p>
-<p><code>rapidocr&gt;=2.0.6</code> 中不再将 ONNXRuntime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。这样做是经过充分考虑了的。</p>
+<p><code>rapidocr&gt;=2.0.0,&lt;=2.0.5</code> 中，默认采用 ONNX Runtime CPU 版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用 GPU 推理。该部分请参见后续文档。</p>
+<p><code>rapidocr&gt;=2.0.6</code> 中不再将 ONNX Runtime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。这样做是经过充分考虑了的。</p>
 <h4 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <p>顺利的话，两行命令即可使用上。<code>rapidocr</code> 包大小约为 15M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 mobile 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>

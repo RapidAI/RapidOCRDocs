@@ -12,13 +12,13 @@
         <meta name="author" content="RapidAI">
       
       
-        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/24/onnxruntime-gpu%E6%8E%A8%E7%90%86/">
+        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/23/onnx-runtime-cpu%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/">
       
       
-        <link rel="prev" href="../../23/onnxruntime-cpu%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/">
+        <link rel="prev" href="../../22/inference-summary/">
       
       
-        <link rel="next" href="../../25/openvino-gpu%E6%8E%A8%E7%90%86/">
+        <link rel="next" href="../../24/onnx-runtime-gpu%E6%8E%A8%E7%90%86/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>ONNXRuntime GPU推理 - RapidOCR 文档</title>
+        <title>ONNX Runtime CPU推理优化 - RapidOCR 文档</title>
       
     
     
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#onnxruntime-gpu" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -184,7 +184,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ONNXRuntime GPU推理
+              ONNX Runtime CPU推理优化
             
           </span>
         </div>
@@ -2183,32 +2183,10 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#onnxruntime-gpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        onnxruntime-gpu 版相关说明
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#onnxruntime-gpu_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        有关 onnxruntime-gpu 推理慢的相关帖子
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        快速查看比较版本
+        引言
       
     </span>
   </a>
@@ -2219,7 +2197,73 @@ You're not viewing the latest version.
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        结论
+        推荐常用设置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable_cpu_mem_arena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        enable_cpu_mem_arena
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable_profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        enable_profiling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        execution_mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inter_op_num_threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inter_op_num_threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intra_op_num_threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        intra_op_num_threads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph_optimization_level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        graph_optimization_level
       
     </span>
   </a>
@@ -2230,7 +2274,7 @@ You're not viewing the latest version.
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        相关对比表格
+        参考资料
       
     </span>
   </a>
@@ -2293,7 +2337,7 @@ You're not viewing the latest version.
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2022-09-24 00:00:00+00:00" class="md-ellipsis">2022/9/24</time>
+                        <time datetime="2022-09-23 00:00:00+00:00" class="md-ellipsis">2022/9/23</time>
                       </div>
                     </li>
                     
@@ -2315,7 +2359,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 1 分钟阅读时间
+                              需要 3 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2364,7 +2408,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/inference_engine/onnxruntime/onnxruntime-gpu.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/inference_engine/onnxruntime/infer_optim.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2373,7 +2417,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/inference_engine/onnxruntime/onnxruntime-gpu.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/inference_engine/onnxruntime/infer_optim.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2385,7 +2429,7 @@ You're not viewing the latest version.
   page title (or respectively site name) is used as the main headline.
 -->
 
-<h1>ONNXRuntime GPU推理</h1>
+<h1>ONNX Runtime CPU推理优化</h1>
 
 
 
@@ -2393,63 +2437,238 @@ You're not viewing the latest version.
 <!-- Page content -->
 <!-- more -->
 
-<h3 id="onnxruntime-gpu">onnxruntime-gpu 版相关说明<a class="headerlink" href="#onnxruntime-gpu" title="Permanent link">&para;</a></h3>
+<h4 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li>目前已知在 onnxruntime-gpu 上测试过的小伙伴，反映都是 GPU 推理速度比在 CPU 上慢很多。关于该问题，已经提了相关 issue，具体可参见 <a href="https://github.com/microsoft/onnxruntime/issues/13198">onnxruntime issue#13198</a></li>
+<li>平时推理用的最多是 ONNX Runtime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于 ONNX Runtime 参数设置的资料却散落在各个地方，不能形成有效的指导意见。</li>
+<li>因此，决定在这一篇文章中来梳理一下相关的设置。</li>
+<li>以下参数都是来自 <code>SessionOptions</code> 中</li>
+<li>相关测试代码可以前往 <a href="https://aistudio.baidu.com/aistudio/projectdetail/6109918?sUid=57084&amp;shared=1&amp;ts=1683438418669">AI Studio</a> 查看</li>
+<li>欢迎补充和指出不足之处。</li>
 </ul>
-<h3 id="onnxruntime-gpu_1">有关 <code>onnxruntime-gpu</code> 推理慢的相关帖子<a class="headerlink" href="#onnxruntime-gpu_1" title="Permanent link">&para;</a></h3>
+<h4 id="_2">推荐常用设置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnxruntime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rt</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">sess_options</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">SessionOptions</span><span class="p">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">sess_options</span><span class="o">.</span><span class="n">graph_optimization_level</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">GraphOptimizationLevel</span><span class="o">.</span><span class="n">ORT_ENABLE_ALL</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">sess_options</span><span class="o">.</span><span class="n">log_severity_level</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">sess_options</span><span class="o">.</span><span class="n">enable_cpu_mem_arena</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1"># 其他参数，采用默认即可</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="enable_cpu_mem_arena"><a href="https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.enable_cpu_mem_arena"><code>enable_cpu_mem_arena</code></a><a class="headerlink" href="#enable_cpu_mem_arena" title="Permanent link">&para;</a></h4>
 <ul>
-<li><a href="https://stackoverflow.com/questions/75553839/pre-allocating-dynamic-shaped-tensor-memory-for-onnx-runtime-inference">Pre-allocating dynamic shaped tensor memory for ONNX runtime inference?</a></li>
-</ul>
-<h3 id="_1">快速查看比较版本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<li>作用：启用 CPU 上的 <strong>memory arena</strong>。Arena 可能会为将来预先申请很多内存。如果不想使用它，可以设置为 <code>enable_cpu_mem_area=False</code>，默认是 <code>True</code></li>
+<li>
+<p>结论：建议关闭</p>
 <ul>
-<li>国外小伙伴可以基于 <a href="https://colab.research.google.com/gist/SWHL/673c39bf07f4cc4ddcb0e196c3e378e6/testortinfer.ipynb">Google Colab</a>，国内的小伙伴可以基于百度的 <a href="https://aistudio.baidu.com/aistudio/projectdetail/4634684?contributionType=1&amp;sUid=57084&amp;shared=1&amp;ts=1664700017761">AI Studio</a> 来查看效果</li>
+<li>开启之后，占用内存会剧增（5618.3M &gt;&gt; 5.3M），且持续占用，不释放；推理时间只有大约 13% 提升</li>
 </ul>
-<h3 id="_2">结论<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>onnxruntime-gpu 版在动态输入情况下，推理速度要比 CPU 慢很多。而 OCR 任务就是动态输入，因此不推荐使用 onnxruntime-gpu 版推理。</p>
-<p>目前一直在找寻 GPU 端，可以快速推理 ONNX 模型的推理引擎。</p>
-<h3 id="_3">相关对比表格<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">设备</th>
-<th style="text-align: center;">onnxruntime-gpu</th>
-<th style="text-align: center;">CPU 总耗时 (s)</th>
-<th style="text-align: center;">CPU 平均耗时 (s / img)</th>
-<th style="text-align: center;">GPU 总耗时 (s)</th>
-<th style="text-align: center;">GPU 平均耗时 (s / img)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">设备 1<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
-<td style="text-align: center;">1.11.0</td>
-<td style="text-align: center;">296.8841</td>
-<td style="text-align: center;">1.18282</td>
-<td style="text-align: center;">646.14667</td>
-<td style="text-align: center;">2.57429</td>
-</tr>
-<tr>
-<td style="text-align: center;">设备 2<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
-<td style="text-align: center;">1.12.1</td>
-<td style="text-align: center;">149.35427</td>
-<td style="text-align: center;">0.50504</td>
-<td style="text-align: center;">250.81760</td>
-<td style="text-align: center;">0.99927</td>
-</tr>
-</tbody>
-</table>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>宏碁 (Acer) 暗影骑士·威 N50-N93 游戏台式机 | Windows | 十代 i5-10400F 16G 512G SSD | NVIDIA GeForce GTX 1660Super 6G&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:2">
-<p>Linux | AMD R9 5950X | NVIDIA GeForce RTX 3090&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li>
+<p>测试环境：</p>
+<ul>
+<li>Python: 3.7.13</li>
+<li>ONNX Runtime: 1.14.1</li>
+</ul>
 </li>
-</ol>
-</div>
+<li>
+<p>测试代码（来自 <a href="https://github.com/microsoft/onnxruntime/issues/11627">issue 11627</a>，<a href="https://github.com/microsoft/onnxruntime/files/8772315/enable_cpu_memory_area_example.zip">enable_cpu_memory_area_example.zip</a>）</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># pip install onnxruntime==1.14.1</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1"># pip install memory_profiler</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnxruntime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ort</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">memory_profiler</span><span class="w"> </span><span class="kn">import</span> <span class="n">profile</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="nd">@profile</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">onnx_prediction</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">input_data</span><span class="p">):</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="n">ort_sess</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">InferenceSession</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">sess_options</span><span class="o">=</span><span class="n">sess_options</span><span class="p">)</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>    <span class="n">preds</span> <span class="o">=</span> <span class="n">ort_sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">output_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;predictions&quot;</span><span class="p">],</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>                         <span class="n">input_feed</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_1&quot;</span><span class="p">:</span> <span class="n">input_data</span><span class="p">})[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>    <span class="k">return</span> <span class="n">preds</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="n">sess_options</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">SessionOptions</span><span class="p">()</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="n">sess_options</span><span class="o">.</span><span class="n">enable_cpu_mem_arena</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;enable_cpu_memory_area_example/input.npy&#39;</span><span class="p">)</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;input_data shape: </span><span class="si">{</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;enable_cpu_memory_area_example/model.onnx&#39;</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="n">onnx_prediction</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Windows 端 | Mac 端 | Linux 端 测试情况都大致相同
+    <details></p>
+<ul>
+<li>
+<p><code>enable_cpu_mem_arena=True</code></p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">(</span>demo<span class="o">)</span><span class="w"> </span>PS<span class="w"> </span>G:&gt;<span class="w"> </span>python<span class="w"> </span>.<span class="se">\t</span>est_enable_cpu_mem_arena.py
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>enable_cpu_mem_arena:<span class="w"> </span>True
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>input_data<span class="w"> </span>shape:<span class="w"> </span><span class="o">(</span><span class="m">32</span>,<span class="w"> </span><span class="m">200</span>,<span class="w"> </span><span class="m">200</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>Filename:<span class="w"> </span>.<span class="se">\t</span>est_enable_cpu_mem_arena.py
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>Line<span class="w"> </span><span class="c1">#    Mem usage    Increment  Occurrences   Line Contents</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="o">=============================================================</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="m">7</span><span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">   </span>@profile
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="m">8</span><span class="w">                                         </span>def<span class="w"> </span>onnx_prediction<span class="o">(</span>model_path,<span class="w"> </span>input_data<span class="o">)</span>:
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="m">9</span><span class="w">     </span><span class="m">77</span>.2<span class="w"> </span>MiB<span class="w">      </span><span class="m">8</span>.1<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">ort_sess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort.InferenceSession<span class="o">(</span>model_path,<span class="w"> </span><span class="nv">sess_options</span><span class="o">=</span>sess_options<span class="o">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="m">10</span><span class="w">     </span><span class="m">77</span>.2<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">preds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort_sess.run<span class="o">(</span><span class="nv">output_names</span><span class="o">=[</span><span class="s2">&quot;predictions&quot;</span><span class="o">]</span>,
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="m">11</span><span class="w">   </span><span class="m">5695</span>.5<span class="w"> </span>MiB<span class="w">   </span><span class="m">5618</span>.3<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">                            </span><span class="nv">input_feed</span><span class="o">={</span><span class="s2">&quot;input_1&quot;</span>:<span class="w"> </span>input_data<span class="o">})[</span><span class="m">0</span><span class="o">]</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="m">12</span><span class="w">   </span><span class="m">5695</span>.5<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="k">return</span><span class="w"> </span>preds
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><code>enable_cpu_mem_arena=False</code></p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">(</span>demo<span class="o">)</span><span class="w"> </span>PS<span class="w"> </span>G:&gt;<span class="w"> </span>python<span class="w"> </span>.<span class="se">\t</span>est_enable_cpu_mem_arena.py
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>enable_cpu_mem_arena:<span class="w"> </span>False
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>input_data<span class="w"> </span>shape:<span class="w"> </span><span class="o">(</span><span class="m">32</span>,<span class="w"> </span><span class="m">200</span>,<span class="w"> </span><span class="m">200</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>Filename:<span class="w"> </span>.<span class="se">\t</span>est_enable_cpu_mem_arena.py
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>Line<span class="w"> </span><span class="c1">#    Mem usage    Increment  Occurrences   Line Contents</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="o">=============================================================</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="m">7</span><span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">   </span>@profile
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="m">8</span><span class="w">                                         </span>def<span class="w"> </span>onnx_prediction<span class="o">(</span>model_path,<span class="w"> </span>input_data<span class="o">)</span>:
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="m">9</span><span class="w">     </span><span class="m">76</span>.9<span class="w"> </span>MiB<span class="w">      </span><span class="m">7</span>.8<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">ort_sess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort.InferenceSession<span class="o">(</span>model_path,<span class="w"> </span><span class="nv">sess_options</span><span class="o">=</span>sess_options<span class="o">)</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="m">10</span><span class="w">     </span><span class="m">76</span>.9<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">preds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort_sess.run<span class="o">(</span><span class="nv">output_names</span><span class="o">=[</span><span class="s2">&quot;predictions&quot;</span><span class="o">]</span>,
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="m">11</span><span class="w">     </span><span class="m">82</span>.1<span class="w"> </span>MiB<span class="w">      </span><span class="m">5</span>.3<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">                            </span><span class="nv">input_feed</span><span class="o">={</span><span class="s2">&quot;input_1&quot;</span>:<span class="w"> </span>input_data<span class="o">})[</span><span class="m">0</span><span class="o">]</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="m">12</span><span class="w">     </span><span class="m">82</span>.1<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="k">return</span><span class="w"> </span>preds
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+</details>
+</li>
+</ul>
+<h4 id="enable_profiling"><code>enable_profiling</code><a class="headerlink" href="#enable_profiling" title="Permanent link">&para;</a></h4>
+<ul>
+<li>开启这个参数，在推理时，会生成一个类似 <code>onnxruntime_profile__2023-05-07_09-02-15.json</code> 的日志文件，包含详细的性能数据（线程、每个运算符的延迟等）。</li>
+<li>建议开启</li>
+<li>
+<p>示例代码：</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnxruntime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rt</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">sess_options</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">SessionOptions</span><span class="p">()</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">sess_options</span><span class="o">.</span><span class="n">enable_profiling</span> <span class="o">=</span> <span class="kc">True</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<h4 id="execution_mode"><code>execution_mode</code><a class="headerlink" href="#execution_mode" title="Permanent link">&para;</a></h4>
+<ul>
+<li>设置运行模型的模式，包括 <code>rt.ExecutionMode.ORT_SEQUENTIAL</code> 和 <code>rt.ExecutionMode.ORT_PARALLEL</code>。一个序列执行，一个并行。默认是序列执行</li>
+<li><strong>通常来说，当一个模型中有许多分支时，可以设置该参数为<code>ORT_PARALLEL</code>来达到更好的表现</strong></li>
+<li>当设置 <code>sess_options.execution_mode = rt.ExecutionMode.ORT_PARALLEL</code> 时，可以设置 <code>sess_options.inter_op_num_threads</code> 来控制使用线程的数量，来并行化执行（模型中各个节点之间）</li>
+</ul>
+<h4 id="inter_op_num_threads"><code>inter_op_num_threads</code><a class="headerlink" href="#inter_op_num_threads" title="Permanent link">&para;</a></h4>
+<ul>
+<li>设置并行化执行图（跨节点）时，使用的线程数。默认是 0，交由 onnxruntime 自行决定。</li>
+<li>
+<p>示例代码：</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnxruntime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rt</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">sess_options</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">SessionOptions</span><span class="p">()</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">sess_options</span><span class="o">.</span><span class="n">inter_op_num_threads</span> <span class="o">=</span> <span class="mi">2</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<h4 id="intra_op_num_threads"><code>intra_op_num_threads</code><a class="headerlink" href="#intra_op_num_threads" title="Permanent link">&para;</a></h4>
+<ul>
+<li>设置并行化执行图（内部节点）时，使用的线程数。默认是 0，交由 onnxruntime 自行决定，一般会选择使用设备上所有的核。</li>
+<li>⚠️ 这个值并不是越大越好，具体参考 <a href="https://aistudio.baidu.com/aistudio/projectdetail/6109918?sUid=57084&amp;shared=1&amp;ts=1683438418669">AI Studio</a> 中的消融实验。</li>
+<li>
+<p>示例代码：</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnxruntime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rt</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">sess_options</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">SessionOptions</span><span class="p">()</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">sess_options</span><span class="o">.</span><span class="n">intra_op_num_threads</span> <span class="o">=</span> <span class="mi">2</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<h4 id="graph_optimization_level"><a href="https://github.com/microsoft/onnxruntime-openenclave/blob/openenclave-public/docs/ONNX_Runtime_Graph_Optimizations.md"><code>graph_optimization_level</code></a><a class="headerlink" href="#graph_optimization_level" title="Permanent link">&para;</a></h4>
+<ul>
+<li>运行图时，对图中算子的优化水平。默认是开启全部算子的优化。建议采用默认值即可。</li>
+<li>可选的枚举值有：<code>ORT_DISABLE_ALL | ORT_ENABLE_BASIC | ORT_ENABLE_EXTENDED | ORT_ENABLE_ALL</code></li>
+<li>
+<p>示例代码：</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnxruntime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rt</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">sess_options</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">SessionOptions</span><span class="p">()</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">sess_options</span><span class="o">.</span><span class="n">graph_optimization_level</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">GraphOptimizationLevel</span><span class="o">.</span><span class="n">ORT_ENABLE_ALL</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<h4 id="_3">参考资料<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/microsoft/onnxruntime-openenclave/blob/openenclave-public/docs/ONNX_Runtime_Perf_Tuning.md">ONNX Runtime Performance Tuning</a></li>
+<li><a href="https://onnxruntime.ai/docs/api/python/api_summary.html">Python API</a></li>
+</ul>
 
 <!-- Source file information -->
 
@@ -2474,7 +2693,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:32:24 CST">2026-03-02 14:32:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:56:16 CST">2026-03-02 14:56:16</span>
   </span>
 
     
@@ -2611,8 +2830,8 @@ You're not viewing the latest version.
         <!-- Link to previous page -->
         
         
-        <a href="../../23/onnxruntime-cpu%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/" class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: ONNXRuntime CPU推理优化">
+        <a href="../../22/inference-summary/" class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: 推理引擎汇总">
             <div class="md-footer__button md-icon">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2622,7 +2841,7 @@ You're not viewing the latest version.
                     上一页
                 </span>
                 <div class="md-ellipsis">
-                    ONNXRuntime CPU推理优化
+                    推理引擎汇总
                 </div>
             </div>
         </a>
@@ -2631,14 +2850,14 @@ You're not viewing the latest version.
         <!-- Link to next page -->
         
         
-        <a href="../../25/openvino-gpu%E6%8E%A8%E7%90%86/" class="md-footer__link md-footer__link--next"
-            aria-label="下一页: OpenVINO GPU推理">
+        <a href="../../24/onnx-runtime-gpu%E6%8E%A8%E7%90%86/" class="md-footer__link md-footer__link--next"
+            aria-label="下一页: ONNX Runtime GPU推理">
             <div class="md-footer__title">
                 <span class="md-footer__direction">
                     下一页
                 </span>
                 <div class="md-ellipsis">
-                    OpenVINO GPU推理
+                    ONNX Runtime GPU推理
                 </div>
             </div>
             <div class="md-footer__button md-icon">

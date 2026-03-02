@@ -53,8 +53,8 @@ coreml_ep_cfg:
 
 本次测试使用标准的 benchmark 数据集，分别对检测（Det）和识别（Rec）模型进行评估：
 
-- **检测模型**：使用 `SWHL / text_det_test_dataset` 数据集
-- **识别模型**：使用 `SWHL / text_rec_test_dataset` 数据集
+- **检测模型**：使用 `SWHL/text_det_test_dataset` 数据集
+- **识别模型**：使用 `SWHL/text_rec_test_dataset` 数据集
 
 对于每个模型，分别测试 ONNX Runtime 的两种 Execution Provider：
 

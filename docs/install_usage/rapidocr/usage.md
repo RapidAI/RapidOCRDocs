@@ -177,7 +177,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_det_cls_rec.jpg")
     ```
 
-    ![](../../ images / vis_det_cls_rec.jpg)
+    ![](../../images/vis_det_cls_rec.jpg)
 
     返回值为 `RapidOCROutput`，可以通过 `result.xxxx` 直接访问。主要包含以下字段：
 
@@ -254,7 +254,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_det_rec.jpg")
     ```
 
-    ![](../../ images / vis_det_rec.jpg)
+    ![](../../images/vis_det_rec.jpg)
 
     返回值类型同 **检测 + 分类 + 识别** 部分。
 
@@ -271,7 +271,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     print(elapse)
     ```
 
-    ![](../../ images / vis_cls_rec.jpg)
+    ![](../../images/vis_cls_rec.jpg)
 
     返回值为 `TextClsOutput` 类，主要包含以下字段：
 
@@ -313,7 +313,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis('vis_only_det.jpg')
     ```
 
-    ![](../../ images / vis_only_det.jpg)
+    ![](../../images/vis_only_det.jpg)
 
     返回值为 `TextDetOutput` 类，主要包含以下字段：
 
@@ -367,7 +367,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_only_cls.jpg")
     ```
 
-    ![](../../ images / vis_only_cls.jpg)
+    ![](../../images/vis_only_cls.jpg)
 
     返回值为 `TextClsOutput` 类，主要包含以下字段：
 
@@ -398,7 +398,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_only_rec.jpg")
     ```
 
-    ![](../../ images / vis_only_rec.jpg)
+    ![](../../images/vis_only_rec.jpg)
 
     返回值为 `TextRecOutput` 类，主要包含以下字段：
 
@@ -437,7 +437,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_return_words.jpg")
     ```
 
-    ![](../../ images / vis_sinlge_words.jpg)
+    ![](../../images/vis_sinlge_words.jpg)
 
     返回值 `RapidOCROutput` 类，主要包含以下字段:
 

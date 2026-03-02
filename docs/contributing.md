@@ -173,7 +173,7 @@ pytest tests/ -v
 ### 8.1 Fork RapidOCR 主仓库到个人账号
 
 1. 打开 [RapidOCR 主仓库](https://github.com/RapidAI/RapidOCR)。
-2. 点击右上角 **Fork**，将仓库 fork 到你自己的 GitHub 账号下（例如 `https://github.com/ 你的用户名 / RapidOCR`）。
+2. 点击右上角 **Fork**，将仓库 fork 到你自己的 GitHub 账号下（例如 `https://github.com/你的用户名/RapidOCR`）。
 
 ### 8.2 将代码提交到个人 Fork
 
@@ -217,19 +217,19 @@ git push myfork fix/xxx
 | `test`   | 测试相关     |
 | `chore`  | 构建 / 工具等  |
 
-示例：`fix(python): 修复某条件下识别结果为空 `, `feat(python): 支持 xxx 输入格式 `。
+示例：`fix(python): 修复某条件下识别结果为空`, `feat(python): 支持 xxx 输入格式`。
 
 ### 8.3 向 RapidOCR 主仓库提交 Pull Request（PR）
 
-1. 打开你 fork 后的仓库页面（如 `https://github.com/ 你的用户名 / RapidOCR`）。
+1. 打开你 fork 后的仓库页面（如 `https://github.com/你的用户名/RapidOCR`）。
 2. 若刚推送分支，页面上通常会出现 **Compare & pull request**，点击即可；否则在 **Branches** 里选择你刚推送的分支，再点 **New pull request** 。
-3. 确认 **base 仓库** 为 `RapidAI / RapidOCR`、**base 分支** 为 `main`（或仓库默认主分支），**head 仓库** 为你的 fork、**head 分支** 为你的分支（如 `fix / xxx`）。
+3. 确认 **base 仓库** 为 `RapidAI/RapidOCR`、**base 分支** 为 `main`（或仓库默认主分支），**head 仓库** 为你的 fork、**head 分支** 为你的分支（如 `fix/xxx`）。
 4. 填写 PR 标题和说明：
    - 标题：简要概括修改内容（如「Fix: 修复 Python 下 xxx 问题」）。
    - 说明中建议包含：
      - 对应 Issue 编号（若有）：`Fixes #123` 或 `Related to #123`。
      - 修改原因与主要改动。
-     - 如何验证：例如「在 python 目录下执行 `pytest tests / -v` 通过」。
+     - 如何验证：例如「在 python 目录下执行 `pytest tests/ -v` 通过」。
 5. 提交 PR，等待 maintainer 审查；根据反馈再在本地修改并推送同一分支，PR 会自动更新。
 
 ---

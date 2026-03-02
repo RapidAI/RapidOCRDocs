@@ -12,20 +12,20 @@ links:
   - 如何使用不同推理引擎？: install_usage/rapidocr/how_to_use_infer_engine.md
 ---
 
-记录支持MNN推理引擎的过程文档。
+记录支持 MNN 推理引擎的过程文档。
 
 <!-- more -->
 
 ## 引言
 
-首先感谢Github [@narc1ssus1](https://github.com/narc1ssus1) 小伙伴的PR [#613](https://github.com/RapidAI/RapidOCR/pull/613)。有了这个PR，我这也有了抓手来推动支持MNN作为推理引擎。
+首先感谢 Github [@narc1ssus1](https://github.com/narc1ssus1) 小伙伴的 PR [#613](https://github.com/RapidAI/RapidOCR/pull/613)。有了这个 PR，我这也有了抓手来推动支持 MNN 作为推理引擎。
 
 ## 运行环境¶
 
 - 操作系统：macOS Tahoe 26.2
 - 硬件：MacBookPro M2
 
-- Python环境（3.10.0）：
+- Python 环境（3.10.0）：
 
   ```bash linenums="1"
   rapidocr==3.5.0
@@ -36,7 +36,7 @@ links:
   onnxruntime==1.23.2
   ```
 
-## 安装MNN
+## 安装 MNN
 
 !!! note
 
@@ -46,7 +46,7 @@ links:
 pip install MNN
 ```
 
-## 转换ONNX模型
+## 转换 ONNX 模型
 
 转换命令：
 
@@ -68,11 +68,11 @@ outputTensors: [ fetch_name_0, ]
 Converted Success!
 ```
 
-## 支持Det模型
+## 支持 Det 模型
 
 ### 比较转化前后推理精度差异
 
-两者对比的模型为`ch_PP-OCRv4_det_infer`模型，Exp1基于`RapidOCR+ONNX Runtime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。
+两者对比的模型为 `ch_PP-OCRv4_det_infer` 模型，Exp1 基于 `RapidOCR+ONNX Runtime` 格式模型推理, Exp2 基于 `RapidOCR+MNN` 格式模型推理。
 
 两次实验除模型不一样外，其余均相同。其余未列出的实验均只换了模型。
 
@@ -205,11 +205,11 @@ Converted Success!
 |11|ch_PP-OCRv5_server_det|RapidOCR|ONNX Runtime|0.7394|0.8442|0.7883|2.0193|
 |12|ch_PP-OCRv5_server_det|RapidOCR|MNN|0.7394|0.8442|0.7883|1.6048|
 
-## 支持Rec模型
+## 支持 Rec 模型
 
 ### 比较转化前后推理精度差异
 
-两者对比的模型为`ch_PP-OCRv4_rec_infer`模型，Exp1基于`RapidOCR+ONNX Runtime`格式模型推理, Exp2基于`RapidOCR+MNN`格式模型推理。两次实验除模型不一样外，其余均相同。
+两者对比的模型为 `ch_PP-OCRv4_rec_infer` 模型，Exp1 基于 `RapidOCR+ONNX Runtime` 格式模型推理, Exp2 基于 `RapidOCR+MNN` 格式模型推理。两次实验除模型不一样外，其余均相同。
 
 === "(Exp1) RapidOCR + ONNX Runtime"
 
@@ -389,10 +389,10 @@ Converted Success!
 - [x] te_PP-OCRv5_rec_mobile_infer
 - [x] th_PP-OCRv5_rec_mobile_infer
 
-相关MNN模型已经上传到[魔搭模型库](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)中。
+相关 MNN 模型已经上传到 [魔搭模型库](https://www.modelscope.cn/models/RapidAI/RapidOCR/files) 中。
 
 ## 写在最后
 
 从以上基准比较来看，MNN 推理引擎整体推理速度要比 ONNX Runtime 更快一些。值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。
 
-`rapidocr`已经在`>=v3.6.0`集成以上模型，欢迎使用和反馈。
+`rapidocr` 已经在 `>=v3.6.0` 集成以上模型，欢迎使用和反馈。

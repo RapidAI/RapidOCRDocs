@@ -19,7 +19,7 @@ pip install rapidocr onnxruntime
     rapidocr -img "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg" --vis_res
     ```
 
-=== "Python使用"
+=== "Python 使用"
 
     ```python linenums="1"
     from rapidocr import RapidOCR
@@ -37,9 +37,9 @@ pip install rapidocr onnxruntime
 
 ![Demo](./images/ch_en_num_vis.png)
 
-### 4. 返回`result`结果示例
+### 4. 返回 `result` 结果示例
 
-返回结果是一个`RapidOCROutput`数据类，可以直接通过`result.boxes`和`result.txts`来访问使用。
+返回结果是一个 `RapidOCROutput` 数据类，可以直接通过 `result.boxes` 和 `result.txts` 来访问使用。
 
 ```python linenums="1"
 RapidOCROutput(

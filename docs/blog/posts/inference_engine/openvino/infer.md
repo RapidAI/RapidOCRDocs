@@ -12,7 +12,7 @@ comments: true
 
 !!! warning
 
-    基于目前`openvino==2022.3.0`版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见[issue11939](https://github.com/openvinotoolkit/openvino/issues/11939)
+    基于目前 `openvino==2022.3.0` 版，存在申请内存不释放的问题，这也就意味着当推理图像很大时，推理完之后，内存会一直占用。详情可参见 [issue11939](https://github.com/openvinotoolkit/openvino/issues/11939)
 
 ### 安装
 
@@ -25,7 +25,7 @@ $ pip install openvino-dev
 
 ### 模型问题
 
-- 因为OpenVINO可以直接推理ONNX模型，故这里暂时不作转换，直接推理之前ONNX模型即可
+- 因为 OpenVINO 可以直接推理 ONNX 模型，故这里暂时不作转换，直接推理之前 ONNX 模型即可
 - 这里仍然给出转换的代码，用作参考:
 
     ```bash linenums="1"
@@ -36,17 +36,17 @@ $ pip install openvino-dev
     --input_shape "[1,3,12128,800]"
     ```
 
-### 关于OpenVINO
+### 关于 OpenVINO
 
-- OpenVINO可以直接推理IR、ONNX和PaddlePaddle模型，具体如下(图来源:[link](https://docs.openvino.ai/latest/openvino_docs_OV_UG_OV_Runtime_User_Guide.html#doxid-openvino-docs-o-v-u-g-o-v-runtime-user-guide))：
+- OpenVINO 可以直接推理 IR, ONNX 和 PaddlePaddle 模型，具体如下 (图来源:[link](https://docs.openvino.ai/latest/openvino_docs_OV_UG_OV_Runtime_User_Guide.html#doxid-openvino-docs-o-v-u-g-o-v-runtime-user-guide))：
 
     <div align="center">
         <img src="https://docs.openvino.ai/archives/index.html">
     </div>
 
-- 和ONNXRuntime同时推理同一个ONNX模型，OpenVINO推理速度更快
-- 但是从对比来看，OpenVINO占用内存更大，其原因是拿空间换的时间
-    - 当指定`input_shape`在一个区间范围时，推理时内存占用会减少一些。示例命令:
+- 和 ONNXRuntime 同时推理同一个 ONNX 模型，OpenVINO 推理速度更快
+- 但是从对比来看，OpenVINO 占用内存更大，其原因是拿空间换的时间
+    - 当指定 `input_shape` 在一个区间范围时，推理时内存占用会减少一些。示例命令:
 
     ```bash linenums="1"
     mo --input_model models/ch_PP-OCRv2_det_infer.onnx \
@@ -54,22 +54,22 @@ $ pip install openvino-dev
     --input_shape "[1,3,960:1200,800]"
     ```
 
-### OpenVINO与ONNXRuntime性能对比
+### OpenVINO 与 ONNXRuntime 性能对比
 
-- 推理设备：`Windows 64位 Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz   2.59 GHz`
+- 推理设备：`Windows 64 位 Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz   2.59 GHz`
 - 测试图像宽高: `12119x810`
 
-| 测试模型                             | 推理框架             | 占用内存(3次平均) | 推理时间(3次平均) |
+| 测试模型                             | 推理框架             | 占用内存 (3 次平均) | 推理时间 (3 次平均) |
 | ------------------------------------ | -------------------- | ----------------- | ----------------- |
 | `ch_PP-OCRv2_det_infer.onnx`         | `ONNXRuntime=1.10.0` | 0.8G              | 5.354s            |
 | `ch_PP-OCRv2_det_infer.onnx`         | `openvino=2022.1.0`  | 3.225G            | 2.53s             |
 | `ch_PP-OCRv2_det_infer.xml` FP32 动态图 | `openvino=2022.1.0`  | 3.175G            | 2.0455s           |
 
-### OpenVINO与ONNXRuntime推理代码写法对比
+### OpenVINO 与 ONNXRuntime 推理代码写法对比
 
 !!! example
 
-    以`ch_ppocr_mobile_v2_det`中推理代码为例子
+    以 `ch_ppocr_mobile_v2_det` 中推理代码为例子
 
 #### ONNXRuntime
 

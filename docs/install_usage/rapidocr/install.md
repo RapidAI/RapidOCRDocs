@@ -11,19 +11,19 @@ hide:
 
 !!! warning
 
-    `rapidocr_onnxruntime`, `rapidocr_openvino`, `rapidocr_paddle`三个库逐渐不再维护，后续会以`rapidocr`为主。
+    `rapidocr_onnxruntime`, `rapidocr_openvino`, `rapidocr_paddle` 三个库逐渐不再维护，后续会以 `rapidocr` 为主。
 
 #### 简介
 
-`rapidocr`是合并了`rapidocr_onnxruntime`、`rapidocr_openvino`、`rapidocr_paddle`以及支持PyTorch推理的版本。
+`rapidocr` 是合并了 `rapidocr_onnxruntime`, `rapidocr_openvino`, `rapidocr_paddle` 以及支持 PyTorch 推理的版本。
 
-`rapidocr>=2.0.0,<=2.0.5`中，默认采用ONNXRuntime CPU版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用GPU推理。该部分请参见后续文档。
+`rapidocr>=2.0.0,<=2.0.5` 中，默认采用 ONNXRuntime CPU 版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用 GPU 推理。该部分请参见后续文档。
 
-`rapidocr>=2.0.6`中不再将ONNXRuntime库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。这样做是经过充分考虑了的。
+`rapidocr>=2.0.6` 中不再将 ONNXRuntime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。这样做是经过充分考虑了的。
 
 #### 安装
 
-顺利的话，两行命令即可使用上。`rapidocr`包大小约为15M左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中mobile版模型较小，因此将相关模型都已打到whl包，可直接pip安装使用。
+顺利的话，两行命令即可使用上。`rapidocr` 包大小约为 15M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 mobile 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。
 
 ```bash linenums="1"
 pip install onnxruntime
@@ -38,7 +38,7 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 #### 验证安装是否成功
 
-=== "`rapidocr>=2.0.3`验证方式"
+=== "`rapidocr>=2.0.3` 验证方式"
 
     ```bash linenums="1" hl_lines="11"
     $ rapidocr check
@@ -54,7 +54,7 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
     Success! rapidocr is installed correctly!
     ```
 
-=== "`rapidocr>=2.0.0,<2.0.2`验证方式"
+=== "`rapidocr>=2.0.0,<2.0.2` 验证方式"
 
     运行以下代码，终端可以打印出文字内容，即安装成功。
 
@@ -64,7 +64,7 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 !!! info
 
-    如果在安装过程中，出现某个依赖包不能正确安装时，可先单独安装某个依赖包，之后再安装`rapidocr`即可。
+    如果在安装过程中，出现某个依赖包不能正确安装时，可先单独安装某个依赖包，之后再安装 `rapidocr` 即可。
 
 依赖的包如下：
 

@@ -12,21 +12,21 @@ comments: true
 
 !!! note
 
-    以下项目不确定是否支持最新的推理代码，Python版为最新的。
+    以下项目不确定是否支持最新的推理代码，Python 版为最新的。
 
-#### C++范例(Windows/Linux/macOS)
+#### C++ 范例 (Windows / Linux / macOS)
 
 - [RapidOcrOnnx](https://github.com/RapidAI/RapidOcrOnnx)
 - [RapidOcrNcnn](https://github.com/RapidAI/RapidOcrNcnn)
 
-#### JVM范例(Java/Kotlin)
+#### JVM 范例 (Java / Kotlin)
 
 - [🔥RapidOcr-Java](https://github.com/MyMonsterCat/RapidOcr-Java)
 - [RapidOcrOnnxJvm](https://github.com/RapidAI/RapidOcrOnnxJvm)
 - [RapidOcrNcnnJvm](https://github.com/RapidAI/RapidOcrNcnnJvm)
 
-#### [.Net范例(C#)](https://github.com/RapidAI/RapidOCRCSharp)
+#### [.Net 范例(C#)](https://github.com/RapidAI/RapidOCRCSharp)
 
-#### [Android范例](https://github.com/RapidAI/RapidOcrAndroidOnnx)
+#### [Android 范例](https://github.com/RapidAI/RapidOcrAndroidOnnx)
 
 #### [易语言](https://github.com/Physton/RapidOCRServer)

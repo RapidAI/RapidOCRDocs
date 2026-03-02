@@ -10,7 +10,7 @@ hide:
 
 针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4 和 PP-OCRv5 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式和 PyTorch 格式。
 
-所有模型目前托管在[魔搭社区](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)上。
+所有模型目前托管在 [魔搭社区](https://www.modelscope.cn/models/RapidAI/RapidOCR/files) 上。
 
 `rapidocr` v3 版本已经集成了托管的所有模型，通过下面参数指定可以自动下载。对应的配置文件：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml)。当然，小伙伴们也可以自己去上述链接下载。
 
@@ -67,7 +67,7 @@ result.vis("vis_result.jpg")
 
 |语种类型|engine_type| lang_type|model_type|ocr_version|
 |:---|:---|:---|:---|:---|
-|多语种[^7]|`onnxruntime` <br/> `openvino` <br/> `paddle`<br>`torch`(`rapidocr>=3.3.0`)<br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)|`ch`|`mobile`<br/> `server (tensorrt可能转换不过)`|`PP-OCRv5`|
+|多语种[^7]|`onnxruntime` <br/> `openvino` <br/> `paddle`<br>`torch`(`rapidocr>=3.3.0`)<br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)|`ch`|`mobile`<br/> `server (tensorrt 可能转换不过)`|`PP-OCRv5`|
 
 #### PP-OCRv4
 
@@ -81,7 +81,7 @@ result.vis("vis_result.jpg")
 
 !!! note
 
-    `lang_type`字段对应Det模块下的`LangDet`
+    `lang_type` 字段对应 Det 模块下的 `LangDet`
 
 ```python linenums="1" hl_lines="5-8"
 from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
@@ -100,25 +100,25 @@ engine = RapidOCR(
 
 !!! note
 
-    `lang_type`字段对应Det模块下的`LangRec`
+    `lang_type` 字段对应 Det 模块下的 `LangRec`
 
 #### PP-OCRv5
 
 | 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
 |----------------|---------------------------|-------------------|-----------------|-------------------|
-| 俄罗斯文[^3] | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` <br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)| `cyrillic`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-| 阿拉伯文[^4] | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `arabic`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-| 梵文等[^5] | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `devanagari`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-| 泰米尔文、英文 | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` <br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)| `ta`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-| 泰卢固文、英文 | `rapidocr>=3.5.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `te`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 俄罗斯文[^3] | `rapidocr>=3.5.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` <br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)| `cyrillic`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 阿拉伯文[^4] | `rapidocr>=3.5.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `arabic`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 梵文等[^5] | `rapidocr>=3.5.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `devanagari`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 泰米尔文、英文 | `rapidocr>=3.5.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` <br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)| `ta`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 泰卢固文、英文 | `rapidocr>=3.5.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `te`            | `mobile`<br>❎`server` | `PP-OCRv5` |
 ||||||
-| 英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `en`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-| 泰文、英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `th`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-| 希腊文、英文 | `rapidocr>=3.4.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `el`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-| 拉丁语种混合[^1] | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `latin`            | `mobile`<br>❎`server` | `PP-OCRv5` |
-| 俄罗斯文[^6] | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`)| `eslav`            | `mobile`<br>`server` | `PP-OCRv5` |
+| 英文 | `rapidocr>=3.4.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `en`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 泰文、英文 | `rapidocr>=3.4.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `th`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 希腊文、英文 | `rapidocr>=3.4.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `el`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 拉丁语种混合[^1] | `rapidocr>=3.3.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `latin`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 俄罗斯文[^6] | `rapidocr>=3.3.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`)| `eslav`            | `mobile`<br>`server` | `PP-OCRv5` |
 | 中英日混合[^2] | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`(`rapidocr>=3.3.0`)<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `ch`            | `mobile`<br>`server` | `PP-OCRv5` |
-| 韩文   | `rapidocr>=3.3.0支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `korean`        | `mobile`<br>❎`server`     | `PP-OCRv5` |
+| 韩文   | `rapidocr>=3.3.0 支持 `<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `korean`        | `mobile`<br>❎`server`     | `PP-OCRv5` |
 
 #### PP-OCRv4
 

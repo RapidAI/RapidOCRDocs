@@ -5,9 +5,9 @@ comments: true
 ### 简介
 
 - 同时支持多种语言，可通过接口参数配置语言及预测过程中的其他参数
-- 调整结果展示方式为基于canvas, 减少后端处理和接口数据传输
-- 预测接口添加Token验证支持
-- 添加pyinstaller打包脚本，简化安装步骤
+- 调整结果展示方式为基于 canvas, 减少后端处理和接口数据传输
+- 预测接口添加 Token 验证支持
+- 添加 pyinstaller 打包脚本，简化安装步骤
 - 示例打包结果：[pyinstaller demo](https://github.com/AutumnSun1996/RapidOCR/releases/tag/v1.1.1-ocrweb-multi)
 
 ### 安装
@@ -27,7 +27,7 @@ comments: true
 
 ### 运行步骤
 
-1. 下载`models`文件到当前目录下
+1. 下载 `models` 文件到当前目录下
     - 下载链接：[百度网盘](https://pan.baidu.com/s/1Z3v34wu0tE6lBndYyP0xOg?pwd=6urq) | [Google Drive](https://drive.google.com/drive/folders/1HZUzGplq_47xKmDVtplwrMmIjoHm7uKo?usp=sharing)
     - 最终目录结构如下：
 
@@ -69,7 +69,7 @@ comments: true
             `-- wrapper.rc
         ```
 
-2. 运行`main.py`
+2. 运行 `main.py`
 
     ```bash linenums="1"
     python main.py

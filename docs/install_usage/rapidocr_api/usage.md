@@ -28,13 +28,13 @@ hide:
 
 !!! note
 
-    OCR API的输出结果为最原始结果，大家可按需进一步扩展。
+    OCR API 的输出结果为最原始结果，大家可按需进一步扩展。
 
 源码仓库：<https://github.com/RapidAI/RapidOCRAPI>
 
-该包是将[rapidocr](../rapidocr/install.md)库做了API封装，采用[FastAPI](https://fastapi.tiangolo.com/) + [uvicorn](https://www.uvicorn.org/)实现。
+该包是将 [rapidocr](../rapidocr/install.md) 库做了 API 封装，采用 [FastAPI](https://fastapi.tiangolo.com/) + [uvicorn](https://www.uvicorn.org/) 实现。
 
-定位是一个快速调用`rapidocr`的API接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看[gunicorn](https://gunicorn.org/)等。
+定位是一个快速调用 `rapidocr` 的 API 接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看 [gunicorn](https://gunicorn.org/) 等。
 
 ## 📌 版本依赖关系
 
@@ -51,9 +51,9 @@ pip install rapidocr_api
 
 ## 启动服务端
 
-在`rapidocr_api>=0.1.0`中，可通过环境变量传递模型参数：det_model_path, cls_model_path, rec_model_path；接口中可传入参数，控制是否使用检测、方向分类和识别这三部分的模型；具体调用可参见下面文档。
+在 `rapidocr_api>=0.1.0` 中，可通过环境变量传递模型参数：det_model_path, cls_model_path, rec_model_path；接口中可传入参数，控制是否使用检测、方向分类和识别这三部分的模型；具体调用可参见下面文档。
 
-=== "Windows下使用"
+=== "Windows 下使用"
 
     ```bash linenums="1"
     set det_model_path=I:\models\图像相关\OCR\RapidOCR\PP-OCRv4\ch_PP-OCRv4_det_server_infer.onnx
@@ -61,7 +61,7 @@ pip install rapidocr_api
     rapidocr_api
     ```
 
-=== "Linux下使用"
+=== "Linux 下使用"
 
     ```bash linenums="1"
     # 默认参数启动
@@ -76,11 +76,11 @@ pip install rapidocr_api
     rapidocr_api -ip 0.0.0.0 -p 9005 -workers 2
     ```
 
-=== "Docker方式使用"
+=== "Docker 方式使用"
 
-    [Dockerfile源码](https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile)
+    [Dockerfile 源码](https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile)
 
-    Build镜像:
+    Build 镜像:
 
     ```bash linenums="1"
     git clone https://github.com/RapidAI/RapidOCR.git
@@ -105,7 +105,7 @@ pip install rapidocr_api
     docker run -d -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
     ```
 
-    接口web界面：
+    接口 web 界面：
 
     ```bash linenums="1"
     http://<ip>:9003/docs
@@ -119,7 +119,7 @@ pip install rapidocr_api
     docker run -p 9003:9003 --name rapidocr_api -e TZ=Asia/Shanghai rapidocr_api:0.1.4
     ```
 
-    进入container修改python源文件，Dockerfile最好加上apt-get install vim安装
+    进入 container 修改 python 源文件，Dockerfile 最好加上 apt-get install vim 安装
 
     ```bash linenums="1"
     docker exec -it rapidocr_api /bin/bash
@@ -130,7 +130,7 @@ pip install rapidocr_api
     # 改好后exit退出
     ```
 
-    重启container
+    重启 container
 
     ```bash linenums="1"
     docker restart rapidocr_api
@@ -146,17 +146,17 @@ pip install rapidocr_api
 
 !!! info
 
-    调用本质就是发送一个POST请求，以下给出Curl和Python的调用示例，其他编程语言同理。
+    调用本质就是发送一个 POST 请求，以下给出 Curl 和 Python 的调用示例，其他编程语言同理。
 
-### Curl调用
+### Curl 调用
 
 ```bash linenums="1"
 curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 ```
 
-### Python调用
+### Python 调用
 
-=== "以文件方式发送POST请求"
+=== "以文件方式发送 POST 请求"
 
     ```python linenums="1"
     import requests
@@ -171,7 +171,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
     print(response.json())
     ```
 
-=== "以base64方式发送POST请求"
+=== "以 base64 方式发送 POST 请求"
 
     ```python linenums="1"
     import base64
@@ -222,7 +222,7 @@ curl -F image_file=@1.png http://0.0.0.0:9003/ocr
 }
 ```
 
-如果没有检测到文字，则会输出空字典(`{}`)。
+如果没有检测到文字，则会输出空字典 (`{}`)。
 
 ## 示例结果
 

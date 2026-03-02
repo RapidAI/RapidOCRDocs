@@ -17,12 +17,12 @@ comments: true
 - [版面分析](https://github.com/RapidAI/RapidLayout)
 - [表格还原](https://github.com/RapidAI/RapidTable)
 
-#### [RapidOCRServer](https://github.com/Physton/RapidOCRServer)：RapidOCR HTTP服务/win32程序/易语言编写
+#### [RapidOCRServer](https://github.com/Physton/RapidOCRServer)：RapidOCR HTTP 服务 / win32 程序 / 易语言编写
 
 #### [PaddleOCRModelConvert](https://github.com/RapidAI/PaddleOCRModelConvert)： 模型自助转换
 
 #### [TextDetMetric](https://github.com/SWHL/TextDetMetric)：文本检测模型评估
 
-#### [RapidOCRPDF](https://github.com/RapidAI/RapidOCRPDF)：解析PDF文件
+#### [RapidOCRPDF](https://github.com/RapidAI/RapidOCRPDF)：解析 PDF 文件
 
-#### [RapidVideOCR](https://github.com/SWHL/RapidVideOCR)：基于RapidOCR，提取视频中的硬字幕
+#### [RapidVideOCR](https://github.com/SWHL/RapidVideOCR)：基于 RapidOCR，提取视频中的硬字幕

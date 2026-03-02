@@ -8,7 +8,7 @@ categories:
 comments: true
 ---
 
-同环境下，比较RapidOCR与PaddleOCR速度。
+同环境下，比较 RapidOCR 与 PaddleOCR 速度。
 
 <!-- more -->
 

@@ -8,7 +8,7 @@ hide:
 
 !!! tip
 
-    Paddle格式模型需要使用`model_dir`来传入。原因是Paddle格式模型为多个文件组成，需要在程序中拼接为对应完整路径。
+    Paddle 格式模型需要使用 `model_dir` 来传入。原因是 Paddle 格式模型为多个文件组成，需要在程序中拼接为对应完整路径。
 
 下面以通过初始化参数传入为例：
 
@@ -26,4 +26,4 @@ print(result)
 result.vis("vis_result.jpg")
 ```
 
-上面第4行通过`Det.model_path`指定了本地已经下载好的文本检测模型。文本方向分类和文本识别模型也可同样指定。(`Cls.model_path`和`Rec.model_path`同理)
+上面第 4 行通过 `Det.model_path` 指定了本地已经下载好的文本检测模型。文本方向分类和文本识别模型也可同样指定。(`Cls.model_path` 和 `Rec.model_path` 同理)

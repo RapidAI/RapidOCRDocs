@@ -8,7 +8,7 @@ comments: true
 
 在 `rapidocr>=3.0.0` 版本之后，`rapidocr` 可以单独为文本检测、文本行方向分类和文本识别单独指定不同的推理引擎。
 
-例如：文本检测使用 ONNX Runtime，文本识别使用PaddlePaddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。同时，不同版本的OCR也可以通过 `Det.ocr_version` 灵活指定。
+例如：文本检测使用 ONNX Runtime，文本识别使用 PaddlePaddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。同时，不同版本的 OCR 也可以通过 `Det.ocr_version` 灵活指定。
 
 `rapidocr` 支持 5 种推理引擎（**ONNX Runtime / OpenVINO / PaddlePaddle / PyTorch / MNN (`rapidocr>=3.6.0`)**），推荐首先使用 **ONNX Runtime CPU** 版。默认为 ONNX Runtime。
 
@@ -99,7 +99,7 @@ comments: true
 
         1. 安装
 
-            从 `onnxruntime>=1.16` 开始， ONNX Runtime 本身已支持 macOS Apple Silicon（M1/M2/M3）的 CoreML 后端，无需额外安装 `coreml` 包。
+            从 `onnxruntime>=1.16` 开始， ONNX Runtime 本身已支持 macOS Apple Silicon（M1 / M2 / M3）的 CoreML 后端，无需额外安装 `coreml` 包。
 
             ```bash linenums="1"
             pip install onnxruntime
@@ -272,7 +272,7 @@ comments: true
 
         !!! tip
 
-            仅在`rapidocr>=3.3.0`中支持。对应版本的PaddlePaddle安装文档：[link](https://www.paddlepaddle.org.cn/install/quick?docurl=undefined)
+            仅在 `rapidocr>=3.3.0` 中支持。对应版本的 PaddlePaddle 安装文档：[link](https://www.paddlepaddle.org.cn/install/quick?docurl=undefined)
 
         ```python linenums="1" hl_lines="3-9"
         from rapidocr import EngineType, RapidOCR
@@ -408,9 +408,9 @@ comments: true
 
     我在这里仅给出参考配置环境：
 
-    - Docker镜像：[@LocNgoXuan23](https://github.com/LocNgoXuan23) 在 [Discord](https://discord.com/channels/1143707958690189373/1143707958690189376/1468529402118672512) 中给出的镜像：[7.0-gc-triton-devel](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream?version=7.0-gc-triton-devel)
+    - Docker 镜像：[@LocNgoXuan23](https://github.com/LocNgoXuan23) 在 [Discord](https://discord.com/channels/1143707958690189373/1143707958690189376/1468529402118672512) 中给出的镜像：[7.0-gc-triton-devel](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream?version=7.0-gc-triton-devel)
     - 设备配置：8 CPU / 256 GB
-    - NVIDIA环境：(详细参见：[link](https://gist.github.com/SWHL/0efe902ee469d49fc63d50e297d7fd98) )
+    - NVIDIA 环境：(详细参见：[link](https://gist.github.com/SWHL/0efe902ee469d49fc63d50e297d7fd98) )
         - cuda: 12.2
         - tensorrt: 8.6.1
         - cuda-python: 12.2.0

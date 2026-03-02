@@ -67,7 +67,7 @@ pip install -e .
 
 ## 三、安装代码格式化与 pre-commit 钩子
 
-在 **开发者环境** 下安装 pre-commit，并启用 Git 提交前钩子，以便自动做代码格式检查与整理（如 black、autoflake 等）：
+在 **开发者环境** 下安装 pre-commit，并启用 Git 提交前钩子，以便自动做代码格式检查与整理（如 black, autoflake 等）：
 
 ```bash
 # 在 python 目录下、已激活的虚拟环境中安装
@@ -113,12 +113,12 @@ pytest tests/ -v --cov=rapidocr
 
 1. 在 [Issues](https://github.com/RapidAI/RapidOCR/issues) 中选定或创建对应 issue。
 2. 根据 issue 描述与报错信息，在本地用 `python` 目录下的代码复现问题。
-3. 在 `rapidocr/` 或 `tests/` 下定位并修改代码，直到问题消失。
+3. 在 `rapidocr /` 或 `tests /` 下定位并修改代码，直到问题消失。
 
 ### 增加新功能
 
 1. 与 maintainer 或现有 issue 讨论需求与实现方式（可选但推荐）。
-2. 在 `rapidocr/` 下实现新逻辑，保持与现有代码风格一致（项目使用 [black](https://github.com/psf/black) 等规范）。
+2. 在 `rapidocr /` 下实现新逻辑，保持与现有代码风格一致（项目使用 [black](https://github.com/psf/black) 等规范）。
 3. 新功能应有对应单元测试覆盖。
 
 ---
@@ -126,8 +126,8 @@ pytest tests/ -v --cov=rapidocr
 ## 六、编写对应单元测试
 
 - 测试文件放在 **`python/tests/`** 下，命名建议 `test_*.py`。
-- 使用 **pytest** 编写用例，可参考现有 `test_input.py`、`test_det_cls_rec.py`、`test_cli.py` 等。
-- 测试用图片等资源放在 `tests/test_files/`。
+- 使用 **pytest** 编写用例，可参考现有 `test_input.py`, `test_det_cls_rec.py`, `test_cli.py` 等。
+- 测试用图片等资源放在 `tests / test_files /`。
 - 新增测试应：
     - 能稳定复现你要验证的行为（Bug 修复或新功能）；
     - 不依赖未在仓库或文档中说明的外部服务（必要时用 mock 或跳过）。
@@ -173,7 +173,7 @@ pytest tests/ -v
 ### 8.1 Fork RapidOCR 主仓库到个人账号
 
 1. 打开 [RapidOCR 主仓库](https://github.com/RapidAI/RapidOCR)。
-2. 点击右上角 **Fork**，将仓库 fork 到你自己的 GitHub 账号下（例如 `https://github.com/你的用户名/RapidOCR`）。
+2. 点击右上角 **Fork**，将仓库 fork 到你自己的 GitHub 账号下（例如 `https://github.com/ 你的用户名 / RapidOCR`）。
 
 ### 8.2 将代码提交到个人 Fork
 
@@ -215,21 +215,21 @@ git push myfork fix/xxx
 | `style`  | 代码格式（不影响逻辑） |
 | `refactor` | 重构       |
 | `test`   | 测试相关     |
-| `chore`  | 构建/工具等  |
+| `chore`  | 构建 / 工具等  |
 
-示例：`fix(python): 修复某条件下识别结果为空`、`feat(python): 支持 xxx 输入格式`。
+示例：`fix(python): 修复某条件下识别结果为空 `, `feat(python): 支持 xxx 输入格式 `。
 
 ### 8.3 向 RapidOCR 主仓库提交 Pull Request（PR）
 
-1. 打开你 fork 后的仓库页面（如 `https://github.com/你的用户名/RapidOCR`）。
+1. 打开你 fork 后的仓库页面（如 `https://github.com/ 你的用户名 / RapidOCR`）。
 2. 若刚推送分支，页面上通常会出现 **Compare & pull request**，点击即可；否则在 **Branches** 里选择你刚推送的分支，再点 **New pull request** 。
-3. 确认 **base 仓库** 为 `RapidAI/RapidOCR`、**base 分支** 为 `main`（或仓库默认主分支），**head 仓库** 为你的 fork、**head 分支** 为你的分支（如 `fix/xxx`）。
+3. 确认 **base 仓库** 为 `RapidAI / RapidOCR`、**base 分支** 为 `main`（或仓库默认主分支），**head 仓库** 为你的 fork、**head 分支** 为你的分支（如 `fix / xxx`）。
 4. 填写 PR 标题和说明：
    - 标题：简要概括修改内容（如「Fix: 修复 Python 下 xxx 问题」）。
    - 说明中建议包含：
      - 对应 Issue 编号（若有）：`Fixes #123` 或 `Related to #123`。
      - 修改原因与主要改动。
-     - 如何验证：例如「在 python 目录下执行 `pytest tests/ -v` 通过」。
+     - 如何验证：例如「在 python 目录下执行 `pytest tests / -v` 通过」。
 5. 提交 PR，等待 maintainer 审查；根据反馈再在本地修改并推送同一分支，PR 会自动更新。
 
 ---
@@ -243,7 +243,7 @@ git push myfork fix/xxx
 | 3 | 安装 pre-commit（`pip install pre-commit`），在仓库根目录执行 `pre-commit install` 安装 Git 钩子 |
 | 4 | 运行单元测试，确认基线通过 |
 | 5 | 复现问题或实现新功能 |
-| 6 | 编写/补充对应单元测试 |
+| 6 | 编写 / 补充对应单元测试 |
 | 7 | 在 `python` 目录下运行全部测试并确认通过 |
 | 8 | Fork 主仓库到个人账号 |
 | 9 | 按约定式提交规范编写 commit，将修改提交并推送到个人 Fork 的对应分支 |

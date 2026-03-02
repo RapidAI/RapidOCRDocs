@@ -18,13 +18,13 @@ links:
 
 ## 引言
 
-首先感谢Github [@HighDoping](https://github.com/HighDoping) 小伙伴的PR [#634](https://github.com/RapidAI/RapidOCR/pull/634)。小伙们不仅高质量实现了相关代码，还给出了贴心提示：
+首先感谢 Github [@HighDoping](https://github.com/HighDoping) 小伙伴的 PR [#634](https://github.com/RapidAI/RapidOCR/pull/634)。小伙们不仅高质量实现了相关代码，还给出了贴心提示：
 
 > CoreML support should be considered experimental due to compatibility issues with certain models (incompatible with PPOCRv5).
 Using the ModelFormat: "NeuralNetwork" yields performance improvements but results in significant accuracy loss.
 >
 > 由于某些型号的兼容性问题（与 PPOCRv5 不兼容），CoreML 支持应被视为实验性。使用模型格式：“NeuralNetwork”能带来性能提升，但会显著丢失准确性。
-> ---来源 [link](https://github.com/RapidAI/RapidOCR/pull/634#issuecomment-3830424296)
+> --- 来源 [link](https://github.com/RapidAI/RapidOCR/pull/634#issuecomment-3830424296)
 
 下面的测试结果使用的是小伙伴在 PR 中给的默认配置：
 
@@ -53,8 +53,8 @@ coreml_ep_cfg:
 
 本次测试使用标准的 benchmark 数据集，分别对检测（Det）和识别（Rec）模型进行评估：
 
-- **检测模型**：使用 `SWHL/text_det_test_dataset` 数据集
-- **识别模型**：使用 `SWHL/text_rec_test_dataset` 数据集
+- **检测模型**：使用 `SWHL / text_det_test_dataset` 数据集
+- **识别模型**：使用 `SWHL / text_rec_test_dataset` 数据集
 
 对于每个模型，分别测试 ONNX Runtime 的两种 Execution Provider：
 
@@ -63,7 +63,7 @@ coreml_ep_cfg:
 
 测试指标包括：
 
-- **精度指标**：Precision、Recall、H-mean（检测）；ExactMatch、CharMatch（识别）
+- **精度指标**：Precision, Recall, H-mean（检测）；ExactMatch, CharMatch（识别）
 - **速度指标**：平均每张图片的推理时间（毫秒）
 
 ## 检测模型（Det）测试结果

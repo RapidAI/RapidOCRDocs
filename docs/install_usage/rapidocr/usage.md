@@ -6,13 +6,13 @@ hide:
 
 ### 引言
 
-该部分涉及如何使用`rapidocr`库来进行图像文字识别工作。
+该部分涉及如何使用 `rapidocr` 库来进行图像文字识别工作。
 
 ### 最简单的使用
 
-一切都使用默认值。默认使用来自PP-OCRv4的DBNet中文轻量检测，来自PP-OCRv4的SVTR_LCNet中文识别模型。
+一切都使用默认值。默认使用来自 PP-OCRv4 的 DBNet 中文轻量检测，来自 PP-OCRv4 的 SVTR_LCNet 中文识别模型。
 
-推荐可以先使用ONNXRuntime CPU版作为推理引擎。
+推荐可以先使用 ONNXRuntime CPU 版作为推理引擎。
 
 ```bash linenums="1"
 pip install onnxruntime
@@ -32,9 +32,9 @@ print(result)
 result.vis("vis_result.jpg")
 ```
 
-### 初始化RapidOCR实例输入
+### 初始化 RapidOCR 实例输入
 
-输入支持传入YAML格式的配置文件，同时支持参数直接传入使用。
+输入支持传入 YAML 格式的配置文件，同时支持参数直接传入使用。
 
 === "方法一：传入配置文件"
 
@@ -45,7 +45,7 @@ result.vis("vis_result.jpg")
         # The config file has saved in ./default_rapidocr.yaml
         ```
 
-    2. 根据自己的需要更改 **default_rapidocr.yaml** 相应的值。例如使用OpenVINO作为作为文本检测的推理引擎，同时使用`ch_mobile`，PP-OCRv4版本的模型，更改如下：
+    2. 根据自己的需要更改 **default_rapidocr.yaml** 相应的值。例如使用 OpenVINO 作为作为文本检测的推理引擎，同时使用 `ch_mobile`，PP-OCRv4 版本的模型，更改如下：
 
         ```yaml linenums="1" hl_lines="3"
         # 该配置文件命名为1.yaml
@@ -74,7 +74,7 @@ result.vis("vis_result.jpg")
             score_mode: fast
         ```
 
-    3. 传入到`RapidOCR`中使用。
+    3. 传入到 `RapidOCR` 中使用。
 
         ```python linenums="1" hl_lines="4-5"
         from rapidocr import RapidOCR
@@ -94,11 +94,11 @@ result.vis("vis_result.jpg")
 
     !!! tip
 
-        `rapidocr>=3.0.0`版本之后，将`engine_type`、`lang_type`、`model_type`和`ocr_version`三个参数的设置下放到了文本检测、文本行方向分类和文本识别三个阶段中。这样更加灵活。可以为不同阶段中，指定不同的推理引擎， 不同的模型type。
+        `rapidocr>=3.0.0` 版本之后，将 `engine_type`, `lang_type`, `model_type` 和 `ocr_version` 三个参数的设置下放到了文本检测、文本行方向分类和文本识别三个阶段中。这样更加灵活。可以为不同阶段中，指定不同的推理引擎， 不同的模型 type。
 
-    由于rapidocr中涉及可调节的参数众多，为了便于维护，引入[omageconf](https://github.com/omry/omegaconf)库来更新参数。这样带来的代价是传入参数没有1.x系列中直观一些。但是现阶段方式也容易理解和使用。
+    由于 rapidocr 中涉及可调节的参数众多，为了便于维护，引入 [omageconf](https://github.com/omry/omegaconf) 库来更新参数。这样带来的代价是传入参数没有 1.x 系列中直观一些。但是现阶段方式也容易理解和使用。
 
-    例如，我想使用OpenVINO作为各个流程的推理引擎，可以通过下面这种方式使用：
+    例如，我想使用 OpenVINO 作为各个流程的推理引擎，可以通过下面这种方式使用：
 
     ```python linenums="1" hl_lines="5-7"
     from rapidocr import EngineType, ModelType, OCRVersion, RapidOCR
@@ -118,7 +118,7 @@ result.vis("vis_result.jpg")
     result.vis("vis_result.jpg")
     ```
 
-    其他参数传入方式，基本就是参考`config.yaml`，关键字之间用点分割，直接写就可以了。例如：
+    其他参数传入方式，基本就是参考 `config.yaml`，关键字之间用点分割，直接写就可以了。例如：
 
     ```yaml linenums="1" title="config.yaml部分参数示例"
     Det:
@@ -149,16 +149,16 @@ result.vis("vis_result.jpg")
     )
     ```
 
-由于采用Pillow库来打开图像，因此支持传入图像格式与Pillow保持一致，详情参见[image-file-formats](https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html)
+由于采用 Pillow 库来打开图像，因此支持传入图像格式与 Pillow 保持一致，详情参见 [image-file-formats](https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html)
 
 ### 输出
 
-RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOutput, RapidOCROutput]`。这4种类型均是Dataclasses类，可以直接访问对应的键值。
+RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRecOutput, RapidOCROutput]`。这 4 种类型均是 Dataclasses 类，可以直接访问对应的键值。
 
 - `TextDetOutput`：仅有检测
 - `TextClsOutput`: 仅有文本行方向分类
 - `TextRecOutput`: 仅有识别
-- `RapidOCROutput`: 检测+方向分类+识别
+- `RapidOCROutput`: 检测+ 方向分类+ 识别
 
 详细搭配如下：
 
@@ -177,15 +177,15 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     result.vis("vis_det_cls_rec.jpg")
     ```
 
-    ![](../../images/vis_det_cls_rec.jpg)
+    ![](../../ images / vis_det_cls_rec.jpg)
 
-    返回值为`RapidOCROutput`，可以通过`result.xxxx`直接访问。主要包含以下字段：
+    返回值为 `RapidOCROutput`，可以通过 `result.xxxx` 直接访问。主要包含以下字段：
 
     - `RapidOCROutput.img (np.ndarray)`: 传入的原始图像
-    - `RapidOCROutput.boxes (np.ndarray)`: 图像中每行坐标框，shape为`(N, 4, 2)`。`N`表示有多少文本行。
-    - `RapidOCROutput.txts (Tuple[str])`: 和`boxes`文本框对应识别到的文本内容。长度和`RapidOCROutput.boxes`长度一致。
-    - `RapidOCROutput.scores (Tuple[float])`: 每行识别文本结果的置信度。长度和`RapidOCROutput.boxes`长度一致。
-    - `RapidOCROutput.word_results (Tuple[Any])`: 该部分结果只有在`return_word_box=True`时，才会有值。
+    - `RapidOCROutput.boxes (np.ndarray)`: 图像中每行坐标框，shape 为 `(N, 4, 2)`。`N` 表示有多少文本行。
+    - `RapidOCROutput.txts (Tuple[str])`: 和 `boxes` 文本框对应识别到的文本内容。长度和 `RapidOCROutput.boxes` 长度一致。
+    - `RapidOCROutput.scores (Tuple[float])`: 每行识别文本结果的置信度。长度和 `RapidOCROutput.boxes` 长度一致。
+    - `RapidOCROutput.word_results (Tuple[Any])`: 该部分结果只有在 `return_word_box=True` 时，才会有值。
     - `RapidOCROutput.elapse_list (List[float])`: 文本检测，文本行方向分类和文本识别三部分各自推理耗时，单位为秒。
     - `RapidOCROutput.elapse (float)`: 三部分整体耗时，单位为秒。
 
@@ -254,7 +254,7 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     result.vis("vis_det_rec.jpg")
     ```
 
-    ![](../../images/vis_det_rec.jpg)
+    ![](../../ images / vis_det_rec.jpg)
 
     返回值类型同 **检测 + 分类 + 识别** 部分。
 
@@ -271,9 +271,9 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     print(elapse)
     ```
 
-    ![](../../images/vis_cls_rec.jpg)
+    ![](../../ images / vis_cls_rec.jpg)
 
-    返回值为`TextClsOutput`类，主要包含以下字段：
+    返回值为 `TextClsOutput` 类，主要包含以下字段：
 
     - `TextClsOutput.img_list (List[np.ndarray])`: 多个文本行图像组成的列表。
     - `TextClsOutput.cls_res (List[Tuple(str, float)])`: 每个文本行对应的方向及置信度。
@@ -313,12 +313,12 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     result.vis('vis_only_det.jpg')
     ```
 
-    ![](../../images/vis_only_det.jpg)
+    ![](../../ images / vis_only_det.jpg)
 
-    返回值为`TextDetOutput`类，主要包含以下字段：
+    返回值为 `TextDetOutput` 类，主要包含以下字段：
 
     - `TextDetOutput.img (np.ndarray)`: 传入的原始图像
-    - `TextDetOutput.boxes (np.ndarray)`: 文本行坐标，4个点组成，依次是`[左上，右上，右下，左下]`
+    - `TextDetOutput.boxes (np.ndarray)`: 文本行坐标，4 个点组成，依次是 `[左上，右上，右下，左下]`
     - `TextDetOutput.scores (List[float])`: 每个文本行对应的置信度。
     - `TextDetOutput.elapse (float)`: 文本检测整体耗时，单位为秒。
 
@@ -367,9 +367,9 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     result.vis("vis_only_cls.jpg")
     ```
 
-    ![](../../images/vis_only_cls.jpg)
+    ![](../../ images / vis_only_cls.jpg)
 
-    返回值为`TextClsOutput`类，主要包含以下字段：
+    返回值为 `TextClsOutput` 类，主要包含以下字段：
 
     - `TextClsOutput.img_list (List[np.ndarray])`: 多个文本行图像组成的列表。
     - `TextClsOutput.cls_res (List[Tuple(str, float)])`: 每个文本行对应的方向及置信度。
@@ -398,14 +398,14 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     result.vis("vis_only_rec.jpg")
     ```
 
-    ![](../../images/vis_only_rec.jpg)
+    ![](../../ images / vis_only_rec.jpg)
 
-    返回值为`TextRecOutput`类，主要包含以下字段：
+    返回值为 `TextRecOutput` 类，主要包含以下字段：
 
     - `TextRecOutput.imgs (List[np.ndarray])`: 多个文本行图像组成的列表。
     - `TextRecOutput.txts (List[Tuple(str, float)])`: 每个文本行对应的识别结果。
     - `TextRecOutput.scores (float)`: 每个文本行识别结果。
-    - `TextRecOutput.word_results (Tuple[None])`: 仅在指定`return_word_box=True`时，有值。
+    - `TextRecOutput.word_results (Tuple[None])`: 仅在指定 `return_word_box=True` 时，有值。
 
     ???+ example "详细返回值示例"
 
@@ -437,15 +437,15 @@ RapidOCR输出包括4种类型：`Union[TextDetOutput, TextClsOutput, TextRecOut
     result.vis("vis_return_words.jpg")
     ```
 
-    ![](../../images/vis_sinlge_words.jpg)
+    ![](../../ images / vis_sinlge_words.jpg)
 
-    返回值`RapidOCROutput`类，主要包含以下字段:
+    返回值 `RapidOCROutput` 类，主要包含以下字段:
 
     - `RapidOCROutput.img (np.ndarray)`: 传入的原始图像
-    - `RapidOCROutput.boxes (np.ndarray)`: 图像中每行坐标框，shape为`(N, 4, 2)`。`N`表示有多少文本行。
-    - `RapidOCROutput.txts (Tuple[str])`: 和`boxes`文本框对应识别到的文本内容。长度和`RapidOCROutput.boxes`长度一致。
-    - `RapidOCROutput.scores (Tuple[float])`: 每行识别文本结果的置信度。长度和`RapidOCROutput.boxes`长度一致。
-    - `RapidOCROutput.word_results (Tuple[Tuple[str, float, List[List[int]]]])`: 由`(识别内容，置信度，[[左上], [右上], [右下], [左下]])`构成。
+    - `RapidOCROutput.boxes (np.ndarray)`: 图像中每行坐标框，shape 为 `(N, 4, 2)`。`N` 表示有多少文本行。
+    - `RapidOCROutput.txts (Tuple[str])`: 和 `boxes` 文本框对应识别到的文本内容。长度和 `RapidOCROutput.boxes` 长度一致。
+    - `RapidOCROutput.scores (Tuple[float])`: 每行识别文本结果的置信度。长度和 `RapidOCROutput.boxes` 长度一致。
+    - `RapidOCROutput.word_results (Tuple[Tuple[str, float, List[List[int]]]])`: 由 `(识别内容，置信度，[[左上], [右上], [右下], [左下]])` 构成。
     - `RapidOCROutput.elapse_list (List[float])`: 文本检测，文本行方向分类和文本识别三部分各自推理耗时，单位为秒。
     - `RapidOCROutput.elapse (float)`: 三部分整体耗时，单位为秒。
 

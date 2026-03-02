@@ -36,7 +36,7 @@ Global:
     log_level: "info" # debug / info / warning / error / critical
 ```
 
-`text_score (float)`: 文本识别结果置信度，值越大，把握越大。取值范围：`[0, 1]`, 默认值是0.5。
+`text_score (float)`: 文本识别结果置信度，值越大，把握越大。取值范围：`[0, 1]`, 默认值是 0.5。
 
 `use_det (bool)`: 是否使用文本检测。默认为 `True`。
 
@@ -46,15 +46,15 @@ Global:
 
 > ⚠️注意：如果配置文件和调用时候同时声明 `use_det | use_cls | use_rec` 这三个参数，调用时参数会覆盖配置文件参数。
 
-`min_height (int)` : 图像最小高度（单位是像素），低于这个值，会跳过文本检测阶段，直接进行后续识别。默认值为30。 `min_height` 是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
+`min_height (int)` : 图像最小高度（单位是像素），低于这个值，会跳过文本检测阶段，直接进行后续识别。默认值为 30。 `min_height` 是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
 
 ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
 
-`width_height_ratio (float)`: 如果输入图像的宽高比大于 `width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1时：不用这个参数. 默认值为8。
+`width_height_ratio (float)`: 如果输入图像的宽高比大于 `width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1 时：不用这个参数. 默认值为 8。
 
-`max_side_len (int)`: 如果输入图像的最大边大于 `max_side_len`，则会按宽高比，将最大边缩放到 `max_side_len`。默认为2000px。
+`max_side_len (int)`: 如果输入图像的最大边大于 `max_side_len`，则会按宽高比，将最大边缩放到 `max_side_len`。默认为 2000px。
 
-`min_side_len (int)`: 如果输入图像的最小边小于 `min_side_len`，则会按宽高比，将最小边缩放到 `min_side_len`。默认为30px。
+`min_side_len (int)`: 如果输入图像的最小边小于 `min_side_len`，则会按宽高比，将最小边缩放到 `min_side_len`。默认为 30px。
 
 `return_word_box (bool)`: 是否返回文字的单字坐标。默认为 `False`。
 
@@ -196,7 +196,7 @@ EngineConfig:
 
 该部分的详细使用，请参见：[如何使用不同推理引擎？](./how_to_use_infer_engine.md)
 
-各个推理引擎的API：
+各个推理引擎的 API：
 
 - ONNXRuntime Python API 参见：[Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)
 - OpenVINO Python API 参见：[OpenVINO Python API](https://docs.openvino.ai/2025/api/ie_python_api/api.html)
@@ -205,11 +205,11 @@ EngineConfig:
 - MNN API 参见：[MNN](https://mnn-docs.readthedocs.io/en/latest/index.html)
 - TensorRT API 参见：[TensorRT Python API](https://docs.nvidia.com/deeplearning/tensorrt/latest/_static/python-api/index.html)
 
-以下三部分前4个参数基本类似，对应关系如下表，具体请参见[模型列表](../../model_list.md)文档：
+以下三部分前 4 个参数基本类似，对应关系如下表，具体请参见 [模型列表](../../model_list.md) 文档：
 
 | YAML 参数       | 对应枚举类       | 可用枚举值（示例）                 |导入方式 | 备注                                |
 |-----------------|------------------|------------------|-------------------|-------------------------------------|
-| `engine_type`   | `EngineType`     | `ONNXRUNTIME`（onnxruntime）<br>`OPENVINO`（openvino）<br>`PADDLE`（paddle）<br>`TORCH`（torch）<br>`MNN` (mnn)(`rapidocr>=3.6.0`)<br>`TENSORRT`(`rapidocr>=3.7.0`) | `from rapidocr import EngineType`|推理引擎类型         |
+| `engine_type`   | `EngineType`     | `ONNXRUNTIME`（onnxruntime）<br>`OPENVINO`（openvino）<br>`PADDLE`（paddle）<br>`TORCH`（torch）<br>`MNN` (mnn)(`rapidocr>=3.6.0`)<br>`TENSORRT`(tensorrt)(`rapidocr>=3.7.0`) | `from rapidocr import EngineType`|推理引擎类型         |
 | `lang_type`     |  `LangDet`<br> `LangCls`<br> `LangRec` | **检测（Det）**：`CH`/`EN`/`MULTI`<br>**分类（Cls）**：`CH`<br>**识别（Rec）**：`CH`/`CH_DOC`/`EN`/`ARABIC`/... |`from rapidocr import LangDet`<br/> `from rapidocr import LangCls` <br/>`from rapidocr import LangRec`| 根据 OCR 处理阶段选择不同枚举值 |
 | `model_type`    | `ModelType`      | `MOBILE`（mobile）<br>`SERVER`（server） |`from rapidocr import ModelType`| 模型大小与性能级别      |
 | `ocr_version`   | `OCRVersion`     | `PPOCRV4`（PP-OCRv4）<br>`PPOCRV5`（PP-OCRv5） |`from rapidocr import OCRVersion`| 模型版本    |
@@ -241,9 +241,9 @@ Det:
     score_mode: fast
 ```
 
-`engine_type (str)`: 选定推理引擎。支持 `onnxruntime`、`openvino`、`paddle` 和 `torch` 四个值。默认为 `onnxruntime`。
+`engine_type (str)`: 选定推理引擎。支持 `onnxruntime`, `openvino`, `paddle` 和 `torch` 四个值。默认为 `onnxruntime`。
 
-`lang_type (str)`: 支持检测的语种类型。这里指的是 `LangDet`，具体支持 `ch`、`en` 和 `multi` 3 个值。 `ch` 可以识别中文和中英文混合文本检测。 `en` 支持英文文字检测。 `multi` 支持多语言文本检测。默认为 `ch`。详细参见：[docs](https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1)
+`lang_type (str)`: 支持检测的语种类型。这里指的是 `LangDet`，具体支持 `ch`, `en` 和 `multi` 3 个值。 `ch` 可以识别中文和中英文混合文本检测。 `en` 支持英文文字检测。 `multi` 支持多语言文本检测。默认为 `ch`。详细参见：[docs](https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1)
 
 `model_type (str)`: 模型量级选择，支持 `mobile`（轻量型）和 `server`（服务型）。默认为 `mobile`。
 
@@ -253,17 +253,17 @@ Det:
 
 `model_dir (str)`: 模型存放路径或目录。如果是 PaddlePaddle，该参数则对应模型存在目录。其余推理引擎请使用 `model_path` 参数。
 
-`limit_side_len (float)`: 限制图像边的长度的像素值。默认值为736。
+`limit_side_len (float)`: 限制图像边的长度的像素值。默认值为 736。
 
-`limit_type (str)`: 限制图像的最小边长度还是最大边为 `limit_side_len`。 示例解释：当 `limit_type=min` 和 `limit_side_len=736` 时，图像最小边小于736时，会将图像最小边拉伸到736，另一边则按图像原始比例等比缩放。 取值范围为：`[min, max]`，默认值为 `min`。
+`limit_type (str)`: 限制图像的最小边长度还是最大边为 `limit_side_len`。 示例解释：当 `limit_type=min` 和 `limit_side_len=736` 时，图像最小边小于 736 时，会将图像最小边拉伸到 736，另一边则按图像原始比例等比缩放。 取值范围为：`[min, max]`，默认值为 `min`。
 
-`thresh (float)`: 图像中文字部分和背景部分分割阈值。值越大，文字部分会越小。取值范围：`[0, 1]`，默认值为0.3。
+`thresh (float)`: 图像中文字部分和背景部分分割阈值。值越大，文字部分会越小。取值范围：`[0, 1]`，默认值为 0.3。
 
-`box_thresh (float)`: 文本检测所得框是否保留的阈值，值越大，召回率越低。取值范围：`[0, 1]`，默认值为0.5。
+`box_thresh (float)`: 文本检测所得框是否保留的阈值，值越大，召回率越低。取值范围：`[0, 1]`，默认值为 0.5。
 
-`max_candidates (int)`: 最大候选框数目。默认是1000。
+`max_candidates (int)`: 最大候选框数目。默认是 1000。
 
-`unclip_ratio (float)`: 控制文本检测框的大小，值越大，检测框整体越大。取值范围：`[1.6, 2.0]`，默认值为1.6。
+`unclip_ratio (float)`: 控制文本检测框的大小，值越大，检测框整体越大。取值范围：`[1.6, 2.0]`，默认值为 1.6。
 
 `use_dilation (bool)`: 是否使用膨胀。默认为 `true`。该参数用于将检测到的文本区域做形态学的膨胀处理。
 
@@ -303,11 +303,11 @@ Cls:
 
 `cls_image_shape (List[int])`: 输入方向分类模型的图像 Shape(CHW)。默认值为 `[3, 48, 192]`。
 
-`cls_batch_num (int)`: 批次推理的 batch 大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为6。
+`cls_batch_num (int)`: 批次推理的 batch 大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为 6。
 
-`cls_thresh (float)`: 方向分类结果的置信度。取值范围：`[0, 1]`，默认值为0.9。
+`cls_thresh (float)`: 方向分类结果的置信度。取值范围：`[0, 1]`，默认值为 0.9。
 
-`label_list (List[str])`: 方向分类的标签，0°或者180°，**该参数不能动** 。默认值为 `["0", "180"]`。
+`label_list (List[str])`: 方向分类的标签，0°或者 180°，**该参数不能动** 。默认值为 `["0", "180"]`。
 
 #### Rec
 
@@ -344,4 +344,4 @@ Rec:
 
 `rec_img_shape (List[int])`: 输入文本识别模型的图像 Shape(CHW)。默认值为 `[3, 48, 320]`。
 
-`rec_batch_num (int)`: 批次推理的batch大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为6。
+`rec_batch_num (int)`: 批次推理的 batch 大小，一般采用默认值即可，太大并没有明显提速，效果还可能会差。默认值为 6。

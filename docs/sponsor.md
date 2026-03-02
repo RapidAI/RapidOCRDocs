@@ -5,16 +5,16 @@ hide:
   - toc
 ---
 
-## 成为RapidOCR的赞助者
+## 成为 RapidOCR 的赞助者
 
-RapidOCR产品开源免费，并且将持续提供免费的技术支持。但是随着项目规模的增长，也需要有相应的资金支持才能持续项目的维护的开发。
+RapidOCR 产品开源免费，并且将持续提供免费的技术支持。但是随着项目规模的增长，也需要有相应的资金支持才能持续项目的维护的开发。
 
 维护这样一个庞大的生态系统和为项目开发新功能所需的巨大努力，只有在我们的赞助者慷慨的财务支持下才得以持续
 
 ### 赞助者有哪些权益？
 
-1. Github仓库[中英文README](https://github.com/RapidAI/RapidOCR/tree/main#sponsors--backers)、官方文档流量曝光
-2. Gitee仓库[中英文README](https://gitee.com/RapidAI/RapidOCR#sponsors--backers)流量曝光
+1. Github 仓库 [中英文 README](https://github.com/RapidAI/RapidOCR/tree/main#sponsors--backers)、官方文档流量曝光
+2. Gitee 仓库 [中英文 README](https://gitee.com/RapidAI/RapidOCR#sponsors--backers) 流量曝光
 
 ### 以企业名义赞助
 
@@ -28,7 +28,7 @@ RapidOCR产品开源免费，并且将持续提供免费的技术支持。但是
 
 如果你是个人用户，并且享受到了 RapidOCR 带给你的生产力，请考虑捐赠以示感谢——就当是偶尔请我们喝杯咖啡。
 
-赞助金额大于`10`元时，可在赞助时备注（RapidOCR + GithubID/Gitee/博客地址等），我们将其加入在下方赞助名单中，您的赞助也会推动我们开发更多优质代码。
+赞助金额大于 `10` 元时，可在赞助时备注（RapidOCR + GithubID / Gitee / 博客地址等），我们将其加入在下方赞助名单中，您的赞助也会推动我们开发更多优质代码。
 
 #### 支付宝或微信打赏 (Alipay reward or WeChat reward)
 

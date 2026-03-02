@@ -12,7 +12,7 @@ links:
   - RapidOCR支持MNN推理引擎: blog/posts/inference_engine/support_mnn_engine.md
 ---
 
-记录支持TensorRT推理引擎的过程文档。
+记录支持 TensorRT 推理引擎的过程文档。
 
 <!-- more -->
 
@@ -31,13 +31,13 @@ links:
 
 ## 运行环境¶
 
-- Docker镜像：[@LocNgoXuan23](https://github.com/LocNgoXuan23) 在 [Discord](https://discord.com/channels/1143707958690189373/1143707958690189376/1468529402118672512) 中给出的镜像：[7.0-gc-triton-devel](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream?version=7.0-gc-triton-devel)
+- Docker 镜像：[@LocNgoXuan23](https://github.com/LocNgoXuan23) 在 [Discord](https://discord.com/channels/1143707958690189373/1143707958690189376/1468529402118672512) 中给出的镜像：[7.0-gc-triton-devel](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream?version=7.0-gc-triton-devel)
 - 设备配置：8 CPU / 256 GB
-- NVIDIA环境：(详细参见：[link](https://gist.github.com/SWHL/0efe902ee469d49fc63d50e297d7fd98) )
+- NVIDIA 环境：(详细参见：[link](https://gist.github.com/SWHL/0efe902ee469d49fc63d50e297d7fd98) )
     - cuda: 12.2
     - tensorrt: 8.6.1
     - cuda-python: 12.2.0
-- Python环境（3.10.0）：
+- Python 环境（3.10.0）：
 
   ```bash linenums="1"
   rapidocr==3.5.0
@@ -59,7 +59,7 @@ links:
 
 #### 文本检测模型
 
-|ONNX 模型| TensorRT Engine 格式 | 硬件设备 | 耗时(s) |
+|ONNX 模型| TensorRT Engine 格式 | 硬件设备 | 耗时 (s) |
 |:---|:---|:---|:---|
 | ch_PP-OCRv4_det_infer.onnx | ch_PP-OCRv4_det_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 521.02 |
 | ch_PP-OCRv4_det_infer.onnx | ch_PP-OCRv4_det_mobile_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 315.53 |
@@ -81,7 +81,7 @@ links:
 
 #### 文本识别模型
 
-|ONNX 模型| TensorRT Engine 格式 | 硬件设备 | 耗时(s) |
+|ONNX 模型| TensorRT Engine 格式 | 硬件设备 | 耗时 (s) |
 |:---|:---|:---|:---|
 | ch_PP-OCRv4_rec_infer.onnx | ch_PP-OCRv4_rec_mobile_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 603.08 |
 | ch_PP-OCRv4_rec_infer.onnx | ch_PP-OCRv4_rec_mobile_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 480.52 |
@@ -98,7 +98,7 @@ links:
 | ch_PP-OCRv5_rec_server_infer.onnx | ch_PP-OCRv5_rec_server_sm80_fp16.engine | NVIDIA A800-SXM4-80GB | 159.35 |
 | ch_PP-OCRv5_rec_server_infer.onnx | ch_PP-OCRv5_rec_server_sm80_fp32.engine | NVIDIA A800-SXM4-80GB | 69.82 |
 
-## 支持Det模型
+## 支持 Det 模型
 
 ### 比较转化前后推理精度差异
 
@@ -339,11 +339,11 @@ Traceback (most recent call last):
 RuntimeError: Failed to build TensorRT engine
 ```
 
-## 支持Rec模型
+## 支持 Rec 模型
 
 ### 比较转化前后推理精度差异
 
-这里主要采用[@LocNgoXuan23](https://github.com/LocNgoXuan23)给出的 [benchmark 脚本](https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254)来批量测试。下面是测试单个模型的脚本。
+这里主要采用 [@LocNgoXuan23](https://github.com/LocNgoXuan23) 给出的 [benchmark 脚本](https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254) 来批量测试。下面是测试单个模型的脚本。
 
 === "(Exp1) RapidOCR + ONNX Runtime"
 
@@ -562,4 +562,4 @@ RuntimeError: Failed to build TensorRT engine
 
 值得一提的是，我这里仅测试了小批量的数据下效果，难免存在疏漏。更多全面测试，仍需要使用到的小伙伴多多反馈。
 
-`rapidocr`将在 `>=v3.7.0` 集成，欢迎届时使用和反馈。
+`rapidocr` 将在 `>=v3.7.0` 集成，欢迎届时使用和反馈。

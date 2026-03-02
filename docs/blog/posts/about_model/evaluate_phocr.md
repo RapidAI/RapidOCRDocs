@@ -11,7 +11,7 @@ links:
   - 开源OCR模型对比: blog/posts/about_model/model_summary.md
 ---
 
-> 该文章主要评测PHOCRv1的中文识别模型效果。
+> 该文章主要评测 PHOCRv1 的中文识别模型效果。
 
 <!-- more -->
 
@@ -21,7 +21,7 @@ links:
 >
 > -- [PHOCR](https://github.com/puhuilab/phocr/tree/main)
 
-最近，有个社区小伙伴新建立了一个PHOCR，里面的文本识别模型据说效果超越PP-OCRv5:
+最近，有个社区小伙伴新建立了一个 PHOCR，里面的文本识别模型据说效果超越 PP-OCRv5:
 
 ![alt text](../images/image.png)
 
@@ -41,7 +41,7 @@ links:
 
     由于评测数据集的限制，以下评测结果不完全代表模型能力，支持给出一个基本参考。小伙伴们还需要在自己场景下真实评测来看哈。
 
-该部分主要使用[TextRecMetric](https://github.com/SWHL/TextRecMetric)和测试集[text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)来评测。
+该部分主要使用 [TextRecMetric](https://github.com/SWHL/TextRecMetric) 和测试集 [text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset) 来评测。
 
 #### 测试集结果识别
 
@@ -100,14 +100,14 @@ print(metric)
 
 ### 结论
 
-|                模型      |              模型大小  |    Exact Match   |   Char Match     |Speed(s/img)  |
+|                模型      |              模型大小  |    Exact Match   |   Char Match     |Speed(s / img)  |
 | :----- | :-----| :-------: | :--- | :--|
 |PHOCR v1.0.3|       224M        |      0.6452      |     0.7648  |  0.0613 |
 |ch_PP-OCRv5_rec_infer.onnx |       16M        |      0.7355      |     0.9177  |  0.0713 |
 |ch_PP-OCRv5_rec_server_infer.onnx |       81M        |      0.8129      |     0.9431  |  0.1133 |
 
-上面结果和PP-OCRv5比较来看，差距还是不小的。可能是测试集的不同，导致指标差距明显。但是速度的确快一些。⚠️注意：仅供参考哈。
+上面结果和 PP-OCRv5 比较来看，差距还是不小的。可能是测试集的不同，导致指标差距明显。但是速度的确快一些。⚠️注意：仅供参考哈。
 
-RapidOCR这里暂时不做集成，后续会持续关注PHOCR这里。
+RapidOCR 这里暂时不做集成，后续会持续关注 PHOCR 这里。
 
 完整的评测结果比较：[文本识别模型比较](./model_summary.md#文本识别模型)

@@ -60,7 +60,7 @@ hide:
 
 详情可以移步 [AI Studio](https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&shared=1&ts=1693054678460) 运行查看。
 
-|  模型  | 模型大小| Precision | Recall | H-mean   | Speed(s / img) |
+|  模型  | 模型大小| Precision | Recall | H-mean   | Speed(s/img) |
 | :---------------------------- | :----------------: | :-------: | :----: | :----: | :------ |
 |     ch_PP-OCRv5_mobile_det.onnx      |     4.6M      |  0.7861   | 0.8266 | 0.8058 |   -   |
 |     ch_PP-OCRv4_det_infer.onnx      |     4.5M      |  0.8301   | 0.8659 | 0.8476 |   0.2256   |
@@ -77,7 +77,7 @@ hide:
 
 不同推理引擎下，效果比较：
 
-|推理引擎|                       模型                       | 模型大小 | Precision | Recall | H-mean | Speed(s / img) |
+|推理引擎|                       模型                       | 模型大小 | Precision | Recall | H-mean | Speed(s/img) |
 |:--| :---- | :------: | :-------: | :----: | :----: | :---- |
 |rapidocr_onnxruntime==1.3.16| ch_PP-OCRv4_det_infer.onnx |   4.5M   |  0.8301   | 0.8659 | 0.8476 | 0.2256       |
 |rapidocr_openvino==1.3.16| ch_PP-OCRv4_det_infer.onnx |   4.5M   |  0.8339   | 0.8629 | 0.8481 | 0.6447       |
@@ -91,18 +91,18 @@ hide:
 - 计算指标库 TextRecMetric: [link](https://github.com/SWHL/TextRecMetric)
 - 测试集 text_rec_test_dataset: [link](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)
 
-|                模型                  | 对应 PaddleOCR 分支|  模型大小  |    Exact Match   |   Char Match     |Speed(s / img)  |
+|                模型                  | 对应 PaddleOCR 分支|  模型大小  |    Exact Match   |   Char Match     |Speed(s/img)  |
 | :----- |:---- | :-----| :-------: | :--- | :--|
-|ch_PP-OCRv5_rec_infer.onnx | release / v3.0      |       16M        |      0.7355      |     0.9177  |  0.0713 |
-|ch_PP-OCRv4_rec_infer.onnx | release / v2.7      |       10M        |      0.8323      |     0.9355  |  0.6836 |
-|ch_PP-OCRv3_rec_infer.onnx | release / v2.6      |       11M        |      0.7097      |     0.8919  |  0.6362 |
+|ch_PP-OCRv5_rec_infer.onnx | release/v3.0      |       16M        |      0.7355      |     0.9177  |  0.0713 |
+|ch_PP-OCRv4_rec_infer.onnx | release/v2.7      |       10M        |      0.8323      |     0.9355  |  0.6836 |
+|ch_PP-OCRv3_rec_infer.onnx | release/v2.6      |       11M        |      0.7097      |     0.8919  |  0.6362 |
 |||||||
-|ch_PP-OCRv5_rec_server_infer.onnx | release / v3.0      |       81M        |      0.8129      |     0.9431  |  0.1133 |
-|ch_PP-OCRv4_rec_server_infer.onnx | release / v2.7      |       86M        |      0.7968      |     0.9381  |  0.6967 |
-|ch_doc_PP-OCRv4_rec_server.onnx | release / v2.10      |       94.93M        |      0.8097      |     0.9444  |  0.6836 |
-|ch_PP-OCRv2_rec_infer.onnx | release / v2.3     |      8.0M        |       0.6387      |     0.8398      | 0.6138|
-|ch_ppocr_mobile_v2.0_rec_infer.onnx  |  release / v2.0    |  4.3M  |       0.5323      |     0.7823     | 0.5575|
-|其他 OCR |  版本    |  模型大小  |    Exact Match   |   Char Match     |Speed(s / img)  |
+|ch_PP-OCRv5_rec_server_infer.onnx | release/v3.0      |       81M        |      0.8129      |     0.9431  |  0.1133 |
+|ch_PP-OCRv4_rec_server_infer.onnx | release/v2.7      |       86M        |      0.7968      |     0.9381  |  0.6967 |
+|ch_doc_PP-OCRv4_rec_server.onnx | release/v2.10      |       94.93M        |      0.8097      |     0.9444  |  0.6836 |
+|ch_PP-OCRv2_rec_infer.onnx | release/v2.3     |      8.0M        |       0.6387      |     0.8398      | 0.6138|
+|ch_ppocr_mobile_v2.0_rec_infer.onnx  |  release/v2.0    |  4.3M  |       0.5323      |     0.7823     | 0.5575|
+|其他 OCR |  版本    |  模型大小  |    Exact Match   |   Char Match     |Speed(s/img)  |
 |[读光-文字识别-行识别模型-中英-文档印刷体文本领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-document_damo/summary)  |  -    |  73M  |       0.5968      |     0.7705     | - |
 |[读光-文字识别-行识别模型-中英-通用领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-general_damo/summary)  |  -    |  73M  |       0.5839      |     0.7615     | - |
 |[读光-文字识别-行识别模型-中英-自然场景文本领域](https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-scene_damo/summary)  |  -    |  73M  |       0.5903      |     0.7779     | - |
@@ -113,7 +113,7 @@ hide:
 
 不同推理引擎下，效果比较：
 
-|           推理引擎           |            模型            | 模型大小 | Exact Match | Char Match | Speed(s / img) |
+|           推理引擎           |            模型            | 模型大小 | Exact Match | Char Match | Speed(s/img) |
 | :--- | :------ | :------: | :-------: | :----: | :----: |
 | rapidocr_onnxruntime==1.3.16 | ch_PP-OCRv4_rec_infer.onnx |   10M   |  0.8323   | 0.9355 | 0.6836 |
 |  rapidocr_openvino==1.3.16   | ch_PP-OCRv4_rec_infer.onnx |   10M   |  0.8323   | 0.9355 | 0.6836 |

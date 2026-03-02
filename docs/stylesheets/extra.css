@@ -1,10 +1,8 @@
-/*定义变量*/
 :root {
   --admonition-border-left-width: 0.2rem;
   --base-border-radius: 1rem;
   --md-text-font: "LXGW WenKai Screen";
   --md-code-font: "consolas, 'Courier New', monospace";
-  /* --font-family: "LXGW WenKai Screen"; */
 }
 
 

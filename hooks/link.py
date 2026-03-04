@@ -4,7 +4,7 @@ import re
 
 def on_page_markdown(markdown, page, config, files):
     """
-    将 'issue #数字'、'PR #数字'、'commit 哈希' 替换为 GitHub 链接
+    将 'issue #数字'、'PR #数字'、'commit 哈希' 以及孤立的 '#数字'（默认视为 PR）替换为 GitHub 链接
     （忽略代码块和行内代码，只在指定页面生效，支持通配符）
     """
 
@@ -32,10 +32,9 @@ def on_page_markdown(markdown, page, config, files):
     markdown = re.sub(r"```.*?```", store_placeholder, markdown, flags=re.DOTALL)
     markdown = re.sub(r"~~~.*?~~~", store_placeholder, markdown, flags=re.DOTALL)
     # 提取行内代码（`...`）
-    markdown = re.sub(r"`.*?`", store_placeholder, markdown)
+    markdown = re.sub(r"`[^`]*`", store_placeholder, markdown)
 
     # --- issue 替换 ---
-    # 支持 issue#123 / issue: #123 / issue #123
     def issue_replacer(match):
         num = match.group(1)
         return f"issue [#{num}]({repo_url}/issues/{num})"
@@ -48,6 +47,15 @@ def on_page_markdown(markdown, page, config, files):
         return f"PR [#{num}]({repo_url}/pull/{num})"
 
     markdown = re.sub(r"(?i)PR\s*[:#]?\s*#?(\d+)", pr_replacer, markdown)
+
+    # --- 孤立的 #数字：默认视为 PR ---
+    # 要求 # 前不能是字母、数字、下划线（即非 \w），后跟数字，且不在行内代码中（已保护）
+    # 使用 (?<!\w) 确保前面不是单词字符，避免匹配 foo#123
+    def hash_pr_replacer(match):
+        num = match.group(1)
+        return f"[#{num}]({repo_url}/pull/{num})"
+
+    markdown = re.sub(r"(?<!\w)#(\d+)\b", hash_pr_replacer, markdown)
 
     # --- commit 替换 ---
     def commit_replacer(match):

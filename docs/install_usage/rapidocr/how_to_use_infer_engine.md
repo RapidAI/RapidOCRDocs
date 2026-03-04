@@ -437,8 +437,6 @@ comments: true
             result.vis('vis_result.jpg')
             ```
 
-        3. 确认是否使用了机器的 GPU。打开
-
 3. 查看输出日志。以下日志中打印出了 **Using engine_name: torch**，则证明使用的推理引擎是 PyTorch。
 
     ```bash linenums="1" hl_lines="1 3 5"

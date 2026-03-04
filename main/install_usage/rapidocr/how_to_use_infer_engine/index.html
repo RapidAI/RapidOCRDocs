@@ -2588,7 +2588,7 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </div>
 </li>
 <li>
-<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: onnxruntime</strong>，则证明使用的推理引擎是 ONNX Runtime。</p>
+<p>查看输出日志。以下日志中打印出了 <strong>Using engine_name: onnxruntime</strong>，则证明使用的推理引擎是 ONNX Runtime。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
@@ -2644,7 +2644,7 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: openvino</strong>，则证明使用的推理引擎是 OpenVINO。</p>
+<p>查看输出日志。以下日志中打印出了 <strong>Using engine_name: openvino</strong>，则证明使用的推理引擎是 OpenVINO。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
@@ -2713,7 +2713,7 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </div>
 </li>
 <li>
-<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: mnn</strong>，则证明使用的推理引擎是 MNN。</p>
+<p>查看输出日志。以下日志中打印出了 <strong>Using engine_name: mnn</strong>，则证明使用的推理引擎是 MNN。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">3</a></span>
@@ -2843,7 +2843,7 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </div>
 </li>
 <li>
-<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: paddle</strong>，则证明使用的推理引擎是 PaddlePaddle。</p>
+<p>查看输出日志。以下日志中打印出了 <strong>Using engine_name: paddle</strong>，则证明使用的推理引擎是 PaddlePaddle。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
 <span class="normal"><a href="#__codelineno-18-2">2</a></span>
 <span class="normal"><a href="#__codelineno-18-3">3</a></span>
@@ -3069,7 +3069,7 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </div>
 </li>
 <li>
-<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: torch</strong>，则证明使用的推理引擎是 PyTorch。</p>
+<p>查看输出日志。以下日志中打印出了 <strong>Using engine_name: torch</strong>，则证明使用的推理引擎是 PyTorch。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
 <span class="normal"><a href="#__codelineno-25-2">2</a></span>
 <span class="normal"><a href="#__codelineno-25-3">3</a></span>
@@ -3107,8 +3107,8 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </li>
 <li>
 <p>指定 TensorRT 作为推理引擎。</p>
-<p>运行下面代码，程序会自动现在对应的 ONNX 模型，并转换为 <code>.engine</code> 格式。该转换仅在首次运行时执行。因此，首次运行速度会较慢，后面再次运行就快了。</p>
-<p>详细模型的支持情况，请参见博客：<a href="https://rapidai.github.io/RapidOCRDocs/latest/blog/2026/02/13/support-tensorrt-engine/">RapidOCR 支持 TensorRT 推理引擎</a></p>
+<p>运行以下代码，程序会自动下载对应的 ONNX 模型，并转换为 <code>.engine</code> 格式。该转换仅在首次运行时执行；因此，首次运行速度较慢，后续再次运行时将显著加快。</p>
+<p>详细模型的支持情况，参见博客：<a href="https://rapidai.github.io/RapidOCRDocs/latest/blog/2026/02/13/support-tensorrt-engine/">RapidOCR 支持 TensorRT 推理引擎</a></p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-26-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-26-3"> 3</a></span>
@@ -3145,7 +3145,7 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>查看输出日志。下面日志中打印出了 <strong>Using engine_name: tensorrt</strong>，则证明使用的推理引擎是 PyTorch。</p>
+<p>查看输出日志。以下日志中打印出了 <strong>Using engine_name: tensorrt</strong>，则证明使用的推理引擎是 PyTorch。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
 <span class="normal"><a href="#__codelineno-27-2">2</a></span>
 <span class="normal"><a href="#__codelineno-27-3">3</a></span>

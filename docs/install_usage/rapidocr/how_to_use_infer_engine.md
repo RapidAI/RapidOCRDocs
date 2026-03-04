@@ -119,7 +119,7 @@ comments: true
             result.vis("vis_result.jpg")
             ```
 
-3. 查看输出日志。下面日志中打印出了 **Using engine_name: onnxruntime**，则证明使用的推理引擎是 ONNX Runtime。
+3. 查看输出日志。以下日志中打印出了 **Using engine_name: onnxruntime**，则证明使用的推理引擎是 ONNX Runtime。
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: onnxruntime
@@ -158,7 +158,7 @@ comments: true
     result.vis('vis_result.jpg')
     ```
 
-3. 查看输出日志。下面日志中打印出了 **Using engine_name: openvino**，则证明使用的推理引擎是 OpenVINO。
+3. 查看输出日志。以下日志中打印出了 **Using engine_name: openvino**，则证明使用的推理引擎是 OpenVINO。
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: openvino
@@ -207,7 +207,7 @@ comments: true
 
         敬请期待！
 
-3. 查看输出日志。下面日志中打印出了 **Using engine_name: mnn**，则证明使用的推理引擎是 MNN。
+3. 查看输出日志。以下日志中打印出了 **Using engine_name: mnn**，则证明使用的推理引擎是 MNN。
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-21 09:28:03,457 base.py:30: Using engine_name: mnn
@@ -292,7 +292,7 @@ comments: true
         result.vis('vis_result.jpg')
         ```
 
-3. 查看输出日志。下面日志中打印出了 **Using engine_name: paddle**，则证明使用的推理引擎是 PaddlePaddle。
+3. 查看输出日志。以下日志中打印出了 **Using engine_name: paddle**，则证明使用的推理引擎是 PaddlePaddle。
 
     ```bash linenums="1" hl_lines="3 6"
     [INFO] 2025-03-22 15:20:45,528 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer/inference.pdmodel
@@ -439,7 +439,7 @@ comments: true
 
         3. 确认是否使用了机器的 GPU。打开
 
-3. 查看输出日志。下面日志中打印出了 **Using engine_name: torch**，则证明使用的推理引擎是 PyTorch。
+3. 查看输出日志。以下日志中打印出了 **Using engine_name: torch**，则证明使用的推理引擎是 PyTorch。
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-22 15:39:13,241 base.py:30: Using engine_name: torch
@@ -471,9 +471,9 @@ comments: true
 
 2. 指定 TensorRT 作为推理引擎。
 
-    运行下面代码，程序会自动现在对应的 ONNX 模型，并转换为 `.engine` 格式。该转换仅在首次运行时执行。因此，首次运行速度会较慢，后面再次运行就快了。
+    运行以下代码，程序会自动下载对应的 ONNX 模型，并转换为 `.engine` 格式。该转换仅在首次运行时执行；因此，首次运行速度较慢，后续再次运行时将显著加快。
 
-    详细模型的支持情况，请参见博客：[RapidOCR 支持 TensorRT 推理引擎](https://rapidai.github.io/RapidOCRDocs/latest/blog/2026/02/13/support-tensorrt-engine/)
+    详细模型的支持情况，参见博客：[RapidOCR 支持 TensorRT 推理引擎](https://rapidai.github.io/RapidOCRDocs/latest/blog/2026/02/13/support-tensorrt-engine/)
 
     ```python linenums="1" hl_lines="3-9"
     from rapidocr import EngineType, RapidOCR
@@ -495,7 +495,7 @@ comments: true
     result.vis('vis_result.jpg')
     ```
 
-3. 查看输出日志。下面日志中打印出了 **Using engine_name: tensorrt**，则证明使用的推理引擎是 PyTorch。
+3. 查看输出日志。以下日志中打印出了 **Using engine_name: tensorrt**，则证明使用的推理引擎是 PyTorch。
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-22 15:39:13,241 base.py:30: Using engine_name: tensorrt

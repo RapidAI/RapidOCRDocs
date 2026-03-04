@@ -387,6 +387,58 @@ comments: true
             result.vis('vis_result.jpg')
             ```
 
+    === "MPS"
+
+        !!! tip
+
+            仅在 `rapidocr>=3.7.0` 中支持。详细 Benchmark 参见：[RapidOCR 支持 PyTorch MPS 作为计算后端](../../blog/posts/inference_engine/support_torch_mps_backend.md)
+
+        1. 安装 `torch`，参见：[docs](https://pytorch.org/get-started/locally/?_gl=1*jbgtzm*_up*MQ..*_ga*NTU3NzM0NTIwLjE3NzI2MTY2NTU.*_ga_469Y0W5V62*czE3NzI2MTY2NTQkbzEkZzEkdDE3NzI2MTY2NjEkajUzJGwwJGgw)。小伙伴们可以在安装之后，运行下面脚本来确定机器是否可以用 Apple GPU：
+
+            ```python linenums="1"
+            import torch
+
+            print(f"PyTorch 版本: {torch.**version**}")
+            print(f"MPS 可用性: {torch.backends.mps.is_available()}")
+
+            if torch.backends.mps.is_available():
+                device = torch.device("mps")
+                print(f"✅ 已成功使用 Apple GPU (MPS): {device}")
+            else:
+                print("❌ 请检查你的 PyTorch 安装是否正确，可能需要重新安装支持 MPS 的版本。")
+            ```
+
+            输出以下类似结果，表明机器可以使用 Apple GPU：
+
+            ```bash linenums="1"
+            PyTorch 版本: 2.6.0
+            MPS 可用性: True
+            ✅ 已成功使用 Apple GPU (MPS): mps
+            ```
+
+        2. 使用
+
+            ```python linenums="1" hl_lines="3-11"
+            from rapidocr import EngineType, RapidOCR
+
+            engine = RapidOCR(
+                params={
+                    "Det.engine_type": EngineType.TORCH,
+                    "Cls.engine_type": EngineType.TORCH,
+                    "Rec.engine_type": EngineType.TORCH,
+                    "EngineConfig.torch.use_mps": True,  # 使用torch MPS版推理
+                }
+            )
+
+            img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+            result = engine(img_url)
+            print(result)
+
+            result.vis('vis_result.jpg')
+            ```
+
+        3. 确认是否使用了机器的 GPU。打开
+
 3. 查看输出日志。下面日志中打印出了 **Using engine_name: torch**，则证明使用的推理引擎是 PyTorch。
 
     ```bash linenums="1" hl_lines="1 3 5"

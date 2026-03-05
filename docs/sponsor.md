@@ -52,21 +52,27 @@ If you are not in mainland China, you can also support the me through:
 
 |Sponsors|Application|Introduction|
 |:---:|:---:|:---|
-|<img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/Quicker.jpg" width=65 height=65>|[Quicker](https://getquicker.net/)|您的指尖工作箱|
+|<img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/Quicker.jpg" width=65 height=65 style="border-radius: 12px; border: none;">|[Quicker](https://getquicker.net/)|您的指尖工作箱|
 
 #### 支持者
 
 <table>
   <tr>
     <td align="center">
+      <a href="https://github.com/zg-young">
+        <img src="https://avatars.githubusercontent.com/u/56186938?v=4" width="60" style="border-radius: 12px; border: none;"/>
+      </a><br />
+      <sub><a href="https://github.com/youzzhang">@youzzhang</a></sub>
+    </td>
+    <td align="center">
       <a href="https://github.com/Eunsolfs">
-        <img src="https://avatars.githubusercontent.com/u/53815751?v=4" width="60" />
+        <img src="https://avatars.githubusercontent.com/u/53815751?v=4" width="60"  style="border-radius: 12px; border: none;"/>
       </a><br />
       <sub><a href="https://github.com/Eunsolfs">@Eunsolfs</a></sub>
     </td>
     <td align="center">
       <a href="https://github.com/youzzhang">
-        <img src="https://avatars.githubusercontent.com/u/49047676?v=4" width="60" />
+        <img src="https://avatars.githubusercontent.com/u/49047676?v=4" width="60" style="border-radius: 12px; border: none;"/>
       </a><br />
       <sub><a href="https://github.com/youzzhang">@youzzhang</a></sub>
     </td>

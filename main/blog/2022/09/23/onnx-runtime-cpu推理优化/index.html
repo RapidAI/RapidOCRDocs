@@ -2526,14 +2526,10 @@ You're not viewing the latest version.
 <h4 id="enable_cpu_mem_arena"><a href="https://onnxruntime.ai/docs/api/python/api_summary.html#onnxruntime.SessionOptions.enable_cpu_mem_arena"><code>enable_cpu_mem_arena</code></a><a class="headerlink" href="#enable_cpu_mem_arena" title="Permanent link">&para;</a></h4>
 <p>作用：启用 CPU 上的 <strong>memory arena</strong>。Arena 可能会为将来预先申请很多内存。如果不想使用它，可以设置为 <code>enable_cpu_mem_area=False</code>，默认是 <code>True</code></p>
 <p>个人基于下面模型测试结论：建议关闭。开启之后，程序占用内存会剧增（5618.3M &gt;&gt; 5.3M），且持续占用，无法释放。推理时间提升约 13%。</p>
-<p>由于不同模型存在差异，建议用户根据自身模型的实际测试效果，评估该参数开启前后的效果，再决定。</p>
-<ul>
-<li>测试环境：<ul>
-<li>Python: 3.7.13</li>
-<li>ONNX Runtime: 1.14.1</li>
-</ul>
-</li>
-<li>
+<p>由于不同模型存在差异，建议用户根据自身模型的实际测试效果，评估该参数开启前后的效果，再决定开启与否。以下是我这里测试的环境、代码和结果。</p>
+<p>测试环境：
+    - Python: 3.7.13
+    - ONNX Runtime: 1.14.1</p>
 <p>测试代码（来自 <a href="https://github.com/microsoft/onnxruntime/issues/11627">issue 11627</a>，<a href="https://github.com/microsoft/onnxruntime/files/8772315/enable_cpu_memory_area_example.zip">enable_cpu_memory_area_example.zip</a>）</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -2570,7 +2566,7 @@ You're not viewing the latest version.
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">onnx_prediction</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">input_data</span><span class="p">):</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="n">ort_sess</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">InferenceSession</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">sess_options</span><span class="o">=</span><span class="n">sess_options</span><span class="p">)</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>    <span class="n">preds</span> <span class="o">=</span> <span class="n">ort_sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">output_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;predictions&quot;</span><span class="p">],</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>                         <span class="n">input_feed</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_1&quot;</span><span class="p">:</span> <span class="n">input_data</span><span class="p">})[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>                            <span class="n">input_feed</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_1&quot;</span><span class="p">:</span> <span class="n">input_data</span><span class="p">})[</span><span class="mi">0</span><span class="p">]</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>    <span class="k">return</span> <span class="n">preds</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>
@@ -2583,73 +2579,39 @@ You're not viewing the latest version.
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="n">onnx_prediction</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>Windows 端 | Mac 端 | Linux 端 测试情况都大致相同
-    <details></p>
-<ul>
-<li>
-<p><code>enable_cpu_mem_arena=True</code></p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">(</span>demo<span class="o">)</span><span class="w"> </span>PS<span class="w"> </span>G:&gt;<span class="w"> </span>python<span class="w"> </span>.<span class="se">\t</span>est_enable_cpu_mem_arena.py
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>enable_cpu_mem_arena:<span class="w"> </span>True
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>input_data<span class="w"> </span>shape:<span class="w"> </span><span class="o">(</span><span class="m">32</span>,<span class="w"> </span><span class="m">200</span>,<span class="w"> </span><span class="m">200</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>Filename:<span class="w"> </span>.<span class="se">\t</span>est_enable_cpu_mem_arena.py
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>Line<span class="w"> </span><span class="c1">#    Mem usage    Increment  Occurrences   Line Contents</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="o">=============================================================</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="m">7</span><span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">   </span>@profile
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="m">8</span><span class="w">                                         </span>def<span class="w"> </span>onnx_prediction<span class="o">(</span>model_path,<span class="w"> </span>input_data<span class="o">)</span>:
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="m">9</span><span class="w">     </span><span class="m">77</span>.2<span class="w"> </span>MiB<span class="w">      </span><span class="m">8</span>.1<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">ort_sess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort.InferenceSession<span class="o">(</span>model_path,<span class="w"> </span><span class="nv">sess_options</span><span class="o">=</span>sess_options<span class="o">)</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="m">10</span><span class="w">     </span><span class="m">77</span>.2<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">preds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort_sess.run<span class="o">(</span><span class="nv">output_names</span><span class="o">=[</span><span class="s2">&quot;predictions&quot;</span><span class="o">]</span>,
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="m">11</span><span class="w">   </span><span class="m">5695</span>.5<span class="w"> </span>MiB<span class="w">   </span><span class="m">5618</span>.3<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">                            </span><span class="nv">input_feed</span><span class="o">={</span><span class="s2">&quot;input_1&quot;</span>:<span class="w"> </span>input_data<span class="o">})[</span><span class="m">0</span><span class="o">]</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="m">12</span><span class="w">   </span><span class="m">5695</span>.5<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="k">return</span><span class="w"> </span>preds
-</span></code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p><code>enable_cpu_mem_arena=False</code></p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">(</span>demo<span class="o">)</span><span class="w"> </span>PS<span class="w"> </span>G:&gt;<span class="w"> </span>python<span class="w"> </span>.<span class="se">\t</span>est_enable_cpu_mem_arena.py
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>enable_cpu_mem_arena:<span class="w"> </span>False
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>input_data<span class="w"> </span>shape:<span class="w"> </span><span class="o">(</span><span class="m">32</span>,<span class="w"> </span><span class="m">200</span>,<span class="w"> </span><span class="m">200</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>Filename:<span class="w"> </span>.<span class="se">\t</span>est_enable_cpu_mem_arena.py
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>Line<span class="w"> </span><span class="c1">#    Mem usage    Increment  Occurrences   Line Contents</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="o">=============================================================</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="m">7</span><span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">   </span>@profile
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="m">8</span><span class="w">                                         </span>def<span class="w"> </span>onnx_prediction<span class="o">(</span>model_path,<span class="w"> </span>input_data<span class="o">)</span>:
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="m">9</span><span class="w">     </span><span class="m">76</span>.9<span class="w"> </span>MiB<span class="w">      </span><span class="m">7</span>.8<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">ort_sess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort.InferenceSession<span class="o">(</span>model_path,<span class="w"> </span><span class="nv">sess_options</span><span class="o">=</span>sess_options<span class="o">)</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="m">10</span><span class="w">     </span><span class="m">76</span>.9<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">preds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort_sess.run<span class="o">(</span><span class="nv">output_names</span><span class="o">=[</span><span class="s2">&quot;predictions&quot;</span><span class="o">]</span>,
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="m">11</span><span class="w">     </span><span class="m">82</span>.1<span class="w"> </span>MiB<span class="w">      </span><span class="m">5</span>.3<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">                            </span><span class="nv">input_feed</span><span class="o">={</span><span class="s2">&quot;input_1&quot;</span>:<span class="w"> </span>input_data<span class="o">})[</span><span class="m">0</span><span class="o">]</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="m">12</span><span class="w">     </span><span class="m">82</span>.1<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="k">return</span><span class="w"> </span>preds
-</span></code></pre></div></td></tr></table></div>
-</li>
-</ul>
-</details>
-</li>
-</ul>
+<p>??? info Windows | macOS | Linux 测试情况都大致相同</p>
+<div class="language-text highlight"><pre><span></span><code>```bash linenums=&quot;1&quot; title=&quot;enable_cpu_mem_arena=True&quot;
+(demo) PS G:&gt; python .\test_enable_cpu_mem_arena.py
+enable_cpu_mem_arena: True
+input_data shape: (32, 200, 200, 1)
+Filename: .\test_enable_cpu_mem_arena.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    7     69.1 MiB     69.1 MiB           1   @profile
+    8                                         def onnx_prediction(model_path, input_data):
+    9     77.2 MiB      8.1 MiB           1       ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
+    10     77.2 MiB      0.0 MiB           1       preds = ort_sess.run(output_names=[&quot;predictions&quot;],
+    11   5695.5 MiB   5618.3 MiB           1                            input_feed={&quot;input_1&quot;: input_data})[0]
+    12   5695.5 MiB      0.0 MiB           1       return preds
+```
+
+```bash linenums=&quot;1&quot; title=&quot;enable_cpu_mem_arena=False&quot;
+(demo) PS G:&gt; python .\test_enable_cpu_mem_arena.py
+enable_cpu_mem_arena: False
+input_data shape: (32, 200, 200, 1)
+Filename: .\test_enable_cpu_mem_arena.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    7     69.1 MiB     69.1 MiB           1   @profile
+    8                                         def onnx_prediction(model_path, input_data):
+    9     76.9 MiB      7.8 MiB           1       ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
+    10     76.9 MiB      0.0 MiB           1       preds = ort_sess.run(output_names=[&quot;predictions&quot;],
+    11     82.1 MiB      5.3 MiB           1                            input_feed={&quot;input_1&quot;: input_data})[0]
+    12     82.1 MiB      0.0 MiB           1       return preds
+```
+</code></pre></div>
 <h4 id="enable_profiling"><code>enable_profiling</code><a class="headerlink" href="#enable_profiling" title="Permanent link">&para;</a></h4>
 <ul>
 <li>开启这个参数，在推理时，会生成一个类似 <code>onnxruntime_profile__2023-05-07_09-02-15.json</code> 的日志文件，包含详细的性能数据（线程、每个运算符的延迟等）。</li>
@@ -2730,7 +2692,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月6日 09:23:27 CST">2026-03-06 09:23:27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月6日 09:53:02 CST">2026-03-06 09:53:02</span>
   </span>
 
     

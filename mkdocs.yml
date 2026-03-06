@@ -126,7 +126,7 @@ extra:
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/rapidocr/
     - icon: fontawesome/solid/rss
-      link: https://rapidai.github.io/main/feed_rss_created.xml
+      link: https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml
   version:
     provider: mike
   expiry_days: 180

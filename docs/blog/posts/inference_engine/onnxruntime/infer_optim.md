@@ -83,7 +83,7 @@ model_path = 'enable_cpu_memory_area_example/model.onnx'
 onnx_prediction(model_path, input_data)
 ```
 
-??? info Windows | macOS | Linux 测试情况都大致相同
+??? info "Windows | macOS | Linux 测试情况"
 
     ```bash linenums="1" title="enable_cpu_mem_arena=True"
     (demo) PS G:> python .\test_enable_cpu_mem_arena.py

@@ -70,6 +70,13 @@ theme:
       software-tag: fontawesome/solid/laptop-code
 
 plugins:
+  - rss:
+      match_path: "blog/posts/*.md"
+      date_from_meta:
+        as_creation: date.created
+        as_update: "git"
+      length: 20
+      pretty_print: true
   - blog:
       archive: false
       post_date_format: short
@@ -118,6 +125,8 @@ extra:
       link: https://raw.githubusercontent.com/RapidAI/.github/main/assets/RapidAI_poster_compose.png
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/rapidocr/
+    - icon: fontawesome/solid/rss
+      link: https://rapidai.github.io/main/feed_rss_created.xml
   version:
     provider: mike
   expiry_days: 180

@@ -48,80 +48,74 @@ sess_options.enable_cpu_mem_arena = False
 
 个人基于下面模型测试结论：建议关闭。开启之后，程序占用内存会剧增（5618.3M >> 5.3M），且持续占用，无法释放。推理时间提升约 13%。
 
-由于不同模型存在差异，建议用户根据自身模型的实际测试效果，评估该参数开启前后的效果，再决定。
+由于不同模型存在差异，建议用户根据自身模型的实际测试效果，评估该参数开启前后的效果，再决定开启与否。以下是我这里测试的环境、代码和结果。
 
-- 测试环境：
+测试环境：
     - Python: 3.7.13
     - ONNX Runtime: 1.14.1
-- 测试代码（来自 [issue 11627](https://github.com/microsoft/onnxruntime/issues/11627)，[enable_cpu_memory_area_example.zip](https://github.com/microsoft/onnxruntime/files/8772315/enable_cpu_memory_area_example.zip)）
 
-    ```python linenums="1"
-    # pip install onnxruntime==1.14.1
-    # pip install memory_profiler
+测试代码（来自 [issue 11627](https://github.com/microsoft/onnxruntime/issues/11627)，[enable_cpu_memory_area_example.zip](https://github.com/microsoft/onnxruntime/files/8772315/enable_cpu_memory_area_example.zip)）
 
-    import numpy as np
-    import onnxruntime as ort
-    from memory_profiler import profile
+```python linenums="1"
+# pip install onnxruntime==1.14.1
+# pip install memory_profiler
 
-
-    @profile
-    def onnx_prediction(model_path, input_data):
-        ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
-        preds = ort_sess.run(output_names=["predictions"],
-                             input_feed={"input_1": input_data})[0]
-        return preds
+import numpy as np
+import onnxruntime as ort
+from memory_profiler import profile
 
 
-    sess_options = ort.SessionOptions()
-    sess_options.enable_cpu_mem_arena = False
+@profile
+def onnx_prediction(model_path, input_data):
+    ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
+    preds = ort_sess.run(output_names=["predictions"],
+                            input_feed={"input_1": input_data})[0]
+    return preds
 
-    input_data = np.load('enable_cpu_memory_area_example/input.npy')
-    print(f'input_data shape: {input_data.shape}')
-    model_path = 'enable_cpu_memory_area_example/model.onnx'
 
-    onnx_prediction(model_path, input_data)
+sess_options = ort.SessionOptions()
+sess_options.enable_cpu_mem_arena = False
+
+input_data = np.load('enable_cpu_memory_area_example/input.npy')
+print(f'input_data shape: {input_data.shape}')
+model_path = 'enable_cpu_memory_area_example/model.onnx'
+
+onnx_prediction(model_path, input_data)
+```
+
+??? info Windows | macOS | Linux 测试情况都大致相同
+
+    ```bash linenums="1" title="enable_cpu_mem_arena=True"
+    (demo) PS G:> python .\test_enable_cpu_mem_arena.py
+    enable_cpu_mem_arena: True
+    input_data shape: (32, 200, 200, 1)
+    Filename: .\test_enable_cpu_mem_arena.py
+
+    Line #    Mem usage    Increment  Occurrences   Line Contents
+    =============================================================
+        7     69.1 MiB     69.1 MiB           1   @profile
+        8                                         def onnx_prediction(model_path, input_data):
+        9     77.2 MiB      8.1 MiB           1       ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
+        10     77.2 MiB      0.0 MiB           1       preds = ort_sess.run(output_names=["predictions"],
+        11   5695.5 MiB   5618.3 MiB           1                            input_feed={"input_1": input_data})[0]
+        12   5695.5 MiB      0.0 MiB           1       return preds
     ```
 
-- Windows 端 | Mac 端 | Linux 端 测试情况都大致相同
-    <details>
+    ```bash linenums="1" title="enable_cpu_mem_arena=False"
+    (demo) PS G:> python .\test_enable_cpu_mem_arena.py
+    enable_cpu_mem_arena: False
+    input_data shape: (32, 200, 200, 1)
+    Filename: .\test_enable_cpu_mem_arena.py
 
-    - `enable_cpu_mem_arena=True`
-
-        ```bash linenums="1"
-        (demo) PS G:> python .\test_enable_cpu_mem_arena.py
-        enable_cpu_mem_arena: True
-        input_data shape: (32, 200, 200, 1)
-        Filename: .\test_enable_cpu_mem_arena.py
-
-        Line #    Mem usage    Increment  Occurrences   Line Contents
-        =============================================================
-            7     69.1 MiB     69.1 MiB           1   @profile
-            8                                         def onnx_prediction(model_path, input_data):
-            9     77.2 MiB      8.1 MiB           1       ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
-            10     77.2 MiB      0.0 MiB           1       preds = ort_sess.run(output_names=["predictions"],
-            11   5695.5 MiB   5618.3 MiB           1                            input_feed={"input_1": input_data})[0]
-            12   5695.5 MiB      0.0 MiB           1       return preds
-        ```
-
-    - `enable_cpu_mem_arena=False`
-
-        ```bash linenums="1"
-        (demo) PS G:> python .\test_enable_cpu_mem_arena.py
-        enable_cpu_mem_arena: False
-        input_data shape: (32, 200, 200, 1)
-        Filename: .\test_enable_cpu_mem_arena.py
-
-        Line #    Mem usage    Increment  Occurrences   Line Contents
-        =============================================================
-            7     69.1 MiB     69.1 MiB           1   @profile
-            8                                         def onnx_prediction(model_path, input_data):
-            9     76.9 MiB      7.8 MiB           1       ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
-            10     76.9 MiB      0.0 MiB           1       preds = ort_sess.run(output_names=["predictions"],
-            11     82.1 MiB      5.3 MiB           1                            input_feed={"input_1": input_data})[0]
-            12     82.1 MiB      0.0 MiB           1       return preds
-        ```
-
-    </details>
+    Line #    Mem usage    Increment  Occurrences   Line Contents
+    =============================================================
+        7     69.1 MiB     69.1 MiB           1   @profile
+        8                                         def onnx_prediction(model_path, input_data):
+        9     76.9 MiB      7.8 MiB           1       ort_sess = ort.InferenceSession(model_path, sess_options=sess_options)
+        10     76.9 MiB      0.0 MiB           1       preds = ort_sess.run(output_names=["predictions"],
+        11     82.1 MiB      5.3 MiB           1                            input_feed={"input_1": input_data})[0]
+        12     82.1 MiB      0.0 MiB           1       return preds
+    ```
 
 #### `enable_profiling`
 

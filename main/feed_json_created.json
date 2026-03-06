@@ -1,0 +1,15 @@
+{
+    "version": "https://jsonfeed.org/version/1.1",
+    "title": "RapidOCR \u6587\u6863",
+    "home_page_url": "https://rapidai.github.io/RapidOCRDocs/main/",
+    "feed_url": "https://rapidai.github.io/RapidOCRDocs/main/feed_json_created.json",
+    "description": "Awesome OCR multiple programing languages toolkits based on ONNXRuntime, OpenVION and PaddlePaddle.",
+    "icon": null,
+    "authors": [
+        {
+            "name": "RapidAI"
+        }
+    ],
+    "language": "zh",
+    "items": []
+}

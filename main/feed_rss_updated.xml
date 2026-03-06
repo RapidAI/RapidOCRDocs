@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    
+    <title>RapidOCR 文档</title>
+    <description>Awesome OCR multiple programing languages toolkits based on ONNXRuntime, OpenVION and PaddlePaddle.</description>
+    <link>https://rapidai.github.io/RapidOCRDocs/main/</link>
+    <atom:link href="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml" rel="self" type="application/rss+xml" />
+
+    
+    <managingEditor>RapidAI</managingEditor>
+    <docs>https://github.com/RapidAI/RapidOCR</docs>
+    <language>zh</language>
+
+    
+    <pubDate>Fri, 06 Mar 2026 01:24:21 -0000</pubDate>
+    <lastBuildDate>Fri, 06 Mar 2026 01:24:21 -0000</lastBuildDate>
+    <ttl>1440</ttl>
+
+    
+    <generator>MkDocs RSS plugin - v1.17.9</generator>
+
+    
+    
+    <image>
+      <url>None</url>
+      <title>RapidOCR 文档</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/</link>
+    </image>
+    
+
+    
+    
+  </channel>
+</rss>

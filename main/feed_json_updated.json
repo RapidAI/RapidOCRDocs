@@ -11,5 +11,306 @@
         }
     ],
     "language": "zh",
-    "items": []
+    "items": [
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/23/onnx-runtime-cpu%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/23/onnx-runtime-cpu%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/",
+            "title": "ONNX Runtime CPU\u63a8\u7406\u4f18\u5316",
+            "content_html": "<p>\u4ecb\u7ecd ONNX Runtime \u5e38\u7528\u63a8\u7406\u53c2\u6570\u3002</p>",
+            "image": null,
+            "date_modified": "2026-03-09T03:05:34+00:00",
+            "date_published": "2022-09-23T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/",
+            "title": "RapidOCR \u652f\u6301 PyTorch MPS \u4f5c\u4e3a\u8ba1\u7b97\u540e\u7aef",
+            "content_html": "<p>\u8bb0\u5f55 RapidOCR \u652f\u6301 PyTorch MPS \u4f5c\u4e3a\u8ba1\u7b97\u540e\u7aef\u7684\u8fc7\u7a0b\u3002</p>",
+            "image": null,
+            "date_modified": "2026-03-04T09:43:59+00:00",
+            "date_published": "2026-03-04T09:27:14+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/21/rapidocr-support-mnn-engine/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/21/rapidocr-support-mnn-engine/",
+            "title": "RapidOCR \u652f\u6301 MNN \u63a8\u7406\u5f15\u64ce",
+            "content_html": "<p>\u8bb0\u5f55\u652f\u6301 MNN \u63a8\u7406\u5f15\u64ce\u7684\u8fc7\u7a0b\u6587\u6863\u3002</p>",
+            "image": null,
+            "date_modified": "2026-03-04T09:27:14+00:00",
+            "date_published": "2026-02-13T07:36:57+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
+            "title": "\u5f00\u6e90OCR\u6a21\u578b\u5bf9\u6bd4",
+            "content_html": "<blockquote>\n<p>\u672c\u6587\u4e3b\u8981\u7ed9\u51fa\u4e86\u5e38\u89c1\u5f00\u6e90\u6587\u672c\u68c0\u6d4b\u548c\u6587\u672c\u8bc6\u522b\u6a21\u578b\u7684\u5bf9\u6bd4\u548c\u8bc4\u6d4b\uff0c\u7ed9\u5927\u5bb6\u4e00\u4e2a\u4f7f\u7528\u53c2\u8003\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-03-02T15:01:12+00:00",
+            "date_published": "2022-04-16T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/28/coreml-vs-cpu-provider-onnxruntime-rapidocr/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/28/coreml-vs-cpu-provider-onnxruntime-rapidocr/",
+            "title": "\u57fa\u4e8e ONNX Runtime \u6765\u770b CoreML Provider \u548c CPU Provider \u5728 RapidOCR \u8868\u73b0",
+            "content_html": "<p>\u8bb0\u5f55 ONNX Runtime \u5728 MacBook Pro M2 \u4e0a CoreML Provider \u548c CPU Provider \u8868\u73b0\uff0c\u5305\u62ec\u901f\u5ea6\u548c\u7cbe\u5ea6\u3002</p>",
+            "image": null,
+            "date_modified": "2026-03-02T14:54:51+00:00",
+            "date_published": "2026-02-28T09:15:34+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr%E9%9B%86%E6%88%90pp-ocrv5_det%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr%E9%9B%86%E6%88%90pp-ocrv5_det%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR\u96c6\u6210PP-OCRv5_det\u6a21\u578b(mobile/server)\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_det \u548c PP-OCRv5_server_det \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-03-02T06:56:16+00:00",
+            "date_published": "2025-05-26T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr%E9%9B%86%E6%88%90pp-ocrv5_rec%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr%E9%9B%86%E6%88%90pp-ocrv5_rec%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR\u96c6\u6210PP-OCRv5_rec\u6a21\u578b(mobile/server)\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_rec \u548c PP-OCRv5_server_rec \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-03-02T06:56:16+00:00",
+            "date_published": "2025-05-30T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/22/inference-summary/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/22/inference-summary/",
+            "title": "\u63a8\u7406\u5f15\u64ce\u6c47\u603b",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-03-02T06:56:16+00:00",
+            "date_published": "2024-06-04T00:12:19+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/04/which-inference/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/04/which-inference/",
+            "title": "OCR\u63a8\u7406\u5f15\u64ce\u9009\u62e9\u6307\u5357",
+            "content_html": "<p>\u4ecb\u7ecd\u5728 CPU \u7aef\u548c GPU \u7aef\uff0cOCR \u6a21\u578b\u7684\u63a8\u7406\u5f15\u64ce\u9009\u62e9\u95ee\u9898\u3002</p>",
+            "image": null,
+            "date_modified": "2026-03-02T06:56:16+00:00",
+            "date_published": "2022-10-04T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/24/onnx-runtime-gpu%E6%8E%A8%E7%90%86/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/24/onnx-runtime-gpu%E6%8E%A8%E7%90%86/",
+            "title": "ONNX Runtime GPU\u63a8\u7406",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-03-02T06:56:16+00:00",
+            "date_published": "2024-06-04T00:12:19+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/25/openvino-gpu%E6%8E%A8%E7%90%86/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/25/openvino-gpu%E6%8E%A8%E7%90%86/",
+            "title": "OpenVINO GPU\u63a8\u7406",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-03-02T06:56:16+00:00",
+            "date_published": "2024-06-04T00:12:19+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2024/07/13/how-to-use-directml/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2024/07/13/how-to-use-directml/",
+            "title": "\u5982\u4f55\u4f7f\u7528DirectML\u52a0\u901f\u63a8\u7406OCR\uff1f",
+            "content_html": "<p>\u672c\u7bc7\u6587\u7ae0\u4e3b\u8981\u4ecb\u7ecd\u4e00\u4e0b DirectML\uff0c\u4ee5\u53ca\u5b83\u5728 OCR \u63a8\u7406\u8fc7\u7a0b\u4e2d\u662f\u5982\u4f55\u4f7f\u7528\u7684\u3002</p>",
+            "image": null,
+            "date_modified": "2026-03-02T06:32:24+00:00",
+            "date_published": "2024-07-13T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2024/12/08/guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-stands-out/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2024/12/08/guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-stands-out/",
+            "title": "\u5e7f\u5dde\u8f6f\u4ef6\u9662\u5f00\u7bb1\u6d4b\u8bc412\u6b3e\u5f00\u6e90OCR\uff0cRapidOCR\u8868\u73b0\u4f18\u5f02",
+            "content_html": "<p>RapidOCR \u5728 12 \u6b3e\u5f00\u6e90 OCR \u4e2d\u8868\u73b0\u4f18\u5f02</p>",
+            "image": null,
+            "date_modified": "2026-03-02T06:32:24+00:00",
+            "date_published": "2024-12-08T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/03/optim-tutorial/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/03/optim-tutorial/",
+            "title": "\u8c03\u4f18\u5c1d\u8bd5\u6559\u7a0b",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-03-02T06:32:24+00:00",
+            "date_published": "2024-06-04T00:12:19+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/08/20/%E5%85%B6%E4%BB%96%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/08/20/%E5%85%B6%E4%BB%96%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81/",
+            "title": "\u5176\u4ed6\u7f16\u7a0b\u8bed\u8a00\u652f\u6301",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-03-02T06:32:24+00:00",
+            "date_published": "2024-06-04T00:12:19+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
+            "title": "RapidOCR\u4e0ePaddleOCR\u901f\u5ea6\u5bf9\u6bd4",
+            "content_html": "<p>\u540c\u73af\u5883\u4e0b\uff0c\u6bd4\u8f83 RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u3002</p>",
+            "image": null,
+            "date_modified": "2026-03-02T06:32:24+00:00",
+            "date_published": "2026-02-06T01:26:40+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2023/10/08/read-dict-onnx/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2023/10/08/read-dict-onnx/",
+            "title": "\u5173\u4e8e\u8bc6\u522b\u6a21\u578b\u4e2d\u5b57\u5178\u7684\u8bfb\u5199",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-03-02T06:32:24+00:00",
+            "date_published": "2024-06-04T00:12:19+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/16/rapidocr%E9%9B%86%E6%88%90pp-ocrv4_server_rec_doc%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/16/rapidocr%E9%9B%86%E6%88%90pp-ocrv4_server_rec_doc%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR\u96c6\u6210PP-OCRv4_server_rec_doc\u6a21\u578b\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u5982\u4f55\u96c6\u6210 PP-OCRv4_server_rec_doc \u6a21\u578b\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-03-02T06:32:24+00:00",
+            "date_published": "2025-05-13T14:45:27+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/27/%E8%BD%AC%E6%8D%A2paddleocr%E6%A8%A1%E5%9E%8B%E4%B8%BAonnx/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/27/%E8%BD%AC%E6%8D%A2paddleocr%E6%A8%A1%E5%9E%8B%E4%B8%BAonnx/",
+            "title": "\u8f6c\u6362PaddleOCR\u6a21\u578b\u4e3aONNX",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u7ed9\u51fa\u4e86\u51e0\u79cd\u8f6c\u6362 PaddleOCR \u6a21\u578b\u7684\u65b9\u6848\uff0c\u4fbf\u4e8e\u5927\u5bb6\u5feb\u901f\u8f6c\u6362\u4f7f\u7528\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-03-02T06:32:24+00:00",
+            "date_published": "2024-06-04T00:12:19+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2023/10/17/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%8D%A2%E5%85%B6%E4%BB%96%E6%A3%80%E6%B5%8B%E5%92%8C%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2023/10/17/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%8D%A2%E5%85%B6%E4%BB%96%E6%A3%80%E6%B5%8B%E5%92%8C%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/",
+            "title": "\u5982\u4f55\u66f4\u6362\u5176\u4ed6\u68c0\u6d4b\u548c\u8bc6\u522b\u6a21\u578b\uff1f",
+            "content_html": "<blockquote>\n<p>\u672c\u6587\u8be6\u5c3d\u5730\u7ed9\u51fa\u4e86\u5982\u4f55\u66f4\u6362\u5176\u4ed6\u68c0\u6d4b\u548c\u8bc6\u522b\u6a21\u578b\u7684\u4fdd\u59c6\u7ea7\u6559\u7a0b\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-03-02T06:32:24+00:00",
+            "date_published": "2023-10-17T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        }
+    ]
 }

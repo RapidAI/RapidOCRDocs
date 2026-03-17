@@ -30,5 +30,5 @@ hide:
 - 9 群：703875382
 
 <div align="left">
-    <img src="images/communicate_2026-03-17_08-20-27.png" width="25%" height="25%" align="center">
+    <img src="../images/communicate_2026-03-17_08-20-27.png" width="25%" height="25%" align="center">
 </div>

@@ -10,6 +10,7 @@ hide:
 ### 微信交流群
 
 微信扫描以下二维码，关注 **RapidAI公众号**，回复 OCR 即可加入 RapidOCR 微信交流群：
+
 <div align="left">
     <img src="https://raw.githubusercontent.com/RapidAI/.github/main/assets/RapidAI_WeChatAccount.jpg" width="15%" height="15%" align="center">
 </div>
@@ -18,15 +19,16 @@ hide:
 
 欢迎加入我们的 QQ 群下载模型及测试程序。
 
-- 1 群：887298230 已满
-- 2 群：755960114 已满
-- 3 群：450338158 已满
-- 4 群：419196348 已满
-- 5 群：1032382811 已满
-- 6 群：910202308 已满
-- 7 群：953714814 已满
-- 8 群: 1070419729
+- 1 群：887298230 已满可尝试添加
+- 2 群：755960114 已满可尝试添加
+- 3 群：450338158 已满可尝试添加
+- 4 群：419196348 已满可尝试添加
+- 5 群：1032382811 已满可尝试添加
+- 6 群：910202308 已满可尝试添加
+- 7 群：953714814 已满可尝试添加
+- 8 群: 1070419729 已满可尝试添加
+- 9 群：703875382
 
 <div align="left">
-    <img src="https://github.com/RapidAI/RapidOCRDocs/releases/download/assets/qq_group8.jpg" width="25%" height="25%" align="center">
+    <img src="images/communicate_2026-03-17_08-20-27.png" width="25%" height="25%" align="center">
 </div>

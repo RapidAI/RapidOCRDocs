@@ -12,13 +12,11 @@
         <meta name="author" content="RapidAI">
       
       
-        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2024/04/12/%E5%B7%B2%E6%9C%89onnx%E6%A8%A1%E5%9E%8B%E4%B8%8B%E8%BD%BD/">
+        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/">
       
       
-        <link rel="prev" href="../../../../2023/10/17/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%8D%A2%E5%85%B6%E4%BB%96%E6%A3%80%E6%B5%8B%E5%92%8C%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/">
       
-      
-        <link rel="next" href="../../../07/13/how-to-use-directml/">
+        <link rel="next" href="../../../08/20/%E5%85%B6%E4%BB%96%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81/">
       
       
         
@@ -32,7 +30,7 @@
     
     
       
-        <title>已有ONNX模型下载 - RapidOCR 文档</title>
+        <title>开源 OCR 模型对比 - RapidOCR 文档</title>
       
     
     
@@ -185,7 +183,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              已有ONNX模型下载
+              开源 OCR 模型对比
             
           </span>
         </div>
@@ -2197,7 +2195,7 @@ You're not viewing the latest version.
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -2217,7 +2215,7 @@ You're not viewing the latest version.
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        简介
+        引言
       
     </span>
   </a>
@@ -2225,21 +2223,10 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#hugging-face-models" class="md-nav__link">
+  <a href="#ocr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hugging Face Models
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#google" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Google 网盘
+        已知开源 OCR 项目
       
     </span>
   </a>
@@ -2250,7 +2237,18 @@ You're not viewing the latest version.
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        百度网盘
+        文本检测模型
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文本识别模型
       
     </span>
   </a>
@@ -2291,7 +2289,7 @@ You're not viewing the latest version.
                     <span class="md-profile__description">
                       <strong>
                         
-                          <a href="https://github.com/SWHL">SWHL</a>
+                          <a href="https://swhl.github.io/">SWHL</a>
                         
                       </strong>
                       <br>
@@ -2313,9 +2311,16 @@ You're not viewing the latest version.
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2024-04-12 00:00:00+00:00" class="md-ellipsis">2024/4/12</time>
+                        <time datetime="2022-04-16 00:00:00+00:00" class="md-ellipsis">2022/4/16</time>
                       </div>
                     </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2025-08-03 00:00:00+00:00" class="md-ellipsis">2025/8/3</time>
+                        </div>
+                      </li>
                     
                     
                       <li class="md-nav__item">
@@ -2335,7 +2340,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 1 分钟阅读时间
+                              需要 3 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2384,7 +2389,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/about_model/download_onnx.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/about_model/model_summary.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2393,7 +2398,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/about_model/download_onnx.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/about_model/model_summary.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2405,19 +2410,438 @@ You're not viewing the latest version.
   page title (or respectively site name) is used as the main headline.
 -->
 
-<h1>已有ONNX模型下载</h1>
+<h1>开源 OCR 模型对比</h1>
 
 
 
 
 <!-- Page content -->
+<blockquote>
+<p>本文主要给出了常见开源文本检测和文本识别模型的对比和评测，给大家一个使用参考。</p>
+</blockquote>
 <!-- more -->
 
-<h3 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>该部分将已经转换好的 ONNX 模型做了整理，提供了 Hugging Face, Google 网盘和百度网盘两个下载途径。</p>
-<h3 id="hugging-face-models"><a href="https://huggingface.co/SWHL/RapidOCR/tree/main">Hugging Face Models</a><a class="headerlink" href="#hugging-face-models" title="Permanent link">&para;</a></h3>
-<h3 id="google"><a href="https://drive.google.com/drive/folders/1x_a9KpCo_1blxH1xFOfgKVkw1HYRVywY?usp=sharing">Google 网盘</a><a class="headerlink" href="#google" title="Permanent link">&para;</a></h3>
-<h3 id="_2"><a href="https://pan.baidu.com/s/1CHOXNJLZundoV_8bNpcpWQ?pwd=9h6g">百度网盘</a><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>目前，开源的项目中有很多 OCR 模型，但是没有一个统一的基准来衡量哪个是更好一些的。</p>
+<p>面对这么多的模型，让我们有些不知所措。为此，最近一段时间以来，我一直想要构建这样一个基准。现在来看，已经初步具有雏形。</p>
+<p>为了能更好地评测各个模型效果，收集标注了两个开源评测集：</p>
+<ul>
+<li><a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">text_det_test_dataset</a></li>
+<li><a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">text_rec_test_dataset</a></li>
+</ul>
+<p>为了能够方便计算各个模型指标，整理开源了两个计算常用指标的库：</p>
+<ul>
+<li><a href="https://github.com/SWHL/TextDetMetric">TextDetMetric</a></li>
+<li><a href="https://github.com/SWHL/TextRecMetric">TextRecMetric</a></li>
+</ul>
+<p>以下结果均是基于以上 4 个库来的，其指标结果仅仅代表在指定评测集上效果，不代表在其他测试集上结果也是如此，仅供参考。</p>
+<p>以下表格中推理时间是基于 MacBook Pro M2 运行所得，不同机器会有差别，请侧重查看彼此之间的比较。</p>
+<p>指标计算都是在相同参数下计算得来，差别仅在于模型文件不同。</p>
+<p>对应模型下载地址，参见：<a href="../../../../2024/04/12/%E5%B7%B2%E6%9C%89-onnx-%E6%A8%A1%E5%9E%8B%E4%B8%8B%E8%BD%BD/">link</a>。</p>
+<h4 id="ocr">已知开源 OCR 项目<a class="headerlink" href="#ocr" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/PaddlePaddle/PaddleOCR">PaddleOCR</a></li>
+<li><a href="https://github.com/JaidedAI/EasyOCR">EasyOCR</a></li>
+<li><a href="https://github.com/open-mmlab/mmocr/blob/main/README_zh-CN.md">MMOCR</a></li>
+<li><a href="https://github.com/breezedeus/cnocr">CnOCR</a></li>
+<li><a href="https://github.com/hikopensource/DAVAR-Lab-OCR">DAVAR-Lab-OCR</a></li>
+<li><a href="https://github.com/mindspore-lab/mindocr">mindocr</a></li>
+<li><a href="https://github.com/datalab-to/surya">surya</a></li>
+</ul>
+<h4 id="_2">文本检测模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>评测依赖仓库：</p>
+<ul>
+<li><code>rapidocr_onnxruntime==1.3.16</code>: <a href="https://github.com/RapidAI/RapidOCR">link</a></li>
+<li><code>rapidocr==2.1.0</code>: <a href="https://github.com/RapidAI/RapidOCR">link</a></li>
+<li>计算指标库 TextDetMetric: <a href="https://github.com/SWHL/TextDetMetric">link</a></li>
+<li>测试集 text_det_test_dataset: <a href="https://huggingface.co/datasets/SWHL/text_det_test_dataset">link</a></li>
+</ul>
+<p>详情可以移步 <a href="https://aistudio.baidu.com/projectdetail/6679889?sUid=57084&amp;shared=1&amp;ts=1693054678460">AI Studio</a> 运行查看。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模型</th>
+<th style="text-align: center;">模型大小</th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">H-mean</th>
+<th style="text-align: left;">Speed(s/img)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_mobile_det.onnx</td>
+<td style="text-align: center;">4.6M</td>
+<td style="text-align: center;">0.7861</td>
+<td style="text-align: center;">0.8266</td>
+<td style="text-align: center;">0.8058</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer.onnx</td>
+<td style="text-align: center;">4.5M</td>
+<td style="text-align: center;">0.8301</td>
+<td style="text-align: center;">0.8659</td>
+<td style="text-align: center;">0.8476</td>
+<td style="text-align: left;">0.2256</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv3_det_infer.onnx</td>
+<td style="text-align: center;">2.3M</td>
+<td style="text-align: center;">0.8021</td>
+<td style="text-align: center;">0.8457</td>
+<td style="text-align: center;">0.8234</td>
+<td style="text-align: left;">0.1660</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv2_det_infer.onnx</td>
+<td style="text-align: center;">2.2M</td>
+<td style="text-align: center;">0.7579</td>
+<td style="text-align: center;">0.8010</td>
+<td style="text-align: center;">0.7788</td>
+<td style="text-align: left;">0.1570</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_server_det.onnx</td>
+<td style="text-align: center;">84M</td>
+<td style="text-align: center;">0.7394</td>
+<td style="text-align: center;">0.8442</td>
+<td style="text-align: center;">0.7883</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_det_server_infer.onnx</td>
+<td style="text-align: center;">108M</td>
+<td style="text-align: center;">0.7922</td>
+<td style="text-align: center;">0.8533</td>
+<td style="text-align: center;">0.8216</td>
+<td style="text-align: left;">3.9093</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_ppocr_server_v2.0_det_infer.onnx</td>
+<td style="text-align: center;">47M</td>
+<td style="text-align: center;">0.7298</td>
+<td style="text-align: center;">0.8128</td>
+<td style="text-align: center;">0.7691</td>
+<td style="text-align: left;">0.7419</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://www.modelscope.cn/models/iic/cv_proxylessnas_ocr-detection-db-line-level_damo/summary">读光-文字检测-轻量化端侧 DBNet 行检测模型-中英-通用领域</a></td>
+<td style="text-align: center;">5.8M</td>
+<td style="text-align: center;">0.7666</td>
+<td style="text-align: center;">0.8128</td>
+<td style="text-align: center;">0.7890</td>
+<td style="text-align: left;">0.6636</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://www.modelscope.cn/models/iic/cv_resnet18_ocr-detection-db-line-level_damo/summary">读光-文字检测-DBNet 行检测模型-中英-通用领域</a></td>
+<td style="text-align: center;">47.2M</td>
+<td style="text-align: center;">0.7749</td>
+<td style="text-align: center;">0.8167</td>
+<td style="text-align: center;">0.7952</td>
+<td style="text-align: left;">0.4121</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://modelscope.cn/models/iic/cv_resnet18_ocr-detection-line-level_damo/summary">读光-文字检测-行检测模型-中英-通用领域</a> 未跑通</td>
+<td style="text-align: center;">312M</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+<p>不同推理引擎下，效果比较：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">推理引擎</th>
+<th style="text-align: left;">模型</th>
+<th style="text-align: center;">模型大小</th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">H-mean</th>
+<th style="text-align: left;">Speed(s/img)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">rapidocr_onnxruntime==1.3.16</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer.onnx</td>
+<td style="text-align: center;">4.5M</td>
+<td style="text-align: center;">0.8301</td>
+<td style="text-align: center;">0.8659</td>
+<td style="text-align: center;">0.8476</td>
+<td style="text-align: left;">0.2256</td>
+</tr>
+<tr>
+<td style="text-align: left;">rapidocr_openvino==1.3.16</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer.onnx</td>
+<td style="text-align: center;">4.5M</td>
+<td style="text-align: center;">0.8339</td>
+<td style="text-align: center;">0.8629</td>
+<td style="text-align: center;">0.8481</td>
+<td style="text-align: left;">0.6447</td>
+</tr>
+<tr>
+<td style="text-align: left;">rapidocr_paddle==1.3.18</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_infer.onnx</td>
+<td style="text-align: center;">4.5M</td>
+<td style="text-align: center;">0.8301</td>
+<td style="text-align: center;">0.8659</td>
+<td style="text-align: center;">0.8476</td>
+<td style="text-align: left;">0.9924</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_3">文本识别模型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>评测依赖仓库：</p>
+<ul>
+<li><code>rapidocr_onnxruntime==1.3.16</code>: <a href="https://github.com/RapidAI/RapidOCR">link</a></li>
+<li>计算指标库 TextRecMetric: <a href="https://github.com/SWHL/TextRecMetric">link</a></li>
+<li>测试集 text_rec_test_dataset: <a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">link</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模型</th>
+<th style="text-align: left;">对应 PaddleOCR 分支</th>
+<th style="text-align: left;">模型大小</th>
+<th style="text-align: center;">Exact Match</th>
+<th style="text-align: left;">Char Match</th>
+<th style="text-align: left;">Speed(s/img)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_rec_infer.onnx</td>
+<td style="text-align: left;">release/v3.0</td>
+<td style="text-align: left;">16M</td>
+<td style="text-align: center;">0.7355</td>
+<td style="text-align: left;">0.9177</td>
+<td style="text-align: left;">0.0713</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer.onnx</td>
+<td style="text-align: left;">release/v2.7</td>
+<td style="text-align: left;">10M</td>
+<td style="text-align: center;">0.8323</td>
+<td style="text-align: left;">0.9355</td>
+<td style="text-align: left;">0.6836</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv3_rec_infer.onnx</td>
+<td style="text-align: left;">release/v2.6</td>
+<td style="text-align: left;">11M</td>
+<td style="text-align: center;">0.7097</td>
+<td style="text-align: left;">0.8919</td>
+<td style="text-align: left;">0.6362</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer.onnx</td>
+<td style="text-align: left;">release/v3.0</td>
+<td style="text-align: left;">81M</td>
+<td style="text-align: center;">0.8129</td>
+<td style="text-align: left;">0.9431</td>
+<td style="text-align: left;">0.1133</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer.onnx</td>
+<td style="text-align: left;">release/v2.7</td>
+<td style="text-align: left;">86M</td>
+<td style="text-align: center;">0.7968</td>
+<td style="text-align: left;">0.9381</td>
+<td style="text-align: left;">0.6967</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server.onnx</td>
+<td style="text-align: left;">release/v2.10</td>
+<td style="text-align: left;">94.93M</td>
+<td style="text-align: center;">0.8097</td>
+<td style="text-align: left;">0.9444</td>
+<td style="text-align: left;">0.6836</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_PP-OCRv2_rec_infer.onnx</td>
+<td style="text-align: left;">release/v2.3</td>
+<td style="text-align: left;">8.0M</td>
+<td style="text-align: center;">0.6387</td>
+<td style="text-align: left;">0.8398</td>
+<td style="text-align: left;">0.6138</td>
+</tr>
+<tr>
+<td style="text-align: left;">ch_ppocr_mobile_v2.0_rec_infer.onnx</td>
+<td style="text-align: left;">release/v2.0</td>
+<td style="text-align: left;">4.3M</td>
+<td style="text-align: center;">0.5323</td>
+<td style="text-align: left;">0.7823</td>
+<td style="text-align: left;">0.5575</td>
+</tr>
+<tr>
+<td style="text-align: left;">其他 OCR</td>
+<td style="text-align: left;">版本</td>
+<td style="text-align: left;">模型大小</td>
+<td style="text-align: center;">Exact Match</td>
+<td style="text-align: left;">Char Match</td>
+<td style="text-align: left;">Speed(s/img)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-document_damo/summary">读光-文字识别-行识别模型-中英-文档印刷体文本领域</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">73M</td>
+<td style="text-align: center;">0.5968</td>
+<td style="text-align: left;">0.7705</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-general_damo/summary">读光-文字识别-行识别模型-中英-通用领域</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">73M</td>
+<td style="text-align: center;">0.5839</td>
+<td style="text-align: left;">0.7615</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://www.modelscope.cn/models/iic/cv_convnextTiny_ocr-recognition-scene_damo/summary">读光-文字识别-行识别模型-中英-自然场景文本领域</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">73M</td>
+<td style="text-align: center;">0.5903</td>
+<td style="text-align: left;">0.7779</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://www.modelscope.cn/models/iic/cv_LightweightEdge_ocr-recognitoin-general_damo/summary">读光-文字识别-轻量化端侧识别模型-中英-通用领域</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">7.4M</td>
+<td style="text-align: center;">0.5484</td>
+<td style="text-align: left;">0.7515</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://www.modelscope.cn/models/iic/cv_crnn_ocr-recognition-general_damo/summary">读光-文字识别-CRNN 模型-中英-通用领域</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">46M</td>
+<td style="text-align: center;">0.5935</td>
+<td style="text-align: left;">0.7671</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://www.modelscope.cn/models/iic/ofa_ocr-recognition_general_base_zh/summary">OFA 文字识别-中文-通用场景-base</a> 未跑通</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/puhuilab/phocr/tree/main">PHOCRv1</a></td>
+<td style="text-align: left;">v1.0.3</td>
+<td style="text-align: left;">224M</td>
+<td style="text-align: center;">0.6452</td>
+<td style="text-align: left;">0.7648</td>
+<td style="text-align: left;">0.0613</td>
+</tr>
+</tbody>
+</table>
+<p>不同推理引擎下，效果比较：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">推理引擎</th>
+<th style="text-align: left;">模型</th>
+<th style="text-align: center;">模型大小</th>
+<th style="text-align: center;">Exact Match</th>
+<th style="text-align: center;">Char Match</th>
+<th style="text-align: center;">Speed(s/img)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">rapidocr_onnxruntime==1.3.16</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer.onnx</td>
+<td style="text-align: center;">10M</td>
+<td style="text-align: center;">0.8323</td>
+<td style="text-align: center;">0.9355</td>
+<td style="text-align: center;">0.6836</td>
+</tr>
+<tr>
+<td style="text-align: left;">rapidocr_openvino==1.3.16</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer.onnx</td>
+<td style="text-align: center;">10M</td>
+<td style="text-align: center;">0.8323</td>
+<td style="text-align: center;">0.9355</td>
+<td style="text-align: center;">0.6836</td>
+</tr>
+<tr>
+<td style="text-align: left;">rapidocr_paddle==1.3.18</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_infer.onnx</td>
+<td style="text-align: center;">10M</td>
+<td style="text-align: center;">0.8323</td>
+<td style="text-align: center;">0.9355</td>
+<td style="text-align: center;">0.6836</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>输入 Shape:</p>
+<ul>
+<li>v2: <code>[3, 32, 320]</code></li>
+<li>v3~v4: <code>[3, 48, 320]</code></li>
+</ul>
+</li>
+<li>
+<p>不同模型，实例化示例如下：</p>
+</li>
+</ul>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr_onnxruntime</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># v3 or v4</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>  <span class="n">rec_model_path</span><span class="o">=</span><span class="s2">&quot;models/ch_PP-OCRv3_rec_infer.onnx&quot;</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1"># v2</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>  <span class="n">rec_model_path</span><span class="o">=</span><span class="s2">&quot;models/ch_ppocr_mobile_v2.0_rec_infer.onnx&quot;</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>  <span class="n">rec_img_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">320</span><span class="p">],</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
 <!-- Source file information -->
 
@@ -2442,7 +2866,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月2日 14:32:24 CST">2026-03-02 14:32:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月19日 21:21:45 CST">2026-03-19 21:21:45</span>
   </span>
 
     
@@ -2452,7 +2876,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2024年6月4日 08:12:19 CST">2024-06-04 08:12:19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2023年9月15日 11:28:10 CST">2023-09-15 11:28:10</span>
   </span>
 
     
@@ -2606,35 +3030,18 @@ You're not viewing the latest version.
 
         <!-- Link to previous page -->
         
-        
-        <a href="../../../../2023/10/17/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%8D%A2%E5%85%B6%E4%BB%96%E6%A3%80%E6%B5%8B%E5%92%8C%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/" class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 如何更换其他检测和识别模型？">
-            <div class="md-footer__button md-icon">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-            </div>
-            <div class="md-footer__title">
-                <span class="md-footer__direction">
-                    上一页
-                </span>
-                <div class="md-ellipsis">
-                    如何更换其他检测和识别模型？
-                </div>
-            </div>
-        </a>
-        
 
         <!-- Link to next page -->
         
         
-        <a href="../../../07/13/how-to-use-directml/" class="md-footer__link md-footer__link--next"
-            aria-label="下一页: 如何使用DirectML加速推理OCR？">
+        <a href="../../../08/20/%E5%85%B6%E4%BB%96%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81/" class="md-footer__link md-footer__link--next"
+            aria-label="下一页: 其他编程语言支持">
             <div class="md-footer__title">
                 <span class="md-footer__direction">
                     下一页
                 </span>
                 <div class="md-ellipsis">
-                    如何使用DirectML加速推理OCR？
+                    其他编程语言支持
                 </div>
             </div>
             <div class="md-footer__button md-icon">

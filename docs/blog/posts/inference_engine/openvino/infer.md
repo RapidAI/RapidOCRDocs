@@ -1,5 +1,5 @@
 ---
-title: OpenVINO GPU推理
+title: OpenVINO GPU 推理
 date: 2022-09-25
 authors: [SWHL]
 categories:

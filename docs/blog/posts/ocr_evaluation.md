@@ -1,5 +1,5 @@
 ---
-title: 广州软件院开箱测评12款开源OCR，RapidOCR表现优异
+title: 广州软件院开箱测评 12 款开源 OCR，RapidOCR 表现优异
 date:
   created: 2024-12-08
 authors: [SWHL]

@@ -1,5 +1,5 @@
 ---
-title: 评测PHOCR中文文本识别模型
+title: 评测 PHOCR 中文文本识别模型
 date: 2025-08-03
 authors: [SWHL]
 categories:

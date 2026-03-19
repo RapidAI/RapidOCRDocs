@@ -1,5 +1,5 @@
 ---
-title: OpenVINO CPU推理优化
+title: OpenVINO CPU 推理优化
 date: 2022-09-26
 authors: [SWHL]
 categories:

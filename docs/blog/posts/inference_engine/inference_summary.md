@@ -72,7 +72,7 @@ comments: true
 
 ### [FastDeploy（百度）](https://github.com/PaddlePaddle/FastDeploy)
 
-FastDeploy 是一款全场景、易用灵活、极致高效的 AI 推理部署工具， 支持云边端部署。提供超过 🔥160+ Text，Vision， Speech 和跨模态模型📦开箱即用的部署体验，并实现🔚端到端的推理性能优化。包括 物体检测、字符识别（OCR）、人脸、人像扣图、多目标跟踪系统、NLP, Stable Diffusion 文图生成、TTS 等几十种任务场景，满足开发者多场景、多硬件、多平台的产业部署需求。
+FastDeploy 是一款全场景、易用灵活、极致高效的 AI 推理部署工具，支持云边端部署。提供超过 🔥160+ Text，Vision，Speech 和跨模态模型📦开箱即用的部署体验，并实现🔚端到端的推理性能优化。包括 物体检测、字符识别（OCR）、人脸、人像扣图、多目标跟踪系统、NLP, Stable Diffusion 文图生成、TTS 等几十种任务场景，满足开发者多场景、多硬件、多平台的产业部署需求。
 
 总结来说就是，将各个场景下的推理引擎做了集成，更加方便易用，大而全。
 

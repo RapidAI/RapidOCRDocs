@@ -1,5 +1,5 @@
 ---
-title: RapidOCR集成PP-OCRv5_det模型(mobile/server)记录
+title: RapidOCR 集成 PP-OCRv5_det 模型(mobile/server)记录
 date:
   created: 2025-05-26
   updated: 2025-07-22
@@ -10,8 +10,8 @@ comments: true
 hide:
   - toc
 links:
-  - 开源OCR模型对比: blog/posts/about_model/model_summary.md
-  - RapidOCR集成PP-OCRv4_server_rec_doc模型记录: blog/posts/about_model/adapt_PP-OCRv4_server_rec_doc.md
+  - 开源 OCR 模型对比: blog/posts/about_model/model_summary.md
+  - RapidOCR 集成 PP-OCRv4_server_rec_doc 模型记录: blog/posts/about_model/adapt_PP-OCRv4_server_rec_doc.md
 ---
 
 
@@ -77,7 +77,7 @@ for res in output:
 
 ### 2. 模型转换
 
-该部分主要参考文档： [docs](https://paddlepaddle.github.io/PaddleX/latest/pipeline_deploy/paddle2onnx.html?h=paddle2onnx#22)
+该部分主要参考文档：[docs](https://paddlepaddle.github.io/PaddleX/latest/pipeline_deploy/paddle2onnx.html?h=paddle2onnx#22)
 
 === "转换 PP-OCRv5_mobile_det"
 
@@ -349,8 +349,8 @@ print(metric)
 
 从以上结果来看，可以得到以下结论：
 
-1. Exp1 和 Exp2 相比，H-mean 差异不大，说明文本检测 **前后处理代码可以共用** 。
-2. Exp2 和 Exp3 相比，mobile 模型转换为 ONNX 格式后，指标几乎一致，说明 **模型转换前后，误差较小，推理速度也有提升** 。
+1. Exp1 和 Exp2 相比，H-mean 差异不大，说明文本检测 **前后处理代码可以共用**。
+2. Exp2 和 Exp3 相比，mobile 模型转换为 ONNX 格式后，指标几乎一致，说明 **模型转换前后，误差较小，推理速度也有提升**。
 3. Exp3 和 Exp4 相比，mobile 整体指标弱于 PP-OCRv4 的。因为测评集集中在中英文的印刷体，手写体少些，因此仅供参考。
 4. Exp6 直接跑，会报以下错误，暂时没有找到原因。如有知道的小伙伴，欢迎留言告知。
 
@@ -361,7 +361,7 @@ print(metric)
     warnings.warn('resource_tracker: There appear to be %d '
     ```
 
-5. 因为 Exp6 暂时没有找到原因，粗略将 Exp5 和 Exp7 相比，可以看到 PP-OCRv5 server 模型转换为 ONNX 格式后，**H-mean下降了5.8%** ，但是转换方式和 mobile 的相同，具体原因需要进一步排查。如有知道的小伙伴，欢迎留言告知。
+5. 因为 Exp6 暂时没有找到原因，粗略将 Exp5 和 Exp7 相比，可以看到 PP-OCRv5 server 模型转换为 ONNX 格式后，**H-mean下降了5.8%**，但是转换方式和 mobile 的相同，具体原因需要进一步排查。如有知道的小伙伴，欢迎留言告知。
 6. Exp7 和 Exp8 相比，PP-OCRv5 server 模型提升很大（H-mean 提升 7.72%）。当然，不排除训练用到了测评集数据。
 7. Exp10 为新增的 PyTorch 模型，其精度与 Paddle 模型几乎一致，但推理速度稍微有些下降。
 
@@ -394,4 +394,4 @@ print(metric)
 
 至此，该部分集成工作就基本完成了。这部分代码会集成到 `rapidocr==3.0.0` 中。
 
-版本号之所以从 v2.1.0 到 v3.0.0，原因是：语义化版本号。我在集成过程中，发现 v2.1.0 中字段不太合理，做了一些改进，动了外部 API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ [docs](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/) 。
+版本号之所以从 v2.1.0 到 v3.0.0，原因是：语义化版本号。我在集成过程中，发现 v2.1.0 中字段不太合理，做了一些改进，动了外部 API，因此只能升大版本号。请大家在使用过程中，注意查看最新文档→ [docs](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/)。

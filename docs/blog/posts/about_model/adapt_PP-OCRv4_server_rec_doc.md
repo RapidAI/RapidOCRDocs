@@ -1,5 +1,5 @@
 ---
-title: RapidOCR集成PP-OCRv4_server_rec_doc模型记录
+title: RapidOCR 集成 PP-OCRv4_server_rec_doc 模型记录
 date: 2025-05-16
 authors: [SWHL]
 categories:
@@ -8,7 +8,7 @@ comments: true
 hide:
   - toc
 links:
-  - 开源OCR模型对比: blog/posts/about_model/model_summary.md
+  - 开源 OCR 模型对比: blog/posts/about_model/model_summary.md
 ---
 
 
@@ -76,7 +76,7 @@ for res in output:
 
 ### 2. 模型转换
 
-该部分主要参考文档： [docs](https://paddlepaddle.github.io/PaddleX/latest/pipeline_deploy/paddle2onnx.html?h=paddle2onnx#22)
+该部分主要参考文档：[docs](https://paddlepaddle.github.io/PaddleX/latest/pipeline_deploy/paddle2onnx.html?h=paddle2onnx#22)
 
 PaddleX 官方集成了 paddle2onnx 的转换代码：
 

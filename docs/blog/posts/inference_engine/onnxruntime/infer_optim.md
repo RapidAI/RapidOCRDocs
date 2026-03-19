@@ -1,5 +1,5 @@
 ---
-title: ONNX Runtime CPU推理优化
+title: ONNX Runtime CPU 推理优化
 date:
   created: 2022-09-23
   updated: 2026-03-06
@@ -17,7 +17,7 @@ comments: true
 
 平时推理用的最多是 ONNX Runtime，推理引擎的合适调配对推理性能有着至关重要的影响。但是有关于 ONNX Runtime 参数设置的资料却散落在各个地方，不能形成有效的指导意见。因此，决定在这一篇文章中来梳理一下相关的设置。
 
-以下参数都是来自 `SessionOptions` 。相关测试代码可以前往 [AI Studio](https://aistudio.baidu.com/aistudio/projectdetail/6109918?sUid=57084&shared=1&ts=1683438418669) 查看。
+以下参数都是来自 `SessionOptions`。相关测试代码可以前往 [AI Studio](https://aistudio.baidu.com/aistudio/projectdetail/6109918?sUid=57084&shared=1&ts=1683438418669) 查看。
 
 欢迎补充和指出不足之处。
 

@@ -1,5 +1,5 @@
 ---
-title: RapidOCR与PaddleOCR速度对比
+title: RapidOCR 与 PaddleOCR 速度对比
 date: 2026-02-06
 authors: [SWHL]
 slug: rapidocr-vs-paddleocr

@@ -10,7 +10,7 @@ comments: true
 hide:
   - toc
 links:
-  - RapidOCR支持MNN推理引擎: blog/posts/inference_engine/support_mnn_engine.md
+  - RapidOCR 支持 MNN 推理引擎: blog/posts/inference_engine/support_mnn_engine.md
 ---
 
 记录 RapidOCR 支持 PyTorch MPS 作为计算后端的过程。

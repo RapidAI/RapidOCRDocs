@@ -1,5 +1,5 @@
 ---
-title: 如何使用DirectML加速推理OCR？
+title: 如何使用 DirectML 加速推理 OCR？
 date:
   created: 2024-07-13
   updated: 2024-07-13
@@ -16,11 +16,11 @@ comments: true
 
 ### DirectML 是什么？[^microsoft]
 
-直接机器学习 (DirectML) 是机器学习 (ML) 的低级 API。 API 具有常见的（本机 C++, nano-COM）编程接口和 DirectX 12 样式的工作流。 可将机器学习推断工作负荷集成到游戏、引擎、中间件、后端或其他应用程序中。 所有与 DirectX 12 兼容的硬件都支持 DirectML。
+直接机器学习 (DirectML) 是机器学习 (ML) 的低级 API。API 具有常见的（本机 C++, nano-COM）编程接口和 DirectX 12 样式的工作流。可将机器学习推断工作负荷集成到游戏、引擎、中间件、后端或其他应用程序中。所有与 DirectX 12 兼容的硬件都支持 DirectML。
 
-硬件加速的机器学习基元（称为“运算符”）是 DirectML 的构建基块。 在这些构建基块中，可以开发纵向扩展、抗锯齿和样式转移等机器学习技术。 例如，使用噪声抑制和超解析度，可以实现令人印象深刻的光线跟踪效果且可以减少每个像素的光线。
+硬件加速的机器学习基元（称为“运算符”）是 DirectML 的构建基块。在这些构建基块中，可以开发纵向扩展、抗锯齿和样式转移等机器学习技术。例如，使用噪声抑制和超解析度，可以实现令人印象深刻的光线跟踪效果且可以减少每个像素的光线。
 
-可将机器学习推断工作负荷集成到游戏、引擎、中间件、后端或其他应用程序中。 DirectML 提供用户熟悉的（本机 C++, nano-COM）DirectX 12 式编程接口和工作流，且受所有 DirectX 12 兼容硬件的支持。 有关 DirectML 示例应用程序（包括精简 DirectML 应用程序的示例），请参阅 [DirectML 示例应用程序](https://learn.microsoft.com/zh-cn/windows/ai/directml/dml-min-app)。
+可将机器学习推断工作负荷集成到游戏、引擎、中间件、后端或其他应用程序中。DirectML 提供用户熟悉的（本机 C++, nano-COM）DirectX 12 式编程接口和工作流，且受所有 DirectX 12 兼容硬件的支持。有关 DirectML 示例应用程序（包括精简 DirectML 应用程序的示例），请参阅 [DirectML 示例应用程序](https://learn.microsoft.com/zh-cn/windows/ai/directml/dml-min-app)。
 
 **DirectML 是在 Windows 10 版本 1903 和 Windows SDK 的相应版本中引入的。**
 

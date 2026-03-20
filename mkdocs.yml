@@ -78,11 +78,17 @@ plugins:
       length: 20
       pretty_print: true
   - blog:
-      archive: false
+      blog_dir: blog
+      archive: true
+      archive_name: Archive
+      archive_date_format: yyyy/MM
+      archive_url_format: "archive/{date}"
       post_date_format: short
       blog_toc: true
-      categories_toc: true
       pagination: false
+      categories_toc: true
+      categories_name: Categories
+  - tags
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - git-committers:
@@ -167,6 +173,9 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - admonition
+
+not_in_nav: |
+  /tags.md
 
 nav:
   - 概览: index.md

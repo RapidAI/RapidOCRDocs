@@ -70,6 +70,7 @@ theme:
       software-tag: fontawesome/solid/laptop-code
 
 plugins:
+  - meta
   - rss:
       match_path: "blog/posts/.*"
       date_from_meta:

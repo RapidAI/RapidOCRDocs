@@ -2778,7 +2778,7 @@ You're not viewing the latest version.
 </blockquote>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">,</span> <span class="n">return_word_box</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_single_char_box</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></code></pre></div>
-<p><code>font_path (str)</code>: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为 <code>null</code>。</p>
+<p><code>font_path (str)</code>: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为 <code>None</code>。</p>
 <p><code>log_level (str)</code>: 日志级别设置。可选择的有 <code>debug / info / warning / error / critical</code>，默认为 <code>info</code>，会打印加载模型等日志。如果设置 <code>critical</code>，则不会打印任何日志。</p>
 <blockquote>
 <p>在 <code>rapidocr&gt;=3.4.0</code> 中添加此参数。</p>
@@ -3100,7 +3100,7 @@ You're not viewing the latest version.
 <p><code>lang_type (str)</code>: 支持检测的语种类型。这里指的是 <code>LangDet</code>，具体支持 <code>ch</code>, <code>en</code> 和 <code>multi</code> 3 个值。<code>ch</code> 可以识别中文和中英文混合文本检测。<code>en</code> 支持英文文字检测。<code>multi</code> 支持多语言文本检测。默认为 <code>ch</code>。详细参见：<a href="https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1">docs</a></p>
 <p><code>model_type (str)</code>: 模型量级选择，支持 <code>mobile</code>（轻量型）和 <code>server</code>（服务型）。默认为 <code>mobile</code>。</p>
 <p><code>ocr_version (str)</code>: OCR 版本的选择，支持 <code>PP-OCRv4</code> 和 <code>PP-OCRv5</code>，默认为 <code>PP-OCRv4</code>。</p>
-<p><code>model_path (str)</code>: 文本检测模型路径，仅限于基于 PaddleOCR 训练所得 DBNet 文本检测模型。默认值为 <code>null</code>。</p>
+<p><code>model_path (str)</code>: 文本检测模型路径，仅限于基于 PaddleOCR 训练所得 DBNet 文本检测模型。默认值为 <code>None</code>。</p>
 <p><code>model_dir (str)</code>: 模型存放路径或目录。如果是 PaddlePaddle，该参数则对应模型存在目录。其余推理引擎请使用 <code>model_path</code> 参数。</p>
 <p><code>limit_side_len (float)</code>: 限制图像边的长度的像素值。默认值为 736。</p>
 <p><code>limit_type (str)</code>: 限制图像的最小边长度还是最大边为 <code>limit_side_len</code>。示例解释：当 <code>limit_type=min</code> 和 <code>limit_side_len=736</code> 时，图像最小边小于 736 时，会将图像最小边拉伸到 736，另一边则按图像原始比例等比缩放。取值范围为：<code>[min, max]</code>，默认值为 <code>min</code>。</p>

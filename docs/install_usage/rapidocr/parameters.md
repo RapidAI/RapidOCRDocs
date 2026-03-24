@@ -76,7 +76,7 @@ Global:
 result = engine(img_url, return_word_box=True, return_single_char_box=True)
 ```
 
-`font_path (str)`: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为 `null`。
+`font_path (str)`: 字体文件路径。如不提供，程序会自动下载预置的字体文件模型到本地。默认为 `None`。
 
 `log_level (str)`: 日志级别设置。可选择的有 `debug / info / warning / error / critical`，默认为 `info`，会打印加载模型等日志。如果设置 `critical`，则不会打印任何日志。
 
@@ -255,7 +255,7 @@ Det:
 
 `ocr_version (str)`: OCR 版本的选择，支持 `PP-OCRv4` 和 `PP-OCRv5`，默认为 `PP-OCRv4`。
 
-`model_path (str)`: 文本检测模型路径，仅限于基于 PaddleOCR 训练所得 DBNet 文本检测模型。默认值为 `null`。
+`model_path (str)`: 文本检测模型路径，仅限于基于 PaddleOCR 训练所得 DBNet 文本检测模型。默认值为 `None`。
 
 `model_dir (str)`: 模型存放路径或目录。如果是 PaddlePaddle，该参数则对应模型存在目录。其余推理引擎请使用 `model_path` 参数。
 

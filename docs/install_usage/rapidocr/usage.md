@@ -4,11 +4,11 @@ hide:
   - toc
 ---
 
-### 引言
+## 引言
 
-该部分涉及如何使用 `rapidocr` 库来进行图像文字识别工作。
+该部分涉及如何使用 `rapidocr` 库来进行图像文字识别工作。主要讲解 Python 脚本和 CLI 终端两种使用 `rapidocr` 库方式。
 
-### 最简单的使用
+## Python 脚本使用
 
 一切都使用默认值。默认使用来自 PP-OCRv4 的 DBNet 中文轻量检测，来自 PP-OCRv4 的 SVTR_LCNet 中文识别模型。
 
@@ -580,3 +580,62 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
                 elapse_list=[0.17388120794203132, 0.018943071365356445, 0.3944867078680545],
                 elapse=0.5873109871754423, lang_rec='ch_mobile')
         ```
+
+## CLI 终端使用
+
+终端使用，命令比较简单。
+
+### `rapidocr check`
+
+自动检查 `rapidocr` 库是否安装成功，主要原理：使用 ONNX Runtime 推理引擎处理一张图像，查看结果是否符合预期来确定是否安装成功。
+
+```bash linenums="1"
+rapidocr check
+```
+
+输出结果示例：
+
+```bash linenums="1"
+[INFO] 2026-03-24 02:20:47,997 [RapidOCR] base.py:22: Using engine_name: onnxruntime
+[INFO] 2026-03-24 02:20:48,088 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
+[INFO] 2026-03-24 02:20:48,089 [RapidOCR] main.py:53: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
+[INFO] 2026-03-24 02:20:48,273 [RapidOCR] base.py:22: Using engine_name: onnxruntime
+[INFO] 2026-03-24 02:20:48,276 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+[INFO] 2026-03-24 02:20:48,276 [RapidOCR] main.py:53: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+[INFO] 2026-03-24 02:20:48,341 [RapidOCR] base.py:22: Using engine_name: onnxruntime
+[INFO] 2026-03-24 02:20:48,376 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
+[INFO] 2026-03-24 02:20:48,376 [RapidOCR] main.py:53: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
+Success! rapidocr is installed correctly!
+```
+
+### `rapidocr config`
+
+自动生成 `rapidocr` 默认所用的配置文件，便于更改定制。
+
+```bash linenums="1"
+rapidocr config
+```
+
+输出结果示例：
+
+```bash linenums="1"
+The config file has saved in ./default_rapidocr.yaml
+```
+
+### `rapidocr download_models`
+
+> 在 `rapidocr>=3.7.0` 中添加此参数。
+
+预先下载指定模型，便于离线部署使用。因为 `rapidocr` 可选参数较多，采用指定配置文件方式来快速下载指定模型。
+
+```bash linenums="1"
+rapidocr download_models --config config.yaml
+```
+
+输出结果示例：
+
+```bash linenums="1"
+[INFO] 2026-03-24 10:37:01,625 [RapidOCR] download_file.py:68: Initiating download: https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.7.0/onnx/PP-OCRv4/cls/ch_ppocr_mobile_v2.0_cls_infer.onnx
+[INFO] 2026-03-24 10:37:03,640 [RapidOCR] download_file.py:82: Download size: 0.56MB
+[INFO] 2026-03-24 10:37:04,364 [RapidOCR] download_file.py:95: Successfully saved to: /Users/xxxx/RapidOCR/python/test_models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+```

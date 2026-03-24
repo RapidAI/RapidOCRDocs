@@ -34,6 +34,8 @@ Global:
 
     font_path: null
     log_level: "info" # debug / info / warning / error / critical
+
+    model_root_dir: null
 ```
 
 `text_score (float)`: 文本识别结果置信度，值越大，把握越大。取值范围：`[0, 1]`, 默认值是 0.5。
@@ -46,15 +48,15 @@ Global:
 
 > ⚠️注意：如果配置文件和调用时候同时声明 `use_det | use_cls | use_rec` 这三个参数，调用时参数会覆盖配置文件参数。
 
-`min_height (int)` : 图像最小高度（单位是像素），低于这个值，会跳过文本检测阶段，直接进行后续识别。默认值为 30。 `min_height` 是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
+`min_height (int)` : 图像最小高度（单位是像素），低于这个值，会跳过文本检测阶段，直接进行后续识别。默认值为 30。`min_height` 是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
 
 ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
 
 `width_height_ratio (float)`: 如果输入图像的宽高比大于 `width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1 时：不用这个参数. 默认值为 8。
 
-`max_side_len (int)`: 如果输入图像的最大边大于 `max_side_len`，则会按宽高比，将最大边缩放到 `max_side_len`。默认为 2000px。
+`max_side_len (int)`: 如果输入图像的最大边大于 `max_side_len`，则会按宽高比，将最大边缩放到 `max_side_len`。默认为 2000 px。
 
-`min_side_len (int)`: 如果输入图像的最小边小于 `min_side_len`，则会按宽高比，将最小边缩放到 `min_side_len`。默认为 30px。
+`min_side_len (int)`: 如果输入图像的最小边小于 `min_side_len`，则会按宽高比，将最小边缩放到 `min_side_len`。默认为 30 px。
 
 `return_word_box (bool)`: 是否返回文字的单字坐标。默认为 `False`。
 
@@ -78,7 +80,11 @@ result = engine(img_url, return_word_box=True, return_single_char_box=True)
 
 `log_level (str)`: 日志级别设置。可选择的有 `debug / info / warning / error / critical`，默认为 `info`，会打印加载模型等日志。如果设置 `critical`，则不会打印任何日志。
 
-> 在 `rapidocr>=3.4.0` 中，才添加此参数。
+> 在 `rapidocr>=3.4.0` 中添加此参数。
+
+`model_root_dir (str)`: 指定预先下载的模型位置。默认为 `None`，保存到 `rapidocr` 安装目录的 `models` 下。
+
+> 在 `rapidocr>=3.8.0` 中添加此参数。
 
 #### EngineConfig
 
@@ -243,7 +249,7 @@ Det:
 
 `engine_type (str)`: 选定推理引擎。支持 `onnxruntime`, `openvino`, `paddle` 和 `torch` 四个值。默认为 `onnxruntime`。
 
-`lang_type (str)`: 支持检测的语种类型。这里指的是 `LangDet`，具体支持 `ch`, `en` 和 `multi` 3 个值。 `ch` 可以识别中文和中英文混合文本检测。 `en` 支持英文文字检测。 `multi` 支持多语言文本检测。默认为 `ch`。详细参见：[docs](https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1)
+`lang_type (str)`: 支持检测的语种类型。这里指的是 `LangDet`，具体支持 `ch`, `en` 和 `multi` 3 个值。`ch` 可以识别中文和中英文混合文本检测。`en` 支持英文文字检测。`multi` 支持多语言文本检测。默认为 `ch`。详细参见：[docs](https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1)
 
 `model_type (str)`: 模型量级选择，支持 `mobile`（轻量型）和 `server`（服务型）。默认为 `mobile`。
 
@@ -255,7 +261,7 @@ Det:
 
 `limit_side_len (float)`: 限制图像边的长度的像素值。默认值为 736。
 
-`limit_type (str)`: 限制图像的最小边长度还是最大边为 `limit_side_len`。 示例解释：当 `limit_type=min` 和 `limit_side_len=736` 时，图像最小边小于 736 时，会将图像最小边拉伸到 736，另一边则按图像原始比例等比缩放。 取值范围为：`[min, max]`，默认值为 `min`。
+`limit_type (str)`: 限制图像的最小边长度还是最大边为 `limit_side_len`。示例解释：当 `limit_type=min` 和 `limit_side_len=736` 时，图像最小边小于 736 时，会将图像最小边拉伸到 736，另一边则按图像原始比例等比缩放。取值范围为：`[min, max]`，默认值为 `min`。
 
 `thresh (float)`: 图像中文字部分和背景部分分割阈值。值越大，文字部分会越小。取值范围：`[0, 1]`，默认值为 0.3。
 
@@ -307,7 +313,7 @@ Cls:
 
 `cls_thresh (float)`: 方向分类结果的置信度。取值范围：`[0, 1]`，默认值为 0.9。
 
-`label_list (List[str])`: 方向分类的标签，0°或者 180°，**该参数不能动** 。默认值为 `["0", "180"]`。
+`label_list (List[str])`: 方向分类的标签，0° 或者 180°，**该参数不能动**。默认值为 `["0", "180"]`。
 
 #### Rec
 

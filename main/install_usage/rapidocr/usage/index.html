@@ -965,17 +965,18 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        最简单的使用
+        Python 脚本使用
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Python 脚本使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#rapidocr" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -985,15 +986,70 @@ You're not viewing the latest version.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         输出
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI 终端使用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI 终端使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rapidocr-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rapidocr check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rapidocr-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rapidocr config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rapidocr-download_models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rapidocr download_models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2528,17 +2584,18 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        最简单的使用
+        Python 脚本使用
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Python 脚本使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#rapidocr" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2548,15 +2605,70 @@ You're not viewing the latest version.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         输出
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI 终端使用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI 终端使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rapidocr-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rapidocr check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rapidocr-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rapidocr config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rapidocr-download_models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rapidocr download_models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2631,9 +2743,9 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<h3 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>该部分涉及如何使用 <code>rapidocr</code> 库来进行图像文字识别工作。</p>
-<h3 id="_2">最简单的使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>该部分涉及如何使用 <code>rapidocr</code> 库来进行图像文字识别工作。主要讲解 Python 脚本和 CLI 终端两种使用 <code>rapidocr</code> 库方式。</p>
+<h2 id="python">Python 脚本使用<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
 <p>一切都使用默认值。默认使用来自 PP-OCRv4 的 DBNet 中文轻量检测，来自 PP-OCRv4 的 SVTR_LCNet 中文识别模型。</p>
 <p>推荐可以先使用 ONNX Runtime CPU 版作为推理引擎。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>onnxruntime
@@ -2836,7 +2948,7 @@ You're not viewing the latest version.
 </div>
 </div>
 <p>由于采用 Pillow 库来打开图像，因此支持传入图像格式与 Pillow 保持一致，详情参见 <a href="https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html">image-file-formats</a></p>
-<h3 id="_3">输出<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_2">输出<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>RapidOCR 输出包括 4 种类型：<code>Union[TextDetOutput, TextClsOutput, TextRecOutput, RapidOCROutput]</code>。这 4 种类型均是 Dataclasses 类，可以直接访问对应的键值。</p>
 <ul>
 <li><code>TextDetOutput</code>：仅有检测</li>
@@ -3515,6 +3627,54 @@ You're not viewing the latest version.
 </div>
 </div>
 </div>
+<h2 id="cli">CLI 终端使用<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h2>
+<p>终端使用，命令比较简单。</p>
+<h3 id="rapidocr-check"><code>rapidocr check</code><a class="headerlink" href="#rapidocr-check" title="Permanent link">&para;</a></h3>
+<p>自动检查 <code>rapidocr</code> 库是否安装成功，主要原理：使用 ONNX Runtime 推理引擎处理一张图像，查看结果是否符合预期来确定是否安装成功。</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a>rapidocr<span class="w"> </span>check
+</span></code></pre></div></td></tr></table></div>
+<p>输出结果示例：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-22-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">02</span>:20:47,997<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:22:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">02</span>:20:48,088<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">02</span>:20:48,089<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:53:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">02</span>:20:48,273<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:22:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">02</span>:20:48,276<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">02</span>:20:48,276<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:53:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">02</span>:20:48,341<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:22:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">02</span>:20:48,376<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">02</span>:20:48,376<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:53:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a>Success!<span class="w"> </span>rapidocr<span class="w"> </span>is<span class="w"> </span>installed<span class="w"> </span>correctly!
+</span></code></pre></div></td></tr></table></div>
+<h3 id="rapidocr-config"><code>rapidocr config</code><a class="headerlink" href="#rapidocr-config" title="Permanent link">&para;</a></h3>
+<p>自动生成 <code>rapidocr</code> 默认所用的配置文件，便于更改定制。</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a>rapidocr<span class="w"> </span>config
+</span></code></pre></div></td></tr></table></div>
+<p>输出结果示例：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a>The<span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span>has<span class="w"> </span>saved<span class="w"> </span><span class="k">in</span><span class="w"> </span>./default_rapidocr.yaml
+</span></code></pre></div></td></tr></table></div>
+<h3 id="rapidocr-download_models"><code>rapidocr download_models</code><a class="headerlink" href="#rapidocr-download_models" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>在 <code>rapidocr&gt;=3.7.0</code> 中添加此参数。</p>
+</blockquote>
+<p>预先下载指定模型，便于离线部署使用。因为 <code>rapidocr</code> 可选参数较多，采用指定配置文件方式来快速下载指定模型。</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a>rapidocr<span class="w"> </span>download_models<span class="w"> </span>--config<span class="w"> </span>config.yaml
+</span></code></pre></div></td></tr></table></div>
+<p>输出结果示例：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">10</span>:37:01,625<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:68:<span class="w"> </span>Initiating<span class="w"> </span>download:<span class="w"> </span>https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.7.0/onnx/PP-OCRv4/cls/ch_ppocr_mobile_v2.0_cls_infer.onnx
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">10</span>:37:03,640<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:82:<span class="w"> </span>Download<span class="w"> </span>size:<span class="w"> </span><span class="m">0</span>.56MB
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">10</span>:37:04,364<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:95:<span class="w"> </span>Successfully<span class="w"> </span>saved<span class="w"> </span>to:<span class="w"> </span>/Users/xxxx/RapidOCR/python/test_models/ch_ppocr_mobile_v2.0_cls_infer.onnx
+</span></code></pre></div></td></tr></table></div>
 
 <!-- Source file information -->
 

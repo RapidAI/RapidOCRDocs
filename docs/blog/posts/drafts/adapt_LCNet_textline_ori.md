@@ -35,6 +35,7 @@ hide:
 - paddle2onnx: 2.1.0
 - paddlex: 3.0.0
 - rapidocr: 2.1.0
+- paddleocr: 3.4.0
 
 ### 1. 模型跑通
 
@@ -86,7 +87,7 @@ paddle2onnx --model_dir official_models/PP-LCNet_x0_25_textline_ori \
 2026-03-24 11:53:37 [INFO]      ONNX model saved in official_models/onnx/PP-LCNet_x0_25_textline_ori.onnx.
 ```
 
-### 3. 模型精度测试
+### 3. 模型转换前后精度测试
 
 将上一步中转换得到的 ONNX 模型，在 PaddleOCR 源码模型推理时，插入 ONNX Runtime 推理 ONNX 模型的代码，确保相同输入，来比较输出是否在误差范围内。
 
@@ -112,7 +113,57 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
 # 省略下面代码
 ```
 
-### 4. 集成到 rapidocr 中
+### 4. 指标评测
+
+文本行方向分类模型评估一直缺乏一个评测集。我将之前构建的文本识别评测集（[text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)）做了部分旋转 180 度处理，剔掉竖排文字。最终得到文本行方向分类评测集 [text_cls_test_dataset](https://huggingface.co/datasets/SWHL/text_cls_test_dataset)。
+
+=== "PaddleOCR 评测代码"
+
+    ```python linenum="1"
+    import cv2
+    import numpy as np
+    from paddleocr import TextLineOrientationClassification
+    from tqdm import tqdm
+
+    from datasets import load_dataset
+
+    model_name = "PP-LCNet_x0_25_textline_ori"
+
+    # model_name = "PP-LCNet_x1_0_textline_ori"
+
+    model = TextLineOrientationClassification(model_name=model_name)
+
+    dataset = load_dataset("SWHL/text_cls_test_dataset")
+    test_datas = dataset["test"]
+
+    nums = 0
+    for data in tqdm(test_datas):
+        image = data["image"]
+        gt = data["label"]
+
+        img_np = np.array(image)
+        img_np = cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR)
+        output = model.predict(img_np, batch_size=1)
+
+        res = output[0]
+        pred = res.json["res"]["label_names"][0].split("_")[0]
+        if pred == gt:
+            nums += 1
+
+    print(model_name)
+    accracy = nums / len(test_datas)
+    print(f"accracy: {accracy:.4f}")
+    ```
+
+|Exp|模型|推理框架|推理引擎|模型格式|Accuracy|
+|:---:|:---|:---|:---|:---:|:---:|
+|1|PP-LCNet_x0_25_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.8513|
+|2|PP-LCNet_x0_25_textline_ori|RapidOCR |ONNX Runtime|ONNX|0.8922|
+|||||||
+|3|PP-LCNet_x1_0_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.7918|
+|4|PP-LCNet_x1_0_textline_ori|RapidOCR |ONNX Runtime|ONNX|0.9033|
+
+### 5. 集成到 rapidocr 中
 
 该部分主要包括将托管模型到魔搭、更改 rapidocr 代码适配等。
 
@@ -131,4 +182,3 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
 我这里已经做完了，小伙伴们感兴趣可以去看看源码。
 
 ### 写在最后
-

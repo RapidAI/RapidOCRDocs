@@ -155,6 +155,39 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
     print(f"accracy: {accracy:.4f}")
     ```
 
+=== "RapidOCR 评测代码"
+
+    ```python linenums="1"
+    from datasets import load_dataset
+    from tqdm import tqdm
+
+    from rapidocr import RapidOCR
+
+    dataset = load_dataset("SWHL/text_cls_test_dataset")
+
+    # model_path = "official_models/onnx/PP-LCNet_x0_25_textline_ori.onnx"
+    model_path = "official_models/onnx/PP-LCNet_x1_0_textline_ori.onnx"
+    engine = RapidOCR(
+        params={"Cls.model_path": model_path, "Cls.cls_image_shape": [3, 80, 160]}
+    )
+
+    test_datas = dataset["test"]
+
+    nums = 0
+    for data in tqdm(test_datas):
+        image = data["image"]
+        gt = data["label"]
+
+        result = engine(image, use_det=False, use_rec=False, use_cls=True)
+        pred = result.cls_res[0][0]
+
+        if gt == pred:
+            nums += 1
+
+    accracy = nums / len(test_datas)
+    print(f"accracy: {accracy:.4f}")
+    ```
+
 |Exp|模型|推理框架|推理引擎|模型格式|Accuracy|
 |:---:|:---|:---|:---|:---:|:---:|
 |1|PP-LCNet_x0_25_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.8513|

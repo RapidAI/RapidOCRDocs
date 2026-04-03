@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Fri, 27 Mar 2026 02:40:51 -0000</pubDate>
-    <lastBuildDate>Fri, 27 Mar 2026 02:40:51 -0000</lastBuildDate>
+    <pubDate>Fri, 03 Apr 2026 03:18:37 -0000</pubDate>
+    <lastBuildDate>Fri, 03 Apr 2026 03:18:37 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,25 @@
     
 
     
+    
+    <item>
+      <title>RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;p&gt;该文章主要记录 RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录，涉及模型转换，模型精度测试等步骤。&lt;/p&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/</link>
+      <pubDate>Fri, 03 Apr 2026 03:17:55 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/</guid>
+      
+    </item>
     
     <item>
       <title>如何使用 DirectML 加速推理 OCR？</title>
@@ -401,25 +420,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/26/openvino-cpu-%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/</guid>
-      
-    </item>
-    
-    <item>
-      <title>OpenVINO GPU 推理</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description></description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/25/openvino-gpu-%E6%8E%A8%E7%90%86/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/25/openvino-gpu-%E6%8E%A8%E7%90%86/</guid>
       
     </item>
     

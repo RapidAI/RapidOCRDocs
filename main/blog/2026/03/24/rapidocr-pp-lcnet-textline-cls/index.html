@@ -12,13 +12,11 @@
         <meta name="author" content="RapidAI">
       
       
-        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/">
+        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/">
       
       
-        <link rel="prev" href="../../../02/28/coreml-vs-cpu-provider-onnxruntime-rapidocr/">
+        <link rel="prev" href="../../04/support-pytorch-mps/">
       
-      
-        <link rel="next" href="../../24/rapidocr-pp-lcnet-textline-cls/">
       
       
         
@@ -32,7 +30,7 @@
     
     
       
-        <title>RapidOCR 支持 PyTorch MPS 作为计算后端 - RapidOCR 文档</title>
+        <title>RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录 - RapidOCR 文档</title>
       
     
     
@@ -185,7 +183,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RapidOCR 支持 PyTorch MPS 作为计算后端
+              RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录
             
           </span>
         </div>
@@ -2442,7 +2440,7 @@ You're not viewing the latest version.
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        运行环境¶
+        以下代码运行环境
       
     </span>
   </a>
@@ -2450,10 +2448,10 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#det" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Det 模型对比
+        1. 模型跑通
       
     </span>
   </a>
@@ -2461,10 +2459,10 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#rec" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rec 模型对比
+        2. 模型转换
       
     </span>
   </a>
@@ -2472,13 +2470,91 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 模型转换前后精度测试
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 指标评测
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model_name-pp-lcnet_x1_0_textline_ori" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model_name = "PP-LCNet_x1_0_textline_ori"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="model_name = &#34;PP-LCNet_x1_0_textline_ori&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-rapidocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 集成到 rapidocr 中
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 集成到 rapidocr 中">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        托管模型到魔搭
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rapidocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        更改 rapidocr 代码适配
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         写在最后
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2538,7 +2614,7 @@ You're not viewing the latest version.
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-03-04 00:00:00+00:00" class="md-ellipsis">2026/3/4</time>
+                        <time datetime="2026-03-24 00:00:00+00:00" class="md-ellipsis">2026/3/24</time>
                       </div>
                     </li>
                     
@@ -2549,7 +2625,7 @@ You're not viewing the latest version.
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E/">推理引擎</a></span>
+                              <a href="../../../../category/%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/">模型相关</a></span>
                         </div>
                       </li>
                     
@@ -2560,7 +2636,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 1 分钟阅读时间
+                              需要 4 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2570,48 +2646,6 @@ You're not viewing the latest version.
                 </nav>
               </li>
             </ul>
-            
-              <ul class="md-post__meta md-nav__list">
-                <li class="md-nav__item md-nav__item--section">
-                  <div class="md-post__title">
-                    <span class="md-ellipsis">
-                      相关链接
-                    </span>
-                  </div>
-                  <nav class="md-nav">
-                    <ul class="md-nav__list">
-                      
-                        
-                        
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../01/21/rapidocr-support-mnn-engine/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RapidOCR 支持 MNN 推理引擎
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-                      
-                    </ul>
-                  </nav>
-                </li>
-              </ul>
             
           </nav>
           
@@ -2651,7 +2685,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/inference_engine/support_torch_mps_backend.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/about_model/adapt_LCNet_textline_ori.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2660,7 +2694,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/inference_engine/support_torch_mps_backend.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/about_model/adapt_LCNet_textline_ori.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2672,150 +2706,344 @@ You're not viewing the latest version.
   page title (or respectively site name) is used as the main headline.
 -->
 
-<h1>RapidOCR 支持 PyTorch MPS 作为计算后端</h1>
-
 
 
 
 <!-- Page content -->
-<p>记录 RapidOCR 支持 PyTorch MPS 作为计算后端的过程。</p>
+<p>该文章主要记录 RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录，涉及模型转换，模型精度测试等步骤。</p>
 <!-- more -->
 
-<h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>衷心感谢 Github <a href="https://github.com/HighDoping">@HighDoping</a> 提交的 PR <a href="https://github.com/RapidAI/RapidOCR/pull/639">#639</a>！</p>
-<p>相关的测试代码已经放到 <a href="https://gist.github.com/SWHL/fd6e647337346aa3e268887a4bf179e6">Gist</a>，有需要的小伙伴自取。</p>
-<h2 id="_2">运行环境¶<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>该部分主要是支持 <a href="https://www.paddleocr.ai/latest/version3.x/module_usage/textline_orientation_classification.html">文本行方向分类模块使用教程</a> 中两个文本行方向分类模型：<strong>PP-LCNet_x0_25_textline_ori</strong> 和 <strong>PP-LCNet_x1_0_textline_ori</strong>。</p>
+<p>下面是从上述链接中得到的这两个模型的情况：</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>模型下载链接</th>
+<th>Top-1 Acc（%）</th>
+<th>GPU 推理耗时（ms）</th>
+<th>CPU 推理耗时 (ms)</th>
+<th>模型存储大小（MB）</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PP-LCNet_x0_25_textline_ori</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-LCNet_x0_25_textline_ori_infer.tar">推理模型</a> / <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNet_x0_25_textline_ori_pretrained.pdparams">训练模型</a></td>
+<td>98.85</td>
+<td>2.16 / 0.41</td>
+<td>2.37 / 0.73</td>
+<td>0.96</td>
+<td>基于 PP-LCNet_x0_25 的文本行分类模型，含有两个类别，即 0 度，180 度</td>
+</tr>
+<tr>
+<td>PP-LCNet_x1_0_textline_ori</td>
+<td><a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-LCNet_x1_0_textline_ori_infer.tar">推理模型</a> / <a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-LCNet_x1_0_textline_ori_pretrained.pdparams">训练模型</a></td>
+<td>99.42</td>
+<td>- / -</td>
+<td>2.98 / 2.98</td>
+<td>6.5</td>
+<td>基于 PP-LCNet_x1_0 的文本行分类模型，含有两个类别，即 0 度，180 度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">以下代码运行环境<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>操作系统：macOS Tahoe 26.2</li>
-<li>
-<p>硬件：MacBookPro M2</p>
-</li>
-<li>
-<p>Python 环境（3.10.0）：</p>
-</li>
+<li>OS: macOs Tahoe 26.3.1 (a)</li>
+<li>Python: 3.10.0</li>
+<li>PaddlePaddle: 3.1.0</li>
+<li>paddle2onnx: 2.1.0</li>
+<li>paddlex: 3.0.0</li>
+<li>rapidocr: 2.1.0</li>
+<li>paddleocr: 3.4.0</li>
 </ul>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">rapidocr</span><span class="o">==</span><span class="m">3</span>.5.0
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nv">text_det_metric</span><span class="o">==</span><span class="m">0</span>.0.8
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nv">text_rec_metric</span><span class="o">==</span><span class="m">0</span>.0.1
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nv">datasets</span><span class="o">==</span><span class="m">3</span>.6.0
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.6.0
+<h3 id="1">1. 模型跑通<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>测试图：<a href="https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/textline_rot180_demo.jpg">link</a></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">paddleocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextLineOrientationClassification</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># model: PP-LCNet_x1_0_textline_ori  /  PP-LCNet_x0_25_textline_ori</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s2">&quot;datasets/textline_rot180_demo.jpg&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">TextLineOrientationClassification</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;PP-LCNet_x1_0_textline_ori&quot;</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="n">res</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">json_format</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_img</span><span class="p">(</span><span class="s2">&quot;./output/demo.png&quot;</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="s2">&quot;./output/res.json&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="det">Det 模型对比<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
+<p>预期结果如下，表明成功运行：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Model<span class="w"> </span>files<span class="w"> </span>already<span class="w"> </span>exist.<span class="w"> </span>Using<span class="w"> </span>cached<span class="w"> </span>files.<span class="w"> </span>To<span class="w"> </span>redownload,<span class="w"> </span>please<span class="w"> </span>delete<span class="w"> </span>the<span class="w"> </span>directory<span class="w"> </span>manually:<span class="w"> </span><span class="sb">`</span>/Users/xxxx/.paddlex/official_models/PP-LCNet_x1_0_textline_ori<span class="sb">`</span>.
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="o">{</span><span class="s1">&#39;res&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;input_path&#39;</span>:<span class="w"> </span><span class="s1">&#39;datasets/textline_rot180_demo.jpg&#39;</span>,<span class="w"> </span><span class="s1">&#39;page_index&#39;</span>:<span class="w"> </span>None,<span class="w"> </span><span class="s1">&#39;class_ids&#39;</span>:<span class="w"> </span>array<span class="o">([</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span><span class="nv">dtype</span><span class="o">=</span>int32<span class="o">)</span>,<span class="w"> </span><span class="s1">&#39;scores&#39;</span>:<span class="w"> </span>array<span class="o">([</span><span class="m">0</span>.89868<span class="o">]</span>,<span class="w"> </span><span class="nv">dtype</span><span class="o">=</span>float32<span class="o">)</span>,<span class="w"> </span><span class="s1">&#39;label_names&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;180_degree&#39;</span><span class="o">]}}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="2">2. 模型转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>转换代码：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>paddle2onnx<span class="w"> </span>--model_dir<span class="w"> </span>official_models/PP-LCNet_x0_25_textline_ori<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">             </span>--model_filename<span class="w"> </span>inference.json<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">             </span>--params_filename<span class="w"> </span>inference.pdiparams<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">             </span>--save_file<span class="w"> </span>official_models/onnx/PP-LCNet_x0_25_textline_ori.onnx
+</span></code></pre></div></td></tr></table></div>
+<p>输出日志如下，表明转换成功：</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">[</span>Paddle2ONNX<span class="o">]</span><span class="w"> </span>Start<span class="w"> </span>parsing<span class="w"> </span>the<span class="w"> </span>Paddle<span class="w"> </span>model<span class="w"> </span>file...
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="o">[</span>Paddle2ONNX<span class="o">]</span><span class="w"> </span>Use<span class="w"> </span><span class="nv">opset_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>ONNX<span class="w"> </span>export.
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="o">[</span>Paddle2ONNX<span class="o">]</span><span class="w"> </span>PaddlePaddle<span class="w"> </span>model<span class="w"> </span>is<span class="w"> </span>exported<span class="w"> </span>as<span class="w"> </span>ONNX<span class="w"> </span>format<span class="w"> </span>now.
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">11</span>:53:36<span class="w"> </span><span class="o">[</span>INFO<span class="o">]</span><span class="w">      </span>Try<span class="w"> </span>to<span class="w"> </span>perform<span class="w"> </span>constant<span class="w"> </span>folding<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>ONNX<span class="w"> </span>model<span class="w"> </span>with<span class="w"> </span>Polygraphy.
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="o">[</span>W<span class="o">]</span><span class="w"> </span><span class="s1">&#39;colored&#39;</span><span class="w"> </span>module<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>installed,<span class="w"> </span>will<span class="w"> </span>not<span class="w"> </span>use<span class="w"> </span>colors<span class="w"> </span>when<span class="w"> </span>logging.<span class="w"> </span>To<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>colors,<span class="w"> </span>please<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;colored&#39;</span><span class="w"> </span>module:<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>colored
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="o">[</span>I<span class="o">]</span><span class="w"> </span>Folding<span class="w"> </span>Constants<span class="w"> </span><span class="p">|</span><span class="w"> </span>Pass<span class="w"> </span><span class="m">1</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="o">[</span>I<span class="o">]</span><span class="w">     </span>Total<span class="w"> </span>Nodes<span class="w"> </span><span class="p">|</span><span class="w"> </span>Original:<span class="w">   </span><span class="m">307</span>,<span class="w"> </span>After<span class="w"> </span>Folding:<span class="w">   </span><span class="m">143</span><span class="w"> </span><span class="p">|</span><span class="w">   </span><span class="m">164</span><span class="w"> </span>Nodes<span class="w"> </span>Folded
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="o">[</span>I<span class="o">]</span><span class="w"> </span>Folding<span class="w"> </span>Constants<span class="w"> </span><span class="p">|</span><span class="w"> </span>Pass<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="o">[</span>I<span class="o">]</span><span class="w">     </span>Total<span class="w"> </span>Nodes<span class="w"> </span><span class="p">|</span><span class="w"> </span>Original:<span class="w">   </span><span class="m">143</span>,<span class="w"> </span>After<span class="w"> </span>Folding:<span class="w">   </span><span class="m">143</span><span class="w"> </span><span class="p">|</span><span class="w">     </span><span class="m">0</span><span class="w"> </span>Nodes<span class="w"> </span>Folded
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="m">2026</span>-03-24<span class="w"> </span><span class="m">11</span>:53:37<span class="w"> </span><span class="o">[</span>INFO<span class="o">]</span><span class="w">      </span>ONNX<span class="w"> </span>model<span class="w"> </span>saved<span class="w"> </span><span class="k">in</span><span class="w"> </span>official_models/onnx/PP-LCNet_x0_25_textline_ori.onnx.
+</span></code></pre></div></td></tr></table></div>
+<h3 id="3">3. 模型转换前后精度测试<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>将上一步中转换得到的 ONNX 模型，在 PaddleOCR 源码模型推理时，插入 ONNX Runtime 推理 ONNX 模型的代码，确保相同输入，来比较输出是否在误差范围内。</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">/miniconda3/envs/py310/lib/python3.10/site-packages/paddlex/inference/models/image_classification/predictor.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># 省略上面代码</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">onnxruntime</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;official_models/onnx/PP-LCNet_x0_25_textline_ori.onnx&quot;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="n">ort_session</span> <span class="o">=</span> <span class="n">onnxruntime</span><span class="o">.</span><span class="n">InferenceSession</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">ort_inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="n">ort_outputs</span> <span class="o">=</span> <span class="n">ort_session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">ort_inputs</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_static_model</span><span class="p">:</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a>    <span class="n">batch_preds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="k">with</span> <span class="n">TemporaryDeviceChanger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">):</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="n">batch_preds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="c1"># 这里是比较相同输入时，输出结果数值差异有多大。如果这行代码可以执行通过，就说明模型转换前后差异很小。</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">batch_preds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ort_outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="c1"># 省略下面代码</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="4">4. 指标评测<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>以下测评结果来自于有限的评测集，很难做到全面评估一个模型效果好坏。因此，需要大家在使用时，辩证地看待各个模型，都可以在实际场景下多测测，看看效果来使用。</p>
+</div>
+<p>文本行方向分类模型评估一直缺乏一个评测集。我将之前构建的文本识别评测集（<a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">text_rec_test_dataset</a>）做了部分旋转 180 度处理，剔掉竖排文字。最终得到文本行方向分类评测集 <a href="https://huggingface.co/datasets/SWHL/text_cls_test_dataset">text_cls_test_dataset</a>。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PaddleOCR 评测代码</label><label for="__tabbed_1_2">RapidOCR 评测代码</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>```python linenum="1"
+import cv2
+import numpy as np
+from paddleocr import TextLineOrientationClassification
+from tqdm import tqdm</p>
+<p>from datasets import load_dataset</p>
+<p>model_name = "PP-LCNet_x0_25_textline_ori"</p>
+<h1 id="model_name-pp-lcnet_x1_0_textline_ori">model_name = "PP-LCNet_x1_0_textline_ori"<a class="headerlink" href="#model_name-pp-lcnet_x1_0_textline_ori" title="Permanent link">&para;</a></h1>
+<p>model = TextLineOrientationClassification(model_name=model_name)</p>
+<p>dataset = load_dataset("SWHL/text_cls_test_dataset")
+test_datas = dataset["test"]</p>
+<p>nums = 0
+for data in tqdm(test_datas):
+    image = data["image"]
+    gt = data["label"]</p>
+<div class="language-text highlight"><pre><span></span><code>img_np = np.array(image)
+img_np = cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR)
+output = model.predict(img_np, batch_size=1)
+
+res = output[0]
+pred = res.json[&quot;res&quot;][&quot;label_names&quot;][0].split(&quot;_&quot;)[0]
+if pred == gt:
+    nums += 1
+</code></pre></div>
+<p>print(model_name)
+accracy = nums / len(test_datas)
+print(f"accracy: {accracy:.4f}")
+```</p>
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#__codelineno-5-26">26</a></span>
+<span class="normal"><a href="#__codelineno-5-27">27</a></span>
+<span class="normal"><a href="#__codelineno-5-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;SWHL/text_cls_test_dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="c1"># model_path = &quot;official_models/onnx/PP-LCNet_x0_25_textline_ori.onnx&quot;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;official_models/onnx/PP-LCNet_x1_0_textline_ori.onnx&quot;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Cls.model_path&quot;</span><span class="p">:</span> <span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;Cls.cls_image_shape&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">160</span><span class="p">]}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="p">)</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="n">test_datas</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="n">nums</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">test_datas</span><span class="p">):</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="n">gt</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a>    <span class="n">pred</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">cls_res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="k">if</span> <span class="n">gt</span> <span class="o">==</span> <span class="n">pred</span><span class="p">:</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a>        <span class="n">nums</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26"></a>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="n">accracy</span> <span class="o">=</span> <span class="n">nums</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_datas</span><span class="p">)</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;accracy: </span><span class="si">{</span><span class="n">accracy</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <table>
 <thead>
 <tr>
-<th>Exp</th>
-<th>模型</th>
-<th>推理框架</th>
-<th>推理引擎</th>
-<th>Precision↑</th>
-<th>Recall↑</th>
-<th>H-mean↑</th>
-<th>Elapse↓(ms)</th>
+<th style="text-align: center;">Exp</th>
+<th style="text-align: left;">模型</th>
+<th style="text-align: left;">推理框架</th>
+<th style="text-align: left;">推理引擎</th>
+<th style="text-align: center;">模型格式</th>
+<th style="text-align: center;">Accuracy</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>ch_PP-OCRv4_det_infer</td>
-<td>PyTorch</td>
-<td>CPU</td>
-<td>0.8121</td>
-<td>0.8419</td>
-<td>0.8267</td>
-<td>609.64</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">ch_ppocr_mobile_v2.0_cls_infer</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNX Runtime</td>
+<td style="text-align: center;">ONNX</td>
+<td style="text-align: center;">0.9219</td>
 </tr>
 <tr>
-<td>2</td>
-<td>ch_PP-OCRv4_det_infer</td>
-<td>PyTorch</td>
-<td>MPS</td>
-<td>0.8121</td>
-<td>0.8419</td>
-<td>0.8267</td>
-<td>896.91</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr>
-<td>3</td>
-<td>ch_PP-OCRv5_mobile_det</td>
-<td>PyTorch</td>
-<td>CPU</td>
-<td>0.7861</td>
-<td>0.8266</td>
-<td>0.8058</td>
-<td>611.07</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">PP-LCNet_x0_25_textline_ori</td>
+<td style="text-align: left;">PaddleOCR</td>
+<td style="text-align: left;">PaddlePaddle</td>
+<td style="text-align: center;">Paddle</td>
+<td style="text-align: center;">0.8513</td>
 </tr>
 <tr>
-<td>4</td>
-<td>ch_PP-OCRv5_mobile_det</td>
-<td>PyTorch</td>
-<td>MPS</td>
-<td>0.7861</td>
-<td>0.8266</td>
-<td>0.8058</td>
-<td>273.44</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">PP-LCNet_x0_25_textline_ori</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNX Runtime</td>
+<td style="text-align: center;">ONNX</td>
+<td style="text-align: center;">0.8922</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">PP-LCNet_x1_0_textline_ori</td>
+<td style="text-align: left;">PaddleOCR</td>
+<td style="text-align: left;">PaddlePaddle</td>
+<td style="text-align: center;">Paddle</td>
+<td style="text-align: center;">0.7918</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">PP-LCNet_x1_0_textline_ori</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNX Runtime</td>
+<td style="text-align: center;">ONNX</td>
+<td style="text-align: center;">0.9033</td>
 </tr>
 </tbody>
 </table>
-<h2 id="rec">Rec 模型对比<a class="headerlink" href="#rec" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Exp</th>
-<th>模型</th>
-<th>推理框架</th>
-<th>推理引擎</th>
-<th>ExactMatch↑</th>
-<th>CharMatch↑</th>
-<th>Elapse↓(ms)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>ch_PP-OCRv4_rec_infer</td>
-<td>PyTorch</td>
-<td>CPU</td>
-<td>0.8290</td>
-<td>0.9432</td>
-<td>101.03</td>
-</tr>
-<tr>
-<td>2</td>
-<td>ch_PP-OCRv4_rec_infer</td>
-<td>PyTorch</td>
-<td>MPS</td>
-<td>0.8290</td>
-<td>0.9432</td>
-<td>163.01</td>
-</tr>
-<tr>
-<td>3</td>
-<td>ch_PP-OCRv5_rec_mobile_infer</td>
-<td>PyTorch</td>
-<td>CPU</td>
-<td>0.7355</td>
-<td>0.9177</td>
-<td>134.61</td>
-</tr>
-<tr>
-<td>4</td>
-<td>ch_PP-OCRv5_rec_mobile_infer</td>
-<td>PyTorch</td>
-<td>MPS</td>
-<td>0.7355</td>
-<td>0.9177</td>
-<td>47.41</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_3">写在最后<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>从以上结果来看，采用 PyTorch MPS 作为计算后端，模型精度维持在误差允许范围内。尽管如此，推理速度的提升并非总是显著，其表现可能与模型内部的具体实现结构有关。有兴趣的读者，可深入探究其背后的原因。</p>
-<p><code>rapidocr</code> 将在 <code>&gt;=v3.7.0</code> 集成 PyTorch MPS，欢迎届时使用和反馈。</p>
+<p>Exp0 是 RapidOCR 一直在使用的 ch_ppocr_mobile_v2.0_cls_infer 模型，该模型源自 PaddleOCR v2 版本。从指标结果来看，在当前评测集上，该模型表现是最优的。</p>
+<p>Exp1 和 Exp3 实验都是用的 PaddleOCR 原始代码 + <a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">text_rec_test_dataset</a> 得到的指标。</p>
+<p>Exp2 和 Exp4 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：</p>
+<ul>
+<li>相同之处：输出 shape 都是 <code>[3, 80, 160]</code></li>
+<li>不同之处：前后处理不同。PaddleOCR 前后处理做了修改，与原有 PaddleOCR v2 的不同了。RapidOCR 用的是 PaddleOCR v2 时的前后处理。</li>
+</ul>
+<p>本来打算集成 PaddleOCR v3 的前后处理，但是在使用评测集评估后，发现复用现有的前后处理，模型效果更好。因此，我这里打算复用旧有前后处理代码了。唯一的改动是输出 shape 适配一下 <code>[3, 80, 160]</code>。</p>
+<h3 id="5-rapidocr">5. 集成到 rapidocr 中<a class="headerlink" href="#5-rapidocr" title="Permanent link">&para;</a></h3>
+<p>该部分主要包括将托管模型到魔搭、更改 rapidocr 代码适配等。</p>
+<h4 id="_3">托管模型到魔搭<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>该部分主要是涉及模型上传到对应位置，并合理命名。注意上传完成后，需要打 Tag，避免后续 rapidocr whl 包中找不到模型下载路径。</p>
+<p>我这里已经上传到了魔搭上，详细链接参见：<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">link</a></p>
+<h4 id="rapidocr">更改 rapidocr 代码适配<a class="headerlink" href="#rapidocr" title="Permanent link">&para;</a></h4>
+<p>该部分主要涉及到更改 <a href="https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/default_models.yaml">default_models.yaml</a> 和 <a href="https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/inference_engine/paddle.py">paddle.py</a> 的代码来适配。</p>
+<p>同时，需要添加对应的单元测试，在保证之前单测成功的同时，新的针对性该模型的单测也能通过。</p>
+<p>我这里已经做完了，小伙伴们感兴趣可以去看看源码。</p>
+<h3 id="_4">写在最后<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>本文中涉及到的两个文本行方向分类模型，归类到 <strong>PP-OCRv5 / cls</strong> 下，支持 ONNX Runtime 和 PaddlePaddle 推理，将在 <code>rapidocr &gt;= 3.8.0</code> 中支持。敬请期待。</p>
 
 <!-- Source file information -->
 
@@ -2840,7 +3068,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月19日 21:21:45 CST">2026-03-19 21:21:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月27日 10:37:44 CST">2026-03-27 10:37:44</span>
   </span>
 
     
@@ -2850,7 +3078,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月4日 17:27:14 CST">2026-03-04 17:27:14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2025年5月13日 22:45:27 CST">2025-05-13 22:45:27</span>
   </span>
 
     
@@ -3007,8 +3235,8 @@ You're not viewing the latest version.
         <!-- Link to previous page -->
         
         
-        <a href="../../../02/28/coreml-vs-cpu-provider-onnxruntime-rapidocr/" class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 基于 ONNX Runtime 来看 CoreML Provider 和 CPU Provider 在 RapidOCR 表现">
+        <a href="../../04/support-pytorch-mps/" class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: RapidOCR 支持 PyTorch MPS 作为计算后端">
             <div class="md-footer__button md-icon">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -3018,30 +3246,13 @@ You're not viewing the latest version.
                     上一页
                 </span>
                 <div class="md-ellipsis">
-                    基于 ONNX Runtime 来看 CoreML Provider 和 CPU Provider 在 RapidOCR 表现
+                    RapidOCR 支持 PyTorch MPS 作为计算后端
                 </div>
             </div>
         </a>
         
 
         <!-- Link to next page -->
-        
-        
-        <a href="../../24/rapidocr-pp-lcnet-textline-cls/" class="md-footer__link md-footer__link--next"
-            aria-label="下一页: RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录">
-            <div class="md-footer__title">
-                <span class="md-footer__direction">
-                    下一页
-                </span>
-                <div class="md-ellipsis">
-                    RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录
-                </div>
-            </div>
-            <div class="md-footer__button md-icon">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-            </div>
-        </a>
         
     </nav>
     

@@ -13,6 +13,21 @@
     "language": "zh",
     "items": [
         {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/",
+            "title": "RapidOCR \u96c6\u6210 PP-LCNet textline \u6587\u672c\u884c\u65b9\u5411\u5206\u7c7b\u6a21\u578b\u8bb0\u5f55",
+            "content_html": "<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-LCNet textline \u6587\u672c\u884c\u65b9\u5411\u5206\u7c7b\u6a21\u578b\u8bb0\u5f55\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>",
+            "image": null,
+            "date_modified": "2026-04-03T03:17:55+00:00",
+            "date_published": "2026-03-24T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
             "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/",
             "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/",
             "title": "RapidOCR \u652f\u6301 PyTorch MPS \u4f5c\u4e3a\u8ba1\u7b97\u540e\u7aef",
@@ -289,21 +304,6 @@
             "content_html": "",
             "image": null,
             "date_modified": "2026-03-02T06:32:24+00:00",
-            "date_published": "2024-06-04T00:12:19+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/22/inference-summary/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/22/inference-summary/",
-            "title": "\u63a8\u7406\u5f15\u64ce\u6c47\u603b",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-03-19T13:21:45+00:00",
             "date_published": "2024-06-04T00:12:19+00:00",
             "authors": [
                 {

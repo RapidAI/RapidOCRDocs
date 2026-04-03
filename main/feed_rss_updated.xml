@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Fri, 03 Apr 2026 03:18:37 -0000</pubDate>
-    <lastBuildDate>Fri, 03 Apr 2026 03:18:37 -0000</lastBuildDate>
+    <pubDate>Fri, 03 Apr 2026 03:26:40 -0000</pubDate>
+    <lastBuildDate>Fri, 03 Apr 2026 03:26:40 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -43,7 +43,7 @@
       
       <description>&lt;p&gt;该文章主要记录 RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录，涉及模型转换，模型精度测试等步骤。&lt;/p&gt;</description>
       <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/</link>
-      <pubDate>Fri, 03 Apr 2026 03:17:55 +0000</pubDate>
+      <pubDate>Fri, 03 Apr 2026 03:25:58 +0000</pubDate>
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/</guid>

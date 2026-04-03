@@ -115,6 +115,10 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
 
 ### 4. 指标评测
 
+!!! note
+
+    以下测评结果来自于有限的评测集，很难做到全面评估一个模型效果好坏。因此，需要大家在使用时，辩证地看待各个模型，都可以在实际场景下多测测，看看效果来使用。
+
 文本行方向分类模型评估一直缺乏一个评测集。我将之前构建的文本识别评测集（[text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset)）做了部分旋转 180 度处理，剔掉竖排文字。最终得到文本行方向分类评测集 [text_cls_test_dataset](https://huggingface.co/datasets/SWHL/text_cls_test_dataset)。
 
 === "PaddleOCR 评测代码"
@@ -190,11 +194,24 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
 
 |Exp|模型|推理框架|推理引擎|模型格式|Accuracy|
 |:---:|:---|:---|:---|:---:|:---:|
+|0|ch_ppocr_mobile_v2.0_cls_infer|RapidOCR |ONNX Runtime|ONNX|0.9219|
+|||||||
 |1|PP-LCNet_x0_25_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.8513|
 |2|PP-LCNet_x0_25_textline_ori|RapidOCR |ONNX Runtime|ONNX|0.8922|
 |||||||
 |3|PP-LCNet_x1_0_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.7918|
 |4|PP-LCNet_x1_0_textline_ori|RapidOCR |ONNX Runtime|ONNX|0.9033|
+
+Exp0 是 RapidOCR 一直在使用的 ch_ppocr_mobile_v2.0_cls_infer 模型，该模型源自 PaddleOCR v2 版本。从指标结果来看，在当前评测集上，该模型表现是最优的。
+
+Exp1 和 Exp3 实验都是用的 PaddleOCR 原始代码 + [text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset) 得到的指标。
+
+Exp2 和 Exp4 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：
+
+- 相同之处：输出 shape 都是 `[3, 80, 160]`
+- 不同之处：前后处理不同。PaddleOCR 前后处理做了修改，与原有 PaddleOCR v2 的不同了。RapidOCR 用的是 PaddleOCR v2 时的前后处理。
+
+本来打算集成 PaddleOCR v3 的前后处理，但是在使用评测集评估后，发现复用现有的前后处理，模型效果更好。因此，我这里打算复用旧有前后处理代码了。唯一的改动是输出 shape 适配一下 `[3, 80, 160]`。
 
 ### 5. 集成到 rapidocr 中
 
@@ -215,3 +232,5 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
 我这里已经做完了，小伙伴们感兴趣可以去看看源码。
 
 ### 写在最后
+
+本文中涉及到的两个文本行方向分类模型，归类到 **PP-OCRv5 / cls** 下，支持 ONNX Runtime 和 PaddlePaddle 推理，将在 `rapidocr >= 3.8.0` 中支持。敬请期待。

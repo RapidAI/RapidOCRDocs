@@ -123,7 +123,7 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
 
 === "PaddleOCR 评测代码"
 
-    ```python linenum="1"
+    ```python linenums="1"
     import cv2
     import numpy as np
     from paddleocr import TextLineOrientationClassification

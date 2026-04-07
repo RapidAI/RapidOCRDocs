@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-<div align="center">
+<div align="no-radius">
   <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/Logov2_white.png" width="50%">
 
 <div align="center">
@@ -67,7 +67,7 @@ flowchart LR
 
 ### 🎥 效果展示
 
-<div align="center">
+<div align="no-radius">
     <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/demo.gif" alt="Demo" width="60%">
 </div>
 

@@ -95,7 +95,7 @@ flowchart LR
 
 <p align="left">
   <a href="https://github.com/RapidAI/RapidOCR/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=RapidAI/RapidOCR&max=400&columns=20"/>
+    <img src="https://contrib.rocks/image?repo=RapidAI/RapidOCR&max=400&columns=20" class="no-radius"/>
   </a>
 </p>
 
@@ -114,7 +114,7 @@ flowchart LR
 
 ### ⭐️ Star history
 
-[![Stargazers over time](https://starchart.cc/RapidAI/RapidOCR.svg?variant=adaptive)](https://starchart.cc/RapidAI/RapidOCR)
+[![Stargazers over time](https://starchart.cc/RapidAI/RapidOCR.svg?variant=adaptive)](https://starchart.cc/RapidAI/RapidOCR){.no-radius}
 
 ### ⚖️ 开源许可证
 

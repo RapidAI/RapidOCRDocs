@@ -21,8 +21,8 @@ Hugging Face 上的 Demo 和魔搭 Demo 是同一套代码，都是基于 [strea
 对应 `rapidocr` v3.x 版本
 
 <p align="left">
-    <a href="https://huggingface.co/spaces/RapidAI/RapidOCRv3" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo%20v3-blue"></a>
-    <a href="https://www.modelscope.cn/studios/RapidAI/RapidOCRv3.0.0" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo%20v3-blue"></a>
+    <a href="https://huggingface.co/spaces/RapidAI/RapidOCRv3" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo%20v3-blue" class="no-radius"></a>
+    <a href="https://www.modelscope.cn/studios/RapidAI/RapidOCRv3.0.0" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo%20v3-blue" class="no-radius"></a>
 </p>
 
 ### RapidOCR v2
@@ -30,8 +30,8 @@ Hugging Face 上的 Demo 和魔搭 Demo 是同一套代码，都是基于 [strea
 对应 `rapidocr` v2.x 版本
 
 <p align="left">
-    <a href="https://huggingface.co/spaces/RapidAI/RapidOCRv2" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo%20v2-blue"></a>
-    <a href="https://www.modelscope.cn/studios/RapidAI/RapidOCRv2" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo%20v2-blue"></a>
+    <a href="https://huggingface.co/spaces/RapidAI/RapidOCRv2" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo%20v2-blue" class="no-radius"></a>
+    <a href="https://www.modelscope.cn/studios/RapidAI/RapidOCRv2" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo%20v2-blue" class="no-radius"></a>
 </p>
 
 ### RapidOCR v1
@@ -39,6 +39,6 @@ Hugging Face 上的 Demo 和魔搭 Demo 是同一套代码，都是基于 [strea
 对应 `rapidocr` v1.x 版本
 
 <p align="left">
-    <a href="https://huggingface.co/spaces/RapidAI/RapidOCR" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo%20v1-blue"></a>
-    <a href="https://www.modelscope.cn/studios/RapidAI/RapidOCRDemo" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo%20v1-blue"></a>
+    <a href="https://huggingface.co/spaces/RapidAI/RapidOCR" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging Face Demo%20v1-blue" class="no-radius"></a>
+    <a href="https://www.modelscope.cn/studios/RapidAI/RapidOCRDemo" target="_blank"><img src="https://img.shields.io/badge/ModelScope-Demo%20v1-blue" class="no-radius"></a>
 </p>

@@ -65,48 +65,6 @@
   font-family: var(--font-family);
 }
 
-/* 可选：如需恢复代码块、警告框等样式，取消注释即可 */
-/*
-.highlight span.filename {
-  border-bottom: none;
-  border-radius: var(--base-border-radius);
-  display: inline;
-  font-family: var(--md-code-font-family);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  margin-bottom: 5px;
-  text-align: center;
-}
-.highlight span.filename + pre > code,
-.md-typeset pre > code {
-  border-radius: var(--base-border-radius);
-  border-top-left-radius: 0;
-}
-.md-typeset .admonition {
-  border-width: 0px;
-  border-left-width: var(--admonition-border-left-width);
-}
-[dir="ltr"] .md-typeset blockquote {
-  border-radius: 0.2rem;
-  border-left-width: var(--admonition-border-left-width);
-}
-*/
-
-/* 可选：博客相关样式，按需启用 */
-
-/* .md-post--excerpt {
-  background-color: rgba(68,138,255,.1);
-  box-shadow: 0 0 0 1rem rgba(68,138,255,.1);
-  border-radius: var(--base-border-radius);
-}
-.md-post--excerpt .md-post__header {
-  justify-content: left;
-}
-.md-post--excerpt .md-post__content > h2,
-.md-post__action {
-  text-align: left;
-} */
-
 
 /* 让所有admonition（包括!!! tip）圆角化且更自然 */
 .md-typeset .admonition,
@@ -117,8 +75,15 @@
     overflow: hidden;
 }
 
-/*图像圆角*/
-img.img1 {
-  border-radius: 25px;
+.md-typeset img {
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* 添加柔和阴影 */
+  transition: transform 0.2s;
+  /* 添加过渡动画 */
+}
 
+/* 可选：鼠标悬停时放大一点点 */
+.md-typeset img:hover {
+  transform: scale(1.02);
 }

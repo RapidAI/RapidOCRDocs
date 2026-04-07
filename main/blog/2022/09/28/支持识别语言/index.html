@@ -2890,7 +2890,18 @@ You're not viewing the latest version.
   
 </div>
 
-            <!-- Site Visits 访客统计 - 不蒜子替代版 -->
+            <!-- 百度统计（后台数据分析） -->
+            <script>
+                var _hmt = _hmt = _hmt || [];
+                (function () {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?a08320fa65511ac1d5ec1d683788131b";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                })();
+            </script>
+
+            <!-- 不蒜子（前台显示访问量） -->
             <style>
                 .site-visit-count {
                     padding: 0 12px;
@@ -2902,7 +2913,9 @@ You're not viewing the latest version.
             </style>
             <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="site-visit-count">
-                <span>本站访问量：</span><span id="busuanzi_value_site_pv"></span>
+                本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                访客数：<span id="busuanzi_value_site_uv"></span> 人
             </div>
 
             <!-- Social links -->

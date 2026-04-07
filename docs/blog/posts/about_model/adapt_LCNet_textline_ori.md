@@ -198,15 +198,17 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
 |||||||
 |1|PP-LCNet_x0_25_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.8513|
 |2|PP-LCNet_x0_25_textline_ori|RapidOCR |ONNX Runtime|ONNX|0.8922|
+|3|PP-LCNet_x0_25_textline_ori|RapidOCR |MNN|ONNX|0.8922|
 |||||||
-|3|PP-LCNet_x1_0_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.7918|
-|4|PP-LCNet_x1_0_textline_ori|RapidOCR |ONNX Runtime|ONNX|0.9033|
+|4|PP-LCNet_x1_0_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.7918|
+|5|PP-LCNet_x1_0_textline_ori|RapidOCR |ONNX Runtime|ONNX|0.9033|
+|6|PP-LCNet_x1_0_textline_ori|RapidOCR |MNN|ONNX|0.9033|
 
 Exp0 是 RapidOCR 一直在使用的 ch_ppocr_mobile_v2.0_cls_infer 模型，该模型源自 PaddleOCR v2 版本。从指标结果来看，在当前评测集上，该模型表现是最优的。
 
-Exp1 和 Exp3 实验都是用的 PaddleOCR 原始代码 + [text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset) 得到的指标。
+Exp1 和 Exp4 实验都是用的 PaddleOCR 原始代码 + [text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset) 得到的指标。
 
-Exp2 和 Exp4 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：
+Exp2 和 Exp5 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：
 
 - 相同之处：输出 shape 都是 `[3, 80, 160]`
 - 不同之处：前后处理不同。PaddleOCR 前后处理做了修改，与原有 PaddleOCR v2 的不同了。RapidOCR 用的是 PaddleOCR v2 时的前后处理。
@@ -225,7 +227,7 @@ Exp2 和 Exp4 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：
 
 #### 更改 rapidocr 代码适配
 
-该部分主要涉及到更改 [default_models.yaml](https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/default_models.yaml) 和 [paddle.py](https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/inference_engine/paddle.py) 的代码来适配。
+该部分主要涉及到更改 [python/rapidocr/default_models.yaml](https://github.com/RapidAI/RapidOCR/blob/ece967983d0227d91a83f104de1a8cb3598a99a0/python/rapidocr/default_models.yaml#L111) 和 [python/rapidocr/ch_ppocr_cls/main.py](https://github.com/RapidAI/RapidOCR/blob/ece967983d0227d91a83f104de1a8cb3598a99a0/python/rapidocr/ch_ppocr_cls/main.py#L27-L30) 的代码来适配。
 
 同时，需要添加对应的单元测试，在保证之前单测成功的同时，新的针对性该模型的单测也能通过。
 

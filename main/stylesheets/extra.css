@@ -90,9 +90,9 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   /* 布局优化：让图片作为块级元素居中，避免行内空隙 */
-  display: block;
+  /* display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
 }
 
 /* 鼠标悬停效果：图片微微放大 */

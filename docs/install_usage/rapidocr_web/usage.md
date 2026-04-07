@@ -4,9 +4,9 @@ comments: true
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_dark.png" width="60%" height="60%">
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_white.png" width="60%" height="60%">
-    <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_white.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_dark.png" width="60%" height="60%" class="no-radius">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_white.png" width="60%" height="60%" class="no-radius">
+    <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_white.png" class="no-radius">
   </picture>
 
   <br/>
@@ -53,7 +53,7 @@ rapidocr_web -ip 0.0.0.0 -p 9003
 rapidocr_web -ip 0.0.0.0 -p 9003
 ```
 
-### 浏览器打开 <http://localhost:9003/> ，enjoy it
+### 浏览器打开 <http://localhost:9003/>，enjoy it
 
 !!! note
 

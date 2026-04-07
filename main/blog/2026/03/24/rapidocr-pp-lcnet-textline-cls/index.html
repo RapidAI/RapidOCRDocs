@@ -3034,6 +3034,14 @@ You're not viewing the latest version.
 <td style="text-align: center;">0.8922</td>
 </tr>
 <tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">PP-LCNet_x0_25_textline_ori</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">MNN</td>
+<td style="text-align: center;">ONNX</td>
+<td style="text-align: center;">0.8922</td>
+</tr>
+<tr>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -3042,7 +3050,7 @@ You're not viewing the latest version.
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
 <td style="text-align: left;">PP-LCNet_x1_0_textline_ori</td>
 <td style="text-align: left;">PaddleOCR</td>
 <td style="text-align: left;">PaddlePaddle</td>
@@ -3050,18 +3058,26 @@ You're not viewing the latest version.
 <td style="text-align: center;">0.7918</td>
 </tr>
 <tr>
-<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
 <td style="text-align: left;">PP-LCNet_x1_0_textline_ori</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">ONNX</td>
 <td style="text-align: center;">0.9033</td>
 </tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">PP-LCNet_x1_0_textline_ori</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">MNN</td>
+<td style="text-align: center;">ONNX</td>
+<td style="text-align: center;">0.9033</td>
+</tr>
 </tbody>
 </table>
 <p>Exp0 是 RapidOCR 一直在使用的 ch_ppocr_mobile_v2.0_cls_infer 模型，该模型源自 PaddleOCR v2 版本。从指标结果来看，在当前评测集上，该模型表现是最优的。</p>
-<p>Exp1 和 Exp3 实验都是用的 PaddleOCR 原始代码 + <a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">text_rec_test_dataset</a> 得到的指标。</p>
-<p>Exp2 和 Exp4 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：</p>
+<p>Exp1 和 Exp4 实验都是用的 PaddleOCR 原始代码 + <a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">text_rec_test_dataset</a> 得到的指标。</p>
+<p>Exp2 和 Exp5 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：</p>
 <ul>
 <li>相同之处：输出 shape 都是 <code>[3, 80, 160]</code></li>
 <li>不同之处：前后处理不同。PaddleOCR 前后处理做了修改，与原有 PaddleOCR v2 的不同了。RapidOCR 用的是 PaddleOCR v2 时的前后处理。</li>
@@ -3073,7 +3089,7 @@ You're not viewing the latest version.
 <p>该部分主要是涉及模型上传到对应位置，并合理命名。注意上传完成后，需要打 Tag，避免后续 rapidocr whl 包中找不到模型下载路径。</p>
 <p>我这里已经上传到了魔搭上，详细链接参见：<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">link</a></p>
 <h4 id="rapidocr">更改 rapidocr 代码适配<a class="headerlink" href="#rapidocr" title="Permanent link">&para;</a></h4>
-<p>该部分主要涉及到更改 <a href="https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/default_models.yaml">default_models.yaml</a> 和 <a href="https://github.com/RapidAI/RapidOCR/blob/4d35ed272a1192afbcb95e823d99eb14c86b7893/python/rapidocr/inference_engine/paddle.py">paddle.py</a> 的代码来适配。</p>
+<p>该部分主要涉及到更改 <a href="https://github.com/RapidAI/RapidOCR/blob/ece967983d0227d91a83f104de1a8cb3598a99a0/python/rapidocr/default_models.yaml#L111">python/rapidocr/default_models.yaml</a> 和 <a href="https://github.com/RapidAI/RapidOCR/blob/ece967983d0227d91a83f104de1a8cb3598a99a0/python/rapidocr/ch_ppocr_cls/main.py#L27-L30">python/rapidocr/ch_ppocr_cls/main.py</a> 的代码来适配。</p>
 <p>同时，需要添加对应的单元测试，在保证之前单测成功的同时，新的针对性该模型的单测也能通过。</p>
 <p>我这里已经做完了，小伙伴们感兴趣可以去看看源码。</p>
 <h3 id="_4">写在最后<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
@@ -3102,7 +3118,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年4月3日 11:25:58 CST">2026-04-03 11:25:58</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年4月7日 18:52:01 CST">2026-04-07 18:52:01</span>
   </span>
 
     

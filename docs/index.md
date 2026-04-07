@@ -5,8 +5,8 @@ hide:
   - toc
 ---
 
-<div align="no-radius">
-  <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/Logov2_white.png" width="50%">
+<div align="center">
+  <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/Logov2_white.png" width="50%" class="no-radius">
 
 <div align="center">
     <b><font size="4"><i> 信创级开源 OCR - 为世界内容安全贡献力量 </i></font></b>
@@ -67,8 +67,8 @@ flowchart LR
 
 ### 🎥 效果展示
 
-<div align="no-radius">
-    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/demo.gif" alt="Demo" width="60%">
+<div align="center">
+    <img src="https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/demo.gif" alt="Demo" width="60%" class="no-radius">
 </div>
 
 ### 👥 谁在使用？([更多](https://github.com/RapidAI/RapidOCR/discussions/286))

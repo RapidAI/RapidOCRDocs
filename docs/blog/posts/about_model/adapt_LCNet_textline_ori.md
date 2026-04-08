@@ -196,6 +196,7 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
 !!! tip
 
     为了后续统一管理，命名约定：
+
       - `PP-LCNet_x0_25_textline_ori` → `ch_PP-LCNet_x0_25_textline_ori_mobile`
       - `PP-LCNet_x1_0_textline_ori` → `ch_PP-LCNet_x1_0_textline_ori_server`
 

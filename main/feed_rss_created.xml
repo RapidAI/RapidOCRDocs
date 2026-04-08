@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Tue, 07 Apr 2026 10:52:47 -0000</pubDate>
-    <lastBuildDate>Tue, 07 Apr 2026 10:52:47 -0000</lastBuildDate>
+    <pubDate>Wed, 08 Apr 2026 02:43:45 -0000</pubDate>
+    <lastBuildDate>Wed, 08 Apr 2026 02:43:45 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -89,25 +89,6 @@
     </item>
     
     <item>
-      <title>RapidOCR 支持 MNN 推理引擎</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;p&gt;记录支持 MNN 推理引擎的过程文档。&lt;/p&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/21/rapidocr-support-mnn-engine/</link>
-      <pubDate>Fri, 13 Feb 2026 07:36:57 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/21/rapidocr-support-mnn-engine/</guid>
-      
-    </item>
-    
-    <item>
       <title>RapidOCR 支持 TensorRT 推理引擎</title>
       
       
@@ -119,7 +100,7 @@
       
       <description>&lt;p&gt;记录支持 TensorRT 推理引擎的过程文档。&lt;/p&gt;</description>
       <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/13/support-tensorrt-engine/</link>
-      <pubDate>Fri, 13 Feb 2026 07:36:57 +0000</pubDate>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/13/support-tensorrt-engine/</guid>
@@ -142,6 +123,25 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/</guid>
+      
+    </item>
+    
+    <item>
+      <title>RapidOCR 支持 MNN 推理引擎</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;p&gt;记录支持 MNN 推理引擎的过程文档。&lt;/p&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/21/rapidocr-support-mnn-engine/</link>
+      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/21/rapidocr-support-mnn-engine/</guid>
       
     </item>
     

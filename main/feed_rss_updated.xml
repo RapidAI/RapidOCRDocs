@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Tue, 07 Apr 2026 10:52:47 -0000</pubDate>
-    <lastBuildDate>Tue, 07 Apr 2026 10:52:47 -0000</lastBuildDate>
+    <pubDate>Wed, 08 Apr 2026 02:43:45 -0000</pubDate>
+    <lastBuildDate>Wed, 08 Apr 2026 02:43:45 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -43,10 +43,67 @@
       
       <description>&lt;p&gt;该文章主要记录 RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录，涉及模型转换，模型精度测试等步骤。&lt;/p&gt;</description>
       <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/</link>
-      <pubDate>Tue, 07 Apr 2026 10:52:01 +0000</pubDate>
+      <pubDate>Wed, 08 Apr 2026 02:43:06 +0000</pubDate>
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/</guid>
+      
+    </item>
+    
+    <item>
+      <title>RapidOCR 支持 MNN 推理引擎</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;p&gt;记录支持 MNN 推理引擎的过程文档。&lt;/p&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/21/rapidocr-support-mnn-engine/</link>
+      <pubDate>Wed, 08 Apr 2026 02:43:06 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/21/rapidocr-support-mnn-engine/</guid>
+      
+    </item>
+    
+    <item>
+      <title>RapidOCR 支持 TensorRT 推理引擎</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;p&gt;记录支持 TensorRT 推理引擎的过程文档。&lt;/p&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/13/support-tensorrt-engine/</link>
+      <pubDate>Wed, 08 Apr 2026 02:43:06 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/13/support-tensorrt-engine/</guid>
+      
+    </item>
+    
+    <item>
+      <title>RapidOCR 支持 PyTorch MPS 作为计算后端</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;p&gt;记录 RapidOCR 支持 PyTorch MPS 作为计算后端的过程。&lt;/p&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/</link>
+      <pubDate>Wed, 08 Apr 2026 02:43:06 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/</guid>
       
     </item>
     
@@ -310,44 +367,6 @@
     </item>
     
     <item>
-      <title>RapidOCR 支持 TensorRT 推理引擎</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;p&gt;记录支持 TensorRT 推理引擎的过程文档。&lt;/p&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/13/support-tensorrt-engine/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/13/support-tensorrt-engine/</guid>
-      
-    </item>
-    
-    <item>
-      <title>RapidOCR 支持 PyTorch MPS 作为计算后端</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;p&gt;记录 RapidOCR 支持 PyTorch MPS 作为计算后端的过程。&lt;/p&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/</guid>
-      
-    </item>
-    
-    <item>
       <title>OCR 推理引擎选择指南</title>
       
       
@@ -401,25 +420,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/24/onnx-runtime-gpu-%E6%8E%A8%E7%90%86/</guid>
-      
-    </item>
-    
-    <item>
-      <title>OpenVINO CPU 推理优化</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description></description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/26/openvino-cpu-%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/26/openvino-cpu-%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/</guid>
       
     </item>
     

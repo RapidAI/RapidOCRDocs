@@ -2670,6 +2670,13 @@ You're not viewing the latest version.
                       </div>
                     </li>
                     
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2026-04-08 00:00:00+00:00" class="md-ellipsis">2026/4/8</time>
+                        </div>
+                      </li>
+                    
                     
                       <li class="md-nav__item">
                         <div class="md-nav__link">
@@ -2842,7 +2849,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 <h2 id="onnx">转换 ONNX 模型<a class="headerlink" href="#onnx" title="Permanent link">&para;</a></h2>
 <p>转换命令：</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>MNNConvert<span class="w"> </span>-f<span class="w"> </span>ONNX<span class="w"> </span>--modelFile<span class="w"> </span>rapidocr/models/ch_PP-OCRv4_det_infer.onnx<span class="w"> </span>--MNNModel<span class="w"> </span>mnn/ch_PP-OCRv4_det_infer.mnn<span class="w"> </span>--bizCode<span class="w"> </span>MNN
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>MNNConvert<span class="w"> </span>-f<span class="w"> </span>ONNX<span class="w"> </span>--modelFile<span class="w"> </span>rapidocr/models/ch_PP-OCRv4_det_mobile.onnx<span class="w"> </span>--MNNModel<span class="w"> </span>mnn/ch_PP-OCRv4_det_mobile.mnn<span class="w"> </span>--bizCode<span class="w"> </span>MNN
 </span></code></pre></div></td></tr></table></div>
 <p>输出以下内容，表示转换成功：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -2865,7 +2872,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 <h2 id="det">支持 Det 模型<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
 <h3 id="_3">比较转化前后推理精度差异<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>两者对比的模型为 <code>ch_PP-OCRv4_det_infer</code> 模型，Exp1 基于 <code>RapidOCR+ONNX Runtime</code> 格式模型推理, Exp2 基于 <code>RapidOCR+MNN</code> 格式模型推理。</p>
+<p>两者对比的模型为 <code>ch_PP-OCRv4_det_mobile</code> 模型，Exp1 基于 <code>RapidOCR+ONNX Runtime</code> 格式模型推理, Exp2 基于 <code>RapidOCR+MNN</code> 格式模型推理。</p>
 <p>两次实验除模型不一样外，其余均相同。其余未列出的实验均只换了模型。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_1_2">(Exp2) RapidOCR + MNN</label></div>
 <div class="tabbed-content">
@@ -2987,7 +2994,7 @@ You're not viewing the latest version.
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a>
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">RapidOCR</span>
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;mnn/ch_PP-OCRv4_det_infer.mnn&quot;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;mnn/ch_PP-OCRv4_det_mobile.mnn&quot;</span>
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">MNN</span><span class="p">,</span> <span class="s2">&quot;Det.model_path&quot;</span><span class="p">:</span> <span class="n">model_path</span><span class="p">}</span>
 </span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="p">)</span>
@@ -3052,7 +3059,7 @@ You're not viewing the latest version.
 <tbody>
 <tr>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8595</td>
@@ -3062,7 +3069,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
-<td style="text-align: left;">ch_PP-OCRv4_det_infer</td>
+<td style="text-align: left;">ch_PP-OCRv4_det_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.8595</td>
@@ -3082,7 +3089,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
-<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">ch_PP-OCRv5_det_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.7861</td>
@@ -3092,7 +3099,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
-<td style="text-align: left;">ch_PP-OCRv5_mobile_det</td>
+<td style="text-align: left;">ch_PP-OCRv5_det_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.7861</td>
@@ -3142,7 +3149,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
-<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">en_PP-OCRv3_det_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8066</td>
@@ -3152,7 +3159,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">8</td>
-<td style="text-align: left;">en_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">en_PP-OCRv3_det_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.8066</td>
@@ -3172,7 +3179,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">9</td>
-<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">multi_PP-OCRv3_det_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.4228</td>
@@ -3182,7 +3189,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">10</td>
-<td style="text-align: left;">Multilingual_PP-OCRv3_det_infer</td>
+<td style="text-align: left;">multi_PP-OCRv3_det_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.4228</td>
@@ -3202,7 +3209,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">11</td>
-<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
+<td style="text-align: left;">ch_PP-OCRv5_det_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.7394</td>
@@ -3212,7 +3219,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">12</td>
-<td style="text-align: left;">ch_PP-OCRv5_server_det</td>
+<td style="text-align: left;">ch_PP-OCRv5_det_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.7394</td>
@@ -3224,7 +3231,7 @@ You're not viewing the latest version.
 </table>
 <h2 id="rec">支持 Rec 模型<a class="headerlink" href="#rec" title="Permanent link">&para;</a></h2>
 <h3 id="_5">比较转化前后推理精度差异<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>两者对比的模型为 <code>ch_PP-OCRv4_rec_infer</code> 模型，Exp1 基于 <code>RapidOCR+ONNX Runtime</code> 格式模型推理, Exp2 基于 <code>RapidOCR+MNN</code> 格式模型推理。两次实验除模型不一样外，其余均相同。</p>
+<p>两者对比的模型为 <code>ch_PP-OCRv4_rec_mobile</code> 模型，Exp1 基于 <code>RapidOCR+ONNX Runtime</code> 格式模型推理, Exp2 基于 <code>RapidOCR+MNN</code> 格式模型推理。两次实验除模型不一样外，其余均相同。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">(Exp1) RapidOCR + ONNX Runtime</label><label for="__tabbed_2_2">(Exp2) RapidOCR + MNN</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3278,7 +3285,7 @@ You're not viewing the latest version.
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
 </span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;rapidocr/models/ch_PP-OCRv4_rec_infer.onnx&quot;</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;rapidocr/models/ch_PP-OCRv4_rec_mobile.onnx&quot;</span>
 </span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="n">dict_path</span> <span class="o">=</span> <span class="s2">&quot;rapidocr/models/ppocr_keys_v1.txt&quot;</span>
 </span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
@@ -3377,7 +3384,7 @@ You're not viewing the latest version.
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a>
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
 </span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;mnn/rec/PP-OCRv4/ch_PP-OCRv4_rec_infer.onnx&quot;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;mnn/rec/PP-OCRv4/ch_PP-OCRv4_rec_mobile.onnx&quot;</span>
 </span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="n">dict_path</span> <span class="o">=</span> <span class="s2">&quot;rapidocr/models/ppocr_keys_v1.txt&quot;</span>
 </span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
@@ -3451,7 +3458,7 @@ You're not viewing the latest version.
 <tbody>
 <tr>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">ch_PP-OCRv4_rec_infer</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.829</td>
@@ -3460,7 +3467,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
-<td style="text-align: left;">ch_PP-OCRv4_rec_infer</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.829</td>
@@ -3478,7 +3485,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
-<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8065</td>
@@ -3487,7 +3494,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
-<td style="text-align: left;">ch_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">ch_PP-OCRv4_rec_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.8065</td>
@@ -3505,7 +3512,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
-<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8097</td>
@@ -3514,7 +3521,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
-<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server_infer</td>
+<td style="text-align: left;">ch_doc_PP-OCRv4_rec_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.8065</td>
@@ -3532,7 +3539,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
-<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.7355</td>
@@ -3541,7 +3548,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">8</td>
-<td style="text-align: left;">ch_PP-OCRv5_rec_mobile_infer</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.7355</td>
@@ -3559,7 +3566,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">9</td>
-<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">0.8129</td>
@@ -3568,7 +3575,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">10</td>
-<td style="text-align: left;">ch_PP-OCRv5_rec_server_infer</td>
+<td style="text-align: left;">ch_PP-OCRv5_rec_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">0.8129</td>
@@ -3580,31 +3587,31 @@ You're not viewing the latest version.
 <h3 id="_7">其他单独校验模型<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <h4 id="pp-ocrv4">PP-OCRv4<a class="headerlink" href="#pp-ocrv4" title="Permanent link">&para;</a></h4>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> arabic_PP-OCRv4_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> chinese_cht_PP-OCRv3_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> cyrillic_PP-OCRv3_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> devanagari_PP-OCRv4_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> en_PP-OCRv4_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> japan_PP-OCRv4_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> ka_PP-OCRv4_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> korean_PP-OCRv4_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> latin_PP-OCRv3_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> ta_PP-OCRv4_rec_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> te_PP-OCRv4_rec_infer</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> arabic_PP-OCRv4_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> chinese_cht_PP-OCRv3_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> cyrillic_PP-OCRv3_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> devanagari_PP-OCRv4_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> en_PP-OCRv4_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> japan_PP-OCRv4_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> ka_PP-OCRv4_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> korean_PP-OCRv4_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> latin_PP-OCRv3_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> ta_PP-OCRv4_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> te_PP-OCRv4_rec_mobile</li>
 </ul>
 <h4 id="pp-ocrv5">PP-OCRv5<a class="headerlink" href="#pp-ocrv5" title="Permanent link">&para;</a></h4>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> arabic_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> cyrillic_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> devanagari_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> en_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> el_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> eslav_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> korean_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> latin_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> ta_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> te_PP-OCRv5_rec_mobile_infer</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> th_PP-OCRv5_rec_mobile_infer</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> arabic_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> cyrillic_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> devanagari_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> en_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> el_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> eslav_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> korean_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> latin_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> ta_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> te_PP-OCRv5_rec_mobile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> th_PP-OCRv5_rec_mobile</li>
 </ul>
 <p>相关 MNN 模型已经上传到 <a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭模型库</a> 中。</p>
 <h2 id="_8">写在最后<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
@@ -3634,7 +3641,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月4日 17:27:14 CST">2026-03-04 17:27:14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年4月8日 10:43:06 CST">2026-04-08 10:43:06</span>
   </span>
 
     

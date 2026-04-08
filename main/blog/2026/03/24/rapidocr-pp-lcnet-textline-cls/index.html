@@ -2529,7 +2529,7 @@ You're not viewing the latest version.
   <a href="#rapidocr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        更改 rapidocr 代码适配
+        适配 rapidocr 已有代码
       
     </span>
   </a>
@@ -2611,6 +2611,13 @@ You're not viewing the latest version.
                         <time datetime="2026-03-24 00:00:00+00:00" class="md-ellipsis">2026/3/24</time>
                       </div>
                     </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2026-04-08 00:00:00+00:00" class="md-ellipsis">2026/4/8</time>
+                        </div>
+                      </li>
                     
                     
                       <li class="md-nav__item">
@@ -2989,6 +2996,12 @@ You're not viewing the latest version.
 </div>
 </div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>为了后续统一管理，命名约定：
+    - <code>PP-LCNet_x0_25_textline_ori</code> → <code>ch_PP-LCNet_x0_25_textline_ori_mobile</code>
+    - <code>PP-LCNet_x1_0_textline_ori</code> → <code>ch_PP-LCNet_x1_0_textline_ori_server</code></p>
+</div>
 <table>
 <thead>
 <tr>
@@ -3003,7 +3016,7 @@ You're not viewing the latest version.
 <tbody>
 <tr>
 <td style="text-align: center;">0</td>
-<td style="text-align: left;">ch_ppocr_mobile_v2.0_cls_infer</td>
+<td style="text-align: left;">ch_ppocr_mobile_v2.0_cls_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">ONNX</td>
@@ -3019,7 +3032,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">PP-LCNet_x0_25_textline_ori</td>
+<td style="text-align: left;">ch_PP-LCNet_x0_25_textline_ori_mobile</td>
 <td style="text-align: left;">PaddleOCR</td>
 <td style="text-align: left;">PaddlePaddle</td>
 <td style="text-align: center;">Paddle</td>
@@ -3027,7 +3040,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
-<td style="text-align: left;">PP-LCNet_x0_25_textline_ori</td>
+<td style="text-align: left;">ch_PP-LCNet_x0_25_textline_ori_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">ONNX</td>
@@ -3035,7 +3048,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
-<td style="text-align: left;">PP-LCNet_x0_25_textline_ori</td>
+<td style="text-align: left;">ch_PP-LCNet_x0_25_textline_ori_mobile</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">ONNX</td>
@@ -3051,7 +3064,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
-<td style="text-align: left;">PP-LCNet_x1_0_textline_ori</td>
+<td style="text-align: left;">ch_PP-LCNet_x1_0_textline_ori_server</td>
 <td style="text-align: left;">PaddleOCR</td>
 <td style="text-align: left;">PaddlePaddle</td>
 <td style="text-align: center;">Paddle</td>
@@ -3059,7 +3072,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
-<td style="text-align: left;">PP-LCNet_x1_0_textline_ori</td>
+<td style="text-align: left;">ch_PP-LCNet_x1_0_textline_ori_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">ONNX Runtime</td>
 <td style="text-align: center;">ONNX</td>
@@ -3067,7 +3080,7 @@ You're not viewing the latest version.
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
-<td style="text-align: left;">PP-LCNet_x1_0_textline_ori</td>
+<td style="text-align: left;">ch_PP-LCNet_x1_0_textline_ori_server</td>
 <td style="text-align: left;">RapidOCR</td>
 <td style="text-align: left;">MNN</td>
 <td style="text-align: center;">ONNX</td>
@@ -3075,7 +3088,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p>Exp0 是 RapidOCR 一直在使用的 ch_ppocr_mobile_v2.0_cls_infer 模型，该模型源自 PaddleOCR v2 版本。从指标结果来看，在当前评测集上，该模型表现是最优的。</p>
+<p>Exp0 是 RapidOCR 一直在使用的 ch_ppocr_mobile_v2.0_cls_mobile 模型，该模型源自 PaddleOCR v2 版本。从指标结果来看，在当前评测集上，该模型表现是最优的。</p>
 <p>Exp1 和 Exp4 实验都是用的 PaddleOCR 原始代码 + <a href="https://huggingface.co/datasets/SWHL/text_rec_test_dataset">text_rec_test_dataset</a> 得到的指标。</p>
 <p>Exp2 和 Exp5 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：</p>
 <ul>
@@ -3088,12 +3101,12 @@ You're not viewing the latest version.
 <h4 id="_3">托管模型到魔搭<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>该部分主要是涉及模型上传到对应位置，并合理命名。注意上传完成后，需要打 Tag，避免后续 rapidocr whl 包中找不到模型下载路径。</p>
 <p>我这里已经上传到了魔搭上，详细链接参见：<a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">link</a></p>
-<h4 id="rapidocr">更改 rapidocr 代码适配<a class="headerlink" href="#rapidocr" title="Permanent link">&para;</a></h4>
+<h4 id="rapidocr">适配 rapidocr 已有代码<a class="headerlink" href="#rapidocr" title="Permanent link">&para;</a></h4>
 <p>该部分主要涉及到更改 <a href="https://github.com/RapidAI/RapidOCR/blob/ece967983d0227d91a83f104de1a8cb3598a99a0/python/rapidocr/default_models.yaml#L111">python/rapidocr/default_models.yaml</a> 和 <a href="https://github.com/RapidAI/RapidOCR/blob/ece967983d0227d91a83f104de1a8cb3598a99a0/python/rapidocr/ch_ppocr_cls/main.py#L27-L30">python/rapidocr/ch_ppocr_cls/main.py</a> 的代码来适配。</p>
 <p>同时，需要添加对应的单元测试，在保证之前单测成功的同时，新的针对性该模型的单测也能通过。</p>
 <p>我这里已经做完了，小伙伴们感兴趣可以去看看源码。</p>
 <h3 id="_4">写在最后<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>本文中涉及到的两个文本行方向分类模型，归类到 <strong>PP-OCRv5 / cls</strong> 下，支持 ONNX Runtime 和 PaddlePaddle 推理，将在 <code>rapidocr &gt;= 3.8.0</code> 中支持。敬请期待。</p>
+<p>本文中涉及到的两个文本行方向分类模型，归类到 <strong>PP-OCRv5/cls</strong> 下，支持 ONNX Runtime, PaddlePaddle, OpenVINO 和 MNN 推理，将在 <code>rapidocr &gt;= 3.8.0</code> 中支持。敬请期待。</p>
 
 <!-- Source file information -->
 
@@ -3118,7 +3131,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年4月7日 18:52:01 CST">2026-04-07 18:52:01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年4月8日 10:43:06 CST">2026-04-08 10:43:06</span>
   </span>
 
     

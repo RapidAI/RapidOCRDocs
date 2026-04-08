@@ -853,12 +853,12 @@ You're not viewing the latest version.
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文本识别模型
+        文本行方向分类模型
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文本识别模型">
+    <nav class="md-nav" aria-label="文本行方向分类模型">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -890,6 +890,45 @@ You're not viewing the latest version.
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文本识别模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文本识别模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pp-ocrv5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PP-OCRv5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pp-ocrv4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PP-OCRv4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         使用方式
@@ -2683,12 +2722,12 @@ You're not viewing the latest version.
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文本识别模型
+        文本行方向分类模型
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="文本识别模型">
+    <nav class="md-nav" aria-label="文本行方向分类模型">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2720,6 +2759,45 @@ You're not viewing the latest version.
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文本识别模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文本识别模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pp-ocrv5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PP-OCRv5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pp-ocrv4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PP-OCRv4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         使用方式
@@ -2961,12 +3039,60 @@ You're not viewing the latest version.
 </span></span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>    <span class="p">}</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="_5">文本识别模型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">文本行方向分类模型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PP-OCRv5: <code>rapidocr &gt;= 3.8.0</code> 中支持</p>
+<p>PP-OCRv4: <code>rapidocr &lt; 3.8.0</code> 支持</p>
+</div>
+<h4 id="pp-ocrv5_1">PP-OCRv5<a class="headerlink" href="#pp-ocrv5_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">语种类型</th>
+<th style="text-align: left;">engine_type</th>
+<th style="text-align: left;">lang_type</th>
+<th style="text-align: left;">model_type</th>
+<th style="text-align: left;">ocr_version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">中文</td>
+<td style="text-align: left;"><code>onnxruntime</code> <br/> <code>openvino</code> <br/> <code>paddle</code><br><code>mnn</code><br></td>
+<td style="text-align: left;"><code>ch</code></td>
+<td style="text-align: left;"><code>mobile</code><br/> <code>server</code></td>
+<td style="text-align: left;"><code>PP-OCRv5</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="pp-ocrv4_1">PP-OCRv4<a class="headerlink" href="#pp-ocrv4_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">语种类型</th>
+<th style="text-align: left;">engine_type</th>
+<th style="text-align: left;">lang_type</th>
+<th style="text-align: left;">model_type</th>
+<th style="text-align: left;">ocr_version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">中文</td>
+<td style="text-align: left;"><code>onnxruntime</code></td>
+<td style="text-align: left;"><code>ch</code></td>
+<td style="text-align: left;"><code>mobile</code></td>
+<td style="text-align: left;"><code>PP-OCRv4</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">文本识别模型<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>lang_type</code> 字段对应 Det 模块下的 <code>LangRec</code></p>
 </div>
-<h4 id="pp-ocrv5_1">PP-OCRv5<a class="headerlink" href="#pp-ocrv5_1" title="Permanent link">&para;</a></h4>
+<h4 id="pp-ocrv5_2">PP-OCRv5<a class="headerlink" href="#pp-ocrv5_2" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -3071,7 +3197,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<h4 id="pp-ocrv4_1">PP-OCRv4<a class="headerlink" href="#pp-ocrv4_1" title="Permanent link">&para;</a></h4>
+<h4 id="pp-ocrv4_2">PP-OCRv4<a class="headerlink" href="#pp-ocrv4_2" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -3176,7 +3302,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<h3 id="_6">使用方式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7">使用方式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>以上模型可直接通过字段指定，程序会自动下载使用。</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>

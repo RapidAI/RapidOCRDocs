@@ -26,8 +26,7 @@ hide:
 顺利的话，两行命令即可使用上。`rapidocr` 包大小约为 15M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 mobile 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。
 
 ```bash linenums="1"
-pip install onnxruntime
-pip install rapidocr
+pip install rapidocr onnxruntime
 ```
 
 国内安装速度慢的话，可以指定国内的安装源，如使用清华源：

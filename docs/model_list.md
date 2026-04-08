@@ -96,6 +96,26 @@ engine = RapidOCR(
 )
 ```
 
+### 文本行方向分类模型
+
+!!! note
+
+    PP-OCRv5: `rapidocr >= 3.8.0` 中支持
+
+    PP-OCRv4: `rapidocr < 3.8.0` 支持
+
+#### PP-OCRv5
+
+|语种类型|engine_type| lang_type|model_type|ocr_version|
+|:---|:---|:---|:---|:---|
+|中文|`onnxruntime` <br/> `openvino` <br/> `paddle`<br>`mnn`<br>|`ch`|`mobile`<br/> `server`|`PP-OCRv5`|
+
+#### PP-OCRv4
+
+|语种类型|engine_type| lang_type|model_type|ocr_version|
+|:---|:---|:---|:---|:---|
+|中文|`onnxruntime`|`ch`|`mobile`|`PP-OCRv4`|
+
 ### 文本识别模型
 
 !!! note

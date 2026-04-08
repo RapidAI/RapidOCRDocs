@@ -42,19 +42,19 @@ links:
 
 | Exp | 模型 | 推理框架 | 推理引擎 | Precision↑ | Recall↑ | H-mean↑ | Elapse↓(ms) |
 |-----|------|----------|----------|------------|---------|---------|-------------|
-| 1 | ch_PP-OCRv4_det_infer | PyTorch | CPU | 0.8121 | 0.8419 | 0.8267 | 609.64 |
-| 2 | ch_PP-OCRv4_det_infer | PyTorch | MPS | 0.8121 | 0.8419 | 0.8267 | 896.91 |
-| 3 | ch_PP-OCRv5_mobile_det | PyTorch | CPU | 0.7861 | 0.8266 | 0.8058 | 611.07 |
-| 4 | ch_PP-OCRv5_mobile_det | PyTorch | MPS | 0.7861 | 0.8266 | 0.8058 | 273.44 |
+| 1 | ch_PP-OCRv4_det_mobile | PyTorch | CPU | 0.8121 | 0.8419 | 0.8267 | 609.64 |
+| 2 | ch_PP-OCRv4_det_mobile | PyTorch | MPS | 0.8121 | 0.8419 | 0.8267 | 896.91 |
+| 3 | ch_PP-OCRv5_det_mobile | PyTorch | CPU | 0.7861 | 0.8266 | 0.8058 | 611.07 |
+| 4 | ch_PP-OCRv5_det_mobile | PyTorch | MPS | 0.7861 | 0.8266 | 0.8058 | 273.44 |
 
 ## Rec 模型对比
 
 | Exp | 模型 | 推理框架 | 推理引擎 | ExactMatch↑ | CharMatch↑ | Elapse↓(ms) |
 |-----|------|----------|----------|-------------|------------|-------------|
-| 1 | ch_PP-OCRv4_rec_infer | PyTorch | CPU | 0.8290 | 0.9432 | 101.03 |
-| 2 | ch_PP-OCRv4_rec_infer | PyTorch | MPS | 0.8290 | 0.9432 | 163.01 |
-| 3 | ch_PP-OCRv5_rec_mobile_infer | PyTorch | CPU | 0.7355 | 0.9177 | 134.61 |
-| 4 | ch_PP-OCRv5_rec_mobile_infer | PyTorch | MPS | 0.7355 | 0.9177 | 47.41 |
+| 1 | ch_PP-OCRv4_rec_mobile | PyTorch | CPU | 0.8290 | 0.9432 | 101.03 |
+| 2 | ch_PP-OCRv4_rec_mobile | PyTorch | MPS | 0.8290 | 0.9432 | 163.01 |
+| 3 | ch_PP-OCRv5_rec_mobile | PyTorch | CPU | 0.7355 | 0.9177 | 134.61 |
+| 4 | ch_PP-OCRv5_rec_mobile | PyTorch | MPS | 0.7355 | 0.9177 | 47.41 |
 
 ## 写在最后
 

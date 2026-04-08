@@ -1,6 +1,8 @@
 ---
 title: RapidOCR 支持 MNN 推理引擎
-date: 2026-01-21
+date:
+  created: 2026-01-21
+  updated: 2026-04-08
 authors: [SWHL]
 slug: rapidocr-support-mnn-engine
 categories:
@@ -51,7 +53,7 @@ pip install MNN
 转换命令：
 
 ```bash linenums="1"
-MNNConvert -f ONNX --modelFile rapidocr/models/ch_PP-OCRv4_det_infer.onnx --MNNModel mnn/ch_PP-OCRv4_det_infer.mnn --bizCode MNN
+MNNConvert -f ONNX --modelFile rapidocr/models/ch_PP-OCRv4_det_mobile.onnx --MNNModel mnn/ch_PP-OCRv4_det_mobile.mnn --bizCode MNN
 ```
 
 输出以下内容，表示转换成功：
@@ -72,7 +74,7 @@ Converted Success!
 
 ### 比较转化前后推理精度差异
 
-两者对比的模型为 `ch_PP-OCRv4_det_infer` 模型，Exp1 基于 `RapidOCR+ONNX Runtime` 格式模型推理, Exp2 基于 `RapidOCR+MNN` 格式模型推理。
+两者对比的模型为 `ch_PP-OCRv4_det_mobile` 模型，Exp1 基于 `RapidOCR+ONNX Runtime` 格式模型推理, Exp2 基于 `RapidOCR+MNN` 格式模型推理。
 
 两次实验除模型不一样外，其余均相同。其余未列出的实验均只换了模型。
 
@@ -137,7 +139,7 @@ Converted Success!
 
     from rapidocr import EngineType, RapidOCR
 
-    model_path = "mnn/ch_PP-OCRv4_det_infer.mnn"
+    model_path = "mnn/ch_PP-OCRv4_det_mobile.mnn"
     engine = RapidOCR(
         params={"Det.engine_type": EngineType.MNN, "Det.model_path": model_path}
     )
@@ -187,29 +189,29 @@ Converted Success!
 
 |Exp|模型|推理框架|推理引擎|Precision↑|Recall↑|H-mean↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|:---:|
-|1|ch_PP-OCRv4_det_infer|RapidOCR|ONNX Runtime|0.8595|0.8434|0.8514|0.182|
-|2|ch_PP-OCRv4_det_infer|RapidOCR|MNN|0.8595|0.8434|0.8514|0.159|
+|1|ch_PP-OCRv4_det_mobile|RapidOCR|ONNX Runtime|0.8595|0.8434|0.8514|0.182|
+|2|ch_PP-OCRv4_det_mobile|RapidOCR|MNN|0.8595|0.8434|0.8514|0.159|
 |||||||||
-|3|ch_PP-OCRv5_mobile_det|RapidOCR|ONNX Runtime|0.7861|0.8266|0.8058|0.1835|
-|4|ch_PP-OCRv5_mobile_det|RapidOCR|MNN|0.7861|0.8266|0.8058|0.1526|
+|3|ch_PP-OCRv5_det_mobile|RapidOCR|ONNX Runtime|0.7861|0.8266|0.8058|0.1835|
+|4|ch_PP-OCRv5_det_mobile|RapidOCR|MNN|0.7861|0.8266|0.8058|0.1526|
 |||||||||
 |5|ch_PP-OCRv4_det_server_infer|RapidOCR|ONNX Runtime|0.7713|0.8579|0.8123|2.8449|
 |6|ch_PP-OCRv4_det_server_infer|RapidOCR|MNN|0.7713|0.8579|0.8123|1.889|
 |||||||||
-|7|en_PP-OCRv3_det_infer|RapidOCR|ONNX Runtime|0.8066|0.8380|0.8220|0.1463|
-|8|en_PP-OCRv3_det_infer|RapidOCR|MNN|0.8066|0.8380|0.8220|0.1262|
+|7|en_PP-OCRv3_det_mobile|RapidOCR|ONNX Runtime|0.8066|0.8380|0.8220|0.1463|
+|8|en_PP-OCRv3_det_mobile|RapidOCR|MNN|0.8066|0.8380|0.8220|0.1262|
 |||||||||
-|9|Multilingual_PP-OCRv3_det_infer|RapidOCR|ONNX Runtime|0.4228|0.6921|0.5249|0.1681|
-|10|Multilingual_PP-OCRv3_det_infer|RapidOCR|MNN|0.4228|0.6921|0.5249|0.1282|
+|9|multi_PP-OCRv3_det_mobile|RapidOCR|ONNX Runtime|0.4228|0.6921|0.5249|0.1681|
+|10|multi_PP-OCRv3_det_mobile|RapidOCR|MNN|0.4228|0.6921|0.5249|0.1282|
 |||||||||
-|11|ch_PP-OCRv5_server_det|RapidOCR|ONNX Runtime|0.7394|0.8442|0.7883|2.0193|
-|12|ch_PP-OCRv5_server_det|RapidOCR|MNN|0.7394|0.8442|0.7883|1.6048|
+|11|ch_PP-OCRv5_det_server|RapidOCR|ONNX Runtime|0.7394|0.8442|0.7883|2.0193|
+|12|ch_PP-OCRv5_det_server|RapidOCR|MNN|0.7394|0.8442|0.7883|1.6048|
 
 ## 支持 Rec 模型
 
 ### 比较转化前后推理精度差异
 
-两者对比的模型为 `ch_PP-OCRv4_rec_infer` 模型，Exp1 基于 `RapidOCR+ONNX Runtime` 格式模型推理, Exp2 基于 `RapidOCR+MNN` 格式模型推理。两次实验除模型不一样外，其余均相同。
+两者对比的模型为 `ch_PP-OCRv4_rec_mobile` 模型，Exp1 基于 `RapidOCR+ONNX Runtime` 格式模型推理, Exp2 基于 `RapidOCR+MNN` 格式模型推理。两次实验除模型不一样外，其余均相同。
 
 === "(Exp1) RapidOCR + ONNX Runtime"
 
@@ -225,7 +227,7 @@ Converted Success!
 
     from rapidocr import EngineType, OCRVersion, RapidOCR
 
-    model_path = "rapidocr/models/ch_PP-OCRv4_rec_infer.onnx"
+    model_path = "rapidocr/models/ch_PP-OCRv4_rec_mobile.onnx"
     dict_path = "rapidocr/models/ppocr_keys_v1.txt"
     engine = RapidOCR(
         params={
@@ -285,7 +287,7 @@ Converted Success!
 
     from rapidocr import EngineType, OCRVersion, RapidOCR
 
-    model_path = "mnn/rec/PP-OCRv4/ch_PP-OCRv4_rec_infer.onnx"
+    model_path = "mnn/rec/PP-OCRv4/ch_PP-OCRv4_rec_mobile.onnx"
     dict_path = "rapidocr/models/ppocr_keys_v1.txt"
     engine = RapidOCR(
         params={
@@ -344,50 +346,50 @@ Converted Success!
 
 |Exp|模型|推理框架|推理引擎|ExactMatch↑|CharMatch↑|Elapse↓|
 |:---:|:---|:---|:---|:---:|:---:|:---:|
-|1|ch_PP-OCRv4_rec_infer|RapidOCR|ONNX Runtime|0.829|0.9432|0.0176|
-|2|ch_PP-OCRv4_rec_infer|RapidOCR|MNN|0.829|0.9432|0.0213|
+|1|ch_PP-OCRv4_rec_mobile|RapidOCR|ONNX Runtime|0.829|0.9432|0.0176|
+|2|ch_PP-OCRv4_rec_mobile|RapidOCR|MNN|0.829|0.9432|0.0213|
 ||||||||
-|3|ch_PP-OCRv4_rec_server_infer|RapidOCR|ONNX Runtime|0.8065|0.9375|0.0811|
-|4|ch_PP-OCRv4_rec_server_infer|RapidOCR|MNN|0.8065|0.9375|0.0639|
+|3|ch_PP-OCRv4_rec_server|RapidOCR|ONNX Runtime|0.8065|0.9375|0.0811|
+|4|ch_PP-OCRv4_rec_server|RapidOCR|MNN|0.8065|0.9375|0.0639|
 ||||||||
-|5|ch_doc_PP-OCRv4_rec_server_infer|RapidOCR|ONNX Runtime|0.8097|0.9444|0.0809|
-|6|ch_doc_PP-OCRv4_rec_server_infer|RapidOCR|MNN|0.8065|0.9375|0.0763|
+|5|ch_doc_PP-OCRv4_rec_server|RapidOCR|ONNX Runtime|0.8097|0.9444|0.0809|
+|6|ch_doc_PP-OCRv4_rec_server|RapidOCR|MNN|0.8065|0.9375|0.0763|
 ||||||||
-|7|ch_PP-OCRv5_rec_mobile_infer|RapidOCR|ONNX Runtime|0.7355|0.9177|0.0196|
-|8|ch_PP-OCRv5_rec_mobile_infer|RapidOCR|MNN|0.7355|0.9177|0.0373|
+|7|ch_PP-OCRv5_rec_mobile|RapidOCR|ONNX Runtime|0.7355|0.9177|0.0196|
+|8|ch_PP-OCRv5_rec_mobile|RapidOCR|MNN|0.7355|0.9177|0.0373|
 ||||||||
-|9|ch_PP-OCRv5_rec_server_infer|RapidOCR|ONNX Runtime|0.8129|0.9431|0.0582|
-|10|ch_PP-OCRv5_rec_server_infer|RapidOCR|MNN|0.8129|0.9431|0.0724|
+|9|ch_PP-OCRv5_rec_server|RapidOCR|ONNX Runtime|0.8129|0.9431|0.0582|
+|10|ch_PP-OCRv5_rec_server|RapidOCR|MNN|0.8129|0.9431|0.0724|
 
 ### 其他单独校验模型
 
 #### PP-OCRv4
 
-- [x] arabic_PP-OCRv4_rec_infer
-- [x] chinese_cht_PP-OCRv3_rec_infer
-- [x] cyrillic_PP-OCRv3_rec_infer
-- [x] devanagari_PP-OCRv4_rec_infer
-- [x] en_PP-OCRv4_rec_infer
-- [x] japan_PP-OCRv4_rec_infer
-- [x] ka_PP-OCRv4_rec_infer
-- [x] korean_PP-OCRv4_rec_infer
-- [x] latin_PP-OCRv3_rec_infer
-- [x] ta_PP-OCRv4_rec_infer
-- [x] te_PP-OCRv4_rec_infer
+- [x] arabic_PP-OCRv4_rec_mobile
+- [x] chinese_cht_PP-OCRv3_rec_mobile
+- [x] cyrillic_PP-OCRv3_rec_mobile
+- [x] devanagari_PP-OCRv4_rec_mobile
+- [x] en_PP-OCRv4_rec_mobile
+- [x] japan_PP-OCRv4_rec_mobile
+- [x] ka_PP-OCRv4_rec_mobile
+- [x] korean_PP-OCRv4_rec_mobile
+- [x] latin_PP-OCRv3_rec_mobile
+- [x] ta_PP-OCRv4_rec_mobile
+- [x] te_PP-OCRv4_rec_mobile
 
 #### PP-OCRv5
 
-- [x] arabic_PP-OCRv5_rec_mobile_infer
-- [x] cyrillic_PP-OCRv5_rec_mobile_infer
-- [x] devanagari_PP-OCRv5_rec_mobile_infer
-- [x] en_PP-OCRv5_rec_mobile_infer
-- [x] el_PP-OCRv5_rec_mobile_infer
-- [x] eslav_PP-OCRv5_rec_mobile_infer
-- [x] korean_PP-OCRv5_rec_mobile_infer
-- [x] latin_PP-OCRv5_rec_mobile_infer
-- [x] ta_PP-OCRv5_rec_mobile_infer
-- [x] te_PP-OCRv5_rec_mobile_infer
-- [x] th_PP-OCRv5_rec_mobile_infer
+- [x] arabic_PP-OCRv5_rec_mobile
+- [x] cyrillic_PP-OCRv5_rec_mobile
+- [x] devanagari_PP-OCRv5_rec_mobile
+- [x] en_PP-OCRv5_rec_mobile
+- [x] el_PP-OCRv5_rec_mobile
+- [x] eslav_PP-OCRv5_rec_mobile
+- [x] korean_PP-OCRv5_rec_mobile
+- [x] latin_PP-OCRv5_rec_mobile
+- [x] ta_PP-OCRv5_rec_mobile
+- [x] te_PP-OCRv5_rec_mobile
+- [x] th_PP-OCRv5_rec_mobile
 
 相关 MNN 模型已经上传到 [魔搭模型库](https://www.modelscope.cn/models/RapidAI/RapidOCR/files) 中。
 

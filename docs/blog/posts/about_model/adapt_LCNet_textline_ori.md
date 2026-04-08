@@ -2,6 +2,7 @@
 title: RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录
 date:
   created: 2026-03-24
+  updated: 2026-04-08
 authors:
  - SWHL
 categories:
@@ -192,19 +193,25 @@ np.testing.assert_allclose(batch_preds[0], ort_outputs[0], atol=1e-5, rtol=1e-5)
     print(f"accracy: {accracy:.4f}")
     ```
 
+!!! tip
+
+    为了后续统一管理，命名约定：
+        - `PP-LCNet_x0_25_textline_ori` → `ch_PP-LCNet_x0_25_textline_ori_mobile`
+        - `PP-LCNet_x1_0_textline_ori` → `ch_PP-LCNet_x1_0_textline_ori_server`
+
 |Exp|模型|推理框架|推理引擎|模型格式|Accuracy|
 |:---:|:---|:---|:---|:---:|:---:|
-|0|ch_ppocr_mobile_v2.0_cls_infer|RapidOCR |ONNX Runtime|ONNX|0.9219|
+|0|ch_ppocr_mobile_v2.0_cls_mobile|RapidOCR |ONNX Runtime|ONNX|0.9219|
 |||||||
-|1|PP-LCNet_x0_25_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.8513|
-|2|PP-LCNet_x0_25_textline_ori|RapidOCR |ONNX Runtime|ONNX|0.8922|
-|3|PP-LCNet_x0_25_textline_ori|RapidOCR |MNN|ONNX|0.8922|
+|1|ch_PP-LCNet_x0_25_textline_ori_mobile|PaddleOCR |PaddlePaddle|Paddle|0.8513|
+|2|ch_PP-LCNet_x0_25_textline_ori_mobile|RapidOCR |ONNX Runtime|ONNX|0.8922|
+|3|ch_PP-LCNet_x0_25_textline_ori_mobile|RapidOCR |MNN|ONNX|0.8922|
 |||||||
-|4|PP-LCNet_x1_0_textline_ori|PaddleOCR |PaddlePaddle|Paddle|0.7918|
-|5|PP-LCNet_x1_0_textline_ori|RapidOCR |ONNX Runtime|ONNX|0.9033|
-|6|PP-LCNet_x1_0_textline_ori|RapidOCR |MNN|ONNX|0.9033|
+|4|ch_PP-LCNet_x1_0_textline_ori_server|PaddleOCR |PaddlePaddle|Paddle|0.7918|
+|5|ch_PP-LCNet_x1_0_textline_ori_server|RapidOCR |ONNX Runtime|ONNX|0.9033|
+|6|ch_PP-LCNet_x1_0_textline_ori_server|RapidOCR |MNN|ONNX|0.9033|
 
-Exp0 是 RapidOCR 一直在使用的 ch_ppocr_mobile_v2.0_cls_infer 模型，该模型源自 PaddleOCR v2 版本。从指标结果来看，在当前评测集上，该模型表现是最优的。
+Exp0 是 RapidOCR 一直在使用的 ch_ppocr_mobile_v2.0_cls_mobile 模型，该模型源自 PaddleOCR v2 版本。从指标结果来看，在当前评测集上，该模型表现是最优的。
 
 Exp1 和 Exp4 实验都是用的 PaddleOCR 原始代码 + [text_rec_test_dataset](https://huggingface.co/datasets/SWHL/text_rec_test_dataset) 得到的指标。
 
@@ -225,7 +232,7 @@ Exp2 和 Exp5 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：
 
 我这里已经上传到了魔搭上，详细链接参见：[link](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)
 
-#### 更改 rapidocr 代码适配
+#### 适配 rapidocr 已有代码
 
 该部分主要涉及到更改 [python/rapidocr/default_models.yaml](https://github.com/RapidAI/RapidOCR/blob/ece967983d0227d91a83f104de1a8cb3598a99a0/python/rapidocr/default_models.yaml#L111) 和 [python/rapidocr/ch_ppocr_cls/main.py](https://github.com/RapidAI/RapidOCR/blob/ece967983d0227d91a83f104de1a8cb3598a99a0/python/rapidocr/ch_ppocr_cls/main.py#L27-L30) 的代码来适配。
 
@@ -235,4 +242,4 @@ Exp2 和 Exp5 实验用的是 RapidOCR 框架。与 PaddleOCR 的推理异同：
 
 ### 写在最后
 
-本文中涉及到的两个文本行方向分类模型，归类到 **PP-OCRv5 / cls** 下，支持 ONNX Runtime 和 PaddlePaddle 推理，将在 `rapidocr >= 3.8.0` 中支持。敬请期待。
+本文中涉及到的两个文本行方向分类模型，归类到 **PP-OCRv5/cls** 下，支持 ONNX Runtime, PaddlePaddle, OpenVINO 和 MNN 推理，将在 `rapidocr >= 3.8.0` 中支持。敬请期待。

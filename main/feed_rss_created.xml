@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<?xml-stylesheet type="text/xsl" href="rss.xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     
     <title>RapidOCR 文档</title>
@@ -13,12 +13,12 @@
     <language>zh</language>
 
     
-    <pubDate>Thu, 09 Apr 2026 09:09:53 -0000</pubDate>
-    <lastBuildDate>Thu, 09 Apr 2026 09:09:53 -0000</lastBuildDate>
+    <pubDate>Fri, 10 Apr 2026 10:51:06 -0000</pubDate>
+    <lastBuildDate>Fri, 10 Apr 2026 10:51:06 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
-    <generator>MkDocs RSS plugin - v1.17.9</generator>
+    <generator>MkDocs RSS plugin - v1.18.0</generator>
 
     
     

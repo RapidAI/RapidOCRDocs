@@ -1,0 +1,117 @@
+:root {
+  --admonition-border-left-width: 0.2rem;
+  --base-border-radius: 1rem;
+  --md-text-font: "LXGW WenKai Screen";
+  --md-code-font: "consolas, 'Courier New', monospace";
+}
+
+
+/*亮色样式*/
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: rgba(255, 255, 255, 0.7);
+    --md-header-bg-color: rgba(255, 255, 255, 0.7);
+    --md-typeset-a-color: steelblue;
+    --md-footer-bg-color: #f6f6f6;
+    --md-footer-bg-color--dark: #f6f6f6;
+    --md-footer-fg-color: #222;
+    --md-footer-fg-color--light: #505050;
+    --md-footer-fg-color--lighter: #777777;
+    --md-code-hl-comment-color: #999999;
+}
+
+/*暗色样式*/
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: rgba(17, 16, 17, 0.7);
+    --md-header-bg-color: rgba(17, 16, 17, 0.7);
+    --md-typeset-a-color: royalblue;
+    --md-footer-bg-color: #101010;
+    --md-footer-bg-color--dark: #101010;
+    --md-code-hl-comment-color: #777777;
+}
+
+
+/* 卡片圆角与悬浮阴影 */
+.md-typeset .grid.cards>ul>li,
+.md-typeset .md-button,
+.md-typeset table:not([class]) {
+    border-radius: var(--base-border-radius);
+}
+
+.md-typeset .grid.cards>ul>li:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* 页脚社交图标高度 */
+.md-social__link svg {
+    max-height: 1rem;
+}
+
+/* 搜索框及下拉结果圆角 */
+.md-search__form {
+    border-radius: var(--base-border-radius);
+}
+
+[data-md-toggle="search"]:checked~.md-header .md-search__form {
+    border-top-right-radius: var(--base-border-radius);
+    border-top-left-radius: var(--base-border-radius);
+}
+
+[dir="ltr"] .md-search__output {
+    border-bottom-right-radius: var(--base-border-radius);
+    border-bottom-left-radius: var(--base-border-radius);
+}
+
+.banner{
+  font-family: var(--font-family);
+}
+
+
+/* 让所有admonition（包括!!! tip）圆角化且更自然 */
+.md-typeset .admonition,
+.md-typeset details {
+    border-radius: 1.5em;
+    box-shadow: 0 2px 12px 0 rgba(60, 60, 60, 0.07);
+    transition: border-radius 0.4s cubic-bezier(.4, 2, .6, 1), box-shadow 0.3s;
+    overflow: hidden;
+}
+
+
+.md-typeset img {
+  /* 圆角设置：使用 rem 单位以适配不同屏幕 */
+  border-radius: 1rem;
+
+  /* 关键：防止图片内容溢出圆角区域（特别是 GIF 或带透明底的图） */
+  overflow: hidden;
+
+  /* 质感提升：轻微阴影，让图片看起来像浮在纸上 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* 交互体验：平滑过渡，鼠标悬停时更自然 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* 布局优化：让图片作为块级元素居中，避免行内空隙 */
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+/* 鼠标悬停效果：图片微微放大 */
+.md-typeset img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/*
+   当你给图片加上 {.no-radius} 时，应用此样式
+   !important 用于强制覆盖上面的全局圆角和阴影
+*/
+.md-typeset img.no-radius {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* 悬停时也取消放大效果 */
+.md-typeset img.no-radius:hover {
+  transform: none !important;
+}

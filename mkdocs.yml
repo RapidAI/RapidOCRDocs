@@ -203,6 +203,7 @@ nav:
       - 安装及使用: install_usage/rapidocr_api/usage.md
       - 更新日志: install_usage/rapidocr_api/changelog.md
   - 更新日志:
+    - v3.8.1: changelog/v3.8.1.md
     - v3.8.0: changelog/v3.8.0.md
     - v3.7.0: changelog/v3.7.0.md
     - v3.6.0: changelog/v3.6.0.md

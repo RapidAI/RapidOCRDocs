@@ -13,6 +13,21 @@
     "language": "zh",
     "items": [
         {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/04/14/attended-open-source-private-board-meeting/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/04/14/attended-open-source-private-board-meeting/",
+            "title": "RapidOCR \u53c2\u4e0e\u5f00\u6e90\u79c1\u8463\u4f1a",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-04-14T14:54:08+00:00",
+            "date_published": "2026-04-14T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
             "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/",
             "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/24/rapidocr-pp-lcnet-textline-cls/",
             "title": "RapidOCR \u96c6\u6210 PP-LCNet textline \u6587\u672c\u884c\u65b9\u5411\u5206\u7c7b\u6a21\u578b\u8bb0\u5f55",
@@ -290,21 +305,6 @@
             "image": null,
             "date_modified": "2026-03-19T13:21:45+00:00",
             "date_published": "2022-09-23T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/24/onnx-runtime-gpu-%E6%8E%A8%E7%90%86/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/24/onnx-runtime-gpu-%E6%8E%A8%E7%90%86/",
-            "title": "ONNX Runtime GPU \u63a8\u7406",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-03-19T13:21:45+00:00",
-            "date_published": "2024-06-04T00:12:19+00:00",
             "authors": [
                 {
                     "name": "SWHL"

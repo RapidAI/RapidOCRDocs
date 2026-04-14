@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Sat, 11 Apr 2026 07:40:10 -0000</pubDate>
-    <lastBuildDate>Sat, 11 Apr 2026 07:40:10 -0000</lastBuildDate>
+    <pubDate>Tue, 14 Apr 2026 14:55:10 -0000</pubDate>
+    <lastBuildDate>Tue, 14 Apr 2026 14:55:10 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,25 @@
     
 
     
+    
+    <item>
+      <title>RapidOCR 参与开源私董会</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description></description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/04/14/attended-open-source-private-board-meeting/</link>
+      <pubDate>Tue, 14 Apr 2026 14:54:08 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/04/14/attended-open-source-private-board-meeting/</guid>
+      
+    </item>
     
     <item>
       <title>RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录</title>
@@ -401,25 +420,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/23/onnx-runtime-cpu-%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/</guid>
-      
-    </item>
-    
-    <item>
-      <title>ONNX Runtime GPU 推理</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description></description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/24/onnx-runtime-gpu-%E6%8E%A8%E7%90%86/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/24/onnx-runtime-gpu-%E6%8E%A8%E7%90%86/</guid>
       
     </item>
     

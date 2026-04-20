@@ -30,6 +30,7 @@ pip install rapidocr onnxruntime
     result = engine(img_url)
     print(result)
 
+    # 可视化会触发程序自动下载所需字体文件。如果是离线环境，可注释掉该行
     result.vis("vis_result.jpg")
     ```
 

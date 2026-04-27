@@ -13,6 +13,21 @@
     "language": "zh",
     "items": [
         {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/",
+            "title": "\u5782\u76f4\u9879\u76ee(\u504f\u5b66\u672f)",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-04-27T08:18:50+00:00",
+            "date_published": "2024-06-04T00:12:19+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
             "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/04/14/attended-open-source-private-board-meeting/",
             "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/04/14/attended-open-source-private-board-meeting/",
             "title": "RapidOCR \u53c2\u4e0e\u5f00\u6e90\u79c1\u8463\u4f1a",
@@ -290,21 +305,6 @@
             "image": null,
             "date_modified": "2026-03-19T13:21:45+00:00",
             "date_published": "2022-10-04T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/23/onnx-runtime-cpu-%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/23/onnx-runtime-cpu-%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/",
-            "title": "ONNX Runtime CPU \u63a8\u7406\u4f18\u5316",
-            "content_html": "<p>\u4ecb\u7ecd ONNX Runtime \u5e38\u7528\u63a8\u7406\u53c2\u6570\u3002</p>",
-            "image": null,
-            "date_modified": "2026-03-19T13:21:45+00:00",
-            "date_published": "2022-09-23T00:00:00+00:00",
             "authors": [
                 {
                     "name": "SWHL"

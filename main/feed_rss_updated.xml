@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Mon, 27 Apr 2026 08:17:58 -0000</pubDate>
-    <lastBuildDate>Mon, 27 Apr 2026 08:17:58 -0000</lastBuildDate>
+    <pubDate>Mon, 27 Apr 2026 08:19:41 -0000</pubDate>
+    <lastBuildDate>Mon, 27 Apr 2026 08:19:41 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,25 @@
     
 
     
+    
+    <item>
+      <title>垂直项目(偏学术)</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description></description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/</link>
+      <pubDate>Mon, 27 Apr 2026 08:18:50 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/</guid>
+      
+    </item>
     
     <item>
       <title>RapidOCR 参与开源私董会</title>
@@ -401,25 +420,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/04/which-inference/</guid>
-      
-    </item>
-    
-    <item>
-      <title>ONNX Runtime CPU 推理优化</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;p&gt;介绍 ONNX Runtime 常用推理参数。&lt;/p&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/23/onnx-runtime-cpu-%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/23/onnx-runtime-cpu-%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/</guid>
       
     </item>
     

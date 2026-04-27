@@ -112,6 +112,7 @@ plugins:
         - "install_usage/**"
 
 hooks:
+  - hooks/announce.py
   - hooks/expiry.py
   - hooks/change_copyright.py
   - hooks/link.py

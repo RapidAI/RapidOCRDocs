@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
 {% block announce %}
-    <p class="banner"> 👍️ RapidOCR 发布 v3.8.0 → <a href="https://rapidai.github.io/RapidOCRDocs/latest/changelog/v3.8.0/" target="_blank">link</a></p>
+    {% set announce = config.extra.latest_announcement %}
+    {% if announce %}
+    <p class="banner">
+        🎉 最新{{ announce.overall.label }}：
+        <a href="{{ announce.overall.url }}" target="_blank" rel="noopener">{{ announce.overall.title }}</a>
+    </p>
+    {% endif %}
 {% endblock %}
 
 {% block outdated %}

@@ -70,6 +70,14 @@ def _iter_posts():
             }
 
 
+def _build_post_url(post: dict[str, Any]) -> str:
+    if post["section"] == "blog":
+        created = post["created"]
+        return f"blog/{created:%Y/%m/%d}/{post['slug']}/"
+
+    return f"{post['section']}/{post['slug']}/"
+
+
 def on_config(config, **kwargs):
     posts = list(_iter_posts())
     if not posts:
@@ -84,7 +92,7 @@ def on_config(config, **kwargs):
             continue
 
         latest_post = latest_post.copy()
-        latest_post["url"] = f"/latest/{section}/{latest_post['slug']}/"
+        latest_post["url"] = _build_post_url(latest_post)
         latest_post["label"] = SECTION_LABELS[section]
         latest_post["created_display"] = latest_post["created"].strftime("%Y-%m-%d")
         latest_post["created"] = latest_post["created"].isoformat()
@@ -92,7 +100,7 @@ def on_config(config, **kwargs):
 
     overall_latest = max(posts, key=lambda item: item["created"]).copy()
     overall_latest["label"] = SECTION_LABELS[overall_latest["section"]]
-    overall_latest["url"] = f"/latest/{overall_latest['section']}/{overall_latest['slug']}/"
+    overall_latest["url"] = _build_post_url(overall_latest)
     overall_latest["created_display"] = overall_latest["created"].strftime("%Y-%m-%d")
     overall_latest["created"] = overall_latest["created"].isoformat()
 

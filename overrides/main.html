@@ -5,7 +5,7 @@
     {% if announce %}
     <p class="banner">
         🎉 最新{{ announce.overall.label }}：
-        <a href="{{ announce.overall.url }}" target="_blank" rel="noopener">{{ announce.overall.title }}</a>
+        <a href="{{ announce.overall.url | url }}" target="_blank" rel="noopener">{{ announce.overall.title }}</a>
     </p>
     {% endif %}
 {% endblock %}

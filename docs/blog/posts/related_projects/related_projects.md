@@ -64,7 +64,7 @@ TODO
 
 - [PaperEdge](https://github.com/cvlab-stonybrook/PaperEdge)：文档图像矫正 | [Demo](https://huggingface.co/spaces/SWHL/PaperEdgeDemo)
 - [DocTr++](https://arxiv.org/pdf/2304.08796) | [Demo](https://demo.doctrp.top/) | [Code](https://github.com/fh2019ustc/DocTr-Plus)
-- [DocRes](https://github.com/ZZZHANG-jx/DocRes)： 统一文档图像恢复任务的广义模型
+- [DocRes](https://github.com/ZZZHANG-jx/DocRes)：统一文档图像恢复任务的广义模型
 
 ### 版面分析
 
@@ -122,7 +122,7 @@ TODO
 - 相关论文和帖子：
     - [来也智能文档处理系统中的印章识别实践](https://laiye.com/tech-blog/2613)
     - [【技术新趋势】合合信息：复杂环境下 ocr 与印章识别技术理解及研发趋势](https://www.cnblogs.com/intsig/p/17098265.html)
-    - [基于文字分割的印章识别技术](https://pdf.hanspub.org/CSA20210300000_33555311.pdf)
+    - [基于文字分割的印章识别技术](https://www.hanspub.org/journal/paperinformation?paperid=40945)
 - 相关工程：
     - [JS 生成印章](https://github.com/niezhiliang/canvas-draw-seal)
     - [Python 绘制透明背景印章](https://www.bilibili.com/opus/641999668409008129)

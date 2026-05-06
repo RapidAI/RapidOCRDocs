@@ -1,6 +1,8 @@
 ---
 title: RapidOCR 与 PaddleOCR 速度对比
-date: 2026-02-06
+date:
+  created: 2026-02-06
+  updated: 2026-05-06
 authors: [SWHL]
 slug: rapidocr-vs-paddleocr
 categories:
@@ -45,6 +47,10 @@ comments: true
     ```
 
 ## 运行代码
+
+!!! warning
+
+    一张侧视图并不能代表真正的推理速度，建议使用的小伙伴们找一些不同分辨率的图来测试，求平均耗时。我这里会在后续推进benchmark的建立。
 
 测试图：
 

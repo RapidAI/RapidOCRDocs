@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Mon, 27 Apr 2026 08:29:22 -0000</pubDate>
-    <lastBuildDate>Mon, 27 Apr 2026 08:29:22 -0000</lastBuildDate>
+    <pubDate>Wed, 06 May 2026 06:12:41 -0000</pubDate>
+    <lastBuildDate>Wed, 06 May 2026 06:12:41 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,25 @@
     
 
     
+    
+    <item>
+      <title>RapidOCR 与 PaddleOCR 速度对比</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;p&gt;同环境下，比较 RapidOCR 与 PaddleOCR 速度。&lt;/p&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/</link>
+      <pubDate>Wed, 06 May 2026 06:11:19 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/</guid>
+      
+    </item>
     
     <item>
       <title>垂直项目(偏学术)</title>
@@ -180,25 +199,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2024/12/08/guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-stands-out/</guid>
-      
-    </item>
-    
-    <item>
-      <title>RapidOCR 与 PaddleOCR 速度对比</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;p&gt;同环境下，比较 RapidOCR 与 PaddleOCR 速度。&lt;/p&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/</guid>
       
     </item>
     

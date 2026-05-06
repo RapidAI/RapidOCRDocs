@@ -13,6 +13,21 @@
     "language": "zh",
     "items": [
         {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
+            "title": "RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u5bf9\u6bd4",
+            "content_html": "<p>\u540c\u73af\u5883\u4e0b\uff0c\u6bd4\u8f83 RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u3002</p>",
+            "image": null,
+            "date_modified": "2026-05-06T06:11:19+00:00",
+            "date_published": "2026-02-06T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
             "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/",
             "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/",
             "title": "\u5782\u76f4\u9879\u76ee(\u504f\u5b66\u672f)",
@@ -125,21 +140,6 @@
             "image": null,
             "date_modified": "2026-03-19T13:21:45+00:00",
             "date_published": "2024-12-08T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
-            "title": "RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u5bf9\u6bd4",
-            "content_html": "<p>\u540c\u73af\u5883\u4e0b\uff0c\u6bd4\u8f83 RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u3002</p>",
-            "image": null,
-            "date_modified": "2026-03-19T13:21:45+00:00",
-            "date_published": "2026-02-06T01:26:40+00:00",
             "authors": [
                 {
                     "name": "SWHL"

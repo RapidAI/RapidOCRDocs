@@ -1,0 +1,42 @@
+<aside class="post-share" aria-label="Share this post">
+  <span class="post-share__title">分享：</span>
+  <div class="post-share__actions">
+    <button
+      class="post-share__button share-wechat"
+      type="button"
+      data-share-wechat
+      aria-label="Share this post via WeChat or WeChat Official Account"
+    >
+      <span class="post-share__icon md-icon" aria-hidden="true">
+        {% include ".icons/fontawesome/brands/weixin.svg" %}
+      </span>
+      <span class="post-share__sr">Share this post via WeChat or WeChat Official Account</span>
+    </button>
+    <a
+      class="post-share__button"
+      href="#"
+      data-share-weibo
+      target="_blank"
+      rel="noopener"
+      aria-label="Share this post on Weibo"
+    >
+      <span class="post-share__icon md-icon" aria-hidden="true">
+        {% include ".icons/fontawesome/brands/weibo.svg" %}
+      </span>
+      <span class="post-share__sr">Share this post on Weibo</span>
+    </a>
+    <a
+      class="post-share__button"
+      href="#"
+      data-share-x
+      target="_blank"
+      rel="noopener"
+      aria-label="分享到 X"
+    >
+      <span class="post-share__icon md-icon" aria-hidden="true">
+        {% include ".icons/fontawesome/brands/x-twitter.svg" %}
+      </span>
+      <span class="post-share__sr">Share this post on X</span>
+    </a>
+  </div>
+</aside>

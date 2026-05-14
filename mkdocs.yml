@@ -2,7 +2,7 @@ site_name: RapidOCR 文档
 site_url: https://rapidai.github.io/RapidOCRDocs/
 site_author: RapidAI
 site_description:
-  Awesome OCR multiple programing languages toolkits based on ONNXRuntime, OpenVION and PaddlePaddle.
+  RapidOCR 是支持离线部署的开源 OCR 工具，面向 Python、C++、Java、C# 等生态，支持 ONNX Runtime、OpenVINO、Paddle、PyTorch、MNN、TensorRT 等推理引擎。
 
 repo_name: RapidAI/RapidOCR
 repo_url: https://github.com/RapidAI/RapidOCR
@@ -116,6 +116,7 @@ hooks:
   - hooks/expiry.py
   - hooks/change_copyright.py
   - hooks/link.py
+  - hooks/markdown_export.py
 
 extra_css:
   - stylesheets/extra.css
@@ -123,10 +124,6 @@ extra_css:
 
 extra_javascript:
   - javascripts/extra.js
-
-link_pages:
-  - changelog/*.md
-  - faq/*.md
 
 extra:
   social:
@@ -141,6 +138,9 @@ extra:
   version:
     provider: mike
   expiry_days: 180
+  link_pages:
+    - changelog/*.md
+    - faq/*.md
 
 markdown_extensions:
   - abbr
@@ -218,6 +218,7 @@ nav:
     - v3.4.1: changelog/v3.4.1.md
     - v3.4.0: changelog/v3.4.0.md
   - 贡献指南: contributing.md
+  - AI 知识库: ai.md
   - 常见问题: faq/faq.md
   - 周边项目: related_projects.md
   - 博客:

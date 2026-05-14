@@ -1,5 +1,6 @@
 ---
 title: 常见问题 (FAQ)
+description: RapidOCR 常见问题，覆盖 ONNX Runtime GPU/CPU 性能、Windows/Linux 依赖、PaddleOCR 关系、模型下载等问题。
 comments: true
 hide:
   - toc

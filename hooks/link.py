@@ -13,7 +13,8 @@ def on_page_markdown(markdown, page, config, files):
         return markdown
 
     # 页面白名单，支持通配符
-    allowed_pages = config.get("link_pages", [])
+    extra = config.get("extra", {}) or {}
+    allowed_pages = extra.get("link_pages", config.get("link_pages", []))
     page_src = page.file.src_path  # 相对于 docs/ 的路径
     if allowed_pages:
         matched = any(fnmatch.fnmatch(page_src, pattern) for pattern in allowed_pages)

@@ -1,4 +1,6 @@
 ---
+title: RapidOCR 使用教程
+description: RapidOCR Python 与 CLI 使用教程，说明配置文件、参数传入、OCR 输出字段和常见调用方式。
 comments: true
 hide:
   - toc

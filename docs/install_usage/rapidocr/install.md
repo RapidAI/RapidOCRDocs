@@ -1,4 +1,6 @@
 ---
+title: RapidOCR 安装指南
+description: RapidOCR Python 包安装教程，推荐安装 rapidocr 与 onnxruntime，并说明依赖项和安装验证方式。
 comments: true
 hide:
   - toc

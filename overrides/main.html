@@ -18,6 +18,80 @@ You're not viewing the latest version.
 {% endblock %}
 
 {% block extrahead %}
+{% if page.meta and page.meta.title %}
+  {% set page_title = page.meta.title %}
+{% elif page.title and not page.is_homepage %}
+  {% set page_title = page.title | striptags %}
+{% else %}
+  {% set page_title = config.site_name %}
+{% endif %}
+{% if page.meta and page.meta.description %}
+  {% set page_description = page.meta.description %}
+{% else %}
+  {% set page_description = config.site_description %}
+{% endif %}
+{% if page.canonical_url is defined and page.canonical_url %}
+  {% set page_url = page.canonical_url %}
+{% else %}
+  {% set page_url = config.site_url %}
+{% endif %}
+{% if page.is_homepage is defined and page.is_homepage %}
+  {% set page_schema_type = "WebSite" %}
+  {% set page_og_type = "website" %}
+{% else %}
+  {% set page_schema_type = "TechArticle" %}
+  {% set page_og_type = "article" %}
+{% endif %}
+{% set project_image = "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png" %}
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="{{ page_og_type }}">
+<meta property="og:site_name" content="{{ config.site_name }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_description }}">
+<meta property="og:url" content="{{ page_url }}">
+<meta property="og:image" content="{{ project_image }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ page_description }}">
+<meta name="twitter:image" content="{{ project_image }}">
+<link rel="alternate" type="text/plain" href="{{ 'llms.txt' | url }}" title="RapidOCR llms.txt">
+<link rel="alternate" type="text/plain" href="{{ 'llms-full.txt' | url }}" title="RapidOCR llms-full.txt">
+<link rel="alternate" type="application/json" href="{{ 'api/project.json' | url }}" title="RapidOCR structured project data">
+{% if page.file is defined and page.file and page.file.src_uri.endswith(".md") %}
+<link rel="alternate" type="text/markdown" href="{{ page.file.src_uri | url }}" title="{{ page_title }} Markdown">
+{% endif %}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": page_schema_type,
+  "name": page_title,
+  "headline": page_title,
+  "description": page_description,
+  "url": page_url,
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": config.site_name,
+    "url": config.site_url
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RapidAI",
+    "url": "https://github.com/RapidAI"
+  },
+  "image": project_image,
+  "about": [
+    "RapidOCR",
+    "OCR",
+    "ONNX Runtime",
+    "OpenVINO",
+    "PaddleOCR",
+    "PP-OCRv4",
+    "PP-OCRv5"
+  ]
+} | tojson }}
+</script>
 <script>
     var _hmt = _hmt || [];
     (function () {

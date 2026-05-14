@@ -1,4 +1,6 @@
 ---
+title: RapidOCR 快速开始
+description: RapidOCR 快速开始指南，包含 pip 安装、CLI 调用、Python 调用和 OCR 结果输出示例。
 comments: true
 hide:
   - navigation

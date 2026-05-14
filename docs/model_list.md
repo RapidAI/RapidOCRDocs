@@ -1,4 +1,6 @@
 ---
+title: RapidOCR 模型列表
+description: RapidOCR 支持的 PP-OCRv4、PP-OCRv5 检测、方向分类、识别模型，以及推理引擎和语言支持矩阵。
 comments: true
 hide:
   - navigation

@@ -1,4 +1,6 @@
 ---
+title: RapidOCR 开源 OCR 工具
+description: RapidOCR 是完全开源、支持离线部署的多平台多语言 OCR 工具，适用于 Python、C++、Java、C# 及边缘设备场景。
 comments: true
 hide:
   - navigation

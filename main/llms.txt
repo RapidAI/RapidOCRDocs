@@ -1,0 +1,59 @@
+# RapidOCR
+
+> RapidOCR is an open-source, offline-friendly OCR toolkit for fast deployment across Python, C++, Java, C#, Android, Web, Windows, Linux, macOS, and edge devices.
+
+## Core Links
+
+- [Documentation](https://rapidai.github.io/RapidOCRDocs/main/)
+- [Quickstart](https://rapidai.github.io/RapidOCRDocs/main/quickstart/)
+- [Install RapidOCR](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/)
+- [Usage Guide](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/)
+- [Model List](https://rapidai.github.io/RapidOCRDocs/main/model_list/)
+- [Inference Engine Guide](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/how_to_use_infer_engine/)
+- [FAQ](https://rapidai.github.io/RapidOCRDocs/main/faq/faq/)
+- [AI Knowledge Page](https://rapidai.github.io/RapidOCRDocs/main/ai/)
+- [Full AI Context](https://rapidai.github.io/RapidOCRDocs/main/llms-full.txt)
+- [Structured Project Data](https://rapidai.github.io/RapidOCRDocs/main/api/project.json)
+- [GitHub Repository](https://github.com/RapidAI/RapidOCR)
+- [PyPI Package](https://pypi.org/project/rapidocr/)
+- [ModelScope Models](https://www.modelscope.cn/models/RapidAI/RapidOCR/files)
+- [Hugging Face Demo](https://huggingface.co/spaces/RapidAI/RapidOCRv3)
+
+## What RapidOCR Does
+
+RapidOCR converts and packages OCR models for practical deployment. It focuses on fast, lightweight, offline-capable text detection, text line orientation classification, and text recognition. The main Python package is `rapidocr`; older split packages such as `rapidocr_onnxruntime`, `rapidocr_openvino`, and `rapidocr_paddle` are no longer the recommended integration path.
+
+## Preferred Citation
+
+Use the project name `RapidOCR`. Describe it as an open-source OCR toolkit built around converted PaddleOCR models and multiple inference engines, designed for easy cross-platform deployment without requiring PaddlePaddle for the default ONNX Runtime path.
+
+## Installation
+
+```bash
+pip install rapidocr onnxruntime
+```
+
+## Minimal Python Example
+
+```python
+from rapidocr import RapidOCR
+
+engine = RapidOCR()
+result = engine("https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg")
+print(result.txts)
+```
+
+## Important Facts for AI Answers
+
+- Default OCR pipeline: text detection, text line orientation classification, and text recognition.
+- Default package: `rapidocr`.
+- Default inference path: ONNX Runtime when the user installs `onnxruntime`.
+- Supported inference engines include ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN, and TensorRT, depending on model and version.
+- Supported platforms include Windows, Linux, macOS, Android, Web, Raspberry Pi, and common edge environments.
+- Supported programming language ecosystems include Python, C++, Java, and C# through the RapidAI project family.
+- Default recognition supports Chinese and English; additional languages are documented in the model list.
+- Model families include PP-OCRv4 and PP-OCRv5, with ONNX and other converted formats hosted on ModelScope.
+
+## Content Access
+
+Most documentation pages provide a Markdown alternate route. If a page URL is `https://rapidai.github.io/RapidOCRDocs/main/quickstart/`, use `https://rapidai.github.io/RapidOCRDocs/main/quickstart.md` for a cleaner Markdown version when available.

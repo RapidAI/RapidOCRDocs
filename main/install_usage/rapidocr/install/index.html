@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Awesome OCR multiple programing languages toolkits based on ONNXRuntime, OpenVION and PaddlePaddle.">
+        <meta name="description" content="RapidOCR Python 包安装教程，推荐安装 rapidocr 与 onnxruntime，并说明依赖项和安装验证方式。">
       
       
         <meta name="author" content="RapidAI">
@@ -29,7 +29,7 @@
     
     
       
-        <title>安装 - RapidOCR 文档</title>
+        <title>RapidOCR 安装指南 - RapidOCR 文档</title>
       
     
     
@@ -95,6 +95,41 @@
     
     
     
+
+  
+
+
+  
+
+
+  
+
+
+  
+  
+
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RapidOCR 文档">
+<meta property="og:title" content="RapidOCR 安装指南">
+<meta property="og:description" content="RapidOCR Python 包安装教程，推荐安装 rapidocr 与 onnxruntime，并说明依赖项和安装验证方式。">
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/">
+<meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RapidOCR 安装指南">
+<meta name="twitter:description" content="RapidOCR Python 包安装教程，推荐安装 rapidocr 与 onnxruntime，并说明依赖项和安装验证方式。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
+<link rel="alternate" type="text/plain" href="../../../llms.txt" title="RapidOCR llms.txt">
+<link rel="alternate" type="text/plain" href="../../../llms-full.txt" title="RapidOCR llms-full.txt">
+<link rel="alternate" type="application/json" href="../../../api/project.json" title="RapidOCR structured project data">
+
+<link rel="alternate" type="text/markdown" href="../install.md" title="RapidOCR 安装指南 Markdown">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR Python \u5305\u5b89\u88c5\u6559\u7a0b\uff0c\u63a8\u8350\u5b89\u88c5 rapidocr \u4e0e onnxruntime\uff0c\u5e76\u8bf4\u660e\u4f9d\u8d56\u9879\u548c\u5b89\u88c5\u9a8c\u8bc1\u65b9\u5f0f\u3002", "headline": "RapidOCR \u5b89\u88c5\u6307\u5357", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "RapidOCR \u6587\u6863", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR \u5b89\u88c5\u6307\u5357", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/"}
+</script>
 <script>
     var _hmt = _hmt || [];
     (function () {
@@ -217,7 +252,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              安装
+              RapidOCR 安装指南
             
           </span>
         </div>
@@ -480,6 +515,25 @@ You're not viewing the latest version.
     
   
   贡献指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../ai/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI 知识库
 
       </a>
     </li>
@@ -1735,6 +1789,28 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
+      <a href="../../../ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI 知识库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../faq/faq/" class="md-nav__link">
         
   
@@ -1802,7 +1878,7 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1819,14 +1895,14 @@ You're not viewing the latest version.
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             博客
           </label>
@@ -1866,10 +1942,10 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_2" >
         
           
-          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11_2" id="__nav_11_2_label" tabindex="0">
             
   
   
@@ -1882,8 +1958,8 @@ You're not viewing the latest version.
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_2">
             <span class="md-nav__icon md-icon"></span>
             Archive
           </label>
@@ -2046,10 +2122,10 @@ You're not viewing the latest version.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_3" >
         
           
-          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
             
   
   
@@ -2062,8 +2138,8 @@ You're not viewing the latest version.
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_3">
             <span class="md-nav__icon md-icon"></span>
             Categories
           </label>

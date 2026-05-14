@@ -218,7 +218,7 @@ nav:
     - v3.4.1: changelog/v3.4.1.md
     - v3.4.0: changelog/v3.4.0.md
   - 贡献指南: contributing.md
-  - AI 知识库: ai.md
+  # - AI 知识库: ai.md
   - 常见问题: faq/faq.md
   - 周边项目: related_projects.md
   - 博客:

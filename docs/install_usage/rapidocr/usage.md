@@ -626,11 +626,25 @@ The config file has saved in ./default_rapidocr.yaml
 
 ### `rapidocr download_models`
 
+> 在 `rapidocr>=3.8.2` 中添加默认 config 文件。
+>
 > 在 `rapidocr>=3.7.0` 中添加此参数。
 
 预先下载指定模型，便于离线部署使用。因为 `rapidocr` 可选参数较多，采用指定配置文件方式来快速下载指定模型。
 
+如果不传 `--config` 参数，执行该命令默认会下载下面模型到 `rapidocr` 安装目录下 `models` 目录里
+
+```text linenums="1"
+ch_PP-OCRv4_det_mobile.onnx
+ch_PP-OCRv4_rec_mobile.onnx
+ch_ppocr_mobile_v2.0_cls_mobile.onnx
+```
+
 ```bash linenums="1"
+# 直接下载默认的配置文件模型
+rapidocr download_models
+
+# 下载指定配置文件下的模型
 rapidocr download_models --config config.yaml
 ```
 

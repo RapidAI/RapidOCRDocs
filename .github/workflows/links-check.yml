@@ -12,6 +12,9 @@ on:
 jobs:
   linkChecker:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
 

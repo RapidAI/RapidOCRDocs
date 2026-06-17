@@ -39,7 +39,7 @@ links:
 
 该步骤主要先基于 PaddleX 可以正确使用 PP-OCRv5_mobile_rec 模型得到正确结果。
 
-该部分主要参考文档：[docs](https://paddlepaddle.github.io/PaddleX/latest/module_usage/tutorials/ocr_modules/text_recognition.html#_3)
+该部分主要参考文档：[docs](https://paddlepaddle.github.io/PaddleX/latest/module_usage/tutorials/ocr_modules/text_recognition.html)
 
 安装 `paddlex`:
 

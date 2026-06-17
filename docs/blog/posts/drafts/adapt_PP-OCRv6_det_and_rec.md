@@ -1,8 +1,7 @@
 ---
-title: RapidOCR 集成 PP-OCRv5_det 模型(mobile/server)记录
+title: RapidOCR 集成 PP-OCRv6 Det 和 Rec 模型记录
 date:
-  created: 2025-05-26
-  updated: 2025-07-22
+  created: 2026-06-17
 authors: [SWHL]
 categories:
   - 模型相关
@@ -14,39 +13,38 @@ links:
   - RapidOCR 集成 PP-OCRv4_server_rec_doc 模型记录: blog/posts/about_model/adapt_PP-OCRv4_server_rec_doc.md
 ---
 
-
-> 该文章主要记录 RapidOCR 集成 PP-OCRv5_mobile_det 和 PP-OCRv5_server_det 模型记录的，涉及模型转换，模型精度测试等步骤。
-
 <!-- more -->
 
 ### 引言
 
-来自 PaddleOCR[官方文档](http://www.paddleocr.ai/latest/version3.x/algorithm/PP-OCRv5/PP-OCRv5.html)：
+来自 PaddleOCR[官方文档](https://www.paddleocr.ai/latest/version3.x/algorithm/PP-OCRv6/PP-OCRv6.html)：
 
-> PP-OCRv5 是 PP-OCR 新一代文字识别解决方案，该方案聚焦于多场景、多文字类型的文字识别。在文字类型方面，PP-OCRv5 支持简体中文、中文拼音、繁体中文、英文、日文 5 大主流文字类型，在场景方面，PP-OCRv5 升级了中英复杂手写体、竖排文本、生僻字等多种挑战性场景的识别能力。在内部多场景复杂评估集上，PP-OCRv5 较 PP-OCRv4 端到端提升 13 个百分点。
+> PP-OCRv6 是 PP-OCR 最新一代通用文字识别解决方案。PP-OCRv6 基于全新设计的 PPLCNetV4 统一骨干网络，提供 tiny, small, medium 三档模型，分别面向端侧 /IoT、移动端 / 桌面端、服务端场景。PP-OCRv6 在语言覆盖方面实现重大突破，medium/small 档单一模型统一支持简体中文、繁体中文、英文、日文及 46 种拉丁语系语言共 50 种语言（tiny 档支持 49 种，不含日文）。在内部多场景综合评估集上，PP-OCRv6_medium 相比 PP-OCRv5_server 识别精度提升 5.1%、检测精度提升 4.6%，同时 GPU 推理速度提升 2.37×；以仅 34.5M 参数的规模，精度超越 Qwen3-VL-235B, GPT-5.5 等大型视觉语言模型。
+
+官方模型托管地址：https://www.modelscope.cn/collections/PaddlePaddle/PP-OCRv6
 
 ### 以下代码运行环境
 
-- OS: macOS Sequoia 15.5
+- OS: macOS Tahoe 26.5.1
 - Python: 3.10.14
-- PaddlePaddle: 3.0.0
-- paddle2onnx: 2.0.2.rc1
-- paddlex: 3.0.0
-- rapidocr: 2.1.0
+- PaddlePaddle: 3.1.0
+- paddle2onnx: 2.1.0
+- paddlex: 3.7.0
+- rapidocr: 3.8.4
 
 ### 1. 模型跑通
 
-该步骤主要先基于 PaddleX 可以正确使用 PP-OCRv5_mobile_det 模型得到正确结果。
+该步骤主要先基于 PaddleX 可以正确使用 PP-OCRv6_medium_det 模型得到正确结果。
 
 该部分主要参考文档：[docs](https://paddlepaddle.github.io/PaddleX/latest/module_usage/tutorials/ocr_modules/text_detection.html)
 
 安装 `paddlex`:
 
 ```bash linenums="1"
-pip install "paddlex[ocr]==3.0.0"
+pip install "paddlex[ocr]==3.7.1"
 ```
 
-测试 PP-OCRv5_mobile_det 模型能否正常识别：
+测试 PP-OCRv6_medium_det 模型能否正常识别：
 
 !!! tip
 
@@ -55,16 +53,18 @@ pip install "paddlex[ocr]==3.0.0"
 测试图：[link](https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_001.png)
 
 ```python linenums="1"
-
 from paddlex import create_model
 
-# mobile
-model = create_model(model_name="PP-OCRv5_mobile_det")
+# medium
+model = create_model(model_name="PP-OCRv6_medium_det")
 
-# server
-model = create_model(model_name="PP-OCRv5_server_det")
+# small
+model = create_model(model_name="PP-OCRv6_small_det")
 
-output = model.predict(input="images/general_ocr_001.png", batch_size=1)
+# tiny
+model = create_model(model_name="PP-OCRv6_tiny_det")
+
+output = model.predict("images/general_ocr_001.png", batch_size=1)
 for res in output:
     res.print()
     res.save_to_img(save_path="./output/")
@@ -73,79 +73,119 @@ for res in output:
 
 预期结果如下，表明成功运行：
 
-![alt text](../images/general_ocr_001_res.png)
+![PP-OCRv6_medium_det_general_ocr_001_res](../images/PP-OCRv6_medium_det_general_ocr_001_res.png)
 
 ### 2. 模型转换
 
+PaddlePaddle 官方提供了 ONNX 模型，但是考虑到自己训练的模型，仍然需要转换。因此这一步更多地是验证使用当前工具可以自行转换模型。
+
 该部分主要参考文档：[docs](https://paddlepaddle.github.io/PaddleX/latest/pipeline_deploy/paddle2onnx.html?h=paddle2onnx#22)
 
-=== "转换 PP-OCRv5_mobile_det"
+=== "转换 PP-OCRv6_medium_det"
 
     PaddleX 官方集成了 paddle2onnx 的转换代码：
 
     ```bash linenums="1"
     paddlex --install paddle2onnx
-    pip install onnx==1.16.0
+    pip install onnx==1.17.0
 
-    paddlex --paddle2onnx --paddle_model_dir models/official_models/PP-OCRv5_mobile_det --onnx_model_dir models/PP-OCRv5_mobile_det
+    paddlex --paddle2onnx --paddle_model_dir models/official_models/PP-OCRv6_medium_det --onnx_model_dir models/PP-OCRv6_det_medium
     ```
 
     输出日志如下，表明转换成功：
 
     ```bash linenums="1"
-    Input dir: models/official_models/PP-OCRv5_mobile_det
-    Output dir: models/PP-OCRv5_mobile_det
+    Input dir: models/official_models/PP-OCRv6_medium_det
+    Output dir: models/PP-OCRv6_det_medium
     Paddle2ONNX conversion starting...
+    /Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:715: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+    warnings.warn(warning_message)
     [Paddle2ONNX] Start parsing the Paddle model file...
-    [Paddle2ONNX] Use opset_version = 14 for ONNX export.
+    [Paddle2ONNX] Use opset_version = 11 for ONNX export.
     [Paddle2ONNX] PaddlePaddle model is exported as ONNX format now.
-    2025-05-26 21:53:00 [INFO]      Try to perform constant folding on the ONNX model with Polygraphy.
+    2026-06-17 22:13:44 [INFO]      Try to perform constant folding on the ONNX model with Polygraphy.
     [W] 'colored' module is not installed, will not use colors when logging. To enable colors, please install the 'colored' module: python3 -m pip install colored
     [I] Folding Constants | Pass 1
-    [I]     Total Nodes | Original:   925, After Folding:   502 |   423 Nodes Folded
+    [I]     Total Nodes | Original:  1268, After Folding:   597 |   671 Nodes Folded
     [I] Folding Constants | Pass 2
-    [I]     Total Nodes | Original:   502, After Folding:   502 |     0 Nodes Folded
-    2025-05-26 21:53:08 [INFO]      ONNX model saved in models/PP-OCRv5_mobile_det/inference.onnx.
+    [I]     Total Nodes | Original:   597, After Folding:   597 |     0 Nodes Folded
+    2026-06-17 22:13:53 [INFO]      ONNX model saved in models/PP-OCRv6_det_medium/inference.onnx.
     Paddle2ONNX conversion succeeded
-    Copied models/official_models/PP-OCRv5_mobile_det/inference.yml to models/PP-OCRv5_mobile_det/inference.yml
+    Copied models/official_models/PP-OCRv6_medium_det/inference.yml to models/PP-OCRv6_det_medium/inference.yml
     Done
     ```
 
-=== "转换 PP-OCRv5_server_det"
+=== "转换 PP-OCRv6_small_det"
 
     PaddleX 官方集成了 paddle2onnx 的转换代码：
 
     ```bash linenums="1"
     paddlex --install paddle2onnx
-    pip install onnx==1.16.0
+    pip install onnx==1.17.0
 
-    paddlex --paddle2onnx --paddle_model_dir models/official_models/PP-OCRv5_server_det --onnx_model_dir models/PP-OCRv5_server_det
+    paddlex --paddle2onnx --paddle_model_dir models/official_models/PP-OCRv6_small_det --onnx_model_dir models/PP-OCRv6_det_small
     ```
 
     输出日志如下，表明转换成功：
 
     ```bash linenums="1"
-    Input dir: models/official_models/PP-OCRv5_server_det
-    Output dir: models/PP-OCRv5_server_det
+    Input dir: models/official_models/PP-OCRv6_small_det
+    Output dir: models/PP-OCRv6_det_small
     Paddle2ONNX conversion starting...
+    /Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:715: UserWarning: No ccache found. Please be awarethat recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+    warnings.warn(warning_message)
     [Paddle2ONNX] Start parsing the Paddle model file...
-    [Paddle2ONNX] Use opset_version = 14 for ONNX export.
+    [Paddle2ONNX] Use opset_version = 11 for ONNX export.
     [Paddle2ONNX] PaddlePaddle model is exported as ONNX format now.
-    2025-05-26 21:43:10 [INFO]      Try to perform constant folding on the ONNX model with Polygraphy.
+    2026-06-17 22:20:02 [INFO]      Try to perform constant folding on the ONNX model with Polygraphy.
+    [W] 'colored' module is not installed, will not use colors when logging. To enablecolors, please install the 'colored' module: python3 -m pip install colored
+    [I] Folding Constants | Pass 1
+    [I]     Total Nodes | Original:   928, After Folding:   464 |   464 Nodes Folded
+    [I] Folding Constants | Pass 2
+    [I]     Total Nodes | Original:   464, After Folding:   464 |     0 Nodes Folded
+    2026-06-17 22:20:11 [INFO]      ONNX model saved in models/PP-OCRv6_det_small/inference.onnx.
+    Paddle2ONNX conversion succeeded
+    Copied models/official_models/PP-OCRv6_small_det/inference.yml to models/PP-OCRv6_det_small/inference.yml
+    Done
+    ```
+
+=== "转换 PP-OCRv6_tiny_det"
+
+    PaddleX 官方集成了 paddle2onnx 的转换代码：
+
+    ```bash linenums="1"
+    paddlex --install paddle2onnx
+    pip install onnx==1.17.0
+
+    paddlex --paddle2onnx --paddle_model_dir models/official_models/PP-OCRv6_tiny_det --onnx_model_dir models/PP-OCRv6_det_tiny
+    ```
+
+    输出日志如下，表明转换成功：
+
+    ```bash linenums="1"
+    Input dir: models/official_models/PP-OCRv6_tiny_det
+    Output dir: models/PP-OCRv6_det_tiny
+    Paddle2ONNX conversion starting...
+    /Users/xxxx/miniconda3/envs/py310/lib/python3.10/site-packages/paddle/utils/cpp_extension/extension_utils.py:715: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+    warnings.warn(warning_message)
+    [Paddle2ONNX] Start parsing the Paddle model file...
+    [Paddle2ONNX] Use opset_version = 11 for ONNX export.
+    [Paddle2ONNX] PaddlePaddle model is exported as ONNX format now.
+    2026-06-17 22:21:03 [INFO]      Try to perform constant folding on the ONNX model with Polygraphy.
     [W] 'colored' module is not installed, will not use colors when logging. To enable colors, please install the 'colored' module: python3 -m pip install colored
     [I] Folding Constants | Pass 1
-    [I]     Total Nodes | Original:  1306, After Folding:   596 |   710 Nodes Folded
+    [I]     Total Nodes | Original:   928, After Folding:   464 |   464 Nodes Folded
     [I] Folding Constants | Pass 2
-    [I]     Total Nodes | Original:   596, After Folding:   596 |     0 Nodes Folded
-    2025-05-26 21:43:21 [INFO]      ONNX model saved in models/PP-OCRv5_server_det/inference.onnx.
+    [I]     Total Nodes | Original:   464, After Folding:   464 |     0 Nodes Folded
+    2026-06-17 22:21:11 [INFO]      ONNX model saved in models/PP-OCRv6_det_tiny/inference.onnx.
     Paddle2ONNX conversion succeeded
-    Copied models/official_models/PP-OCRv5_server_det/inference.yml to models/PP-OCRv5_server_det/inference.yml
+    Copied models/official_models/PP-OCRv6_tiny_det/inference.yml to models/PP-OCRv6_det_tiny/inference.yml
     Done
     ```
 
 ### 3. 模型推理验证
 
-=== "验证 PP-OCRv5_mobile_det 模型"
+=== "验证 PP-OCRv6_medium_det 模型"
 
     该部分主要是在 RapidOCR 项目中测试能否直接使用 onnx 模型。要点主要是确定模型前后处理是否兼容。从 PaddleOCR config 文件中比较 [PP-OCRv4](https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv4/PP-OCRv4_mobile_det.yml) 和 [PP-OCRv5 mobile det](https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv5/PP-OCRv5_mobile_det.yml) 文件差异：
 

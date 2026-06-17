@@ -13,6 +13,36 @@
     "language": "zh",
     "items": [
         {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_det \u6a21\u578b(mobile/server)\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_det \u548c PP-OCRv5_server_det \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-06-17T14:22:47+00:00",
+            "date_published": "2025-05-26T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_rec \u6a21\u578b(mobile/server)\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_rec \u548c PP-OCRv5_server_rec \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-06-17T14:22:47+00:00",
+            "date_published": "2025-05-30T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
             "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
             "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
             "title": "RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u5bf9\u6bd4",
@@ -155,36 +185,6 @@
             "image": null,
             "date_modified": "2026-03-19T13:21:45+00:00",
             "date_published": "2025-05-13T14:45:27+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_det \u6a21\u578b(mobile/server)\u8bb0\u5f55",
-            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_det \u548c PP-OCRv5_server_det \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-03-19T13:21:45+00:00",
-            "date_published": "2025-05-26T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_rec \u6a21\u578b(mobile/server)\u8bb0\u5f55",
-            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_rec \u548c PP-OCRv5_server_rec \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-03-19T13:21:45+00:00",
-            "date_published": "2025-05-30T00:00:00+00:00",
             "authors": [
                 {
                     "name": "SWHL"

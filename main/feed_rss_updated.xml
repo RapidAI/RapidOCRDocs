@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Wed, 17 Jun 2026 12:31:56 -0000</pubDate>
-    <lastBuildDate>Wed, 17 Jun 2026 12:31:56 -0000</lastBuildDate>
+    <pubDate>Wed, 17 Jun 2026 14:23:50 -0000</pubDate>
+    <lastBuildDate>Wed, 17 Jun 2026 14:23:50 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,48 @@
     
 
     
+    
+    <item>
+      <title>RapidOCR 集成 PP-OCRv5_det 模型(mobile/server)记录</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;该文章主要记录 RapidOCR 集成 PP-OCRv5_mobile_det 和 PP-OCRv5_server_det 模型记录的，涉及模型转换，模型精度测试等步骤。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 17 Jun 2026 14:22:47 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/</guid>
+      
+    </item>
+    
+    <item>
+      <title>RapidOCR 集成 PP-OCRv5_rec 模型(mobile/server)记录</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;该文章主要记录 RapidOCR 集成 PP-OCRv5_mobile_rec 和 PP-OCRv5_server_rec 模型记录的，涉及模型转换，模型精度测试等步骤。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 17 Jun 2026 14:22:47 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/</guid>
+      
+    </item>
     
     <item>
       <title>RapidOCR 与 PaddleOCR 速度对比</title>
@@ -220,48 +262,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/16/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv4_server_rec_doc-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/</guid>
-      
-    </item>
-    
-    <item>
-      <title>RapidOCR 集成 PP-OCRv5_det 模型(mobile/server)记录</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;blockquote&gt;
-&lt;p&gt;该文章主要记录 RapidOCR 集成 PP-OCRv5_mobile_det 和 PP-OCRv5_server_det 模型记录的，涉及模型转换，模型精度测试等步骤。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/</guid>
-      
-    </item>
-    
-    <item>
-      <title>RapidOCR 集成 PP-OCRv5_rec 模型(mobile/server)记录</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;blockquote&gt;
-&lt;p&gt;该文章主要记录 RapidOCR 集成 PP-OCRv5_mobile_rec 和 PP-OCRv5_server_rec 模型记录的，涉及模型转换，模型精度测试等步骤。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/</guid>
       
     </item>
     

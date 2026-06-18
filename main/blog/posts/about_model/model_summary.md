@@ -33,7 +33,7 @@
 - [MMOCR](https://github.com/open-mmlab/mmocr/blob/main/README_zh-CN.md)
 - [CnOCR](https://github.com/breezedeus/cnocr)
 - [DAVAR-Lab-OCR](https://github.com/hikopensource/DAVAR-Lab-OCR)
-- [mindocr](https://github.com/mindspore-lab/mindocr)
+- --mindocr--：已经删库了
 - [surya](https://github.com/datalab-to/surya)
 
 #### 文本检测模型

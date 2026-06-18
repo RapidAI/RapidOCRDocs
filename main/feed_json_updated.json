@@ -18,8 +18,23 @@
             "title": "RapidOCR \u96c6\u6210 PP-OCRv6 Det \u6a21\u578b\u8bb0\u5f55",
             "content_html": "",
             "image": null,
-            "date_modified": "2026-06-18T03:11:59+00:00",
+            "date_modified": "2026-06-18T03:27:27+00:00",
             "date_published": "2026-06-17T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
+            "title": "\u5f00\u6e90 OCR \u6a21\u578b\u5bf9\u6bd4",
+            "content_html": "<blockquote>\n<p>\u672c\u6587\u4e3b\u8981\u7ed9\u51fa\u4e86\u5e38\u89c1\u5f00\u6e90\u6587\u672c\u68c0\u6d4b\u548c\u6587\u672c\u8bc6\u522b\u6a21\u578b\u7684\u5bf9\u6bd4\u548c\u8bc4\u6d4b\uff0c\u7ed9\u5927\u5bb6\u4e00\u4e2a\u4f7f\u7528\u53c2\u8003\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-06-18T03:27:27+00:00",
+            "date_published": "2022-04-16T00:00:00+00:00",
             "authors": [
                 {
                     "name": "SWHL"
@@ -245,21 +260,6 @@
             "image": null,
             "date_modified": "2026-03-19T13:21:45+00:00",
             "date_published": "2025-08-03T03:18:59+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
-            "title": "\u5f00\u6e90 OCR \u6a21\u578b\u5bf9\u6bd4",
-            "content_html": "<blockquote>\n<p>\u672c\u6587\u4e3b\u8981\u7ed9\u51fa\u4e86\u5e38\u89c1\u5f00\u6e90\u6587\u672c\u68c0\u6d4b\u548c\u6587\u672c\u8bc6\u522b\u6a21\u578b\u7684\u5bf9\u6bd4\u548c\u8bc4\u6d4b\uff0c\u7ed9\u5927\u5bb6\u4e00\u4e2a\u4f7f\u7528\u53c2\u8003\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-03-19T13:21:45+00:00",
-            "date_published": "2022-04-16T00:00:00+00:00",
             "authors": [
                 {
                     "name": "SWHL"

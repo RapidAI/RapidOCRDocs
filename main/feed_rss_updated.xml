@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Thu, 18 Jun 2026 03:12:41 -0000</pubDate>
-    <lastBuildDate>Thu, 18 Jun 2026 03:12:41 -0000</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2026 03:28:16 -0000</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2026 03:28:16 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -43,10 +43,31 @@
       
       <description></description>
       <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Thu, 18 Jun 2026 03:11:59 +0000</pubDate>
+      <pubDate>Thu, 18 Jun 2026 03:27:27 +0000</pubDate>
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/</guid>
+      
+    </item>
+    
+    <item>
+      <title>开源 OCR 模型对比</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文主要给出了常见开源文本检测和文本识别模型的对比和评测，给大家一个使用参考。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Thu, 18 Jun 2026 03:27:27 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/</guid>
       
     </item>
     
@@ -342,27 +363,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/</guid>
-      
-    </item>
-    
-    <item>
-      <title>开源 OCR 模型对比</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;blockquote&gt;
-&lt;p&gt;本文主要给出了常见开源文本检测和文本识别模型的对比和评测，给大家一个使用参考。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/</guid>
       
     </item>
     

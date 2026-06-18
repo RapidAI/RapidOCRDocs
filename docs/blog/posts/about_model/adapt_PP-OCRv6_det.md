@@ -399,7 +399,7 @@ pip install text_det_metric
 
 从以上结果来看，可以得到以下结论：
 
-1. Exp1-3 和 Exp4-6 相比，差异点在于前后处理以及默认参数，从 H-mean 来看，medium 官方推理为 0.8517，而基于 RapidOCR 框架是 0.8423。small 和 tiny 两个模型，H-mean 对比，基于 RapidOCR 框架推理反而更高。== 这个具体原因暂时不明。==
+1. Exp1-3 和 Exp4-6 相比，差异点在于前后处理以及默认参数，从 H-mean 来看，medium 官方推理为 0.8517，而基于 RapidOCR 框架是 0.8423。small 和 tiny 两个模型，H-mean 对比，基于 RapidOCR 框架推理反而更高。**这个具体原因暂时不明。**
 2. Exp1-3 和 Exp4-6 推理速度来看，猜测 RapidOCR 中封装的推理 Paddle 格式模型代码应该有些没对齐的，后续这块也会详细查看。
 3. Exp4-6 和 Exp7-9 相比，paddle 格式模型转换为 ONNX 格式后，指标几乎一致，说明 **模型转换前后，误差较小，推理速度也有提升**。
 4. 从 H-mean 指标来看，Exp8 PP-OCRv6_small_det 中 H-mean 0.8492 要好于 Exp12 PP-OCRv5_mobile_det 0.8058, Exp14 PP-OCRv4_mobile_det 0.8476。同时，考虑到 PP-OCRv6 ONNX 模型的存储大小：medium 62.12 MB, small 9.93 MB, tiny 1.83 MB。**后续集成版本，我会倾向于将 PP-OCRv6_small_det 作为默认模型。**

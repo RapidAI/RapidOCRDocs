@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Wed, 17 Jun 2026 14:23:50 -0000</pubDate>
-    <lastBuildDate>Wed, 17 Jun 2026 14:23:50 -0000</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2026 03:12:41 -0000</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2026 03:12:41 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,25 @@
     
 
     
+    
+    <item>
+      <title>RapidOCR 集成 PP-OCRv6 Det 模型记录</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description></description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/</guid>
+      
+    </item>
     
     <item>
       <title>RapidOCR 参与开源私董会</title>
@@ -399,25 +418,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/09/27/%E8%BD%AC%E6%8D%A2-paddleocr-%E6%A8%A1%E5%9E%8B%E4%B8%BA-onnx/</guid>
-      
-    </item>
-    
-    <item>
-      <title>已有 ONNX 模型下载</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description></description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2024/04/12/%E5%B7%B2%E6%9C%89-onnx-%E6%A8%A1%E5%9E%8B%E4%B8%8B%E8%BD%BD/</link>
-      <pubDate>Tue, 04 Jun 2024 00:12:19 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2024/04/12/%E5%B7%B2%E6%9C%89-onnx-%E6%A8%A1%E5%9E%8B%E4%B8%8B%E8%BD%BD/</guid>
       
     </item>
     

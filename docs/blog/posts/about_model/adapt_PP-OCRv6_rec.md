@@ -1,5 +1,5 @@
 ---
-title: RapidOCR 集成 PP-OCRv6_rec 模型记录
+title: RapidOCR 集成 PP-OCRv6 Rec 模型记录
 date:
   created: 2026-06-18
 authors: [SWHL]

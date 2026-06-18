@@ -97,7 +97,7 @@ for res in output:
 
     ```bash linenums="1"
     paddlex --install paddle2onnx
-    pip install onnx==1.16.0
+    pip install onnx==1.17.0
 
     paddlex --paddle2onnx --paddle_model_dir models/official_models/PP-OCRv6_small_rec --onnx_model_dir models/PP-OCRv6_rec_small
     ```
@@ -131,7 +131,7 @@ for res in output:
 
     ```bash linenums="1"
     paddlex --install paddle2onnx
-    pip install onnx==1.16.0
+    pip install onnx==1.17.0
 
     paddlex --paddle2onnx --paddle_model_dir models/official_models/PP-OCRv6_tiny_rec --onnx_model_dir models/PP-OCRv6_rec_tiny
     ```

@@ -36,7 +36,7 @@ engine = RapidOCR(
         "Rec.engine_type": EngineType.ONNXRUNTIME,
         "Rec.lang_type": LangRec.CH,
         "Rec.model_type": ModelType.MOBILE,
-        "Rec.ocr_version": OCRVersion.PPOCRV5,
+        "Rec.ocr_version": OCRVersion.PPOCRV4,
         "Cls.engine_type": EngineType.ONNXRUNTIME,
         "Cls.lang_type": LangDet.CH,
         "Cls.model_type": ModelType.MOBILE,

@@ -38,6 +38,25 @@ print(result)
 result.vis("vis_result.jpg")
 ```
 
+使用不同尺寸的模型，其他不指定的参数都会用默认值。
+
+```python linenums="1"
+from rapidocr import ModelType, RapidOCR
+
+engine = RapidOCR(
+    params={
+        "Det.model_type": ModelType.TINY, # ModelType.MEDIUM
+        "Rec.model_type": ModelType.TINY, # ModelType.MEDIUM
+    }
+)
+
+img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+result = engine(img_url)
+print(result)
+
+result.vis("vis_result.jpg")
+```
+
 ### 初始化 RapidOCR 实例输入
 
 输入支持传入 YAML 格式的配置文件，同时支持参数直接传入使用。

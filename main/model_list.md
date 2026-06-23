@@ -104,7 +104,13 @@
 
 |语种类型|engine_type| lang_type|model_type|ocr_version|
 |:---|:---|:---|:---|:---|
-|多语种[^7]|`onnxruntime` <br/> `openvino` <br/> `paddle`<br>`torch`(`rapidocr>=3.3.0`)<br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)|`ch`|`mobile`<br/> `server (tensorrt 可能转换不过)`|`PP-OCRv5`|
+|多语种|`onnxruntime`(`rapidocr==3.9.0`) <br/> `openvino` (`rapidocr==3.9.0`)|`ch`<br/>`en`<br/>`multi`<br/>|`tiny`<br/> `small`<br/>`medium`|`PP-OCRv6`|
+
+`medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`
+
+`tiny` 模型不支持 `japan`。
+
+参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
 
 #### PP-OCRv5
 
@@ -222,6 +228,91 @@ print(result)
 
 result.vis("vis_result.jpg")
 ```
+
+## 语种对照表
+
+| `lang`                | 语言名称                 |
+| ---------------------- | ------------------------ |
+| `abq`                  | 阿布哈兹文               |
+| `af`                   | 南非荷兰文               |
+| `ang`                  | 古英文                   |
+| `ar`                   | 阿拉伯文                 |
+| `ava`                  | 阿瓦尔文                 |
+| `az`                   | 阿塞拜疆文               |
+| `be`                   | 白俄罗斯文               |
+| `bg`                   | 保加利亚文               |
+| `bgc`                  | 哈里亚纳文               |
+| `bh`                   | 比哈尔文                 |
+| `bho`                  | 博杰普尔文               |
+| `bs`                   | 波斯尼亚文               |
+| `ch`                   | 简体中文                 |
+| `che`                  | 车臣文                   |
+| `chinese_cht`          | 繁体中文                 |
+| `cs`                   | 捷克文                   |
+| `cy`                   | 威尔士文                 |
+| `da`                   | 丹麦文                   |
+| `dar`                  | 达尔格瓦文               |
+| `de` or `german`      | 德文                     |
+| `en`                   | 英文                     |
+| `es`                   | 西班牙文                 |
+| `et`                   | 爱沙尼亚文               |
+| `fa`                   | 波斯文                   |
+| `fr` or `french`      | 法文                     |
+| `ga`                   | 爱尔兰文                 |
+| `gom`                  | 孔卡尼文                 |
+| `hi`                   | 印地文                   |
+| `hr`                   | 克罗地亚文               |
+| `hu`                   | 匈牙利文                 |
+| `id`                   | 印尼文                   |
+| `inh`                  | 印古什文                 |
+| `is`                   | 冰岛文                   |
+| `it`                   | 意大利文                 |
+| `japan`                | 日文                     |
+| `ka`                   | 格鲁吉亚文               |
+| `kbd`                  | 卡巴尔达文               |
+| `korean`               | 韩文                     |
+| `ku`                   | 库尔德文                 |
+| `la`                   | 拉丁文                   |
+| `lbe`                  | 拉克文                   |
+| `lez`                  | 列兹金文                 |
+| `lt`                   | 立陶宛文                 |
+| `lv`                   | 拉脱维亚文               |
+| `mah`                  | 马加希文                 |
+| `mai`                  | 迈蒂利文                 |
+| `mi`                   | 毛利文                   |
+| `mn`                   | 蒙古文                   |
+| `mr`                   | 马拉地文                 |
+| `ms`                   | 马来文                   |
+| `mt`                   | 马耳他文                 |
+| `ne`                   | 尼泊尔文                 |
+| `new`                  | 尼瓦尔文                 |
+| `nl`                   | 荷兰文                   |
+| `no`                   | 挪威文                   |
+| `oc`                   | 奥克文                   |
+| `pi`                   | 巴利文                   |
+| `pl`                   | 波兰文                   |
+| `pt`                   | 葡萄牙文                 |
+| `ro`                   | 罗马尼亚文               |
+| `rs_cyrillic`          | 塞尔维亚语西里尔字母     |
+| `rs_latin`             | 塞尔维亚语拉丁字母       |
+| `ru`                   | 俄文                     |
+| `sa`                   | 梵文                     |
+| `sck`                  | 萨达里文                 |
+| `sk`                   | 斯洛伐克文               |
+| `sl`                   | 斯洛文尼亚文             |
+| `sq`                   | 阿尔巴尼亚文             |
+| `sv`                   | 瑞典文                   |
+| `sw`                   | 斯瓦希里文               |
+| `tab`                  | 塔巴萨兰文               |
+| `ta`                   | 泰米尔文                 |
+| `te`                   | 泰卢固文                 |
+| `tl`                   | 塔加洛文                 |
+| `tr`                   | 土耳其文                 |
+| `ug`                   | 维吾尔文                 |
+| `uk`                   | 乌克兰文                 |
+| `ur`                   | 乌尔都文                 |
+| `uz`                   | 乌兹别克文               |
+| `vi`                   | 越南文                   |
 
 [^1]: 英文、法文、德文、南非荷兰文、意大利文、西班牙文、波斯尼亚文、葡萄牙文、捷克文、威尔士文、丹麦文、爱沙尼亚文、爱尔兰文、克罗地亚文、乌兹别克文、匈牙利文、塞尔维亚文（latin）、印度尼西亚文、欧西坦文、冰岛文、立陶宛文、毛利文、马来文、荷兰文、挪威文、波兰文、斯洛伐克文、斯洛文尼亚文、阿尔巴尼亚文、瑞典文、西瓦希里文、塔加洛文、土耳其文、拉丁文
 [^2]: 简体中文、中文拼音、繁体中文、英文、日文

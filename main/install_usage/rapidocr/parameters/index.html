@@ -3077,8 +3077,8 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-4-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">Det</span><span class="p">:</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nt">engine_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;onnxruntime&quot;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="nt">lang_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ch&quot;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mobile&quot;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="nt">ocr_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PP-OCRv4&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;small&quot;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="nt">ocr_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PP-OCRv6&quot;</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="nt">task_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;det&quot;</span>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>
@@ -3099,8 +3099,8 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 <p><code>engine_type (str)</code>: 选定推理引擎。支持 <code>onnxruntime</code>, <code>openvino</code>, <code>paddle</code> 和 <code>torch</code> 四个值。默认为 <code>onnxruntime</code>。</p>
 <p><code>lang_type (str)</code>: 支持检测的语种类型。这里指的是 <code>LangDet</code>，具体支持 <code>ch</code>, <code>en</code> 和 <code>multi</code> 3 个值。<code>ch</code> 可以识别中文和中英文混合文本检测。<code>en</code> 支持英文文字检测。<code>multi</code> 支持多语言文本检测。默认为 <code>ch</code>。详细参见：<a href="https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1">docs</a></p>
-<p><code>model_type (str)</code>: 模型量级选择，支持 <code>mobile</code>（轻量型）和 <code>server</code>（服务型）。默认为 <code>mobile</code>。</p>
-<p><code>ocr_version (str)</code>: OCR 版本的选择，支持 <code>PP-OCRv4</code> 和 <code>PP-OCRv5</code>，默认为 <code>PP-OCRv4</code>。</p>
+<p><code>model_type (str)</code>: 模型量级选择，<code>PP-OCRv4</code> 和 <code>PP-OCRv5</code> 支持 <code>mobile</code>（轻量型）和 <code>server</code>（服务型）。<code>PP-OCRv6</code> 支持 <code>tiny</code>, <code>small</code> 和 <code>medium</code>，默认为 <code>PP-OCRv6</code> 的 <code>small</code>。</p>
+<p><code>ocr_version (str)</code>: OCR 版本的选择，支持 <code>PP-OCRv4</code>、<code>PP-OCRv5</code> 和 <code>PP-OCRv6</code>，默认为 <code>PP-OCRv6</code>。</p>
 <p><code>model_path (str)</code>: 文本检测模型路径，仅限于基于 PaddleOCR 训练所得 DBNet 文本检测模型。默认值为 <code>None</code>。</p>
 <p><code>model_dir (str)</code>: 模型存放路径或目录。如果是 PaddlePaddle，该参数则对应模型存在目录。其余推理引擎请使用 <code>model_path</code> 参数。</p>
 <p><code>limit_side_len (float)</code>: 限制图像边的长度的像素值。默认值为 736。</p>
@@ -3169,8 +3169,8 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-6-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">Rec</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nt">engine_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;onnxruntime&quot;</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="nt">lang_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ch&quot;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mobile&quot;</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="nt">ocr_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PP-OCRv4&quot;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;small&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="nt">ocr_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PP-OCRv6&quot;</span>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="nt">task_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;rec&quot;</span>
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>

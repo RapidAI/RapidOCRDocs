@@ -846,9 +846,9 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pp-ocrv6-wip" class="md-nav__link">
+  <a href="#pp-ocrv6" class="md-nav__link">
     <span class="md-ellipsis">
-      PP-OCRv6 (WIP)
+      PP-OCRv6
     </span>
   </a>
   
@@ -919,6 +919,15 @@ You're not viewing the latest version.
   
     <nav class="md-nav" aria-label="文本识别模型">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pp-ocrv6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PP-OCRv6
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#pp-ocrv5_2" class="md-nav__link">
@@ -2695,9 +2704,9 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pp-ocrv6-wip" class="md-nav__link">
+  <a href="#pp-ocrv6" class="md-nav__link">
     <span class="md-ellipsis">
-      PP-OCRv6 (WIP)
+      PP-OCRv6
     </span>
   </a>
   
@@ -2768,6 +2777,15 @@ You're not viewing the latest version.
   
     <nav class="md-nav" aria-label="文本识别模型">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pp-ocrv6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PP-OCRv6
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#pp-ocrv5_2" class="md-nav__link">
@@ -2886,12 +2904,13 @@ You're not viewing the latest version.
 
 <!-- Page content -->
 <h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4, PP-OCRv5 和 PP-OCRv6 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式, TensorRT 格式和 PyTorch 格式。</p>
+<p>针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4, PP-OCRv5 和 PP-OCRv6 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式、TensorRT 格式和 PyTorch 格式。</p>
 <p>所有模型目前托管在 <a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭社区</a> 上。</p>
 <p><code>rapidocr</code> v3 版本已经集成了托管的所有模型，通过下面参数指定可以自动下载。对应的配置文件：<a href="https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml">default_model.yaml</a>。当然，小伙伴们也可以自己去上述链接下载。</p>
 <h2 id="_2">默认配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>直接通过 pip 安装 <code>rapidocr</code> 使用时，可以直接使用，不用指定任何参数。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><code>rapidocr&gt;=3.9.0</code> 默认值写法</label><label for="__tabbed_1_2"><code>rapidocr&lt;3.9.0</code> 默认值写法</label></div>
+<p>通过 pip 安装 <code>rapidocr</code> 之后，可以直接使用，不用指定任何参数。因为 whl 包中预先打包了默认模型，同时给出了默认配置。</p>
+<p>不同版本的 <code>rapidocr</code>，默认配置有所不同。下面详细给出不同版本对应的默认配置。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><code>rapidocr&gt;=3.9.0</code> 默认配置</label><label for="__tabbed_1_2"><code>rapidocr&lt;3.9.0</code> 默认配置</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -2961,6 +2980,7 @@ You're not viewing the latest version.
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
+<p>对应的配置文件：<a href="https://github.com/RapidAI/RapidOCR/blob/v3.9.0/python/rapidocr/config.yaml">config.yaml</a></p>
 </div>
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
@@ -3030,12 +3050,13 @@ You're not viewing the latest version.
 </span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a>
 </span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
+<p>对应的配置文件：<a href="https://github.com/RapidAI/RapidOCR/blob/v3.8.4/python/rapidocr/config.yaml">config.yaml</a></p>
 </div>
 </div>
 </div>
 <h2 id="_3">配置文件字段对应<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">文本检测模型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<h4 id="pp-ocrv6-wip">PP-OCRv6 (WIP)<a class="headerlink" href="#pp-ocrv6-wip" title="Permanent link">&para;</a></h4>
+<h4 id="pp-ocrv6">PP-OCRv6<a class="headerlink" href="#pp-ocrv6" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -3056,9 +3077,10 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p><code>medium</code> 和 <code>small</code> 模型支持的语种：<code>ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german</code></p>
+<p><code>medium</code> 和 <code>small</code> 模型支持的语种：<code>ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german</code>。</p>
 <p><code>tiny</code> 模型不支持 <code>japan</code>。</p>
 <p>参考文档：<a href="https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5">通用 OCR 产线使用教程</a></p>
+<p><code>lang_type</code>：PP-OCRv6 中，不管指定哪个，对应的模型都是一样的。不同模型仅由 <code>model_type</code> 来区分。</p>
 <h4 id="pp-ocrv5">PP-OCRv5<a class="headerlink" href="#pp-ocrv5" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -3193,6 +3215,34 @@ You're not viewing the latest version.
 <p class="admonition-title">Note</p>
 <p><code>lang_type</code> 字段对应 Det 模块下的 <code>LangRec</code></p>
 </div>
+<h4 id="pp-ocrv6_1">PP-OCRv6<a class="headerlink" href="#pp-ocrv6_1" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><code>rapidocr&gt;=3.9.0</code> 支持。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>语种类型</th>
+<th>engine_type</th>
+<th>lang_type</th>
+<th>model_type</th>
+<th>ocr_version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多语种</td>
+<td><code>onnxruntime</code><br><code>openvino</code></td>
+<td><code>ch</code></td>
+<td><code>tiny</code><br/> <code>small</code><br/><code>medium</code></td>
+<td><code>PP-OCRv6</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>medium</code> 和 <code>small</code> 模型支持的语种：<code>ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german</code>。</p>
+<p><code>tiny</code> 模型不支持 <code>japan</code>。</p>
+<p>参考文档：<a href="https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5">通用 OCR 产线使用教程</a></p>
+<p><code>lang_type</code>：PP-OCRv6 中，不管指定哪个，对应的模型都是一样的。不同模型仅由 <code>model_type</code> 来区分。</p>
 <h4 id="pp-ocrv5_2">PP-OCRv5<a class="headerlink" href="#pp-ocrv5_2" title="Permanent link">&para;</a></h4>
 <table>
 <thead>

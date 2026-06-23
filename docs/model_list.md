@@ -10,7 +10,7 @@ hide:
 
 ## 引言
 
-针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4, PP-OCRv5 和 PP-OCRv6 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式, TensorRT 格式和 PyTorch 格式。
+针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4, PP-OCRv5 和 PP-OCRv6 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式、TensorRT 格式和 PyTorch 格式。
 
 所有模型目前托管在 [魔搭社区](https://www.modelscope.cn/models/RapidAI/RapidOCR/files) 上。
 
@@ -18,9 +18,11 @@ hide:
 
 ## 默认配置
 
-直接通过 pip 安装 `rapidocr` 使用时，可以直接使用，不用指定任何参数。
+通过 pip 安装 `rapidocr` 之后，可以直接使用，不用指定任何参数。因为 whl 包中预先打包了默认模型，同时给出了默认配置。
 
-=== "`rapidocr>=3.9.0` 默认值写法"
+不同版本的 `rapidocr`，默认配置有所不同。下面详细给出不同版本对应的默认配置。
+
+=== "`rapidocr>=3.9.0` 默认配置"
 
     ```python linenums="1"
     from rapidocr import RapidOCR
@@ -63,7 +65,9 @@ hide:
     result.vis("vis_result.jpg")
     ```
 
-=== "`rapidocr<3.9.0` 默认值写法"
+    对应的配置文件：[config.yaml](https://github.com/RapidAI/RapidOCR/blob/v3.9.0/python/rapidocr/config.yaml)
+
+=== "`rapidocr<3.9.0` 默认配置"
 
     ```python linenums="1"
     from rapidocr import RapidOCR
@@ -106,21 +110,25 @@ hide:
     result.vis("vis_result.jpg")
     ```
 
+    对应的配置文件：[config.yaml](https://github.com/RapidAI/RapidOCR/blob/v3.8.4/python/rapidocr/config.yaml)
+
 ## 配置文件字段对应
 
 ### 文本检测模型
 
-#### PP-OCRv6 (WIP)
+#### PP-OCRv6
 
 |语种类型|engine_type| lang_type|model_type|ocr_version|
 |:---|:---|:---|:---|:---|
 |多语种|`onnxruntime`(`rapidocr==3.9.0`) <br/> `openvino` (`rapidocr==3.9.0`)|`ch`<br/>`en`<br/>`multi`<br/>|`tiny`<br/> `small`<br/>`medium`|`PP-OCRv6`|
 
-`medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`
+`medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`。
 
 `tiny` 模型不支持 `japan`。
 
 参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
+
+`lang_type`：PP-OCRv6 中，不管指定哪个，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
 
 #### PP-OCRv5
 
@@ -180,6 +188,22 @@ engine = RapidOCR(
 !!! note
 
     `lang_type` 字段对应 Det 模块下的 `LangRec`
+
+#### PP-OCRv6
+
+> `rapidocr>=3.9.0` 支持。
+
+| 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
+|----------------|---------------------------|-------------------|-----------------|-------------------|
+| 多语种 | `onnxruntime`<br>`openvino`| `ch`       | `tiny`<br/> `small`<br/>`medium` | `PP-OCRv6` |
+
+`medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`。
+
+`tiny` 模型不支持 `japan`。
+
+参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
+
+`lang_type`：PP-OCRv6 中，不管指定哪个，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
 
 #### PP-OCRv5
 

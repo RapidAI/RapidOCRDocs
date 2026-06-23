@@ -6,9 +6,9 @@
 
 一切都使用默认值。
 
-`rapidocr>=3.9.0` 中默认使用 Det PP-OCRv6 small + Cls PP-OCRv4 mobile + Rec PP-OCRv6 small。
+`rapidocr>=3.9.0` 中默认使用 `Det PP-OCRv6 small` + `Cls PP-OCRv4 mobile` + `Rec PP-OCRv6 small`。
 
-`rapidocr<3.9.0` 中默认使用来自 PP-OCRv4 的 DBNet 中文轻量检测，来自 PP-OCRv4 的 SVTR_LCNet 中文识别模型。
+`rapidocr<3.9.0` 中默认使用 `Det PP-OCRv4 mobile` + `Cls PP-OCRv4 mobiel` + `Rec PP-OCRv4 mobile`。
 
 推荐可以先使用 ONNX Runtime CPU 版作为推理引擎。
 
@@ -594,15 +594,15 @@ rapidocr check
 输出结果示例：
 
 ```bash linenums="1"
-[INFO] 2026-03-24 02:20:47,997 [RapidOCR] base.py:22: Using engine_name: onnxruntime
-[INFO] 2026-03-24 02:20:48,088 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
-[INFO] 2026-03-24 02:20:48,089 [RapidOCR] main.py:53: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
-[INFO] 2026-03-24 02:20:48,273 [RapidOCR] base.py:22: Using engine_name: onnxruntime
-[INFO] 2026-03-24 02:20:48,276 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
-[INFO] 2026-03-24 02:20:48,276 [RapidOCR] main.py:53: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
-[INFO] 2026-03-24 02:20:48,341 [RapidOCR] base.py:22: Using engine_name: onnxruntime
-[INFO] 2026-03-24 02:20:48,376 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
-[INFO] 2026-03-24 02:20:48,376 [RapidOCR] main.py:53: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
+[INFO] 2026-06-23 12:51:43,979 [RapidOCR] base.py:23: Using engine_name: onnxruntime
+[INFO] 2026-06-23 12:51:44,045 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
+[INFO] 2026-06-23 12:51:44,046 [RapidOCR] main.py:63: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
+[INFO] 2026-06-23 12:51:44,127 [RapidOCR] base.py:23: Using engine_name: onnxruntime
+[INFO] 2026-06-23 12:51:44,129 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
+[INFO] 2026-06-23 12:51:44,129 [RapidOCR] main.py:63: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
+[INFO] 2026-06-23 12:51:44,190 [RapidOCR] base.py:23: Using engine_name: onnxruntime
+[INFO] 2026-06-23 12:51:44,260 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
+[INFO] 2026-06-23 12:51:44,260 [RapidOCR] main.py:63: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
 Success! rapidocr is installed correctly!
 ```
 
@@ -631,9 +631,9 @@ The config file has saved in ./default_rapidocr.yaml
 如果不传 `--config` 参数，执行该命令默认会下载下面模型到 `rapidocr` 安装目录下 `models` 目录里
 
 ```text linenums="1"
-ch_PP-OCRv4_det_mobile.onnx
-ch_PP-OCRv4_rec_mobile.onnx
+PP-OCRv6_det_small.onnx
 ch_ppocr_mobile_v2.0_cls_mobile.onnx
+PP-OCRv6_rec_small.onnx
 ```
 
 ```bash linenums="1"

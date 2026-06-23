@@ -2637,9 +2637,9 @@ You're not viewing the latest version.
 <h4 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p><code>rapidocr</code> 是合并了 <code>rapidocr_onnxruntime</code>, <code>rapidocr_openvino</code>, <code>rapidocr_paddle</code> 以及支持 PyTorch 推理的版本。</p>
 <p><code>rapidocr&gt;=2.0.0,&lt;=2.0.5</code> 中，默认采用 ONNX Runtime CPU 版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用 GPU 推理。该部分请参见后续文档。</p>
-<p><code>rapidocr&gt;=2.0.6</code> 中不再将 ONNX Runtime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。这样做是经过充分考虑了的。</p>
+<p><code>rapidocr&gt;=2.0.6</code> 中不再将 ONNX Runtime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。</p>
 <h4 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>顺利的话，两行命令即可使用上。<code>rapidocr</code> 包大小约为 15M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 mobile 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。</p>
+<p>顺利的话，一行命令即可使用上。<code>rapidocr</code> 包大小约为 27.2M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 small 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr<span class="w"> </span>onnxruntime
 </span></code></pre></div></td></tr></table></div>
 <p>国内安装速度慢的话，可以指定国内的安装源，如使用清华源：</p>
@@ -2659,18 +2659,22 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>$<span class="w"> </span>rapidocr<span class="w"> </span>check
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>$<span class="w"> </span>rapidocr<span class="w"> </span>check
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1"># 输出以下内容即证明安装成功</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-20<span class="w"> </span><span class="m">21</span>:46:47,854<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-20<span class="w"> </span><span class="m">21</span>:46:47,886<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-20<span class="w"> </span><span class="m">21</span>:46:47,931<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-20<span class="w"> </span><span class="m">21</span>:46:47,931<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-20<span class="w"> </span><span class="m">21</span>:46:47,949<span class="w"> </span>base.py:30:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2025</span>-03-20<span class="w"> </span><span class="m">21</span>:46:47,949<span class="w"> </span>utils.py:35:<span class="w"> </span>File<span class="w"> </span>already<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>/Users/jiahuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="hll">Success!<span class="w"> </span>rapidocr<span class="w"> </span>is<span class="w"> </span>installed<span class="w"> </span>correctly!
-</span></span></code></pre></div></td></tr></table></div>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:43,979<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:23:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,045<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,046<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:63:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,127<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:23:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,129<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,129<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:63:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,190<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:23:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,260<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
+</span></span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,260<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:63:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>Success!<span class="w"> </span>rapidocr<span class="w"> </span>is<span class="w"> </span>installed<span class="w"> </span>correctly!
+</span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <p>运行以下代码，终端可以打印出文字内容，即安装成功。</p>
@@ -2684,15 +2688,17 @@ You're not viewing the latest version.
 <p>如果在安装过程中，出现某个依赖包不能正确安装时，可先单独安装某个依赖包，之后再安装 <code>rapidocr</code> 即可。</p>
 </div>
 <p>依赖的包如下：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span>
-<span class="normal"><a href="#__codelineno-4-7">7</a></span>
-<span class="normal"><a href="#__codelineno-4-8">8</a></span>
-<span class="normal"><a href="#__codelineno-4-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>pyclipper&gt;=1.2.0
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>pyclipper&gt;=1.2.0
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>opencv_python&gt;=4.5.1.48
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>numpy&gt;=1.19.5,&lt;3.0.0
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>six&gt;=1.15.0
@@ -2700,7 +2706,9 @@ You're not viewing the latest version.
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>PyYAML
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>Pillow
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>tqdm
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>omegaconf
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>omegaconf!=2.2.1 # https://github.com/omry/omegaconf/issues/934
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a>requests
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a>colorlog
 </span></code></pre></div></td></tr></table></div>
 
 <!-- Source file information -->

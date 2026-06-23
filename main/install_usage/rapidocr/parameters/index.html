@@ -3025,28 +3025,28 @@ You're not viewing the latest version.
 <tr>
 <td><code>engine_type</code></td>
 <td><code>EngineType</code></td>
-<td><code>ONNXRUNTIME</code>（onnxruntime）<br><code>OPENVINO</code>（openvino）<br><code>PADDLE</code>（paddle）<br><code>TORCH</code>（torch）<br><code>MNN</code> (mnn)(<code>rapidocr&gt;=3.6.0</code>)<br><code>TENSORRT</code>(tensorrt)(<code>rapidocr&gt;=3.7.0</code>)</td>
+<td><code>ONNXRUNTIME</code>（onnxruntime）<br/><code>OPENVINO</code>（openvino）<br/><code>PADDLE</code>（paddle）<br/><code>TORCH</code>（torch）<br/><code>MNN</code> (mnn)(<code>rapidocr&gt;=3.6.0</code>)<br/><code>TENSORRT</code>(tensorrt)(<code>rapidocr&gt;=3.7.0</code>)</td>
 <td><code>from rapidocr import EngineType</code></td>
 <td>推理引擎类型</td>
 </tr>
 <tr>
 <td><code>lang_type</code></td>
-<td><code>LangDet</code><br> <code>LangCls</code><br> <code>LangRec</code></td>
-<td><strong>检测（Det）</strong>：<code>CH</code>/<code>EN</code>/<code>MULTI</code><br><strong>分类（Cls）</strong>：<code>CH</code><br><strong>识别（Rec）</strong>：<code>CH</code>/<code>CH_DOC</code>/<code>EN</code>/<code>ARABIC</code>/...</td>
+<td><code>LangDet</code><br/> <code>LangCls</code><br/> <code>LangRec</code></td>
+<td><strong>检测（Det）</strong>：<code>CH</code>/<code>EN</code>/<code>MULTI</code><br/><strong>分类（Cls）</strong>：<code>CH</code><br/><strong>识别（Rec）</strong>：<code>CH</code>/<code>CH_DOC</code>/<code>EN</code>/<code>ARABIC</code>/...</td>
 <td><code>from rapidocr import LangDet</code><br/> <code>from rapidocr import LangCls</code> <br/><code>from rapidocr import LangRec</code></td>
 <td>根据 OCR 处理阶段选择不同枚举值</td>
 </tr>
 <tr>
 <td><code>model_type</code></td>
 <td><code>ModelType</code></td>
-<td><code>MOBILE</code>（mobile）<br><code>SERVER</code>（server）</td>
+<td><code>MOBILE</code>（mobile）<br/><code>SERVER</code>（server）<br/><code>TINY</code>(tiny) <br/> <code>SMALL</code>(small)<br/><code>MEDIUM</code>(medium)</td>
 <td><code>from rapidocr import ModelType</code></td>
 <td>模型大小与性能级别</td>
 </tr>
 <tr>
 <td><code>ocr_version</code></td>
 <td><code>OCRVersion</code></td>
-<td><code>PPOCRV4</code>（PP-OCRv4）<br><code>PPOCRV5</code>（PP-OCRv5）</td>
+<td><code>PPOCRV4</code>（PP-OCRv4）<br/><code>PPOCRV5</code>（PP-OCRv5）<br/><code>PPOCRV6</code>(PP-OCRv6)</td>
 <td><code>from rapidocr import OCRVersion</code></td>
 <td>模型版本</td>
 </tr>

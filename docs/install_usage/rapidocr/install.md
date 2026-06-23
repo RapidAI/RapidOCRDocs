@@ -21,11 +21,11 @@ hide:
 
 `rapidocr>=2.0.0,<=2.0.5` 中，默认采用 ONNX Runtime CPU 版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用 GPU 推理。该部分请参见后续文档。
 
-`rapidocr>=2.0.6` 中不再将 ONNX Runtime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。这样做是经过充分考虑了的。
+`rapidocr>=2.0.6` 中不再将 ONNX Runtime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。
 
 #### 安装
 
-顺利的话，两行命令即可使用上。`rapidocr` 包大小约为 15M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 mobile 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。
+顺利的话，一行命令即可使用上。`rapidocr` 包大小约为 27.2M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 small 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。
 
 ```bash linenums="1"
 pip install rapidocr onnxruntime
@@ -45,13 +45,15 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
     $ rapidocr check
 
     # 输出以下内容即证明安装成功
-    [INFO] 2025-03-20 21:46:47,854 base.py:30: Using engine_name: onnxruntime
-    [INFO] 2025-03-20 21:46:47,886 utils.py:35: File already exists in /Users/jiahuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv4_det_infer.onnx
-    [INFO] 2025-03-20 21:46:47,931 base.py:30: Using engine_name: onnxruntime
-    [INFO] 2025-03-20 21:46:47,931 utils.py:35: File already exists in /Users/jiahuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx
-    [INFO] 2025-03-20 21:46:47,949 base.py:30: Using engine_name: onnxruntime
-    [INFO] 2025-03-20 21:46:47,949 utils.py:35: File already exists in /Users/jiahuawang/miniconda3/envs/py310/lib/python3.10/site-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx
-
+    [INFO] 2026-06-23 12:51:43,979 [RapidOCR] base.py:23: Using engine_name: onnxruntime
+    [INFO] 2026-06-23 12:51:44,045 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
+    [INFO] 2026-06-23 12:51:44,046 [RapidOCR] main.py:63: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
+    [INFO] 2026-06-23 12:51:44,127 [RapidOCR] base.py:23: Using engine_name: onnxruntime
+    [INFO] 2026-06-23 12:51:44,129 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
+    [INFO] 2026-06-23 12:51:44,129 [RapidOCR] main.py:63: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
+    [INFO] 2026-06-23 12:51:44,190 [RapidOCR] base.py:23: Using engine_name: onnxruntime
+    [INFO] 2026-06-23 12:51:44,260 [RapidOCR] download_file.py:60: File exists and is valid: /usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
+    [INFO] 2026-06-23 12:51:44,260 [RapidOCR] main.py:63: Using /usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
     Success! rapidocr is installed correctly!
     ```
 
@@ -78,5 +80,7 @@ Shapely>=1.7.1,!=2.0.4  # python3.12 2.0.4 bug
 PyYAML
 Pillow
 tqdm
-omegaconf
+omegaconf!=2.2.1 # https://github.com/omry/omegaconf/issues/934
+requests
+colorlog
 ```

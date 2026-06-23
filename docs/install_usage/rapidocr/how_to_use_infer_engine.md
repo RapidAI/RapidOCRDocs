@@ -14,6 +14,8 @@ comments: true
 
 `rapidocr` 是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。
 
+使用不同推理引擎前，请先确定当前 `rapidocr` 版本是否支持该推理引擎。详情可查阅：[模型列表](../../model_list.md)
+
 ### 使用 ONNX Runtime
 
 1. 安装 ONNX Runtime。推荐用 CPU 版的 ONNX Runtime，GPU 版不推荐在 `rapidocr` 中使用，相关原因参见：[ONNX Runtime GPU 推理](../../blog/posts/inference_engine/onnxruntime/onnxruntime-gpu.md)。

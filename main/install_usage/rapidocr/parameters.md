@@ -247,7 +247,11 @@ Det:
 
 `model_type (str)`: 模型量级选择，`PP-OCRv4` 和 `PP-OCRv5` 支持 `mobile`（轻量型）和 `server`（服务型）。`PP-OCRv6` 支持 `tiny`, `small` 和 `medium`，默认为 `PP-OCRv6` 的 `small`。
 
+> 在 `rapidocr>=3.9.0` 中支持 `PP-OCRv6`。
+
 `ocr_version (str)`: OCR 版本的选择，支持 `PP-OCRv4`、`PP-OCRv5` 和 `PP-OCRv6`，默认为 `PP-OCRv6`。
+
+> 在 `rapidocr>=3.9.0` 中支持 `PP-OCRv6`。
 
 `model_path (str)`: 文本检测模型路径，仅限于基于 PaddleOCR 训练所得 DBNet 文本检测模型。默认值为 `None`。
 

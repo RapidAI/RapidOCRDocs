@@ -1,6 +1,6 @@
 ## 引言
 
-针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4 和 PP-OCRv5 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式和 PyTorch 格式。
+针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4, PP-OCRv5 和 PP-OCRv6 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式, TensorRT 格式和 PyTorch 格式。
 
 所有模型目前托管在 [魔搭社区](https://www.modelscope.cn/models/RapidAI/RapidOCR/files) 上。
 
@@ -8,52 +8,103 @@
 
 ## 默认配置
 
-直接通过 pip 安装 `rapidocr` 使用时，可以直接使用，不用指定任何参数。下面写法：
+直接通过 pip 安装 `rapidocr` 使用时，可以直接使用，不用指定任何参数。
 
-```python linenums="1"
-from rapidocr import RapidOCR
+=== `rapidocr>=3.9.0` 默认值写法
 
-engine = RapidOCR()
+    ```python linenums="1"
+    from rapidocr import RapidOCR
 
-img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
-result = engine(img_url)
-print(result)
+    engine = RapidOCR()
 
-result.vis("vis_result.jpg")
-```
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+    result = engine(img_url)
+    print(result)
 
-等价于下面：
+    result.vis("vis_result.jpg")
+    ```
 
-```python linenums="1" hl_lines="5-16"
-from rapidocr import EngineType, LangDet, LangRec, ModelType, OCRVersion, RapidOCR
+    等价于下面：
 
-engine = RapidOCR(
-    params={
-        "Det.engine_type": EngineType.ONNXRUNTIME,
-        "Det.lang_type": LangDet.CH,
-        "Det.model_type": ModelType.MOBILE,
-        "Det.ocr_version": OCRVersion.PPOCRV4,
-        "Rec.engine_type": EngineType.ONNXRUNTIME,
-        "Rec.lang_type": LangRec.CH,
-        "Rec.model_type": ModelType.MOBILE,
-        "Rec.ocr_version": OCRVersion.PPOCRV4,
-        "Cls.engine_type": EngineType.ONNXRUNTIME,
-        "Cls.lang_type": LangDet.CH,
-        "Cls.model_type": ModelType.MOBILE,
-        "Cls.ocr_version": OCRVersion.PPOCRV4,
-    }
-)
+    ```python linenums="1" hl_lines="5-16"
+    from rapidocr import EngineType, LangDet, LangRec, ModelType, OCRVersion, RapidOCR
 
-img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
-result = engine(img_url)
-print(result)
+    engine = RapidOCR(
+        params={
+            "Det.engine_type": EngineType.ONNXRUNTIME,
+            "Det.lang_type": LangDet.CH,
+            "Det.model_type": ModelType.SMALL,
+            "Det.ocr_version": OCRVersion.PPOCRV6,
+            "Rec.engine_type": EngineType.ONNXRUNTIME,
+            "Rec.lang_type": LangRec.CH,
+            "Rec.model_type": ModelType.SMALL,
+            "Rec.ocr_version": OCRVersion.PPOCRV6,
+            "Cls.engine_type": EngineType.ONNXRUNTIME,
+            "Cls.lang_type": LangDet.CH,
+            "Cls.model_type": ModelType.MOBILE,
+            "Cls.ocr_version": OCRVersion.PPOCRV4,
+        }
+    )
 
-result.vis("vis_result.jpg")
-```
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+    result = engine(img_url)
+    print(result)
+
+    result.vis("vis_result.jpg")
+    ```
+
+=== `rapidocr<3.9.0` 默认值写法
+
+    ```python linenums="1"
+    from rapidocr import RapidOCR
+
+    engine = RapidOCR()
+
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+    result = engine(img_url)
+    print(result)
+
+    result.vis("vis_result.jpg")
+    ```
+
+    等价于下面：
+
+    ```python linenums="1" hl_lines="5-16"
+    from rapidocr import EngineType, LangDet, LangRec, ModelType, OCRVersion, RapidOCR
+
+    engine = RapidOCR(
+        params={
+            "Det.engine_type": EngineType.ONNXRUNTIME,
+            "Det.lang_type": LangDet.CH,
+            "Det.model_type": ModelType.MOBILE,
+            "Det.ocr_version": OCRVersion.PPOCRV4,
+            "Rec.engine_type": EngineType.ONNXRUNTIME,
+            "Rec.lang_type": LangRec.CH,
+            "Rec.model_type": ModelType.MOBILE,
+            "Rec.ocr_version": OCRVersion.PPOCRV4,
+            "Cls.engine_type": EngineType.ONNXRUNTIME,
+            "Cls.lang_type": LangDet.CH,
+            "Cls.model_type": ModelType.MOBILE,
+            "Cls.ocr_version": OCRVersion.PPOCRV4,
+        }
+    )
+
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+    result = engine(img_url)
+    print(result)
+
+    result.vis("vis_result.jpg")
+    ```
 
 ## 配置文件字段对应
 
 ### 文本检测模型
+
+#### PP-OCRv6 (WIP)
+
+|语种类型|engine_type| lang_type|model_type|ocr_version|
+|:---|:---|:---|:---|:---|
+|多语种[^7]|`onnxruntime` <br/> `openvino` <br/> `paddle`<br>`torch`(`rapidocr>=3.3.0`)<br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)|`ch`|`mobile`<br/> `server (tensorrt 可能转换不过)`|`PP-OCRv5`|
 
 #### PP-OCRv5
 
@@ -178,4 +229,3 @@ result.vis("vis_result.jpg")
 [^4]: 阿拉伯文、波斯文、维吾尔文、乌尔都文、普什图文、库尔德文、信德文、俾路支文、英文
 [^5]: 印地文，马拉地文，尼泊尔文，比哈尔文，迈蒂利文，古英文，博杰普尔文，马加希文，萨达里文，尼瓦尔文，孔卡尼文，梵文，哈里亚纳文、英文
 [^6]: 俄罗斯文、白俄罗斯文、乌克兰文
-[^7]: 简体中文、中文拼音、繁体中文、英文、日文

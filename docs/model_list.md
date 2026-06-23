@@ -20,7 +20,7 @@ hide:
 
 直接通过 pip 安装 `rapidocr` 使用时，可以直接使用，不用指定任何参数。
 
-=== `rapidocr>=3.9.0` 默认值写法
+=== "`rapidocr>=3.9.0` 默认值写法"
 
     ```python linenums="1"
     from rapidocr import RapidOCR
@@ -63,7 +63,7 @@ hide:
     result.vis("vis_result.jpg")
     ```
 
-=== `rapidocr<3.9.0` 默认值写法
+=== "`rapidocr<3.9.0` 默认值写法"
 
     ```python linenums="1"
     from rapidocr import RapidOCR

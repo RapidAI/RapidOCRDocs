@@ -226,8 +226,8 @@ EngineConfig:
 Det:
     engine_type: "onnxruntime"
     lang_type: "ch"
-    model_type: "mobile"
-    ocr_version: "PP-OCRv4"
+    model_type: "small"
+    ocr_version: "PP-OCRv6"
 
     task_type: "det"
 
@@ -251,9 +251,9 @@ Det:
 
 `lang_type (str)`: 支持检测的语种类型。这里指的是 `LangDet`，具体支持 `ch`, `en` 和 `multi` 3 个值。`ch` 可以识别中文和中英文混合文本检测。`en` 支持英文文字检测。`multi` 支持多语言文本检测。默认为 `ch`。详细参见：[docs](https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1)
 
-`model_type (str)`: 模型量级选择，支持 `mobile`（轻量型）和 `server`（服务型）。默认为 `mobile`。
+`model_type (str)`: 模型量级选择，`PP-OCRv4` 和 `PP-OCRv5` 支持 `mobile`（轻量型）和 `server`（服务型）。`PP-OCRv6` 支持 `tiny`, `small` 和 `medium`，默认为 `PP-OCRv6` 的 `small`。
 
-`ocr_version (str)`: OCR 版本的选择，支持 `PP-OCRv4` 和 `PP-OCRv5`，默认为 `PP-OCRv4`。
+`ocr_version (str)`: OCR 版本的选择，支持 `PP-OCRv4`、`PP-OCRv5` 和 `PP-OCRv6`，默认为 `PP-OCRv6`。
 
 `model_path (str)`: 文本检测模型路径，仅限于基于 PaddleOCR 训练所得 DBNet 文本检测模型。默认值为 `None`。
 
@@ -321,8 +321,8 @@ Cls:
 Rec:
     engine_type: "onnxruntime"
     lang_type: "ch"
-    model_type: "mobile"
-    ocr_version: "PP-OCRv4"
+    model_type: "small"
+    ocr_version: "PP-OCRv6"
 
     task_type: "rec"
 

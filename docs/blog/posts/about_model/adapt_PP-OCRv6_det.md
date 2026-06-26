@@ -10,6 +10,7 @@ hide:
   - toc
 links:
   - RapidOCR 集成 PP-OCRv5_det 模型(mobile/server)记录: blog/posts/about_model/adapt_PP-OCRv5_det.md
+  - RapidOCR 集成 PP-OCRv6 Rec 模型记录: blog/posts/about_model/adapt_PP-OCRv6_rec.md
 ---
 
 <!-- more -->
@@ -406,4 +407,4 @@ pip install text_det_metric
 
 ### 写在最后
 
-这部分代码会集成到 `rapidocr==3.9.0` 中。相关工作正在进行中，欢迎持续关注。
+这部分代码已经集成到 `rapidocr==3.9.0` 中。相关工作正在进行中，欢迎持续关注。

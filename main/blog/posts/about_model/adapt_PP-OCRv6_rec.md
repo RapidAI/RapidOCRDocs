@@ -301,6 +301,14 @@ pip install text_rec_metric
     with open("pred.txt", "w", encoding="utf-8") as f:
         for v in content:
             f.write(f"{v}\n")
+
+    from text_rec_metric import TextRecMetric
+
+    metric = TextRecMetric()
+
+    pred_path = "pred.txt"
+    metric = metric(pred_path)
+    print(metric)
     ```
 
 === "(Exp3)RapidOCR 框架+ONNX Runtime 格式模型"
@@ -472,4 +480,4 @@ pip install text_rec_metric
 
 ### 写在最后
 
-这部分代码会集成到 `rapidocr==3.9.0` 中。相关工作正在进行中，欢迎持续关注。
+这部分代码已经集成到 `rapidocr==3.9.0` 中。相关工作正在进行中，欢迎持续关注。

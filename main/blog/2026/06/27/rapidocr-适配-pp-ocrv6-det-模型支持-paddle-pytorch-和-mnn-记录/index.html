@@ -12,13 +12,11 @@
         <meta name="author" content="RapidAI">
       
       
-        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/">
+        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/">
       
       
-        <link rel="prev" href="../../../09/30/inference-summary/">
+        <link rel="prev" href="../../18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/">
       
-      
-        <link rel="next" href="../../03/optim-tutorial/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../../feed_rss_created.xml">
@@ -29,7 +27,7 @@
     
     
       
-        <title>垂直项目(偏学术) - RapidOCR 文档</title>
+        <title>RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录 - RapidOCR 文档</title>
       
     
     
@@ -113,22 +111,22 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RapidOCR 文档">
-<meta property="og:title" content="垂直项目(偏学术)">
+<meta property="og:title" content="RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录">
 <meta property="og:description" content="RapidOCR 是支持离线部署的开源 OCR 工具，面向 Python、C++、Java、C# 等生态，支持 ONNX Runtime、OpenVINO、Paddle、PyTorch、MNN、TensorRT 等推理引擎。">
-<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/">
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/">
 <meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="垂直项目(偏学术)">
+<meta name="twitter:title" content="RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录">
 <meta name="twitter:description" content="RapidOCR 是支持离线部署的开源 OCR 工具，面向 Python、C++、Java、C# 等生态，支持 ONNX Runtime、OpenVINO、Paddle、PyTorch、MNN、TensorRT 等推理引擎。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <link rel="alternate" type="text/plain" href="../../../../../llms.txt" title="RapidOCR llms.txt">
 <link rel="alternate" type="text/plain" href="../../../../../llms-full.txt" title="RapidOCR llms-full.txt">
 <link rel="alternate" type="application/json" href="../../../../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../../../posts/related_projects/related_projects.md" title="垂直项目(偏学术) Markdown">
+<link rel="alternate" type="text/markdown" href="../../../../posts/inference_engine/support_PP-OCRv6_det_engines.md" title="RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录 Markdown">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR \u662f\u652f\u6301\u79bb\u7ebf\u90e8\u7f72\u7684\u5f00\u6e90 OCR \u5de5\u5177\uff0c\u9762\u5411 Python\u3001C++\u3001Java\u3001C# \u7b49\u751f\u6001\uff0c\u652f\u6301 ONNX Runtime\u3001OpenVINO\u3001Paddle\u3001PyTorch\u3001MNN\u3001TensorRT \u7b49\u63a8\u7406\u5f15\u64ce\u3002", "headline": "\u5782\u76f4\u9879\u76ee(\u504f\u5b66\u672f)", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "RapidOCR \u6587\u6863", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "\u5782\u76f4\u9879\u76ee(\u504f\u5b66\u672f)", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/"}
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR \u662f\u652f\u6301\u79bb\u7ebf\u90e8\u7f72\u7684\u5f00\u6e90 OCR \u5de5\u5177\uff0c\u9762\u5411 Python\u3001C++\u3001Java\u3001C# \u7b49\u751f\u6001\uff0c\u652f\u6301 ONNX Runtime\u3001OpenVINO\u3001Paddle\u3001PyTorch\u3001MNN\u3001TensorRT \u7b49\u63a8\u7406\u5f15\u64ce\u3002", "headline": "RapidOCR \u9002\u914d PP-OCRv6 Det \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "RapidOCR \u6587\u6863", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR \u9002\u914d PP-OCRv6 Det \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/"}
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -197,7 +195,7 @@
     
     <p class="banner">
         🎉 最新文章：
-        <a href="../../../../2026/06/27/rapidocr-适配-pp-ocrv6-det-模型支持-paddle-pytorch-和-mnn-记录/" target="_blank" rel="noopener">RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录</a>
+        <a href="../rapidocr-适配-pp-ocrv6-det-模型支持-paddle-pytorch-和-mnn-记录/" target="_blank" rel="noopener">RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录</a>
     </p>
     
 
@@ -252,7 +250,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              垂直项目(偏学术)
+              RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录
             
           </span>
         </div>
@@ -2446,7 +2444,7 @@ You're not viewing the latest version.
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -2472,18 +2470,36 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#visual-text-rendering" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Visual Text Rendering
+      以下代码运行环境
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#paddlepaddle" class="md-nav__link">
     <span class="md-ellipsis">
-      阅读序列抽取
+      支持 PaddlePaddle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      支持 PyTorch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      支持 MNN
     </span>
   </a>
   
@@ -2492,115 +2508,7 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      手写体识别
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      手写体公式识别
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      公式识别
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      公式检测
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      发票识别
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      图像文字擦除
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      文档增强
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      文档图像矫正
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      版面分析
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      表格结构识别
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ocr" class="md-nav__link">
-    <span class="md-ellipsis">
-      视频 OCR
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ocr_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      卡证 OCR
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ocr_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      印章 OCR
+      不同推理引擎指标汇总
     </span>
   </a>
   
@@ -2662,7 +2570,7 @@ You're not viewing the latest version.
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2022-10-01 00:00:00+00:00" class="md-ellipsis">2022/10/1</time>
+                        <time datetime="2026-06-27 00:00:00+00:00" class="md-ellipsis">2026/6/27</time>
                       </div>
                     </li>
                     
@@ -2673,7 +2581,7 @@ You're not viewing the latest version.
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/ocr%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/">OCR相关项目</a></span>
+                              <a href="../../../../category/%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/">模型相关</a></span>
                         </div>
                       </li>
                     
@@ -2684,7 +2592,7 @@ You're not viewing the latest version.
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 2 分钟阅读时间
+                              需要 4 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2694,6 +2602,65 @@ You're not viewing the latest version.
                 </nav>
               </li>
             </ul>
+            
+              <ul class="md-post__meta md-nav__list">
+                <li class="md-nav__item md-nav__item--section">
+                  <div class="md-post__title">
+                    <span class="md-ellipsis">
+                      相关链接
+                    </span>
+                  </div>
+                  <nav class="md-nav">
+                    <ul class="md-nav__list">
+                      
+                        
+                        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RapidOCR 集成 PP-OCRv5_det 模型(mobile/server)记录
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                      
+                        
+                        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RapidOCR 集成 PP-OCRv6 Rec 模型记录
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                      
+                    </ul>
+                  </nav>
+                </li>
+              </ul>
             
           </nav>
           
@@ -2708,7 +2675,7 @@ You're not viewing the latest version.
 
         
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/related_projects/related_projects.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/inference_engine/support_PP-OCRv6_det_engines.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2717,164 +2684,521 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/related_projects/related_projects.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/inference_engine/support_PP-OCRv6_det_engines.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
         
-          <h1>垂直项目(偏学术)</h1>
+          <h1>RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录</h1>
         
         <!-- more -->
 
 <h3 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><code>rapidocr==3.9.0</code> 仅支持 ONNXRuntime 和 OpenVINO 两个推理引擎，PaddlePaddle, PyTorch, MNN 和 TensorRT 打算在下个版本都支持了。</p>
+<p>本篇文章就是用来记录支持的过程，一是备忘，二是希望帮助需要的小伙伴们。</p>
+<h3 id="_2">以下代码运行环境<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>以下几个方向，每个都是比较独立的方向，但是却和 OCR 有着千丝万缕的关系，关于它们的资料就像散落在天空中的星星一般，散发着微弱的光芒，这里要做的就是将这些点点光芒聚集起来。</li>
-<li>这里将会汇总出以下几个 OCR 周边项目的一些文档和资源，包括学术动态和一些工程化代码。</li>
-<li>欢迎各位小伙伴提供 PR。</li>
+<li>OS: macOS Tahoe 26.5.1</li>
+<li>Python: 3.10.14</li>
+<li>PaddlePaddle: 3.1.0</li>
+<li>paddle2onnx: 2.1.0</li>
+<li>paddlex: 3.7.1</li>
+<li>rapidocr: 3.9.0</li>
+<li>MNN: 3.2.5</li>
+<li>OpenVINO: 2026.2.1</li>
+<li>torch: 2.7.0</li>
 </ul>
-<h3 id="visual-text-rendering">Visual Text Rendering<a class="headerlink" href="#visual-text-rendering" title="Permanent link">&para;</a></h3>
+<h3 id="paddlepaddle">支持 PaddlePaddle<a class="headerlink" href="#paddlepaddle" title="Permanent link">&para;</a></h3>
+<p>得益于原始模型就是 PaddlePaddle 格式，因此支持 PaddlePaddle 推理引擎较为容易，加上 <a href="https://github.com/jaminmei">@jaminmei</a> 提的 PR <a href="https://github.com/RapidAI/RapidOCR/pull/696">#696</a>。我这里做的工作少了许多，由衷地感谢。</p>
+<p>需要做的：</p>
 <ul>
-<li><a href="https://glyph-byt5.github.io/">Glyph-ByT5: A Customized Text Encoder for Accurate Visual Text Rendering</a></li>
+<li>将 Paddle 格式模型托管到魔搭仓库中，包括模型文件和字典文件。</li>
+<li>更新 <code>default_models.yaml</code> 文件中 Paddle 部分模型的路径和 SHA256，这个配置好后，可以直接通过参数指定 <code>EngineType</code> 为 Paddle 格式，程序会自动下载对应的模型。</li>
 </ul>
-<h3 id="_2">阅读序列抽取<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>数据集：</p>
-<ul>
-<li><a href="https://github.com/doc-analysis/ReadingBank">ReadingBank</a></li>
-</ul>
-<h3 id="_3">手写体识别<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>TODO</p>
-<h3 id="_4">手写体公式识别<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>TODO</p>
-<h3 id="_5">公式识别<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>TODO</p>
-<h3 id="_6">公式检测<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>图像中公式检测需求一般出现于文档分析和还原需求中。</p>
-<p>单纯公式检测任务包括对行内公式和行间公式的检测。而版面分析任务中，仅有对行间公式的标注，缺乏行内公式标注。如果想要精细化做版面还原，行内公式的检测识别就变得尤为重要。</p>
-<p>这一块的工作，breezedeus 做得比较好，详情可以参见其博客：<a href="https://www.breezedeus.com/article/p2t-mfd-20230613">Pix2Text (P2T) 新版公式检测模型</a>。</p>
-<p>有关数据集：<a href="https://zenodo.org/records/4757865">IBEM</a> 和中文 <a href="https://github.com/breezedeus/CnMFD_Dataset">CnMFD_Dataset</a></p>
-<h3 id="_7">发票识别<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://davar-lab.github.io/competition/CSIG2022-invoice-ch.html##">CSIG 2022 Competition on Invoice Recognition and Analysis</a></li>
-</ul>
-<h3 id="_8">图像文字擦除<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/lcy0604/CTRNet">CTRNet</a>：图像文字擦除 | <a href="https://huggingface.co/spaces/SWHL/CTRNetDemo">Demo</a></li>
-</ul>
-<h3 id="_9">文档增强<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://arxiv.org/pdf/2305.03892">DocDiff</a>（<a href="https://github.com/Royalvice/DocDiff">Github</a>）: 文档增强模型，可以用于文档去模糊、文档去噪、文档二值化、文档去水印和印章等任务。</li>
-</ul>
-<h3 id="_10">文档图像矫正<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/cvlab-stonybrook/PaperEdge">PaperEdge</a>：文档图像矫正 | <a href="https://huggingface.co/spaces/SWHL/PaperEdgeDemo">Demo</a></li>
-<li><a href="https://arxiv.org/pdf/2304.08796">DocTr++</a> | <a href="https://demo.doctrp.top/">Demo</a> | <a href="https://github.com/fh2019ustc/DocTr-Plus">Code</a></li>
-<li><a href="https://github.com/ZZZHANG-jx/DocRes">DocRes</a>：统一文档图像恢复任务的广义模型</li>
-</ul>
-<h3 id="_11">版面分析<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<ul>
-<li>相关论文和帖子：<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/392058153">版面分析方法汇总</a></li>
-</ul>
-</li>
-<li>相关工程：<ul>
-<li><a href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.5/ppstructure/layout/README_ch.md">PaddleOCR Layout</a></li>
-<li><a href="https://github.com/hikopensource/DAVAR-Lab-OCR/tree/main/demo/text_layout/VSR">海康 DAVAR VSR</a></li>
-</ul>
-</li>
-<li>
-<p>数据集汇总：</p>
-<ul>
-<li>
-<p>英文版面分析数据集：</p>
-<ul>
-<li><a href="https://github.com/ibm-aur-nlp/PubLayNet">PubLayNet</a>: IBM 构建，34 万张图像，分为 5 类：text, title list table figure。</li>
-<li><a href="https://doc-analysis.github.io/docbank-page/index.html">DocBank</a>：微软亚洲研究院构建，50 万英文文档图像，分为 12 类：摘要、作者、标题、公式、图形、页脚、列表、段落、参考、节标题、表格和文章标题。</li>
-<li><a href="https://modelscope.cn/datasets/iic/D4LA/summary">D4LA</a>: 阿里通义实验室构建，11092 张图像，12 个文档种类，27 个类别，手工标注。详情可参见论文 <a href="https://arxiv.org/pdf/2308.14978">Vision Grid Transformer for Document Layout Analysis</a></li>
-</ul>
-</li>
-<li>
-<p>中文版面分析数据集：</p>
-<ul>
-<li><a href="https://github.com/buptlihang/CDLA">CDLA</a>：中文文档版面分析数据集，面向中文文献类（论文）场景，总共 6000 张（5000 训练，1000 测试），分为 10 类：正文、标题、图片、图片标题、表格、表格标题、页眉、页脚、注释和公式。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="_12">表格结构识别<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/microsoft/table-transformer">table-transformer</a></li>
-<li>相关论文和帖子：<ul>
-<li><a href="https://blog.csdn.net/shiwanghualuo/article/details/123726879">OCR 之表格结构识别综述</a></li>
-<li><a href="https://blog.csdn.net/INTSIG/article/details/123000010?spm=1001.2014.3001.5502">合合信息：表格识别与内容提炼技术理解及研发趋势</a></li>
-<li><a href="https://blog.csdn.net/shiwanghualuo/article/details/125047732?spm=1001.2014.3001.5501">论文阅读: （ICDAR2021 海康威视）LGPMA（表格识别算法）及官方源码对应解读</a></li>
-</ul>
-</li>
-<li>相关工程：<ul>
-<li><a href="https://github.com/hikopensource/DAVAR-Lab-OCR/tree/main/demo/table_recognition/lgpma">海康官方 LGPMA 源码</a></li>
-<li><a href="https://github.com/SWHL/LGPMA_Infer">LGPMA Inference</a></li>
-<li><a href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.5/ppstructure/table/README_ch.md">PaddleOCR Table</a></li>
-</ul>
-</li>
-<li>数据集汇总：<ul>
-<li>英文表格识别数据集：<ul>
-<li><a href="https://github.com/ibm-aur-nlp/PubTabNet">PubTabNet</a>: IBM 构建，568k+ 文档图像数据，包括表格图像和对应的 HTML 标注。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="ocr">视频 OCR<a class="headerlink" href="#ocr" title="Permanent link">&para;</a></h3>
-<ul>
-<li>相关论文和帖子：<ul>
-<li><a href="https://arxiv.org/abs/2112.04888">【NeurIPS2021】A Bilingual, OpenWorld Video Text Dataset and End-to-end Video Text Spotter with Transformer</a> | <a href="https://blog.csdn.net/shiwanghualuo/article/details/122712872?spm=1001.2014.3001.5501">博客解读</a></li>
-<li><a href="https://arxiv.org/pdf/1903.03299">【ACM MM 2019】You only recognize once: Towards fast video text spotting</a></li>
-<li><a href="https://arxiv.org/pdf/2404.19652">VimTS: A Unified Video and Image Text Spotter for Enhancing the Cross-domain Generalization</a></li>
-</ul>
-</li>
-<li>相关工程：<ul>
-<li><a href="https://github.com/YaoFANGUK/video-subtitle-extractor">video-subtitle-extractor</a>: 一款将视频中的硬字幕提取为外挂字幕文件 (srt 格式) 的软件</li>
-<li><a href="https://github.com/SWHL/RapidVideOCR">RapidVideOCR</a>: 提取视频中硬字幕</li>
-</ul>
-</li>
-<li>数据集汇总：<ul>
-<li><a href="https://github.com/weijiawu/BOVText-Benchmark">BOVText: A Large-Scale, Bilingual Open World Dataset for Video Text Spotting</a>: 快手科技、浙江大学和北京邮电大学合作提出，大规模双语开放场景下的视频文本基准数据集，该数据集主要提供了 2000+ 视频，1,750,000 帧开放视频场景的视频。同时，还提供了丰富的标注类型（标题、字幕、场景文本等）。该数据集支持四个任务：视频帧检测、视频帧识别、视频文本跟踪和端到端视频文本识别。</li>
-</ul>
-</li>
-</ul>
-<h3 id="ocr_1">卡证 OCR<a class="headerlink" href="#ocr_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>相关论文和帖子：</li>
-<li>相关工程：<ul>
-<li><a href="https://github.com/deep-practice/fake_certificate_generator">fake_certificate_generator</a>: 假的证件合成器，包括身份证、驾驶证、营业执照。</li>
-</ul>
-</li>
-<li>数据集汇总：<ul>
-<li>暂无，一般这类数据较为敏感，通常都合成假数据来使用。</li>
-</ul>
-</li>
-</ul>
-<h3 id="ocr_2">印章 OCR<a class="headerlink" href="#ocr_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li>相关论文和帖子：<ul>
-<li><a href="https://laiye.com/tech-blog/2613">来也智能文档处理系统中的印章识别实践</a></li>
-<li><a href="https://www.cnblogs.com/intsig/p/17098265.html">【技术新趋势】合合信息：复杂环境下 ocr 与印章识别技术理解及研发趋势</a></li>
-<li><a href="https://www.hanspub.org/journal/paperinformation?paperid=40945">基于文字分割的印章识别技术</a></li>
-</ul>
-</li>
-<li>相关工程：<ul>
-<li><a href="https://github.com/niezhiliang/canvas-draw-seal">JS 生成印章</a></li>
-<li><a href="https://www.bilibili.com/opus/641999668409008129">Python 绘制透明背景印章</a></li>
-<li><a href="https://github.com/Gmgge/TrOCR-Seal-Recognition">TrOCR-Seal-Recognition</a></li>
-</ul>
-</li>
-<li>数据集汇总：<ul>
-<li><a href="https://github.com/Royalvice/DocDiff">DocDiff</a></li>
-</ul>
-</li>
-</ul>
+<p>测试代码如下：</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">RapidOCR</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>以上代码可以正确打印出结果，说明程序跑通了。接下来跑一下在评测集上文字检测的指标，看看和之前跑的是否一致。</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>        <span class="s2">&quot;Det.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV6</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="s2">&quot;Det.model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">TINY</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>    <span class="p">}</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">)</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;SWHL/text_det_test_dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="n">test_data</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">one_data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="n">test_data</span><span class="p">)):</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">one_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">))</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">)</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a>    <span class="n">ocr_results</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">boxes</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">dt_boxes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">dt_boxes</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a>    <span class="n">elapse</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">elapse</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a>    <span class="n">gt_boxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">one_data</span><span class="p">[</span><span class="s2">&quot;shapes&quot;</span><span class="p">]]</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31"></a>    <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">gt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">elapse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32"></a>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pred.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34"></a>    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36"></a>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="kn">from</span><span class="w"> </span><span class="nn">text_det_metric</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextDetMetric</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38"></a>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="n">metric</span> <span class="o">=</span> <span class="n">TextDetMetric</span><span class="p">()</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="n">pred_path</span> <span class="o">=</span> <span class="s2">&quot;pred.txt&quot;</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="n">metric</span> <span class="o">=</span> <span class="n">metric</span><span class="p">(</span><span class="n">pred_path</span><span class="p">)</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="nb">print</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>最终结果汇总到文章末尾了。</p>
+<h3 id="pytorch">支持 PyTorch<a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h3>
+<p>PP-OCRv6 中，官方支持 safetensors 格式，支持用 transformers 库推理。经过我的调研，发现 safetensors 格式仅仅是权重，里面并没有具体网络结构。</p>
+<p>因此想要直接使用 PyTorch 推理，就必须安装 transformers 库来推理。我翻看了 PaddleOCR, PaddleX 和 transformers 源码，试图找到 PP-OCRv6 检测和识别模型的网络结构定义。最终仅在 PaddleX 中找到了 PP-OCRv6_medium_det 的 PaddlePaddle 实现（<a href="https://github.com/PaddlePaddle/PaddleX/blob/ffb64904d23708863ff5b8da312a5cbd52a7f462/paddlex/inference/models/text_detection/modeling/pp_ocrv6_medium_det.py">source</a>）。<strong>从源码中可以看到，当前版本所谓的支持 PyTorch 推理，也只是包装了一套 PaddlePaddle 实现的网路结构。如果想要不安装 PaddlePaddle，来使用 PyTorch 推理，那是不可能的。</strong> 因此，这条路算是走不通了。</p>
+<p>但是 <a href="https://github.com/frotms/PaddleOCR2Pytorch">PaddleOCR2Pytorch</a> 中已经支持 PP-OCRv6 文本检测和识别模型了。哈哈哈。RapidOCR 之前支持的 PyTorch 推理，其模型都是来自这个仓库。有了这个，剩下工作就是集成和测试一下指标就可以了。感谢大佬的工作。</p>
+<p>评测代码：</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span>
+<span class="normal"><a href="#__codelineno-2-38">38</a></span>
+<span class="normal"><a href="#__codelineno-2-39">39</a></span>
+<span class="normal"><a href="#__codelineno-2-40">40</a></span>
+<span class="normal"><a href="#__codelineno-2-41">41</a></span>
+<span class="normal"><a href="#__codelineno-2-42">42</a></span>
+<span class="normal"><a href="#__codelineno-2-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">ModelType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;models/PP-OCRv6_det_tiny.pth&quot;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>        <span class="s2">&quot;Det.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV6</span><span class="p">,</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>        <span class="s2">&quot;Det.model_path&quot;</span><span class="p">:</span> <span class="n">model_path</span><span class="p">,</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>    <span class="p">}</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="p">)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;SWHL/text_det_test_dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="n">test_data</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">one_data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="n">test_data</span><span class="p">)):</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">one_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">))</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">)</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a>    <span class="n">ocr_results</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">boxes</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">dt_boxes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">dt_boxes</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a>    <span class="n">elapse</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">elapse</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a>    <span class="n">gt_boxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">one_data</span><span class="p">[</span><span class="s2">&quot;shapes&quot;</span><span class="p">]]</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32"></a>    <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">gt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">elapse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33"></a>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pred.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35"></a>    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37"></a>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="kn">from</span><span class="w"> </span><span class="nn">text_det_metric</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextDetMetric</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39"></a>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="n">metric</span> <span class="o">=</span> <span class="n">TextDetMetric</span><span class="p">()</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="n">pred_path</span> <span class="o">=</span> <span class="s2">&quot;pred.txt&quot;</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="n">metric</span> <span class="o">=</span> <span class="n">metric</span><span class="p">(</span><span class="n">pred_path</span><span class="p">)</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="nb">print</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="mnn">支持 MNN<a class="headerlink" href="#mnn" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># 安装</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">MNN</span><span class="o">==</span><span class="m">3</span>.2.5
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># 转换</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>MNNConvert<span class="w"> </span>-f<span class="w"> </span>ONNX<span class="w"> </span>--modelFile<span class="w"> </span>rapidocr/models/PP-OCRv6_det_medium.onnx<span class="w"> </span>--MNNModel<span class="w"> </span>mnn/PP-OCRv6_det_medium.mnn<span class="w"> </span>--bizCode<span class="w"> </span>MNN
+</span></code></pre></div></td></tr></table></div>
+<p>测试转换后的模型指标</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span>
+<span class="normal"><a href="#__codelineno-4-38">38</a></span>
+<span class="normal"><a href="#__codelineno-4-39">39</a></span>
+<span class="normal"><a href="#__codelineno-4-40">40</a></span>
+<span class="normal"><a href="#__codelineno-4-41">41</a></span>
+<span class="normal"><a href="#__codelineno-4-42">42</a></span>
+<span class="normal"><a href="#__codelineno-4-43">43</a></span>
+<span class="normal"><a href="#__codelineno-4-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">EngineType</span><span class="p">,</span> <span class="n">ModelType</span><span class="p">,</span> <span class="n">OCRVersion</span><span class="p">,</span> <span class="n">RapidOCR</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1"># 依次跑 Tiny, small 和 Medium 三个模型</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;mnn/PP-OCRv6_det_tiny.mnn&quot;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>        <span class="s2">&quot;Det.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV6</span><span class="p">,</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>        <span class="s2">&quot;Det.model_path&quot;</span><span class="p">:</span> <span class="n">model_path</span><span class="p">,</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">MNN</span><span class="p">,</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>    <span class="p">}</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;SWHL/text_det_test_dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="n">test_data</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">]</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">one_data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="n">test_data</span><span class="p">)):</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">one_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">))</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">)</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>    <span class="n">ocr_results</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">boxes</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="n">dt_boxes</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">dt_boxes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">dt_boxes</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a>    <span class="n">elapse</span> <span class="o">=</span> <span class="n">ocr_results</span><span class="o">.</span><span class="n">elapse</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a>    <span class="n">gt_boxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">one_data</span><span class="p">[</span><span class="s2">&quot;shapes&quot;</span><span class="p">]]</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a>    <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">gt_boxes</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">elapse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pred.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a>    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38"></a>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="kn">from</span><span class="w"> </span><span class="nn">text_det_metric</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextDetMetric</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40"></a>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="n">metric</span> <span class="o">=</span> <span class="n">TextDetMetric</span><span class="p">()</span>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="n">pred_path</span> <span class="o">=</span> <span class="s2">&quot;pred.txt&quot;</span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="n">metric</span> <span class="o">=</span> <span class="n">metric</span><span class="p">(</span><span class="n">pred_path</span><span class="p">)</span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44"></a><span class="nb">print</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>最终结果汇总到文章末尾了。</p>
+<h3 id="_3">不同推理引擎指标汇总<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>在这里将 ONNXRuntime, OpenVINO, PaddlePaddle, MNN 和 PyTorch 在 PP-OCRv6 Det 模型上指标和速度都汇总起来了，便于大家选用最合适的。</p>
+<p>TensorRT 的指标等有时间再补哈！</p>
+<p>各个推理引擎对应不同的模型，最终指标效果如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模型</th>
+<th style="text-align: left;">推理框架</th>
+<th style="text-align: left;">模型格式</th>
+<th style="text-align: center;">Precision↑</th>
+<th style="text-align: center;">Recall↑</th>
+<th style="text-align: center;">H-mean↑</th>
+<th style="text-align: center;">Elapse↓</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">PP-OCRv6_medium_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNX Runtime</td>
+<td style="text-align: center;">0.8251</td>
+<td style="text-align: center;">0.8598</td>
+<td style="text-align: center;">0.8421</td>
+<td style="text-align: center;">0.9491</td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_medium_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">OpenVINO</td>
+<td style="text-align: center;">0.8256</td>
+<td style="text-align: center;">0.8587</td>
+<td style="text-align: center;">0.8418</td>
+<td style="text-align: center;"><strong>0.4476</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_medium_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">PaddlePaddle</td>
+<td style="text-align: center;">0.8254</td>
+<td style="text-align: center;">0.8598</td>
+<td style="text-align: center;"><strong>0.8423</strong></td>
+<td style="text-align: center;">3.2856</td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_medium_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">MNN</td>
+<td style="text-align: center;">0.8254</td>
+<td style="text-align: center;">0.8598</td>
+<td style="text-align: center;">0.8423</td>
+<td style="text-align: center;">0.6936</td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_medium_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">PyTorch</td>
+<td style="text-align: center;">0.8251</td>
+<td style="text-align: center;">0.8598</td>
+<td style="text-align: center;">0.8421</td>
+<td style="text-align: center;">3.4131</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_small_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNX Runtime</td>
+<td style="text-align: center;">0.854</td>
+<td style="text-align: center;">0.8445</td>
+<td style="text-align: center;">0.8492</td>
+<td style="text-align: center;">0.2277</td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_small_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">OpenVINO</td>
+<td style="text-align: center;">0.8532</td>
+<td style="text-align: center;">0.8457</td>
+<td style="text-align: center;">0.8494</td>
+<td style="text-align: center;"><strong>0.1617</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_small_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">PaddlePaddle</td>
+<td style="text-align: center;">0.854</td>
+<td style="text-align: center;">0.8445</td>
+<td style="text-align: center;">0.8492</td>
+<td style="text-align: center;">0.8097</td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_small_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">MNN</td>
+<td style="text-align: center;">0.8541</td>
+<td style="text-align: center;">0.8449</td>
+<td style="text-align: center;"><strong>0.8495</strong></td>
+<td style="text-align: center;">0.1926</td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_small_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">PyTorch</td>
+<td style="text-align: center;">0.8540</td>
+<td style="text-align: center;">0.8445</td>
+<td style="text-align: center;">0.8492</td>
+<td style="text-align: center;">0.8752</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_tiny_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">ONNX Runtime</td>
+<td style="text-align: center;">0.8241</td>
+<td style="text-align: center;">0.8285</td>
+<td style="text-align: center;">0.8263</td>
+<td style="text-align: center;">0.1451</td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_tiny_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">OpenVINO</td>
+<td style="text-align: center;">0.8299</td>
+<td style="text-align: center;">0.8331</td>
+<td style="text-align: center;"><strong>0.8315</strong></td>
+<td style="text-align: center;"><strong>0.104</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_tiny_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">PaddlePaddle</td>
+<td style="text-align: center;">0.8244</td>
+<td style="text-align: center;">0.8285</td>
+<td style="text-align: center;">0.8264</td>
+<td style="text-align: center;">0.4245</td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_tiny_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">MNN</td>
+<td style="text-align: center;">0.8238</td>
+<td style="text-align: center;">0.8285</td>
+<td style="text-align: center;">0.8261</td>
+<td style="text-align: center;">0.1352</td>
+</tr>
+<tr>
+<td style="text-align: left;">PP-OCRv6_tiny_det</td>
+<td style="text-align: left;">RapidOCR</td>
+<td style="text-align: left;">PyTorch</td>
+<td style="text-align: center;">0.8241</td>
+<td style="text-align: center;">0.8285</td>
+<td style="text-align: center;">0.8263</td>
+<td style="text-align: center;">0.4136</td>
+</tr>
+</tbody>
+</table>
+<p>从以上推理速度来看，OpenVINO 竟然去是最快的了。这个有点出乎我的意料。</p>
         
 
 
@@ -2897,7 +3221,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年4月27日 16:18:50 CST">2026-04-27 16:18:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年6月30日 14:30:15 CST">2026-06-30 14:30:15</span>
   </span>
 
     
@@ -2907,7 +3231,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2024年6月4日 08:12:19 CST">2024-06-04 08:12:19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年6月30日 14:30:15 CST">2026-06-30 14:30:15</span>
   </span>
 
     
@@ -2928,11 +3252,6 @@ You're not viewing the latest version.
         <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
           
           <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
-        </a>
-      
-        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
-          
-          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
         </a>
       
       
@@ -3102,8 +3421,8 @@ You're not viewing the latest version.
         <!-- Link to previous page -->
         
         
-        <a href="../../../09/30/inference-summary/" class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 衍生项目(偏工程)">
+        <a href="../../18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/" class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: RapidOCR 集成 PP-OCRv6 Rec 模型记录">
             <div class="md-footer__button md-icon">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -3113,30 +3432,13 @@ You're not viewing the latest version.
                     上一页
                 </span>
                 <div class="md-ellipsis">
-                    衍生项目(偏工程)
+                    RapidOCR 集成 PP-OCRv6 Rec 模型记录
                 </div>
             </div>
         </a>
         
 
         <!-- Link to next page -->
-        
-        
-        <a href="../../03/optim-tutorial/" class="md-footer__link md-footer__link--next"
-            aria-label="下一页: 调优尝试教程">
-            <div class="md-footer__title">
-                <span class="md-footer__direction">
-                    下一页
-                </span>
-                <div class="md-ellipsis">
-                    调优尝试教程
-                </div>
-            </div>
-            <div class="md-footer__button md-icon">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-            </div>
-        </a>
         
     </nav>
     

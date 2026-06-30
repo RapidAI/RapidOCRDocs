@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Fri, 26 Jun 2026 03:25:19 -0000</pubDate>
-    <lastBuildDate>Fri, 26 Jun 2026 03:25:19 -0000</lastBuildDate>
+    <pubDate>Tue, 30 Jun 2026 06:31:13 -0000</pubDate>
+    <lastBuildDate>Tue, 30 Jun 2026 06:31:13 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,25 @@
     
 
     
+    
+    <item>
+      <title>RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description></description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 30 Jun 2026 06:30:15 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/</guid>
+      
+    </item>
     
     <item>
       <title>RapidOCR 集成 PP-OCRv6 Det 模型记录</title>
@@ -401,25 +420,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2024/09/03/2024-bjos/</guid>
-      
-    </item>
-    
-    <item>
-      <title>2025：RapidOCR 获得 AtomGit 官方 G-Star 项目毕业认证</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;p&gt;宣布 RapidOCR 获得 G-Star 项目毕业认证&lt;/p&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/15/2025-atomgit-g-star/</link>
-      <pubDate>Thu, 19 Mar 2026 13:21:45 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/15/2025-atomgit-g-star/</guid>
       
     </item>
     

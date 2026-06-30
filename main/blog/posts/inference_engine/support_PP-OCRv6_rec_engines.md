@@ -2,9 +2,9 @@
 
 ### 引言
 
-`rapidocr==3.9.0` 仅支持 ONNXRuntime 和 OpenVINO 两个推理引擎，PaddlePaddle, PyTorch 和 MNN 打算在下个版本（v3.9.1）都支持了。
+`rapidocr==3.9.0` 仅支持 ONNXRuntime 和 OpenVINO 两个推理引擎，PaddlePaddle, PyTorch, MNN 和 TensorRT 打算在下个版本（v3.9.1）都支持了。
 
-本篇文章就是用来记录 RapidOCR PP-OCRv6 Det 模型支持 PaddlePaddle, PyTorch, MNN 的过程，一是备忘，二是希望帮助需要的小伙伴们。
+本篇文章就是用来记录 RapidOCR PP-OCRv6 Rec 模型支持 PaddlePaddle, PyTorch, MNN 的过程，一是备忘，二是希望帮助需要的小伙伴们。
 
 ### 以下代码运行环境
 
@@ -22,50 +22,29 @@
 
 得益于原始模型就是 PaddlePaddle 格式，因此支持 PaddlePaddle 推理引擎较为容易，加上 [@jaminmei](https://github.com/jaminmei) 提的 PR [#696](https://github.com/RapidAI/RapidOCR/pull/696)。我这里做的工作少了许多，由衷地感谢。
 
-需要做的：
-
-- 将 Paddle 格式模型托管到魔搭仓库中，包括模型文件和字典文件。
-- 更新 `default_models.yaml` 文件中 Paddle 部分模型的路径和 SHA256，这个配置好后，可以直接通过参数指定 `EngineType` 为 Paddle 格式，程序会自动下载对应的模型。
-
-测试代码如下：
-
 ```python linenums="1"
-from rapidocr import EngineType, RapidOCR
+import time
 
-engine = RapidOCR(
-    params={
-        "Det.engine_type": EngineType.PADDLE,
-        "Rec.engine_type": EngineType.PADDLE,
-    }
-)
-
-
-img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
-result = engine(img_url)
-print(result)
-
-result.vis("vis_result.jpg")
-```
-
-以上代码可以正确打印出结果，说明程序跑通了。接下来跑一下在评测集上文字检测的指标，看看和之前跑的是否一致。
-
-```python linenums="1"
 import cv2
 import numpy as np
-from rapidocr import EngineType, OCRVersion, RapidOCR
+from datasets import load_dataset
 from tqdm import tqdm
 
-from datasets import load_dataset
+from rapidocr import EngineType, OCRVersion, RapidOCR
 
+# 依次跑三个规格的模型
+model_path = "modelscope/paddle/PP-OCRv6/rec/PP-OCRv6_rec_medium"
+dict_path = "modelscope/paddle/PP-OCRv6/rec/PP-OCRv6_rec_medium/ppocrv6_dict.txt"
 engine = RapidOCR(
     params={
-        "Det.ocr_version": OCRVersion.PPOCRV6,
-        "Det.engine_type": EngineType.PADDLE,
-        "Det.model_type": ModelType.TINY,
+        "Rec.model_dir": model_path,
+        "Rec.rec_keys_path": dict_path,
+        "Rec.engine_type": EngineType.PADDLE,
+        "Rec.ocr_version": OCRVersion.PPOCRV5,
     }
 )
 
-dataset = load_dataset("SWHL/text_det_test_dataset")
+dataset = load_dataset("SWHL/text_rec_test_dataset")
 test_data = dataset["test"]
 
 content = []
@@ -73,22 +52,26 @@ for i, one_data in enumerate(tqdm(test_data)):
     img = np.array(one_data.get("image"))
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
-    ocr_results = engine(img, use_det=True, use_cls=False, use_rec=False)
-    dt_boxes = ocr_results.boxes
+    t0 = time.perf_counter()
+    result = engine(img, use_rec=True, use_cls=False, use_det=False)
+    elapse = time.perf_counter() - t0
 
-    dt_boxes = [] if dt_boxes is None else dt_boxes.tolist()
-    elapse = ocr_results.elapse
+    rec_text = result.txts[0]
+    if len(rec_text) <= 0:
+        rec_text = ""
+        elapse = 0
 
-    gt_boxes = [v["points"] for v in one_data["shapes"]]
-    content.append(f"{dt_boxes}\t{gt_boxes}\t{elapse}")
+    gt = one_data.get("label", None)
+    content.append(f"{rec_text}\t{gt}\t{elapse}")
 
 with open("pred.txt", "w", encoding="utf-8") as f:
     for v in content:
         f.write(f"{v}\n")
 
-from text_det_metric import TextDetMetric
+from text_rec_metric import TextRecMetric
 
-metric = TextDetMetric()
+metric = TextRecMetric()
+
 pred_path = "pred.txt"
 metric = metric(pred_path)
 print(metric)
@@ -159,12 +142,18 @@ print(metric)
 pip install MNN==3.2.5
 
 # 转换
-MNNConvert -f ONNX --modelFile rapidocr/models/PP-OCRv6_det_medium.onnx --MNNModel mnn/PP-OCRv6_det_medium.mnn --bizCode MNN
+MNNConvert -f ONNX --modelFile modelscope/onnx/PP-OCRv6/rec/PP-OCRv6_rec_medium.onnx --MNNModel modelscope/mnn/PP-OCRv6/rec/PP-OCRv6_rec_medium.mnn --bizCode MNN
+
+MNNConvert -f ONNX --modelFile modelscope/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx --MNNModel modelscope/mnn/PP-OCRv6/rec/PP-OCRv6_rec_small.mnn --bizCode MNN
+
+MNNConvert -f ONNX --modelFile modelscope/onnx/PP-OCRv6/rec/PP-OCRv6_rec_tiny.onnx --MNNModel modelscope/mnn/PP-OCRv6/rec/PP-OCRv6_rec_tiny.mnn --bizCode MNN
 ```
 
 测试转换后的模型指标
 
 ```python linenums="1"
+import time
+
 import cv2
 import numpy as np
 from datasets import load_dataset
@@ -172,17 +161,25 @@ from tqdm import tqdm
 
 from rapidocr import EngineType, ModelType, OCRVersion, RapidOCR
 
-# 依次跑 Tiny, small 和 Medium 三个模型
-model_path = "mnn/PP-OCRv6_det_tiny.mnn"
+model_path = "modelscope/mnn/PP-OCRv6/rec/PP-OCRv6_rec_tiny.mnn"
+dict_path = "modelscope/paddle/PP-OCRv6/rec/PP-OCRv6_rec_tiny/ppocrv6_tiny_dict.txt"
+
+# model_path = "modelscope/torch/PP-OCRv6/rec/PP-OCRv6_rec_small.pth"
+# dict_path = "modelscope/paddle/PP-OCRv6/rec/PP-OCRv6_rec_small/ppocrv6_dict.txt"
+# model_path = "modelscope/torch/PP-OCRv6/rec/PP-OCRv6_rec_medium.pth"
+# dict_path = "modelscope/paddle/PP-OCRv6/rec/PP-OCRv6_rec_small/ppocrv6_dict.txt"
+
 engine = RapidOCR(
     params={
-        "Det.ocr_version": OCRVersion.PPOCRV6,
-        "Det.model_path": model_path,
-        "Det.engine_type": EngineType.MNN,
+        "Rec.model_path": model_path,
+        "Rec.rec_keys_path": dict_path,
+        "Rec.ocr_version": OCRVersion.PPOCRV6,
+        "Rec.engine_type": EngineType.MNN,
+        "Rec.model_type": ModelType.TINY,
     }
 )
 
-dataset = load_dataset("SWHL/text_det_test_dataset")
+dataset = load_dataset("SWHL/text_rec_test_dataset")
 test_data = dataset["test"]
 
 content = []
@@ -190,22 +187,26 @@ for i, one_data in enumerate(tqdm(test_data)):
     img = np.array(one_data.get("image"))
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
-    ocr_results = engine(img, use_det=True, use_cls=False, use_rec=False)
-    dt_boxes = ocr_results.boxes
+    t0 = time.perf_counter()
+    result = engine(img, use_rec=True, use_cls=False, use_det=False)
+    elapse = time.perf_counter() - t0
 
-    dt_boxes = [] if dt_boxes is None else dt_boxes.tolist()
-    elapse = ocr_results.elapse
+    rec_text = result.txts[0]
+    if len(rec_text) <= 0:
+        rec_text = ""
+        elapse = 0
 
-    gt_boxes = [v["points"] for v in one_data["shapes"]]
-    content.append(f"{dt_boxes}\t{gt_boxes}\t{elapse}")
+    gt = one_data.get("label", None)
+    content.append(f"{rec_text}\t{gt}\t{elapse}")
 
 with open("pred.txt", "w", encoding="utf-8") as f:
     for v in content:
         f.write(f"{v}\n")
 
-from text_det_metric import TextDetMetric
+from text_rec_metric import TextRecMetric
 
-metric = TextDetMetric()
+metric = TextRecMetric()
+
 pred_path = "pred.txt"
 metric = metric(pred_path)
 print(metric)
@@ -221,26 +222,27 @@ TensorRT 的指标等有时间再补哈！
 
 各个推理引擎对应不同的模型，最终指标效果如下：
 
-|模型|推理框架|模型格式|Precision↑|Recall↑|H-mean↑|Elapse↓|
-|:---|:---|:---|:---:|:---:|:---:|:---:|
-|PP-OCRv6_medium_det| RapidOCR| ONNX Runtime |0.8251|0.8598|0.8421|0.9491|
-|PP-OCRv6_medium_det| RapidOCR| OpenVINO |0.8256|0.8587|0.8418|**0.4476**|
-|PP-OCRv6_medium_det| RapidOCR| PaddlePaddle |0.8254|0.8598|**0.8423**|3.2856|
-|PP-OCRv6_medium_det| RapidOCR| MNN |0.8254|0.8598|0.8423|0.6936|
-|PP-OCRv6_medium_det| RapidOCR| PyTorch |0.8251|0.8598|0.8421|3.4131|
-||||||||
-|PP-OCRv6_small_det| RapidOCR| ONNX Runtime |0.854|0.8445|0.8492|0.2277|
-|PP-OCRv6_small_det| RapidOCR| OpenVINO |0.8532|0.8457|0.8494|**0.1617**|
-|PP-OCRv6_small_det| RapidOCR| PaddlePaddle|0.854|0.8445|0.8492|0.8097|
-|PP-OCRv6_small_det| RapidOCR| MNN|0.8541|0.8449|**0.8495**|0.1926|
-|PP-OCRv6_small_det| RapidOCR| PyTorch|0.8540|0.8445|0.8492|0.8752|
-||||||||
-|PP-OCRv6_tiny_det| RapidOCR| ONNX Runtime |0.8241|0.8285|0.8263|0.1451|
-|PP-OCRv6_tiny_det| RapidOCR| OpenVINO |0.8299|0.8331|**0.8315**|**0.104**|
-|PP-OCRv6_tiny_det| RapidOCR| PaddlePaddle|0.8244|0.8285|0.8264|0.4245|
-|PP-OCRv6_tiny_det| RapidOCR| MNN|0.8238|0.8285|0.8261|0.1352|
-|PP-OCRv6_tiny_det| RapidOCR| PyTorch|0.8241|0.8285|0.8263|0.4136|
+|模型|推理框架|模型格式|ExactMatch↑|CharMatch↑|Elapse↓|
+|:---|:---|:---|:---:|:---:|:---:|
+|||||||
+|PP-OCRv6_medium_rec|RapidOCR| ONNX Runtime|0.8613|0.9491|0.0515|
+|PP-OCRv6_medium_rec|RapidOCR| OpenVINO|0.8548|0.9478|0.0316|
+|PP-OCRv6_medium_rec|RapidOCR| PaddlePaddle|0.8613|0.9491|0.059|
+|PP-OCRv6_medium_rec|RapidOCR| MNN|0.8613|0.9497|0.0813|
+|PP-OCRv6_medium_rec|RapidOCR| PyTorch|0.8613|0.9491|0.0944|
+|||||||
+|PP-OCRv6_small_rec|RapidOCR| ONNX Runtime|0.8419|0.9515|0.0159|
+|PP-OCRv6_small_rec|RapidOCR| OpenVINO|0.8419|0.9518|0.0123|
+|PP-OCRv6_small_rec|RapidOCR| PaddlePaddle|0.8419|0.9515|0.0277|
+|PP-OCRv6_small_rec|RapidOCR| MNN|0.8419|0.9519|0.0447|
+|PP-OCRv6_small_rec|RapidOCR| PyTorch|0.8419|0.9515|0.0429|
+|||||||
+|PP-OCRv6_tiny_rec|RapidOCR| ONNX Runtime|0.6968|0.8897|0.0041|
+|PP-OCRv6_tiny_rec|RapidOCR| OpenVINO|0.6903|0.885|0.0041|
+|PP-OCRv6_tiny_rec|RapidOCR| PaddlePaddle|0.6968|0.8897|0.0008|
+|PP-OCRv6_tiny_rec|RapidOCR| MNN|0.6935|0.8877|0.0168|
+|PP-OCRv6_tiny_rec|RapidOCR| PyTorch|0.0032|0.3461|0.0207|
 
-从以上推理速度来看，OpenVINO 竟然去是最快的了。这个有点出乎我的意料。
+值得注意的是，PP-OCRv6 Rec Tiny PyTorch 模型在指标上很低，我再三验证发现仍然如此。具体原因，需要我进一步查验。
 
-上述推理引擎的支持，将会随 `rapidocr==3.9.1` 发布，敬请期待！
+大家用的时候，注意一下就行。

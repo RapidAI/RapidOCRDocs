@@ -18,8 +18,23 @@
             "title": "RapidOCR \u9002\u914d PP-OCRv6 Det \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55",
             "content_html": "",
             "image": null,
-            "date_modified": "2026-06-30T06:34:22+00:00",
+            "date_modified": "2026-06-30T22:07:12+00:00",
             "date_published": "2026-06-27T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u9002\u914d PP-OCRv6 Rec \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-06-30T22:07:12+00:00",
+            "date_published": "2026-06-30T00:00:00+00:00",
             "authors": [
                 {
                     "name": "SWHL"
@@ -290,21 +305,6 @@
             "image": null,
             "date_modified": "2026-03-19T13:21:45+00:00",
             "date_published": "2025-08-03T03:18:59+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2024/09/03/2024-bjos/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2024/09/03/2024-bjos/",
-            "title": "2024\uff1aRapidOCR \u83b7\u5f97 2024 \u4e2d\u56fd\u4e92\u8054\u7f51\u53d1\u5c55\u521b\u65b0\u4e0e\u6295\u8d44\u5927\u8d5b\uff08\u5f00\u6e90\uff09\u4e8c\u7b49\u5956",
-            "content_html": "<p>\u5ba3\u5e03\u83b7\u5f97 2024 \u4e2d\u56fd\u4e92\u8054\u7f51\u53d1\u5c55\u521b\u65b0\u4e0e\u6295\u8d44\u5927\u8d5b\u4e8c\u7b49\u5956</p>",
-            "image": null,
-            "date_modified": "2026-03-19T13:21:45+00:00",
-            "date_published": "2026-01-15T00:22:10+00:00",
             "authors": [
                 {
                     "name": "SWHL"

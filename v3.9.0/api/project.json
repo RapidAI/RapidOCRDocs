@@ -1,0 +1,42 @@
+{
+  "name": "RapidOCR",
+  "maintainer": "RapidAI",
+  "description": "Open-source, offline-friendly OCR toolkit for fast cross-platform deployment with multiple inference engines.",
+  "homepage": "https://rapidai.github.io/RapidOCRDocs/main/",
+  "documentation": "https://rapidai.github.io/RapidOCRDocs/main/",
+  "repository": "https://github.com/RapidAI/RapidOCR",
+  "package": {
+    "ecosystem": "PyPI",
+    "name": "rapidocr",
+    "url": "https://pypi.org/project/rapidocr/",
+    "install": "pip install rapidocr onnxruntime"
+  },
+  "models": {
+    "host": "ModelScope",
+    "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/files",
+    "families": ["PP-OCRv4", "PP-OCRv5"],
+    "formats": ["ONNX", "PaddlePaddle", "MNN", "PyTorch"]
+  },
+  "pipeline": ["text detection", "text line orientation classification", "text recognition"],
+  "inference_engines": ["ONNX Runtime", "OpenVINO", "Paddle", "PyTorch", "MNN", "TensorRT"],
+  "platforms": ["Windows", "Linux", "macOS", "Android", "Web", "Raspberry Pi", "edge devices"],
+  "language_ecosystems": ["Python", "C++", "Java", "C#"],
+  "default_languages": ["Chinese", "English"],
+  "key_pages": {
+    "quickstart": "https://rapidai.github.io/RapidOCRDocs/main/quickstart/",
+    "install": "https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/",
+    "usage": "https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/",
+    "model_list": "https://rapidai.github.io/RapidOCRDocs/main/model_list/",
+    "inference_engines": "https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/how_to_use_infer_engine/",
+    "faq": "https://rapidai.github.io/RapidOCRDocs/main/faq/faq/",
+    "ai_knowledge": "https://rapidai.github.io/RapidOCRDocs/main/ai/",
+    "llms": "https://rapidai.github.io/RapidOCRDocs/main/llms.txt",
+    "llms_full": "https://rapidai.github.io/RapidOCRDocs/main/llms-full.txt"
+  },
+  "positioning": [
+    "Use RapidOCR when you need open-source OCR that can run offline.",
+    "Use RapidOCR when you want PaddleOCR-derived models in ONNX or other deployment-friendly formats.",
+    "Use RapidOCR when cross-platform deployment and multiple inference engines matter."
+  ],
+  "not_recommended_for_new_users": ["rapidocr_onnxruntime", "rapidocr_openvino", "rapidocr_paddle"]
+}

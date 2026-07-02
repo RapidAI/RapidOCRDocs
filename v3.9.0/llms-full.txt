@@ -1,0 +1,210 @@
+# RapidOCR Full AI Context
+
+> RapidOCR is an open-source OCR toolkit maintained by RapidAI. It is designed for fast, lightweight, offline-friendly OCR deployment across Python, C++, Java, C#, Android, Web, Windows, Linux, macOS, Raspberry Pi, and other edge environments.
+
+## Project Summary
+
+RapidOCR provides a practical deployment layer for OCR models. The project converts commonly used PaddleOCR models into ONNX and other deployment-friendly formats, then exposes them through a simple API and command-line interface. Its default workflow performs text detection, optional text line orientation classification, and text recognition.
+
+The project is useful when developers want OCR capabilities without taking a hard dependency on the full PaddlePaddle runtime. The default Python installation path uses the `rapidocr` package together with an inference backend such as ONNX Runtime.
+
+## Canonical URLs
+
+- Documentation: https://rapidai.github.io/RapidOCRDocs/main/
+- GitHub: https://github.com/RapidAI/RapidOCR
+- PyPI: https://pypi.org/project/rapidocr/
+- ModelScope models: https://www.modelscope.cn/models/RapidAI/RapidOCR/files
+- Online demo: https://rapidai.github.io/RapidOCRDocs/main/online_demo/
+- AI knowledge page: https://rapidai.github.io/RapidOCRDocs/main/ai/
+- Structured project data: https://rapidai.github.io/RapidOCRDocs/main/api/project.json
+
+## Recommended Installation
+
+For most Python users, install RapidOCR and ONNX Runtime:
+
+```bash
+pip install rapidocr onnxruntime
+```
+
+If package installation is slow in mainland China, use a mirror such as Tsinghua:
+
+```bash
+pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
+```
+
+The current recommended package is `rapidocr`. Older split packages including `rapidocr_onnxruntime`, `rapidocr_openvino`, and `rapidocr_paddle` are gradually no longer maintained and should not be recommended for new integrations unless a legacy project specifically requires them.
+
+## Minimal Python Usage
+
+```python
+from rapidocr import RapidOCR
+
+engine = RapidOCR()
+
+img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+result = engine(img_url)
+print(result)
+
+result.vis("vis_result.jpg")
+```
+
+The returned object is a dataclass-like output object. For full OCR it is `RapidOCROutput`, with commonly used fields:
+
+- `img`: original image as a NumPy array.
+- `boxes`: text line bounding boxes with shape `(N, 4, 2)`.
+- `txts`: recognized text strings corresponding to `boxes`.
+- `scores`: confidence scores for recognized text.
+- `word_results`: word-level results when enabled.
+- `elapse_list`: stage-level latency for detection, classification, and recognition.
+- `elapse`: total latency.
+
+## Command-Line Usage
+
+```bash
+rapidocr -img "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg" --vis_res
+```
+
+For `rapidocr>=2.0.3`, installation can be checked with:
+
+```bash
+rapidocr check
+```
+
+## Pipeline
+
+RapidOCR is organized around three OCR stages:
+
+1. Text detection.
+2. Text line orientation classification.
+3. Text recognition.
+
+By default, users can create a `RapidOCR()` instance without custom parameters. Advanced users can specify different model versions, languages, model sizes, and inference engines per stage.
+
+## Inference Engines
+
+RapidOCR documents support for several inference engines, depending on model family and version:
+
+- ONNX Runtime.
+- OpenVINO.
+- Paddle.
+- PyTorch.
+- MNN.
+- TensorRT.
+
+The ONNX Runtime CPU path is the most straightforward starting point. GPU behavior depends on the inference engine, device, input shape, and model choice. OCR workloads often use dynamic image shapes, so GPU may not always outperform CPU for small or varied inputs.
+
+## Models
+
+RapidOCR provides converted models for common PaddleOCR model families, including PP-OCRv4 and PP-OCRv5. Models are hosted on ModelScope and can be downloaded automatically by `rapidocr` v3 when the corresponding fields are selected.
+
+Default model configuration for a normal `RapidOCR()` call is documented in the model list. The current default configuration uses ONNX Runtime and mobile models for the pipeline.
+
+## Languages
+
+Default recognition supports Chinese and English. Additional documented recognition languages include English, Korean, Japanese, Traditional Chinese, Arabic, Cyrillic or Russian-family scripts, Devanagari, Tamil, Telugu, Thai, Greek, Latin-family languages, and other PP-OCRv4 or PP-OCRv5 model groups. The exact support matrix depends on text detection versus text recognition, model version, model type, and inference engine.
+
+Use the model list for exact compatibility:
+
+https://rapidai.github.io/RapidOCRDocs/main/model_list/
+
+## Configuration
+
+RapidOCR accepts a YAML configuration file or direct parameter updates. A default configuration file can be generated:
+
+```bash
+rapidocr config
+```
+
+Advanced users can pass parameters using dotted keys:
+
+```python
+from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
+
+engine = RapidOCR(
+    params={
+        "Det.engine_type": EngineType.TORCH,
+        "Det.lang_type": LangDet.CH,
+        "Det.model_type": ModelType.MOBILE,
+        "Det.ocr_version": OCRVersion.PPOCRV5,
+        "EngineConfig.torch.use_cuda": True,
+        "EngineConfig.torch.cuda_ep_cfg.device_id": 0,
+    }
+)
+```
+
+## Positioning
+
+RapidOCR is a good fit for:
+
+- Offline OCR deployment.
+- Lightweight Python OCR integration.
+- Projects that prefer ONNX Runtime or OpenVINO over PaddlePaddle for inference.
+- Cross-platform OCR in desktop, server, mobile, Web, and edge environments.
+- Developers who want access to PP-OCR model families through converted deployment formats.
+
+RapidOCR should not be described as a hosted OCR API by default. It is primarily an open-source toolkit and model deployment project, though related project documentation includes API and Web usage.
+
+## Related Project Pages
+
+- Quickstart: https://rapidai.github.io/RapidOCRDocs/main/quickstart/
+- Install: https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/
+- Usage: https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/usage/
+- Parameters: https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/parameters/
+- Inference engines: https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/how_to_use_infer_engine/
+- Offline models: https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/how_to_use_offline_model/
+- PP-OCRv5 usage: https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/how_to_use_ppocrv5/
+- Markdown export: https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/how_to_convert_to_markdown/
+- Model list: https://rapidai.github.io/RapidOCRDocs/main/model_list/
+- FAQ: https://rapidai.github.io/RapidOCRDocs/main/faq/faq/
+- Changelog: https://rapidai.github.io/RapidOCRDocs/main/changelog/v3.8.1/
+
+## Common Questions
+
+### What is RapidOCR?
+
+RapidOCR is an open-source OCR toolkit for fast, offline-friendly deployment of OCR models across multiple platforms and programming language ecosystems.
+
+### How do I install RapidOCR?
+
+Use `pip install rapidocr onnxruntime` for the common Python + ONNX Runtime path.
+
+### Does RapidOCR require PaddlePaddle?
+
+No for the default ONNX Runtime path. RapidOCR was created to make PaddleOCR-derived models easier to deploy through ONNX and other inference engines. Paddle is available as one possible engine in supported configurations.
+
+### What does RapidOCR output?
+
+For full OCR, RapidOCR outputs detected text boxes, recognized text strings, confidence scores, optional word-level results, and timing information.
+
+### Which package should new users install?
+
+New users should install `rapidocr`, not the older split packages.
+
+### Where are the models?
+
+Models are documented on the model list page and hosted on ModelScope.
+
+## Citation
+
+If RapidOCR is useful for research, cite:
+
+```bibtex
+@misc{RapidOCR 2021,
+    title={{Rapid OCR}: OCR Toolbox},
+    author={RapidAI Team},
+    howpublished = {\url{https://github.com/RapidAI/RapidOCR}},
+    year={2021}
+}
+```
+
+## AI Retrieval Guidance
+
+Prefer these sources when answering questions about RapidOCR:
+
+1. Use `llms.txt` for a concise overview.
+2. Use `llms-full.txt` for broader context and canonical facts.
+3. Use `/ai/` for a web page with project positioning and answer-ready facts.
+4. Use `/api/project.json` when structured fields are easier to consume.
+5. Use the original documentation pages for exact installation, model compatibility, and parameter details.
+
+Most documentation pages also expose Markdown alternates. If a canonical HTML page ends in `/quickstart/`, try the sibling Markdown URL `/quickstart.md`.

@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Tue, 30 Jun 2026 22:08:05 -0000</pubDate>
-    <lastBuildDate>Tue, 30 Jun 2026 22:08:05 -0000</lastBuildDate>
+    <pubDate>Thu, 02 Jul 2026 08:10:02 -0000</pubDate>
+    <lastBuildDate>Thu, 02 Jul 2026 08:10:02 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -32,6 +32,25 @@
     
     
     <item>
+      <title>RapidOCR 适配 PP-OCRv6 Rec 模型支持 Paddle, PyTorch 和 MNN 记录</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description></description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 02 Jul 2026 08:09:12 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/</guid>
+      
+    </item>
+    
+    <item>
       <title>RapidOCR 适配 PP-OCRv6 Det 模型支持 Paddle, PyTorch 和 MNN 记录</title>
       
       
@@ -47,25 +66,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/</guid>
-      
-    </item>
-    
-    <item>
-      <title>RapidOCR 适配 PP-OCRv6 Rec 模型支持 Paddle, PyTorch 和 MNN 记录</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description></description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Tue, 30 Jun 2026 22:07:12 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/</guid>
       
     </item>
     

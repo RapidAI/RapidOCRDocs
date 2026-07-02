@@ -225,16 +225,16 @@ TensorRT 的指标等有时间再补哈！
 |模型|推理框架|模型格式|ExactMatch↑|CharMatch↑|Elapse↓|
 |:---|:---|:---|:---:|:---:|:---:|
 |||||||
-|PP-OCRv6_medium_rec|RapidOCR| ONNX Runtime|0.8613|0.9491|0.0515|
+|PP-OCRv6_medium_rec|RapidOCR| ONNX Runtime|**0.8613**|0.9491|0.0515|
 |PP-OCRv6_medium_rec|RapidOCR| OpenVINO|0.8548|0.9478|0.0316|
 |PP-OCRv6_medium_rec|RapidOCR| PaddlePaddle|0.8613|0.9491|0.059|
-|PP-OCRv6_medium_rec|RapidOCR| MNN|0.8613|0.9497|0.0813|
+|PP-OCRv6_medium_rec|RapidOCR| MNN|0.8613|**0.9497**|0.0813|
 |PP-OCRv6_medium_rec|RapidOCR| PyTorch|0.8613|0.9491|0.0944|
 |||||||
 |PP-OCRv6_small_rec|RapidOCR| ONNX Runtime|0.8419|0.9515|0.0159|
 |PP-OCRv6_small_rec|RapidOCR| OpenVINO|0.8419|0.9518|0.0123|
 |PP-OCRv6_small_rec|RapidOCR| PaddlePaddle|0.8419|0.9515|0.0277|
-|PP-OCRv6_small_rec|RapidOCR| MNN|0.8419|0.9519|0.0447|
+|PP-OCRv6_small_rec|RapidOCR| MNN|0.8419|**0.9519**|0.0447|
 |PP-OCRv6_small_rec|RapidOCR| PyTorch|0.8419|0.9515|0.0429|
 |||||||
 |PP-OCRv6_tiny_rec|RapidOCR| ONNX Runtime|0.6968|0.8897|0.0041|

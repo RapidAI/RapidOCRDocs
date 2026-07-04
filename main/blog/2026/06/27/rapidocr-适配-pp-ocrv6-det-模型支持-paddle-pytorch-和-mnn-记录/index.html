@@ -2838,7 +2838,7 @@ You're not viewing the latest version.
 <p>最终结果汇总到文章末尾了。</p>
 <h3 id="pytorch">支持 PyTorch<a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h3>
 <p>PP-OCRv6 中，官方支持 safetensors 格式，支持用 transformers 库推理。经过我的调研，发现 safetensors 格式仅仅是权重，里面并没有具体网络结构。</p>
-<p>因此想要直接使用 PyTorch 推理，就必须安装 transformers 库来推理。我翻看了 PaddleOCR, PaddleX 和 transformers 源码，试图找到 PP-OCRv6 检测和识别模型的网络结构定义。最终仅在 PaddleX 中找到了 PP-OCRv6_medium_det 的 PaddlePaddle 实现（<a href="https://github.com/PaddlePaddle/PaddleX/blob/ffb64904d23708863ff5b8da312a5cbd52a7f462/paddlex/inference/models/text_detection/modeling/pp_ocrv6_medium_det.py">source</a>）。<strong>从源码中可以看到，当前版本所谓的支持 PyTorch 推理，也只是包装了一套 PaddlePaddle 实现的网路结构。如果想要不安装 PaddlePaddle，来使用 PyTorch 推理，那是不可能的。</strong> 因此，这条路算是走不通了。</p>
+<p>经过社区小伙伴的提醒，我才发现 PP-OCRv6 已经集成到了 transformers 库了。我本以为这个事情就变得简单了。后来发现 transformers 中集成了很多模型的推理，想要单独抠出 PP-OCRv6 的相关最小可执行代码，太难了。</p>
 <p>但是 <a href="https://github.com/frotms/PaddleOCR2Pytorch">PaddleOCR2Pytorch</a> 中已经支持 PP-OCRv6 文本检测和识别模型了。哈哈哈。RapidOCR 之前支持的 PyTorch 推理，其模型都是来自这个仓库。有了这个，剩下工作就是集成和测试一下指标就可以了。感谢大佬的工作。</p>
 <p>评测代码：</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -3200,7 +3200,7 @@ You're not viewing the latest version.
 </tr>
 </tbody>
 </table>
-<p>从以上推理速度来看，OpenVINO 竟然去是最快的了。这个有点出乎我的意料。</p>
+<p>从以上推理速度来看，OpenVINO 竟然是最快的了。这个有点出乎我的意料。</p>
 <p>上述推理引擎的支持，将会随 <code>rapidocr==3.9.1</code> 发布，敬请期待！</p>
         
 
@@ -3224,7 +3224,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年7月1日 06:07:12 CST">2026-07-01 06:07:12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年7月4日 23:09:18 CST">2026-07-04 23:09:18</span>
   </span>
 
     

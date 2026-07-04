@@ -100,7 +100,7 @@ PP-OCRv6 中，PaddleOCR 官方支持 safetensors 格式，支持用 transformer
 
 经过社区小伙伴的提醒，我才发现 PP-OCRv6 已经集成到了 transformers 库了。我本以为这个事情就变得简单了。后来发现 transformers 中集成了很多模型的推理，想要单独抠出 PP-OCRv6 的相关最小可执行代码，太难了。
 
-我这里给出 transformers 库中如何使用 PP-OCRv6 rec 系列模型，代码来自 [transformers 模型卡片](https://github.com/huggingface/transformers/blob/b70d02fc724d04c916832ca4ead03ff05e8fb1ee/docs/source/en/model_doc/pp_ocrv6_small_rec.md)
+我这里给出 transformers 库中如何使用 PP-OCRv6 rec 系列模型，代码来自 [transformers 模型卡片](https://github.com/huggingface/transformers/blob/b70d02fc724d04c916832ca4ead03ff05e8fb1ee/docs/source/en/model_doc/pp_ocrv6_small_rec.md)。
 
 ```python linenums="1"
 from io import BytesIO
@@ -124,7 +124,7 @@ for result in results:
     print(result)
 ```
 
-但是 [PaddleOCR2Pytorch](https://github.com/frotms/PaddleOCR2Pytorch) 中已经支持 PP-OCRv6 文本检测和识别模型了。哈哈哈。RapidOCR 之前支持的 PyTorch 推理，其模型都是来自这个仓库。有了这个，剩下工作就是集成和测试一下指标就可以了。感谢大佬的工作。
+后来发现 [PaddleOCR2Pytorch](https://github.com/frotms/PaddleOCR2Pytorch) 中已经支持 PP-OCRv6 文本检测和识别模型了。哈哈哈。RapidOCR 之前支持的 PyTorch 推理，其模型都是来自这个仓库。有了这个，剩下工作就是集成和测试一下指标就可以了。感谢大佬的工作。
 
 其中 Rec Tiny 模型，PaddleOCR2Pytorch 中实现的网络结构与 PaddleOCR 官方不同，因此我这里在 `rapidocr==3.9.1` 中，PP-OCRV6 Rec Tiny 模型指标效果很差。到现在我已经对齐了，还向 PaddleOCR2Pytorch 提了一个 PR [#127](https://github.com/frotms/PaddleOCR2Pytorch/pull/127)。
 

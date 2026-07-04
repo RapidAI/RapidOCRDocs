@@ -96,9 +96,33 @@ print(metric)
 
 ### 支持 PyTorch
 
-PP-OCRv6 中，官方支持 safetensors 格式，支持用 transformers 库推理。经过我的调研，发现 safetensors 格式仅仅是权重，里面并没有具体网络结构。
+PP-OCRv6 中，PaddleOCR 官方支持 safetensors 格式，支持用 transformers 库推理。经过我的调研，发现 safetensors 格式仅仅是权重，里面并没有具体网络结构。
 
 经过社区小伙伴的提醒，我才发现 PP-OCRv6 已经集成到了 transformers 库了。我本以为这个事情就变得简单了。后来发现 transformers 中集成了很多模型的推理，想要单独抠出 PP-OCRv6 的相关最小可执行代码，太难了。
+
+我这里给出 transformers 库中如何使用 PP-OCRv6 rec 系列模型，代码来自 [transformers 模型卡片](https://github.com/huggingface/transformers/blob/b70d02fc724d04c916832ca4ead03ff05e8fb1ee/docs/source/en/model_doc/pp_ocrv6_small_rec.md)
+
+```python linenums="1"
+from io import BytesIO
+
+import httpx
+from PIL import Image
+from transformers import AutoImageProcessor, AutoModelForTextRecognition
+from transformers.image_utils import load_image
+
+model_path = "PaddlePaddle/PP-OCRv6_small_rec_safetensors"
+model = AutoModelForTextRecognition.from_pretrained(model_path, device_map="auto")
+image_processor = AutoImageProcessor.from_pretrained(model_path)
+
+image_url = "https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/general_ocr_rec_001.png"
+image = load_image(image_url)
+inputs = image_processor(images=image, return_tensors="pt").to(model.device)
+outputs = model(**inputs)
+
+results = image_processor.post_process_text_recognition(outputs)
+for result in results:
+    print(result)
+```
 
 但是 [PaddleOCR2Pytorch](https://github.com/frotms/PaddleOCR2Pytorch) 中已经支持 PP-OCRv6 文本检测和识别模型了。哈哈哈。RapidOCR 之前支持的 PyTorch 推理，其模型都是来自这个仓库。有了这个，剩下工作就是集成和测试一下指标就可以了。感谢大佬的工作。
 
@@ -258,4 +282,4 @@ TensorRT 的指标等有时间再补哈！
 |PP-OCRv6_tiny_rec|RapidOCR| OpenVINO|0.6903|0.885|0.0041|
 |PP-OCRv6_tiny_rec|RapidOCR| PaddlePaddle|0.6968|0.8897|0.0008|
 |PP-OCRv6_tiny_rec|RapidOCR| MNN|0.6935|0.8877|0.0168|
-|PP-OCRv6_tiny_rec|RapidOCR| PyTorch|0.7000|0.8909|0.0239|
+|PP-OCRv6_tiny_rec|RapidOCR| PyTorch|**0.7000**|**0.8909**|0.0239|

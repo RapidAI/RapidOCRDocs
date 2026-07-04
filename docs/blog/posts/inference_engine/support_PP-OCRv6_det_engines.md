@@ -115,7 +115,7 @@ print(metric)
 
 PP-OCRv6 中，官方支持 safetensors 格式，支持用 transformers 库推理。经过我的调研，发现 safetensors 格式仅仅是权重，里面并没有具体网络结构。
 
-因此想要直接使用 PyTorch 推理，就必须安装 transformers 库来推理。我翻看了 PaddleOCR, PaddleX 和 transformers 源码，试图找到 PP-OCRv6 检测和识别模型的网络结构定义。最终仅在 PaddleX 中找到了 PP-OCRv6_medium_det 的 PaddlePaddle 实现（[source](https://github.com/PaddlePaddle/PaddleX/blob/ffb64904d23708863ff5b8da312a5cbd52a7f462/paddlex/inference/models/text_detection/modeling/pp_ocrv6_medium_det.py)）。**从源码中可以看到，当前版本所谓的支持 PyTorch 推理，也只是包装了一套 PaddlePaddle 实现的网路结构。如果想要不安装 PaddlePaddle，来使用 PyTorch 推理，那是不可能的。** 因此，这条路算是走不通了。
+经过社区小伙伴的提醒，我才发现 PP-OCRv6 已经集成到了 transformers 库了。我本以为这个事情就变得简单了。后来发现 transformers 中集成了很多模型的推理，想要单独抠出 PP-OCRv6 的相关最小可执行代码，太难了。
 
 但是 [PaddleOCR2Pytorch](https://github.com/frotms/PaddleOCR2Pytorch) 中已经支持 PP-OCRv6 文本检测和识别模型了。哈哈哈。RapidOCR 之前支持的 PyTorch 推理，其模型都是来自这个仓库。有了这个，剩下工作就是集成和测试一下指标就可以了。感谢大佬的工作。
 

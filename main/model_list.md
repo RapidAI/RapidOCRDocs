@@ -110,7 +110,7 @@
 
 |语种类型|engine_type| lang_type|model_type|ocr_version|
 |:---|:---|:---|:---|:---|
-|多语种|`onnxruntime`(`rapidocr==3.9.0`) <br/> `openvino` (`rapidocr==3.9.0`)|`ch`<br/>`en`<br/>`multi`<br/>|`tiny`<br/> `small`<br/>`medium`|`PP-OCRv6`|
+|多语种|`onnxruntime`(`rapidocr>=3.9.0`) <br/> `openvino` (`rapidocr>=3.9.0`) <br/> `paddle` (`rapidocr>=3.9.1`) <br/>`torch` (`rapidocr>=3.9.1`)<br/>`mnn` (`rapidocr>=3.9.1`)<br/> ❎ `tensorrt`|`ch`<br/>`en`<br/>`multi`<br/>|`tiny`<br/> `small`<br/>`medium`|`PP-OCRv6`|
 
 `medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`。
 
@@ -181,11 +181,9 @@ engine = RapidOCR(
 
 #### PP-OCRv6
 
-> `rapidocr>=3.9.0` 支持。
-
 | 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
 |----------------|---------------------------|-------------------|-----------------|-------------------|
-| 多语种 | `onnxruntime`<br>`openvino`| `ch`       | `tiny`<br/> `small`<br/>`medium` | `PP-OCRv6` |
+| 多语种 | `onnxruntime`(`rapidocr>=3.9.0`) <br/> `openvino` (`rapidocr>=3.9.0`) <br/> `paddle` (`rapidocr>=3.9.1`) <br/>`torch` (`rapidocr>=3.9.1`)<br/>`mnn` (`rapidocr>=3.9.1`)<br/> ❎ `tensorrt`| `ch`       | `tiny`<br/> `small`<br/>`medium` | `PP-OCRv6` |
 
 `medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`。
 

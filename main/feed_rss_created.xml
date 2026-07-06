@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Sun, 05 Jul 2026 00:54:16 -0000</pubDate>
-    <lastBuildDate>Sun, 05 Jul 2026 00:54:16 -0000</lastBuildDate>
+    <pubDate>Mon, 06 Jul 2026 13:43:25 -0000</pubDate>
+    <lastBuildDate>Mon, 06 Jul 2026 13:43:25 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,25 @@
     
 
     
+    
+    <item>
+      <title>RapidOCR PP-OCRv6 支持 TensorRT 推理引擎</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description></description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/</link>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/</guid>
+      
+    </item>
     
     <item>
       <title>RapidOCR 适配 PP-OCRv6 Rec 模型支持 Paddle, PyTorch 和 MNN 记录</title>
@@ -397,25 +416,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2024/07/13/how-to-use-directml/</guid>
-      
-    </item>
-    
-    <item>
-      <title>调优尝试教程</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description></description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/03/optim-tutorial/</link>
-      <pubDate>Tue, 04 Jun 2024 00:12:19 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/03/optim-tutorial/</guid>
       
     </item>
     

@@ -13,6 +13,21 @@
     "language": "zh",
     "items": [
         {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/",
+            "title": "RapidOCR PP-OCRv6 \u652f\u6301 TensorRT \u63a8\u7406\u5f15\u64ce",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-07-06T13:42:19+00:00",
+            "date_published": "2026-07-05T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
             "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
             "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
             "title": "RapidOCR \u9002\u914d PP-OCRv6 Rec \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55",
@@ -290,21 +305,6 @@
             "image": null,
             "date_modified": "2026-03-19T13:21:45+00:00",
             "date_published": "2024-07-13T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/03/optim-tutorial/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/03/optim-tutorial/",
-            "title": "\u8c03\u4f18\u5c1d\u8bd5\u6559\u7a0b",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-03-02T06:32:24+00:00",
-            "date_published": "2024-06-04T00:12:19+00:00",
             "authors": [
                 {
                     "name": "SWHL"

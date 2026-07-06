@@ -13,6 +13,21 @@
     "language": "zh",
     "items": [
         {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/",
+            "title": "RapidOCR PP-OCRv6 \u652f\u6301 TensorRT \u63a8\u7406\u5f15\u64ce",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-07-06T13:42:19+00:00",
+            "date_published": "2026-07-05T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
             "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
             "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
             "title": "RapidOCR \u9002\u914d PP-OCRv6 Det \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55",
@@ -290,21 +305,6 @@
             "image": null,
             "date_modified": "2026-03-19T13:21:45+00:00",
             "date_published": "2024-06-04T00:12:19+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/",
-            "title": "\u8bc4\u6d4b PHOCR \u4e2d\u6587\u6587\u672c\u8bc6\u522b\u6a21\u578b",
-            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bc4\u6d4b PHOCRv1 \u7684\u4e2d\u6587\u8bc6\u522b\u6a21\u578b\u6548\u679c\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-03-19T13:21:45+00:00",
-            "date_published": "2025-08-03T03:18:59+00:00",
             "authors": [
                 {
                     "name": "SWHL"

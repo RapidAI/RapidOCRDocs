@@ -32,19 +32,19 @@ links:
     - cuda-python: 12.2.0
 - Python 环境（3.10.0）：
 
-  ```bash linenums="1"
-  rapidocr==3.9.1
-  text_det_metric==0.0.8
-  text_rec_metric==0.0.1
-  datasets==3.6.0
-  onnxruntime==1.23.2
-  ```
+    ```bash linenums="1"
+    rapidocr==3.9.1
+    text_det_metric==0.0.8
+    text_rec_metric==0.0.1
+    datasets==3.6.0
+    onnxruntime==1.23.2
+    ```
+
+测试 TensorRT 是否安装成功的测试脚本：[Gist](https://gist.github.com/SWHL/b2d4cfb34b503733f898a580d5d5cdcc)
 
 ## 支持 Det 模型
 
 ### 比较转化前后推理精度差异
-
-这里主要采用 [@LocNgoXuan23](https://github.com/LocNgoXuan23) 给出的 [benchmark 脚本](https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254) 来批量测试。下面是测试单个模型的脚本。
 
 === "(Exp1) RapidOCR + ONNX Runtime"
 
@@ -220,8 +220,6 @@ links:
 ## 支持 Rec 模型
 
 ### 比较转化前后推理精度差异
-
-这里主要采用 [@LocNgoXuan23](https://github.com/LocNgoXuan23) 给出的 [benchmark 脚本](https://github.com/RapidAI/RapidOCR/pull/623#issuecomment-3805793254) 来批量测试。下面是测试单个模型的脚本。
 
 === "(Exp1) RapidOCR + ONNX Runtime"
 

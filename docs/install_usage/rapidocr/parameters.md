@@ -24,10 +24,13 @@ Global:
     use_cls: true
     use_rec: true
 
+    use_preprocess_img: true
+    min_side_len: 30
+    max_side_len: 2000
+
+    use_vertical_padding: true
     min_height: 30
     width_height_ratio: 8
-    max_side_len: 2000
-    min_side_len: 30
 
     return_word_box: false
     return_single_char_box: false
@@ -48,11 +51,19 @@ Global:
 
 > ⚠️注意：如果配置文件和调用时候同时声明 `use_det | use_cls | use_rec` 这三个参数，调用时参数会覆盖配置文件参数。
 
+`use_preprocess_img (bool)`: 是否使用图像预处理。这里的预处理主要是 `min_hegiht` 和 `width_height_ratio` 两个参数控制是否对图像做补边操作。r 如果设置为 `False`，则 `min_hegiht` 和 `width_height_ratio` 参数均无效。默认为 `True`。
+
+> 在 `rapidocr>=3.9.2` 中添加此参数。
+
 `min_height (int)` : 图像最小高度（单位是像素），低于这个值时，会触发图像上下补边操作，补边会让文本检测模型更加准确检测到文本行。默认值为 30。
 
 ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
 
 `width_height_ratio (float)`: 如果输入图像的宽高比大于 `width_height_ratio`，则会触发图像上下补边操作，取值为-1 时：不用这个参数. 默认值为 8。
+
+`use_vertical_padding (bool)`: 是否对图像上下补边。该参数主要控制 `max_side_len` 和 `min_side_len` 两个参数是否生效。如果设置为 `False`，则这两个参数均无效。默认为 `True`。
+
+> 在 `rapidocr>=3.9.2` 中添加此参数。
 
 `max_side_len (int)`: 如果输入图像的最大边大于 `max_side_len`，则会按宽高比，将最大边缩放到 `max_side_len`。默认为 2000 px。
 

@@ -442,7 +442,13 @@ engine = RapidOCR(
 
 设置这个参数的初衷是限制图像过大或者过小。图像过大，则存在占满机器内存情况，过小则存在文字不清晰。
 
-我会在下个版本（v3.9.2）中，给出开关来开启或关闭这个前处理。
+计划在下个版本（v3.9.2）中，给出开关来开启或关闭这个前处理。默认仍是开启。
+
+```yaml linenums="1" hl_lines="1"
+use_preprocess_img: true
+min_side_len: 30
+max_side_len: 2000
+```
 
 ## 不同点：图像进入文本检测上下补边
 
@@ -457,3 +463,11 @@ engine = RapidOCR(
 > `width_height_ratio (float)`: 如果输入图像的宽高比大于 `width_height_ratio`，则会触发图像上下补边操作，取值为-1 时：不用这个参数. 默认值为 8。
 
 设置这个参数的初衷是某些图像宽度大，高度小。通过图像预先上下补边，尽可能还原文本检测模型训练时图像比例，来达到图像检测更加准确的目的。
+
+在下个版本（v3.9.2）中，给出开关来开启或关闭这个前处理。默认仍是开启。
+
+```yaml linenums="1" hl_lines="1"
+use_apply_vertical_padding: true
+min_height: 30
+width_height_ratio: 8
+```

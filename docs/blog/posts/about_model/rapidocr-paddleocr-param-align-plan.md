@@ -160,7 +160,7 @@ engine = RapidOCR(
 )
 ```
 
-## 不同点：limit_side_len 不同
+## 不同点：`limit_side_len` 不同
 
 以下来自参数介绍 [文档](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr/parameters/)：
 
@@ -296,7 +296,7 @@ engine = RapidOCR(
 )
 ```
 
-## 不同点：use_dilation 不同
+## 不同点：`use_dilation` 不同
 
 以下来自参数 [文档](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr/parameters/)：
 
@@ -456,7 +456,7 @@ max_side_len: 2000
 在下个版本（v3.9.2）中，给出开关来开启或关闭这个前处理。默认仍是开启。
 
 ```yaml linenums="1" hl_lines="1"
-use_apply_vertical_padding: true
+use_vertical_padding: true
 min_height: 30
 width_height_ratio: 8
 ```

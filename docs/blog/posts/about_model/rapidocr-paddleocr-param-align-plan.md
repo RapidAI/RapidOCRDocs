@@ -162,7 +162,7 @@ engine = RapidOCR(
 
 ## 不同点：limit_side_len 不同
 
-以下来自参数介绍文档：
+以下来自参数介绍 [文档](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr/parameters/)：
 
 > `limit_side_len (float)`: 限制图像边的长度的像素值。默认值为 736。
 >
@@ -287,7 +287,7 @@ engine = RapidOCR(
 
 从上述实验指标来看，`limit_side_len=736` 是更优的选择。但是从推理速度来看，`limit_side_len=64` 明显更快。我这里后续仍然采用 `limit_side_len=736` 这个值。有需求的小伙伴可以自行指定其他值，指定方法：
 
-```python linenums="1
+```python linenums="1"
 engine = RapidOCR(
     params={
         "Det.ocr_version": OCRVersion.PPOCRV6,
@@ -298,7 +298,7 @@ engine = RapidOCR(
 
 ## 不同点：use_dilation 不同
 
-以下来自参数文档的介绍：
+以下来自参数 [文档](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr/parameters/)：
 
 > `use_dilation (bool)`: 是否使用膨胀。默认为 true。该参数用于将检测到的文本区域做形态学的膨胀处理。
 

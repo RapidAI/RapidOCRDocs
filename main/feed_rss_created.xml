@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Tue, 21 Jul 2026 02:07:14 -0000</pubDate>
-    <lastBuildDate>Tue, 21 Jul 2026 02:07:14 -0000</lastBuildDate>
+    <pubDate>Tue, 21 Jul 2026 05:06:01 -0000</pubDate>
+    <lastBuildDate>Tue, 21 Jul 2026 05:06:01 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,25 @@
     
 
     
+    
+    <item>
+      <title>RapidOCR 默认参数与PaddleOCR默认参数对齐探究</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description></description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/19/rapidocr-paddleocr-param-align-plan/</link>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/19/rapidocr-paddleocr-param-align-plan/</guid>
+      
+    </item>
     
     <item>
       <title>RapidOCR PP-OCRv6 支持 TensorRT 推理引擎</title>
@@ -397,25 +416,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2024/12/08/guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-stands-out/</guid>
-      
-    </item>
-    
-    <item>
-      <title>如何使用 DirectML 加速推理 OCR？</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;p&gt;本篇文章主要介绍一下 DirectML，以及它在 OCR 推理过程中是如何使用的。&lt;/p&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2024/07/13/how-to-use-directml/</link>
-      <pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_created.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2024/07/13/how-to-use-directml/</guid>
       
     </item>
     

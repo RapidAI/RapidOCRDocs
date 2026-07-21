@@ -50,7 +50,7 @@
 
 从理论上来讲，模型训练和推理，前后处理要保持一致，才是最优的。那么在 PP-OCRv6 场景下，这个结论是否仍然如此呢？为此，我重新设计实验来比较不同图像归一化值，在指标上差异如何？
 
-=== "std和mean为0.5"
+=== "std和mean为0.5 (默认)"
 
     ```python linenums="1"
     import cv2
@@ -189,7 +189,7 @@ engine = RapidOCR(
 
 为了比较 `limit_side_len` 参数值的不同带来的差异，我这里做了控制变量的实验，以 `rapidocr` 库为基准，仅比较更改 `limit_side_len` 值，检测指标变化。
 
-=== "`limit_side_len=736`"
+=== "`limit_side_len=736` (默认)"
 
     ```python linenums="1" hl_lines="11"
     import cv2
@@ -461,3 +461,23 @@ use_apply_vertical_padding: true
 min_height: 30
 width_height_ratio: 8
 ```
+
+## 总结
+
+要想和 PaddleOCR 参数基本等价，需要按照下面的配置来设置：
+
+```python linenums="1"
+from rapidocr import OCRVersion, RapidOCR
+
+engine = RapidOCR(
+    params={
+        "Det.ocr_version": OCRVersion.PPOCRV6,
+        "Det.std": [0.5, 0.5, 0.5],
+        "Det.mean": [0.5, 0.5, 0.5],
+        "Det.limit_side_len": 64,
+        "Det.use_dilation": False,
+    },
+)
+```
+
+从以上效果来看，RapidOCR 当前参数基本是更优一些。当然不排除某些图像，情况不同。所以小伙伴在使用时，效果不好时，可以多调调这些参数。

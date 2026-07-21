@@ -307,7 +307,7 @@ engine = RapidOCR(
 )
 ```
 
-## 不同点：use_dilation 不同不同
+## 不同点：use_dilation 不同
 
 以下来自参数文档的介绍：
 
@@ -414,7 +414,46 @@ engine = RapidOCR(
     print(metric)
     ```
 
-|阶段|库|`limit_side_len`|`limit_side_mode`|Precision↑|Recall↑|H-mean↑|Elapse↓|
-|:---|:---|:---|:---|:---|:---|:---|:---|
-|文本检测|`rapidocr`|736|`min`|0.854|0.8445|0.8492|0.235|
-|文本检测|`rapidocr`|64|`min`|0.8278|0.8079|0.8177|0.165|
+|阶段|库|`use_dilation`|Precision↑|Recall↑|H-mean↑|Elapse↓|
+|:---|:---|:---|:---|:---|:---|:---|
+|文本检测|`rapidocr`|`True`|0.854|0.8445|0.8492|0.198|
+|文本检测|`rapidocr`|`False`|0.8278|0.8079|0.8177|0.165|
+
+从上述实验指标来看，`use_dilatio=True` 效果更好，但是推理速度慢了一些。我这里后续仍然采用 `use_dilation=True`。有需求的小伙伴可以自行指定。
+
+```python linenums="1"
+engine = RapidOCR(
+    params={
+        "Det.ocr_version": OCRVersion.PPOCRV6,
+        "Det.use_dilation": False,
+    },
+)
+```
+
+## 不同点：图像进入检测模型前预处理
+
+这个属于 `rapidocr` 特有，具体源码：[source code](https://github.com/RapidAI/RapidOCR/blob/44e2e900eccf2ad0702030dce9e20f5c5941be39/python/rapidocr/main.py#L281-L287)。
+
+这个对应以下两个参数：（来自 [参数介绍文档](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr/parameters/#global)）
+
+> `max_side_len (int)`: 如果输入图像的最大边大于 `max_side_len`，则会按宽高比，将最大边缩放到 `max_side_len`。默认为 2000 px。
+>
+> `min_side_len (int)`: 如果输入图像的最小边小于 `min_side_len`，则会按宽高比，将最小边缩放到 `min_side_len`。默认为 30 px。
+
+设置这个参数的初衷是限制图像过大或者过小。图像过大，则存在占满机器内存情况，过小则存在文字不清晰。
+
+我会在下个版本（v3.9.2）中，给出开关来开启或关闭这个前处理。
+
+## 不同点：图像进入文本检测上下补边
+
+这个属于 `rapidocr` 特有，具体源码：[source code](https://github.com/RapidAI/RapidOCR/blob/44e2e900eccf2ad0702030dce9e20f5c5941be39/python/rapidocr/main.py#L292-L294)。
+
+这个对应以下两个参数：（来自 [参数介绍文档](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr/parameters/#global)）
+
+> `min_height (int)` : 图像最小高度（单位是像素），低于这个值时，会触发图像上下补边操作，补边会让文本检测模型更加准确检测到文本行。默认值为 30。
+>
+> ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
+>
+> `width_height_ratio (float)`: 如果输入图像的宽高比大于 `width_height_ratio`，则会触发图像上下补边操作，取值为-1 时：不用这个参数. 默认值为 8。
+
+设置这个参数的初衷是某些图像宽度大，高度小。通过图像预先上下补边，尽可能还原文本检测模型训练时图像比例，来达到图像检测更加准确的目的。

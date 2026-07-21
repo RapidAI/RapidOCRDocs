@@ -1,0 +1,344 @@
+## 引言
+
+针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4, PP-OCRv5 和 PP-OCRv6 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式、TensorRT 格式和 PyTorch 格式。
+
+所有模型目前托管在 [魔搭社区](https://www.modelscope.cn/models/RapidAI/RapidOCR/files) 上。
+
+`rapidocr` v3 版本已经集成了托管的所有模型，通过下面参数指定可以自动下载。对应的配置文件：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml)。当然，小伙伴们也可以自己去上述链接下载。
+
+## 默认配置
+
+通过 pip 安装 `rapidocr` 之后，可以直接使用，不用指定任何参数。因为 whl 包中预先打包了默认模型，同时给出了默认配置。
+
+不同版本的 `rapidocr`，默认配置有所不同。下面详细给出不同版本对应的默认配置。
+
+=== "`rapidocr>=3.9.0` 默认配置"
+
+    ```python linenums="1"
+    from rapidocr import RapidOCR
+
+    engine = RapidOCR()
+
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+    result = engine(img_url)
+    print(result)
+
+    result.vis("vis_result.jpg")
+    ```
+
+    等价于下面：
+
+    ```python linenums="1" hl_lines="5-16"
+    from rapidocr import EngineType, LangDet, LangRec, ModelType, OCRVersion, RapidOCR
+
+    engine = RapidOCR(
+        params={
+            "Det.engine_type": EngineType.ONNXRUNTIME,
+            "Det.lang_type": LangDet.CH,
+            "Det.model_type": ModelType.SMALL,
+            "Det.ocr_version": OCRVersion.PPOCRV6,
+            "Rec.engine_type": EngineType.ONNXRUNTIME,
+            "Rec.lang_type": LangRec.CH,
+            "Rec.model_type": ModelType.SMALL,
+            "Rec.ocr_version": OCRVersion.PPOCRV6,
+            "Cls.engine_type": EngineType.ONNXRUNTIME,
+            "Cls.lang_type": LangDet.CH,
+            "Cls.model_type": ModelType.MOBILE,
+            "Cls.ocr_version": OCRVersion.PPOCRV4,
+        }
+    )
+
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+    result = engine(img_url)
+    print(result)
+
+    result.vis("vis_result.jpg")
+    ```
+
+    对应的配置文件：[config.yaml](https://github.com/RapidAI/RapidOCR/blob/v3.9.0/python/rapidocr/config.yaml)
+
+=== "`rapidocr<3.9.0` 默认配置"
+
+    ```python linenums="1"
+    from rapidocr import RapidOCR
+
+    engine = RapidOCR()
+
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+    result = engine(img_url)
+    print(result)
+
+    result.vis("vis_result.jpg")
+    ```
+
+    等价于下面：
+
+    ```python linenums="1" hl_lines="5-16"
+    from rapidocr import EngineType, LangDet, LangRec, ModelType, OCRVersion, RapidOCR
+
+    engine = RapidOCR(
+        params={
+            "Det.engine_type": EngineType.ONNXRUNTIME,
+            "Det.lang_type": LangDet.CH,
+            "Det.model_type": ModelType.MOBILE,
+            "Det.ocr_version": OCRVersion.PPOCRV4,
+            "Rec.engine_type": EngineType.ONNXRUNTIME,
+            "Rec.lang_type": LangRec.CH,
+            "Rec.model_type": ModelType.MOBILE,
+            "Rec.ocr_version": OCRVersion.PPOCRV4,
+            "Cls.engine_type": EngineType.ONNXRUNTIME,
+            "Cls.lang_type": LangDet.CH,
+            "Cls.model_type": ModelType.MOBILE,
+            "Cls.ocr_version": OCRVersion.PPOCRV4,
+        }
+    )
+
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+    result = engine(img_url)
+    print(result)
+
+    result.vis("vis_result.jpg")
+    ```
+
+    对应的配置文件：[config.yaml](https://github.com/RapidAI/RapidOCR/blob/v3.8.4/python/rapidocr/config.yaml)
+
+## 配置文件字段对应
+
+### 文本检测模型
+
+#### PP-OCRv6
+
+|语种类型|engine_type| lang_type|model_type|ocr_version|
+|:---|:---|:---|:---|:---|
+|多语种|`onnxruntime`(`rapidocr>=3.9.0`) <br/> `openvino` (`rapidocr>=3.9.0`) <br/> `paddle` (`rapidocr>=3.9.1`) <br/>`torch` (`rapidocr>=3.9.1`)<br/>`mnn` (`rapidocr>=3.9.1`)<br/> ❎ `tensorrt`|`ch`<br/>`en`<br/>`multi`<br/>|`tiny`<br/> `small`<br/>`medium`|`PP-OCRv6`|
+
+`medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`。
+
+`tiny` 模型不支持 `japan`。
+
+参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
+
+`lang_type`：PP-OCRv6 中，不管指定哪个，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
+
+#### PP-OCRv5
+
+|语种类型|engine_type| lang_type|model_type|ocr_version|
+|:---|:---|:---|:---|:---|
+|多语种[^7]|`onnxruntime` <br/> `openvino` <br/> `paddle`<br>`torch`(`rapidocr>=3.3.0`)<br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)|`ch`|`mobile`<br/> `server (tensorrt 可能转换不过)`|`PP-OCRv5`|
+
+#### PP-OCRv4
+
+|语种类型|engine_type| lang_type|model_type|ocr_version|
+|:---|:---|:---|:---|:---|
+|中英|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`<br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)|`ch`|`mobile`<br/> `server`|`PP-OCRv4`|
+|英语、拉丁语|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`<br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)|`en`|`mobile`<br/> `server`|`PP-OCRv4`<br/>|
+|多语种|`onnxruntime` <br/> `openvino` <br/> `paddle` <br/> `torch`<br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)|`multi`|`mobile`<br>❎`server` |`PP-OCRv4`<br/>|
+
+对应使用方法：
+
+!!! note
+
+    `lang_type` 字段对应 Det 模块下的 `LangDet`
+
+```python linenums="1" hl_lines="5-8"
+from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
+
+engine = RapidOCR(
+    params={
+        "Det.engine_type": EngineType.TORCH,
+        "Det.lang_type": LangDet.CH,
+        "Det.model_type": ModelType.MOBILE,
+        "Det.ocr_version": OCRVersion.PPOCRV5
+    }
+)
+```
+
+### 文本行方向分类模型
+
+!!! note
+
+    PP-OCRv5: `rapidocr >= 3.8.0` 中支持
+
+    PP-OCRv4: `rapidocr < 3.8.0` 支持
+
+#### PP-OCRv5
+
+|语种类型|engine_type| lang_type|model_type|ocr_version|
+|:---|:---|:---|:---|:---|
+|中文|`onnxruntime` <br/> `openvino` <br/> `paddle`<br>`mnn`<br>|`ch`|`mobile`<br/> `server`|`PP-OCRv5`|
+
+#### PP-OCRv4
+
+|语种类型|engine_type| lang_type|model_type|ocr_version|
+|:---|:---|:---|:---|:---|
+|中文|`onnxruntime`|`ch`|`mobile`|`PP-OCRv4`|
+
+### 文本识别模型
+
+!!! note
+
+    `lang_type` 字段对应 Det 模块下的 `LangRec`
+
+#### PP-OCRv6
+
+| 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
+|----------------|---------------------------|-------------------|-----------------|-------------------|
+| 多语种 | `onnxruntime`(`rapidocr>=3.9.0`) <br/> `openvino` (`rapidocr>=3.9.0`) <br/> `paddle` (`rapidocr>=3.9.1`) <br/>`torch` (`rapidocr>=3.9.1`)<br/>`mnn` (`rapidocr>=3.9.1`)<br/> ❎ `tensorrt`| `ch`       | `tiny`<br/> `small`<br/>`medium` | `PP-OCRv6` |
+
+`medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`。
+
+`tiny` 模型不支持 `japan`。
+
+参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
+
+`lang_type`：PP-OCRv6 中，不管指定哪个，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
+
+#### PP-OCRv5
+
+| 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
+|----------------|---------------------------|-------------------|-----------------|-------------------|
+| 俄罗斯文[^3] | `rapidocr>=3.5.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` <br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)| `cyrillic`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 阿拉伯文[^4] | `rapidocr>=3.5.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `arabic`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 梵文等[^5] | `rapidocr>=3.5.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `devanagari`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 泰米尔文、英文 | `rapidocr>=3.5.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch` <br>`mnn`(`rapidocr>=3.6.0`)<br>`tensorrt`(`rapidocr>=3.7.0`)| `ta`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 泰卢固文、英文 | `rapidocr>=3.5.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `te`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+||||||
+| 英文 | `rapidocr>=3.4.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `en`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 泰文、英文 | `rapidocr>=3.4.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `th`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 希腊文、英文 | `rapidocr>=3.4.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `el`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 拉丁语种混合[^1] | `rapidocr>=3.3.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `latin`            | `mobile`<br>❎`server` | `PP-OCRv5` |
+| 俄罗斯文[^6] | `rapidocr>=3.3.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`)| `eslav`            | `mobile`<br>`server` | `PP-OCRv5` |
+| 中英日混合[^2] | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`(`rapidocr>=3.3.0`)<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `ch`            | `mobile`<br>`server` | `PP-OCRv5` |
+| 韩文   | `rapidocr>=3.3.0 支持`<br/><br/>`onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `korean`        | `mobile`<br>❎`server`     | `PP-OCRv5` |
+
+#### PP-OCRv4
+
+| 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
+|----------------|---------------------------|-------------------|-----------------|-------------------|
+| 韩文      | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `korean`        | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 中文文档    | `onnxruntime`<br>`openvino`<br>`paddle`<br>❎`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `ch_doc`            | ❎`mobile`<br>`server` | `PP-OCRv4` |
+| 中文        | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `ch`            | `mobile`<br>`server` | `PP-OCRv4` |
+| 中文繁体    | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `chinese_cht`   | `mobile`<br>`server`   | `PP-OCRv4` |
+| 英文        | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `en`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 阿拉伯文    | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch` <br>`mnn`(`rapidocr>=3.6.0`)| `ar`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 塞尔维亚文  | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `cyrillic`      | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 梵文        | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `devanagari`    | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 日文        | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `japan`         | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 卡纳达语    | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `ka`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 拉丁文      | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `latin`         | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 泰米尔文    | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `ta`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
+| 泰卢固文    | `onnxruntime`<br>`openvino`<br>`paddle`<br>`torch`<br>`mnn`(`rapidocr>=3.6.0`) <br>`tensorrt`(`rapidocr>=3.7.0`)| `te`            | `mobile`<br>❎`server`     | `PP-OCRv4` |
+
+### 使用方式
+
+以上模型可直接通过字段指定，程序会自动下载使用。
+
+```python linenums="1" hl_lines="5-7"
+from rapidocr import EngineType, LangDet, ModelType, OCRVersion, RapidOCR
+
+engine = RapidOCR(
+    params={
+        "Rec.ocr_version": OCRVersion.PPOCRV5,
+        "Rec.engine_type": EngineType.PADDLE,
+        "Rec.model_type": ModelType.MOBILE,
+    }
+)
+
+img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
+result = engine(img_url)
+print(result)
+
+result.vis("vis_result.jpg")
+```
+
+## 语种对照表
+
+| `lang`                | 语言名称                 |
+| ---------------------- | ------------------------ |
+| `abq`                  | 阿布哈兹文               |
+| `af`                   | 南非荷兰文               |
+| `ang`                  | 古英文                   |
+| `ar`                   | 阿拉伯文                 |
+| `ava`                  | 阿瓦尔文                 |
+| `az`                   | 阿塞拜疆文               |
+| `be`                   | 白俄罗斯文               |
+| `bg`                   | 保加利亚文               |
+| `bgc`                  | 哈里亚纳文               |
+| `bh`                   | 比哈尔文                 |
+| `bho`                  | 博杰普尔文               |
+| `bs`                   | 波斯尼亚文               |
+| `ch`                   | 简体中文                 |
+| `che`                  | 车臣文                   |
+| `chinese_cht`          | 繁体中文                 |
+| `cs`                   | 捷克文                   |
+| `cy`                   | 威尔士文                 |
+| `da`                   | 丹麦文                   |
+| `dar`                  | 达尔格瓦文               |
+| `de` or `german`      | 德文                     |
+| `en`                   | 英文                     |
+| `es`                   | 西班牙文                 |
+| `et`                   | 爱沙尼亚文               |
+| `fa`                   | 波斯文                   |
+| `fr` or `french`      | 法文                     |
+| `ga`                   | 爱尔兰文                 |
+| `gom`                  | 孔卡尼文                 |
+| `hi`                   | 印地文                   |
+| `hr`                   | 克罗地亚文               |
+| `hu`                   | 匈牙利文                 |
+| `id`                   | 印尼文                   |
+| `inh`                  | 印古什文                 |
+| `is`                   | 冰岛文                   |
+| `it`                   | 意大利文                 |
+| `japan`                | 日文                     |
+| `ka`                   | 格鲁吉亚文               |
+| `kbd`                  | 卡巴尔达文               |
+| `korean`               | 韩文                     |
+| `ku`                   | 库尔德文                 |
+| `la`                   | 拉丁文                   |
+| `lbe`                  | 拉克文                   |
+| `lez`                  | 列兹金文                 |
+| `lt`                   | 立陶宛文                 |
+| `lv`                   | 拉脱维亚文               |
+| `mah`                  | 马加希文                 |
+| `mai`                  | 迈蒂利文                 |
+| `mi`                   | 毛利文                   |
+| `mn`                   | 蒙古文                   |
+| `mr`                   | 马拉地文                 |
+| `ms`                   | 马来文                   |
+| `mt`                   | 马耳他文                 |
+| `ne`                   | 尼泊尔文                 |
+| `new`                  | 尼瓦尔文                 |
+| `nl`                   | 荷兰文                   |
+| `no`                   | 挪威文                   |
+| `oc`                   | 奥克文                   |
+| `pi`                   | 巴利文                   |
+| `pl`                   | 波兰文                   |
+| `pt`                   | 葡萄牙文                 |
+| `ro`                   | 罗马尼亚文               |
+| `rs_cyrillic`          | 塞尔维亚语西里尔字母     |
+| `rs_latin`             | 塞尔维亚语拉丁字母       |
+| `ru`                   | 俄文                     |
+| `sa`                   | 梵文                     |
+| `sck`                  | 萨达里文                 |
+| `sk`                   | 斯洛伐克文               |
+| `sl`                   | 斯洛文尼亚文             |
+| `sq`                   | 阿尔巴尼亚文             |
+| `sv`                   | 瑞典文                   |
+| `sw`                   | 斯瓦希里文               |
+| `tab`                  | 塔巴萨兰文               |
+| `ta`                   | 泰米尔文                 |
+| `te`                   | 泰卢固文                 |
+| `tl`                   | 塔加洛文                 |
+| `tr`                   | 土耳其文                 |
+| `ug`                   | 维吾尔文                 |
+| `uk`                   | 乌克兰文                 |
+| `ur`                   | 乌尔都文                 |
+| `uz`                   | 乌兹别克文               |
+| `vi`                   | 越南文                   |
+
+[^1]: 英文、法文、德文、南非荷兰文、意大利文、西班牙文、波斯尼亚文、葡萄牙文、捷克文、威尔士文、丹麦文、爱沙尼亚文、爱尔兰文、克罗地亚文、乌兹别克文、匈牙利文、塞尔维亚文（latin）、印度尼西亚文、欧西坦文、冰岛文、立陶宛文、毛利文、马来文、荷兰文、挪威文、波兰文、斯洛伐克文、斯洛文尼亚文、阿尔巴尼亚文、瑞典文、西瓦希里文、塔加洛文、土耳其文、拉丁文
+[^2]: 简体中文、中文拼音、繁体中文、英文、日文
+[^3]: 俄罗斯文、白俄罗斯文、乌克兰文、塞尔维亚文（cyrillic）、保加利亚文、蒙古文、阿布哈兹文、阿迪赫文、卡巴尔达文、阿瓦尔文、达尔格瓦文、印古什文、车臣文、拉克文、列兹金文、塔巴萨兰文、哈萨克文、吉尔吉斯文、塔吉克文、马其顿文、鞑靼文、楚瓦什文、巴什基尔文、马里文、莫尔多瓦文、乌德穆尔特文、科米文、奥塞梯文、布里亚特文、卡尔梅克文、图瓦文、萨哈文、卡拉卡尔帕克文、英文
+[^4]: 阿拉伯文、波斯文、维吾尔文、乌尔都文、普什图文、库尔德文、信德文、俾路支文、英文
+[^5]: 印地文，马拉地文，尼泊尔文，比哈尔文，迈蒂利文，古英文，博杰普尔文，马加希文，萨达里文，尼瓦尔文，孔卡尼文，梵文，哈里亚纳文、英文
+[^6]: 俄罗斯文、白俄罗斯文、乌克兰文

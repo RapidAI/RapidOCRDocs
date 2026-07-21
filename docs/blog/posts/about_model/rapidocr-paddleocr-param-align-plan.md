@@ -11,18 +11,6 @@ categories:
 
 <!-- more -->
 
-<!-- TOC -->
-
-- [引言](#%E5%BC%95%E8%A8%80)
-- [不足之处](#%E4%B8%8D%E8%B6%B3%E4%B9%8B%E5%A4%84)
-- [不同点：文本检测图像归一化值不同](#%E4%B8%8D%E5%90%8C%E7%82%B9%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E5%9B%BE%E5%83%8F%E5%BD%92%E4%B8%80%E5%8C%96%E5%80%BC%E4%B8%8D%E5%90%8C)
-- [不同点：limit_side_len 不同](#%E4%B8%8D%E5%90%8C%E7%82%B9limit_side_len-%E4%B8%8D%E5%90%8C)
-- [不同点：use_dilation 不同](#%E4%B8%8D%E5%90%8C%E7%82%B9use_dilation-%E4%B8%8D%E5%90%8C)
-- [不同点：图像进入检测模型前预处理](#%E4%B8%8D%E5%90%8C%E7%82%B9%E5%9B%BE%E5%83%8F%E8%BF%9B%E5%85%A5%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E5%89%8D%E9%A2%84%E5%A4%84%E7%90%86)
-- [不同点：图像进入文本检测上下补边](#%E4%B8%8D%E5%90%8C%E7%82%B9%E5%9B%BE%E5%83%8F%E8%BF%9B%E5%85%A5%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%8A%E4%B8%8B%E8%A1%A5%E8%BE%B9)
-
-<!-- /TOC -->
-
 ## 引言
 
 在 `rapidocr==1.3.26` 以来，`rapidocr` 库的一些默认参数与 `paddleocr` 默认参数并不相同。在 PaddleOCR 推出了 PP-OCRv5 之后，`rapidocr` 与 `paddleocr` 两者默认模型甚至也不相同。

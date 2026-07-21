@@ -42,11 +42,11 @@ Global:
 
 > ⚠️注意：如果配置文件和调用时候同时声明 `use_det | use_cls | use_rec` 这三个参数，调用时参数会覆盖配置文件参数。
 
-`min_height (int)` : 图像最小高度（单位是像素），低于这个值，会跳过文本检测阶段，直接进行后续识别。默认值为 30。`min_height` 是用来过滤只有一行文本的图像（如下图），这类图像不会进入文本检测模块，直接进入后续过程。
+`min_height (int)` : 图像最小高度（单位是像素），低于这个值时，会触发图像上下补边操作，补边会让文本检测模型更加准确检测到文本行。默认值为 30。
 
 ![](https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/single_line_text.jpg)
 
-`width_height_ratio (float)`: 如果输入图像的宽高比大于 `width_height_ratio`，则会跳过文本检测，直接进行后续识别，取值为-1 时：不用这个参数. 默认值为 8。
+`width_height_ratio (float)`: 如果输入图像的宽高比大于 `width_height_ratio`，则会触发图像上下补边操作，取值为-1 时：不用这个参数. 默认值为 8。
 
 `max_side_len (int)`: 如果输入图像的最大边大于 `max_side_len`，则会按宽高比，将最大边缩放到 `max_side_len`。默认为 2000 px。
 
@@ -55,11 +55,11 @@ Global:
 `return_word_box (bool)`: 是否返回文字的单字坐标。默认为 `False`。
 
 > 在 `rapidocr>=2.1.0` 中，纯中文、中英文混合返回单字坐标，纯英文返回单词坐标。
-
+>
 > 在 `rapidocr<=2.0.7` 中，纯中文、中英文混合和纯英文均返回单字坐标。
-
+>
 > 在 `rapidocr_onnxruntime>=1.4.1` 中，汉字返回单字坐标，英语返回单字母坐标。
-
+>
 > 在 `rapidocr_onnxruntime==1.4.0` 中，汉字会返回单字坐标，英语返回单词坐标。
 
 `return_single_char_box (bool)`: 文本内容只有英文和数字情况下，是否返回单字坐标。默认为 `False`。

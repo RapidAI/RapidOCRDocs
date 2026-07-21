@@ -2670,19 +2670,6 @@ You're not viewing the latest version.
         
         <!-- more -->
 
-<!-- TOC -->
-
-<ul>
-<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
-<li><a href="#%E4%B8%8D%E8%B6%B3%E4%B9%8B%E5%A4%84">不足之处</a></li>
-<li><a href="#%E4%B8%8D%E5%90%8C%E7%82%B9%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E5%9B%BE%E5%83%8F%E5%BD%92%E4%B8%80%E5%8C%96%E5%80%BC%E4%B8%8D%E5%90%8C">不同点：文本检测图像归一化值不同</a></li>
-<li><a href="#%E4%B8%8D%E5%90%8C%E7%82%B9limit_side_len-%E4%B8%8D%E5%90%8C">不同点：limit_side_len 不同</a></li>
-<li><a href="#%E4%B8%8D%E5%90%8C%E7%82%B9use_dilation-%E4%B8%8D%E5%90%8C">不同点：use_dilation 不同</a></li>
-<li><a href="#%E4%B8%8D%E5%90%8C%E7%82%B9%E5%9B%BE%E5%83%8F%E8%BF%9B%E5%85%A5%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%9E%8B%E5%89%8D%E9%A2%84%E5%A4%84%E7%90%86">不同点：图像进入检测模型前预处理</a></li>
-<li><a href="#%E4%B8%8D%E5%90%8C%E7%82%B9%E5%9B%BE%E5%83%8F%E8%BF%9B%E5%85%A5%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%8A%E4%B8%8B%E8%A1%A5%E8%BE%B9">不同点：图像进入文本检测上下补边</a></li>
-</ul>
-<!-- /TOC -->
-
 <h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>在 <code>rapidocr==1.3.26</code> 以来，<code>rapidocr</code> 库的一些默认参数与 <code>paddleocr</code> 默认参数并不相同。在 PaddleOCR 推出了 PP-OCRv5 之后，<code>rapidocr</code> 与 <code>paddleocr</code> 两者默认模型甚至也不相同。</p>
 <p>这就让很多小伙伴有困惑：某些图像上，<code>rapidocr</code> 效果好，而另外图像上，<code>paddleocr</code> 效果反而更好。</p>
@@ -3504,7 +3491,7 @@ engine = RapidOCR(
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年7月21日 13:05:06 CST">2026-07-21 13:05:06</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年7月21日 13:08:42 CST">2026-07-21 13:08:42</span>
   </span>
 
     

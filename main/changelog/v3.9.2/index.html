@@ -12,31 +12,31 @@
         <meta name="author" content="RapidAI">
       
       
-        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/">
+        <link rel="canonical" href="https://rapidai.github.io/RapidOCRDocs/main/changelog/v3.9.2/">
       
       
-        <link rel="prev" href="../../../02/28/coreml-vs-cpu-provider-onnxruntime-rapidocr/">
+        <link rel="prev" href="../../install_usage/rapidocr_api/changelog/">
       
       
-        <link rel="next" href="../../24/rapidocr-pp-lcnet-textline-cls/">
+        <link rel="next" href="../v3.9.1/">
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../../../static/images/favicon-lightning.svg">
+      <link rel="icon" href="../../static/images/favicon-lightning.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>RapidOCR 支持 PyTorch MPS 作为计算后端 - RapidOCR 文档</title>
+        <title>v3.9.2 - RapidOCR 文档</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -84,11 +84,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -113,22 +113,22 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RapidOCR 文档">
-<meta property="og:title" content="RapidOCR 支持 PyTorch MPS 作为计算后端">
+<meta property="og:title" content="v3.9.2">
 <meta property="og:description" content="RapidOCR 是支持离线部署的开源 OCR 工具，面向 Python、C++、Java、C# 等生态，支持 ONNX Runtime、OpenVINO、Paddle、PyTorch、MNN、TensorRT 等推理引擎。">
-<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/">
+<meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/changelog/v3.9.2/">
 <meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="RapidOCR 支持 PyTorch MPS 作为计算后端">
+<meta name="twitter:title" content="v3.9.2">
 <meta name="twitter:description" content="RapidOCR 是支持离线部署的开源 OCR 工具，面向 Python、C++、Java、C# 等生态，支持 ONNX Runtime、OpenVINO、Paddle、PyTorch、MNN、TensorRT 等推理引擎。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
-<link rel="alternate" type="text/plain" href="../../../../../llms.txt" title="RapidOCR llms.txt">
-<link rel="alternate" type="text/plain" href="../../../../../llms-full.txt" title="RapidOCR llms-full.txt">
-<link rel="alternate" type="application/json" href="../../../../../api/project.json" title="RapidOCR structured project data">
+<link rel="alternate" type="text/plain" href="../../llms.txt" title="RapidOCR llms.txt">
+<link rel="alternate" type="text/plain" href="../../llms-full.txt" title="RapidOCR llms-full.txt">
+<link rel="alternate" type="application/json" href="../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../../../posts/inference_engine/support_torch_mps_backend.md" title="RapidOCR 支持 PyTorch MPS 作为计算后端 Markdown">
+<link rel="alternate" type="text/markdown" href="../v3.9.2.md" title="v3.9.2 Markdown">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR \u662f\u652f\u6301\u79bb\u7ebf\u90e8\u7f72\u7684\u5f00\u6e90 OCR \u5de5\u5177\uff0c\u9762\u5411 Python\u3001C++\u3001Java\u3001C# \u7b49\u751f\u6001\uff0c\u652f\u6301 ONNX Runtime\u3001OpenVINO\u3001Paddle\u3001PyTorch\u3001MNN\u3001TensorRT \u7b49\u63a8\u7406\u5f15\u64ce\u3002", "headline": "RapidOCR \u652f\u6301 PyTorch MPS \u4f5c\u4e3a\u8ba1\u7b97\u540e\u7aef", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "RapidOCR \u6587\u6863", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR \u652f\u6301 PyTorch MPS \u4f5c\u4e3a\u8ba1\u7b97\u540e\u7aef", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/"}
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR \u662f\u652f\u6301\u79bb\u7ebf\u90e8\u7f72\u7684\u5f00\u6e90 OCR \u5de5\u5177\uff0c\u9762\u5411 Python\u3001C++\u3001Java\u3001C# \u7b49\u751f\u6001\uff0c\u652f\u6301 ONNX Runtime\u3001OpenVINO\u3001Paddle\u3001PyTorch\u3001MNN\u3001TensorRT \u7b49\u63a8\u7406\u5f15\u64ce\u3002", "headline": "v3.9.2", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "zh-CN", "isPartOf": {"@type": "WebSite", "name": "RapidOCR \u6587\u6863", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "v3.9.2", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/changelog/v3.9.2/"}
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -197,7 +197,7 @@
     
     <p class="banner">
         🎉 最新更新日志：
-        <a href="../../../../../changelog/v3.9.2/" target="_blank" rel="noopener">v3.9.2</a>
+        <a href="./" target="_blank" rel="noopener">v3.9.2</a>
     </p>
     
 
@@ -215,12 +215,12 @@
             <div class="md-banner__inner md-grid md-typeset">
               
 You're not viewing the latest version.
-<a href="../../../../../..">
+<a href="../../..">
     <strong>Click here to go to latest.</strong>
 </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../../../../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -232,7 +232,7 @@ You're not viewing the latest version.
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../../.." title="RapidOCR 文档" class="md-header__button md-logo" aria-label="RapidOCR 文档" data-md-component="logo">
+    <a href="../.." title="RapidOCR 文档" class="md-header__button md-logo" aria-label="RapidOCR 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M338.8-9.9c11.9 8.6 16.3 24.2 10.9 37.8L271.3 224H416c13.5 0 25.5 8.4 30.1 21.1s.7 26.9-9.6 35.5l-288 240c-11.3 9.4-27.4 9.9-39.3 1.3s-16.3-24.2-10.9-37.8L176.7 288H32c-13.5 0-25.5-8.4-30.1-21.1s-.7-26.9 9.6-35.5l288-240c11.3-9.4 27.4-9.9 39.3-1.3"/></svg>
@@ -252,7 +252,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RapidOCR 支持 PyTorch MPS 作为计算后端
+              v3.9.2
             
           </span>
         </div>
@@ -374,7 +374,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -393,7 +393,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../quickstart/" class="md-tabs__link">
+      <a href="../../quickstart/" class="md-tabs__link">
         
   
   
@@ -412,7 +412,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../online_demo/" class="md-tabs__link">
+      <a href="../../online_demo/" class="md-tabs__link">
         
   
   
@@ -431,7 +431,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../model_list/" class="md-tabs__link">
+      <a href="../../model_list/" class="md-tabs__link">
         
   
   
@@ -459,7 +459,7 @@ You're not viewing the latest version.
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../install_usage/rapidocr/install/" class="md-tabs__link">
+        <a href="../../install_usage/rapidocr/install/" class="md-tabs__link">
           
   
   
@@ -480,11 +480,13 @@ You're not viewing the latest version.
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../../changelog/v3.9.2/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -504,7 +506,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../contributing/" class="md-tabs__link">
+      <a href="../../contributing/" class="md-tabs__link">
         
   
   
@@ -523,7 +525,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../faq/faq/" class="md-tabs__link">
+      <a href="../../faq/faq/" class="md-tabs__link">
         
   
   
@@ -542,7 +544,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../related_projects/" class="md-tabs__link">
+      <a href="../../related_projects/" class="md-tabs__link">
         
   
   
@@ -559,13 +561,11 @@ You're not viewing the latest version.
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
           
   
   
@@ -585,7 +585,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../communicate/" class="md-tabs__link">
+      <a href="../../communicate/" class="md-tabs__link">
         
   
   
@@ -604,7 +604,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../sponsor/" class="md-tabs__link">
+      <a href="../../sponsor/" class="md-tabs__link">
         
   
   
@@ -623,7 +623,7 @@ You're not viewing the latest version.
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../business_support/" class="md-tabs__link">
+      <a href="../../business_support/" class="md-tabs__link">
         
   
   
@@ -655,7 +655,7 @@ You're not viewing the latest version.
               
                 
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -666,7 +666,7 @@ You're not viewing the latest version.
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="RapidOCR 文档" class="md-nav__button md-logo" aria-label="RapidOCR 文档" data-md-component="logo">
+    <a href="../.." title="RapidOCR 文档" class="md-nav__button md-logo" aria-label="RapidOCR 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M338.8-9.9c11.9 8.6 16.3 24.2 10.9 37.8L271.3 224H416c13.5 0 25.5 8.4 30.1 21.1s.7 26.9-9.6 35.5l-288 240c-11.3 9.4-27.4 9.9-39.3 1.3s-16.3-24.2-10.9-37.8L176.7 288H32c-13.5 0-25.5-8.4-30.1-21.1s-.7-26.9 9.6-35.5l288-240c11.3-9.4 27.4-9.9 39.3-1.3"/></svg>
@@ -696,7 +696,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -718,7 +718,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../quickstart/" class="md-nav__link">
+      <a href="../../quickstart/" class="md-nav__link">
         
   
   
@@ -740,7 +740,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../online_demo/" class="md-nav__link">
+      <a href="../../online_demo/" class="md-nav__link">
         
   
   
@@ -762,7 +762,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../model_list/" class="md-nav__link">
+      <a href="../../model_list/" class="md-nav__link">
         
   
   
@@ -896,7 +896,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr/install/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr/install/" class="md-nav__link">
         
   
   
@@ -919,7 +919,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr/usage/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr/usage/" class="md-nav__link">
         
   
   
@@ -942,7 +942,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr/parameters/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr/parameters/" class="md-nav__link">
         
   
   
@@ -1012,7 +1012,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr/package/build-custom-version-rapidocr-whl/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr/package/build-custom-version-rapidocr-whl/" class="md-nav__link">
         
   
   
@@ -1043,7 +1043,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr/how_to_use_infer_engine/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr/how_to_use_infer_engine/" class="md-nav__link">
         
   
   
@@ -1066,7 +1066,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr/how_to_use_offline_model/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr/how_to_use_offline_model/" class="md-nav__link">
         
   
   
@@ -1089,7 +1089,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr/how_to_use_ppocrv5/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr/how_to_use_ppocrv5/" class="md-nav__link">
         
   
   
@@ -1112,7 +1112,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr/how_to_convert_to_markdown/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr/how_to_convert_to_markdown/" class="md-nav__link">
         
   
   
@@ -1200,7 +1200,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr_web/usage/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr_web/usage/" class="md-nav__link">
         
   
   
@@ -1223,7 +1223,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr_web/desktop_usage/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr_web/desktop_usage/" class="md-nav__link">
         
   
   
@@ -1246,7 +1246,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr_web/nuitka_package/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr_web/nuitka_package/" class="md-nav__link">
         
   
   
@@ -1269,7 +1269,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr_web/pyinstaller/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr_web/pyinstaller/" class="md-nav__link">
         
   
   
@@ -1292,7 +1292,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr_web/ocrweb_multi/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr_web/ocrweb_multi/" class="md-nav__link">
         
   
   
@@ -1315,7 +1315,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr_web/changelog/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr_web/changelog/" class="md-nav__link">
         
   
   
@@ -1395,7 +1395,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr_api/usage/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr_api/usage/" class="md-nav__link">
         
   
   
@@ -1418,7 +1418,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../install_usage/rapidocr_api/changelog/" class="md-nav__link">
+      <a href="../../install_usage/rapidocr_api/changelog/" class="md-nav__link">
         
   
   
@@ -1453,8 +1453,10 @@ You're not viewing the latest version.
       
   
   
+    
   
   
+  
     
     
       
@@ -1494,19 +1496,20 @@ You're not viewing the latest version.
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1519,7 +1522,7 @@ You're not viewing the latest version.
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             更新日志
@@ -1530,10 +1533,30 @@ You're not viewing the latest version.
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.9.2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    v3.9.2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1544,6 +1567,60 @@ You're not viewing the latest version.
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 新功能
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐛 Bug 修复
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 测试
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎉 贡献者
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1556,7 +1633,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.9.1/" class="md-nav__link">
+      <a href="../v3.9.1/" class="md-nav__link">
         
   
   
@@ -1579,7 +1656,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.9.0/" class="md-nav__link">
+      <a href="../v3.9.0/" class="md-nav__link">
         
   
   
@@ -1602,7 +1679,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.8.4/" class="md-nav__link">
+      <a href="../v3.8.4/" class="md-nav__link">
         
   
   
@@ -1625,7 +1702,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.8.3/" class="md-nav__link">
+      <a href="../v3.8.3/" class="md-nav__link">
         
   
   
@@ -1648,7 +1725,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.8.2/" class="md-nav__link">
+      <a href="../v3.8.2/" class="md-nav__link">
         
   
   
@@ -1671,7 +1748,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.8.1/" class="md-nav__link">
+      <a href="../v3.8.1/" class="md-nav__link">
         
   
   
@@ -1694,7 +1771,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.8.0/" class="md-nav__link">
+      <a href="../v3.8.0/" class="md-nav__link">
         
   
   
@@ -1717,7 +1794,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.7.0/" class="md-nav__link">
+      <a href="../v3.7.0/" class="md-nav__link">
         
   
   
@@ -1740,7 +1817,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.6.0/" class="md-nav__link">
+      <a href="../v3.6.0/" class="md-nav__link">
         
   
   
@@ -1763,7 +1840,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.5.0/" class="md-nav__link">
+      <a href="../v3.5.0/" class="md-nav__link">
         
   
   
@@ -1786,7 +1863,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.4.5/" class="md-nav__link">
+      <a href="../v3.4.5/" class="md-nav__link">
         
   
   
@@ -1809,7 +1886,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.4.3/" class="md-nav__link">
+      <a href="../v3.4.3/" class="md-nav__link">
         
   
   
@@ -1832,7 +1909,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.4.2/" class="md-nav__link">
+      <a href="../v3.4.2/" class="md-nav__link">
         
   
   
@@ -1855,7 +1932,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.4.1/" class="md-nav__link">
+      <a href="../v3.4.1/" class="md-nav__link">
         
   
   
@@ -1878,7 +1955,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/v3.4.0/" class="md-nav__link">
+      <a href="../v3.4.0/" class="md-nav__link">
         
   
   
@@ -1908,7 +1985,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../contributing/" class="md-nav__link">
+      <a href="../../contributing/" class="md-nav__link">
         
   
   
@@ -1930,7 +2007,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../faq/faq/" class="md-nav__link">
+      <a href="../../faq/faq/" class="md-nav__link">
         
   
   
@@ -1952,7 +2029,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../related_projects/" class="md-nav__link">
+      <a href="../../related_projects/" class="md-nav__link">
         
   
   
@@ -1971,8 +2048,6 @@ You're not viewing the latest version.
       
   
   
-    
-  
   
   
     
@@ -1990,21 +2065,20 @@ You're not viewing the latest version.
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../blog/" class="md-nav__link ">
               
   
   
@@ -2017,13 +2091,13 @@ You're not viewing the latest version.
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             博客
@@ -2094,7 +2168,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2026/" class="md-nav__link">
+      <a href="../../blog/archive/2026/" class="md-nav__link">
         
   
   
@@ -2117,7 +2191,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2025/" class="md-nav__link">
+      <a href="../../blog/archive/2025/" class="md-nav__link">
         
   
   
@@ -2140,7 +2214,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2024/" class="md-nav__link">
+      <a href="../../blog/archive/2024/" class="md-nav__link">
         
   
   
@@ -2163,7 +2237,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2023/" class="md-nav__link">
+      <a href="../../blog/archive/2023/" class="md-nav__link">
         
   
   
@@ -2186,7 +2260,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2022/" class="md-nav__link">
+      <a href="../../blog/archive/2022/" class="md-nav__link">
         
   
   
@@ -2274,7 +2348,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/general/" class="md-nav__link">
+      <a href="../../blog/category/general/" class="md-nav__link">
         
   
   
@@ -2297,7 +2371,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/honor/" class="md-nav__link">
+      <a href="../../blog/category/honor/" class="md-nav__link">
         
   
   
@@ -2320,7 +2394,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/ocr%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
+      <a href="../../blog/category/ocr%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
         
   
   
@@ -2343,7 +2417,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/%E5%8A%A8%E6%80%81/" class="md-nav__link">
+      <a href="../../blog/category/%E5%8A%A8%E6%80%81/" class="md-nav__link">
         
   
   
@@ -2366,7 +2440,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E/" class="md-nav__link">
+      <a href="../../blog/category/%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E/" class="md-nav__link">
         
   
   
@@ -2389,7 +2463,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+      <a href="../../blog/category/%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/" class="md-nav__link">
         
   
   
@@ -2427,7 +2501,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../communicate/" class="md-nav__link">
+      <a href="../../communicate/" class="md-nav__link">
         
   
   
@@ -2449,7 +2523,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../sponsor/" class="md-nav__link">
+      <a href="../../sponsor/" class="md-nav__link">
         
   
   
@@ -2471,7 +2545,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../../../../../business_support/" class="md-nav__link">
+      <a href="../../business_support/" class="md-nav__link">
         
   
   
@@ -2515,7 +2589,16 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      引言
+      🚀 新功能
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐛 Bug 修复
     </span>
   </a>
   
@@ -2524,25 +2607,7 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      运行环境¶
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#det" class="md-nav__link">
-    <span class="md-ellipsis">
-      Det 模型对比
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rec" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rec 模型对比
+      🧪 测试
     </span>
   </a>
   
@@ -2551,7 +2616,7 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      写在最后
+      🎉 贡献者
     </span>
   </a>
   
@@ -2566,137 +2631,41 @@ You're not viewing the latest version.
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-                  <span class="md-ellipsis">
-                    回到主页
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-              <div class="md-post__authors md-typeset">
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="https://avatars.githubusercontent.com/u/28639377?v=4" alt="SWHL">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          <a href="https://swhl.github.io/">SWHL</a>
-                        
-                      </strong>
-                      <br>
-                      Creator
-                    </span>
-                  </div>
-                
-              </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    元数据
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-03-04 00:00:00+00:00" class="md-ellipsis">2026/3/4</time>
-                      </div>
-                    </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            分类于
-                            
-                              <a href="../../../../category/%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E/">推理引擎</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              需要 1 分钟阅读时间
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-            
-              <ul class="md-post__meta md-nav__list">
-                <li class="md-nav__item md-nav__item--section">
-                  <div class="md-post__title">
-                    <span class="md-ellipsis">
-                      相关链接
-                    </span>
-                  </div>
-                  <nav class="md-nav">
-                    <ul class="md-nav__list">
-                      
-                        
-                        
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../01/21/rapidocr-support-mnn-engine/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    RapidOCR 支持 MNN 推理引擎
-    
-  </span>
-  
+                  <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
 
-      </a>
-    </li>
-  
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
 
-                      
-                    </ul>
-                  </nav>
-                </li>
-              </ul>
-            
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
-      
-        
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Tags -->
+
   
 
 
-        
+
+<!-- Actions -->
+
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/blog/posts/inference_engine/support_torch_mps_backend.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/changelog/v3.9.2.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2705,154 +2674,50 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/blog/posts/inference_engine/support_torch_mps_backend.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/changelog/v3.9.2.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
-        
-          <h1>RapidOCR 支持 PyTorch MPS 作为计算后端</h1>
-        
-        <p>记录 RapidOCR 支持 PyTorch MPS 作为计算后端的过程。</p>
-<!-- more -->
 
-<h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>衷心感谢 Github <a href="https://github.com/HighDoping">@HighDoping</a> 提交的 PR <a href="https://github.com/RapidAI/RapidOCR/pull/639">#639</a>！</p>
-<p>相关的测试代码已经放到 <a href="https://gist.github.com/SWHL/fd6e647337346aa3e268887a4bf179e6">Gist</a>，有需要的小伙伴自取。</p>
-<h2 id="_2">运行环境¶<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<!--
+  Hack: check whether the content contains a h1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+<h1>v3.9.2</h1>
+
+
+
+
+<!-- Page content -->
+<h3 id="_1">🚀 新功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>操作系统：macOS Tahoe 26.2</li>
-<li>
-<p>硬件：MacBookPro M2</p>
-</li>
-<li>
-<p>Python 环境（3.10.0）：</p>
-</li>
+<li>新增 <code>use_preprocess_img</code> 和 <code>use_vertical_padding</code> 逻辑（由 <a href="https://github.com/SWHL">@SWHL</a> 在 <a href="https://github.com/RapidAI/RapidOCR/commit/3cc33f8d54950d4e81106643bb99a920eb795125">3cc33f8</a> 提交）</li>
+<li>新增 <code>use_preprocess_img</code> 和 <code>use_apply_vertical_padding</code> 参数（由 <a href="https://github.com/SWHL">@SWHL</a> 在 <a href="https://github.com/RapidAI/RapidOCR/commit/83866d6a5cf0002db1abfb426796b88213035f78">83866d6</a> 提交）</li>
+<li>验证 TensorRT 推理引擎下的 RapidOCR 模型精度。详情请参阅博客：<a href="https://link.wtturl.cn/?target=https%3A%2F%2Frapidai.github.io%2FRapidOCRDocs%2Flatest%2Fblog%2F2026%2F07%2F05%2Fsupport-pp-ocrv6-tensorrt-engine%2F&amp;scene=im&amp;aid=497858&amp;lang=zh">RapidOCR PP-OCRv6 支持 TensorRT 推理引擎</a></li>
 </ul>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">rapidocr</span><span class="o">==</span><span class="m">3</span>.5.0
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nv">text_det_metric</span><span class="o">==</span><span class="m">0</span>.0.8
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nv">text_rec_metric</span><span class="o">==</span><span class="m">0</span>.0.1
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nv">datasets</span><span class="o">==</span><span class="m">3</span>.6.0
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.6.0
-</span></code></pre></div></td></tr></table></div>
-<h2 id="det">Det 模型对比<a class="headerlink" href="#det" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Exp</th>
-<th>模型</th>
-<th>推理框架</th>
-<th>推理引擎</th>
-<th>Precision↑</th>
-<th>Recall↑</th>
-<th>H-mean↑</th>
-<th>Elapse↓(ms)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>ch_PP-OCRv4_det_mobile</td>
-<td>PyTorch</td>
-<td>CPU</td>
-<td>0.8121</td>
-<td>0.8419</td>
-<td>0.8267</td>
-<td>609.64</td>
-</tr>
-<tr>
-<td>2</td>
-<td>ch_PP-OCRv4_det_mobile</td>
-<td>PyTorch</td>
-<td>MPS</td>
-<td>0.8121</td>
-<td>0.8419</td>
-<td>0.8267</td>
-<td>896.91</td>
-</tr>
-<tr>
-<td>3</td>
-<td>ch_PP-OCRv5_det_mobile</td>
-<td>PyTorch</td>
-<td>CPU</td>
-<td>0.7861</td>
-<td>0.8266</td>
-<td>0.8058</td>
-<td>611.07</td>
-</tr>
-<tr>
-<td>4</td>
-<td>ch_PP-OCRv5_det_mobile</td>
-<td>PyTorch</td>
-<td>MPS</td>
-<td>0.7861</td>
-<td>0.8266</td>
-<td>0.8058</td>
-<td>273.44</td>
-</tr>
-</tbody>
-</table>
-<h2 id="rec">Rec 模型对比<a class="headerlink" href="#rec" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Exp</th>
-<th>模型</th>
-<th>推理框架</th>
-<th>推理引擎</th>
-<th>ExactMatch↑</th>
-<th>CharMatch↑</th>
-<th>Elapse↓(ms)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>ch_PP-OCRv4_rec_mobile</td>
-<td>PyTorch</td>
-<td>CPU</td>
-<td>0.8290</td>
-<td>0.9432</td>
-<td>101.03</td>
-</tr>
-<tr>
-<td>2</td>
-<td>ch_PP-OCRv4_rec_mobile</td>
-<td>PyTorch</td>
-<td>MPS</td>
-<td>0.8290</td>
-<td>0.9432</td>
-<td>163.01</td>
-</tr>
-<tr>
-<td>3</td>
-<td>ch_PP-OCRv5_rec_mobile</td>
-<td>PyTorch</td>
-<td>CPU</td>
-<td>0.7355</td>
-<td>0.9177</td>
-<td>134.61</td>
-</tr>
-<tr>
-<td>4</td>
-<td>ch_PP-OCRv5_rec_mobile</td>
-<td>PyTorch</td>
-<td>MPS</td>
-<td>0.7355</td>
-<td>0.9177</td>
-<td>47.41</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_3">写在最后<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>从以上结果来看，采用 PyTorch MPS 作为计算后端，模型精度维持在误差允许范围内。尽管如此，推理速度的提升并非总是显著，其表现可能与模型内部的具体实现结构有关。有兴趣的读者，可深入探究其背后的原因。</p>
-<p><code>rapidocr</code> 将在 <code>&gt;=v3.7.0</code> 集成 PyTorch MPS，欢迎届时使用和反馈。</p>
-        
+<h3 id="bug">🐛 Bug 修复<a class="headerlink" href="#bug" title="Permanent link">&para;</a></h3>
+<ul>
+<li>改善 IDE 对 lazy package exports（延迟导出包）的支持（由 <a href="https://github.com/SWHL">@SWHL</a> 在 <a href="https://github.com/RapidAI/RapidOCR/commit/096293330eb0e96700e3775ab7b7166cdbb385fd">0962933</a> 提交）</li>
+<li>修复 issue <a href="https://github.com/RapidAI/RapidOCR/issues/695">[#695](https://github.com/RapidAI/RapidOCR/pull/695)</a>（由 <a href="https://github.com/SWHL">@SWHL</a> 在 <a href="https://github.com/RapidAI/RapidOCR/commit/0fa7a9664c61de5a07d4fcb1a81e296f6764a691">0fa7a96</a> 提交）</li>
+<li>修复 issue <a href="https://github.com/RapidAI/RapidOCR/issues/709">[#709](https://github.com/RapidAI/RapidOCR/pull/709)</a>（由 <a href="https://github.com/SWHL">@SWHL</a> 在 <a href="https://github.com/RapidAI/RapidOCR/commit/802c05647f705cb225b637533d303e137fa38922">802c056</a> 提交）</li>
+<li>对齐 PyTorch 版本 PP-OCRv6 Rec tiny 模型的性能表现（由 <a href="https://github.com/SWHL">@SWHL</a> 在 <a href="https://github.com/RapidAI/RapidOCR/commit/b64a46ffd4fc370e4e2c5a10c485cb26e40b8b0f">b64a46f</a> 提交）</li>
+</ul>
+<h3 id="_2">🧪 测试<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>移除 tensorrt 模块中无效的单元测试（由 <a href="https://github.com/SWHL">@SWHL</a> 在 <a href="https://github.com/RapidAI/RapidOCR/commit/c4db82f7aca76404a56c514f62b2d2df735a3288">c4db82f</a> 提交）</li>
+<li>新增 PP-OCRv3 mobile 单元测试（由 <a href="https://github.com/SWHL">@SWHL</a> 在 <a href="https://github.com/RapidAI/RapidOCR/commit/bce0c99be9914e7df9a7590a68a65056a8b78438">bce0c99</a> 提交）</li>
+</ul>
+<h3 id="_3">🎉 贡献者<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/SWHL">@SWHL</a></li>
+</ul>
+<p><strong>完整更新日志</strong>：<a href="https://github.com/RapidAI/RapidOCR/compare/v3.9.1..v3.9.2">3.9.2</a></p>
+
+<!-- Source file information -->
+
 
 
 
@@ -2874,7 +2739,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年4月8日 10:43:06 CST">2026-04-08 10:43:06</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年7月21日 19:10:07 CST">2026-07-21 19:10:07</span>
   </span>
 
     
@@ -2884,7 +2749,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年3月4日 17:27:14 CST">2026-03-04 17:27:14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年7月21日 19:10:07 CST">2026-07-21 19:10:07</span>
   </span>
 
     
@@ -2920,56 +2785,16 @@ You're not viewing the latest version.
     
   </aside>
 
-        <aside class="post-share" aria-label="Share this post">
-  <span class="post-share__title">分享：</span>
-  <div class="post-share__actions">
-    <button
-      class="post-share__button share-wechat"
-      type="button"
-      data-share-wechat
-      aria-label="Share this post via WeChat or WeChat Official Account"
-    >
-      <span class="post-share__icon md-icon" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154m-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4m-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2M563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4m-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6m107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6"/></svg>
-      </span>
-      <span class="post-share__sr">Share this post via WeChat or WeChat Official Account</span>
-    </button>
-    <a
-      class="post-share__button"
-      href="#"
-      data-share-weibo
-      target="_blank"
-      rel="noopener"
-      aria-label="Share this post on Weibo"
-    >
-      <span class="post-share__icon md-icon" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3M214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2m143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116M347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3m-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5m-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34m32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9"/></svg>
-      </span>
-      <span class="post-share__sr">Share this post on Weibo</span>
-    </a>
-    <a
-      class="post-share__button"
-      href="#"
-      data-share-x
-      target="_blank"
-      rel="noopener"
-      aria-label="分享到 X"
-    >
-      <span class="post-share__icon md-icon" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
-      </span>
-      <span class="post-share__sr">Share this post on X</span>
-    </a>
-  </div>
-</aside>
-        
 
-  
-    
+<!-- Was this page helpful? -->
+
+
   
 
 
-        
+
+<!-- Comment system -->
+
 <h2 id="__comments">评论</h2>
 <!-- Insert generated snippet here -->
 
@@ -3025,10 +2850,10 @@ You're not viewing the latest version.
     })
 </script>
 
-      
-    </article>
-  </div>
-
+                
+              </article>
+            </div>
+          
           
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
@@ -3079,8 +2904,8 @@ You're not viewing the latest version.
         <!-- Link to previous page -->
         
         
-        <a href="../../../02/28/coreml-vs-cpu-provider-onnxruntime-rapidocr/" class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 基于 ONNX Runtime 来看 CoreML Provider 和 CPU Provider 在 RapidOCR 表现">
+        <a href="../../install_usage/rapidocr_api/changelog/" class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: 更新日志">
             <div class="md-footer__button md-icon">
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -3090,7 +2915,7 @@ You're not viewing the latest version.
                     上一页
                 </span>
                 <div class="md-ellipsis">
-                    基于 ONNX Runtime 来看 CoreML Provider 和 CPU Provider 在 RapidOCR 表现
+                    更新日志
                 </div>
             </div>
         </a>
@@ -3099,14 +2924,14 @@ You're not viewing the latest version.
         <!-- Link to next page -->
         
         
-        <a href="../../24/rapidocr-pp-lcnet-textline-cls/" class="md-footer__link md-footer__link--next"
-            aria-label="下一页: RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录">
+        <a href="../v3.9.1/" class="md-footer__link md-footer__link--next"
+            aria-label="下一页: v3.9.1">
             <div class="md-footer__title">
                 <span class="md-footer__direction">
                     下一页
                 </span>
                 <div class="md-ellipsis">
-                    RapidOCR 集成 PP-LCNet textline 文本行方向分类模型记录
+                    v3.9.1
                 </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3217,12 +3042,12 @@ You're not viewing the latest version.
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["announce.dismiss", "content.tooltips", "content.code.copy", "content.tabs.link", "content.action.edit", "content.action.view", "content.footnote.tooltips", "navigation.expand", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.tooltips", "content.code.copy", "content.tabs.link", "content.action.edit", "content.action.view", "content.footnote.tooltips", "navigation.expand", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="../../../../../javascripts/extra.js"></script>
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

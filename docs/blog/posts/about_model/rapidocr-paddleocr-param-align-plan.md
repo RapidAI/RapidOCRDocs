@@ -471,8 +471,8 @@ from rapidocr import OCRVersion, RapidOCR
 engine = RapidOCR(
     params={
         "Det.ocr_version": OCRVersion.PPOCRV6,
-        "Det.std": [0.5, 0.5, 0.5],
-        "Det.mean": [0.5, 0.5, 0.5],
+        "Det.std": [0.229, 0.224, 0.225],
+        "Det.mean": [0.485, 0.456, 0.406],
         "Det.limit_side_len": 64,
         "Det.use_dilation": False,
     },

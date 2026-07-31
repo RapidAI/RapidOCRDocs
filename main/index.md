@@ -43,6 +43,7 @@ RapidOCR 是一款完全开源免费、支持离线快速部署的多平台多�
 ---
 config:
   fontFamily: "LXGW WenKai Screen"
+  look: handDrawn
 ---
 flowchart LR
     subgraph Step

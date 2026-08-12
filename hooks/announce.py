@@ -179,8 +179,24 @@ def _blog_slug(meta: dict[str, Any], title: str) -> str:
     return DEFAULT_POST_SLUGIFY(title, "-")
 
 
+def _localized_suffixes(config) -> tuple[str, ...]:
+    """返回 i18n 插件的翻译文件后缀，例如 '.en.md'。
+
+    Return the file suffixes used by the i18n plugin for translated pages, such
+    as '.en.md'. Announcements are built from the default language only, so the
+    translated copies must not be treated as separate articles.
+    """
+    for plugin in config.get("plugins", {}).values():
+        languages = getattr(getattr(plugin, "config", None), "languages", None)
+        if not languages:
+            continue
+        return tuple(f".{language.locale}.md" for language in languages)
+    return ()
+
+
 def _iter_articles(config):
     nav_titles = _collect_nav_titles(config.get("nav", []))
+    localized_suffixes = _localized_suffixes(config)
 
     for path in sorted(DOCS_DIR.rglob("*.md")):
         src_uri = path.relative_to(DOCS_DIR).as_posix()
@@ -188,6 +204,8 @@ def _iter_articles(config):
         if "drafts" in relative_parts:
             continue
         if path.name == "index.md" or src_uri in EXCLUDED_PAGES:
+            continue
+        if localized_suffixes and src_uri.endswith(localized_suffixes):
             continue
 
         meta, markdown = _load_page(path)

@@ -111,6 +111,33 @@ plugins:
           site_description:
             RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java
             and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.
+          nav_translations:
+            概览: Overview
+            快速开始: Quick Start
+            在线 demo: Online Demo
+            模型列表: Model List
+            安装及使用: Installation & Usage
+            安装: Installation
+            使用: Usage
+            参数介绍: Parameters
+            打包: Packaging
+            如何自行构建指定版本的 rapidocr whl 包: Build a Custom rapidocr Wheel
+            使用不同推理引擎: Using Different Inference Engines
+            使用本地模型推理: Using Local Models
+            使用 PP-OCRv5 模型: Using PP-OCRv5 Models
+            导出为 markdown 格式: Export to Markdown
+            桌面版使用教程: Desktop App Guide
+            Nuitka 打包: Nuitka Packaging
+            PyInstaller 打包: PyInstaller Packaging
+            多语言版本部署: Multi-language Deployment
+            更新日志: Changelog
+            贡献指南: Contributing
+            常见问题: FAQ
+            周边项目: Related Projects
+            博客: Blog
+            交流群: Community
+            赞助: Sponsor
+            商业支持: Commercial Support
   - git-committers:
       repository: RapidAI/RapidOCRDocs
       branch: main

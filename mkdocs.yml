@@ -92,6 +92,25 @@ plugins:
   - tags
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  # 多语言支持：未翻译的页面会自动回退到中文版本
+  # Multi-language support: untranslated pages fall back to the Chinese version
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: zh
+          name: 简体中文
+          default: true
+          build: true
+        - locale: en
+          name: English
+          build: true
+          site_name: RapidOCR Documentation
+          site_description:
+            RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java
+            and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.
   - git-committers:
       repository: RapidAI/RapidOCRDocs
       branch: main
@@ -112,6 +131,7 @@ plugins:
         - "install_usage/**"
 
 hooks:
+  - hooks/i18n_blog_compat.py
   - hooks/announce.py
   - hooks/expiry.py
   - hooks/change_copyright.py

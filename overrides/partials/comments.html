@@ -1,6 +1,7 @@
 {% if page.meta.comments %}
 <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
 <!-- Insert generated snippet here -->
+{% set giscus_language = {"zh": "zh-CN", "en": "en"}.get(config.theme.language | default("zh", true), "zh-CN") %}
 
 <script src="https://giscus.app/client.js"
     data-repo="RapidAI/RapidOCR"
@@ -13,7 +14,7 @@
     data-emit-metadata="0"
     data-input-position="top"
     data-theme="https://cdn.jsdelivr.net/gh/L33Z22L11/giscus-theme/lxgw-wenkai.css"
-    data-lang="zh-CN"
+    data-lang="{{ giscus_language }}"
     data-loading="lazy" crossorigin="anonymous" async>
     </script>
 

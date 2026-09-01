@@ -6,6 +6,13 @@ on:
       - main
 permissions:
   contents: write
+
+# mike updates the shared gh-pages branch. Queue deployments so two runs
+# cannot fetch the same revision and then race while pushing it.
+concurrency:
+  group: docs-deploy-gh-pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -31,8 +38,8 @@ jobs:
             mkdocs-material-
       - run: pip install -r requirements.txt
       - run: |
-          git fetch origin gh-pages --depth=1
           mkdocs build
           ls -la site/
+          git fetch origin gh-pages --depth=1
           mike deploy --push --update-aliases main latest
           mike set-default --push latest

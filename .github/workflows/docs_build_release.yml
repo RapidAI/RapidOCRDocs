@@ -6,6 +6,12 @@ on:
 
 permissions:
   contents: write
+
+# Keep release and develop deployments from racing on the shared gh-pages branch.
+concurrency:
+  group: docs-deploy-gh-pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

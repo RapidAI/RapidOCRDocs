@@ -8,13 +8,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/mainen/"/>
     </url>
     <url>
-        <loc>https://rapidai.github.io/RapidOCRDocs/main/ai/</loc>
-        <lastmod>2026-09-01</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://rapidai.github.io/RapidOCRDocs/main/ai/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/mainen/ai/"/>
-    </url>
-    <url>
         <loc>https://rapidai.github.io/RapidOCRDocs/main/business_support/</loc>
         <lastmod>2026-09-01</lastmod>
         <changefreq>daily</changefreq>
@@ -657,13 +650,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/main/en/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://rapidai.github.io/RapidOCRDocs/main"/>
-    </url>
-    <url>
-        <loc>https://rapidai.github.io/RapidOCRDocs/main/en/ai/</loc>
-        <lastmod>2026-09-01</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/main/en/ai/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://rapidai.github.io/RapidOCRDocs/mainai/"/>
     </url>
     <url>
         <loc>https://rapidai.github.io/RapidOCRDocs/main/en/business_support/</loc>

@@ -43,8 +43,12 @@ You're not viewing the latest version.
   {% set page_og_type = "article" %}
 {% endif %}
 {% set project_image = "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png" %}
+{# 语言标签随 i18n 插件当前构建的语言变化 / Language tags follow the language currently built by the i18n plugin #}
+{% set site_language = config.theme.language | default("zh", true) %}
+{% set page_language = {"zh": "zh-CN", "en": "en", "tr": "tr"}.get(site_language, site_language) %}
+{% set page_og_locale = {"zh": "zh_CN", "en": "en_US", "tr": "tr_TR"}.get(site_language, site_language) %}
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="{{ page_og_locale }}">
 <meta property="og:type" content="{{ page_og_type }}">
 <meta property="og:site_name" content="{{ config.site_name }}">
 <meta property="og:title" content="{{ page_title }}">
@@ -69,7 +73,7 @@ You're not viewing the latest version.
   "headline": page_title,
   "description": page_description,
   "url": page_url,
-  "inLanguage": "zh-CN",
+  "inLanguage": page_language,
   "isPartOf": {
     "@type": "WebSite",
     "name": config.site_name,
@@ -109,7 +113,7 @@ You're not viewing the latest version.
     data-project-logo="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png"
     data-button-text="Ask AI"
     data-bot-protection-mechanism="hcaptcha"
-    data-language="zh"
+    data-language="{{ site_language }}"
     data-scale-factor="0.8"
     data-color-scheme="auto"
     data-color-scheme-selector="[data-md-color-scheme='slate']"

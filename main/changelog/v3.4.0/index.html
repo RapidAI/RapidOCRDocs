@@ -109,6 +109,10 @@
   
 
 
+
+
+
+
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
@@ -298,6 +302,32 @@ You're not viewing the latest version.
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../en/changelog/v3.4.0/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -2816,6 +2846,14 @@ You're not viewing the latest version.
 
 
 
+    <div class="admonition warning">
+        <p class="admonition-title">Warning</p>
+        <p>
+            本文档最后更新于 2026-03-02，
+            已超过 180 天未更新，内容可能已经过时，阅读注意甄别。
+        </p>
+    </div>
+
 
 <!-- Page content -->
 <h3 id="_1">新增功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
@@ -2839,16 +2877,16 @@ You're not viewing the latest version.
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="s2">&quot;Rec.lang_type&quot;</span><span class="p">:</span> <span class="n">LangRec</span><span class="o">.</span><span class="n">EL</span><span class="p">,</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="s2">&quot;Rec.model_type&quot;</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">MOBILE</span><span class="p">,</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="s2">&quot;Rec.ocr_version&quot;</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV5</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="s2">"Rec.lang_type"</span><span class="p">:</span> <span class="n">LangRec</span><span class="o">.</span><span class="n">EL</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="s2">"Rec.model_type"</span><span class="p">:</span> <span class="n">ModelType</span><span class="o">.</span><span class="n">MOBILE</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="s2">"Rec.ocr_version"</span><span class="p">:</span> <span class="n">OCRVersion</span><span class="o">.</span><span class="n">PPOCRV5</span><span class="p">,</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="p">}</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">)</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/el_rec.jpg?raw=true&quot;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://github.com/RapidAI/RapidOCR/blob/main/python/tests/test_files/el_rec.jpg?raw=true"</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">,</span> <span class="n">use_det</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_cls</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_rec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">"vis_result.jpg"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_2">改进优化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <h4 id="det-cls-rec-issue-544httpsgithubcomrapidairapidocrpull544">统一 det, cls 和 rec 各个阶段统计运行时间的范围 (issue <a href="https://github.com/RapidAI/RapidOCR/issues/544">[#544](https://github.com/RapidAI/RapidOCR/pull/544)</a>)<a class="headerlink" href="#det-cls-rec-issue-544httpsgithubcomrapidairapidocrpull544" title="Permanent link">&para;</a></h4>
@@ -2867,13 +2905,13 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Global.log_level&quot;</span><span class="p">:</span> <span class="s2">&quot;critical&quot;</span><span class="p">})</span>  <span class="c1"># 注意这里改为critical，就不会打印日志了</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"Global.log_level"</span><span class="p">:</span> <span class="s2">"critical"</span><span class="p">})</span>  <span class="c1"># 注意这里改为critical，就不会打印日志了</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516"</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">"vis_result.jpg"</span><span class="p">)</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="bug">Bug 修复<a class="headerlink" href="#bug" title="Permanent link">&para;</a></h3>

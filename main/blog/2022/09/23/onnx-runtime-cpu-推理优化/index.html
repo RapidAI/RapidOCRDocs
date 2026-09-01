@@ -109,6 +109,10 @@
   
 
 
+
+
+
+
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
@@ -298,6 +302,32 @@ You're not viewing the latest version.
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../../../en/blog/2022/09/23/onnx-runtime-cpu-%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -2824,17 +2854,17 @@ You're not viewing the latest version.
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="nd">@profile</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">onnx_prediction</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">input_data</span><span class="p">):</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="n">ort_sess</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">InferenceSession</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">sess_options</span><span class="o">=</span><span class="n">sess_options</span><span class="p">)</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>    <span class="n">preds</span> <span class="o">=</span> <span class="n">ort_sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">output_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;predictions&quot;</span><span class="p">],</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>                            <span class="n">input_feed</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_1&quot;</span><span class="p">:</span> <span class="n">input_data</span><span class="p">})[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>    <span class="n">preds</span> <span class="o">=</span> <span class="n">ort_sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">output_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"predictions"</span><span class="p">],</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>                            <span class="n">input_feed</span><span class="o">=</span><span class="p">{</span><span class="s2">"input_1"</span><span class="p">:</span> <span class="n">input_data</span><span class="p">})[</span><span class="mi">0</span><span class="p">]</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>    <span class="k">return</span> <span class="n">preds</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="n">sess_options</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">SessionOptions</span><span class="p">()</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="n">sess_options</span><span class="o">.</span><span class="n">enable_cpu_mem_arena</span> <span class="o">=</span> <span class="kc">False</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;enable_cpu_memory_area_example/input.npy&#39;</span><span class="p">)</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;input_data shape: </span><span class="si">{</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;enable_cpu_memory_area_example/model.onnx&#39;</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="n">input_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'enable_cpu_memory_area_example/input.npy'</span><span class="p">)</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'input_data shape: </span><span class="si">{</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s1">'enable_cpu_memory_area_example/model.onnx'</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="n">onnx_prediction</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -2862,8 +2892,8 @@ You're not viewing the latest version.
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="m">7</span><span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">   </span>@profile
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="m">8</span><span class="w">                                         </span>def<span class="w"> </span>onnx_prediction<span class="o">(</span>model_path,<span class="w"> </span>input_data<span class="o">)</span>:
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="m">9</span><span class="w">     </span><span class="m">77</span>.2<span class="w"> </span>MiB<span class="w">      </span><span class="m">8</span>.1<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">ort_sess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort.InferenceSession<span class="o">(</span>model_path,<span class="w"> </span><span class="nv">sess_options</span><span class="o">=</span>sess_options<span class="o">)</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="m">10</span><span class="w">     </span><span class="m">77</span>.2<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">preds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort_sess.run<span class="o">(</span><span class="nv">output_names</span><span class="o">=[</span><span class="s2">&quot;predictions&quot;</span><span class="o">]</span>,
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="m">11</span><span class="w">   </span><span class="m">5695</span>.5<span class="w"> </span>MiB<span class="w">   </span><span class="m">5618</span>.3<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">                            </span><span class="nv">input_feed</span><span class="o">={</span><span class="s2">&quot;input_1&quot;</span>:<span class="w"> </span>input_data<span class="o">})[</span><span class="m">0</span><span class="o">]</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="m">10</span><span class="w">     </span><span class="m">77</span>.2<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">preds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort_sess.run<span class="o">(</span><span class="nv">output_names</span><span class="o">=[</span><span class="s2">"predictions"</span><span class="o">]</span>,
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="m">11</span><span class="w">   </span><span class="m">5695</span>.5<span class="w"> </span>MiB<span class="w">   </span><span class="m">5618</span>.3<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">                            </span><span class="nv">input_feed</span><span class="o">={</span><span class="s2">"input_1"</span>:<span class="w"> </span>input_data<span class="o">})[</span><span class="m">0</span><span class="o">]</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="m">12</span><span class="w">   </span><span class="m">5695</span>.5<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="k">return</span><span class="w"> </span>preds
 </span></code></pre></div></td></tr></table></div>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">enable_cpu_mem_arena=False</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
@@ -2888,8 +2918,8 @@ You're not viewing the latest version.
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="m">7</span><span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">     </span><span class="m">69</span>.1<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">   </span>@profile
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="m">8</span><span class="w">                                         </span>def<span class="w"> </span>onnx_prediction<span class="o">(</span>model_path,<span class="w"> </span>input_data<span class="o">)</span>:
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="m">9</span><span class="w">     </span><span class="m">76</span>.9<span class="w"> </span>MiB<span class="w">      </span><span class="m">7</span>.8<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">ort_sess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort.InferenceSession<span class="o">(</span>model_path,<span class="w"> </span><span class="nv">sess_options</span><span class="o">=</span>sess_options<span class="o">)</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="m">10</span><span class="w">     </span><span class="m">76</span>.9<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">preds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort_sess.run<span class="o">(</span><span class="nv">output_names</span><span class="o">=[</span><span class="s2">&quot;predictions&quot;</span><span class="o">]</span>,
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="m">11</span><span class="w">     </span><span class="m">82</span>.1<span class="w"> </span>MiB<span class="w">      </span><span class="m">5</span>.3<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">                            </span><span class="nv">input_feed</span><span class="o">={</span><span class="s2">&quot;input_1&quot;</span>:<span class="w"> </span>input_data<span class="o">})[</span><span class="m">0</span><span class="o">]</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="m">10</span><span class="w">     </span><span class="m">76</span>.9<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="nv">preds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ort_sess.run<span class="o">(</span><span class="nv">output_names</span><span class="o">=[</span><span class="s2">"predictions"</span><span class="o">]</span>,
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="m">11</span><span class="w">     </span><span class="m">82</span>.1<span class="w"> </span>MiB<span class="w">      </span><span class="m">5</span>.3<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">                            </span><span class="nv">input_feed</span><span class="o">={</span><span class="s2">"input_1"</span>:<span class="w"> </span>input_data<span class="o">})[</span><span class="m">0</span><span class="o">]</span>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="m">12</span><span class="w">     </span><span class="m">82</span>.1<span class="w"> </span>MiB<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>MiB<span class="w">           </span><span class="m">1</span><span class="w">       </span><span class="k">return</span><span class="w"> </span>preds
 </span></code></pre></div></td></tr></table></div>
 </details>

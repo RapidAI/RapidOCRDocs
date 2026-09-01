@@ -109,6 +109,10 @@
   
 
 
+
+
+
+
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
@@ -298,6 +302,32 @@ You're not viewing the latest version.
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../en/install_usage/rapidocr/how_to_use_infer_engine/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -2772,11 +2802,11 @@ You're not viewing the latest version.
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">()</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -2802,13 +2832,13 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-3-8">8</a></span>
 <span class="normal"><a href="#__codelineno-3-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;EngineConfig.onnxruntime.use_cann&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"EngineConfig.onnxruntime.use_cann"</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516&quot;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516"</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">"vis_result.jpg"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -2837,13 +2867,13 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 <span class="normal"><a href="#__codelineno-5-8">8</a></span>
 <span class="normal"><a href="#__codelineno-5-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;EngineConfig.onnxruntime.use_dml&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"EngineConfig.onnxruntime.use_dml"</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516&quot;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516"</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">"vis_result.jpg"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -2872,13 +2902,13 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 <span class="normal"><a href="#__codelineno-7-8">8</a></span>
 <span class="normal"><a href="#__codelineno-7-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rapidocr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RapidOCR</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;EngineConfig.onnxruntime.use_coreml&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"EngineConfig.onnxruntime.use_coreml"</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516&quot;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://img1.baidu.com/it/u=3619974146,1266987475&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=516"</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">&quot;vis_result.jpg&quot;</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">"vis_result.jpg"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -2929,17 +2959,17 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">OPENVINO</span><span class="p">,</span>
-</span></span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">OPENVINO</span><span class="p">,</span>
-</span></span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">OPENVINO</span><span class="p">,</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="hll">        <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">OPENVINO</span><span class="p">,</span>
+</span></span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="hll">        <span class="s2">"Cls.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">OPENVINO</span><span class="p">,</span>
+</span></span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="hll">        <span class="s2">"Rec.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">OPENVINO</span><span class="p">,</span>
 </span></span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a>    <span class="p">}</span>
 </span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">)</span>
 </span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a>
-</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
@@ -2992,17 +3022,17 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">MNN</span><span class="p">,</span>
-</span></span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">MNN</span><span class="p">,</span>
-</span></span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">MNN</span><span class="p">,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="hll">        <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">MNN</span><span class="p">,</span>
+</span></span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="hll">        <span class="s2">"Cls.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">MNN</span><span class="p">,</span>
+</span></span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="hll">        <span class="s2">"Rec.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">MNN</span><span class="p">,</span>
 </span></span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a>    <span class="p">}</span>
 </span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="p">)</span>
 </span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14"></a>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -3057,17 +3087,17 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
-</span></span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
-</span></span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="hll">        <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span></span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="hll">        <span class="s2">"Cls.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span></span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="hll">        <span class="s2">"Rec.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
 </span></span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a>    <span class="p">}</span>
 </span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="p">)</span>
 </span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14"></a>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -3089,17 +3119,17 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span></span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span></span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="hll">    <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
-</span></span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="hll">    <span class="s2">&quot;EngineConfig.paddle.use_cuda&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用PaddlePaddle GPU版推理</span>
-</span></span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="hll">    <span class="s2">&quot;EngineConfig.paddle.cuda_ep_cfg.device_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定GPU id</span>
+</span></span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="hll">    <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span></span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="hll">    <span class="s2">"EngineConfig.paddle.use_cuda"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用PaddlePaddle GPU版推理</span>
+</span></span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="hll">    <span class="s2">"EngineConfig.paddle.cuda_ep_cfg.device_id"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定GPU id</span>
 </span></span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="hll">    <span class="p">}</span>
 </span></span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="hll"><span class="p">)</span>
 </span></span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a>
-</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -3125,17 +3155,17 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span></span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span></span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="hll">    <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
-</span></span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="hll">    <span class="s2">&quot;EngineConfig.paddle.use_npu&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用PaddlePaddle NPU版推理</span>
-</span></span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="hll">    <span class="s2">&quot;EngineConfig.paddle.npu_ep_cfg.device_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定NPU id</span>
+</span></span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="hll">    <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">PADDLE</span><span class="p">,</span>
+</span></span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="hll">    <span class="s2">"EngineConfig.paddle.use_npu"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用PaddlePaddle NPU版推理</span>
+</span></span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="hll">    <span class="s2">"EngineConfig.paddle.npu_ep_cfg.device_id"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定NPU id</span>
 </span></span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="hll">    <span class="p">}</span>
 </span></span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="hll"><span class="p">)</span>
 </span></span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10"></a>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14"></a>
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -3191,17 +3221,17 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span></span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a>    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a>        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a>        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a>        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a>        <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a>        <span class="s2">"Cls.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a>        <span class="s2">"Rec.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
 </span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8"></a>    <span class="p">}</span>
 </span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="p">)</span>
 </span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10"></a>
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14"></a>
-</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -3225,19 +3255,19 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span></span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span></span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.use_cuda&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用 torch GPU 版推理</span>
-</span></span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.cuda_ep_cfg.device_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定GPU id</span>
+</span></span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="hll">        <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="hll">        <span class="s2">"Cls.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="hll">        <span class="s2">"Rec.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="hll">        <span class="s2">"EngineConfig.torch.use_cuda"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用 torch GPU 版推理</span>
+</span></span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="hll">        <span class="s2">"EngineConfig.torch.cuda_ep_cfg.device_id"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定GPU id</span>
 </span></span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10"></a>    <span class="p">}</span>
 </span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11"></a><span class="p">)</span>
 </span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12"></a>
-</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16"></a>
-</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -3271,19 +3301,19 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span></span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span></span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.use_npu&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用torch NPU版推理</span>
-</span></span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.npu_ep_cfg.device_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定NPU id</span>
+</span></span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="hll">        <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="hll">        <span class="s2">"Cls.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="hll">        <span class="s2">"Rec.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="hll">        <span class="s2">"EngineConfig.torch.use_npu"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用torch NPU版推理</span>
+</span></span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="hll">        <span class="s2">"EngineConfig.torch.npu_ep_cfg.device_id"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定NPU id</span>
 </span></span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="hll">    <span class="p">}</span>
 </span></span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11"></a><span class="hll"><span class="p">)</span>
 </span></span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12"></a>
-</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16"></a>
-</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -3307,14 +3337,14 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 <span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-22-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PyTorch 版本: </span><span class="si">{</span><span class="n">torch</span><span class="o">.**</span><span class="n">version</span><span class="o">**</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MPS 可用性: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">mps</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"PyTorch 版本: </span><span class="si">{</span><span class="n">torch</span><span class="o">.**</span><span class="n">version</span><span class="o">**</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"MPS 可用性: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">mps</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a>
 </span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">mps</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a>    <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;mps&quot;</span><span class="p">)</span>
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ 已成功使用 Apple GPU (MPS): </span><span class="si">{</span><span class="n">device</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a>    <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"mps"</span><span class="p">)</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✅ 已成功使用 Apple GPU (MPS): </span><span class="si">{</span><span class="n">device</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="k">else</span><span class="p">:</span>
-</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ 请检查你的 PyTorch 安装是否正确，可能需要重新安装支持 MPS 的版本。&quot;</span><span class="p">)</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"❌ 请检查你的 PyTorch 安装是否正确，可能需要重新安装支持 MPS 的版本。"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>输出以下类似结果，表明机器可以使用 Apple GPU：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
@@ -3345,18 +3375,18 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a>
 </span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span></span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span></span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
-</span></span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="hll">        <span class="s2">&quot;EngineConfig.torch.use_mps&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用torch MPS版推理</span>
+</span></span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="hll">        <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="hll">        <span class="s2">"Cls.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="hll">        <span class="s2">"Rec.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TORCH</span><span class="p">,</span>
+</span></span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="hll">        <span class="s2">"EngineConfig.torch.use_mps"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># 使用torch MPS版推理</span>
 </span></span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="hll">    <span class="p">}</span>
 </span></span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="hll"><span class="p">)</span>
 </span></span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="hll">
-</span></span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span></span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15"></a>
-</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -3425,19 +3455,19 @@ ONNX Runtime 官方相关文档：<a href="https://onnxruntime.ai/docs/execution
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2"></a>
 </span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="hll"><span class="n">engine</span> <span class="o">=</span> <span class="n">RapidOCR</span><span class="p">(</span>
 </span></span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="hll">    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span></span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="hll">        <span class="s2">&quot;Det.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
-</span></span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="hll">        <span class="s2">&quot;Cls.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
-</span></span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="hll">        <span class="s2">&quot;Rec.engine_type&quot;</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
-</span></span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="hll">        <span class="s2">&quot;EngineConfig.tensorrt.use_fp16&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-</span></span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="hll">        <span class="s2">&quot;EngineConfig.tensorrt.device_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定GPU id</span>
+</span></span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="hll">        <span class="s2">"Det.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
+</span></span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="hll">        <span class="s2">"Cls.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
+</span></span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="hll">        <span class="s2">"Rec.engine_type"</span><span class="p">:</span> <span class="n">EngineType</span><span class="o">.</span><span class="n">TENSORRT</span><span class="p">,</span>
+</span></span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="hll">        <span class="s2">"EngineConfig.tensorrt.use_fp16"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="hll">        <span class="s2">"EngineConfig.tensorrt.device_id"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 指定GPU id</span>
 </span></span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10"></a>    <span class="p">}</span>
 </span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11"></a><span class="p">)</span>
 </span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12"></a>
-</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg&quot;</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13"></a><span class="n">img_url</span> <span class="o">=</span> <span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span>
 </span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14"></a><span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
 </span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16"></a>
-</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">&#39;vis_result.jpg&#39;</span><span class="p">)</span>
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s1">'vis_result.jpg'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>

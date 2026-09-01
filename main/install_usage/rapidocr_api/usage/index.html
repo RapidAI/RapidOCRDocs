@@ -109,6 +109,10 @@
   
 
 
+
+
+
+
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
@@ -298,6 +302,32 @@ You're not viewing the latest version.
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../en/install_usage/rapidocr_api/usage/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -2894,7 +2924,7 @@ You're not viewing the latest version.
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nb">cd</span><span class="w"> </span>api
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># build方式1：使用宿主机的网络</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="o">=</span><span class="s2">&quot;rapidocr_api:0.1.4&quot;</span><span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>.
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="o">=</span><span class="s2">"rapidocr_api:0.1.4"</span><span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>.
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1"># build方式2：使用宿主机上的代理</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>rapidocr_api:0.1.4<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">HTTP_PROXY</span><span class="o">=</span>http://127.0.0.1:8888<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">HTTPS_PROXY</span><span class="o">=</span>http://127.0.0.1:8888<span class="w"> </span>.
@@ -2957,11 +2987,11 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-12-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:9003/ocr&#39;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">&#39;tests/test_files/ch_en_num.jpg&#39;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">'http://localhost:9003/ocr'</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">'tests/test_files/ch_en_num.jpg'</span>
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>    <span class="n">file_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;image_file&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s1">&#39;image/png&#39;</span><span class="p">)}</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>    <span class="n">file_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'image_file'</span><span class="p">:</span> <span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s1">'image/png'</span><span class="p">)}</span>
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">file_dict</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 </span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a>
 </span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
@@ -2983,13 +3013,13 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-13-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:9003/ocr&#39;</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">&#39;tests/test_files/ch_en_num.jpg&#39;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">'http://localhost:9003/ocr'</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">'tests/test_files/ch_en_num.jpg'</span>
 </span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fa</span><span class="p">:</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fa</span><span class="p">:</span>
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a>    <span class="n">img_str</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">fa</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;image_data&#39;</span><span class="p">:</span> <span class="n">img_str</span><span class="p">}</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'image_data'</span><span class="p">:</span> <span class="n">img_str</span><span class="p">}</span>
 </span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 </span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a>
 </span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
@@ -3006,11 +3036,11 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-14-8">8</a></span>
 <span class="normal"><a href="#__codelineno-14-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:9003/ocr&#39;</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">&#39;tests/test_files/ch_en_num.jpg&#39;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">'http://localhost:9003/ocr'</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">'tests/test_files/ch_en_num.jpg'</span>
 </span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a>    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;use_det&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;use_cls&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;use_rec&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a>    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"use_det"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"use_cls"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"use_rec"</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 </span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">file_dict</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 </span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </span></code></pre></div></td></tr></table></div>
@@ -3031,15 +3061,15 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-15-10">10</a></span>
 <span class="normal"><a href="#__codelineno-15-11">11</a></span>
 <span class="normal"><a href="#__codelineno-15-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">{</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w"> </span><span class="nt">&quot;0&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="nt">&quot;rec_txt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;香港深圳抽血，&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">识别的文本</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="nt">&quot;dt_boxes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">依次为左上角</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">右上角</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">右下角</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">左下角</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w"> </span><span class="nt">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"香港深圳抽血，"</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">识别的文本</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">依次为左上角</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">右上角</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">右下角</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">左下角</span>
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">   </span><span class="p">[</span><span class="mi">265</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">],</span>
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">   </span><span class="p">[</span><span class="mi">472</span><span class="p">,</span><span class="w"> </span><span class="mi">231</span><span class="p">],</span>
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">   </span><span class="p">[</span><span class="mi">431</span><span class="p">,</span><span class="w"> </span><span class="mi">271</span><span class="p">],</span>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">   </span><span class="p">[</span><span class="mi">223</span><span class="p">,</span><span class="w"> </span><span class="mi">59</span><span class="p">]</span>
 </span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">  </span><span class="p">],</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">  </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.8176&quot;</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">置信度</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">  </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.8176"</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">置信度</span>
 </span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
@@ -3087,45 +3117,45 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-16-40">40</a></span>
 <span class="normal"><a href="#__codelineno-16-41">41</a></span>
 <span class="normal"><a href="#__codelineno-16-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">{</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">    </span><span class="nt">&quot;0&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">        </span><span class="nt">&quot;rec_txt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8月26日！&quot;</span><span class="p">,</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">        </span><span class="nt">&quot;dt_boxes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">    </span><span class="nt">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">        </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8月26日！"</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">        </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">            </span><span class="p">[</span><span class="mf">333.0</span><span class="p">,</span><span class="w"> </span><span class="mf">72.0</span><span class="p">],</span>
 </span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">            </span><span class="p">[</span><span class="mf">545.0</span><span class="p">,</span><span class="w"> </span><span class="mf">40.0</span><span class="p">],</span>
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">            </span><span class="p">[</span><span class="mf">552.0</span><span class="p">,</span><span class="w"> </span><span class="mf">90.0</span><span class="p">],</span>
 </span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">            </span><span class="p">[</span><span class="mf">341.0</span><span class="p">,</span><span class="w"> </span><span class="mf">122.0</span><span class="p">]</span>
 </span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">        </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.7342&quot;</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">        </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.7342"</span>
 </span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="w">    </span><span class="nt">&quot;1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="w">        </span><span class="nt">&quot;rec_txt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;澳洲名校招生信息&quot;</span><span class="p">,</span>
-</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="w">        </span><span class="nt">&quot;dt_boxes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="w">    </span><span class="nt">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="w">        </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"澳洲名校招生信息"</span><span class="p">,</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="w">        </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="w">            </span><span class="p">[</span><span class="mf">266.0</span><span class="p">,</span><span class="w"> </span><span class="mf">163.0</span><span class="p">],</span>
 </span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">            </span><span class="p">[</span><span class="mf">612.0</span><span class="p">,</span><span class="w"> </span><span class="mf">116.0</span><span class="p">],</span>
 </span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="w">            </span><span class="p">[</span><span class="mf">619.0</span><span class="p">,</span><span class="w"> </span><span class="mf">163.0</span><span class="p">],</span>
 </span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="w">            </span><span class="p">[</span><span class="mf">272.0</span><span class="p">,</span><span class="w"> </span><span class="mf">210.0</span><span class="p">]</span>
 </span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="w">        </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.8262&quot;</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="w">        </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.8262"</span>
 </span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22"></a><span class="w">    </span><span class="nt">&quot;2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23"></a><span class="w">        </span><span class="nt">&quot;rec_txt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;解读！！&quot;</span><span class="p">,</span>
-</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24"></a><span class="w">        </span><span class="nt">&quot;dt_boxes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22"></a><span class="w">    </span><span class="nt">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23"></a><span class="w">        </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"解读！！"</span><span class="p">,</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24"></a><span class="w">        </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25"></a><span class="w">            </span><span class="p">[</span><span class="mf">341.0</span><span class="p">,</span><span class="w"> </span><span class="mf">187.0</span><span class="p">],</span>
 </span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26"></a><span class="w">            </span><span class="p">[</span><span class="mf">595.0</span><span class="p">,</span><span class="w"> </span><span class="mf">179.0</span><span class="p">],</span>
 </span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27"></a><span class="w">            </span><span class="p">[</span><span class="mf">598.0</span><span class="p">,</span><span class="w"> </span><span class="mf">288.0</span><span class="p">],</span>
 </span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28"></a><span class="w">            </span><span class="p">[</span><span class="mf">344.0</span><span class="p">,</span><span class="w"> </span><span class="mf">296.0</span><span class="p">]</span>
 </span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30"></a><span class="w">        </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.6152&quot;</span>
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30"></a><span class="w">        </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.6152"</span>
 </span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32"></a><span class="w">    </span><span class="nt">&quot;3&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33"></a><span class="w">        </span><span class="nt">&quot;rec_txt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rules...&quot;</span><span class="p">,</span>
-</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34"></a><span class="w">        </span><span class="nt">&quot;dt_boxes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32"></a><span class="w">    </span><span class="nt">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33"></a><span class="w">        </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rules..."</span><span class="p">,</span>
+</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34"></a><span class="w">        </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35"></a><span class="w">            </span><span class="p">[</span><span class="mf">446.0</span><span class="p">,</span><span class="w"> </span><span class="mf">321.0</span><span class="p">],</span>
 </span><span id="__span-16-36"><a id="__codelineno-16-36" name="__codelineno-16-36"></a><span class="w">            </span><span class="p">[</span><span class="mf">560.0</span><span class="p">,</span><span class="w"> </span><span class="mf">326.0</span><span class="p">],</span>
 </span><span id="__span-16-37"><a id="__codelineno-16-37" name="__codelineno-16-37"></a><span class="w">            </span><span class="p">[</span><span class="mf">559.0</span><span class="p">,</span><span class="w"> </span><span class="mf">352.0</span><span class="p">],</span>
 </span><span id="__span-16-38"><a id="__codelineno-16-38" name="__codelineno-16-38"></a><span class="w">            </span><span class="p">[</span><span class="mf">445.0</span><span class="p">,</span><span class="w"> </span><span class="mf">347.0</span><span class="p">]</span>
 </span><span id="__span-16-39"><a id="__codelineno-16-39" name="__codelineno-16-39"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-16-40"><a id="__codelineno-16-40" name="__codelineno-16-40"></a><span class="w">        </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.8704&quot;</span>
+</span><span id="__span-16-40"><a id="__codelineno-16-40" name="__codelineno-16-40"></a><span class="w">        </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.8704"</span>
 </span><span id="__span-16-41"><a id="__codelineno-16-41" name="__codelineno-16-41"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-16-42"><a id="__codelineno-16-42" name="__codelineno-16-42"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>

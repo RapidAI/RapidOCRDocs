@@ -118,7 +118,7 @@
 
 参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
 
-`lang_type`：PP-OCRv6 中，不管指定哪个，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
+`lang_type`：PP-OCRv6 中，不管指定哪个语种，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
 
 #### PP-OCRv5
 

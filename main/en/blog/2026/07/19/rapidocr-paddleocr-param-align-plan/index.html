@@ -3794,41 +3794,43 @@ You're not viewing the latest version.
     data-reactions-enabled="1"
     data-emit-metadata="0"
     data-input-position="top"
-    data-theme="https://cdn.jsdelivr.net/gh/L33Z22L11/giscus-theme/lxgw-wenkai.css"
+    data-theme="https://cdn.jsdelivr.net/gh/RapidAI/rapidai.github.io@main/docs/stylesheets/giscus-light.css"
     data-lang="en"
     data-loading="lazy" crossorigin="anonymous" async>
     </script>
 
-
 <!-- Synchronize Giscus theme with palette -->
 <script>
+    var giscusThemes = {
+        light: "https://cdn.jsdelivr.net/gh/RapidAI/rapidai.github.io@main/docs/stylesheets/giscus-light.css",
+        dark: "https://cdn.jsdelivr.net/gh/RapidAI/rapidai.github.io@main/docs/stylesheets/giscus-dark.css"
+    }
     var giscus = document.querySelector("script[src*=giscus]")
 
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-        var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
+    function getGiscusTheme() {
+        var palette = __md_get("__palette")
+        return palette && typeof palette.color === "object" && palette.color.scheme === "slate"
+            ? giscusThemes.dark
+            : giscusThemes.light
+    }
 
+    // Set palette on initial load
+    if (giscus) {
         // Instruct Giscus to set theme
-        giscus.setAttribute("data-theme", theme)
+        giscus.setAttribute("data-theme", getGiscusTheme())
     }
 
     // Register event handlers after documented loaded
     document.addEventListener("DOMContentLoaded", function () {
         var ref = document.querySelector("[data-md-component=palette]")
-        ref.addEventListener("change", function () {
-            var palette = __md_get("__palette")
-            if (palette && typeof palette.color === "object") {
-                var theme = palette.color.scheme === "slate"
-                    ? "transparent_dark"
-                    : "light"
+        if (!ref) return
 
+        ref.addEventListener("change", function () {
+            var frame = document.querySelector(".giscus-frame")
+            if (frame && frame.contentWindow) {
                 // Instruct Giscus to change theme
-                var frame = document.querySelector(".giscus-frame")
                 frame.contentWindow.postMessage(
-                    { giscus: { setConfig: { theme } } },
+                    { giscus: { setConfig: { theme: getGiscusTheme() } } },
                     "https://giscus.app"
                 )
             }

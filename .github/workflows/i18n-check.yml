@@ -1,0 +1,39 @@
+name: Check Documentation Translations
+
+on:
+  pull_request:
+    paths:
+      - "docs/**/*.md"
+      - "docs/*.md"
+      - "scripts/check_i18n.py"
+      - ".github/i18n-check.yml"
+      - ".github/workflows/i18n-check.yml"
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - "docs/**/*.md"
+      - "docs/*.md"
+      - "scripts/check_i18n.py"
+      - ".github/i18n-check.yml"
+      - ".github/workflows/i18n-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - name: Install documentation dependencies
+        run: pip install -r requirements.txt
+      - name: Check translation pairs and freshness
+        run: python scripts/check_i18n.py

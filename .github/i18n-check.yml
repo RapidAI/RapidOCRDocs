@@ -1,0 +1,18 @@
+# Translation pairing and freshness rules for scripts/check_i18n.py.
+default_locale: zh
+
+locales:
+  en:
+    suffix: .en.md
+    # These pages are the minimum English surface and block the CI when stale
+    # or missing. Add pages here as their translations become mandatory.
+    required:
+      - index.md
+      - quickstart.md
+      - install_usage/rapidocr/install.md
+    # Blog posts currently remain in the default language because of the
+    # Material blog/i18n compatibility hook.
+    exclude:
+      - blog/**
+      - changelog/**
+      - tags.md

@@ -108,6 +108,12 @@
 
 #### PP-OCRv6
 
+!!! note
+
+    1. 该版本支持是由汉语、日语和拉丁字母组成的语言。不包括韩语、阿拉伯语、藏语、彝族等语言。
+    2. 参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
+    3. `lang_type`：PP-OCRv6 中，不管指定哪个语种，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
+
 |语种类型|engine_type| lang_type|model_type|ocr_version|
 |:---|:---|:---|:---|:---|
 |多语种|`onnxruntime`(`rapidocr>=3.9.0`) <br/> `openvino` (`rapidocr>=3.9.0`) <br/> `paddle` (`rapidocr>=3.9.1`) <br/>`torch` (`rapidocr>=3.9.1`)<br/>`mnn` (`rapidocr>=3.9.1`)<br/> `tensorrt`(`rapidocr>=3.9.2`)|`ch`|`tiny`<br/> `small`<br/>`medium`|`PP-OCRv6`|
@@ -115,12 +121,6 @@
 `medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`。
 
 `tiny` 模型不支持 `japan`。
-
-⚠️注意：该版本支持是由汉语、日语和拉丁字母组成的语言。不包括韩语、阿拉伯语、藏语、彝族等语言。
-
-参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
-
-`lang_type`：PP-OCRv6 中，不管指定哪个语种，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
 
 #### PP-OCRv5
 
@@ -183,6 +183,12 @@ engine = RapidOCR(
 
 #### PP-OCRv6
 
+!!! note
+
+    1. 该版本支持是由汉语、日语和拉丁字母组成的语言。不包括韩语、阿拉伯语、藏语、彝族等语言。
+    2. 参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
+    3. `lang_type`：PP-OCRv6 中，不管指定哪个，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
+
 | 语种类型       | engine_type               | lang_type         | model_type      | ocr_version       |
 |----------------|---------------------------|-------------------|-----------------|-------------------|
 | 多语种 | `onnxruntime`(`rapidocr>=3.9.0`) <br/> `openvino` (`rapidocr>=3.9.0`) <br/> `paddle` (`rapidocr>=3.9.1`) <br/>`torch` (`rapidocr>=3.9.1`)<br/>`mnn` (`rapidocr>=3.9.1`)<br/> `tensorrt`(`rapidocr>=3.9.2`)| `ch`       | `tiny`<br/> `small`<br/>`medium` | `PP-OCRv6` |
@@ -190,12 +196,6 @@ engine = RapidOCR(
 `medium` 和 `small` 模型支持的语种：`ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german`。
 
 `tiny` 模型不支持 `japan`。
-
-⚠️注意：该版本支持是由汉语、日语和拉丁字母组成的语言。不包括韩语、阿拉伯语、藏语、彝族等语言。
-
-参考文档：[通用 OCR 产线使用教程](https://www.paddleocr.ai/latest/version3.x/pipeline_usage/OCR.html?h=#5)
-
-`lang_type`：PP-OCRv6 中，不管指定哪个，对应的模型都是一样的。不同模型仅由 `model_type` 来区分。
 
 #### PP-OCRv5
 

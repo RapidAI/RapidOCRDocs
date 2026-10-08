@@ -202,7 +202,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_det_cls_rec.jpg")
     ```
 
-    ![](../../images/vis_det_cls_rec.jpg)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-24-08-5100098f.jpg)
 
     返回值为 `RapidOCROutput`，可以通过 `result.xxxx` 直接访问。主要包含以下字段：
 
@@ -279,7 +279,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_det_rec.jpg")
     ```
 
-    ![](../../images/vis_det_rec.jpg)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-24-35-01ae4972.jpg)
 
     返回值类型同 **检测 + 分类 + 识别** 部分。
 
@@ -296,7 +296,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     print(elapse)
     ```
 
-    ![](../../images/vis_cls_rec.jpg)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-19-07-ba404f86.jpg)
 
     返回值为 `TextClsOutput` 类，主要包含以下字段：
 
@@ -338,7 +338,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis('vis_only_det.jpg')
     ```
 
-    ![](../../images/vis_only_det.jpg)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-25-14-6d325105.jpg)
 
     返回值为 `TextDetOutput` 类，主要包含以下字段：
 
@@ -392,7 +392,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_only_cls.jpg")
     ```
 
-    ![](../../images/vis_only_cls.jpg)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-24-56-274ec91f.jpg)
 
     返回值为 `TextClsOutput` 类，主要包含以下字段：
 
@@ -423,7 +423,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_only_rec.jpg")
     ```
 
-    ![](../../images/vis_only_rec.jpg)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-25-26-a1276ed8.jpg)
 
     返回值为 `TextRecOutput` 类，主要包含以下字段：
 
@@ -462,7 +462,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
     result.vis("vis_return_words.jpg")
     ```
 
-    ![](../../images/vis_sinlge_words.jpg)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-25-46-fdd5005f.jpg)
 
     返回值 `RapidOCROutput` 类，主要包含以下字段:
 

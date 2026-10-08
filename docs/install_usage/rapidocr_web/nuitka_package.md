@@ -14,7 +14,7 @@ comments: true
 
 ### 打包步骤
 
-#### 1. 安装 `Nuitka`
+#### Step 1: 安装 `Nuitka`
 
 ```bash linenums="1"
 pip install nuitka
@@ -22,7 +22,7 @@ pip install nuitka
 
 注：第一次安装会自动下载 mingw 和 ccache，也可以手动配置，自行某度。
 
-#### Step 2
+#### Step 2: 修改源码
 
 !!! note
 
@@ -47,7 +47,7 @@ nuitka --mingw64 --standalone --show-memory --show-progress --nofollow-import-to
 
 ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-43-37-1b48293b.png)
 
-#### Step 3 拷贝静态文件
+#### Step 3：拷贝静态文件
 
 打包后的文件位于当前位置的 `out\ocrweb.dist` 目录下，需要将 `web` 项目和 `rapidocr-onnxruntime` 相关文件拷贝到此目录。
 

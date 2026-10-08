@@ -6,8 +6,8 @@ RapidOCR 产品开源免费，并且将持续提供免费的技术支持。但�
 
 ### 赞助者有哪些权益？
 
-1. Github 仓库 [中英文 README](https://github.com/RapidAI/RapidOCR/tree/main#sponsors--backers)、官方文档流量曝光
-2. Gitee 仓库 [中英文 README](https://gitee.com/RapidAI/RapidOCR#sponsors--backers) 流量曝光
+1. Github 仓库 [中英文 README](https://github.com/RapidAI/RapidOCR/tree/main#sponsors)、官方文档流量曝光
+2. Gitee 仓库 [中英文 README](https://gitee.com/RapidAI/RapidOCR#sponsors) 流量曝光
 
 ### 以企业名义赞助
 

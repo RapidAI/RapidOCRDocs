@@ -73,7 +73,7 @@ for res in output:
 
 预期结果如下，表明成功运行：
 
-![PP-OCRv6_medium_det_general_ocr_001_res](../images/PP-OCRv6_medium_det_general_ocr_001_res.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-35-24-c4386a42.png)
 
 ### 2. 模型转换
 
@@ -189,7 +189,7 @@ PaddlePaddle 官方提供了 ONNX 模型，但是考虑到自己训练的模型�
 
 该部分主要是在 RapidOCR 项目中测试能否直接使用 onnx 模型。要点主要是确定模型前后处理是否兼容。从 PaddleOCR config 文件中比较 [PP-OCRv5 mobile det](https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv5/PP-OCRv5_mobile_det.yml) 和 [PP-OCRv6 medium det](https://github.com/PaddlePaddle/PaddleOCR/blob/ef346e0b402934477489001a4d253a20dbeb72a5/configs/det/PP-OCRv6/PP-OCRv6_medium_det.yml) 文件差异：
 
-![v5_mobile_vs_v6_medium_config](../images/v5_mobile_vs_v6_medium_config.jpg)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-38-32-833f5be1.jpg)
 
 从上图中可以看出，除了训练阶段的配置有差异外，推理阶段配置基本一模一样，因此现有 `rapidocr` 前后推理代码可以直接使用。
 
@@ -208,7 +208,7 @@ print(result)
 result.vis("vis_result.jpg")
 ```
 
-![v6_medium_det_vis_result](../images/v6_medium_det_vis_result.jpg)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-39-44-7ef1cceb.jpg)
 
 ### 4. 模型精度测试
 

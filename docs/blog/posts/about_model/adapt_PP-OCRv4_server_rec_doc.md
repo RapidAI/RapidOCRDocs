@@ -54,7 +54,7 @@ pip install "paddlex[ocr]==3.0.0rc1"
 
 测试用图：
 
-![alt text](../images/1.jpg)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-27-16-7c1e316a.jpg)
 
 !!! tip
 
@@ -122,7 +122,7 @@ print(result)
 result.vis("vis_result.jpg")
 ```
 
-![alt text](../images/vis_result.jpg)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-40-23-c0359819.jpg)
 
 ### 4. 模型精度测试
 

@@ -54,7 +54,7 @@ comments: true
 
 测试图：
 
-![alt text](./images/8.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-27-38-9e44b93c.png)
 
 ```python linenums="1"
 # test_ocr.py

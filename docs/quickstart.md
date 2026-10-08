@@ -40,8 +40,6 @@ pip install rapidocr onnxruntime
 
 ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-09-14-1fc6ada8.png)
 
-![Demo](./images/ch_en_num_vis.png)
-
 ### 4. 返回 `result` 结果示例
 
 返回结果是一个 `RapidOCROutput` 数据类，可以直接通过 `result.boxes` 和 `result.txts` 来访问使用。

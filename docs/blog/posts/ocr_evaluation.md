@@ -22,38 +22,38 @@ RapidOCR 在 12 款开源 OCR 中也算得上可圈可点了。完整的测评�
 我在这里只放一些关键的测评结论：
  (1) 印刷中文的综合测评结果为：
 
-![image-20241208103232900](./images/image-20241208103232900.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-33-35-3aea07f6.png)
 
 （2）印刷英文的综合测评结果为：
 
-![image-20241208103310417](./images/image-20241208103310417.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-33-45-dd89e2db.png)
 
 （3）变形字体的艺术字测评结果为：
 
-![image-20241208103329977](./images/image-20241208103329977.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-33-56-ffbdf579.png)
 
 （4）自然场景的街景图片测评结果为：
 
-![image-20241208103344517](./images/image-20241208103344517.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-34-14-13ddcbcf.png)
 
 （5）手写中文的综合测评结果为：
 
-![image-20241208103400365](./images/image-20241208103400365.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-34-25-0030c9cd.png)
 
 测评总结：
 
-![图片](./images/640-20241208103523542)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-29-16-a4391473.jpg)
 
 **RapidOCR虽然基于PaddleOCR，但做了⼀定预处理和参数优化，因此在⾓度旋转180度和低对⽐度两个数据集中拉开了与PaddleOCR的差距；并且基于onnx推理格式的版本，在识别的速度上也较PaddleOCR有明显提升。** 各个⼯具在中⽂印刷⽂字正常扫描、拍照图⽚中识别的准确度都很⾼。其中，扫描⽂档数据集，前三名的綜合评分都在 99% 以上，照⽚⽂档数据集中，前三名的综合评分都在 98% 以上。
 
-![图片](./images/640-20241208103536368)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-30-56-b339af77.jpg)
 
-![图片](./images/640-20241208103541160)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-31-10-446f9018.jpg)
 
-![图片](./images/640-20241208103546381)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-31-40-ff670b6d.jpg)
 
-![图片](./images/640-20241208103550187)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-31-51-170f5b67.jpg)
 
-![图片](./images/640-20241208103554131)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-32-03-439edb2f.jpg)
 
 完整测评报告：<https://pan.baidu.com/s/1DgFZfKw5PxQuyy1PIX8thg?pwd=0527>

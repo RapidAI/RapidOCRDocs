@@ -29,6 +29,8 @@ pip install rapidocr onnxruntime
 
 ### 3. 查看可视化结果
 
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-09-14-1fc6ada8.png)
+
 ![Demo](./images/ch_en_num_vis.png)
 
 ### 4. 返回 `result` 结果示例

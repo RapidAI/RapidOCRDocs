@@ -30,7 +30,7 @@ pip install rapidocr onnxruntime
 
 ### 3. Check the visualized result
 
-![Demo](./images/ch_en_num_vis.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-09-14-1fc6ada8.png)
 
 ### 4. Example of the returned `result`
 

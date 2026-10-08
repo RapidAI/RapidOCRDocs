@@ -51,7 +51,7 @@ for res in output:
 
 预期结果如下，表明成功运行：
 
-![PP-OCRv6_tiny_rec_general_ocr_rec_001](../images/PP-OCRv6_tiny_rec_general_ocr_rec_001.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-35-39-974c56ee.png)
 
 ### 2. 模型转换
 
@@ -167,7 +167,7 @@ for res in output:
 
 该部分主要是在 RapidOCR 项目中测试能否直接使用 onnx 模型。要点主要是确定模型前后处理是否兼容。从 PaddleOCR config 文件中比较 [PP-OCRv5_mobile_rec](https://github.com/PaddlePaddle/PaddleOCR/blob/ef346e0b402934477489001a4d253a20dbeb72a5/configs/rec/PP-OCRv5/PP-OCRv5_mobile_rec.yml) 和 [PP-OCRv6_medium_rec](https://github.com/PaddlePaddle/PaddleOCR/blob/ef346e0b402934477489001a4d253a20dbeb72a5/configs/rec/PP-OCRv6/PP-OCRv6_medium_rec.yml) 文件差异：
 
-![rec_v5_mobile_vs_v6_medium_config](../images/rec_v5_mobile_vs_v6_medium_config.jpg)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-36-33-192fa0c0.jpg)
 
 从上图中可以看出，配置基本一模一样，backbone 换了，但是前后处理配置是一样的。因此现有 `rapidocr` 前后推理代码可以直接使用。
 
@@ -185,7 +185,7 @@ print(result)
 result.vis("vis_result.jpg")
 ```
 
-![v6_medium_rec_vis_result](../images/v6_medium_rec_vis_result.jpg)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-39-58-75a6e9f5.jpg)
 
 ### 4. 模型精度测试
 

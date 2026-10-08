@@ -2846,7 +2846,7 @@ You're not viewing the latest version.
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>    <span class="n">res</span><span class="o">.</span><span class="n">save_to_json</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="s2">"./output/res.json"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>预期结果如下，表明成功运行：</p>
-<p><img alt="PP-OCRv6_medium_det_general_ocr_001_res" src="../../../../images/PP-OCRv6_medium_det_general_ocr_001_res.png" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-35-24-c4386a42.png" /></p>
 <h3 id="2">2. 模型转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>PaddlePaddle 官方提供了 ONNX 模型，但是考虑到自己训练的模型，仍然需要转换。因此这一步更多地是验证使用当前工具可以自行转换模型。</p>
 <p>该部分主要参考文档：<a href="https://paddlepaddle.github.io/PaddleX/latest/pipeline_deploy/paddle2onnx.html?h=paddle2onnx#22">docs</a></p>
@@ -3001,7 +3001,7 @@ You're not viewing the latest version.
 <h3 id="3">3. 模型推理验证<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>我这里主要验证 PP-OCRv6_medium_det 模型，small 和 tiny 版除了参数量区别外，其余都一样，因此不做重复验证。</p>
 <p>该部分主要是在 RapidOCR 项目中测试能否直接使用 onnx 模型。要点主要是确定模型前后处理是否兼容。从 PaddleOCR config 文件中比较 <a href="https://github.com/PaddlePaddle/PaddleOCR/blob/549d83a88b7c75144120e6ec03de80d3eb9e48a5/configs/det/PP-OCRv5/PP-OCRv5_mobile_det.yml">PP-OCRv5 mobile det</a> 和 <a href="https://github.com/PaddlePaddle/PaddleOCR/blob/ef346e0b402934477489001a4d253a20dbeb72a5/configs/det/PP-OCRv6/PP-OCRv6_medium_det.yml">PP-OCRv6 medium det</a> 文件差异：</p>
-<p><img alt="v5_mobile_vs_v6_medium_config" src="../../../../images/v5_mobile_vs_v6_medium_config.jpg" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-38-32-833f5be1.jpg" /></p>
 <p>从上图中可以看出，除了训练阶段的配置有差异外，推理阶段配置基本一模一样，因此现有 <code>rapidocr</code> 前后推理代码可以直接使用。</p>
 <p>值得注意的是，后处理阶段的中默认参数变了。这一点我这里先不动，后期我再仔细核验。</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
@@ -3024,7 +3024,7 @@ You're not viewing the latest version.
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="n">result</span><span class="o">.</span><span class="n">vis</span><span class="p">(</span><span class="s2">"vis_result.jpg"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="v6_medium_det_vis_result" src="../../../../images/v6_medium_det_vis_result.jpg" /></p>
+<p><img alt="" src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-39-44-7ef1cceb.jpg" /></p>
 <h3 id="4">4. 模型精度测试<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -3575,7 +3575,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年6月26日 11:24:28 CST">2026-06-26 11:24:28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年10月8日 11:47:48 CST">2026-10-08 11:47:48</span>
   </span>
 
     

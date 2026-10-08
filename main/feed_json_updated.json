@@ -13,6 +13,276 @@
     "language": "zh",
     "items": [
         {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2024/12/08/guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-stands-out/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2024/12/08/guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-stands-out/",
+            "title": "\u5e7f\u5dde\u8f6f\u4ef6\u9662\u5f00\u7bb1\u6d4b\u8bc4 12 \u6b3e\u5f00\u6e90 OCR\uff0cRapidOCR \u8868\u73b0\u4f18\u5f02",
+            "content_html": "<p>RapidOCR \u5728 12 \u6b3e\u5f00\u6e90 OCR \u4e2d\u8868\u73b0\u4f18\u5f02</p>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2024-12-08T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
+            "title": "RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u5bf9\u6bd4",
+            "content_html": "<p>\u540c\u73af\u5883\u4e0b\uff0c\u6bd4\u8f83 RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u3002</p>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2026-02-06T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/16/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv4_server_rec_doc-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/16/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv4_server_rec_doc-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv4_server_rec_doc \u6a21\u578b\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u5982\u4f55\u96c6\u6210 PP-OCRv4_server_rec_doc \u6a21\u578b\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2025-05-13T14:45:27+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_det \u6a21\u578b(mobile/server)\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_det \u548c PP-OCRv5_server_det \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2025-05-26T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_rec \u6a21\u578b(mobile/server)\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_rec \u548c PP-OCRv5_server_rec \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2025-05-30T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv6 Det \u6a21\u578b\u8bb0\u5f55",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2026-06-17T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv6 Rec \u6a21\u578b\u8bb0\u5f55",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2026-06-18T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/",
+            "title": "\u8bc4\u6d4b PHOCR \u4e2d\u6587\u6587\u672c\u8bc6\u522b\u6a21\u578b",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bc4\u6d4b PHOCRv1 \u7684\u4e2d\u6587\u8bc6\u522b\u6a21\u578b\u6548\u679c\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2025-08-03T03:18:59+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/15/2025-atomgit-g-star/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/01/15/2025-atomgit-g-star/",
+            "title": "2025\uff1aRapidOCR \u83b7\u5f97 AtomGit \u5b98\u65b9 G-Star \u9879\u76ee\u6bd5\u4e1a\u8ba4\u8bc1",
+            "content_html": "<p>\u5ba3\u5e03 RapidOCR \u83b7\u5f97 G-Star \u9879\u76ee\u6bd5\u4e1a\u8ba4\u8bc1</p>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2026-01-15T00:22:10+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2024/12/08/guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-stands-out/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2024/12/08/guangzhou-software-institute-reviews-12-open-source-ocr-tools-rapidocr-stands-out/",
+            "title": "\u5e7f\u5dde\u8f6f\u4ef6\u9662\u5f00\u7bb1\u6d4b\u8bc4 12 \u6b3e\u5f00\u6e90 OCR\uff0cRapidOCR \u8868\u73b0\u4f18\u5f02",
+            "content_html": "<p>RapidOCR \u5728 12 \u6b3e\u5f00\u6e90 OCR \u4e2d\u8868\u73b0\u4f18\u5f02</p>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2024-12-08T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/02/06/rapidocr-vs-paddleocr/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/02/06/rapidocr-vs-paddleocr/",
+            "title": "RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u5bf9\u6bd4",
+            "content_html": "<p>\u540c\u73af\u5883\u4e0b\uff0c\u6bd4\u8f83 RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u3002</p>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2026-02-06T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/16/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv4_server_rec_doc-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/16/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv4_server_rec_doc-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv4_server_rec_doc \u6a21\u578b\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u5982\u4f55\u96c6\u6210 PP-OCRv4_server_rec_doc \u6a21\u578b\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2025-05-13T14:45:27+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_det \u6a21\u578b(mobile/server)\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_det \u548c PP-OCRv5_server_det \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2025-05-26T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_rec \u6a21\u578b(mobile/server)\u8bb0\u5f55",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_rec \u548c PP-OCRv5_server_rec \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2025-05-30T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv6 Det \u6a21\u578b\u8bb0\u5f55",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2026-06-17T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
+            "title": "RapidOCR \u96c6\u6210 PP-OCRv6 Rec \u6a21\u578b\u8bb0\u5f55",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2026-06-18T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/",
+            "title": "\u8bc4\u6d4b PHOCR \u4e2d\u6587\u6587\u672c\u8bc6\u522b\u6a21\u578b",
+            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bc4\u6d4b PHOCRv1 \u7684\u4e2d\u6587\u8bc6\u522b\u6a21\u578b\u6548\u679c\u3002</p>\n</blockquote>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2025-08-03T03:18:59+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/01/15/2025-atomgit-g-star/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/01/15/2025-atomgit-g-star/",
+            "title": "2025\uff1aRapidOCR \u83b7\u5f97 AtomGit \u5b98\u65b9 G-Star \u9879\u76ee\u6bd5\u4e1a\u8ba4\u8bc1",
+            "content_html": "<p>\u5ba3\u5e03 RapidOCR \u83b7\u5f97 G-Star \u9879\u76ee\u6bd5\u4e1a\u8ba4\u8bc1</p>",
+            "image": null,
+            "date_modified": "2026-10-08T03:47:48+00:00",
+            "date_published": "2026-01-15T00:22:10+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
             "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/19/rapidocr-paddleocr-param-align-plan/",
             "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/19/rapidocr-paddleocr-param-align-plan/",
             "title": "RapidOCR \u9ed8\u8ba4\u53c2\u6570\u4e0ePaddleOCR\u9ed8\u8ba4\u53c2\u6570\u5bf9\u9f50\u63a2\u7a76",
@@ -35,276 +305,6 @@
             "image": null,
             "date_modified": "2026-07-23T22:19:48+00:00",
             "date_published": "2026-07-19T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/",
-            "title": "RapidOCR PP-OCRv6 \u652f\u6301 TensorRT \u63a8\u7406\u5f15\u64ce",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-07-07T22:53:03+00:00",
-            "date_published": "2026-07-05T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/07/05/support-pp-ocrv6-tensorrt-engine/",
-            "title": "RapidOCR PP-OCRv6 \u652f\u6301 TensorRT \u63a8\u7406\u5f15\u64ce",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-07-07T22:53:03+00:00",
-            "date_published": "2026-07-05T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u9002\u914d PP-OCRv6 Det \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-07-04T23:52:43+00:00",
-            "date_published": "2026-06-27T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u9002\u914d PP-OCRv6 Rec \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-07-04T23:52:43+00:00",
-            "date_published": "2026-06-30T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/27/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u9002\u914d PP-OCRv6 Det \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-07-04T23:52:43+00:00",
-            "date_published": "2026-06-27T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u9002\u914d PP-OCRv6 Rec \u6a21\u578b\u652f\u6301 Paddle, PyTorch \u548c MNN \u8bb0\u5f55",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-07-04T23:52:43+00:00",
-            "date_published": "2026-06-30T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv6 Det \u6a21\u578b\u8bb0\u5f55",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-06-26T03:24:28+00:00",
-            "date_published": "2026-06-17T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv6 Rec \u6a21\u578b\u8bb0\u5f55",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-06-26T03:24:28+00:00",
-            "date_published": "2026-06-18T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/17/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-det-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv6 Det \u6a21\u578b\u8bb0\u5f55",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-06-26T03:24:28+00:00",
-            "date_published": "2026-06-17T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/06/18/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv6 Rec \u6a21\u578b\u8bb0\u5f55",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-06-26T03:24:28+00:00",
-            "date_published": "2026-06-18T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
-            "title": "\u5f00\u6e90 OCR \u6a21\u578b\u5bf9\u6bd4",
-            "content_html": "<blockquote>\n<p>\u672c\u6587\u4e3b\u8981\u7ed9\u51fa\u4e86\u5e38\u89c1\u5f00\u6e90\u6587\u672c\u68c0\u6d4b\u548c\u6587\u672c\u8bc6\u522b\u6a21\u578b\u7684\u5bf9\u6bd4\u548c\u8bc4\u6d4b\uff0c\u7ed9\u5927\u5bb6\u4e00\u4e2a\u4f7f\u7528\u53c2\u8003\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-06-18T03:27:27+00:00",
-            "date_published": "2022-04-16T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/",
-            "title": "\u5f00\u6e90 OCR \u6a21\u578b\u5bf9\u6bd4",
-            "content_html": "<blockquote>\n<p>\u672c\u6587\u4e3b\u8981\u7ed9\u51fa\u4e86\u5e38\u89c1\u5f00\u6e90\u6587\u672c\u68c0\u6d4b\u548c\u6587\u672c\u8bc6\u522b\u6a21\u578b\u7684\u5bf9\u6bd4\u548c\u8bc4\u6d4b\uff0c\u7ed9\u5927\u5bb6\u4e00\u4e2a\u4f7f\u7528\u53c2\u8003\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-06-18T03:27:27+00:00",
-            "date_published": "2022-04-16T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_det \u6a21\u578b(mobile/server)\u8bb0\u5f55",
-            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_det \u548c PP-OCRv5_server_det \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-06-17T14:22:47+00:00",
-            "date_published": "2025-05-26T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_rec \u6a21\u578b(mobile/server)\u8bb0\u5f55",
-            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_rec \u548c PP-OCRv5_server_rec \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-06-17T14:22:47+00:00",
-            "date_published": "2025-05-30T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/26/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_det-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_det \u6a21\u578b(mobile/server)\u8bb0\u5f55",
-            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_det \u548c PP-OCRv5_server_det \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-06-17T14:22:47+00:00",
-            "date_published": "2025-05-26T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2025/05/30/rapidocr-%E9%9B%86%E6%88%90-pp-ocrv5_rec-%E6%A8%A1%E5%9E%8Bmobileserver%E8%AE%B0%E5%BD%95/",
-            "title": "RapidOCR \u96c6\u6210 PP-OCRv5_rec \u6a21\u578b(mobile/server)\u8bb0\u5f55",
-            "content_html": "<blockquote>\n<p>\u8be5\u6587\u7ae0\u4e3b\u8981\u8bb0\u5f55 RapidOCR \u96c6\u6210 PP-OCRv5_mobile_rec \u548c PP-OCRv5_server_rec \u6a21\u578b\u8bb0\u5f55\u7684\uff0c\u6d89\u53ca\u6a21\u578b\u8f6c\u6362\uff0c\u6a21\u578b\u7cbe\u5ea6\u6d4b\u8bd5\u7b49\u6b65\u9aa4\u3002</p>\n</blockquote>",
-            "image": null,
-            "date_modified": "2026-06-17T14:22:47+00:00",
-            "date_published": "2025-05-30T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/06/rapidocr-vs-paddleocr/",
-            "title": "RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u5bf9\u6bd4",
-            "content_html": "<p>\u540c\u73af\u5883\u4e0b\uff0c\u6bd4\u8f83 RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u3002</p>",
-            "image": null,
-            "date_modified": "2026-05-06T06:11:19+00:00",
-            "date_published": "2026-02-06T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/02/06/rapidocr-vs-paddleocr/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/en/blog/2026/02/06/rapidocr-vs-paddleocr/",
-            "title": "RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u5bf9\u6bd4",
-            "content_html": "<p>\u540c\u73af\u5883\u4e0b\uff0c\u6bd4\u8f83 RapidOCR \u4e0e PaddleOCR \u901f\u5ea6\u3002</p>",
-            "image": null,
-            "date_modified": "2026-05-06T06:11:19+00:00",
-            "date_published": "2026-02-06T00:00:00+00:00",
             "authors": [
                 {
                     "name": "SWHL"

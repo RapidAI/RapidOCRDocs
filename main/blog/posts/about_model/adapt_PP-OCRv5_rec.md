@@ -55,7 +55,7 @@ for res in output:
 
 预期结果如下，表明成功运行：
 
-![alt text](../images/general_ocr_rec_001_res.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-33-03-a8fed20f.png)
 
 ### 2. 模型转换
 
@@ -135,7 +135,7 @@ for res in output:
 
     该部分主要是在 RapidOCR 项目中测试能否直接使用 onnx 模型。要点主要是确定模型前后处理是否兼容。从 PaddleOCR config 文件中比较 [PP-OCRv4](https://github.com/PaddlePaddle/PaddleOCR/blob/6dce3e0b1fee4b8b0a90ac55f0bf5dbed2de6af4/configs/rec/PP-OCRv4/en_PP-OCRv4_mobile_rec.yml) 和 [PP-OCRv5 mobile det](https://github.com/PaddlePaddle/PaddleOCR/blob/6dce3e0b1fee4b8b0a90ac55f0bf5dbed2de6af4/configs/rec/PP-OCRv5/PP-OCRv5_server_rec.yml) 文件差异：
 
-    ![alt text](../images/v4_v5_mobile_rec.png)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-37-16-3509a2e8.png)
 
     从上图中可以看出，配置基本一模一样，因此现有 `rapidocr` 前后推理代码可以直接使用。
 
@@ -153,13 +153,13 @@ for res in output:
     result.vis("vis_result.jpg")
     ```
 
-    ![alt text](../images/v5_mobile_rec_result.jpg)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-38-18-92a0cba3.jpg)
 
 === "验证 PP-OCRv5_server_rec 模型"
 
     该部分主要是在 RapidOCR 项目中测试能否直接使用 onnx 模型。要点主要是确定模型前后处理是否兼容。从 PaddleOCR config 文件中比较 [PP-OCRv4_server_rec](https://github.com/PaddlePaddle/PaddleOCR/blob/6dce3e0b1fee4b8b0a90ac55f0bf5dbed2de6af4/configs/rec/PP-OCRv4/PP-OCRv4_server_rec.yml) 和 [PP-OCRv5_server_rec](https://github.com/PaddlePaddle/PaddleOCR/blob/6dce3e0b1fee4b8b0a90ac55f0bf5dbed2de6af4/configs/rec/PP-OCRv5/PP-OCRv5_server_rec.yml) 文件差异：
 
-    ![alt text](../images/v4_v5_server_rec.png)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-37-49-9518ebbe.png)
 
     从上图中可以看出，配置基本一模一样，backbone 换了，但是前后处理配置是一样的。因此现有 `rapidocr` 前后推理代码可以直接使用。
 
@@ -176,7 +176,7 @@ for res in output:
     result.vis("vis_result.jpg")
     ```
 
-    ![alt text](../images/v5_server_det_vis_result.jpg)
+    ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-39-07-b68c0d71.jpg)
 
 ### 4. 模型精度测试
 

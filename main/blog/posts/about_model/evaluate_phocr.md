@@ -10,7 +10,7 @@
 
 最近，有个社区小伙伴新建立了一个 PHOCR，里面的文本识别模型据说效果超越 PP-OCRv5:
 
-![alt text](../images/image.png)
+![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-35-05-ba5d26af.png)
 
 至于真实效果如何呢？还需要自己来看一下。
 

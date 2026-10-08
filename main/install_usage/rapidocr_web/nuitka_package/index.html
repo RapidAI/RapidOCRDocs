@@ -1344,9 +1344,9 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-nuitka" class="md-nav__link">
+  <a href="#step-1-nuitka" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 安装 Nuitka
+      Step 1: 安装 Nuitka
     </span>
   </a>
   
@@ -1355,7 +1355,7 @@ You're not viewing the latest version.
           <li class="md-nav__item">
   <a href="#step-2" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2
+      Step 2: 修改源码
     </span>
   </a>
   
@@ -1364,7 +1364,7 @@ You're not viewing the latest version.
           <li class="md-nav__item">
   <a href="#step-3" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3 拷贝静态文件
+      Step 3：拷贝静态文件
     </span>
   </a>
   
@@ -2667,9 +2667,9 @@ You're not viewing the latest version.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-nuitka" class="md-nav__link">
+  <a href="#step-1-nuitka" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 安装 Nuitka
+      Step 1: 安装 Nuitka
     </span>
   </a>
   
@@ -2678,7 +2678,7 @@ You're not viewing the latest version.
           <li class="md-nav__item">
   <a href="#step-2" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2
+      Step 2: 修改源码
     </span>
   </a>
   
@@ -2687,7 +2687,7 @@ You're not viewing the latest version.
           <li class="md-nav__item">
   <a href="#step-3" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3 拷贝静态文件
+      Step 3：拷贝静态文件
     </span>
   </a>
   
@@ -2794,11 +2794,11 @@ You're not viewing the latest version.
 <li><code>onnxruntime</code>: 1.14.0</li>
 </ul>
 <h3 id="_2">打包步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<h4 id="1-nuitka">1. 安装 <code>Nuitka</code><a class="headerlink" href="#1-nuitka" title="Permanent link">&para;</a></h4>
+<h4 id="step-1-nuitka">Step 1: 安装 <code>Nuitka</code><a class="headerlink" href="#step-1-nuitka" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nuitka
 </span></code></pre></div></td></tr></table></div>
 <p>注：第一次安装会自动下载 mingw 和 ccache，也可以手动配置，自行某度。</p>
-<h4 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h4>
+<h4 id="step-2">Step 2: 修改源码<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>rapidocr_onnxruntime&gt;=1.2.8</code> 以后不用再手动修改下面代码，已经做了修改。可以跳过该步。"</p>
@@ -2814,7 +2814,7 @@ You're not viewing the latest version.
 </span></code></pre></div></td></tr></table></div>
 <p>如下图所示：</p>
 <p><img alt="" src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-43-37-1b48293b.png" /></p>
-<h4 id="step-3">Step 3 拷贝静态文件<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h4>
+<h4 id="step-3">Step 3：拷贝静态文件<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h4>
 <p>打包后的文件位于当前位置的 <code>out\ocrweb.dist</code> 目录下，需要将 <code>web</code> 项目和 <code>rapidocr-onnxruntime</code> 相关文件拷贝到此目录。</p>
 <p><img alt="" src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-45-56-5fadb69c.png" /></p>
 <p>拷贝 <code>rapidocr_web</code> 目录 <code>static</code> 和 <code>templates</code> 两个文件夹全部拷贝到 <code>out\ocrweb.dist</code> 下</p>

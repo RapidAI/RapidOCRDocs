@@ -113,6 +113,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/mainen/install_usage/rapidocr/how_to_use_ppocrv5/"/>
     </url>
     <url>
+        <loc>https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/image_input/</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/image_input/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/mainen/install_usage/rapidocr/image_input/"/>
+    </url>
+    <url>
         <loc>https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/</loc>
         <lastmod>2026-10-09</lastmod>
         <changefreq>daily</changefreq>
@@ -758,6 +765,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr/how_to_use_ppocrv5/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://rapidai.github.io/RapidOCRDocs/maininstall_usage/rapidocr/how_to_use_ppocrv5/"/>
+    </url>
+    <url>
+        <loc>https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr/image_input/</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr/image_input/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://rapidai.github.io/RapidOCRDocs/maininstall_usage/rapidocr/image_input/"/>
     </url>
     <url>
         <loc>https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr/install/</loc>

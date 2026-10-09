@@ -8,7 +8,7 @@
 
 `rapidocr>=3.10.0` 起，模型选择由 [default_models.yaml](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml) 中的模型路由统一管理。用户传入语言、模型类型和 OCR 版本后，RapidOCR 会自动解析实际模型文件。
 
-使用阿拉伯语等 RTL 语言时，请先安装 [RTL 额外依赖](install_usage/rapidocr/install.md#按需安装额外依赖)。
+使用阿拉伯语等 RTL 语言时，请先安装 [RTL 额外依赖](install_usage/rapidocr/install.md)。
 
 ## 默认配置
 

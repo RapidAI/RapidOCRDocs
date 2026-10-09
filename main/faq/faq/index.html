@@ -1707,9 +1707,9 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-linux-python-import-cv2-importerror-ligglso1-cannot-open-shared-object-file-no-such-file-or-directory" class="md-nav__link">
+  <a href="#q-linux-python-import-cv2-importerror-libglso1-cannot-open-shared-object-file-no-such-file-or-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: Linux 部署 python 的程序时，import cv2 时会报 ImportError: ligGL.so.1: cannot open shared object file: No such file or directory?
+      Q: Linux 部署 Python 程序时，import cv2 报 ImportError: libGL.so.1: cannot open shared object file: No such file or directory，怎么办？
     </span>
   </a>
   
@@ -1745,7 +1745,7 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: onnxruntime arm32 有人编译过吗？ 我编译成功了，但是使用的时候 libonnxruntime.so error: file not recognized: File format not recognized 应该是版本不匹配
+      Q: onnxruntime arm32 有人编译过吗？我编译成功了，但是使用的时候 libonnxruntime.so error: file not recognized: File format not recognized 应该是版本不匹配
     </span>
   </a>
   
@@ -2432,9 +2432,9 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-linux-python-import-cv2-importerror-ligglso1-cannot-open-shared-object-file-no-such-file-or-directory" class="md-nav__link">
+  <a href="#q-linux-python-import-cv2-importerror-libglso1-cannot-open-shared-object-file-no-such-file-or-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: Linux 部署 python 的程序时，import cv2 时会报 ImportError: ligGL.so.1: cannot open shared object file: No such file or directory?
+      Q: Linux 部署 Python 程序时，import cv2 报 ImportError: libGL.so.1: cannot open shared object file: No such file or directory，怎么办？
     </span>
   </a>
   
@@ -2470,7 +2470,7 @@ You're not viewing the latest version.
         <li class="md-nav__item">
   <a href="#q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: onnxruntime arm32 有人编译过吗？ 我编译成功了，但是使用的时候 libonnxruntime.so error: file not recognized: File format not recognized 应该是版本不匹配
+      Q: onnxruntime arm32 有人编译过吗？我编译成功了，但是使用的时候 libonnxruntime.so error: file not recognized: File format not recognized 应该是版本不匹配
     </span>
   </a>
   
@@ -2633,8 +2633,12 @@ You're not viewing the latest version.
 <h4 id="q-32-c">Q: 请问这个能在 32 位 C#中用嘛?<a class="headerlink" href="#q-32-c" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> C#可以 32 位，要用 32 位的 dll，但 nuget 上的 onnxruntime 不支持 win7。</p>
 <h4 id="q-windows-oserror-winerror-126">Q: Windows 系统下，装完环境之后，运行示例程序之后，报错 OSError: [WinError 126] 找不到指定的模組<a class="headerlink" href="#q-windows-oserror-winerror-126" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 原因是 Shapely 库没有正确安装，如果是在 Windows，可以在 <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#shapely">Shapely whl</a> 下载对应的 whl 包，离线安装即可；另外一种解决办法是用 conda 安装也可。</p>
-<h4 id="q-linux-python-import-cv2-importerror-ligglso1-cannot-open-shared-object-file-no-such-file-or-directory">Q: Linux 部署 python 的程序时，<code>import cv2</code> 时会报 <code>ImportError: ligGL.so.1: cannot open shared object file: No such file or directory</code>?<a class="headerlink" href="#q-linux-python-import-cv2-importerror-ligglso1-cannot-open-shared-object-file-no-such-file-or-directory" title="Permanent link">&para;</a></h4>
+<p><strong>A:</strong> 原因通常是 Shapely 二进制依赖没有正确安装。建议优先升级 <code>pip</code> 后重新安装：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>Shapely
+</span></code></pre></div>
+<p>如果使用 Conda，也可以运行 <code>conda install -c conda-forge shapely</code>。</p>
+<h4 id="q-linux-python-import-cv2-importerror-libglso1-cannot-open-shared-object-file-no-such-file-or-directory">Q: Linux 部署 Python 程序时，<code>import cv2</code> 报 <code>ImportError: libGL.so.1: cannot open shared object file: No such file or directory</code>，怎么办？<a class="headerlink" href="#q-linux-python-import-cv2-importerror-libglso1-cannot-open-shared-object-file-no-such-file-or-directory" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> <a href="https://stackoverflow.com/questions/63977422/error-trying-to-import-cv2opencv-python-package/63978454">解决方法</a> 有两个 (来自群友 ddeef)：</p>
 <ol>
 <li>安装 <code>opencv-python-headless</code> 取代 <code>opencv-python</code>;</li>
@@ -2646,7 +2650,7 @@ You're not viewing the latest version.
 <p><strong>A:</strong> 这个目前正在调研测试当中，如果 mmocr 中关键信息提取效果还可以，后期会考虑整合进来。</p>
 <h4 id="q-rapidocr-paddleocr">Q: RapidOCR 和 PaddleOCR 是什么关系呢？<a class="headerlink" href="#q-rapidocr-paddleocr" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> RapidOCR 是将 PaddleOCR 的预训练模型转为 onnx 模型，不依赖 paddle 框架，方便各个平台部署。</p>
-<h4 id="q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized">Q: onnxruntime arm32 有人编译过吗？ 我编译成功了，但是使用的时候 libonnxruntime.so<img alt="👎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f44e.svg" title=":-1:" /> error: file not recognized: File format not recognized  应该是版本不匹配<a class="headerlink" href="#q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized" title="Permanent link">&para;</a></h4>
+<h4 id="q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized">Q: onnxruntime arm32 有人编译过吗？我编译成功了，但是使用的时候 libonnxruntime.so<img alt="👎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f44e.svg" title=":-1:" /> error: file not recognized: File format not recognized  应该是版本不匹配<a class="headerlink" href="#q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 没遇到过。我是直接在当前平台编译的，我们用的是 arm。估计是平台不兼容,建议在本身平台上编译。没遇到过问题。通常出在交叉编译方式下。</p>
 <h4 id="q-c-demo-vs2017">Q: 请问一下 c++ demo 必须要 vs2017 及以上版本吗?<a class="headerlink" href="#q-c-demo-vs2017" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 最好用 vs2019</p>
@@ -2655,7 +2659,7 @@ You're not viewing the latest version.
 <h4 id="q-c-onnx-cpu-gpu">Q: 我用 c++ 推理 onnx 貌似是 cpu 推理的，gpu 没有反应?<a class="headerlink" href="#q-c-onnx-cpu-gpu" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 如果想用 GPU 的话，需要安装 onnxruntime-gpu 版，自己在 onnxruntime 的代码中添加 EP (execution provider)。我们的定位是通用，只用 cpu 推理。</p>
 <h4 id="q-ocr-linux-ocr">Q: 您好，我想部署下咱们的 ocr 识别，有提供 linux 版本的 ocr 部署包吗?<a class="headerlink" href="#q-ocr-linux-ocr" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> linux 版本的自己编译即可, 可以参考我们的 action 中的脚本；其实编译非常容易，安装个 opencv 后，在 cmakelists.txt 中修改一下 onnxruntime 的路径即可，具体参考这个： <a href="https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml">https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml</a></p>
+<p><strong>A:</strong> linux 版本的自己编译即可, 可以参考我们的 action 中的脚本；其实编译非常容易，安装个 opencv 后，在 cmakelists.txt 中修改一下 onnxruntime 的路径即可，具体参考这个：<a href="https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml">https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml</a></p>
 <h4 id="q-onnxruntime-c">Q: onnxruntime 编译好的 C++ 库，哪里可以下载到？<a class="headerlink" href="#q-onnxruntime-c" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 从这里：<a href="https://github.com/RapidAI/OnnxruntimeBuilder/releases/tag/1.7.0">https://github.com/RapidAI/OnnxruntimeBuilder/releases/tag/1.7.0</a></p>
 <h4 id="q-win10-cygwin-gcc-c-c-ocr">Q: 目前简单测试环境是  Win10 + Cygwin + gcc + 纯 C 编程，可以在 C 程序中直接接入简单 OCR 功能吗？<a class="headerlink" href="#q-win10-cygwin-gcc-c-c-ocr" title="Permanent link">&para;</a></h4>
@@ -2665,7 +2669,7 @@ You're not viewing the latest version.
 <h4 id="q-onnxruntime-17-onnxruntimesequentialexecutorexecute-non-zero-status-code-returned-while-running-scatternd-node-namescatternd1-status-message-updates">Q: onnxruntime 1.7 下出错：onnxruntime::SequentialExecutor::Execute] Non-zero status code returned while running ScatterND node. Name:'ScatterND@1' Status Message: updates<a class="headerlink" href="#q-onnxruntime-17-onnxruntimesequentialexecutorexecute-non-zero-status-code-returned-while-running-scatternd-node-namescatternd1-status-message-updates" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 由于模型只支持 <code>onnxruntime=1.5.0</code> 导致，请更新模型,下载地址见 <code>Q3</code></p>
 <h4 id="q_1">Q: 边缘总有一行文字无法识别，怎么办？<a class="headerlink" href="#q_1" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 在 padding 参数中添加一个值 ，默认是 0,你可以添加 5 或 10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。</p>
+<p><strong>A:</strong> 在 padding 参数中添加一个值，默认是 0,你可以添加 5 或 10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。</p>
 
 <!-- Source file information -->
 
@@ -2690,7 +2694,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年5月14日 10:07:57 CST">2026-05-14 10:07:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年10月9日 14:03:45 CST">2026-10-09 14:03:45</span>
   </span>
 
     

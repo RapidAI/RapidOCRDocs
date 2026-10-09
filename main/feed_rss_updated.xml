@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Fri, 09 Oct 2026 05:01:19 -0000</pubDate>
-    <lastBuildDate>Fri, 09 Oct 2026 05:01:19 -0000</lastBuildDate>
+    <pubDate>Fri, 09 Oct 2026 06:08:57 -0000</pubDate>
+    <lastBuildDate>Fri, 09 Oct 2026 06:08:57 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,48 @@
     
 
     
+    
+    <item>
+      <title>评测 PHOCR 中文文本识别模型</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;该文章主要评测 PHOCRv1 的中文识别模型效果。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Fri, 09 Oct 2026 06:03:45 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/</guid>
+      
+    </item>
+    
+    <item>
+      <title>开源 OCR 模型对比</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文主要给出了常见开源文本检测和文本识别模型的对比和评测，给大家一个使用参考。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Fri, 09 Oct 2026 06:03:45 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/</guid>
+      
+    </item>
     
     <item>
       <title>广州软件院开箱测评 12 款开源 OCR，RapidOCR 表现优异</title>
@@ -171,27 +213,6 @@
     </item>
     
     <item>
-      <title>评测 PHOCR 中文文本识别模型</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;blockquote&gt;
-&lt;p&gt;该文章主要评测 PHOCRv1 的中文识别模型效果。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/</link>
-      <pubDate>Thu, 08 Oct 2026 03:47:48 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2025/08/03/%E8%AF%84%E6%B5%8B-phocr-%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/</guid>
-      
-    </item>
-    
-    <item>
       <title>2025：RapidOCR 获得 AtomGit 官方 G-Star 项目毕业认证</title>
       
       
@@ -283,27 +304,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/06/30/rapidocr-%E9%80%82%E9%85%8D-pp-ocrv6-rec-%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81-paddle-pytorch-%E5%92%8C-mnn-%E8%AE%B0%E5%BD%95/</guid>
-      
-    </item>
-    
-    <item>
-      <title>开源 OCR 模型对比</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;blockquote&gt;
-&lt;p&gt;本文主要给出了常见开源文本检测和文本识别模型的对比和评测，给大家一个使用参考。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/</link>
-      <pubDate>Thu, 18 Jun 2026 03:27:27 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/04/16/%E5%BC%80%E6%BA%90-ocr-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/</guid>
       
     </item>
     

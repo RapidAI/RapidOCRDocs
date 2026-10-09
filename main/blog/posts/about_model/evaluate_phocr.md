@@ -97,4 +97,4 @@ print(metric)
 
 RapidOCR 这里暂时不做集成，后续会持续关注 PHOCR 这里。
 
-完整的评测结果比较：[文本识别模型比较](./model_summary.md#文本识别模型)
+完整的评测结果比较：[文本识别模型比较](./model_summary.md#text-recognition-models)

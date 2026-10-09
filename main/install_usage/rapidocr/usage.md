@@ -674,3 +674,21 @@ rapidocr download_models --config config.yaml
 [INFO] 2026-03-24 10:37:03,640 [RapidOCR] download_file.py:82: Download size: 0.56MB
 [INFO] 2026-03-24 10:37:04,364 [RapidOCR] download_file.py:95: Successfully saved to: /Users/xxxx/RapidOCR/python/test_models/ch_ppocr_mobile_v2.0_cls_infer.onnx
 ```
+
+### 查看支持的语言
+
+`rapidocr>=3.10.0` 提供 `--list-langs`，可以按照任务、OCR 版本和模型类型查询当前模型路由支持的语言：
+
+```bash
+# 查询 PP-OCRv6 medium 识别模型支持的语言
+rapidocr --list-langs --task rec --ocr_version PP-OCRv6 --model_type medium
+```
+
+也可以在 Python 中调用同一个接口：
+
+```python
+from rapidocr import RapidOCR
+
+langs = RapidOCR.list_supported_langs("rec", "PP-OCRv6", "medium")
+print(langs)
+```

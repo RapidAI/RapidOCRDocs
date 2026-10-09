@@ -4,7 +4,7 @@
 
 例如：文本检测使用 ONNX Runtime，文本识别使用 PaddlePaddle（`params={"Rec.engine_type": EngineType.PADDLE}`）。同时，不同版本的 OCR 也可以通过 `Det.ocr_version` 灵活指定。
 
-`rapidocr` 支持 5 种推理引擎（**ONNX Runtime / OpenVINO / PaddlePaddle / PyTorch / MNN (`rapidocr>=3.6.0`)**），推荐首先使用 **ONNX Runtime CPU** 版。默认为 ONNX Runtime。
+`rapidocr` 支持 6 种推理引擎（**ONNX Runtime / OpenVINO / PaddlePaddle / PyTorch / MNN (`rapidocr>=3.6.0`) / TensorRT (`rapidocr>=3.7.0`)**），推荐首先使用 **ONNX Runtime CPU** 版。默认为 ONNX Runtime。
 
 `rapidocr` 是通过指定不同参数来选择使用不同的推理引擎的。当然，使用不同推理引擎的前提是事先安装好对应的推理引擎库，并确保安装正确。
 

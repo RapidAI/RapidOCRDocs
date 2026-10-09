@@ -1,5 +1,27 @@
 import fnmatch
 import re
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
+
+
+def _url_exists(url, cache):
+    """Return whether a URL responds successfully, caching checks per build."""
+    if url in cache:
+        return cache[url]
+
+    try:
+        request = Request(url, method="HEAD")
+        with urlopen(request, timeout=5) as response:
+            exists = 200 <= response.status < 400
+    except HTTPError:
+        # If GitHub cannot confirm the target (including rate limiting), leave
+        # the source text unchanged rather than guessing.
+        exists = False
+    except (URLError, TimeoutError, OSError):
+        exists = False
+
+    cache[url] = exists
+    return exists
 
 
 def on_page_markdown(markdown, page, config, files):
@@ -16,6 +38,9 @@ def on_page_markdown(markdown, page, config, files):
     extra = config.get("extra", {}) or {}
     allowed_pages = extra.get("link_pages", config.get("link_pages", []))
     page_src = page.file.src_path  # 相对于 docs/ 的路径
+    # 链接自动转换仅适用于 changelog，避免影响其他文档中的普通编号。
+    if not page_src.startswith("changelog/"):
+        return markdown
     if allowed_pages:
         matched = any(fnmatch.fnmatch(page_src, pattern) for pattern in allowed_pages)
         if not matched:
@@ -23,6 +48,7 @@ def on_page_markdown(markdown, page, config, files):
 
     # 保存代码块和行内代码
     placeholders = {}
+    link_exists_cache = {}
 
     def store_placeholder(match):
         key = f"__PLACEHOLDER_{len(placeholders)}__"
@@ -34,18 +60,30 @@ def on_page_markdown(markdown, page, config, files):
     markdown = re.sub(r"~~~.*?~~~", store_placeholder, markdown, flags=re.DOTALL)
     # 提取行内代码（`...`）
     markdown = re.sub(r"`[^`]*`", store_placeholder, markdown)
+    # 提取已有的 Markdown 链接，避免链接文本中的 issue/PR 编号被再次处理
+    markdown = re.sub(r"\[[^\]]*\]\([^)]*\)", store_placeholder, markdown)
 
     # --- issue 替换 ---
     def issue_replacer(match):
         num = match.group(1)
-        return f"issue [#{num}]({repo_url}/issues/{num})"
+        url = f"{repo_url}/issues/{num}"
+        return (
+            f"issue [#{num}]({url})"
+            if _url_exists(url, link_exists_cache)
+            else match.group(0)
+        )
 
     markdown = re.sub(r"(?i)issue\s*[:#]?\s*#?(\d+)", issue_replacer, markdown)
 
     # --- PR 替换 ---
     def pr_replacer(match):
         num = match.group(1)
-        return f"PR [#{num}]({repo_url}/pull/{num})"
+        url = f"{repo_url}/pull/{num}"
+        return (
+            f"PR [#{num}]({url})"
+            if _url_exists(url, link_exists_cache)
+            else match.group(0)
+        )
 
     markdown = re.sub(r"(?i)PR\s*[:#]?\s*#?(\d+)", pr_replacer, markdown)
 
@@ -54,15 +92,26 @@ def on_page_markdown(markdown, page, config, files):
     # 使用 (?<!\w) 确保前面不是单词字符，避免匹配 foo#123
     def hash_pr_replacer(match):
         num = match.group(1)
-        return f"[#{num}]({repo_url}/pull/{num})"
+        url = f"{repo_url}/pull/{num}"
+        return (
+            f"[#{num}]({url})"
+            if _url_exists(url, link_exists_cache)
+            else match.group(0)
+        )
 
-    markdown = re.sub(r"(?<!\w)#(\d+)\b", hash_pr_replacer, markdown)
+    # `[` 也作为边界排除，避免处理已有链接（以及前面刚生成的链接）中的编号
+    markdown = re.sub(r"(?<![\w\[])#(\d+)\b", hash_pr_replacer, markdown)
 
     # --- commit 替换 ---
     def commit_replacer(match):
         sha = match.group(1)
         short_sha = sha[:7]
-        return f"commit [{short_sha}]({repo_url}/commit/{sha})"
+        url = f"{repo_url}/commit/{sha}"
+        return (
+            f"commit [{short_sha}]({url})"
+            if _url_exists(url, link_exists_cache)
+            else match.group(0)
+        )
 
     markdown = re.sub(r"(?i)commit\s+([0-9a-f]{6,40})", commit_replacer, markdown)
 

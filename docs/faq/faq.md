@@ -18,12 +18,18 @@ hide:
 
 #### Q: Windows 系统下，装完环境之后，运行示例程序之后，报错 OSError: [WinError 126] 找不到指定的模組
 
-**A:** 原因是 Shapely 库没有正确安装，如果是在 Windows，可以在 [Shapely whl](https://www.lfd.uci.edu/~gohlke/pythonlibs/#shapely) 下载对应的 whl 包，离线安装即可；另外一种解决办法是用 conda 安装也可。
+**A:** 原因通常是 Shapely 二进制依赖没有正确安装。建议优先升级 `pip` 后重新安装：
 
-#### Q: Linux 部署 python 的程序时，`import cv2` 时会报 `ImportError: ligGL.so.1: cannot open shared object file: No such file or directory`?
+```bash
+python -m pip install -U pip
+python -m pip install -U Shapely
+```
 
-**A:** [解决方法](https://stackoverflow.com/questions/63977422/error-trying-to-import-cv2opencv-python-package/63978454
-) 有两个 (来自群友 ddeef)：
+如果使用 Conda，也可以运行 `conda install -c conda-forge shapely`。
+
+#### Q: Linux 部署 Python 程序时，`import cv2` 报 `ImportError: libGL.so.1: cannot open shared object file: No such file or directory`，怎么办？
+
+**A:** [解决方法](https://stackoverflow.com/questions/63977422/error-trying-to-import-cv2opencv-python-package/63978454) 有两个 (来自群友 ddeef)：
 
   1. 安装 `opencv-python-headless` 取代 `opencv-python`;
   2. 运行 `sudo apt-get install -y libgl1-mesa-dev`
@@ -40,7 +46,7 @@ hide:
 
 **A:** RapidOCR 是将 PaddleOCR 的预训练模型转为 onnx 模型，不依赖 paddle 框架，方便各个平台部署。
 
-#### Q: onnxruntime arm32 有人编译过吗？ 我编译成功了，但是使用的时候 libonnxruntime.so:-1: error: file not recognized: File format not recognized  应该是版本不匹配
+#### Q: onnxruntime arm32 有人编译过吗？我编译成功了，但是使用的时候 libonnxruntime.so:-1: error: file not recognized: File format not recognized  应该是版本不匹配
 
 **A:** 没遇到过。我是直接在当前平台编译的，我们用的是 arm。估计是平台不兼容,建议在本身平台上编译。没遇到过问题。通常出在交叉编译方式下。
 
@@ -58,7 +64,7 @@ hide:
 
 #### Q: 您好，我想部署下咱们的 ocr 识别，有提供 linux 版本的 ocr 部署包吗?
 
-**A:** linux 版本的自己编译即可, 可以参考我们的 action 中的脚本；其实编译非常容易，安装个 opencv 后，在 cmakelists.txt 中修改一下 onnxruntime 的路径即可，具体参考这个： <https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml>
+**A:** linux 版本的自己编译即可, 可以参考我们的 action 中的脚本；其实编译非常容易，安装个 opencv 后，在 cmakelists.txt 中修改一下 onnxruntime 的路径即可，具体参考这个：<https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml>
 
 #### Q: onnxruntime 编译好的 C++ 库，哪里可以下载到？
 
@@ -78,4 +84,4 @@ hide:
 
 #### Q: 边缘总有一行文字无法识别，怎么办？
 
-**A:** 在 padding 参数中添加一个值 ，默认是 0,你可以添加 5 或 10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。
+**A:** 在 padding 参数中添加一个值，默认是 0,你可以添加 5 或 10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。

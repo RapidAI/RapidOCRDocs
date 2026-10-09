@@ -7,7 +7,7 @@ site_description:
 repo_name: RapidAI/RapidOCR
 repo_url: https://github.com/RapidAI/RapidOCR
 
-copyright: Copyright &copy; 2025 Maintained by SWHL.
+copyright: Copyright &copy; 2026 Maintained by SWHL.
 
 edit_uri: https://github.com/RapidAI/RapidOCRDocs/blob/main/docs
 
@@ -72,6 +72,7 @@ theme:
 plugins:
   - meta
   - rss:
+      enabled: !ENV [CI, false]
       match_path: "blog/posts/.*"
       date_from_meta:
         as_creation: date.created
@@ -149,6 +150,8 @@ plugins:
   - git-committers:
       repository: RapidAI/RapidOCRDocs
       branch: main
+      # GitHub API access is available in CI; keep local/offline builds usable.
+      enabled: !ENV [CI, false]
       token: !!python/object/apply:os.getenv ["BLOG_MKDOCS_GIT_COMMITTERS_APIKEY"]
   - git-revision-date-localized:
       enable_creation_date: true

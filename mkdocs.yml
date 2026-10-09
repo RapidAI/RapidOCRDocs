@@ -241,6 +241,7 @@ nav:
   - 快速开始: quickstart.md
   - 在线 demo: online_demo.md
   - 模型列表: model_list.md
+  - 模型开源协议: model_licenses.md
   - 安装及使用:
     - rapidocr:
       - 安装: install_usage/rapidocr/install.md

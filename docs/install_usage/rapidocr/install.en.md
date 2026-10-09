@@ -6,7 +6,7 @@ hide:
   - toc
 ---
 
-<a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.13-aff.svg"></a>
+<a href=""><img src="https://img.shields.io/badge/Python->=3.8,<4-aff.svg"></a>
 <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
 <a href="https://pepy.tech/project/rapidocr"><img src="https://static.pepy.tech/personalized-badge/rapidocr?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20rapidocr"></a>
 <a href="https://pypi.org/project/rapidocr/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr"></a>
@@ -23,11 +23,18 @@ In `rapidocr>=2.0.0,<=2.0.5`, the ONNX Runtime CPU build is used as the default 
 
 Starting from `rapidocr>=2.0.6`, ONNX Runtime is no longer a dependency, although it remains the default inference engine. From that version onwards you need to install the inference engine you want to use yourself.
 
+`rapidocr>=3.10.0`: The dependent `opencv` library has been changed from `opencv-python` to `opencv-python-headless`.
+
+Server-side, Docker, headless environment: use `opencv-python-headless` — simply install it directly.
+
+If you need GUI features such as `imshow` and window display: switch to `opencv-python`. Do not install both packages at the same time to avoid cv2 conflicts.
+
+```bash linenums="1"
+pip uninstall opencv-python-headless
+pip install opencv-python
+```
+
 #### Installation
-
-!!! note
-
-    `rapidocr>=3.10.0`: The dependent `opencv` library has been changed from `opencv-python` to `opencv-python-headless`.
 
 If all goes well, a single command is enough to get started. The `rapidocr` package is about 27.2 MB and contains three models: text detection, text line orientation classification and text recognition. The small models are compact enough to be bundled into the wheel, so pip install is all that is needed.
 

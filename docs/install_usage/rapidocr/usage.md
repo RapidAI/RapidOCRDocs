@@ -176,7 +176,9 @@ result.vis("vis_result.jpg")
     )
     ```
 
-由于采用 Pillow 库来打开图像，因此支持传入图像格式与 Pillow 保持一致，详情参见 [image-file-formats](https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html)
+### 图像输入
+
+`RapidOCR` 支持文件路径、URL、`bytes`、NumPy, Pillow 以及内存地址等多种图像输入方式。详细说明参见：[图像输入](./image_input.md)。
 
 ### 输出
 

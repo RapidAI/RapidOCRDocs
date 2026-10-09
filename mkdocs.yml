@@ -246,6 +246,7 @@ nav:
     - rapidocr:
       - 安装: install_usage/rapidocr/install.md
       - 使用: install_usage/rapidocr/usage.md
+      - 图像输入: install_usage/rapidocr/image_input.md
       - 参数介绍: install_usage/rapidocr/parameters.md
       - 打包:
         - 如何自行构建指定版本的 rapidocr whl 包: install_usage/rapidocr/package/build-custom-version-rapidocr-whl.md

@@ -5,6 +5,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**/*.md'
+      - '.lycheeignore'
+      - '.github/workflows/links-check.yml'
   workflow_dispatch:
   schedule:
     - cron: "00 18 * * 6"
@@ -24,7 +28,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-            args: --quiet --max-redirects 5 './**/*.md' --accept 100..=103,200..=299,301,302,520,521,522,524 --no-progress
+            args: >-
+              --quiet --max-redirects 5 --max-retries 3 --retry-wait-time 10
+              --timeout 20 './**/*.md'
+              --accept 100..=103,200..=299,301,302,520,521,522,524 --no-progress
             format: markdown
             fail: false
             output: lychee/results.md
@@ -36,3 +43,4 @@ jobs:
           title: Link Checker Report
           content-filepath: ./lychee/results.md
           labels: report, automated issue
+          update-existing: true

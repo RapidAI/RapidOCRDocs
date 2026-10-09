@@ -29,6 +29,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/mainen/contributing/"/>
     </url>
     <url>
+        <loc>https://rapidai.github.io/RapidOCRDocs/main/model_licenses/</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://rapidai.github.io/RapidOCRDocs/main/model_licenses/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/mainen/model_licenses/"/>
+    </url>
+    <url>
         <loc>https://rapidai.github.io/RapidOCRDocs/main/model_list/</loc>
         <lastmod>2026-10-09</lastmod>
         <changefreq>daily</changefreq>
@@ -667,6 +674,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/main/en/contributing/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://rapidai.github.io/RapidOCRDocs/maincontributing/"/>
+    </url>
+    <url>
+        <loc>https://rapidai.github.io/RapidOCRDocs/main/en/model_licenses/</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rapidai.github.io/RapidOCRDocs/main/en/model_licenses/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://rapidai.github.io/RapidOCRDocs/mainmodel_licenses/"/>
     </url>
     <url>
         <loc>https://rapidai.github.io/RapidOCRDocs/main/en/model_list/</loc>

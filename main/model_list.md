@@ -6,6 +6,8 @@
 
 `rapidocr` v3 版本已经集成了托管的所有模型，通过下面参数指定可以自动下载。对应的配置文件：[default_model.yaml](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml)。当然，小伙伴们也可以自己去上述链接下载。
 
+`rapidocr>=v3.10.0` 起，模型选择由 default_models.yaml 中的模型路由统一管理。用户传入语言、模型类型和 OCR 版本后，RapidOCR 会自动解析实际模型文件。
+
 ## 默认配置
 
 通过 pip 安装 `rapidocr` 之后，可以直接使用，不用指定任何参数。因为 whl 包中预先打包了默认模型，同时给出了默认配置。

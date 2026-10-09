@@ -1,4 +1,4 @@
-<a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.13-aff.svg"></a>
+<a href=""><img src="https://img.shields.io/badge/Python->=3.8,<4-aff.svg"></a>
 <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
 <a href="https://pepy.tech/project/rapidocr"><img src="https://static.pepy.tech/personalized-badge/rapidocr?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20rapidocr"></a>
 <a href="https://pypi.org/project/rapidocr/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr"></a>
@@ -15,11 +15,18 @@
 
 `rapidocr>=2.0.6` 中不再将 ONNX Runtime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。
 
+`rapidocr>=3.10.0`，默认依赖的 `opencv` 库由 `opencv-python` 改为了 `opencv-python-headless`。推荐使用如下：
+
+服务端、Docker、无桌面环境：使用 `opencv-python-headless`，也就是直接安装就可以了。
+
+需要 imshow、窗口显示等 GUI 功能：改装 `opencv-python`。两者不要同时安装，避免 cv2 冲突。
+
+```bash linenums="1"
+pip uninstall opencv-python-headless
+pip install opencv-python
+```
+
 #### 安装
-
-!!! note
-
-    `rapidocr>=3.10.0`，依赖的`opencv`库由`opencv-python`改为了`opencv-python-headless`。
 
 顺利的话，一行命令即可使用上。`rapidocr` 包大小约为 27.2M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 small 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。
 

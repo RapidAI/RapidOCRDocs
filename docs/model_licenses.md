@@ -67,9 +67,9 @@ RapidOCR 转换后的模型制品，与百度官方托管的 ONNX 模型并非�
 
 |RapidOCR 制品名称|上游原始模型|SHA-256 哈希值|RapidOCR 溯源地址|
 |---|---|---|---|
-|`PP-OCRv6_det_small.onnx`|`PP-OCRv6_small_det`|090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f|[ModelScope 溯源链接](https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx)|
-|`PP-OCRv6_rec_small.onnx`|`PP-OCRv6_small_rec`|6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884|[ModelScope 溯源链接](https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx)|
-|`ch_ppocr_mobile_v2.0_cls_mobile.onnx`|`ch_ppocr_mobile_v2.0_cls`|e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c|[ModelScope 溯源链接](https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv4/cls/ch_ppocr_mobile_v2.0_cls_mobile.onnx)|
+|`PP-OCRv6_det_small.onnx`|`PP-OCRv6_small_det`|090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f|[ModelScope 溯源链接](https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx)|
+|`PP-OCRv6_rec_small.onnx`|`PP-OCRv6_small_rec`|6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884|[ModelScope 溯源链接](https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx)|
+|`ch_ppocr_mobile_v2.0_cls_mobile.onnx`|`ch_ppocr_mobile_v2.0_cls`|e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c|[ModelScope 溯源链接](https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/onnx/PP-OCRv4/cls/ch_ppocr_mobile_v2.0_cls_mobile.onnx)|
 
 项目配置文件 `rapidocr/default_models.yaml` 为所有模型制品溯源地址与 SHA-256 哈希值的 **权威发布记录**。
 

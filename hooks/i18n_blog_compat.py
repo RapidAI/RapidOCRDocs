@@ -31,6 +31,16 @@ def _default_locale(config) -> str:
     return "zh"
 
 
+def _is_default_language_build(config) -> bool:
+    """Only render blog files in the default-language site."""
+    default_locale = _default_locale(config)
+    for plugin in config.plugins.values():
+        current_language = getattr(plugin, "current_language", None)
+        if current_language:
+            return current_language == default_locale
+    return True
+
+
 def _blog_prefixes(config) -> tuple[str, ...]:
     """Return the `blog_dir` of every enabled blog plugin, as path prefixes.
 
@@ -67,6 +77,9 @@ def _detach_blog_files(files: Files, config, *_, **__) -> Files:
 @plugins.event_priority(-105)
 def _reattach_blog_files(files: Files, config, *_, **__) -> Files:
     """Runs after the i18n plugin has processed the remaining files."""
+    if not _is_default_language_build(config):
+        return files
+
     default_locale = _default_locale(config)
     for file in BLOG_FILES:
         # Files detached before mkdocs-static-i18n.on_files do not receive the

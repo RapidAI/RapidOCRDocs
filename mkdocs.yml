@@ -91,6 +91,7 @@ plugins:
       categories_name: Categories
   - blog:
       blog_dir: changelog
+      archive: false
   - tags
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'

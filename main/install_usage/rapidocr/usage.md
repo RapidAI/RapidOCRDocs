@@ -64,7 +64,7 @@ result.vis("vis_result.jpg")
         # The config file has saved in ./default_rapidocr.yaml
         ```
 
-    2. 根据自己的需要更改 **default_rapidocr.yaml** 相应的值。例如使用 OpenVINO 作为作为文本检测的推理引擎，同时使用 `ch_mobile`，PP-OCRv4 版本的模型，更改如下：
+    2. 根据自己的需要更改 **default_rapidocr.yaml** 相应的值。例如使用 OpenVINO 作为文本检测的推理引擎，同时使用 `ch_mobile`，PP-OCRv4 版本的模型，更改如下：
 
         ```yaml linenums="1" hl_lines="3"
         # 该配置文件命名为1.yaml

@@ -45,7 +45,7 @@ Global:
 
 > ⚠️注意：如果配置文件和调用时候同时声明 `use_det | use_cls | use_rec` 这三个参数，调用时参数会覆盖配置文件参数。
 
-`use_preprocess_img (bool)`: 是否使用图像预处理。这里的预处理主要是 `min_hegiht` 和 `width_height_ratio` 两个参数控制是否对图像做补边操作。r 如果设置为 `False`，则 `min_hegiht` 和 `width_height_ratio` 参数均无效。默认为 `True`。
+`use_preprocess_img (bool)`: 是否使用图像预处理。这里的预处理主要是 `min_hegiht` 和 `width_height_ratio` 两个参数控制是否对图像做补边操作。如果设置为 `False`，则 `min_hegiht` 和 `width_height_ratio` 参数均无效。默认为 `True`。
 
 > 在 `rapidocr>=3.9.2` 中添加此参数。
 

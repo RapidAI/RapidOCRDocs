@@ -201,7 +201,7 @@
     
     <p class="banner">
         🎉 最新文档：
-        <a href="../../model_licenses/" target="_blank" rel="noopener">模型开源协议</a>
+        <a href="../../model_licenses/" target="_blank" rel="noopener">RapidOCR 模型许可与归属声明</a>
     </p>
     
 
@@ -2280,7 +2280,8 @@ You're not viewing the latest version.
 <p>针对 PaddleOCR 已经发布的常用模型，我们这里已经做了统一转换和汇总，包括 PP-OCRv4, PP-OCRv5 和 PP-OCRv6 系列的 PaddlePaddle 格式、ONNX 格式、MNN 格式、TensorRT 格式和 PyTorch 格式。</p>
 <p>所有模型目前托管在 <a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/files">魔搭社区</a> 上。</p>
 <p><code>rapidocr</code> v3 版本已经集成了托管的所有模型，通过下面参数指定可以自动下载。对应的配置文件：<a href="https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml">default_model.yaml</a>。当然，小伙伴们也可以自己去上述链接下载。</p>
-<p><code>rapidocr&gt;=v3.10.0</code> 起，模型选择由 default_models.yaml 中的模型路由统一管理。用户传入语言、模型类型和 OCR 版本后，RapidOCR 会自动解析实际模型文件。</p>
+<p><code>rapidocr&gt;=3.10.0</code> 起，模型选择由 default_models.yaml 中的模型路由统一管理。用户传入语言、模型类型和 OCR 版本后，RapidOCR 会自动解析实际模型文件。</p>
+<p>使用阿拉伯语等 RTL 语言时，请先安装 <a href="../install_usage/rapidocr/install/#按需安装额外依赖">RTL 额外依赖</a>。</p>
 <h2 id="_2">默认配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>通过 pip 安装 <code>rapidocr</code> 之后，可以直接使用，不用指定任何参数。因为 whl 包中预先打包了默认模型，同时给出了默认配置。</p>
 <p>不同版本的 <code>rapidocr</code>，默认配置有所不同。下面详细给出不同版本对应的默认配置。</p>

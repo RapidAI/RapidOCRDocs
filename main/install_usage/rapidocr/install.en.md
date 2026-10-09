@@ -40,6 +40,24 @@ If the download is slow in your region, specify a closer mirror. For example, us
 pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
+#### Install Additional Dependencies as Needed
+
+> Supported for `rapidocr>=3.10.0`
+
+If you need to use right-to-left languages such as Arabic, install RTL support:
+
+```bash linenums="1"
+pip install "rapidocr[rtl]" onnxruntime
+```
+
+If rapidocr and the inference engine are already installed, just install the extra dependency:
+
+```bash linenums="1"
+pip install "rapidocr[rtl]"
+```
+
+The `rtl` extra installs `python-bidi`, which adjusts the display order for right-to-left languages.
+
 #### Verify the installation
 
 === "`rapidocr>=2.0.3`"

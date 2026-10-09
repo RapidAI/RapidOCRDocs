@@ -201,7 +201,7 @@
     
     <p class="banner">
         🎉 最新文档：
-        <a href="../../../../model_licenses/" target="_blank" rel="noopener">模型开源协议</a>
+        <a href="../../../../model_licenses/" target="_blank" rel="noopener">RapidOCR 模型许可与归属声明</a>
     </p>
     
 
@@ -1030,6 +1030,15 @@ You're not viewing the latest version.
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-additional-dependencies-as-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Additional Dependencies as Needed
     </span>
   </a>
   
@@ -1921,6 +1930,15 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-additional-dependencies-as-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Additional Dependencies as Needed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#verify-the-installation" class="md-nav__link">
     <span class="md-ellipsis">
       Verify the installation
@@ -2025,50 +2043,22 @@ You're not viewing the latest version.
 <p>If the download is slow in your region, specify a closer mirror. For example, using the Tsinghua mirror:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr<span class="w"> </span>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple/
 </span></code></pre></div></td></tr></table></div>
+<h4 id="install-additional-dependencies-as-needed">Install Additional Dependencies as Needed<a class="headerlink" href="#install-additional-dependencies-as-needed" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Supported for <code>rapidocr&gt;=3.10.0</code></p>
+</blockquote>
+<p>If you need to use right-to-left languages such as Arabic, install RTL support:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"rapidocr[rtl]"</span><span class="w"> </span>onnxruntime
+</span></code></pre></div></td></tr></table></div>
+<p>If rapidocr and the inference engine are already installed, just install the extra dependency:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"rapidocr[rtl]"</span>
+</span></code></pre></div></td></tr></table></div>
+<p>The <code>rtl</code> extra installs <code>python-bidi</code>, which adjusts the display order for right-to-left languages.</p>
 <h4 id="verify-the-installation">Verify the installation<a class="headerlink" href="#verify-the-installation" title="Permanent link">&para;</a></h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><code>rapidocr&gt;=2.0.3</code></label><label for="__tabbed_1_2"><code>rapidocr&gt;=2.0.0,&lt;2.0.2</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>$<span class="w"> </span>rapidocr<span class="w"> </span>check
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># The installation is correct when you see the following output</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:43,979<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:23:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,045<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,046<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:63:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,127<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:23:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,129<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,129<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:63:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,190<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:23:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,260<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
-</span></span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,260<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:63:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>Success!<span class="w"> </span>rapidocr<span class="w"> </span>is<span class="w"> </span>installed<span class="w"> </span>correctly!
-</span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<p>Run the following command. The installation succeeded if the recognized text is printed in the terminal.</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>rapidocr<span class="w"> </span>-img<span class="w"> </span><span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span><span class="w"> </span>--vis_res
-</span></code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>If a dependency fails to install, install that dependency on its own first and then install <code>rapidocr</code>.</p>
-</div>
-<p>The dependencies are:</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -2078,17 +2068,56 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>pyclipper&gt;=1.2.0
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>opencv-python-headless&gt;=4.5.1.48
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>numpy&gt;=1.19.5,&lt;3.0.0
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>six&gt;=1.15.0
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>Shapely&gt;=1.7.1,!=2.0.4  # python3.12 2.0.4 bug
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>PyYAML
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>Pillow
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a>tqdm
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>omegaconf!=2.2.1 # https://github.com/omry/omegaconf/issues/934
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a>requests
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a>colorlog
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>$<span class="w"> </span>rapidocr<span class="w"> </span>check
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1"># The installation is correct when you see the following output</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:43,979<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:23:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,045<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,046<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:63:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_det_small.onnx
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,127<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:23:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,129<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,129<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:63:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/ch_ppocr_mobile_v2.0_cls_mobile.onnx
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,190<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>base.py:23:<span class="w"> </span>Using<span class="w"> </span>engine_name:<span class="w"> </span>onnxruntime
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="hll"><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,260<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>download_file.py:60:<span class="w"> </span>File<span class="w"> </span>exists<span class="w"> </span>and<span class="w"> </span>is<span class="w"> </span>valid:<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
+</span></span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span><span class="m">2026</span>-06-23<span class="w"> </span><span class="m">12</span>:51:44,260<span class="w"> </span><span class="o">[</span>RapidOCR<span class="o">]</span><span class="w"> </span>main.py:63:<span class="w"> </span>Using<span class="w"> </span>/usr/local/lib/python3.12/dist-packages/rapidocr/models/PP-OCRv6_rec_small.onnx
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a>Success!<span class="w"> </span>rapidocr<span class="w"> </span>is<span class="w"> </span>installed<span class="w"> </span>correctly!
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p>Run the following command. The installation succeeded if the recognized text is printed in the terminal.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>rapidocr<span class="w"> </span>-img<span class="w"> </span><span class="s2">"https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"</span><span class="w"> </span>--vis_res
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If a dependency fails to install, install that dependency on its own first and then install <code>rapidocr</code>.</p>
+</div>
+<p>The dependencies are:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>pyclipper&gt;=1.2.0
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>opencv-python-headless&gt;=4.5.1.48
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>numpy&gt;=1.19.5,&lt;3.0.0
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>six&gt;=1.15.0
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>Shapely&gt;=1.7.1,!=2.0.4  # python3.12 2.0.4 bug
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a>PyYAML
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>Pillow
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>tqdm
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>omegaconf!=2.2.1 # https://github.com/omry/omegaconf/issues/934
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a>requests
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a>colorlog
 </span></code></pre></div></td></tr></table></div>
 
 <!-- Source file information -->

@@ -10,7 +10,7 @@
 
 `rapidocr>=3.9.0` 中默认使用 `Det PP-OCRv6 small` + `Cls PP-OCRv4 mobile` + `Rec PP-OCRv6 small`。
 
-`rapidocr<3.9.0` 中默认使用 `Det PP-OCRv4 mobile` + `Cls PP-OCRv4 mobiel` + `Rec PP-OCRv4 mobile`。
+`rapidocr<3.9.0` 中默认使用 `Det PP-OCRv4 mobile` + `Cls PP-OCRv4 mobile` + `Rec PP-OCRv4 mobile`。
 
 推荐可以先使用 ONNX Runtime CPU 版作为推理引擎。
 

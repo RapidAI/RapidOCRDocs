@@ -123,6 +123,7 @@ plugins:
             快速开始: Quick Start
             在线 demo: Online Demo
             模型列表: Model List
+            模型许可与归属声明: Model License and Attribution Statement
             安装及使用: Installation & Usage
             安装: Installation
             使用: Usage
@@ -241,7 +242,7 @@ nav:
   - 快速开始: quickstart.md
   - 在线 demo: online_demo.md
   - 模型列表: model_list.md
-  - 模型开源协议: model_licenses.md
+  - 模型许可与归属声明: model_licenses.md
   - 安装及使用:
     - rapidocr:
       - 安装: install_usage/rapidocr/install.md

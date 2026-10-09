@@ -1,5 +1,5 @@
 ---
-title: RapidOCR 模型许可与归属声明
+title: 模型许可与归属声明
 comments: true
 hide:
   - navigation

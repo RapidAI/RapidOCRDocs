@@ -1,5 +1,5 @@
 ---
-title: RapidOCR Model License and Attribution Statement
+title: Model License and Attribution Statement
 comments: true
 hide:
   - navigation

@@ -48,6 +48,24 @@ pip install rapidocr onnxruntime
 pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
+#### 按需安装额外依赖
+
+> `rapidocr>=3.10.0` 支持
+
+如果需要使用阿拉伯语等从右向左书写的语言，请安装 RTL 支持：
+
+```bash linenums="1"
+pip install "rapidocr[rtl]" onnxruntime
+```
+
+如果已经安装了 rapidocr 和推理引擎，只需补充安装：
+
+```bash linenums="1"
+pip install "rapidocr[rtl]"
+```
+
+`rtl` extra 会安装 `python-bidi`，用于调整从右向左语言的显示顺序。
+
 #### 验证安装是否成功
 
 === "`rapidocr>=2.0.3` 验证方式"

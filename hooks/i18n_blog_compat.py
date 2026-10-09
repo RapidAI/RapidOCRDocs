@@ -17,7 +17,6 @@ the Gothic Modding Community.
 
 from mkdocs import plugins
 from mkdocs.structure.files import File, Files
-from mkdocs.structure.nav import Section
 
 BLOG_FILES: list[File] = []
 """Blog files removed from the build, kept between the two events below."""
@@ -40,22 +39,6 @@ def _is_default_language_build(config) -> bool:
         if current_language:
             return current_language == default_locale
     return True
-
-
-def _find_page_section(items, src_uri: str):
-    """Find the navigation section containing the given page source URI."""
-    for item in items:
-        if isinstance(item, Section):
-            if any(
-                getattr(child, "file", None)
-                and child.file.src_uri == src_uri
-                for child in item.children
-            ):
-                return item
-            found = _find_page_section(item.children, src_uri)
-            if found:
-                return found
-    return None
 
 
 def _blog_prefixes(config) -> tuple[str, ...]:
@@ -110,31 +93,3 @@ def _reattach_blog_files(files: Files, config, *_, **__) -> Files:
 
 
 on_files = plugins.CombinedEvent(_detach_blog_files, _reattach_blog_files)
-
-
-@plugins.event_priority(-95)
-def on_nav(nav, config, files):
-    """Expose all default-language blog posts in their blog sections."""
-    if not _is_default_language_build(config):
-        return nav
-
-    for plugin in config.plugins.values():
-        blog_dir = getattr(getattr(plugin, "config", None), "blog_dir", None)
-        blog = getattr(plugin, "blog", None)
-        if not blog_dir or not blog or not blog.posts:
-            continue
-
-        section = _find_page_section(nav.items, f"{blog_dir}/index.md")
-        if not section:
-            continue
-
-        existing = {getattr(item, "file", None) for item in section.children}
-        for post in blog.posts:
-            post.meta.setdefault("hide", []).remove("navigation") if "navigation" in post.meta.get("hide", []) else None
-            if post not in nav.pages:
-                nav.pages.append(post)
-            if post.file not in existing:
-                post.parent = section
-                section.children.append(post)
-                existing.add(post.file)
-    return nav

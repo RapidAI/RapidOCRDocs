@@ -22,6 +22,15 @@ BLOG_FILES: list[File] = []
 """Blog files removed from the build, kept between the two events below."""
 
 
+def _default_locale(config) -> str:
+    """Return the i18n plugin's default locale for default-language blog files."""
+    for plugin in config.plugins.values():
+        default_language = getattr(plugin, "default_language", None)
+        if default_language:
+            return default_language
+    return "zh"
+
+
 def _blog_prefixes(config) -> tuple[str, ...]:
     """Return the `blog_dir` of every enabled blog plugin, as path prefixes.
 
@@ -56,9 +65,16 @@ def _detach_blog_files(files: Files, config, *_, **__) -> Files:
 
 
 @plugins.event_priority(-105)
-def _reattach_blog_files(files: Files, *_, **__) -> Files:
+def _reattach_blog_files(files: Files, config, *_, **__) -> Files:
     """Runs after the i18n plugin has processed the remaining files."""
+    default_locale = _default_locale(config)
     for file in BLOG_FILES:
+        # Files detached before mkdocs-static-i18n.on_files do not receive the
+        # metadata that its i18n sitemap expects.  Blog content intentionally
+        # remains in the default language, so provide the corresponding
+        # self-alternate before putting it back into the final file collection.
+        if not hasattr(file, "alternates"):
+            file.alternates = {default_locale: file}
         files.append(file)
     return files
 

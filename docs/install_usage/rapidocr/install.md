@@ -25,6 +25,10 @@ hide:
 
 #### 安装
 
+!!! note
+
+    `rapidocr>=3.10.0`，依赖的`opencv`库由`opencv-python`改为了`opencv-python-headless`。
+
 顺利的话，一行命令即可使用上。`rapidocr` 包大小约为 27.2M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 small 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。
 
 ```bash linenums="1"
@@ -41,7 +45,7 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 === "`rapidocr>=2.0.3` 验证方式"
 
-    ```bash linenums="1" hl_lines="11"
+    ```bash linenums="1" hl_lines="13"
     $ rapidocr check
 
     # 输出以下内容即证明安装成功
@@ -73,7 +77,7 @@ pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 ```txt linenums="1"
 pyclipper>=1.2.0
-opencv_python>=4.5.1.48
+opencv-python-headless>=4.5.1.48
 numpy>=1.19.5,<3.0.0
 six>=1.15.0
 Shapely>=1.7.1,!=2.0.4  # python3.12 2.0.4 bug

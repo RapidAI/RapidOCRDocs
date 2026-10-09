@@ -17,6 +17,10 @@ Starting from `rapidocr>=2.0.6`, ONNX Runtime is no longer a dependency, althoug
 
 #### Installation
 
+!!! note
+
+    `rapidocr>=3.10.0`: The dependent `opencv` library has been changed from `opencv-python` to `opencv-python-headless`.
+
 If all goes well, a single command is enough to get started. The `rapidocr` package is about 27.2 MB and contains three models: text detection, text line orientation classification and text recognition. The small models are compact enough to be bundled into the wheel, so pip install is all that is needed.
 
 ```bash linenums="1"
@@ -65,7 +69,7 @@ The dependencies are:
 
 ```txt linenums="1"
 pyclipper>=1.2.0
-opencv_python>=4.5.1.48
+opencv-python-headless>=4.5.1.48
 numpy>=1.19.5,<3.0.0
 six>=1.15.0
 Shapely>=1.7.1,!=2.0.4  # python3.12 2.0.4 bug

@@ -179,7 +179,6 @@ hooks:
 
 extra_css:
   - stylesheets/extra.css
-  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css
 
 extra_javascript:
   - javascripts/extra.js

@@ -51,7 +51,7 @@ RapidOCR 是一款完全开源免费、支持离线快速部署的多平台多�
 ```mermaid
 ---
 config:
-  fontFamily: "LXGW WenKai Screen"
+  fontFamily: "Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif"
   look: handDrawn
 ---
 flowchart LR

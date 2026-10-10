@@ -8,7 +8,7 @@ You can select a language, OCR version and model size through `RapidOCR` paramet
 
 !!! info
 
-    This page summarizes the main model routes. The [complete Chinese model reference](https://rapidai.github.io/RapidOCRDocs/model_list/) contains the full route matrix, aliases, language table and version-specific defaults.
+    This page summarizes the main model routes. The [complete Chinese model reference](https://rapidai.github.io/RapidOCRDocs/latest/model_list/) contains the full route matrix, aliases, language table and version-specific defaults.
 
 ```python
 from rapidocr import EngineType, ModelType, OCRVersion, RapidOCR
@@ -44,4 +44,4 @@ PP-OCRv6 `small` and `medium` support the broadest multilingual routes. `tiny` s
 - Check the selected language route before choosing a multilingual model.
 - Install the [RTL extra dependency](install_usage/rapidocr/install.md) for right-to-left languages such as Arabic.
 
-For the complete route matrix and language table, see the [Chinese model reference](https://rapidai.github.io/RapidOCRDocs/model_list/) and [`default_models.yaml`](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml).
+For the complete route matrix and language table, see the [Chinese model reference](https://rapidai.github.io/RapidOCRDocs/latest/model_list/) and [`default_models.yaml`](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml).

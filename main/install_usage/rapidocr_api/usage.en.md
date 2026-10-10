@@ -102,4 +102,4 @@ When text is detected, the response maps result indexes to recognized text, box 
 
 If no text is detected, the API returns an empty object: `{}`.
 
-For Docker examples, historical package layouts and additional request flags, see the [complete Chinese API reference](https://rapidai.github.io/RapidOCRDocs/install_usage/rapidocr_api/usage/).
+For Docker examples, historical package layouts and additional request flags, see the [complete Chinese API reference](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr_api/usage/).

@@ -246,7 +246,7 @@ git push myfork fix/xxx
 ## 其他说明
 
 - **代码风格**：项目采用 [black](https://github.com/psf/black)、autoflake 等规范，已通过 pre-commit 钩子在提交时自动检查；也可在仓库根目录执行 `pre-commit run --all-files` 手动跑一遍。
-- **文档**：更多安装与使用说明见 [RapidOCR 文档](https://rapidai.github.io/RapidOCRDocs/)。
+- **文档**：更多安装与使用说明见 [RapidOCR 文档](https://rapidai.github.io/RapidOCRDocs/latest/)。
 - **问题与讨论**：Bug 与功能建议可通过 [GitHub Issues](https://github.com/RapidAI/RapidOCR/issues) 反馈。
 
 再次感谢你的贡献！

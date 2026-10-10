@@ -6,7 +6,7 @@ Starting with `rapidocr>=3.10.0`, model loading is lazy: detection, classificati
 
 !!! info
 
-    This English page covers the primary workflow. The [Chinese usage reference](https://rapidai.github.io/RapidOCRDocs/install_usage/rapidocr/usage/) contains the complete stage-by-stage examples and return-value details.
+    This English page covers the primary workflow. The [Chinese usage reference](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr/usage/) contains the complete stage-by-stage examples and return-value details.
 
 ## Python usage
 
@@ -74,7 +74,7 @@ print(result.scores)
 print(result.elapse)
 ```
 
-Set `use_det`, `use_cls` or `use_rec` to `False` when you need only selected stages. The corresponding return type and fields are documented in the [Chinese usage reference](https://rapidai.github.io/RapidOCRDocs/install_usage/rapidocr/usage/).
+Set `use_det`, `use_cls` or `use_rec` to `False` when you need only selected stages. The corresponding return type and fields are documented in the [Chinese usage reference](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr/usage/).
 
 ## CLI usage
 

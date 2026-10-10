@@ -15,7 +15,7 @@
 
 #### ❤2023-05-20 ocrweb update
 
-- 增加桌面版 RapidOCRWeb，详情可参见 [RapidOCRWeb 桌面版使用教程](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr_web/usage/)
+- 增加桌面版 RapidOCRWeb，详情可参见 [RapidOCRWeb 桌面版使用教程](https://rapidai.github.io/RapidOCRDocs/latest/install_usage/rapidocr_web/usage/)
 - 对仓库文档做了整理
 
 #### 🌹2023-05-14 ocrweb v0.1.5 update

@@ -33,7 +33,7 @@ hide:
 
 RapidOCR 是一款完全开源免费、支持离线快速部署的多平台多语言 OCR 工具，以极致的速度与广泛的兼容性为核心优势。
 
-**支持语言：** 默认支持中英文识别。其他支持的语言，参见文档：[模型列表](https://rapidai.github.io/RapidOCRDocs/main/model_list/)
+**支持语言：** 默认支持中英文识别。其他支持的语言，参见 [模型列表](model_list.md)。
 
 **项目缘起：** 鉴于 [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) 在工程化方面仍有优化空间，为简化并加速 OCR 模型在各类终端设备上的推理部署，我们创新性地将 PaddleOCR 中的模型转换为高度兼容的 ONNX 格式，并基于 Python, C++, Java, C# 等多种编程语言，实现了跨平台的无缝移植，让开发者能够轻松上手、高效集成。
 
@@ -41,7 +41,7 @@ RapidOCR 是一款完全开源免费、支持离线快速部署的多平台多�
 
 **使用指南：**
 
-- **直接部署**：若本仓库提供的模型已满足您的需求，只需参考 [快速开始](https://rapidai.github.io/RapidOCRDocs/main/quickstart/) 即可快速完成 RapidOCR 的部署与使用。
+- **直接部署**：若本仓库提供的模型已满足您的需求，只需参考 [快速开始](quickstart.md) 即可完成 RapidOCR 的部署与使用。
 - **定制化微调**：若现有模型无法满足特定场景需求，您可在 PaddleOCR 基础上，利用自有数据进行微调，再将优化后的模型应用于 RapidOCR 的部署流程，实现个性化定制。
 
 如果您觉得本项目对您的工作或学习有所帮助，恳请您不吝赐予一颗 ⭐ Star，给予我们宝贵的支持与鼓励！

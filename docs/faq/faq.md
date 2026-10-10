@@ -10,7 +10,7 @@ hide:
 
 **A:** 因为 OCR 任务中输入图像 Shape 是动态的。每次 GPU 上都需要重新清空上一次不同 Shape 的缓存结果。如果输入图像 Shape 不变的情况下，ONNX Runtime GPU 版一般都要比 CPU 快的。该问题已经提了相关 issue #13198。
 
-推荐 CPU 端推理用 `rapidocr_onnxruntime` 或者 `rapidocr_openvino`，GPU 端用 `rapidocr_paddle`。关于 `rapidocr_onnxruntime` 和 `rapidocr_paddle` 两者之间推理，可参见：[docs](https://rapidai.github.io/RapidOCRDocs/v1.4.4/install_usage/rapidocr_paddle/usage/#_4)
+当前版本建议统一使用 `rapidocr`，再按需选择 ONNX Runtime, OpenVINO, Paddle, PyTorch 或其他推理引擎。具体安装方式和限制请参见 [使用不同推理引擎](../install_usage/rapidocr/how_to_use_infer_engine.md)。
 
 #### Q: 请问这个能在 32 位 C#中用嘛?
 
@@ -64,7 +64,7 @@ python -m pip install -U Shapely
 
 #### Q: 您好，我想部署下咱们的 ocr 识别，有提供 linux 版本的 ocr 部署包吗?
 
-**A:** linux 版本的自己编译即可, 可以参考我们的 action 中的脚本；其实编译非常容易，安装个 opencv 后，在 cmakelists.txt 中修改一下 onnxruntime 的路径即可，具体参考这个：<https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml>
+**A:** 当前仓库没有统一发布的 Linux C++ 二进制包。建议参考 [RapidOcrOnnx](https://github.com/RapidAI/RapidOcrOnnx) 的构建说明，或根据目标平台自行编译 OpenCV 和 ONNX Runtime。
 
 #### Q: onnxruntime 编译好的 C++ 库，哪里可以下载到？
 
@@ -80,7 +80,7 @@ python -m pip install -U Shapely
 
 #### Q: onnxruntime 1.7 下出错：onnxruntime::SequentialExecutor::Execute] Non-zero status code returned while running ScatterND node. Name:'ScatterND@1' Status Message: updates
 
-**A:** 由于模型只支持 `onnxruntime=1.5.0` 导致，请更新模型,下载地址见 `Q3`
+**A:** 这是旧模型与旧版 ONNX Runtime 的兼容性问题。请优先升级 RapidOCR 和模型；如果仍然报错，请提供 RapidOCR, ONNX Runtime, Python 版本以及完整错误日志。
 
 #### Q: 边缘总有一行文字无法识别，怎么办？
 

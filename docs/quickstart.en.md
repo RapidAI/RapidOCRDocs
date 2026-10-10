@@ -9,138 +9,59 @@ hide:
 
 ### 1. Installation
 
-```bash linenums="1"
+```bash
 pip install rapidocr onnxruntime
 ```
 
 ### 2. Usage
 
-=== "Command line"
+=== "CLI"
 
-    ```bash linenums="1"
+    ```bash
     rapidocr -img "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg" --vis_res
     ```
 
 === "Python"
 
-    ```python linenums="1"
+    ```python
     from rapidocr import RapidOCR
 
     engine = RapidOCR()
-
     img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
     result = engine(img_url)
-    print(result)
 
-    # Visualization automatically downloads the required font file. Comment out this
-    # line if you are working in an offline environment.
+    print(result.txts)
+    print(result.scores)
     result.vis("vis_result.jpg")
     ```
 
-### 3. Check the visualized result
+!!! note
+
+    `result.vis()` downloads the font required for visualization on first use. In an offline environment, omit this line or configure `font_path` in advance.
+
+### 3. View the visualization result
 
 ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-09-14-1fc6ada8.png)
 
-### 4. Example of the returned `result`
+### 4. Inspect the `result`
 
-The return value is a `RapidOCROutput` dataclass, whose contents can be accessed directly through `result.boxes` and `result.txts`.
+`result` is a `RapidOCROutput` data class. The most commonly used fields are:
 
-```python linenums="1"
-RapidOCROutput(
-    boxes=array([[[  6.,   2.],
-        [322.,   9.],
-        [320., 104.],
-        [  4.,  97.]],
+| Field | Type | Description |
+| --- | --- | --- |
+| `boxes` | `np.ndarray` | Four-point coordinates for each text line, shaped `(N, 4, 2)` |
+| `txts` | `Tuple[str]` | Recognized text, in the same order as `boxes` |
+| `scores` | `Tuple[float]` | Confidence score for each text line |
+| `elapse` | `float` | Total inference time in seconds |
 
-       [[ 70.,  98.],
-        [252.,  98.],
-        [252., 125.],
-        [ 70., 125.]],
-
-       [[ 68., 144.],
-        [256., 144.],
-        [256., 165.],
-        [ 68., 165.]],
-
-       [[108., 170.],
-        [217., 170.],
-        [217., 182.],
-        [108., 182.]],
-
-       [[ 35., 227.],
-        [ 62., 227.],
-        [ 62., 236.],
-        [ 35., 236.]],
-
-       [[139., 223.],
-        [187., 223.],
-        [187., 251.],
-        [139., 251.]],
-
-       [[ 35., 233.],
-        [ 81., 236.],
-        [ 80., 255.],
-        [ 33., 252.]],
-
-       [[257., 234.],
-        [304., 236.],
-        [303., 254.],
-        [257., 253.]],
-
-       [[259., 227.],
-        [286., 226.],
-        [287., 236.],
-        [259., 237.]],
-
-       [[140., 243.],
-        [186., 245.],
-        [186., 272.],
-        [139., 271.]],
-
-       [[129., 289.],
-        [207., 290.],
-        [206., 340.],
-        [128., 338.]],
-
-       [[ 98., 320.],
-        [129., 320.],
-        [129., 330.],
-        [ 98., 330.]],
-
-       [[205., 316.],
-        [223., 316.],
-        [223., 335.],
-        [205., 335.]],
-
-       [[114., 342.],
-        [210., 342.],
-        [210., 355.],
-        [114., 355.]],
-
-       [[ 68., 362.],
-        [151., 362.],
-        [151., 384.],
-        [ 68., 384.]],
-
-       [[202., 362.],
-        [286., 362.],
-        [286., 384.],
-        [202., 384.]],
-
-       [[ 68., 391.],
-        [151., 391.],
-        [151., 413.],
-        [ 68., 413.]],
-
-       [[202., 391.],
-        [287., 391.],
-        [287., 413.],
-        [202., 413.]]], dtype=float32),
-    txts=('正品促销', '大桶装更划算', '强力去污符合国标', '40°C深度防冻不结冰', '日常价￥', '真击', '10.0起', '10.0起', '日常价￥', '底价', '5.8', '券后价￥', '起', '惊喜福利不容错过', '极速发货', '冰点标准', '破损就赔', '假一赔十'),
-    scores=(0.99893, 0.9843, 0.97842, 0.93412, 0.81418, 0.66226, 0.99243, 0.99849, 0.81369, 0.99633, 0.9999, 0.83907, 0.99993, 0.99782, 0.99813, 0.99786, 0.92679, 0.99717),
-    word_results=(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), elapse_list=[0.16008154186420143, 0.017705917358398438, 0.35501312371343374], elapse=0.5328005829360336)
+```python
+print(result.boxes.shape)
+print(result.txts)
+print(result.scores)
 ```
+
+See the [usage guide](install_usage/rapidocr/usage.md) for the complete output structure and stage-specific results.
 
 ### Recommended reading
 
-#### [Support for other programming languages](./blog/posts/other_programing_lan.md)
+#### [Support for other programming languages](https://rapidai.github.io/RapidOCRDocs/blog/posts/other_programing_lan/)

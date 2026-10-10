@@ -90,7 +90,7 @@
 }
 
 /* 鼠标悬停效果：图片微微放大 */
-.md-typeset img:hover {
+.md-typeset img.zoomable:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }

@@ -1,6 +1,6 @@
 ---
 title: RapidOCR 模型列表
-description: RapidOCR 支持的 PP-OCRv4、PP-OCRv5 检测、方向分类、识别模型，以及推理引擎和语言支持矩阵。
+description: RapidOCR 支持的 PP-OCRv4、PP-OCRv5、PP-OCRv6 检测、方向分类和识别模型，以及推理引擎和语言支持矩阵。
 comments: true
 hide:
   - navigation
@@ -135,7 +135,7 @@ engine = RapidOCR(
 
 ## 配置文件字段对应
 
-以下表格以 `rapidocr>=3.10.0` 的 `default_models.yaml` 为准。`engine_type` 仅列出配置文件中直接登记模型文件的推理引擎；TensorRT 使用对应的 ONNX 模型动态构建 Engine，使用限制参见 [TensorRT 推理引擎说明](install_usage/rapidocr/how_to_use_infer_engine.md#使用-tensorrt)。
+以下表格以 `rapidocr>=3.10.0` 的 `default_models.yaml` 为准。`engine_type` 仅列出配置文件中直接登记模型文件的推理引擎；TensorRT 使用对应的 ONNX 模型动态构建 Engine，使用限制参见 [TensorRT 推理引擎说明](install_usage/rapidocr/how_to_use_infer_engine.md)。
 
 PP-OCRv6 的 `tiny`、`small` 和 `medium` 模型均为多语种模型。同一规格下，不同 `lang_type` 会路由到同一个模型文件：
 

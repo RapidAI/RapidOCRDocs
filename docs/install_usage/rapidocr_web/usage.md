@@ -1,4 +1,6 @@
 ---
+title: RapidOCR Web 安装及使用
+description: rapidocr_web 本地 OCR Web 服务的安装、启动、访问和端口配置说明。
 comments: true
 ---
 
@@ -41,23 +43,22 @@ pip install rapidocr_web
 
 ## 使用
 
-### 用法
+### 启动服务
 
 ```bash linenums="1"
 rapidocr_web -ip 0.0.0.0 -p 9003
 ```
 
-### 运行
+启动后，在浏览器中打开 <http://localhost:9003/>。默认使用 `http`，不是 `https`。
 
-```bash linenums="1"
-rapidocr_web -ip 0.0.0.0 -p 9003
-```
+其中：
 
-### 浏览器打开 <http://localhost:9003/>，enjoy it
+- `-ip 0.0.0.0` 允许局域网内其他设备访问；仅本机使用时可改为 `127.0.0.1`。
+- `-p 9003` 指定端口。如果端口被占用，请换成其他端口，并使用对应地址访问。
 
 !!! note
 
-    浏览器打开的网址是 `http` 的，不是 `https`。
+    如果从其他设备访问，请将 `localhost` 替换为运行服务设备的局域网 IP。
 
 <div align="center">
     <img src="https://github.com/RapidAI/RapidOCRWeb/releases/download/v0.0.0/demo.gif" width="100%" height="100%">

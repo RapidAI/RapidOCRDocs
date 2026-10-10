@@ -44,4 +44,4 @@ PP-OCRv6 `small` and `medium` support the broadest multilingual routes. `tiny` s
 - Check the selected language route before choosing a multilingual model.
 - Install the [RTL extra dependency](install_usage/rapidocr/install.md) for right-to-left languages such as Arabic.
 
-For the complete route matrix and language table, see the [Chinese model reference](model_list.md) and [`default_models.yaml`](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml).
+For the complete route matrix and language table, see the [Chinese model reference](./model_list.md) and [`default_models.yaml`](https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml).

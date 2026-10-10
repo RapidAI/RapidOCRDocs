@@ -3,8 +3,9 @@
   --base-border-radius: 1rem;
   --md-text-font: "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
     "Segoe UI", sans-serif;
-  --md-code-font: "JetBrains Mono", "Cascadia Code", "SFMono-Regular",
-    Consolas, "Courier New", monospace;
+  --md-code-font: Consolas, "JetBrains Mono", "Cascadia Code", "SFMono-Regular",
+    "Courier New", monospace;
+  --md-typeset-font-weight: 450;
 }
 
 
@@ -18,6 +19,8 @@
   --md-footer-fg-color: #222;
   --md-footer-fg-color--light: #505050;
   --md-footer-fg-color--lighter: #777777;
+  --md-code-bg-color: #1e1e1e;
+  --md-code-fg-color: #d4d4d4;
   --md-code-hl-comment-color: #999999;
 }
 
@@ -28,7 +31,22 @@
   --md-typeset-a-color: royalblue;
   --md-footer-bg-color: #101010;
   --md-footer-bg-color--dark: #101010;
+  --md-code-bg-color: #141414;
+  --md-code-fg-color: #d4d4d4;
   --md-code-hl-comment-color: #777777;
+}
+
+/* 技术文档正文略加字重，改善中文在高分屏上的可读性 */
+.md-typeset {
+  font-weight: var(--md-typeset-font-weight);
+}
+
+/* 代码块统一使用深色底，避免亮色主题下与正文背景对比不足 */
+.md-typeset pre,
+.md-typeset .highlight,
+.md-typeset pre>code {
+  background-color: var(--md-code-bg-color);
+  color: var(--md-code-fg-color);
 }
 
 

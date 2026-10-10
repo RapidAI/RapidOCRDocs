@@ -48,11 +48,18 @@ python -m pip install -U Shapely
 
 #### Q: onnxruntime arm32 有人编译过吗？我编译成功了，但是使用的时候 libonnxruntime.so:-1: error: file not recognized: File format not recognized  应该是版本不匹配
 
-**A:** 没遇到过。我是直接在当前平台编译的，我们用的是 arm。估计是平台不兼容,建议在本身平台上编译。没遇到过问题。通常出在交叉编译方式下。
+**A:** 这通常是库文件架构与运行环境不一致导致的。建议依次检查：
+
+1. 运行 `uname -m` 确认设备架构；
+2. 运行 `file libonnxruntime.so` 确认动态库架构，二者应一致；
+3. 如果使用交叉编译，确认目标平台、ABI 和 C/C++ 运行库版本一致；
+4. 使用 `ldd libonnxruntime.so` 检查是否存在缺失的动态库依赖。
+
+建议优先在目标设备上直接编译，或下载与设备架构匹配的构建产物。
 
 #### Q: 请问一下 c++ demo 必须要 vs2017 及以上版本吗?
 
-**A:** 最好用 vs2019
+**A:** 建议使用 Visual Studio 2019 或更高版本，并确保项目、OpenCV 和 ONNX Runtime 使用相同的目标架构（通常为 x64）。如果需要支持更旧的编译器，请以对应 C++ 示例工程的构建配置为准。
 
 #### Q: 可以达到百度 EasyEdge Free App 的效果吗？
 

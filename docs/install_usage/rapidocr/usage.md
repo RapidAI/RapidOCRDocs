@@ -198,7 +198,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
 
     engine = RapidOCR()
 
-    img_url = "https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/ch_en_num.jpg"
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
 
     # 默认都为True
     result = engine(img_url, use_det=True, use_cls=True, use_rec=True)
@@ -277,7 +277,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
 
     engine = RapidOCR()
 
-    img_url = "https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/ch_en_num.jpg"
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
     result = engine(img_url, use_det=True, use_cls=False, use_rec=True)
     print(result)
     result.vis("vis_det_rec.jpg")
@@ -290,14 +290,14 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
 === "分类 + 识别"
 
     ```python linenums="1" hl_lines="6"
-    from rapidocr_onnxruntime import RapidOCR
+    from rapidocr import RapidOCR
 
     engine = RapidOCR()
 
     img_path = 'tests/test_files/ch_en_num.jpg'
-    result, elapse = engine(img_path, use_det=False, use_cls=True, use_rec=True)
+    result = engine(img_path, use_det=False, use_cls=True, use_rec=True)
     print(result)
-    print(elapse)
+    print(result.elapse)
     ```
 
     ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-19-07-ba404f86.jpg)
@@ -336,7 +336,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
 
     engine = RapidOCR()
 
-    img_url = "https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/ch_en_num.jpg"
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
     result = engine(img_url, use_det=True, use_cls=False, use_rec=False)
     print(result)
     result.vis('vis_only_det.jpg')
@@ -460,7 +460,7 @@ RapidOCR 输出包括 4 种类型：`Union[TextDetOutput, TextClsOutput, TextRec
 
     engine = RapidOCR()
 
-    img_url = "https://github.com/RapidAI/RapidOCR/releases/download/v1.1.0/ch_en_num.jpg"
+    img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
     result = engine(img_url, return_word_box=True)
     print(result)
     result.vis("vis_return_words.jpg")

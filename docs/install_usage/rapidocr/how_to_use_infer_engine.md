@@ -400,7 +400,7 @@ comments: true
             ```python linenums="1"
             import torch
 
-            print(f"PyTorch 版本: {torch.**version**}")
+            print(f"PyTorch 版本: {torch.__version__}")
             print(f"MPS 可用性: {torch.backends.mps.is_available()}")
 
             if torch.backends.mps.is_available():
@@ -443,11 +443,11 @@ comments: true
 
     ```bash linenums="1" hl_lines="1 3 5"
     [INFO] 2025-03-22 15:39:13,241 base.py:30: Using engine_name: torch
-    [INFO] 2025-03-22 15:39:13,956 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_det_infer.pth
+    [INFO] 2025-03-22 15:39:13,956 utils.py:35: File already exists in .../site-packages/rapidocr/models/ch_PP-OCRv4_det_infer.pth
     [INFO] 2025-03-22 15:39:14,136 base.py:30: Using engine_name: torch
-    [INFO] 2025-03-22 15:39:14,136 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_ptocr_mobile_v2.0_cls_infer.pth
+    [INFO] 2025-03-22 15:39:14,136 utils.py:35: File already exists in .../site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_infer.pth
     [INFO] 2025-03-22 15:39:14,168 base.py:30: Using engine_name: torch
-    [INFO] 2025-03-22 15:39:14,168 utils.py:35: File already exists in /Users/SWHL/projects/RapidOCR/python/rapidocr/models/ch_PP-OCRv4_rec_infer.pth
+    [INFO] 2025-03-22 15:39:14,168 utils.py:35: File already exists in .../site-packages/rapidocr/models/ch_PP-OCRv4_rec_infer.pth
     ```
 
 ### 使用 TensorRT

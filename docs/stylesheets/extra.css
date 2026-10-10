@@ -19,9 +19,9 @@
   --md-footer-fg-color: #222;
   --md-footer-fg-color--light: #505050;
   --md-footer-fg-color--lighter: #777777;
-  --md-code-bg-color: #1e1e1e;
-  --md-code-fg-color: #d4d4d4;
-  --md-code-hl-comment-color: #999999;
+  --md-code-bg-color: #f6f8fa;
+  --md-code-fg-color: #476582;
+  --md-code-hl-comment-color: #8a9aa9;
 }
 
 /*暗色样式*/
@@ -41,12 +41,57 @@
   font-weight: var(--md-typeset-font-weight);
 }
 
-/* 代码块统一使用深色底，避免亮色主题下与正文背景对比不足 */
+/* Vue 风格的浅色代码块与行内代码 */
 .md-typeset pre,
 .md-typeset .highlight,
 .md-typeset pre>code {
   background-color: var(--md-code-bg-color);
   color: var(--md-code-fg-color);
+}
+
+.md-typeset :not(pre)>code {
+  border-radius: 0.3rem;
+  background: #f1f3f5;
+  color: #476582;
+  font-size: 0.86em;
+  padding: 0.15em 0.35em;
+}
+
+/* 亮色代码语法：接近 Vue 文档的蓝、紫、绿配色 */
+[data-md-color-scheme="default"] .highlight .k,
+[data-md-color-scheme="default"] .highlight .kd,
+[data-md-color-scheme="default"] .highlight .kn,
+[data-md-color-scheme="default"] .highlight .ow {
+  color: #7c3aed;
+}
+
+[data-md-color-scheme="default"] .highlight .s,
+[data-md-color-scheme="default"] .highlight .sa,
+[data-md-color-scheme="default"] .highlight .sb,
+[data-md-color-scheme="default"] .highlight .sc,
+[data-md-color-scheme="default"] .highlight .dl,
+[data-md-color-scheme="default"] .highlight .sd,
+[data-md-color-scheme="default"] .highlight .s1,
+[data-md-color-scheme="default"] .highlight .s2 {
+  color: #0f8a5f;
+}
+
+[data-md-color-scheme="default"] .highlight .nf,
+[data-md-color-scheme="default"] .highlight .nb,
+[data-md-color-scheme="default"] .highlight .nc {
+  color: #1677b3;
+}
+
+[data-md-color-scheme="default"] .highlight .c,
+[data-md-color-scheme="default"] .highlight .ch,
+[data-md-color-scheme="default"] .highlight .cm,
+[data-md-color-scheme="default"] .highlight .c1 {
+  color: #8a9aa9;
+}
+
+[data-md-color-scheme="slate"] .md-typeset :not(pre)>code {
+  background: #252526;
+  color: #c9d7e3;
 }
 
 

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.">
+        <meta name="description" content="Install, start and call the FastAPI-based RapidOCR HTTP service.">
       
       
         <meta name="author" content="RapidAI">
@@ -29,7 +29,7 @@
     
     
       
-        <title>Installation & Usage - RapidOCR Documentation</title>
+        <title>RapidOCR API Installation and Usage - RapidOCR Documentation</title>
       
     
     
@@ -117,22 +117,22 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RapidOCR Documentation">
-<meta property="og:title" content="Installation & Usage">
-<meta property="og:description" content="RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.">
+<meta property="og:title" content="RapidOCR API Installation and Usage">
+<meta property="og:description" content="Install, start and call the FastAPI-based RapidOCR HTTP service.">
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_api/usage/">
 <meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Installation & Usage">
-<meta name="twitter:description" content="RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.">
+<meta name="twitter:title" content="RapidOCR API Installation and Usage">
+<meta name="twitter:description" content="Install, start and call the FastAPI-based RapidOCR HTTP service.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <link rel="alternate" type="text/plain" href="../../../../llms.txt" title="RapidOCR llms.txt">
 <link rel="alternate" type="text/plain" href="../../../../llms-full.txt" title="RapidOCR llms-full.txt">
 <link rel="alternate" type="application/json" href="../../../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_api/usage.md" title="Installation & Usage Markdown">
+<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_api/usage.en.md" title="RapidOCR API Installation and Usage Markdown">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.", "headline": "Installation \u0026 Usage", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "Installation \u0026 Usage", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_api/usage/"}
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "Install, start and call the FastAPI-based RapidOCR HTTP service.", "headline": "RapidOCR API Installation and Usage", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR API Installation and Usage", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_api/usage/"}
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -181,7 +181,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -256,7 +256,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation & Usage
+              RapidOCR API Installation and Usage
             
           </span>
         </div>
@@ -1542,64 +1542,73 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      📖 简介
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#version-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 版本依赖关系
+      Version compatibility
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      安装
+      Installation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#start-the-server" class="md-nav__link">
     <span class="md-ellipsis">
-      启动服务端
+      Start the server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#call-the-api" class="md-nav__link">
     <span class="md-ellipsis">
-      调用
+      Call the API
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="调用">
+    <nav class="md-nav" aria-label="Call the API">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#curl" class="md-nav__link">
     <span class="md-ellipsis">
-      Curl 调用
+      cURL
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
+  <a href="#python-file-upload" class="md-nav__link">
     <span class="md-ellipsis">
-      Python 调用
+      Python file upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base64-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base64 input
     </span>
   </a>
   
@@ -1611,18 +1620,9 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#response-format" class="md-nav__link">
     <span class="md-ellipsis">
-      输出结果说明
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      示例结果
+      Response format
     </span>
   </a>
   
@@ -1988,64 +1988,73 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      📖 简介
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#version-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 版本依赖关系
+      Version compatibility
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      安装
+      Installation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#start-the-server" class="md-nav__link">
     <span class="md-ellipsis">
-      启动服务端
+      Start the server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#call-the-api" class="md-nav__link">
     <span class="md-ellipsis">
-      调用
+      Call the API
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="调用">
+    <nav class="md-nav" aria-label="Call the API">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#curl" class="md-nav__link">
     <span class="md-ellipsis">
-      Curl 调用
+      cURL
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
+  <a href="#python-file-upload" class="md-nav__link">
     <span class="md-ellipsis">
-      Python 调用
+      Python file upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base64-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base64 input
     </span>
   </a>
   
@@ -2057,18 +2066,9 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#response-format" class="md-nav__link">
     <span class="md-ellipsis">
-      输出结果说明
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      示例结果
+      Response format
     </span>
   </a>
   
@@ -2117,7 +2117,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_api/usage.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_api/usage.en.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2126,7 +2126,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_api/usage.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_api/usage.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2144,339 +2144,92 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RapidAI/RapidOCRAPI/releases/download/v0.2.0/rapidocr_api_logo_v2_dark.png" width="60%" height="60%" class="no-radius">
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/RapidAI/RapidOCRAPI/releases/download/v0.2.0/rapidocr_api_logov2_white.png" width="60%" height="60%" class="no-radius">
-    <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://github.com/RapidAI/RapidOCRAPI/releases/download/v0.2.0/rapidocr_api_logov2_white.png" class="no-radius">
-  </picture>
-
- <br/>
-  <a href=""><img src="https://img.shields.io/badge/Python->=3.6-aff.svg"></a>
-  <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
-  <a href="https://github.com/RapidAI/RapidOCRAPI/graphs/contributors"><img src="https://img.shields.io/github/contributors/RapidAI/RapidOCRAPI?color=9ea"></a>
-  <a href="https://github.com/RapidAI/RapidOCRAPI/stargazers"><img src="https://img.shields.io/github/stars/RapidAI/RapidOCRAPI?color=ccf" ></a>
-  <a href="https://pepy.tech/project/rapidocr_api"><img src="https://static.pepy.tech/personalized-badge/rapidocr_api?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20rapidocr_api"></a>
-  <a href="https://pypi.org/project/rapidocr_api/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr_api"></a>
-  <a href="https://choosealicense.com/licenses/apache-2.0/"><img src="https://img.shields.io/badge/License-Apache%202-dfd.svg"></a>
-  <a href="https://semver.org/"><img alt="SemVer2.0" src="https://img.shields.io/badge/SemVer-2.0-brightgreen"></a>
-  <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-
-</div>
-
-<h2 id="_1">📖 简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Source repository: <a href="https://github.com/RapidAI/RapidOCRAPI">https://github.com/RapidAI/RapidOCRAPI</a></p>
+<p><code>rapidocr_api</code> exposes RapidOCR through FastAPI and Uvicorn. It is intended as a simple HTTP wrapper. For production concurrency and process management, place it behind an appropriate deployment setup and consult the upstream repository.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>OCR API 的输出结果为最原始结果，大家可按需进一步扩展。</p>
+<p>The API returns low-level OCR results. Applications should validate requests and transform the response for their own domain.</p>
 </div>
-<p>源码仓库：<a href="https://github.com/RapidAI/RapidOCRAPI">https://github.com/RapidAI/RapidOCRAPI</a></p>
-<p>该包是将 <a href="../../rapidocr/install/">rapidocr</a> 库做了 API 封装，采用 <a href="https://fastapi.tiangolo.com/">FastAPI</a> + <a href="https://uvicorn.dev/">uvicorn</a> 实现。</p>
-<p>定位是一个快速调用 <code>rapidocr</code> 的 API 接口，没有考虑多进程处理并发请求，如果有这需求的小伙伴，可以看看 <a href="https://gunicorn.org/">gunicorn</a> 等。</p>
-<h2 id="_2">📌 版本依赖关系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="version-compatibility">Version compatibility<a class="headerlink" href="#version-compatibility" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><code>rapidocr_api</code></th>
-<th style="text-align: left;"><code>rapidocr</code></th>
+<th><code>rapidocr_api</code></th>
+<th>OCR dependency</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>v0.2.x</code></td>
-<td style="text-align: left;"><code>rapidocr&gt;1.0.0,&lt;3.0.0</code></td>
+<td><code>v0.2.x</code></td>
+<td><code>rapidocr&gt;1.0.0,&lt;3.0.0</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>v0.1.x</code></td>
-<td style="text-align: left;"><code>rapidocr_onnxruntime</code></td>
+<td><code>v0.1.x</code></td>
+<td>Legacy <code>rapidocr_onnxruntime</code> package</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_3">安装<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr_api
-</span></code></pre></div></td></tr></table></div>
-<h2 id="_4">启动服务端<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>在 <code>rapidocr_api&gt;=0.1.0</code> 中，可通过环境变量传递模型参数：det_model_path, cls_model_path, rec_model_path；接口中可传入参数，控制是否使用检测、方向分类和识别这三部分的模型；具体调用可参见下面文档。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 下使用</label><label for="__tabbed_1_2">Linux 下使用</label><label for="__tabbed_1_3">Docker 方式使用</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">set</span><span class="w"> </span><span class="nv">det_model_path</span><span class="o">=</span>I:<span class="se">\m</span>odels<span class="se">\图</span>像相关<span class="se">\O</span>CR<span class="se">\R</span>apidOCR<span class="se">\P</span>P-OCRv4<span class="se">\c</span>h_PP-OCRv4_det_server_infer.onnx
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nb">set</span><span class="w"> </span><span class="nv">rec_model_path</span><span class="o">=</span>I:<span class="se">\m</span>odels<span class="se">\图</span>像相关<span class="se">\O</span>CR<span class="se">\R</span>apidOCR<span class="se">\P</span>P-OCRv4<span class="se">\c</span>h_PP-OCRv4_rec_server_infer.onnx
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>rapidocr_api
-</span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># 默认参数启动</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>rapidocr_api
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1"># 指定参数：端口与进程数量；</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>rapidocr_api<span class="w"> </span>-ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-p<span class="w"> </span><span class="m">9005</span><span class="w"> </span>-workers<span class="w"> </span><span class="m">2</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># 指定模型</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">det_model_path</span><span class="o">=</span>/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_det_server_infer.onnx
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">rec_model_path</span><span class="o">=</span>/mnt/sda1/models/PP-OCRv4/ch_PP-OCRv4_rec_server_infer.onnx
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>rapidocr_api<span class="w"> </span>-ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-p<span class="w"> </span><span class="m">9005</span><span class="w"> </span>-workers<span class="w"> </span><span class="m">2</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<p><a href="https://github.com/RapidAI/RapidOCR/blob/3aa4463ad20bc9dc8d8b08766d0f46d7699efc57/api/Dockerfile">Dockerfile 源码</a></p>
-<p>Build 镜像:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span>
-<span class="normal"><a href="#__codelineno-3-7">7</a></span>
-<span class="normal"><a href="#__codelineno-3-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/RapidAI/RapidOCR.git
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nb">cd</span><span class="w"> </span>api
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># build方式1：使用宿主机的网络</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="o">=</span><span class="s2">"rapidocr_api:0.1.4"</span><span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>.
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1"># build方式2：使用宿主机上的代理</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>rapidocr_api:0.1.4<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">HTTP_PROXY</span><span class="o">=</span>http://127.0.0.1:8888<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">HTTPS_PROXY</span><span class="o">=</span>http://127.0.0.1:8888<span class="w"> </span>.
-</span></code></pre></div></td></tr></table></div>
-<p>调试运行:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>:9003<span class="w"> </span>--name<span class="w"> </span>rapidocr_api<span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>rapidocr_api:0.1.4
-</span></code></pre></div></td></tr></table></div>
-<p>运行:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>:9003<span class="w"> </span>--name<span class="w"> </span>rapidocr_api<span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>rapidocr_api:0.1.4
-</span></code></pre></div></td></tr></table></div>
-<p>接口 web 界面：</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>http://&lt;ip&gt;:9003/docs
-</span></code></pre></div></td></tr></table></div>
-<hr />
-<p>Docker 临时修改并验证的方法</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>:9003<span class="w"> </span>--name<span class="w"> </span>rapidocr_api<span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>rapidocr_api:0.1.4
-</span></code></pre></div></td></tr></table></div>
-<p>进入 container 修改 python 源文件，Dockerfile 最好加上 apt-get install vim 安装</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span>
-<span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span>
-<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>rapidocr_api<span class="w"> </span>/bin/bash
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="nb">cd</span><span class="w"> </span>/usr/local/lib/python3.10/site-packages/rapidocr_api
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>...
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="c1"># 修改参数文件</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>vi<span class="w"> </span>/usr/local/lib/python3.10/site-packages/rapidocr_onnxruntime/config.yaml
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c1"># 改好后exit退出</span>
-</span></code></pre></div></td></tr></table></div>
-<p>重启 container</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a>docker<span class="w"> </span>restart<span class="w"> </span>rapidocr_api
-</span></code></pre></div></td></tr></table></div>
-<p>查看日志：</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>rapidocr_api
-</span></code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-<h2 id="_5">调用<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>调用本质就是发送一个 POST 请求，以下给出 Curl 和 Python 的调用示例，其他编程语言同理。</p>
-</div>
-<h3 id="curl">Curl 调用<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>curl<span class="w"> </span>-F<span class="w"> </span><span class="nv">image_file</span><span class="o">=</span>@1.png<span class="w"> </span>http://0.0.0.0:9003/ocr
-</span></code></pre></div></td></tr></table></div>
-<h3 id="python">Python 调用<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">以文件方式发送 POST 请求</label><label for="__tabbed_2_2">以 base64 方式发送 POST 请求</label><label for="__tabbed_2_3">控制使用检测、方向分类和识别模型</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-12-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">'http://localhost:9003/ocr'</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">'tests/test_files/ch_en_num.jpg'</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>    <span class="n">file_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'image_file'</span><span class="p">:</span> <span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s1">'image/png'</span><span class="p">)}</span>
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">file_dict</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a>
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-13-10">10</a></span>
-<span class="normal"><a href="#__codelineno-13-11">11</a></span>
-<span class="normal"><a href="#__codelineno-13-12">12</a></span>
-<span class="normal"><a href="#__codelineno-13-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">'http://localhost:9003/ocr'</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">'tests/test_files/ch_en_num.jpg'</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fa</span><span class="p">:</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a>    <span class="n">img_str</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">fa</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'image_data'</span><span class="p">:</span> <span class="n">img_str</span><span class="p">}</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span>
-<span class="normal"><a href="#__codelineno-14-3">3</a></span>
-<span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span>
-<span class="normal"><a href="#__codelineno-14-6">6</a></span>
-<span class="normal"><a href="#__codelineno-14-7">7</a></span>
-<span class="normal"><a href="#__codelineno-14-8">8</a></span>
-<span class="normal"><a href="#__codelineno-14-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">'http://localhost:9003/ocr'</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s1">'tests/test_files/ch_en_num.jpg'</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a>    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"use_det"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"use_cls"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"use_rec"</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">file_dict</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-<h2 id="_6">输出结果说明<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>如果图像中存在文字，则会输出字典格式，具体介绍如下：</p>
-<div class="language-json highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-15-10">10</a></span>
-<span class="normal"><a href="#__codelineno-15-11">11</a></span>
-<span class="normal"><a href="#__codelineno-15-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">{</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w"> </span><span class="nt">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"香港深圳抽血，"</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">识别的文本</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">依次为左上角</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">右上角</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">右下角</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">左下角</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">   </span><span class="p">[</span><span class="mi">265</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">],</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">   </span><span class="p">[</span><span class="mi">472</span><span class="p">,</span><span class="w"> </span><span class="mi">231</span><span class="p">],</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">   </span><span class="p">[</span><span class="mi">431</span><span class="p">,</span><span class="w"> </span><span class="mi">271</span><span class="p">],</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">   </span><span class="p">[</span><span class="mi">223</span><span class="p">,</span><span class="w"> </span><span class="mi">59</span><span class="p">]</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">  </span><span class="p">],</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">  </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.8176"</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">置信度</span>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
-<p>如果没有检测到文字，则会输出空字典 (<code>{}</code>)。</p>
-<h2 id="_7">示例结果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<div class="language-json highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-16-10">10</a></span>
-<span class="normal"><a href="#__codelineno-16-11">11</a></span>
-<span class="normal"><a href="#__codelineno-16-12">12</a></span>
-<span class="normal"><a href="#__codelineno-16-13">13</a></span>
-<span class="normal"><a href="#__codelineno-16-14">14</a></span>
-<span class="normal"><a href="#__codelineno-16-15">15</a></span>
-<span class="normal"><a href="#__codelineno-16-16">16</a></span>
-<span class="normal"><a href="#__codelineno-16-17">17</a></span>
-<span class="normal"><a href="#__codelineno-16-18">18</a></span>
-<span class="normal"><a href="#__codelineno-16-19">19</a></span>
-<span class="normal"><a href="#__codelineno-16-20">20</a></span>
-<span class="normal"><a href="#__codelineno-16-21">21</a></span>
-<span class="normal"><a href="#__codelineno-16-22">22</a></span>
-<span class="normal"><a href="#__codelineno-16-23">23</a></span>
-<span class="normal"><a href="#__codelineno-16-24">24</a></span>
-<span class="normal"><a href="#__codelineno-16-25">25</a></span>
-<span class="normal"><a href="#__codelineno-16-26">26</a></span>
-<span class="normal"><a href="#__codelineno-16-27">27</a></span>
-<span class="normal"><a href="#__codelineno-16-28">28</a></span>
-<span class="normal"><a href="#__codelineno-16-29">29</a></span>
-<span class="normal"><a href="#__codelineno-16-30">30</a></span>
-<span class="normal"><a href="#__codelineno-16-31">31</a></span>
-<span class="normal"><a href="#__codelineno-16-32">32</a></span>
-<span class="normal"><a href="#__codelineno-16-33">33</a></span>
-<span class="normal"><a href="#__codelineno-16-34">34</a></span>
-<span class="normal"><a href="#__codelineno-16-35">35</a></span>
-<span class="normal"><a href="#__codelineno-16-36">36</a></span>
-<span class="normal"><a href="#__codelineno-16-37">37</a></span>
-<span class="normal"><a href="#__codelineno-16-38">38</a></span>
-<span class="normal"><a href="#__codelineno-16-39">39</a></span>
-<span class="normal"><a href="#__codelineno-16-40">40</a></span>
-<span class="normal"><a href="#__codelineno-16-41">41</a></span>
-<span class="normal"><a href="#__codelineno-16-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">{</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">    </span><span class="nt">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">        </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8月26日！"</span><span class="p">,</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">        </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">            </span><span class="p">[</span><span class="mf">333.0</span><span class="p">,</span><span class="w"> </span><span class="mf">72.0</span><span class="p">],</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">            </span><span class="p">[</span><span class="mf">545.0</span><span class="p">,</span><span class="w"> </span><span class="mf">40.0</span><span class="p">],</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">            </span><span class="p">[</span><span class="mf">552.0</span><span class="p">,</span><span class="w"> </span><span class="mf">90.0</span><span class="p">],</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">            </span><span class="p">[</span><span class="mf">341.0</span><span class="p">,</span><span class="w"> </span><span class="mf">122.0</span><span class="p">]</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">        </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.7342"</span>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="w">    </span><span class="nt">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="w">        </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"澳洲名校招生信息"</span><span class="p">,</span>
-</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="w">        </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="w">            </span><span class="p">[</span><span class="mf">266.0</span><span class="p">,</span><span class="w"> </span><span class="mf">163.0</span><span class="p">],</span>
-</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">            </span><span class="p">[</span><span class="mf">612.0</span><span class="p">,</span><span class="w"> </span><span class="mf">116.0</span><span class="p">],</span>
-</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="w">            </span><span class="p">[</span><span class="mf">619.0</span><span class="p">,</span><span class="w"> </span><span class="mf">163.0</span><span class="p">],</span>
-</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="w">            </span><span class="p">[</span><span class="mf">272.0</span><span class="p">,</span><span class="w"> </span><span class="mf">210.0</span><span class="p">]</span>
-</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="w">        </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.8262"</span>
-</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22"></a><span class="w">    </span><span class="nt">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23"></a><span class="w">        </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"解读！！"</span><span class="p">,</span>
-</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24"></a><span class="w">        </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25"></a><span class="w">            </span><span class="p">[</span><span class="mf">341.0</span><span class="p">,</span><span class="w"> </span><span class="mf">187.0</span><span class="p">],</span>
-</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26"></a><span class="w">            </span><span class="p">[</span><span class="mf">595.0</span><span class="p">,</span><span class="w"> </span><span class="mf">179.0</span><span class="p">],</span>
-</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27"></a><span class="w">            </span><span class="p">[</span><span class="mf">598.0</span><span class="p">,</span><span class="w"> </span><span class="mf">288.0</span><span class="p">],</span>
-</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28"></a><span class="w">            </span><span class="p">[</span><span class="mf">344.0</span><span class="p">,</span><span class="w"> </span><span class="mf">296.0</span><span class="p">]</span>
-</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30"></a><span class="w">        </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.6152"</span>
-</span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32"></a><span class="w">    </span><span class="nt">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33"></a><span class="w">        </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rules..."</span><span class="p">,</span>
-</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34"></a><span class="w">        </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35"></a><span class="w">            </span><span class="p">[</span><span class="mf">446.0</span><span class="p">,</span><span class="w"> </span><span class="mf">321.0</span><span class="p">],</span>
-</span><span id="__span-16-36"><a id="__codelineno-16-36" name="__codelineno-16-36"></a><span class="w">            </span><span class="p">[</span><span class="mf">560.0</span><span class="p">,</span><span class="w"> </span><span class="mf">326.0</span><span class="p">],</span>
-</span><span id="__span-16-37"><a id="__codelineno-16-37" name="__codelineno-16-37"></a><span class="w">            </span><span class="p">[</span><span class="mf">559.0</span><span class="p">,</span><span class="w"> </span><span class="mf">352.0</span><span class="p">],</span>
-</span><span id="__span-16-38"><a id="__codelineno-16-38" name="__codelineno-16-38"></a><span class="w">            </span><span class="p">[</span><span class="mf">445.0</span><span class="p">,</span><span class="w"> </span><span class="mf">347.0</span><span class="p">]</span>
-</span><span id="__span-16-39"><a id="__codelineno-16-39" name="__codelineno-16-39"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-16-40"><a id="__codelineno-16-40" name="__codelineno-16-40"></a><span class="w">        </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.8704"</span>
-</span><span id="__span-16-41"><a id="__codelineno-16-41" name="__codelineno-16-41"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-16-42"><a id="__codelineno-16-42" name="__codelineno-16-42"></a><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
+<p>Check the package release notes before combining newer RapidOCR versions with this API wrapper.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr_api
+</span></code></pre></div>
+<h2 id="start-the-server">Start the server<a class="headerlink" href="#start-the-server" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rapidocr_api<span class="w"> </span>-ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-p<span class="w"> </span><span class="m">9005</span><span class="w"> </span>-workers<span class="w"> </span><span class="m">2</span>
+</span></code></pre></div>
+<p>The interactive FastAPI documentation is available at:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>http://localhost:9005/docs
+</span></code></pre></div>
+<p>Model paths can be supplied through environment variables. For example on Linux:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">det_model_path</span><span class="o">=</span>/path/to/detection.onnx
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">rec_model_path</span><span class="o">=</span>/path/to/recognition.onnx
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>rapidocr_api<span class="w"> </span>-ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-p<span class="w"> </span><span class="m">9005</span><span class="w"> </span>-workers<span class="w"> </span><span class="m">2</span>
+</span></code></pre></div>
+<h2 id="call-the-api">Call the API<a class="headerlink" href="#call-the-api" title="Permanent link">&para;</a></h2>
+<h3 id="curl">cURL<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-F<span class="w"> </span><span class="nv">image_file</span><span class="o">=</span>@image.png<span class="w"> </span>http://localhost:9005/ocr
+</span></code></pre></div>
+<h3 id="python-file-upload">Python file upload<a class="headerlink" href="#python-file-upload" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">"http://localhost:9005/ocr"</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">image_path</span> <span class="o">=</span> <span class="s2">"image.png"</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">files</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"image_file"</span><span class="p">:</span> <span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">image_file</span><span class="p">,</span> <span class="s2">"image/png"</span><span class="p">)}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</span></code></pre></div>
+<h3 id="base64-input">Base64 input<a class="headerlink" href="#base64-input" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">encoded</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">"image.png"</span><span class="p">)</span><span class="o">.</span><span class="n">read_bytes</span><span class="p">())</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="s2">"http://localhost:9005/ocr"</span><span class="p">,</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">"image_data"</span><span class="p">:</span> <span class="n">encoded</span><span class="p">},</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">)</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</span></code></pre></div>
+<h2 id="response-format">Response format<a class="headerlink" href="#response-format" title="Permanent link">&para;</a></h2>
+<p>When text is detected, the response maps result indexes to recognized text, box coordinates and confidence scores:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">"rec_txt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RapidOCR"</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">"dt_boxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">]],</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.98"</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>If no text is detected, the API returns an empty object: <code>{}</code>.</p>
+<p>For Docker examples, historical package layouts and additional request flags, see the <a href="https://rapidai.github.io/RapidOCRDocs/install_usage/rapidocr_api/usage/">complete Chinese API reference</a>.</p>
 
 <!-- Source file information -->
 

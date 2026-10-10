@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="rapidocr_web 本地 OCR Web 服务的安装、启动、访问和端口配置说明。">
+        <meta name="description" content="Install, start and access the local rapidocr_web OCR service.">
       
       
         <meta name="author" content="RapidAI">
@@ -29,7 +29,7 @@
     
     
       
-        <title>RapidOCR Web 安装及使用 - RapidOCR Documentation</title>
+        <title>RapidOCR Web Installation and Usage - RapidOCR Documentation</title>
       
     
     
@@ -117,22 +117,22 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RapidOCR Documentation">
-<meta property="og:title" content="RapidOCR Web 安装及使用">
-<meta property="og:description" content="rapidocr_web 本地 OCR Web 服务的安装、启动、访问和端口配置说明。">
+<meta property="og:title" content="RapidOCR Web Installation and Usage">
+<meta property="og:description" content="Install, start and access the local rapidocr_web OCR service.">
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_web/usage/">
 <meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="RapidOCR Web 安装及使用">
-<meta name="twitter:description" content="rapidocr_web 本地 OCR Web 服务的安装、启动、访问和端口配置说明。">
+<meta name="twitter:title" content="RapidOCR Web Installation and Usage">
+<meta name="twitter:description" content="Install, start and access the local rapidocr_web OCR service.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <link rel="alternate" type="text/plain" href="../../../../llms.txt" title="RapidOCR llms.txt">
 <link rel="alternate" type="text/plain" href="../../../../llms-full.txt" title="RapidOCR llms-full.txt">
 <link rel="alternate" type="application/json" href="../../../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_web/usage.md" title="RapidOCR Web 安装及使用 Markdown">
+<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_web/usage.en.md" title="RapidOCR Web Installation and Usage Markdown">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "rapidocr_web \u672c\u5730 OCR Web \u670d\u52a1\u7684\u5b89\u88c5\u3001\u542f\u52a8\u3001\u8bbf\u95ee\u548c\u7aef\u53e3\u914d\u7f6e\u8bf4\u660e\u3002", "headline": "RapidOCR Web \u5b89\u88c5\u53ca\u4f7f\u7528", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR Web \u5b89\u88c5\u53ca\u4f7f\u7528", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_web/usage/"}
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "Install, start and access the local rapidocr_web OCR service.", "headline": "RapidOCR Web Installation and Usage", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR Web Installation and Usage", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_web/usage/"}
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -181,7 +181,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -256,7 +256,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RapidOCR Web 安装及使用
+              RapidOCR Web Installation and Usage
             
           </span>
         </div>
@@ -1345,44 +1345,29 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      简介
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      安装
+      Installation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#start-the-service" class="md-nav__link">
     <span class="md-ellipsis">
-      使用
+      Start the service
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="使用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      启动服务
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1939,44 +1924,29 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      简介
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      安装
+      Installation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#start-the-service" class="md-nav__link">
     <span class="md-ellipsis">
-      使用
+      Start the service
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="使用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      启动服务
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2021,7 +1991,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_web/usage.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_web/usage.en.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2030,7 +2000,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_web/usage.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_web/usage.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2048,49 +2018,23 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_dark.png" width="60%" height="60%" class="no-radius">
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_white.png" width="60%" height="60%" class="no-radius">
-    <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_white.png" class="no-radius">
-  </picture>
-
-  <br/>
-  <a href=""><img src="https://img.shields.io/badge/Python->=3.6-aff.svg"></a>
-  <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
-  <a href="https://pepy.tech/project/rapidocr_web"><img src="https://static.pepy.tech/personalized-badge/rapidocr_web?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20rapidocr_web"></a>
-  <a href="https://pypi.org/project/rapidocr_web/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr_web"></a>
-  <a href="https://choosealicense.com/licenses/apache-2.0/"><img src="https://img.shields.io/badge/License-Apache%202-dfd.svg"></a>
-  <a href="https://semver.org/"><img alt="SemVer2.0" src="https://img.shields.io/badge/SemVer-2.0-brightgreen"></a>
-  <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-
-</div>
-
-<h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>源码：<a href="https://github.com/RapidAI/RapidOCRWeb">https://github.com/RapidAI/RapidOCRWeb</a></p>
-<p><code>rapidocr_web</code> 是基于 <code>rapidocr</code> 库封装的 web 版 OCR 程序。它可以让小伙们快速在本地启动 OCR 服务，支持剪贴板、拖拽和选择图像文件上传识别，同时具有一键复制识别文本功能。</p>
-<p>整体项目采用前后端分离设计：</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Source repository: <a href="https://github.com/RapidAI/RapidOCRWeb">https://github.com/RapidAI/RapidOCRWeb</a></p>
+<p><code>rapidocr_web</code> wraps RapidOCR in a local browser interface. It supports clipboard input, drag-and-drop, file selection and one-click copying of recognized text. The interface is responsive on desktop and mobile devices.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr_web
+</span></code></pre></div>
+<h2 id="start-the-service">Start the service<a class="headerlink" href="#start-the-service" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rapidocr_web<span class="w"> </span>-ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>
+</span></code></pre></div>
+<p>Open <a href="http://localhost:9003/">http://localhost:9003/</a> in a browser.</p>
 <ul>
-<li>前端：HTML + CSS + JavaScript</li>
-<li>后端：Flask</li>
-</ul>
-<p>UI 来自 Cursor，自适应移动端和 PC 端。相比于旧有版本（v0.x），现在版本（v1.x）更加现代化。</p>
-<h2 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr_web
-</span></code></pre></div></td></tr></table></div>
-<h2 id="_3">使用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">启动服务<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>rapidocr_web<span class="w"> </span>-ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>
-</span></code></pre></div></td></tr></table></div>
-<p>启动后，在浏览器中打开 <a href="http://localhost:9003/">http://localhost:9003/</a>。默认使用 <code>http</code>，不是 <code>https</code>。</p>
-<p>其中：</p>
-<ul>
-<li><code>-ip 0.0.0.0</code> 允许局域网内其他设备访问；仅本机使用时可改为 <code>127.0.0.1</code>。</li>
-<li><code>-p 9003</code> 指定端口。如果端口被占用，请换成其他端口，并使用对应地址访问。</li>
+<li><code>-ip 0.0.0.0</code> allows access from other devices on the local network. Use <code>127.0.0.1</code> for local-only access.</li>
+<li><code>-p 9003</code> selects the port. Choose another port if it is already in use.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>如果从其他设备访问，请将 <code>localhost</code> 替换为运行服务设备的局域网 IP。</p>
+<p>The default service uses <code>http</code>, not <code>https</code>. For access from another device, replace <code>localhost</code> with the server's local-network IP address.</p>
 </div>
 <div align="center">
     <img src="https://github.com/RapidAI/RapidOCRWeb/releases/download/v0.0.0/demo.gif" width="100%" height="100%">

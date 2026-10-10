@@ -8,7 +8,7 @@ This creates `default_rapidocr.yaml` in the current directory. You can pass the 
 
 !!! info
 
-    This page summarizes the most frequently used parameters. See the [complete Chinese parameter reference](parameters.md) for every field, default value and version-specific note.
+    This page summarizes the most frequently used parameters. See the [complete Chinese parameter reference](https://rapidai.github.io/RapidOCRDocs/install_usage/rapidocr/parameters/) for every field, default value and version-specific note.
 
 ## Common parameter groups
 
@@ -53,4 +53,4 @@ This creates `default_rapidocr.yaml` in the current directory. You can pass the 
 | `rec_batch_num` | Recognition batch size. |
 | `rec_keys_path` | Optional dictionary file for a custom recognition model. |
 
-For the complete parameter list, defaults and version-specific notes, see the [Chinese parameter reference](parameters.md).
+For the complete parameter list, defaults and version-specific notes, see the [Chinese parameter reference](https://rapidai.github.io/RapidOCRDocs/install_usage/rapidocr/parameters/).

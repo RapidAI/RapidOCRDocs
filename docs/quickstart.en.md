@@ -64,4 +64,4 @@ See the [usage guide](install_usage/rapidocr/usage.md) for the complete output s
 
 ### Recommended reading
 
-#### [Support for other programming languages](https://rapidai.github.io/RapidOCRDocs/blog/posts/other_programing_lan/)
+#### [Support for other programming languages](https://rapidai.github.io/RapidOCRDocs/latest/blog/posts/other_programing_lan/)

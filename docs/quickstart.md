@@ -64,4 +64,4 @@ print(result.scores)
 
 ### 推荐阅读
 
-#### [其他编程语言支持](https://rapidai.github.io/RapidOCRDocs/blog/posts/other_programing_lan/)
+#### [其他编程语言支持](https://rapidai.github.io/RapidOCRDocs/latest/blog/posts/other_programing_lan/)

@@ -7,5 +7,5 @@
 ### 鸣谢仓库
 
 - [giscus-theme-with-font](https://github.com/L33Z22L11/giscus-theme-with-font)
-- [Mkdocs 教程](https://wcowin.work)
+- Mkdocs 教程
 - [Xiaokang2022.github.io](https://github.com/Xiaokang2022/Xiaokang2022.github.io/tree/main)

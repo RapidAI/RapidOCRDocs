@@ -2273,7 +2273,7 @@ You're not viewing the latest version.
 <!-- Page content -->
 <h4 id="q-onnx-runtime-gpu-cpu">Q: 为什么我的模型在 ONNX Runtime GPU 版上比在 CPU 上还要慢？<a class="headerlink" href="#q-onnx-runtime-gpu-cpu" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 因为 OCR 任务中输入图像 Shape 是动态的。每次 GPU 上都需要重新清空上一次不同 Shape 的缓存结果。如果输入图像 Shape 不变的情况下，ONNX Runtime GPU 版一般都要比 CPU 快的。该问题已经提了相关 issue #13198。</p>
-<p>推荐 CPU 端推理用 <code>rapidocr_onnxruntime</code> 或者 <code>rapidocr_openvino</code>，GPU 端用 <code>rapidocr_paddle</code>。关于 <code>rapidocr_onnxruntime</code> 和 <code>rapidocr_paddle</code> 两者之间推理，可参见：<a href="https://rapidai.github.io/RapidOCRDocs/v1.4.4/install_usage/rapidocr_paddle/usage/#_4">docs</a></p>
+<p>当前版本建议统一使用 <code>rapidocr</code>，再按需选择 ONNX Runtime, OpenVINO, Paddle, PyTorch 或其他推理引擎。具体安装方式和限制请参见 <a href="../../install_usage/rapidocr/how_to_use_infer_engine/">使用不同推理引擎</a>。</p>
 <h4 id="q-32-c">Q: 请问这个能在 32 位 C#中用嘛?<a class="headerlink" href="#q-32-c" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> C#可以 32 位，要用 32 位的 dll，但 nuget 上的 onnxruntime 不支持 win7。</p>
 <h4 id="q-windows-oserror-winerror-126">Q: Windows 系统下，装完环境之后，运行示例程序之后，报错 OSError: [WinError 126] 找不到指定的模組<a class="headerlink" href="#q-windows-oserror-winerror-126" title="Permanent link">&para;</a></h4>
@@ -2303,7 +2303,7 @@ You're not viewing the latest version.
 <h4 id="q-c-onnx-cpu-gpu">Q: 我用 c++ 推理 onnx 貌似是 cpu 推理的，gpu 没有反应?<a class="headerlink" href="#q-c-onnx-cpu-gpu" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 如果想用 GPU 的话，需要安装 onnxruntime-gpu 版，自己在 onnxruntime 的代码中添加 EP (execution provider)。我们的定位是通用，只用 cpu 推理。</p>
 <h4 id="q-ocr-linux-ocr">Q: 您好，我想部署下咱们的 ocr 识别，有提供 linux 版本的 ocr 部署包吗?<a class="headerlink" href="#q-ocr-linux-ocr" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> linux 版本的自己编译即可, 可以参考我们的 action 中的脚本；其实编译非常容易，安装个 opencv 后，在 cmakelists.txt 中修改一下 onnxruntime 的路径即可，具体参考这个：<a href="https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml">https://github.com/RapidAI/RapidOCR/blob/v0.1.5/.github/workflows/make-linux.yml</a></p>
+<p><strong>A:</strong> 当前仓库没有统一发布的 Linux C++ 二进制包。建议参考 <a href="https://github.com/RapidAI/RapidOcrOnnx">RapidOcrOnnx</a> 的构建说明，或根据目标平台自行编译 OpenCV 和 ONNX Runtime。</p>
 <h4 id="q-onnxruntime-c">Q: onnxruntime 编译好的 C++ 库，哪里可以下载到？<a class="headerlink" href="#q-onnxruntime-c" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 从这里：<a href="https://github.com/RapidAI/OnnxruntimeBuilder/releases/tag/1.7.0">https://github.com/RapidAI/OnnxruntimeBuilder/releases/tag/1.7.0</a></p>
 <h4 id="q-win10-cygwin-gcc-c-c-ocr">Q: 目前简单测试环境是  Win10 + Cygwin + gcc + 纯 C 编程，可以在 C 程序中直接接入简单 OCR 功能吗？<a class="headerlink" href="#q-win10-cygwin-gcc-c-c-ocr" title="Permanent link">&para;</a></h4>
@@ -2311,7 +2311,7 @@ You're not viewing the latest version.
 <h4 id="q">Q: 模型下载地址<a class="headerlink" href="#q" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> <a href="https://pan.baidu.com/s/1PTcgXG2zEgQU6A_A3kGJ3Q?pwd=jhai">百度网盘</a> | <a href="https://drive.google.com/drive/folders/1x_a9KpCo_1blxH1xFOfgKVkw1HYRVywY?usp=sharing">Google Drive</a></p>
 <h4 id="q-onnxruntime-17-onnxruntimesequentialexecutorexecute-non-zero-status-code-returned-while-running-scatternd-node-namescatternd1-status-message-updates">Q: onnxruntime 1.7 下出错：onnxruntime::SequentialExecutor::Execute] Non-zero status code returned while running ScatterND node. Name:'ScatterND@1' Status Message: updates<a class="headerlink" href="#q-onnxruntime-17-onnxruntimesequentialexecutorexecute-non-zero-status-code-returned-while-running-scatternd-node-namescatternd1-status-message-updates" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 由于模型只支持 <code>onnxruntime=1.5.0</code> 导致，请更新模型,下载地址见 <code>Q3</code></p>
+<p><strong>A:</strong> 这是旧模型与旧版 ONNX Runtime 的兼容性问题。请优先升级 RapidOCR 和模型；如果仍然报错，请提供 RapidOCR, ONNX Runtime, Python 版本以及完整错误日志。</p>
 <h4 id="q_1">Q: 边缘总有一行文字无法识别，怎么办？<a class="headerlink" href="#q_1" title="Permanent link">&para;</a></h4>
 <p><strong>A:</strong> 在 padding 参数中添加一个值，默认是 0,你可以添加 5 或 10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。</p>
 
@@ -2338,7 +2338,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年10月9日 14:03:45 CST">2026-10-09 14:03:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年10月10日 09:58:25 CST">2026-10-10 09:58:25</span>
   </span>
 
     

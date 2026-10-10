@@ -7,7 +7,7 @@
 
     The three packages `rapidocr_onnxruntime`, `rapidocr_openvino` and `rapidocr_paddle` are gradually being retired. Development continues on `rapidocr`.
 
-#### Introduction
+## Introduction
 
 `rapidocr` merges `rapidocr_onnxruntime`, `rapidocr_openvino` and `rapidocr_paddle`, and adds support for PyTorch inference.
 
@@ -26,7 +26,7 @@ pip uninstall opencv-python-headless
 pip install opencv-python
 ```
 
-#### Installation
+## Installation
 
 If all goes well, a single command is enough to get started. The `rapidocr` package is about 27.2 MB and contains three models: text detection, text line orientation classification and text recognition. The small models are compact enough to be bundled into the wheel, so pip install is all that is needed.
 
@@ -40,7 +40,7 @@ If the download is slow in your region, specify a closer mirror. For example, us
 pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
-#### Install Additional Dependencies as Needed
+## Install Additional Dependencies as Needed
 
 > Supported for `rapidocr>=3.10.0`
 
@@ -58,7 +58,7 @@ pip install "rapidocr[rtl]"
 
 The `rtl` extra installs `python-bidi`, which adjusts the display order for right-to-left languages.
 
-#### Verify the installation
+## Verify the installation
 
 === "`rapidocr>=2.0.3`"
 

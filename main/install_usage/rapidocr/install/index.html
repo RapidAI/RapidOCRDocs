@@ -2406,7 +2406,7 @@ You're not viewing the latest version.
 <p class="admonition-title">Warning</p>
 <p><code>rapidocr_onnxruntime</code>, <code>rapidocr_openvino</code>, <code>rapidocr_paddle</code> 三个库逐渐不再维护，后续会以 <code>rapidocr</code> 为主。</p>
 </div>
-<h4 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><code>rapidocr</code> 是合并了 <code>rapidocr_onnxruntime</code>, <code>rapidocr_openvino</code>, <code>rapidocr_paddle</code> 以及支持 PyTorch 推理的版本。</p>
 <p><code>rapidocr&gt;=2.0.0,&lt;=2.0.5</code> 中，默认采用 ONNX Runtime CPU 版作为推理引擎，可以通过安装其他推理引擎，通过相应参数来使用 GPU 推理。该部分请参见后续文档。</p>
 <p><code>rapidocr&gt;=2.0.6</code> 中不再将 ONNX Runtime 库作为依赖包，但是仍然是默认推理引擎。该版本及以后需要小伙伴们手动安装所需推理引擎来使用。</p>
@@ -2417,14 +2417,14 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>uninstall<span class="w"> </span>opencv-python-headless
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>opencv-python
 </span></code></pre></div></td></tr></table></div>
-<h4 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<h2 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>顺利的话，一行命令即可使用上。<code>rapidocr</code> 包大小约为 27.2M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 small 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr<span class="w"> </span>onnxruntime
 </span></code></pre></div></td></tr></table></div>
 <p>国内安装速度慢的话，可以指定国内的安装源，如使用清华源：</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr<span class="w"> </span>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple/
 </span></code></pre></div></td></tr></table></div>
-<h4 id="_3">按需安装额外依赖<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h2 id="_3">按需安装额外依赖<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><code>rapidocr&gt;=3.10.0</code> 支持</p>
 </blockquote>
@@ -2435,7 +2435,7 @@ You're not viewing the latest version.
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"rapidocr[rtl]"</span>
 </span></code></pre></div></td></tr></table></div>
 <p><code>rtl</code> extra 会安装 <code>python-bidi</code>，用于调整从右向左语言的显示顺序。</p>
-<h4 id="_4">验证安装是否成功<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h2 id="_4">验证安装是否成功<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><code>rapidocr&gt;=2.0.3</code> 验证方式</label><label for="__tabbed_1_2"><code>rapidocr&gt;=2.0.0,&lt;2.0.2</code> 验证方式</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">

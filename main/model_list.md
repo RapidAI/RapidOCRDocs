@@ -125,7 +125,7 @@ engine = RapidOCR(
 
 ## 配置文件字段对应
 
-以下表格以 `rapidocr>=3.10.0` 的 `default_models.yaml` 为准。`engine_type` 仅列出配置文件中直接登记模型文件的推理引擎；TensorRT 使用对应的 ONNX 模型动态构建 Engine，使用限制参见 [TensorRT 推理引擎说明](install_usage/rapidocr/how_to_use_infer_engine.md#使用-tensorrt)。
+以下表格以 `rapidocr>=3.10.0` 的 `default_models.yaml` 为准。`engine_type` 仅列出配置文件中直接登记模型文件的推理引擎；TensorRT 使用对应的 ONNX 模型动态构建 Engine，使用限制参见 [TensorRT 推理引擎说明](install_usage/rapidocr/how_to_use_infer_engine.md)。
 
 PP-OCRv6 的 `tiny`、`small` 和 `medium` 模型均为多语种模型。同一规格下，不同 `lang_type` 会路由到同一个模型文件：
 

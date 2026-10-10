@@ -1,6 +1,6 @@
 ### 1. 安装
 
-```bash linenums="1"
+```bash
 pip install rapidocr onnxruntime
 ```
 
@@ -8,129 +8,51 @@ pip install rapidocr onnxruntime
 
 === "命令行使用"
 
-    ```bash linenums="1"
+    ```bash
     rapidocr -img "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg" --vis_res
     ```
 
 === "Python 使用"
 
-    ```python linenums="1"
+    ```python
     from rapidocr import RapidOCR
 
     engine = RapidOCR()
-
     img_url = "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/resources/test_files/ch_en_num.jpg"
     result = engine(img_url)
-    print(result)
 
-    # 可视化会触发程序自动下载所需字体文件。如果是离线环境，可注释掉该行
+    print(result.txts)
+    print(result.scores)
     result.vis("vis_result.jpg")
     ```
+
+!!! note
+
+    `result.vis()` 会在首次运行时自动下载可视化所需字体。离线环境可以省略这一行，或提前配置 `font_path`。
 
 ### 3. 查看可视化结果
 
 ![](https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-09-14-1fc6ada8.png)
 
-### 4. 返回 `result` 结果示例
+### 4. 查看 `result` 结果
 
-返回结果是一个 `RapidOCROutput` 数据类，可以直接通过 `result.boxes` 和 `result.txts` 来访问使用。
+`result` 是一个 `RapidOCROutput` 数据类。最常用的字段如下：
 
-```python linenums="1"
-RapidOCROutput(
-    boxes=array([[[  6.,   2.],
-        [322.,   9.],
-        [320., 104.],
-        [  4.,  97.]],
+| 字段 | 类型 | 含义 |
+| --- | --- | --- |
+| `boxes` | `np.ndarray` | 每行文本的四点坐标，形状为 `(N, 4, 2)` |
+| `txts` | `Tuple[str]` | 识别出的文本，顺序与 `boxes` 一致 |
+| `scores` | `Tuple[float]` | 每行文本的置信度 |
+| `elapse` | `float` | 整体推理耗时，单位为秒 |
 
-       [[ 70.,  98.],
-        [252.,  98.],
-        [252., 125.],
-        [ 70., 125.]],
-
-       [[ 68., 144.],
-        [256., 144.],
-        [256., 165.],
-        [ 68., 165.]],
-
-       [[108., 170.],
-        [217., 170.],
-        [217., 182.],
-        [108., 182.]],
-
-       [[ 35., 227.],
-        [ 62., 227.],
-        [ 62., 236.],
-        [ 35., 236.]],
-
-       [[139., 223.],
-        [187., 223.],
-        [187., 251.],
-        [139., 251.]],
-
-       [[ 35., 233.],
-        [ 81., 236.],
-        [ 80., 255.],
-        [ 33., 252.]],
-
-       [[257., 234.],
-        [304., 236.],
-        [303., 254.],
-        [257., 253.]],
-
-       [[259., 227.],
-        [286., 226.],
-        [287., 236.],
-        [259., 237.]],
-
-       [[140., 243.],
-        [186., 245.],
-        [186., 272.],
-        [139., 271.]],
-
-       [[129., 289.],
-        [207., 290.],
-        [206., 340.],
-        [128., 338.]],
-
-       [[ 98., 320.],
-        [129., 320.],
-        [129., 330.],
-        [ 98., 330.]],
-
-       [[205., 316.],
-        [223., 316.],
-        [223., 335.],
-        [205., 335.]],
-
-       [[114., 342.],
-        [210., 342.],
-        [210., 355.],
-        [114., 355.]],
-
-       [[ 68., 362.],
-        [151., 362.],
-        [151., 384.],
-        [ 68., 384.]],
-
-       [[202., 362.],
-        [286., 362.],
-        [286., 384.],
-        [202., 384.]],
-
-       [[ 68., 391.],
-        [151., 391.],
-        [151., 413.],
-        [ 68., 413.]],
-
-       [[202., 391.],
-        [287., 391.],
-        [287., 413.],
-        [202., 413.]]], dtype=float32),
-    txts=('正品促销', '大桶装更划算', '强力去污符合国标', '40°C深度防冻不结冰', '日常价￥', '真击', '10.0起', '10.0起', '日常价￥', '底价', '5.8', '券后价￥', '起', '惊喜福利不容错过', '极速发货', '冰点标准', '破损就赔', '假一赔十'),
-    scores=(0.99893, 0.9843, 0.97842, 0.93412, 0.81418, 0.66226, 0.99243, 0.99849, 0.81369, 0.99633, 0.9999, 0.83907, 0.99993, 0.99782, 0.99813, 0.99786, 0.92679, 0.99717),
-    word_results=(None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), elapse_list=[0.16008154186420143, 0.017705917358398438, 0.35501312371343374], elapse=0.5328005829360336)
+```python
+print(result.boxes.shape)
+print(result.txts)
+print(result.scores)
 ```
+
+完整的输出结构和检测、分类、识别三阶段结果，请参见 [使用教程](install_usage/rapidocr/usage.md)。
 
 ### 推荐阅读
 
-#### [其他编程语言支持](./blog/posts/other_programing_lan.md)
+#### [其他编程语言支持](https://rapidai.github.io/RapidOCRDocs/blog/posts/other_programing_lan/)

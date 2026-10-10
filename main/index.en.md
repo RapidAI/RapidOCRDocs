@@ -24,7 +24,7 @@
 
 RapidOCR is a completely open-source, free OCR tool that supports multi-platform, multi-language operation and rapid offline deployment. Its core advantages lie in extreme speed and extensive compatibility.
 
-**Supported Languages:** Default support for Chinese and English recognition. For other supported languages, please refer to the documentation: [Model List](model_list.md)
+**Supported Languages:** Chinese and English recognition are supported by default. For other languages, see the [Model List](model_list.md).
 
 **Project Origin:** Considering that [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) still has room for optimization in engineering aspects, we innovatively converted the models in PaddleOCR into the highly compatible ONNX format to simplify and accelerate the inference deployment of OCR models on various terminal devices. Furthermore, we achieved seamless cross-platform porting based on multiple programming languages such as Python, C++, Java, and C#, enabling developers to get started easily and integrate efficiently.
 
@@ -32,7 +32,7 @@ RapidOCR is a completely open-source, free OCR tool that supports multi-platform
 
 **User Guide:**
 
-- **Direct Deployment:** If the models provided in this repository meet your needs, simply refer to the [Quick Start](quickstart.md) guide to quickly complete the deployment and usage of RapidOCR.
+- **Direct Deployment:** If the models provided in this repository meet your needs, follow the [Quick Start](quickstart.md) guide.
 - **Custom Fine-tuning:** If the existing models cannot meet specific scenario requirements, you can fine-tune them using your own data based on PaddleOCR, and then apply the optimized models to the RapidOCR deployment process to achieve personalized customization.
 
 If you find this project helpful for your work or study, we kindly ask you to give us a ⭐ Star to provide valuable support and encouragement!

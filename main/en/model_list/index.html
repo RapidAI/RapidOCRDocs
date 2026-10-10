@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="RapidOCR 支持的 PP-OCRv4、PP-OCRv5 检测、方向分类、识别模型，以及推理引擎和语言支持矩阵。">
+        <meta name="description" content="RapidOCR 支持的 PP-OCRv4、PP-OCRv5、PP-OCRv6 检测、方向分类和识别模型，以及推理引擎和语言支持矩阵。">
       
       
         <meta name="author" content="RapidAI">
@@ -118,12 +118,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RapidOCR Documentation">
 <meta property="og:title" content="RapidOCR 模型列表">
-<meta property="og:description" content="RapidOCR 支持的 PP-OCRv4、PP-OCRv5 检测、方向分类、识别模型，以及推理引擎和语言支持矩阵。">
+<meta property="og:description" content="RapidOCR 支持的 PP-OCRv4、PP-OCRv5、PP-OCRv6 检测、方向分类和识别模型，以及推理引擎和语言支持矩阵。">
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/en/model_list/">
 <meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RapidOCR 模型列表">
-<meta name="twitter:description" content="RapidOCR 支持的 PP-OCRv4、PP-OCRv5 检测、方向分类、识别模型，以及推理引擎和语言支持矩阵。">
+<meta name="twitter:description" content="RapidOCR 支持的 PP-OCRv4、PP-OCRv5、PP-OCRv6 检测、方向分类和识别模型，以及推理引擎和语言支持矩阵。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <link rel="alternate" type="text/plain" href="../../llms.txt" title="RapidOCR llms.txt">
 <link rel="alternate" type="text/plain" href="../../llms-full.txt" title="RapidOCR llms-full.txt">
@@ -132,7 +132,7 @@
 <link rel="alternate" type="text/markdown" href="../../model_list.md" title="RapidOCR 模型列表 Markdown">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR \u652f\u6301\u7684 PP-OCRv4\u3001PP-OCRv5 \u68c0\u6d4b\u3001\u65b9\u5411\u5206\u7c7b\u3001\u8bc6\u522b\u6a21\u578b\uff0c\u4ee5\u53ca\u63a8\u7406\u5f15\u64ce\u548c\u8bed\u8a00\u652f\u6301\u77e9\u9635\u3002", "headline": "RapidOCR \u6a21\u578b\u5217\u8868", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR \u6a21\u578b\u5217\u8868", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/model_list/"}
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR \u652f\u6301\u7684 PP-OCRv4\u3001PP-OCRv5\u3001PP-OCRv6 \u68c0\u6d4b\u3001\u65b9\u5411\u5206\u7c7b\u548c\u8bc6\u522b\u6a21\u578b\uff0c\u4ee5\u53ca\u63a8\u7406\u5f15\u64ce\u548c\u8bed\u8a00\u652f\u6301\u77e9\u9635\u3002", "headline": "RapidOCR \u6a21\u578b\u5217\u8868", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR \u6a21\u578b\u5217\u8868", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/model_list/"}
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -2306,7 +2306,7 @@ You're not viewing the latest version.
 </div>
 </div>
 <h2 id="_3">配置文件字段对应<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>以下表格以 <code>rapidocr&gt;=3.10.0</code> 的 <code>default_models.yaml</code> 为准。<code>engine_type</code> 仅列出配置文件中直接登记模型文件的推理引擎；TensorRT 使用对应的 ONNX 模型动态构建 Engine，使用限制参见 <a href="../install_usage/rapidocr/how_to_use_infer_engine/#使用-tensorrt">TensorRT 推理引擎说明</a>。</p>
+<p>以下表格以 <code>rapidocr&gt;=3.10.0</code> 的 <code>default_models.yaml</code> 为准。<code>engine_type</code> 仅列出配置文件中直接登记模型文件的推理引擎；TensorRT 使用对应的 ONNX 模型动态构建 Engine，使用限制参见 <a href="../install_usage/rapidocr/how_to_use_infer_engine/">TensorRT 推理引擎说明</a>。</p>
 <p>PP-OCRv6 的 <code>tiny</code>、<code>small</code> 和 <code>medium</code> 模型均为多语种模型。同一规格下，不同 <code>lang_type</code> 会路由到同一个模型文件：</p>
 <ul>
 <li><code>small</code> 和 <code>medium</code> 支持：<code>ch, chinese_cht, en, japan, af, az, bs, ca, cs, cy, da, de, es, et, eu, fi, fr, ga, gl, hr, hu, id, is, it, ku, la, lb, lt, lv, mi, ms, mt, nl, no, oc, pl, pt, qu, rm, ro, rs_latin, sk, sl, sq, sv, sw, tl, tr, uz, vi, french, german</code>。</li>

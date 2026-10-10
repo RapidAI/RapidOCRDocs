@@ -2050,7 +2050,7 @@ You're not viewing the latest version.
 <p class="admonition-title">Warning</p>
 <p>The three packages <code>rapidocr_onnxruntime</code>, <code>rapidocr_openvino</code> and <code>rapidocr_paddle</code> are gradually being retired. Development continues on <code>rapidocr</code>.</p>
 </div>
-<h4 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h4>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p><code>rapidocr</code> merges <code>rapidocr_onnxruntime</code>, <code>rapidocr_openvino</code> and <code>rapidocr_paddle</code>, and adds support for PyTorch inference.</p>
 <p>In <code>rapidocr&gt;=2.0.0,&lt;=2.0.5</code>, the ONNX Runtime CPU build is used as the default inference engine. You can install another inference engine and switch to GPU inference through the corresponding parameters, which later pages describe in detail.</p>
 <p>Starting from <code>rapidocr&gt;=2.0.6</code>, ONNX Runtime is no longer a dependency, although it remains the default inference engine. From that version onwards you need to install the inference engine you want to use yourself.</p>
@@ -2061,14 +2061,14 @@ You're not viewing the latest version.
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>uninstall<span class="w"> </span>opencv-python-headless
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>opencv-python
 </span></code></pre></div></td></tr></table></div>
-<h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h4>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>If all goes well, a single command is enough to get started. The <code>rapidocr</code> package is about 27.2 MB and contains three models: text detection, text line orientation classification and text recognition. The small models are compact enough to be bundled into the wheel, so pip install is all that is needed.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr<span class="w"> </span>onnxruntime
 </span></code></pre></div></td></tr></table></div>
 <p>If the download is slow in your region, specify a closer mirror. For example, using the Tsinghua mirror:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr<span class="w"> </span>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple/
 </span></code></pre></div></td></tr></table></div>
-<h4 id="install-additional-dependencies-as-needed">Install Additional Dependencies as Needed<a class="headerlink" href="#install-additional-dependencies-as-needed" title="Permanent link">&para;</a></h4>
+<h2 id="install-additional-dependencies-as-needed">Install Additional Dependencies as Needed<a class="headerlink" href="#install-additional-dependencies-as-needed" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Supported for <code>rapidocr&gt;=3.10.0</code></p>
 </blockquote>
@@ -2079,7 +2079,7 @@ You're not viewing the latest version.
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"rapidocr[rtl]"</span>
 </span></code></pre></div></td></tr></table></div>
 <p>The <code>rtl</code> extra installs <code>python-bidi</code>, which adjusts the display order for right-to-left languages.</p>
-<h4 id="verify-the-installation">Verify the installation<a class="headerlink" href="#verify-the-installation" title="Permanent link">&para;</a></h4>
+<h2 id="verify-the-installation">Verify the installation<a class="headerlink" href="#verify-the-installation" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><code>rapidocr&gt;=2.0.3</code></label><label for="__tabbed_1_2"><code>rapidocr&gt;=2.0.0,&lt;2.0.2</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2173,6 +2173,16 @@ You're not viewing the latest version.
 
     
     <nav>
+      
+        <a href="https://github.com/SWHL" class="md-author" title="@SWHL">
+          
+          <img src="https://avatars.githubusercontent.com/u/28639377?v=4&size=72" alt="SWHL">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
       
         <a href="https://github.com/mftnakrsu" class="md-author" title="@mftnakrsu">
           

@@ -7,7 +7,7 @@
 
     `rapidocr_onnxruntime`, `rapidocr_openvino`, `rapidocr_paddle` 三个库逐渐不再维护，后续会以 `rapidocr` 为主。
 
-#### 简介
+## 简介
 
 `rapidocr` 是合并了 `rapidocr_onnxruntime`, `rapidocr_openvino`, `rapidocr_paddle` 以及支持 PyTorch 推理的版本。
 
@@ -26,7 +26,7 @@ pip uninstall opencv-python-headless
 pip install opencv-python
 ```
 
-#### 安装
+## 安装
 
 顺利的话，一行命令即可使用上。`rapidocr` 包大小约为 27.2M 左右，包含三个模型：文本检测、文本行方向分类和文本识别。其中 small 版模型较小，因此将相关模型都已打到 whl 包，可直接 pip 安装使用。
 
@@ -40,7 +40,7 @@ pip install rapidocr onnxruntime
 pip install rapidocr -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
-#### 按需安装额外依赖
+## 按需安装额外依赖
 
 > `rapidocr>=3.10.0` 支持
 
@@ -58,7 +58,7 @@ pip install "rapidocr[rtl]"
 
 `rtl` extra 会安装 `python-bidi`，用于调整从右向左语言的显示顺序。
 
-#### 验证安装是否成功
+## 验证安装是否成功
 
 === "`rapidocr>=2.0.3` 验证方式"
 

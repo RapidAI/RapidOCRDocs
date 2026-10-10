@@ -29,7 +29,7 @@ paddlepaddle 推理引擎，并未测试与其他两个速度差异。但是相�
 
 ### ☆ 推荐：`rapidocr_paddle`
 
-### 推荐理由 → [link](https://rapidai.github.io/RapidOCRDocs/v1.4.4/install_usage/rapidocr_paddle/usage/)
+### 推荐理由 → [使用不同推理引擎](../../../install_usage/rapidocr/how_to_use_infer_engine.md)
 
 ### 其他不推荐原因
 

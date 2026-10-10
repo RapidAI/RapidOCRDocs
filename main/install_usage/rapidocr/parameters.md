@@ -1,12 +1,12 @@
-### `config.yaml` 的生成
+## `config.yaml` 的生成
 
 ```bash linenums="1"
 rapidocr config
 ```
 
-### `default_rapidocr.yaml` 常用参数介绍
+## `default_rapidocr.yaml` 常用参数介绍
 
-#### Global
+### Global
 
 该部分为全局配置。
 
@@ -91,7 +91,7 @@ result = engine(img_url, return_word_box=True, return_single_char_box=True)
 
 > 在 `rapidocr>=3.8.0` 中添加此参数。
 
-#### EngineConfig
+### EngineConfig
 
 !!! note
 
@@ -225,7 +225,7 @@ EngineConfig:
 | `model_type`    | `ModelType`      | `MOBILE`（mobile）<br/>`SERVER`（server）<br/>`TINY`(tiny) <br/> `SMALL`(small)<br/>`MEDIUM`(medium) |`from rapidocr import ModelType`| 模型大小与性能级别      |
 | `ocr_version`   | `OCRVersion`     | `PPOCRV4`（PP-OCRv4）<br/>`PPOCRV5`（PP-OCRv5）<br/>`PPOCRV6`(PP-OCRv6) |`from rapidocr import OCRVersion`| 模型版本    |
 
-#### Det
+### Det
 
 ```yaml linenums="1"
 Det:
@@ -254,7 +254,7 @@ Det:
 
 `engine_type (str)`: 选定推理引擎。支持 `onnxruntime`, `openvino`, `paddle` 和 `torch` 四个值。默认为 `onnxruntime`。
 
-`lang_type (str)`: 支持检测的语种类型。具体可用编码由 OCR 版本和模型类型决定，详见 [模型路由明细](../../model_list.md#模型路由明细)。默认为 `ch`。
+`lang_type (str)`: 支持检测的语种类型。具体可用编码由 OCR 版本和模型类型决定，详见 [模型列表](../../model_list.md)。默认为 `ch`。
 
 > `rapidocr>=3.10.0` 支持直接传语言编码字符串，也兼容 `LangDet` 枚举。
 
@@ -288,7 +288,7 @@ Det:
 
 `score_mode (str)`: 计算文本框得分的方式。取值范围为：`[slow, fast]`，默认值为 `fast`。
 
-#### Cls
+### Cls
 
 ```yaml linenums="1"
 Cls:
@@ -330,7 +330,7 @@ Cls:
 
 `label_list (List[str])`: 方向分类的标签，0° 或者 180°，**该参数不能动**。默认值为 `["0", "180"]`。
 
-#### Rec
+### Rec
 
 ```yaml linenums="1"
 Rec:
@@ -351,7 +351,7 @@ Rec:
 
 `engine_type (str)`: 同 Det 部分介绍。
 
-`lang_type (str)`: 支持识别的语种类型。具体支持的语种参见 [模型路由明细](../../model_list.md#模型路由明细)。
+`lang_type (str)`: 支持识别的语种类型。具体支持的语种参见 [模型列表](../../model_list.md)。
 
 > 在 `rapidocr>=3.10.0` 可直接传语言编码字符串，也兼容 `LangRec` 枚举。
 

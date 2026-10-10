@@ -13,8 +13,8 @@
     <language>zh</language>
 
     
-    <pubDate>Sat, 10 Oct 2026 00:30:18 -0000</pubDate>
-    <lastBuildDate>Sat, 10 Oct 2026 00:30:18 -0000</lastBuildDate>
+    <pubDate>Sat, 10 Oct 2026 02:01:02 -0000</pubDate>
+    <lastBuildDate>Sat, 10 Oct 2026 02:01:02 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,25 @@
     
 
     
+    
+    <item>
+      <title>OCR 推理引擎选择指南</title>
+      
+      
+        
+      <author>SWHL</author>
+        
+      
+      
+      
+      <description>&lt;p&gt;介绍在 CPU 端和 GPU 端，OCR 模型的推理引擎选择问题。&lt;/p&gt;</description>
+      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/04/which-inference/</link>
+      <pubDate>Sat, 10 Oct 2026 01:58:25 +0000</pubDate>
+      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
+      
+      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/04/which-inference/</guid>
+      
+    </item>
     
     <item>
       <title>评测 PHOCR 中文文本识别模型</title>
@@ -399,25 +418,6 @@
       <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
       
       <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/02/13/support-tensorrt-engine/</guid>
-      
-    </item>
-    
-    <item>
-      <title>RapidOCR 支持 PyTorch MPS 作为计算后端</title>
-      
-      
-        
-      <author>SWHL</author>
-        
-      
-      
-      
-      <description>&lt;p&gt;记录 RapidOCR 支持 PyTorch MPS 作为计算后端的过程。&lt;/p&gt;</description>
-      <link>https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/</link>
-      <pubDate>Wed, 08 Apr 2026 02:43:06 +0000</pubDate>
-      <source url="https://rapidai.github.io/RapidOCRDocs/main/feed_rss_updated.xml">RapidOCR 文档</source>
-      
-      <guid isPermaLink="true">https://rapidai.github.io/RapidOCRDocs/main/blog/2026/03/04/support-pytorch-mps/</guid>
       
     </item>
     

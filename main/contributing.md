@@ -53,7 +53,7 @@ pip install pytest  # 运行单元测试需要
 pip install -e .
 ```
 
-如需使用 ONNX Runtime 等推理后端，请按 [文档](https://rapidai.github.io/RapidOCRDocs/main/install_usage/rapidocr/install/) 安装对应依赖（如 `rapidocr_onnxruntime` 等）。
+如需使用 ONNX Runtime 等推理后端，请按 [安装文档](install_usage/rapidocr/install.md) 和 [推理引擎说明](install_usage/rapidocr/how_to_use_infer_engine.md) 安装对应依赖。
 
 ---
 

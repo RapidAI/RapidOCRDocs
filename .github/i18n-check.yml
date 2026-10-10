@@ -10,6 +10,12 @@ locales:
       - index.md
       - quickstart.md
       - install_usage/rapidocr/install.md
+      - install_usage/rapidocr/usage.md
+      - install_usage/rapidocr/parameters.md
+      - install_usage/rapidocr/how_to_use_infer_engine.md
+      - model_list.md
+      - online_demo.md
+      - faq/faq.md
     # Blog posts currently remain in the default language because of the
     # Material blog/i18n compatibility hook.
     exclude:

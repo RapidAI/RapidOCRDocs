@@ -221,7 +221,7 @@ EngineConfig:
 | YAML 参数       | 对应枚举类       | 可用枚举值（示例）                 |导入方式 | 备注                                |
 |-----------------|------------------|------------------|-------------------|-------------------------------------|
 | `engine_type`   | `EngineType`     | `ONNXRUNTIME`（onnxruntime）<br/>`OPENVINO`（openvino）<br/>`PADDLE`（paddle）<br/>`TORCH`（torch）<br/>`MNN` (mnn)(`rapidocr>=3.6.0`)<br/>`TENSORRT`(tensorrt)(`rapidocr>=3.7.0`) | `from rapidocr import EngineType`|推理引擎类型         |
-| `lang_type`     |  `LangDet`<br/> `LangCls`<br/> `LangRec` | **检测（Det）**：`CH`/`EN`/`MULTI`<br/>**分类（Cls）**：`CH`<br/>**识别（Rec）**：`CH`/`CH_DOC`/`EN`/`ARABIC`/... |`from rapidocr import LangDet`<br/> `from rapidocr import LangCls` <br/>`from rapidocr import LangRec`| 根据 OCR 处理阶段选择不同枚举值 |
+| `lang_type`     |  `LangDet`<br/> `LangCls`<br/> `LangRec` | `rapidocr<3.10.0`：使用对应枚举值。<br/>`rapidocr>=3.10.0`：除枚举外，也可直接传 `default_models.yaml` 中的语言编码字符串，例如 `"ch"`、`"japan"`、`"korean"`。|`from rapidocr import LangDet`<br/> `from rapidocr import LangCls` <br/>`from rapidocr import LangRec`| 根据 OCR 处理阶段、OCR 版本和模型类型解析模型路由；支持的编码以 [模型列表](../../model_list.md) 为准。|
 | `model_type`    | `ModelType`      | `MOBILE`（mobile）<br/>`SERVER`（server）<br/>`TINY`(tiny) <br/> `SMALL`(small)<br/>`MEDIUM`(medium) |`from rapidocr import ModelType`| 模型大小与性能级别      |
 | `ocr_version`   | `OCRVersion`     | `PPOCRV4`（PP-OCRv4）<br/>`PPOCRV5`（PP-OCRv5）<br/>`PPOCRV6`(PP-OCRv6) |`from rapidocr import OCRVersion`| 模型版本    |
 
@@ -254,7 +254,9 @@ Det:
 
 `engine_type (str)`: 选定推理引擎。支持 `onnxruntime`, `openvino`, `paddle` 和 `torch` 四个值。默认为 `onnxruntime`。
 
-`lang_type (str)`: 支持检测的语种类型。这里指的是 `LangDet`，具体支持 `ch`, `en` 和 `multi` 3 个值。`ch` 可以识别中文和中英文混合文本检测。`en` 支持英文文字检测。`multi` 支持多语言文本检测。默认为 `ch`。详细参见：[docs](https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1)
+`lang_type (str)`: 支持检测的语种类型。具体可用编码由 OCR 版本和模型类型决定，详见 [模型路由明细](../../model_list.md#模型路由明细)。默认为 `ch`。
+
+> `rapidocr>=3.10.0` 支持直接传语言编码字符串，也兼容 `LangDet` 枚举。
 
 `model_type (str)`: 模型量级选择，`PP-OCRv4` 和 `PP-OCRv5` 支持 `mobile`（轻量型）和 `server`（服务型）。`PP-OCRv6` 支持 `tiny`, `small` 和 `medium`，默认为 `PP-OCRv6` 的 `small`。
 
@@ -308,7 +310,9 @@ Cls:
 
 `engine_type (str)`: 同 Det 部分介绍。
 
-`lang_type (str)`: 支持检测的语种类型。这里指的是 `LangCls`，目前只有一种选项：`ch`。默认为 `ch`。
+`lang_type (str)`: 支持分类的语种类型。目前分类模型使用 `ch`/`multi` 路由，默认为 `ch`。
+
+> 在 `rapidocr>=3.10.0` 可直接传语言编码字符串，也兼容 `LangCls` 枚举。
 
 `model_type (str)`: 同 Det 部分介绍。
 
@@ -347,7 +351,9 @@ Rec:
 
 `engine_type (str)`: 同 Det 部分介绍。
 
-`lang_type (str)`: 支持检测的语种类型。这里指的是 `LangRec`，具体支持的语种参见：[model_list](../../model_list.md).
+`lang_type (str)`: 支持识别的语种类型。具体支持的语种参见 [模型路由明细](../../model_list.md#模型路由明细)。
+
+> 在 `rapidocr>=3.10.0` 可直接传语言编码字符串，也兼容 `LangRec` 枚举。
 
 `model_type (str)`: 同 Det 部分介绍。
 

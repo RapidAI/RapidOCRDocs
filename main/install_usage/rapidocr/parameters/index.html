@@ -2800,9 +2800,9 @@ You're not viewing the latest version.
 <tr>
 <td><code>lang_type</code></td>
 <td><code>LangDet</code><br/> <code>LangCls</code><br/> <code>LangRec</code></td>
-<td><strong>检测（Det）</strong>：<code>CH</code>/<code>EN</code>/<code>MULTI</code><br/><strong>分类（Cls）</strong>：<code>CH</code><br/><strong>识别（Rec）</strong>：<code>CH</code>/<code>CH_DOC</code>/<code>EN</code>/<code>ARABIC</code>/...</td>
+<td><code>rapidocr&lt;3.10.0</code>：使用对应枚举值。<br/><code>rapidocr&gt;=3.10.0</code>：除枚举外，也可直接传 <code>default_models.yaml</code> 中的语言编码字符串，例如 <code>"ch"</code>、<code>"japan"</code>、<code>"korean"</code>。</td>
 <td><code>from rapidocr import LangDet</code><br/> <code>from rapidocr import LangCls</code> <br/><code>from rapidocr import LangRec</code></td>
-<td>根据 OCR 处理阶段选择不同枚举值</td>
+<td>根据 OCR 处理阶段、OCR 版本和模型类型解析模型路由；支持的编码以 <a href="../../../model_list/">模型列表</a> 为准。</td>
 </tr>
 <tr>
 <td><code>model_type</code></td>
@@ -2866,7 +2866,10 @@ You're not viewing the latest version.
 </span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">    </span><span class="nt">score_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fast</span>
 </span></code></pre></div></td></tr></table></div>
 <p><code>engine_type (str)</code>: 选定推理引擎。支持 <code>onnxruntime</code>, <code>openvino</code>, <code>paddle</code> 和 <code>torch</code> 四个值。默认为 <code>onnxruntime</code>。</p>
-<p><code>lang_type (str)</code>: 支持检测的语种类型。这里指的是 <code>LangDet</code>，具体支持 <code>ch</code>, <code>en</code> 和 <code>multi</code> 3 个值。<code>ch</code> 可以识别中文和中英文混合文本检测。<code>en</code> 支持英文文字检测。<code>multi</code> 支持多语言文本检测。默认为 <code>ch</code>。详细参见：<a href="https://rapidai.github.io/RapidOCRDocs/main/model_list/#_1">docs</a></p>
+<p><code>lang_type (str)</code>: 支持检测的语种类型。具体可用编码由 OCR 版本和模型类型决定，详见 <a href="../../../model_list/#模型路由明细">模型路由明细</a>。默认为 <code>ch</code>。</p>
+<blockquote>
+<p><code>rapidocr&gt;=3.10.0</code> 支持直接传语言编码字符串，也兼容 <code>LangDet</code> 枚举。</p>
+</blockquote>
 <p><code>model_type (str)</code>: 模型量级选择，<code>PP-OCRv4</code> 和 <code>PP-OCRv5</code> 支持 <code>mobile</code>（轻量型）和 <code>server</code>（服务型）。<code>PP-OCRv6</code> 支持 <code>tiny</code>, <code>small</code> 和 <code>medium</code>，默认为 <code>PP-OCRv6</code> 的 <code>small</code>。</p>
 <blockquote>
 <p>在 <code>rapidocr&gt;=3.9.0</code> 中支持 <code>PP-OCRv6</code>。</p>
@@ -2920,7 +2923,10 @@ You're not viewing the latest version.
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="nt">label_list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"0"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"180"</span><span class="p p-Indicator">]</span>
 </span></code></pre></div></td></tr></table></div>
 <p><code>engine_type (str)</code>: 同 Det 部分介绍。</p>
-<p><code>lang_type (str)</code>: 支持检测的语种类型。这里指的是 <code>LangCls</code>，目前只有一种选项：<code>ch</code>。默认为 <code>ch</code>。</p>
+<p><code>lang_type (str)</code>: 支持分类的语种类型。目前分类模型使用 <code>ch</code>/<code>multi</code> 路由，默认为 <code>ch</code>。</p>
+<blockquote>
+<p>在 <code>rapidocr&gt;=3.10.0</code> 可直接传语言编码字符串，也兼容 <code>LangCls</code> 枚举。</p>
+</blockquote>
 <p><code>model_type (str)</code>: 同 Det 部分介绍。</p>
 <p><code>ocr_version (str)</code>: 同 Det 部分介绍。</p>
 <p><code>model_path (str)</code>: 文本行方向分类模型路径，仅限于 PaddleOCR 训练所得二分类分类模型。默认值为 <code>None</code>。</p>
@@ -2959,7 +2965,10 @@ You're not viewing the latest version.
 </span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="nt">rec_batch_num</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
 </span></code></pre></div></td></tr></table></div>
 <p><code>engine_type (str)</code>: 同 Det 部分介绍。</p>
-<p><code>lang_type (str)</code>: 支持检测的语种类型。这里指的是 <code>LangRec</code>，具体支持的语种参见：<a href="../../../model_list/">model_list</a>.</p>
+<p><code>lang_type (str)</code>: 支持识别的语种类型。具体支持的语种参见 <a href="../../../model_list/#模型路由明细">模型路由明细</a>。</p>
+<blockquote>
+<p>在 <code>rapidocr&gt;=3.10.0</code> 可直接传语言编码字符串，也兼容 <code>LangRec</code> 枚举。</p>
+</blockquote>
 <p><code>model_type (str)</code>: 同 Det 部分介绍。</p>
 <p><code>ocr_version (str)</code>: 同 Det 部分介绍。</p>
 <p><code>model_path (str)</code>: 文本识别模型路径，仅限于 PaddleOCR 训练文本识别模型。默认值为 <code>None</code>。</p>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="RapidOCR 常见问题，覆盖 ONNX Runtime GPU/CPU 性能、Windows/Linux 依赖、PaddleOCR 关系、模型下载等问题。">
+        <meta name="description" content="Frequently asked questions about RapidOCR inference engines, dependencies, platforms and model compatibility.">
       
       
         <meta name="author" content="RapidAI">
@@ -29,7 +29,7 @@
     
     
       
-        <title>常见问题 (FAQ) - RapidOCR Documentation</title>
+        <title>Frequently Asked Questions (FAQ) - RapidOCR Documentation</title>
       
     
     
@@ -117,22 +117,22 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RapidOCR Documentation">
-<meta property="og:title" content="常见问题 (FAQ)">
-<meta property="og:description" content="RapidOCR 常见问题，覆盖 ONNX Runtime GPU/CPU 性能、Windows/Linux 依赖、PaddleOCR 关系、模型下载等问题。">
+<meta property="og:title" content="Frequently Asked Questions (FAQ)">
+<meta property="og:description" content="Frequently asked questions about RapidOCR inference engines, dependencies, platforms and model compatibility.">
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/en/faq/faq/">
 <meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="常见问题 (FAQ)">
-<meta name="twitter:description" content="RapidOCR 常见问题，覆盖 ONNX Runtime GPU/CPU 性能、Windows/Linux 依赖、PaddleOCR 关系、模型下载等问题。">
+<meta name="twitter:title" content="Frequently Asked Questions (FAQ)">
+<meta name="twitter:description" content="Frequently asked questions about RapidOCR inference engines, dependencies, platforms and model compatibility.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <link rel="alternate" type="text/plain" href="../../../llms.txt" title="RapidOCR llms.txt">
 <link rel="alternate" type="text/plain" href="../../../llms-full.txt" title="RapidOCR llms-full.txt">
 <link rel="alternate" type="application/json" href="../../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../../faq/faq.md" title="常见问题 (FAQ) Markdown">
+<link rel="alternate" type="text/markdown" href="../../../faq/faq.en.md" title="Frequently Asked Questions (FAQ) Markdown">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR \u5e38\u89c1\u95ee\u9898\uff0c\u8986\u76d6 ONNX Runtime GPU/CPU \u6027\u80fd\u3001Windows/Linux \u4f9d\u8d56\u3001PaddleOCR \u5173\u7cfb\u3001\u6a21\u578b\u4e0b\u8f7d\u7b49\u95ee\u9898\u3002", "headline": "\u5e38\u89c1\u95ee\u9898 (FAQ)", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "\u5e38\u89c1\u95ee\u9898 (FAQ)", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/faq/faq/"}
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "Frequently asked questions about RapidOCR inference engines, dependencies, platforms and model compatibility.", "headline": "Frequently Asked Questions (FAQ)", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "Frequently Asked Questions (FAQ)", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/faq/faq/"}
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -181,7 +181,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#q-onnx-runtime-gpu-cpu" class="md-skip">
+        <a href="#why-can-onnx-runtime-gpu-be-slower-than-cpu-for-ocr" class="md-skip">
           Skip to content
         </a>
       
@@ -256,7 +256,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              常见问题 (FAQ)
+              Frequently Asked Questions (FAQ)
             
           </span>
         </div>
@@ -704,7 +704,7 @@ You're not viewing the latest version.
               
                 
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1697,153 +1697,72 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#q-onnx-runtime-gpu-cpu" class="md-nav__link">
+  <a href="#why-can-onnx-runtime-gpu-be-slower-than-cpu-for-ocr" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: 为什么我的模型在 ONNX Runtime GPU 版上比在 CPU 上还要慢？
+      Why can ONNX Runtime GPU be slower than CPU for OCR?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-32-c" class="md-nav__link">
+  <a href="#does-rapidocr-support-32-bit-c" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: 请问这个能在 32 位 C#中用嘛?
+      Does RapidOCR support 32-bit C#?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-windows-oserror-winerror-126" class="md-nav__link">
+  <a href="#windows-reports-oserror-winerror-126-after-installation-what-should-i-do" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: Windows 系统下，装完环境之后，运行示例程序之后，报错 OSError: [WinError 126] 找不到指定的模組
+      Windows reports OSError: [WinError 126] after installation. What should I do?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-linux-python-import-cv2-importerror-libglso1-cannot-open-shared-object-file-no-such-file-or-directory" class="md-nav__link">
+  <a href="#linux-reports-libglso1-when-importing-opencv" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: Linux 部署 Python 程序时，import cv2 报 ImportError: libGL.so.1: cannot open shared object file: No such file or directory，怎么办？
+      Linux reports libGL.so.1 when importing OpenCV.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-win7-cmd" class="md-nav__link">
+  <a href="#what-is-the-relationship-between-rapidocr-and-paddleocr" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: 询问下，我编译出来的进程在 win7 下面通过 cmd 调用，发生了崩溃的情况?
+      What is the relationship between RapidOCR and PaddleOCR?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-openmmlab" class="md-nav__link">
+  <a href="#how-can-i-diagnose-an-arm-library-format-error" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: 能不能搞个 openmmlab 类似的那个提取信息的?
+      How can I diagnose an ARM library format error?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-rapidocr-paddleocr" class="md-nav__link">
+  <a href="#how-can-i-improve-recognition-near-an-image-edge" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: RapidOCR 和 PaddleOCR 是什么关系呢？
+      How can I improve recognition near an image edge?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized" class="md-nav__link">
+  <a href="#how-do-i-resolve-an-old-scatternd-compatibility-error" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: onnxruntime arm32 有人编译过吗？我编译成功了，但是使用的时候 libonnxruntime.so error: file not recognized: File format not recognized 应该是版本不匹配
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-c-demo-vs2017" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 请问一下 c++ demo 必须要 vs2017 及以上版本吗?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-easyedge-free-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 可以达到百度 EasyEdge Free App 的效果吗？
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-c-onnx-cpu-gpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 我用 c++ 推理 onnx 貌似是 cpu 推理的，gpu 没有反应?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-ocr-linux-ocr" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 您好，我想部署下咱们的 ocr 识别，有提供 linux 版本的 ocr 部署包吗?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-onnxruntime-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: onnxruntime 编译好的 C++ 库，哪里可以下载到？
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-win10-cygwin-gcc-c-c-ocr" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 目前简单测试环境是 Win10 + Cygwin + gcc + 纯 C 编程，可以在 C 程序中直接接入简单 OCR 功能吗？
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 模型下载地址
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-onnxruntime-17-onnxruntimesequentialexecutorexecute-non-zero-status-code-returned-while-running-scatternd-node-namescatternd1-status-message-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: onnxruntime 1.7 下出错：onnxruntime::SequentialExecutor::Execute] Non-zero status code returned while running ScatterND node. Name:'ScatterND@1' Status Message: updates
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 边缘总有一行文字无法识别，怎么办？
+      How do I resolve an old ScatterND compatibility error?
     </span>
   </a>
   
@@ -2049,153 +1968,72 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#q-onnx-runtime-gpu-cpu" class="md-nav__link">
+  <a href="#why-can-onnx-runtime-gpu-be-slower-than-cpu-for-ocr" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: 为什么我的模型在 ONNX Runtime GPU 版上比在 CPU 上还要慢？
+      Why can ONNX Runtime GPU be slower than CPU for OCR?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-32-c" class="md-nav__link">
+  <a href="#does-rapidocr-support-32-bit-c" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: 请问这个能在 32 位 C#中用嘛?
+      Does RapidOCR support 32-bit C#?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-windows-oserror-winerror-126" class="md-nav__link">
+  <a href="#windows-reports-oserror-winerror-126-after-installation-what-should-i-do" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: Windows 系统下，装完环境之后，运行示例程序之后，报错 OSError: [WinError 126] 找不到指定的模組
+      Windows reports OSError: [WinError 126] after installation. What should I do?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-linux-python-import-cv2-importerror-libglso1-cannot-open-shared-object-file-no-such-file-or-directory" class="md-nav__link">
+  <a href="#linux-reports-libglso1-when-importing-opencv" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: Linux 部署 Python 程序时，import cv2 报 ImportError: libGL.so.1: cannot open shared object file: No such file or directory，怎么办？
+      Linux reports libGL.so.1 when importing OpenCV.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-win7-cmd" class="md-nav__link">
+  <a href="#what-is-the-relationship-between-rapidocr-and-paddleocr" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: 询问下，我编译出来的进程在 win7 下面通过 cmd 调用，发生了崩溃的情况?
+      What is the relationship between RapidOCR and PaddleOCR?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-openmmlab" class="md-nav__link">
+  <a href="#how-can-i-diagnose-an-arm-library-format-error" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: 能不能搞个 openmmlab 类似的那个提取信息的?
+      How can I diagnose an ARM library format error?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-rapidocr-paddleocr" class="md-nav__link">
+  <a href="#how-can-i-improve-recognition-near-an-image-edge" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: RapidOCR 和 PaddleOCR 是什么关系呢？
+      How can I improve recognition near an image edge?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized" class="md-nav__link">
+  <a href="#how-do-i-resolve-an-old-scatternd-compatibility-error" class="md-nav__link">
     <span class="md-ellipsis">
-      Q: onnxruntime arm32 有人编译过吗？我编译成功了，但是使用的时候 libonnxruntime.so error: file not recognized: File format not recognized 应该是版本不匹配
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-c-demo-vs2017" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 请问一下 c++ demo 必须要 vs2017 及以上版本吗?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-easyedge-free-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 可以达到百度 EasyEdge Free App 的效果吗？
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-c-onnx-cpu-gpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 我用 c++ 推理 onnx 貌似是 cpu 推理的，gpu 没有反应?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-ocr-linux-ocr" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 您好，我想部署下咱们的 ocr 识别，有提供 linux 版本的 ocr 部署包吗?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-onnxruntime-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: onnxruntime 编译好的 C++ 库，哪里可以下载到？
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-win10-cygwin-gcc-c-c-ocr" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 目前简单测试环境是 Win10 + Cygwin + gcc + 纯 C 编程，可以在 C 程序中直接接入简单 OCR 功能吗？
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 模型下载地址
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q-onnxruntime-17-onnxruntimesequentialexecutorexecute-non-zero-status-code-returned-while-running-scatternd-node-namescatternd1-status-message-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: onnxruntime 1.7 下出错：onnxruntime::SequentialExecutor::Execute] Non-zero status code returned while running ScatterND node. Name:'ScatterND@1' Status Message: updates
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#q_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q: 边缘总有一行文字无法识别，怎么办？
+      How do I resolve an old ScatterND compatibility error?
     </span>
   </a>
   
@@ -2244,7 +2082,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/faq/faq.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/faq/faq.en.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2253,7 +2091,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/faq/faq.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/faq/faq.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2271,56 +2109,33 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<h4 id="q-onnx-runtime-gpu-cpu">Q: 为什么我的模型在 ONNX Runtime GPU 版上比在 CPU 上还要慢？<a class="headerlink" href="#q-onnx-runtime-gpu-cpu" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 因为 OCR 任务中输入图像 Shape 是动态的。每次 GPU 上都需要重新清空上一次不同 Shape 的缓存结果。如果输入图像 Shape 不变的情况下，ONNX Runtime GPU 版一般都要比 CPU 快的。该问题已经提了相关 issue #13198。</p>
-<p>当前版本建议统一使用 <code>rapidocr</code>，再按需选择 ONNX Runtime, OpenVINO, Paddle, PyTorch 或其他推理引擎。具体安装方式和限制请参见 <a href="../../install_usage/rapidocr/how_to_use_infer_engine/">使用不同推理引擎</a>。</p>
-<h4 id="q-32-c">Q: 请问这个能在 32 位 C#中用嘛?<a class="headerlink" href="#q-32-c" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> C#可以 32 位，要用 32 位的 dll，但 nuget 上的 onnxruntime 不支持 win7。</p>
-<h4 id="q-windows-oserror-winerror-126">Q: Windows 系统下，装完环境之后，运行示例程序之后，报错 OSError: [WinError 126] 找不到指定的模組<a class="headerlink" href="#q-windows-oserror-winerror-126" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 原因通常是 Shapely 二进制依赖没有正确安装。建议优先升级 <code>pip</code> 后重新安装：</p>
+<h4 id="why-can-onnx-runtime-gpu-be-slower-than-cpu-for-ocr">Why can ONNX Runtime GPU be slower than CPU for OCR?<a class="headerlink" href="#why-can-onnx-runtime-gpu-be-slower-than-cpu-for-ocr" title="Permanent link">&para;</a></h4>
+<p>OCR detection uses dynamic image shapes. Different shapes can reduce GPU reuse and add memory-management overhead. For many workloads, ONNX Runtime CPU is therefore faster. See the <a href="../../install_usage/rapidocr/how_to_use_infer_engine/">inference engine guide</a> for current recommendations.</p>
+<h4 id="does-rapidocr-support-32-bit-c">Does RapidOCR support 32-bit C#?<a class="headerlink" href="#does-rapidocr-support-32-bit-c" title="Permanent link">&para;</a></h4>
+<p>The application and native DLL must use the same architecture. A 32-bit C# application requires a 32-bit DLL and compatible native dependencies. Windows 7 is not supported by recent ONNX Runtime packages.</p>
+<h4 id="windows-reports-oserror-winerror-126-after-installation-what-should-i-do">Windows reports <code>OSError: [WinError 126]</code> after installation. What should I do?<a class="headerlink" href="#windows-reports-oserror-winerror-126-after-installation-what-should-i-do" title="Permanent link">&para;</a></h4>
+<p>This is often caused by a missing or incompatible Shapely binary dependency. Upgrade pip and reinstall Shapely:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>Shapely
 </span></code></pre></div>
-<p>如果使用 Conda，也可以运行 <code>conda install -c conda-forge shapely</code>。</p>
-<h4 id="q-linux-python-import-cv2-importerror-libglso1-cannot-open-shared-object-file-no-such-file-or-directory">Q: Linux 部署 Python 程序时，<code>import cv2</code> 报 <code>ImportError: libGL.so.1: cannot open shared object file: No such file or directory</code>，怎么办？<a class="headerlink" href="#q-linux-python-import-cv2-importerror-libglso1-cannot-open-shared-object-file-no-such-file-or-directory" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> <a href="https://stackoverflow.com/questions/63977422/error-trying-to-import-cv2opencv-python-package/63978454">解决方法</a> 有两个 (来自群友 ddeef)：</p>
-<ol>
-<li>安装 <code>opencv-python-headless</code> 取代 <code>opencv-python</code>;</li>
-<li>运行 <code>sudo apt-get install -y libgl1-mesa-dev</code></li>
-</ol>
-<h4 id="q-win7-cmd">Q: 询问下，我编译出来的进程在 win7 下面通过 cmd 调用，发生了崩溃的情况?<a class="headerlink" href="#q-win7-cmd" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 不支持 win7 (by @如果我有時光機)</p>
-<h4 id="q-openmmlab">Q: 能不能搞个 openmmlab 类似的那个提取信息的?<a class="headerlink" href="#q-openmmlab" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 这个目前正在调研测试当中，如果 mmocr 中关键信息提取效果还可以，后期会考虑整合进来。</p>
-<h4 id="q-rapidocr-paddleocr">Q: RapidOCR 和 PaddleOCR 是什么关系呢？<a class="headerlink" href="#q-rapidocr-paddleocr" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> RapidOCR 是将 PaddleOCR 的预训练模型转为 onnx 模型，不依赖 paddle 框架，方便各个平台部署。</p>
-<h4 id="q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized">Q: onnxruntime arm32 有人编译过吗？我编译成功了，但是使用的时候 libonnxruntime.so<img alt="👎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f44e.svg" title=":-1:" /> error: file not recognized: File format not recognized  应该是版本不匹配<a class="headerlink" href="#q-onnxruntime-arm32-libonnxruntimeso-error-file-not-recognized-file-format-not-recognized" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 这通常是库文件架构与运行环境不一致导致的。建议依次检查：</p>
-<ol>
-<li>运行 <code>uname -m</code> 确认设备架构；</li>
-<li>运行 <code>file libonnxruntime.so</code> 确认动态库架构，二者应一致；</li>
-<li>如果使用交叉编译，确认目标平台、ABI 和 C/C++ 运行库版本一致；</li>
-<li>使用 <code>ldd libonnxruntime.so</code> 检查是否存在缺失的动态库依赖。</li>
-</ol>
-<p>建议优先在目标设备上直接编译，或下载与设备架构匹配的构建产物。</p>
-<h4 id="q-c-demo-vs2017">Q: 请问一下 c++ demo 必须要 vs2017 及以上版本吗?<a class="headerlink" href="#q-c-demo-vs2017" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 建议使用 Visual Studio 2019 或更高版本，并确保项目、OpenCV 和 ONNX Runtime 使用相同的目标架构（通常为 x64）。如果需要支持更旧的编译器，请以对应 C++ 示例工程的构建配置为准。</p>
-<h4 id="q-easyedge-free-app">Q: 可以达到百度 EasyEdge Free App 的效果吗？<a class="headerlink" href="#q-easyedge-free-app" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> edge 的模型应该没有开源。百度开源的模型里 server det 的识别效果可以达到，但是模型比较大。</p>
-<h4 id="q-c-onnx-cpu-gpu">Q: 我用 c++ 推理 onnx 貌似是 cpu 推理的，gpu 没有反应?<a class="headerlink" href="#q-c-onnx-cpu-gpu" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 如果想用 GPU 的话，需要安装 onnxruntime-gpu 版，自己在 onnxruntime 的代码中添加 EP (execution provider)。我们的定位是通用，只用 cpu 推理。</p>
-<h4 id="q-ocr-linux-ocr">Q: 您好，我想部署下咱们的 ocr 识别，有提供 linux 版本的 ocr 部署包吗?<a class="headerlink" href="#q-ocr-linux-ocr" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 当前仓库没有统一发布的 Linux C++ 二进制包。建议参考 <a href="https://github.com/RapidAI/RapidOcrOnnx">RapidOcrOnnx</a> 的构建说明，或根据目标平台自行编译 OpenCV 和 ONNX Runtime。</p>
-<h4 id="q-onnxruntime-c">Q: onnxruntime 编译好的 C++ 库，哪里可以下载到？<a class="headerlink" href="#q-onnxruntime-c" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 从这里：<a href="https://github.com/RapidAI/OnnxruntimeBuilder/releases/tag/1.7.0">https://github.com/RapidAI/OnnxruntimeBuilder/releases/tag/1.7.0</a></p>
-<h4 id="q-win10-cygwin-gcc-c-c-ocr">Q: 目前简单测试环境是  Win10 + Cygwin + gcc + 纯 C 编程，可以在 C 程序中直接接入简单 OCR 功能吗？<a class="headerlink" href="#q-win10-cygwin-gcc-c-c-ocr" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 直接使用 API 就行，API 就是由 c 导出的</p>
-<h4 id="q">Q: 模型下载地址<a class="headerlink" href="#q" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> <a href="https://pan.baidu.com/s/1PTcgXG2zEgQU6A_A3kGJ3Q?pwd=jhai">百度网盘</a> | <a href="https://drive.google.com/drive/folders/1x_a9KpCo_1blxH1xFOfgKVkw1HYRVywY?usp=sharing">Google Drive</a></p>
-<h4 id="q-onnxruntime-17-onnxruntimesequentialexecutorexecute-non-zero-status-code-returned-while-running-scatternd-node-namescatternd1-status-message-updates">Q: onnxruntime 1.7 下出错：onnxruntime::SequentialExecutor::Execute] Non-zero status code returned while running ScatterND node. Name:'ScatterND@1' Status Message: updates<a class="headerlink" href="#q-onnxruntime-17-onnxruntimesequentialexecutorexecute-non-zero-status-code-returned-while-running-scatternd-node-namescatternd1-status-message-updates" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 这是旧模型与旧版 ONNX Runtime 的兼容性问题。请优先升级 RapidOCR 和模型；如果仍然报错，请提供 RapidOCR, ONNX Runtime, Python 版本以及完整错误日志。</p>
-<h4 id="q_1">Q: 边缘总有一行文字无法识别，怎么办？<a class="headerlink" href="#q_1" title="Permanent link">&para;</a></h4>
-<p><strong>A:</strong> 在 padding 参数中添加一个值，默认是 0,你可以添加 5 或 10, 甚至更大，直到能识别为止。注意不要添加过大，会浪费内存。</p>
+<p>With Conda, you can use <code>conda install -c conda-forge shapely</code>.</p>
+<h4 id="linux-reports-libglso1-when-importing-opencv">Linux reports <code>libGL.so.1</code> when importing OpenCV.<a class="headerlink" href="#linux-reports-libglso1-when-importing-opencv" title="Permanent link">&para;</a></h4>
+<p>For headless servers, install <code>opencv-python-headless</code> instead of <code>opencv-python</code>. If GUI support is required, install the system OpenGL dependency, for example:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libgl1-mesa-dev
+</span></code></pre></div>
+<h4 id="what-is-the-relationship-between-rapidocr-and-paddleocr">What is the relationship between RapidOCR and PaddleOCR?<a class="headerlink" href="#what-is-the-relationship-between-rapidocr-and-paddleocr" title="Permanent link">&para;</a></h4>
+<p>RapidOCR converts and packages PaddleOCR models for lightweight, cross-platform inference. It does not require the Paddle framework when using the corresponding RapidOCR inference engine.</p>
+<h4 id="how-can-i-diagnose-an-arm-library-format-error">How can I diagnose an ARM library format error?<a class="headerlink" href="#how-can-i-diagnose-an-arm-library-format-error" title="Permanent link">&para;</a></h4>
+<p>If <code>libonnxruntime.so</code> reports <code>File format not recognized</code>, verify that the library and device use the same architecture:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uname<span class="w"> </span>-m
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>file<span class="w"> </span>libonnxruntime.so
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ldd<span class="w"> </span>libonnxruntime.so
+</span></code></pre></div>
+<p>For cross-compilation, also verify the target ABI and C/C++ runtime. Building directly on the target device is usually the simplest option.</p>
+<h4 id="how-can-i-improve-recognition-near-an-image-edge">How can I improve recognition near an image edge?<a class="headerlink" href="#how-can-i-improve-recognition-near-an-image-edge" title="Permanent link">&para;</a></h4>
+<p>Increase the padding-related parameter gradually, for example to <code>5</code> or <code>10</code>. Very large padding values increase memory usage and may slow inference.</p>
+<h4 id="how-do-i-resolve-an-old-scatternd-compatibility-error">How do I resolve an old <code>ScatterND</code> compatibility error?<a class="headerlink" href="#how-do-i-resolve-an-old-scatternd-compatibility-error" title="Permanent link">&para;</a></h4>
+<p>This usually indicates an old model paired with an incompatible ONNX Runtime version. Upgrade RapidOCR and the model first. If the error remains, include the RapidOCR, ONNX Runtime and Python versions together with the complete traceback when reporting the issue.</p>
 
 <!-- Source file information -->
 
@@ -2345,7 +2160,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年10月10日 10:31:42 CST">2026-10-10 10:31:42</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="October 10, 2026 11:31:56 CST">2026-10-10 11:31:56</span>
   </span>
 
     
@@ -2355,7 +2170,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2023年9月14日 21:58:48 CST">2023-09-14 21:58:48</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="October 10, 2026 11:31:56 CST">2026-10-10 11:31:56</span>
   </span>
 
     

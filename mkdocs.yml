@@ -71,7 +71,7 @@ theme:
 
 plugins:
   - pygments:
-      light: monokai
+      light: material
       dark: material
   - meta
   - rss:

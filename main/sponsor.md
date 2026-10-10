@@ -35,9 +35,7 @@ RapidOCR 产品开源免费，并且将持续提供免费的技术支持。但�
 
 If you are not in mainland China, you can also support the me through:
 
-<div align="left">
-    <a href="https://buymeacoffee.com/swhl"><img src="https://raw.githubusercontent.com/RapidAI/.github/main/assets/buymeacoffe.png" width="25%" style="border-radius: 12px; border: none;"></a>
-</div>
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E4Y227ZR1P)
 
 ### 当前赞助商
 
@@ -68,6 +66,17 @@ If you are not in mainland China, you can also support the me through:
         <img src="https://avatars.githubusercontent.com/u/49047676?v=4" width="60" style="border-radius: 12px; border: none;"/>
       </a><br />
       <sub><a href="https://github.com/youzzhang">@youzzhang</a></sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/heyq02">
+        <img src="https://avatars.githubusercontent.com/u/206218794?v=4" width="60" style="border-radius: 12px; border: none;"/>
+      </a><br />
+      <sub><a href="https://github.com/heyq02">@heyq02</a></sub>
+    </td>
+    <td align="center">
+      <img src="" width="60" style="border-radius: 12px; border: none;"/>
+      <br />
+      <sub>Lucky-Li-le</sub>
     </td>
   </tr>
 </table>

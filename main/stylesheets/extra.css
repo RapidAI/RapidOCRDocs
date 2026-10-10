@@ -1,8 +1,10 @@
 :root {
   --admonition-border-left-width: 0.2rem;
   --base-border-radius: 1rem;
-  --md-text-font: "LXGW WenKai Screen";
-  --md-code-font: "consolas, 'Courier New', monospace";
+  --md-text-font: "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+    "Segoe UI", sans-serif;
+  --md-code-font: "JetBrains Mono", "Cascadia Code", "SFMono-Regular",
+    Consolas, "Courier New", monospace;
 }
 
 

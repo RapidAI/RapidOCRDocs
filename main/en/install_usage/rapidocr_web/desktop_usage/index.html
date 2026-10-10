@@ -86,8 +86,6 @@
     
       <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css">
-    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -129,7 +127,7 @@
 <link rel="alternate" type="text/plain" href="../../../../llms-full.txt" title="RapidOCR llms-full.txt">
 <link rel="alternate" type="application/json" href="../../../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_web/desktop_usage.md" title="Desktop App Guide Markdown">
+<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_web/desktop_usage.en.md" title="Desktop App Guide Markdown">
 
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.", "headline": "Desktop App Guide", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "Desktop App Guide", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_web/desktop_usage/"}
@@ -181,7 +179,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -1368,18 +1366,18 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      引言
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      使用步骤
+      Usage
     </span>
   </a>
   
@@ -1915,18 +1913,18 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      引言
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      使用步骤
+      Usage
     </span>
   </a>
   
@@ -1973,7 +1971,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_web/desktop_usage.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_web/desktop_usage.en.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -1982,7 +1980,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_web/desktop_usage.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_web/desktop_usage.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2000,28 +1998,24 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<h4 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<h4 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h4>
 <ul>
-<li>说明：桌面版指的是可以直接解压，双击即可运行的版本。</li>
-<li>通俗来说，对 <code>rapidocr_web</code> 做了打包，将相关依赖全部放到一个 zip 包中，不需要本地有额外的环境，降低使用门槛。</li>
-<li>下面会以 Windows 版为例，作简要说明。</li>
+<li>The desktop edition can be extracted and launched by double-clicking it.</li>
+<li><code>rapidocr_web</code> and its dependencies are packaged into a ZIP archive, so no additional local environment is required.</li>
+<li>The example below uses Windows.</li>
 </ul>
-<h4 id="_2">使用步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p>下载对应的 zip 包</p>
+<p>Download the corresponding ZIP package.</p>
 <ul>
-<li>
-<p>目前已有的 zip 包如下：
-     <img alt="image" src="https://github.com/RapidAI/RapidOCR/assets/28639377/e60a6411-7d3d-4063-9e0a-6d85df78de7a" /></p>
-</li>
-<li>
-<p>下载方式: <a href="https://github.com/RapidAI/RapidOCR/releases/tag/v0.1.5">Github</a> | <a href="https://pan.baidu.com/s/1Kfk-56I4GoKw8xMZlqUUEw?pwd=rfen">百度网盘</a> | QQ 群共享（群号：755960114）</p>
-</li>
+<li>Available packages:
+  <img alt="image" src="https://github.com/RapidAI/RapidOCR/assets/28639377/e60a6411-7d3d-4063-9e0a-6d85df78de7a" /></li>
+<li>Download from <a href="https://github.com/RapidAI/RapidOCR/releases/tag/v0.1.5">GitHub</a>, <a href="https://pan.baidu.com/s/1Kfk-56I4GoKw8xMZlqUUEw?pwd=rfen">Baidu Netdisk</a>, or QQ group files (group <code>755960114</code>).</li>
 </ul>
 </li>
 <li>
-<p>解压目录如下示例</p>
+<p>Extract the package. The directory looks like this:</p>
 <details>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -2146,9 +2140,9 @@ You're not viewing the latest version.
 </span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a>├── _decimal.pyd
 </span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>├── _hashlib.pyd
 </span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>├── importlib_metadata-6.6.0.dist-info
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>├── libcrypto-1_1.dll
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>├── libcrypto-1-1.dll
 </span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a>├── libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a>├── libssl-1_1.dll
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a>├── libssl-1-1.dll
 </span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a>├── _lzma.pyd
 </span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a>├── markupsafe
 </span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a>├── MSVCP140.dll
@@ -2180,15 +2174,15 @@ You're not viewing the latest version.
 </details>
 </li>
 <li>
-<p>双击 <code>RapidOCRWeb.exe</code> 运行，界面如下图所示：
+<p>Double-click <code>RapidOCRWeb.exe</code>. The interface appears as shown below:
     <img alt="image" src="https://github.com/RapidAI/RapidOCR/assets/28639377/5ff1d582-bde8-407f-83be-f3a3ec9c9b87" /></p>
 </li>
 <li>
-<p>浏览器中打开 <code>http://localhost:9003/</code>，即可看到熟悉的 RapidOCRWeb 界面。
+<p>Open <code>http://localhost:9003/</code> in a browser to access the RapidOCRWeb interface.
   <img alt="image" src="https://github.com/RapidAI/RapidOCR/assets/28639377/c113c1c6-376a-48b2-9e52-201e499b1a4f" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>如果遇到浏览器不显示界面的情况，可以尝试在黑框上按 <code>Ctrl + C</code></p>
+<p>If the interface does not appear, try pressing <code>Ctrl + C</code> in the console window.</p>
 </div>
 </li>
 </ol>

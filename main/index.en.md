@@ -42,7 +42,7 @@ If you find this project helpful for your work or study, we kindly ask you to gi
 ```mermaid
 ---
 config:
-  fontFamily: "LXGW WenKai Screen"
+  fontFamily: "Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif"
   look: handDrawn
 ---
 flowchart LR

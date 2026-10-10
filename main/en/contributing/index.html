@@ -29,7 +29,7 @@
     
     
       
-        <title>RapidOCR Python 贡献指南 - RapidOCR Documentation</title>
+        <title>RapidOCR Python Contribution Guide - RapidOCR Documentation</title>
       
     
     
@@ -86,8 +86,6 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -117,22 +115,22 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RapidOCR Documentation">
-<meta property="og:title" content="RapidOCR Python 贡献指南">
+<meta property="og:title" content="RapidOCR Python Contribution Guide">
 <meta property="og:description" content="RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.">
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/en/contributing/">
 <meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="RapidOCR Python 贡献指南">
+<meta name="twitter:title" content="RapidOCR Python Contribution Guide">
 <meta name="twitter:description" content="RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <link rel="alternate" type="text/plain" href="../../llms.txt" title="RapidOCR llms.txt">
 <link rel="alternate" type="text/plain" href="../../llms-full.txt" title="RapidOCR llms-full.txt">
 <link rel="alternate" type="application/json" href="../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../contributing.md" title="RapidOCR Python 贡献指南 Markdown">
+<link rel="alternate" type="text/markdown" href="../../contributing.en.md" title="RapidOCR Python Contribution Guide Markdown">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.", "headline": "RapidOCR Python \u8d21\u732e\u6307\u5357", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR Python \u8d21\u732e\u6307\u5357", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/contributing/"}
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.", "headline": "RapidOCR Python Contribution Guide", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR Python Contribution Guide", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/contributing/"}
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -181,7 +179,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#prerequisites" class="md-skip">
           Skip to content
         </a>
       
@@ -256,7 +254,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RapidOCR Python 贡献指南
+              RapidOCR Python Contribution Guide
             
           </span>
         </div>
@@ -1675,73 +1673,73 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      前置要求
+      Prerequisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#1-clone-the-source" class="md-nav__link">
     <span class="md-ellipsis">
-      一、克隆源码
+      1. Clone the source
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
+  <a href="#2-enter-the-python-directory-and-configure-the-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      二、进入 Python 目录并配置环境
+      2. Enter the Python directory and configure the environment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pre-commit" class="md-nav__link">
+  <a href="#3-install-formatting-tools-and-pre-commit-hooks" class="md-nav__link">
     <span class="md-ellipsis">
-      三、安装代码格式化与 pre-commit 钩子
+      3. Install formatting tools and pre-commit hooks
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#4-run-unit-tests" class="md-nav__link">
     <span class="md-ellipsis">
-      四、运行单元测试
+      4. Run unit tests
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#5-reproduce-issues-or-add-features" class="md-nav__link">
     <span class="md-ellipsis">
-      五、复现问题 / 增加新功能
+      5. Reproduce issues or add features
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="五、复现问题 / 增加新功能">
+    <nav class="md-nav" aria-label="5. Reproduce issues or add features">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bug" class="md-nav__link">
+  <a href="#reproduce-a-bug" class="md-nav__link">
     <span class="md-ellipsis">
-      复现 Bug
+      Reproduce a bug
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#add-a-feature" class="md-nav__link">
     <span class="md-ellipsis">
-      增加新功能
+      Add a feature
     </span>
   </a>
   
@@ -1753,55 +1751,55 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#6-write-corresponding-unit-tests" class="md-nav__link">
     <span class="md-ellipsis">
-      六、编写对应单元测试
+      6. Write corresponding unit tests
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#7-run-all-unit-tests-again" class="md-nav__link">
     <span class="md-ellipsis">
-      七、运行所有单元测试
+      7. Run all unit tests again
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#8-prepare-a-submission" class="md-nav__link">
     <span class="md-ellipsis">
-      八、准备提交到仓库
+      8. Prepare a submission
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="八、准备提交到仓库">
+    <nav class="md-nav" aria-label="8. Prepare a submission">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#81-fork-rapidocr" class="md-nav__link">
+  <a href="#81-fork-the-rapidocr-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      8.1 Fork RapidOCR 主仓库到个人账号
+      8.1 Fork the RapidOCR repository
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#82-fork" class="md-nav__link">
+  <a href="#82-commit-and-push-to-your-fork" class="md-nav__link">
     <span class="md-ellipsis">
-      8.2 将代码提交到个人 Fork
+      8.2 Commit and push to your fork
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#83-rapidocr-pull-requestpr" class="md-nav__link">
+  <a href="#83-open-a-pull-request" class="md-nav__link">
     <span class="md-ellipsis">
-      8.3 向 RapidOCR 主仓库提交 Pull Request（PR）
+      8.3 Open a pull request
     </span>
   </a>
   
@@ -1813,18 +1811,18 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      流程小结
+      Summary
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#additional-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      其他说明
+      Additional notes
     </span>
   </a>
   
@@ -2052,73 +2050,73 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      前置要求
+      Prerequisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#1-clone-the-source" class="md-nav__link">
     <span class="md-ellipsis">
-      一、克隆源码
+      1. Clone the source
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
+  <a href="#2-enter-the-python-directory-and-configure-the-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      二、进入 Python 目录并配置环境
+      2. Enter the Python directory and configure the environment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pre-commit" class="md-nav__link">
+  <a href="#3-install-formatting-tools-and-pre-commit-hooks" class="md-nav__link">
     <span class="md-ellipsis">
-      三、安装代码格式化与 pre-commit 钩子
+      3. Install formatting tools and pre-commit hooks
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#4-run-unit-tests" class="md-nav__link">
     <span class="md-ellipsis">
-      四、运行单元测试
+      4. Run unit tests
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#5-reproduce-issues-or-add-features" class="md-nav__link">
     <span class="md-ellipsis">
-      五、复现问题 / 增加新功能
+      5. Reproduce issues or add features
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="五、复现问题 / 增加新功能">
+    <nav class="md-nav" aria-label="5. Reproduce issues or add features">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bug" class="md-nav__link">
+  <a href="#reproduce-a-bug" class="md-nav__link">
     <span class="md-ellipsis">
-      复现 Bug
+      Reproduce a bug
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#add-a-feature" class="md-nav__link">
     <span class="md-ellipsis">
-      增加新功能
+      Add a feature
     </span>
   </a>
   
@@ -2130,55 +2128,55 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#6-write-corresponding-unit-tests" class="md-nav__link">
     <span class="md-ellipsis">
-      六、编写对应单元测试
+      6. Write corresponding unit tests
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#7-run-all-unit-tests-again" class="md-nav__link">
     <span class="md-ellipsis">
-      七、运行所有单元测试
+      7. Run all unit tests again
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#8-prepare-a-submission" class="md-nav__link">
     <span class="md-ellipsis">
-      八、准备提交到仓库
+      8. Prepare a submission
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="八、准备提交到仓库">
+    <nav class="md-nav" aria-label="8. Prepare a submission">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#81-fork-rapidocr" class="md-nav__link">
+  <a href="#81-fork-the-rapidocr-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      8.1 Fork RapidOCR 主仓库到个人账号
+      8.1 Fork the RapidOCR repository
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#82-fork" class="md-nav__link">
+  <a href="#82-commit-and-push-to-your-fork" class="md-nav__link">
     <span class="md-ellipsis">
-      8.2 将代码提交到个人 Fork
+      8.2 Commit and push to your fork
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#83-rapidocr-pull-requestpr" class="md-nav__link">
+  <a href="#83-open-a-pull-request" class="md-nav__link">
     <span class="md-ellipsis">
-      8.3 向 RapidOCR 主仓库提交 Pull Request（PR）
+      8.3 Open a pull request
     </span>
   </a>
   
@@ -2190,18 +2188,18 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      流程小结
+      Summary
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#additional-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      其他说明
+      Additional notes
     </span>
   </a>
   
@@ -2250,7 +2248,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/contributing.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/contributing.en.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2259,7 +2257,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/contributing.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/contributing.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2279,98 +2277,75 @@ You're not viewing the latest version.
 <!-- Page content -->
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>本文与 <a href="https://github.com/RapidAI/RapidOCR/blob/main/docs/CONTRIBUTING-CN.md">GitHub 仓库 CONTRIBUTING.md</a> 同步， <strong>主仓库为准</strong> 。文档站副本可能非最新，请以 GitHub 版本为准。</p>
+<p>This document is synchronized with <a href="https://github.com/RapidAI/RapidOCR/blob/main/docs/CONTRIBUTING.md">CONTRIBUTING.md in the GitHub repository</a>. The upstream repository is authoritative; this copy may not always be current.</p>
 </div>
-<p>感谢你对 RapidOCR Python 部分的关注！本文档说明如何参与 Python 目录下的代码开发与贡献，包括环境准备、开发流程和提交流程。</p>
-<h2 id="_1">前置要求<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Thank you for your interest in RapidOCR Python. This guide explains how to prepare an environment, develop code, run tests and submit contributions in the Python directory.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Python &gt;= 3.6（推荐 3.8+）</li>
+<li>Python &gt;= 3.6 (3.8+ recommended)</li>
 <li>Git</li>
-<li>已注册的 GitHub 账号</li>
+<li>A registered GitHub account</li>
 </ul>
-<hr />
-<h2 id="_2">一、克隆源码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>从 RapidOCR 主仓库克隆项目到本地：</p>
+<h2 id="1-clone-the-source">1. Clone the source<a class="headerlink" href="#1-clone-the-source" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/RapidAI/RapidOCR.git
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>RapidOCR
 </span></code></pre></div>
-<p>若网络受限，可使用镜像或代理；也可先 fork 到个人账号后再克隆（见后文「准备提交」部分）。</p>
-<hr />
-<h2 id="python">二、进入 Python 目录并配置环境<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<p>If the network is restricted, use a mirror or proxy, or fork the repository first and clone your fork as described below.</p>
+<h2 id="2-enter-the-python-directory-and-configure-the-environment">2. Enter the Python directory and configure the environment<a class="headerlink" href="#2-enter-the-python-directory-and-configure-the-environment" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>python
 </span></code></pre></div>
-<p>建议使用虚拟环境，避免与系统 Python 冲突：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 使用 venv</span>
+<p>Use a virtual environment to avoid conflicts with the system Python:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># venv</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">   </span><span class="c1"># Linux/macOS</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># .venv\Scripts\activate    # Windows</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># 或使用 conda</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># or conda</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>rapidocr<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>conda<span class="w"> </span>activate<span class="w"> </span>rapidocr
 </span></code></pre></div>
-<p>安装依赖（开发时建议可编辑安装以便本地修改生效）：</p>
+<p>Install dependencies. Editable installation is recommended during development:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>pip<span class="w"> </span>install<span class="w"> </span>pytest<span class="w">  </span><span class="c1"># 运行单元测试需要</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 可选：以可编辑模式安装当前包，便于调试</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>pip<span class="w"> </span>install<span class="w"> </span>pytest
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </span></code></pre></div>
-<p>如需使用 ONNX Runtime 等推理后端，请按 <a href="../install_usage/rapidocr/install/">安装文档</a> 和 <a href="../install_usage/rapidocr/how_to_use_infer_engine/">推理引擎说明</a> 安装对应依赖。</p>
-<hr />
-<h2 id="pre-commit">三、安装代码格式化与 pre-commit 钩子<a class="headerlink" href="#pre-commit" title="Permanent link">&para;</a></h2>
-<p>在 <strong>开发者环境</strong> 下安装 pre-commit，并启用 Git 提交前钩子，以便自动做代码格式检查与整理（如 black, autoflake 等）：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 在 python 目录下、已激活的虚拟环境中安装</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># 到仓库根目录 RapidOCR 下安装 Git 钩子（.pre-commit-config.yaml 在根目录）</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">cd</span><span class="w"> </span>..<span class="w">   </span><span class="c1"># 若当前在 python 目录，先回到仓库根目录</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>pre-commit<span class="w"> </span>install
+<p>For ONNX Runtime and other inference backends, follow the <a href="../install_usage/rapidocr/install/">installation guide</a> and <a href="../install_usage/rapidocr/how_to_use_infer_engine/">inference engine guide</a>.</p>
+<h2 id="3-install-formatting-tools-and-pre-commit-hooks">3. Install formatting tools and pre-commit hooks<a class="headerlink" href="#3-install-formatting-tools-and-pre-commit-hooks" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">cd</span><span class="w"> </span>..
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>pre-commit<span class="w"> </span>install
 </span></code></pre></div>
-<p>安装成功后，每次执行 <code>git commit</code> 时会自动运行配置好的格式化工具；若检查未通过，提交会被拒绝，请根据提示修改后再次提交。也可在提交前手动跑一遍：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 在仓库根目录执行</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+<p>The configured formatters, such as Black and autoflake, run automatically on <code>git commit</code>. You can run them manually from the repository root:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 </span></code></pre></div>
-<hr />
-<h2 id="_3">四、运行单元测试<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>在 <strong><code>python</code> 目录下</strong> 执行：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 运行全部测试</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>-v
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># 仅运行部分测试文件</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>pytest<span class="w"> </span>tests/test_input.py<span class="w"> </span>-v
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>pytest<span class="w"> </span>tests/test_det_cls_rec.py<span class="w"> </span>-v
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># 查看测试覆盖率（需先安装 pytest-cov）</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>-v<span class="w"> </span>--cov<span class="o">=</span>rapidocr
+<h2 id="4-run-unit-tests">4. Run unit tests<a class="headerlink" href="#4-run-unit-tests" title="Permanent link">&para;</a></h2>
+<p>Run these commands from the <code>python</code> directory:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>-v
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>pytest<span class="w"> </span>tests/test_input.py<span class="w"> </span>-v
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>pytest<span class="w"> </span>tests/test_det_cls_rec.py<span class="w"> </span>-v
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>-v<span class="w"> </span>--cov<span class="o">=</span>rapidocr
 </span></code></pre></div>
-<p>确认当前主分支在你本机环境下测试通过，再进行修改。</p>
-<hr />
-<h2 id="_4">五、复现问题 / 增加新功能<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="bug">复现 Bug<a class="headerlink" href="#bug" title="Permanent link">&para;</a></h3>
+<p>The coverage command requires <code>pytest-cov</code>. Confirm that the baseline branch passes locally before making changes.</p>
+<h2 id="5-reproduce-issues-or-add-features">5. Reproduce issues or add features<a class="headerlink" href="#5-reproduce-issues-or-add-features" title="Permanent link">&para;</a></h2>
+<h3 id="reproduce-a-bug">Reproduce a bug<a class="headerlink" href="#reproduce-a-bug" title="Permanent link">&para;</a></h3>
 <ol>
-<li>在 <a href="https://github.com/RapidAI/RapidOCR/issues">Issues</a> 中选定或创建对应 issue。</li>
-<li>根据 issue 描述与报错信息，在本地用 <code>python</code> 目录下的代码复现问题。</li>
-<li>在 <code>rapidocr /</code> 或 <code>tests /</code> 下定位并修改代码，直到问题消失。</li>
+<li>Select or create an issue in <a href="https://github.com/RapidAI/RapidOCR/issues">Issues</a>.</li>
+<li>Reproduce it locally using the code under <code>python</code>.</li>
+<li>Locate the issue in <code>rapidocr/</code> or <code>tests/</code> and modify the code until it is resolved.</li>
 </ol>
-<h3 id="_5">增加新功能<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="add-a-feature">Add a feature<a class="headerlink" href="#add-a-feature" title="Permanent link">&para;</a></h3>
 <ol>
-<li>与 maintainer 或现有 issue 讨论需求与实现方式（可选但推荐）。</li>
-<li>在 <code>rapidocr /</code> 下实现新逻辑，保持与现有代码风格一致（项目使用 <a href="https://github.com/psf/black">black</a> 等规范）。</li>
-<li>新功能应有对应单元测试覆盖。</li>
+<li>Discuss the requirement and implementation with a maintainer or in an existing issue when practical.</li>
+<li>Implement the logic under <code>rapidocr/</code>, following the project style (including <a href="https://github.com/psf/black">Black</a>).</li>
+<li>Add unit-test coverage for the new behavior.</li>
 </ol>
-<hr />
-<h2 id="_6">六、编写对应单元测试<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="6-write-corresponding-unit-tests">6. Write corresponding unit tests<a class="headerlink" href="#6-write-corresponding-unit-tests" title="Permanent link">&para;</a></h2>
 <ul>
-<li>测试文件放在 <strong><code>python/tests/</code></strong> 下，命名建议 <code>test_*.py</code>。</li>
-<li>使用 <strong>pytest</strong> 编写用例，可参考现有 <code>test_input.py</code>, <code>test_det_cls_rec.py</code>, <code>test_cli.py</code> 等。</li>
-<li>测试用图片等资源放在 <code>tests / test_files /</code>。</li>
-<li>新增测试应：<ul>
-<li>能稳定复现你要验证的行为（Bug 修复或新功能）；</li>
-<li>不依赖未在仓库或文档中说明的外部服务（必要时用 mock 或跳过）。</li>
+<li>Put tests in <code>python/tests/</code> and use the <code>test_*.py</code> naming convention.</li>
+<li>Test images and other resources belong in <code>tests/test_files/</code>.</li>
+<li>Tests should reliably reproduce the bug or feature and should not depend on undocumented external services. Use mocks or skips when necessary.</li>
 </ul>
-</li>
-</ul>
-<p>示例：</p>
+<p>Example:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># tests/test_xxx.py</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
@@ -2387,159 +2362,85 @@ You're not viewing the latest version.
 </span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="n">img_path</span> <span class="o">=</span> <span class="n">tests_dir</span> <span class="o">/</span> <span class="s2">"ch_en_num.jpg"</span>
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">engine</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
 </span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="k">assert</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="c1"># 更多断言...</span>
 </span></code></pre></div>
-<hr />
-<h2 id="_7">七、运行所有单元测试<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>在 <strong><code>python</code> 目录下</strong> 再次全量跑测，确保无回归：</p>
+<h2 id="7-run-all-unit-tests-again">7. Run all unit tests again<a class="headerlink" href="#7-run-all-unit-tests-again" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>-v
 </span></code></pre></div>
-<p>若有测试被跳过（如缺少某推理引擎），请确认你修改或新增的测试在现有环境下已执行并通过。</p>
-<hr />
-<h2 id="_8">八、准备提交到仓库<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h3 id="81-fork-rapidocr">8.1 Fork RapidOCR 主仓库到个人账号<a class="headerlink" href="#81-fork-rapidocr" title="Permanent link">&para;</a></h3>
-<ol>
-<li>打开 <a href="https://github.com/RapidAI/RapidOCR">RapidOCR 主仓库</a>。</li>
-<li>点击右上角 <strong>Fork</strong>，将仓库 fork 到你自己的 GitHub 账号下（例如 <code>https://github.com/你的用户名/RapidOCR</code>）。</li>
-</ol>
-<h3 id="82-fork">8.2 将代码提交到个人 Fork<a class="headerlink" href="#82-fork" title="Permanent link">&para;</a></h3>
-<p>若最初是克隆的主仓库，需要把远程改为你的 fork，并推送到 fork：</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 在项目根目录 RapidOCR 下执行</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>myfork<span class="w"> </span>https://github.com/你的用户名/RapidOCR.git
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># 若已有 origin 且就是主仓库，可保留；推送时用 myfork</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># 创建分支（推荐为每个 issue/功能单独分支）</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/xxx<span class="w">   </span><span class="c1"># 或 feat/xxx</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># 添加并提交你在 python 目录下的修改</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>git<span class="w"> </span>add<span class="w"> </span>python/
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>git<span class="w"> </span>status<span class="w">   </span><span class="c1"># 确认只提交预期文件</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"fix(python): 简短描述"</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1"># 推送到你的 fork</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>git<span class="w"> </span>push<span class="w"> </span>myfork<span class="w"> </span>fix/xxx
+<p>If tests are skipped because an inference backend is unavailable, confirm that your modified or new tests actually ran and passed in the current environment.</p>
+<h2 id="8-prepare-a-submission">8. Prepare a submission<a class="headerlink" href="#8-prepare-a-submission" title="Permanent link">&para;</a></h2>
+<h3 id="81-fork-the-rapidocr-repository">8.1 Fork the RapidOCR repository<a class="headerlink" href="#81-fork-the-rapidocr-repository" title="Permanent link">&para;</a></h3>
+<p>Open the <a href="https://github.com/RapidAI/RapidOCR">RapidOCR repository</a> and click <strong>Fork</strong>.</p>
+<h3 id="82-commit-and-push-to-your-fork">8.2 Commit and push to your fork<a class="headerlink" href="#82-commit-and-push-to-your-fork" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>myfork<span class="w"> </span>https://github.com/your-name/RapidOCR.git
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/xxx
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>git<span class="w"> </span>add<span class="w"> </span>python/
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>git<span class="w"> </span>status
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"fix(python): short description"</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>git<span class="w"> </span>push<span class="w"> </span>myfork<span class="w"> </span>fix/xxx
 </span></code></pre></div>
-<p><strong>请按约定式提交规范（Conventional Commits）书写 commit 信息</strong>，便于维护者阅读与自动生成 Changelog。格式为：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&lt;类型&gt;[可选范围]: &lt;简短描述&gt;
+<p>Use <a href="https://www.conventionalcommits.org/">Conventional Commits</a> for commit messages:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&lt;type&gt;[optional scope]: &lt;short description&gt;
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>[可选正文]
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>[可选脚注]
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>[optional body]
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>[optional footer]
 </span></code></pre></div>
-<p>常用类型示例：</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>feat</code></td>
-<td>新功能</td>
-</tr>
-<tr>
-<td><code>fix</code></td>
-<td>Bug 修复</td>
-</tr>
-<tr>
-<td><code>docs</code></td>
-<td>文档变更</td>
-</tr>
-<tr>
-<td><code>style</code></td>
-<td>代码格式（不影响逻辑）</td>
-</tr>
-<tr>
-<td><code>refactor</code></td>
-<td>重构</td>
-</tr>
-<tr>
-<td><code>test</code></td>
-<td>测试相关</td>
-</tr>
-<tr>
-<td><code>chore</code></td>
-<td>构建 / 工具等</td>
-</tr>
-</tbody>
-</table>
-<p>示例：<code>fix(python): 修复某条件下识别结果为空</code>, <code>feat(python): 支持 xxx 输入格式</code>。</p>
-<h3 id="83-rapidocr-pull-requestpr">8.3 向 RapidOCR 主仓库提交 Pull Request（PR）<a class="headerlink" href="#83-rapidocr-pull-requestpr" title="Permanent link">&para;</a></h3>
+<p>Common types include <code>feat</code>, <code>fix</code>, <code>docs</code>, <code>style</code>, <code>refactor</code>, <code>test</code> and <code>chore</code>.</p>
+<h3 id="83-open-a-pull-request">8.3 Open a pull request<a class="headerlink" href="#83-open-a-pull-request" title="Permanent link">&para;</a></h3>
 <ol>
-<li>打开你 fork 后的仓库页面（如 <code>https://github.com/你的用户名/RapidOCR</code>）。</li>
-<li>若刚推送分支，页面上通常会出现 <strong>Compare &amp; pull request</strong>，点击即可；否则在 <strong>Branches</strong> 里选择你刚推送的分支，再点 <strong>New pull request</strong>。</li>
-<li>确认 <strong>base 仓库</strong> 为 <code>RapidAI/RapidOCR</code>、<strong>base 分支</strong> 为 <code>main</code>（或仓库默认主分支），<strong>head 仓库</strong> 为你的 fork、<strong>head 分支</strong> 为你的分支（如 <code>fix/xxx</code>）。</li>
-<li>填写 PR 标题和说明：</li>
-<li>标题：简要概括修改内容（如「Fix: 修复 Python 下 xxx 问题」）。</li>
-<li>说明中建议包含：<ul>
-<li>对应 Issue 编号（若有）：<code>Fixes #123</code> 或 <code>Related to #123</code>。</li>
-<li>修改原因与主要改动。</li>
-<li>如何验证：例如「在 python 目录下执行 <code>pytest tests/ -v</code> 通过」。</li>
-</ul>
-</li>
-<li>提交 PR，等待 maintainer 审查；根据反馈再在本地修改并推送同一分支，PR 会自动更新。</li>
+<li>Open your fork and click <strong>Compare &amp; pull request</strong>, or create a pull request from the <strong>Branches</strong> page.</li>
+<li>Set the base repository to <code>RapidAI/RapidOCR</code>, base branch to <code>main</code>, and the head to your fork and branch.</li>
+<li>Include the issue number, reason for the change, main modifications and verification steps in the description.</li>
+<li>Submit the pull request and push follow-up changes to the same branch after review.</li>
 </ol>
-<hr />
-<h2 id="_9">流程小结<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>步骤</th>
-<th>说明</th>
+<th>Step</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td>克隆 RapidOCR 源码</td>
+<td>Clone RapidOCR</td>
 </tr>
 <tr>
 <td>2</td>
-<td>进入 <code>python</code> 目录，配置虚拟环境并安装依赖与 pytest</td>
+<td>Configure the Python environment and install dependencies</td>
 </tr>
 <tr>
 <td>3</td>
-<td>安装 pre-commit（<code>pip install pre-commit</code>），在仓库根目录执行 <code>pre-commit install</code> 安装 Git 钩子</td>
+<td>Install pre-commit</td>
 </tr>
 <tr>
 <td>4</td>
-<td>运行单元测试，确认基线通过</td>
+<td>Run the baseline tests</td>
 </tr>
 <tr>
 <td>5</td>
-<td>复现问题或实现新功能</td>
+<td>Reproduce an issue or implement a feature</td>
 </tr>
 <tr>
 <td>6</td>
-<td>编写 / 补充对应单元测试</td>
+<td>Add or update tests</td>
 </tr>
 <tr>
 <td>7</td>
-<td>在 <code>python</code> 目录下运行全部测试并确认通过</td>
+<td>Run the full test suite again</td>
 </tr>
 <tr>
 <td>8</td>
-<td>Fork 主仓库到个人账号</td>
-</tr>
-<tr>
-<td>9</td>
-<td>按约定式提交规范编写 commit，将修改提交并推送到个人 Fork 的对应分支</td>
-</tr>
-<tr>
-<td>10</td>
-<td>在主仓库创建 PR，从个人 Fork 分支指向主仓库 main</td>
+<td>Fork, commit and push, then open a pull request</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="_10">其他说明<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="additional-notes">Additional notes<a class="headerlink" href="#additional-notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>代码风格</strong>：项目采用 <a href="https://github.com/psf/black">black</a>、autoflake 等规范，已通过 pre-commit 钩子在提交时自动检查；也可在仓库根目录执行 <code>pre-commit run --all-files</code> 手动跑一遍。</li>
-<li><strong>文档</strong>：更多安装与使用说明见 <a href="https://rapidai.github.io/RapidOCRDocs/latest/">RapidOCR 文档</a>。</li>
-<li><strong>问题与讨论</strong>：Bug 与功能建议可通过 <a href="https://github.com/RapidAI/RapidOCR/issues">GitHub Issues</a> 反馈。</li>
+<li><strong>Code style:</strong> use Black, autoflake and the configured pre-commit hooks. Run <code>pre-commit run --all-files</code> before submitting.</li>
+<li><strong>Documentation:</strong> see the <a href="https://rapidai.github.io/RapidOCRDocs/latest/">RapidOCR documentation</a> for installation and usage details.</li>
+<li><strong>Issues and discussions:</strong> report bugs and feature requests through <a href="https://github.com/RapidAI/RapidOCR/issues">GitHub Issues</a>.</li>
 </ul>
-<p>再次感谢你的贡献！</p>
 
 <!-- Source file information -->
 
@@ -2564,7 +2465,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年10月10日 13:09:01 CST">2026-10-10 13:09:01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="October 10, 2026 14:29:32 CST">2026-10-10 14:29:32</span>
   </span>
 
     
@@ -2574,7 +2475,7 @@ You're not viewing the latest version.
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2026年2月6日 18:50:10 CST">2026-02-06 18:50:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="October 10, 2026 14:29:32 CST">2026-10-10 14:29:32</span>
   </span>
 
     

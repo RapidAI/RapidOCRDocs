@@ -86,8 +86,6 @@
     
       <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css">
-    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -129,7 +127,7 @@
 <link rel="alternate" type="text/plain" href="../../../../llms-full.txt" title="RapidOCR llms-full.txt">
 <link rel="alternate" type="application/json" href="../../../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_web/ocrweb_multi.md" title="Multi-language Deployment Markdown">
+<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_web/ocrweb_multi.en.md" title="Multi-language Deployment Markdown">
 
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.", "headline": "Multi-language Deployment", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "Multi-language Deployment", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_web/ocrweb_multi/"}
@@ -181,7 +179,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -1437,27 +1435,27 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      简介
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      安装
+      Installation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#run" class="md-nav__link">
     <span class="md-ellipsis">
-      运行步骤
+      Run
     </span>
   </a>
   
@@ -1924,27 +1922,27 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      简介
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      安装
+      Installation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#run" class="md-nav__link">
     <span class="md-ellipsis">
-      运行步骤
+      Run
     </span>
   </a>
   
@@ -1991,7 +1989,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_web/ocrweb_multi.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_web/ocrweb_multi.en.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2000,7 +1998,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_web/ocrweb_multi.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_web/ocrweb_multi.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2018,37 +2016,37 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<h3 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
 <ul>
-<li>同时支持多种语言，可通过接口参数配置语言及预测过程中的其他参数</li>
-<li>调整结果展示方式为基于 canvas, 减少后端处理和接口数据传输</li>
-<li>预测接口添加 Token 验证支持</li>
-<li>添加 pyinstaller 打包脚本，简化安装步骤</li>
-<li>示例打包结果：<a href="https://github.com/AutumnSun1996/RapidOCR/releases/tag/v1.1.1-ocrweb-multi">pyinstaller demo</a></li>
+<li>Supports multiple languages; configure the language and other inference parameters through API arguments.</li>
+<li>Displays results with canvas to reduce backend processing and API data transfer.</li>
+<li>Adds token validation to the inference API.</li>
+<li>Includes a PyInstaller packaging script to simplify installation.</li>
+<li>Example package: <a href="https://github.com/AutumnSun1996/RapidOCR/releases/tag/v1.1.1-ocrweb-multi">PyInstaller demo</a></li>
 </ul>
-<h3 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>克隆项目到本地</p>
+<p>Clone the project:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>main<span class="w"> </span>https://github.com/RapidAI/RapidOCRWeb.git
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>安装运行所需环境</p>
+<p>Install the runtime environment:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>ocrweb_multi
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>-i<span class="w"> </span>https://pypi.douban.com/simple/
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h3 id="_3">运行步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>下载 <code>models</code> 文件到当前目录下</p>
+<p>Download the <code>models</code> directory into the current directory.</p>
 <ul>
-<li>下载链接：<a href="https://pan.baidu.com/s/1Z3v34wu0tE6lBndYyP0xOg?pwd=6urq">百度网盘</a> | <a href="https://drive.google.com/drive/folders/1HZUzGplq_47xKmDVtplwrMmIjoHm7uKo?usp=sharing">Google Drive</a></li>
+<li>Download: <a href="https://pan.baidu.com/s/1Z3v34wu0tE6lBndYyP0xOg?pwd=6urq">Baidu Netdisk</a> | <a href="https://drive.google.com/drive/folders/1HZUzGplq_47xKmDVtplwrMmIjoHm7uKo?usp=sharing">Google Drive</a></li>
 <li>
-<p>最终目录结构如下：</p>
+<p>The final directory structure is:</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -2097,7 +2095,7 @@ You're not viewing the latest version.
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>    |   |-- chinese_cht_PP-OCRv3_rec_infer.meta.onnx
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>    |   |-- en_PP-OCRv3_det_infer.onnx
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>    |   |-- en_PP-OCRv3_rec_infer.meta.onnx
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>    |   `-- japan_PP-OCRv3_rec_infer.meta.onnx
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>    |   |-- japan_PP-OCRv3_rec_infer.meta.onnx
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>    |-- rapidocr
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>    |   |-- __init__.py
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>    |   |-- classify.py
@@ -2123,12 +2121,12 @@ You're not viewing the latest version.
 </ul>
 </li>
 <li>
-<p>运行 <code>main.py</code></p>
+<p>Run <code>main.py</code>:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>python<span class="w"> </span>main.py
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>打开 <a href="http://127.0.0.1:8001">http://127.0.0.1:8001</a> 即可， enjoy it!</p>
+<p>Open <a href="http://127.0.0.1:8001">http://127.0.0.1:8001</a>. Enjoy!</p>
 </li>
 </ol>
 <p><img alt="ocr_web_multi_demo" src="https://raw.githubusercontent.com/RapidAI/RapidOCR/refs/tags/v1.4.1/ocrweb_multi/assets/ocr_web_multi.jpg" /></p>

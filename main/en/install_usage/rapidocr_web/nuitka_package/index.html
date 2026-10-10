@@ -86,8 +86,6 @@
     
       <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css">
-    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -129,7 +127,7 @@
 <link rel="alternate" type="text/plain" href="../../../../llms-full.txt" title="RapidOCR llms-full.txt">
 <link rel="alternate" type="application/json" href="../../../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_web/nuitka_package.md" title="Nuitka Packaging Markdown">
+<link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_web/nuitka_package.en.md" title="Nuitka Packaging Markdown">
 
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.", "headline": "Nuitka Packaging", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "Nuitka Packaging", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_web/nuitka_package/"}
@@ -181,7 +179,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#packaging-environment" class="md-skip">
           Skip to content
         </a>
       
@@ -1391,64 +1389,64 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#packaging-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      打包环境
+      Packaging environment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#packaging-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      打包步骤
+      Packaging steps
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="打包步骤">
+    <nav class="md-nav" aria-label="Packaging steps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-nuitka" class="md-nav__link">
+  <a href="#step-1-install-nuitka" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: 安装 Nuitka
+      Step 1: Install Nuitka
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2" class="md-nav__link">
+  <a href="#step-2-modify-the-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: 修改源码
+      Step 2: Modify the source
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3" class="md-nav__link">
+  <a href="#step-3-copy-static-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3：拷贝静态文件
+      Step 3: Copy static files
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4" class="md-nav__link">
+  <a href="#step-4-run-the-program" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: 运行程序
+      Step 4: Run the program
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#additional-note" class="md-nav__link">
     <span class="md-ellipsis">
-      补充
+      Additional note
     </span>
   </a>
   
@@ -1966,64 +1964,64 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#packaging-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      打包环境
+      Packaging environment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#packaging-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      打包步骤
+      Packaging steps
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="打包步骤">
+    <nav class="md-nav" aria-label="Packaging steps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-nuitka" class="md-nav__link">
+  <a href="#step-1-install-nuitka" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: 安装 Nuitka
+      Step 1: Install Nuitka
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2" class="md-nav__link">
+  <a href="#step-2-modify-the-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: 修改源码
+      Step 2: Modify the source
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3" class="md-nav__link">
+  <a href="#step-3-copy-static-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3：拷贝静态文件
+      Step 3: Copy static files
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4" class="md-nav__link">
+  <a href="#step-4-run-the-program" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: 运行程序
+      Step 4: Run the program
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#additional-note" class="md-nav__link">
     <span class="md-ellipsis">
-      补充
+      Additional note
     </span>
   </a>
   
@@ -2075,7 +2073,7 @@ You're not viewing the latest version.
 <!-- Actions -->
 
   
-    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_web/nuitka_package.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/blob/main/docs/install_usage/rapidocr_web/nuitka_package.en.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2084,7 +2082,7 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_web/nuitka_package.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/RapidAI/RapidOCRDocs/raw/main/docs/install_usage/rapidocr_web/nuitka_package.en.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
@@ -2103,48 +2101,42 @@ You're not viewing the latest version.
 
 <!-- Page content -->
 <p>--by <a href="https://github.com/DeadWood8">DeadWood8</a></p>
-<h3 id="_1">打包环境<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="packaging-environment">Packaging environment<a class="headerlink" href="#packaging-environment" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>OS</code>: Windows11</li>
+<li><code>OS</code>: Windows 11</li>
 <li><code>Python</code>: 3.8.10</li>
 <li><code>rapidocr_onnxruntime</code>: 1.2.0</li>
 <li><code>nuitka</code>: 1.5.3</li>
 <li><code>onnxruntime</code>: 1.14.0</li>
 </ul>
-<h3 id="_2">打包步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<h4 id="step-1-nuitka">Step 1: 安装 <code>Nuitka</code><a class="headerlink" href="#step-1-nuitka" title="Permanent link">&para;</a></h4>
+<h3 id="packaging-steps">Packaging steps<a class="headerlink" href="#packaging-steps" title="Permanent link">&para;</a></h3>
+<h4 id="step-1-install-nuitka">Step 1: Install <code>Nuitka</code><a class="headerlink" href="#step-1-install-nuitka" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nuitka
 </span></code></pre></div></td></tr></table></div>
-<p>注：第一次安装会自动下载 mingw 和 ccache，也可以手动配置，自行某度。</p>
-<h4 id="step-2">Step 2: 修改源码<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h4>
+<p>The first installation automatically downloads MinGW and ccache. You can also configure them manually.</p>
+<h4 id="step-2-modify-the-source">Step 2: Modify the source<a class="headerlink" href="#step-2-modify-the-source" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>rapidocr_onnxruntime&gt;=1.2.8</code> 以后不用再手动修改下面代码，已经做了修改。可以跳过该步。"</p>
+<p>Starting with <code>rapidocr_onnxruntime&gt;=1.2.8</code>, the source below is already fixed and this step can be skipped.</p>
 </div>
-<p>修改 <code>rapidocr-onnxruntime</code> 源码（修改后可以将所有依赖打包进文件）</p>
-<p>进入 <code>rapidocr-onnxruntime</code> 安装位置，一般在 <code>Lib\site-packages\rapidocr_onnxruntime</code> 或者你设置的虚拟环境下。</p>
-<p>用编辑器打开 <code>rapid_ocr_api.py</code>，对 <strong>39-52行</strong> 进行修改，如下图：</p>
+<p>Modify the <code>rapidocr-onnxruntime</code> source so all dependencies can be packaged. Open <code>rapid_ocr_api.py</code> in the installed package (usually under <code>Lib\\site-packages\\rapidocr_onnxruntime</code>) and edit lines <strong>39-52</strong> as shown:</p>
 <p><img alt="" src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-43-17-2196674a.png" /></p>
-<p><code>nuitka</code> 打包</p>
+<p>Package <code>nuitka</code>:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>rapidocr_web
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>nuitka<span class="w"> </span>--mingw64<span class="w"> </span>--standalone<span class="w"> </span>--show-memory<span class="w"> </span>--show-progress<span class="w"> </span>--nofollow-import-to<span class="o">=</span>tkinter<span class="w"> </span>--output-dir<span class="o">=</span>out<span class="w"> </span>ocrweb.py
 </span></code></pre></div></td></tr></table></div>
-<p>如下图所示：</p>
 <p><img alt="" src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-43-37-1b48293b.png" /></p>
-<h4 id="step-3">Step 3：拷贝静态文件<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h4>
-<p>打包后的文件位于当前位置的 <code>out\ocrweb.dist</code> 目录下，需要将 <code>web</code> 项目和 <code>rapidocr-onnxruntime</code> 相关文件拷贝到此目录。</p>
+<h4 id="step-3-copy-static-files">Step 3: Copy static files<a class="headerlink" href="#step-3-copy-static-files" title="Permanent link">&para;</a></h4>
+<p>The packaged files are in <code>out\\ocrweb.dist</code>. Copy the Web project and the required <code>rapidocr-onnxruntime</code> files into this directory.</p>
 <p><img alt="" src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-45-56-5fadb69c.png" /></p>
-<p>拷贝 <code>rapidocr_web</code> 目录 <code>static</code> 和 <code>templates</code> 两个文件夹全部拷贝到 <code>out\ocrweb.dist</code> 下</p>
-<p>在 <code>out\ocrweb.dist</code> 创建 <code>rapidocr_onnxruntime</code> 文件夹，将 <code>Lib\site-packages\rapidocr_onnxruntime</code> 目录下的 <code>config.yaml</code> 和 <code>models</code> 文件夹拷贝到 <code>out\ocrweb.dist\rapidocr_onnxruntime</code> 文件夹内</p>
-<h4 id="step-4">Step 4: 运行程序<a class="headerlink" href="#step-4" title="Permanent link">&para;</a></h4>
-<p>进入 <code>out\ocrweb.dist</code>，直接双击 <code>ocrweb.exe</code> 运行。</p>
+<p>Copy the <code>static</code> and <code>templates</code> directories from <code>rapidocr_web</code> into <code>out\\ocrweb.dist</code>. Create <code>out\\ocrweb.dist\\rapidocr_onnxruntime</code> and copy <code>config.yaml</code> and the <code>models</code> directory from the installed package into it.</p>
+<h4 id="step-4-run-the-program">Step 4: Run the program<a class="headerlink" href="#step-4-run-the-program" title="Permanent link">&para;</a></h4>
+<p>Open <code>out\\ocrweb.dist</code> and double-click <code>ocrweb.exe</code>.</p>
 <p><img alt="" src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-44-01-23818d58.png" /></p>
-<p>打包好的 exe 下载：<a href="https://pan.baidu.com/s/1nj_1rjuVu76drKBZDY9Bww?pwd=xnu7">百度网盘</a> | <a href="https://drive.google.com/drive/folders/1okQj22XxLUptyhjKQcRU25eI8Ya693gf?usp=share_link">Google Drive</a> | <a href="https://gitee.com/RapidAI/RapidOCR/releases/download/v1.2.0/ocrweb.dist.rar">Gitee</a></p>
-<h4 id="_3">补充<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>如果不想运行程序后有黑框，可以在打包命令中加入以下参数
- <code>--windows-disable-console</code></p>
-<p>完整命令为：</p>
+<p>Download the packaged executable: <a href="https://pan.baidu.com/s/1nj_1rjuVu76drKBZDY9Bww?pwd=xnu7">Baidu Netdisk</a> | <a href="https://drive.google.com/drive/folders/1okQj22XxLUptyhjKQcRU25eI8Ya693gf?usp=share_link">Google Drive</a> | <a href="https://gitee.com/RapidAI/RapidOCR/releases/download/v1.2.0/ocrweb.dist.rar">Gitee</a></p>
+<h4 id="additional-note">Additional note<a class="headerlink" href="#additional-note" title="Permanent link">&para;</a></h4>
+<p>To prevent a console window from appearing, add <code>--windows-disable-console</code> to the packaging command:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>nuitka<span class="w"> </span>--mingw64<span class="w"> </span>--standalone<span class="w"> </span>--show-memory<span class="w"> </span>--show-progress<span class="w"> </span>--nofollow-import-to<span class="o">=</span>tkinter<span class="w"> </span>--windows-disable-console<span class="w"> </span>--output-dir<span class="o">=</span>out<span class="w"> </span>ocrweb.py
 </span></code></pre></div></td></tr></table></div>
 

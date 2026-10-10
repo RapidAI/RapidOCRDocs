@@ -70,6 +70,9 @@ theme:
       software-tag: fontawesome/solid/laptop-code
 
 plugins:
+  - pygments:
+      light: monokai
+      dark: material
   - meta
   - rss:
       enabled: !ENV [CI, false]

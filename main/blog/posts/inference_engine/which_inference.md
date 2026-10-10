@@ -2,11 +2,15 @@
 
 <!-- more -->
 
+!!! warning
+
+    本文基于 RapidOCR v1/v2 的旧包结构。当前版本请参考[使用不同推理引擎](../../../install_usage/rapidocr/how_to_use_infer_engine.md)。
+
 ## CPU 端推理引擎选择
 
 ### ☆ 推荐：`rapidocr_onnxruntime`
 
-目前可用的推理库有：`rapidocr_onnxruntime`，`rapidocr_openvino` 和 `rapid_paddle`。这三个库均可在 CPU 上推理，除推理引擎不同外，其他接口均相同。
+本文发布时可用的推理库有：`rapidocr_onnxruntime`、`rapidocr_openvino` 和 `rapidocr_paddle`。这些内容仅适用于旧版包结构；当前版本请以文档中的 `rapidocr` 配置方式为准。
 
 其中，因为 openvino 推理引擎在推理完大图后，所占用的内存不释放问题（issue [#11939](https://github.com/openvinotoolkit/openvino/issues/11939)），不作为优先考虑。
 

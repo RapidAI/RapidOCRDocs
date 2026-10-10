@@ -18,8 +18,23 @@
             "title": "OCR \u63a8\u7406\u5f15\u64ce\u9009\u62e9\u6307\u5357",
             "content_html": "<p>\u4ecb\u7ecd\u5728 CPU \u7aef\u548c GPU \u7aef\uff0cOCR \u6a21\u578b\u7684\u63a8\u7406\u5f15\u64ce\u9009\u62e9\u95ee\u9898\u3002</p>",
             "image": null,
-            "date_modified": "2026-10-10T01:58:25+00:00",
+            "date_modified": "2026-10-10T02:21:57+00:00",
             "date_published": "2022-10-04T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "SWHL"
+                }
+            ],
+            "tags": null
+        },
+        {
+            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/",
+            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/",
+            "title": "\u5782\u76f4\u9879\u76ee(\u504f\u5b66\u672f)",
+            "content_html": "",
+            "image": null,
+            "date_modified": "2026-10-10T02:21:57+00:00",
+            "date_published": "2024-06-04T00:12:19+00:00",
             "authors": [
                 {
                     "name": "SWHL"
@@ -230,21 +245,6 @@
             "image": null,
             "date_modified": "2026-07-04T23:52:43+00:00",
             "date_published": "2026-06-30T00:00:00+00:00",
-            "authors": [
-                {
-                    "name": "SWHL"
-                }
-            ],
-            "tags": null
-        },
-        {
-            "id": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/",
-            "url": "https://rapidai.github.io/RapidOCRDocs/main/blog/2022/10/01/inference-summary/",
-            "title": "\u5782\u76f4\u9879\u76ee(\u504f\u5b66\u672f)",
-            "content_html": "",
-            "image": null,
-            "date_modified": "2026-04-27T08:18:50+00:00",
-            "date_published": "2024-06-04T00:12:19+00:00",
             "authors": [
                 {
                     "name": "SWHL"

@@ -128,6 +128,7 @@ plugins:
             安装及使用: Installation & Usage
             安装: Installation
             使用: Usage
+            图像输入: Image Input
             参数介绍: Parameters
             打包: Packaging
             如何自行构建指定版本的 rapidocr whl 包: Build a Custom rapidocr Wheel

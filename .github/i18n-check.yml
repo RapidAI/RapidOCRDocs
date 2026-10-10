@@ -13,6 +13,13 @@ locales:
       - install_usage/rapidocr/usage.md
       - install_usage/rapidocr/parameters.md
       - install_usage/rapidocr/how_to_use_infer_engine.md
+      - install_usage/rapidocr/image_input.md
+      - install_usage/rapidocr/how_to_use_offline_model.md
+      - install_usage/rapidocr/how_to_use_ppocrv5.md
+      - install_usage/rapidocr/how_to_convert_to_markdown.md
+      - install_usage/rapidocr/package/build-custom-version-rapidocr-whl.md
+      - install_usage/rapidocr_web/usage.md
+      - install_usage/rapidocr_api/usage.md
       - model_list.md
       - online_demo.md
       - faq/faq.md

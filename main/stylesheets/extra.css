@@ -19,9 +19,10 @@
   --md-footer-fg-color: #222;
   --md-footer-fg-color--light: #505050;
   --md-footer-fg-color--lighter: #777777;
-  --md-code-bg-color: #f6f8fa;
-  --md-code-fg-color: #476582;
-  --md-code-hl-comment-color: #8a9aa9;
+  --md-code-bg-color: #211b2d;
+  --md-code-fg-color: #f4efff;
+  --md-code-hl-color: rgba(255, 244, 48, 0.14);
+  --md-code-hl-comment-color: #b7a8ca;
 }
 
 /*暗色样式*/
@@ -31,9 +32,10 @@
   --md-typeset-a-color: royalblue;
   --md-footer-bg-color: #101010;
   --md-footer-bg-color--dark: #101010;
-  --md-code-bg-color: #141414;
-  --md-code-fg-color: #d4d4d4;
-  --md-code-hl-comment-color: #777777;
+  --md-code-bg-color: #17131f;
+  --md-code-fg-color: #f4efff;
+  --md-code-hl-color: rgba(255, 244, 48, 0.12);
+  --md-code-hl-comment-color: #a99bbd;
 }
 
 /* 技术文档正文略加字重，改善中文在高分屏上的可读性 */
@@ -41,7 +43,7 @@
   font-weight: var(--md-typeset-font-weight);
 }
 
-/* Vue 风格的浅色代码块与行内代码 */
+/* 高对比代码主题：深紫黑底，参考 Non-Binary Pride Dark */
 .md-typeset pre,
 .md-typeset .highlight,
 .md-typeset pre>code {
@@ -49,20 +51,26 @@
   color: var(--md-code-fg-color);
 }
 
+.md-typeset .highlight .hll {
+  background-color: var(--md-code-hl-color);
+}
+
 .md-typeset :not(pre)>code {
   border-radius: 0.3rem;
-  background: #f1f3f5;
-  color: #476582;
+  background: #211b2d;
+  color: #f4efff;
   font-size: 0.86em;
   padding: 0.15em 0.35em;
 }
 
-/* 亮色代码语法：接近 Vue 文档的蓝、紫、绿配色 */
+/* 亮色站点也使用深色代码区；语法颜色提高饱和度与对比度 */
 [data-md-color-scheme="default"] .highlight .k,
 [data-md-color-scheme="default"] .highlight .kd,
 [data-md-color-scheme="default"] .highlight .kn,
-[data-md-color-scheme="default"] .highlight .ow {
-  color: #7c3aed;
+[data-md-color-scheme="default"] .highlight .ow,
+[data-md-color-scheme="default"] .highlight .nt {
+  color: #fff430;
+  font-weight: 600;
 }
 
 [data-md-color-scheme="default"] .highlight .s,
@@ -73,25 +81,48 @@
 [data-md-color-scheme="default"] .highlight .sd,
 [data-md-color-scheme="default"] .highlight .s1,
 [data-md-color-scheme="default"] .highlight .s2 {
-  color: #0f8a5f;
+  color: #61e7d2;
 }
 
 [data-md-color-scheme="default"] .highlight .nf,
 [data-md-color-scheme="default"] .highlight .nb,
 [data-md-color-scheme="default"] .highlight .nc {
-  color: #1677b3;
+  color: #ff78c6;
+  font-weight: 600;
 }
 
 [data-md-color-scheme="default"] .highlight .c,
 [data-md-color-scheme="default"] .highlight .ch,
 [data-md-color-scheme="default"] .highlight .cm,
-[data-md-color-scheme="default"] .highlight .c1 {
-  color: #8a9aa9;
+[data-md-color-scheme="default"] .highlight .c1,
+[data-md-color-scheme="default"] .highlight .cs {
+  color: #b7a8ca;
+  font-style: italic;
+}
+
+[data-md-color-scheme="default"] .highlight .m,
+[data-md-color-scheme="default"] .highlight .mf,
+[data-md-color-scheme="default"] .highlight .mi,
+[data-md-color-scheme="default"] .highlight .mh {
+  color: #ffad5c;
+}
+
+[data-md-color-scheme="default"] .highlight .n,
+[data-md-color-scheme="default"] .highlight .na,
+[data-md-color-scheme="default"] .highlight .ne,
+[data-md-color-scheme="default"] .highlight .nv,
+[data-md-color-scheme="default"] .highlight .vm {
+  color: #d8c5ff;
+}
+
+[data-md-color-scheme="default"] .highlight .o,
+[data-md-color-scheme="default"] .highlight .p {
+  color: #f0b7ff;
 }
 
 [data-md-color-scheme="slate"] .md-typeset :not(pre)>code {
-  background: #252526;
-  color: #c9d7e3;
+  background: #17131f;
+  color: #f4efff;
 }
 
 

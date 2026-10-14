@@ -42,13 +42,13 @@
   font-weight: 400;
 }
 
-/* Material's default inline-code size is easy to lose in screenshots. */
+/* Keep code at Material's default relative size so it matches body text. */
 .md-typeset code {
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .md-typeset pre>code {
-  font-size: 1em;
+  font-size: 0.85em;
 }
 
 /* 卡片圆角与悬浮阴影 */

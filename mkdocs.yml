@@ -68,6 +68,20 @@ theme:
       default-tag: fontawesome/solid/tag
       hardware-tag: fontawesome/solid/microchip
       software-tag: fontawesome/solid/laptop-code
+    # Use MkDocs Material icons for the leading icon of every admonition.
+    admonition:
+      note: material/notebook
+      abstract: material/clipboard-text
+      info: material/information
+      tip: material/fire
+      success: material/check
+      question: material/help-circle
+      warning: material/alert
+      failure: material/close
+      danger: material/lightning-bolt
+      bug: material/bug
+      example: material/test-tube
+      quote: material/format-quote-close
 
 plugins:
   - meta

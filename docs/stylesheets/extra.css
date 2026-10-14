@@ -3,8 +3,9 @@
   --base-border-radius: 1rem;
   --md-text-font: "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
     "Segoe UI", sans-serif;
-  --md-code-font: Consolas, "JetBrains Mono", "Cascadia Code", "SFMono-Regular",
-    "Courier New", monospace;
+  /* Use installed system monospace fonts for crisp, predictable code rendering. */
+  --md-code-font: "SFMono-Regular", Menlo, Monaco, Consolas,
+    "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
   --md-typeset-font-weight: 450;
 }
 
@@ -33,6 +34,21 @@
 /* 技术文档正文略加字重，改善中文在高分屏上的可读性 */
 .md-typeset {
   font-weight: var(--md-typeset-font-weight);
+}
+
+/* Keep inline code and code blocks aligned with Material's default rendering. */
+.md-typeset code,
+.md-typeset pre {
+  font-weight: 400;
+}
+
+/* Material's default inline-code size is easy to lose in screenshots. */
+.md-typeset code {
+  font-size: 0.9em;
+}
+
+.md-typeset pre>code {
+  font-size: 1em;
 }
 
 /* 卡片圆角与悬浮阴影 */

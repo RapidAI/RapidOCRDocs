@@ -1,5 +1,5 @@
 {
     "gitpaste.github.repository": "RapidAI/RapidOCRDocs-Assets",
-    "gitpaste.github.branch": "main",
-    "gitpaste.github.path": "images/2026/"
+    "gitpaste.github.path": "images",
+    "gitpaste.fileNameStrategy": "hash"
 }

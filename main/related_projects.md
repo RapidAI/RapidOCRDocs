@@ -1,6 +1,7 @@
 ### RapidOCR 相关
 
 - [rapidocr-worker](https://github.com/alfonsodg/rapidocr-worker)：基于 UNIX 域套接字的 Rust 语言高吞吐量独立 OCR 工作节点（支持 PP-OCR 检测、分类和识别）
+- [RapidOCRLite](https://github.com/RapidAI/RapidOCRLite):  RapidOCR 的轻量快速版：C++ 实现的 PP-OCRv6 引擎，带 C ABI, C++ API，以及导入名仍为 rapidocr, API 与 RapidOCR 完全兼容的 Python 包。基于 ONNX Runtime 的 3.x 线（最新标签 v3.9.2）留在 RapidAI/RapidOCR。
 
 ### 🤖 LLM
 

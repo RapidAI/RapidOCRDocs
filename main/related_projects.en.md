@@ -1,3 +1,7 @@
+### RapidOCR Related
+
+- [rapidocr-worker](https://github.com/alfonsodg/rapidocr-worker): High-throughput standalone OCR worker in Rust (PP-OCR detection + classification + recognition) over UNIX domain sockets
+
 ### 🤖 LLM
 
 |🏗️ Project|⭐ Stars|📝 Description|

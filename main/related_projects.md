@@ -1,3 +1,7 @@
+### RapidOCR 相关
+
+- [rapidocr-worker](https://github.com/alfonsodg/rapidocr-worker)：基于 UNIX 域套接字的 Rust 语言高吞吐量独立 OCR 工作节点（支持 PP-OCR 检测、分类和识别）
+
 ### 🤖 LLM
 
 |🏗️Project|⭐️Stars|📝Description|

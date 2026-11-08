@@ -7,6 +7,7 @@ hide:
 ### RapidOCR Related
 
 - [rapidocr-worker](https://github.com/alfonsodg/rapidocr-worker): High-throughput standalone OCR worker in Rust (PP-OCR detection + classification + recognition) over UNIX domain sockets
+- [RapidOCRLite](https://github.com/RapidAI/RapidOCRLite):  the lightweight, fast edition of RapidOCR: a C++ PP-OCRv6 engine with a C ABI, a C++ API, and a Python package whose import name is still rapidocr and whose Python API is fully compatible with RapidOCR. The ONNX Runtime 3.x line (latest tag v3.9.2) stays in RapidAI/RapidOCR. Hosted demos linked from the badges above run that 3.x line.
 
 ### 🤖 LLM
 

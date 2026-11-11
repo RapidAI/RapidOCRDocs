@@ -991,9 +991,9 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-bundled-model-artifacts" class="md-nav__link">
+  <a href="#6-models-registered-in-default_modelsyaml" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Bundled model artifacts
+      6. Models registered in default_models.yaml
     </span>
   </a>
   
@@ -2100,9 +2100,9 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-bundled-model-artifacts" class="md-nav__link">
+  <a href="#6-models-registered-in-default_modelsyaml" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Bundled model artifacts
+      6. Models registered in default_models.yaml
     </span>
   </a>
   
@@ -2216,6 +2216,8 @@ You're not viewing the latest version.
 <p>This document records the license, copyright attribution, provenance, and
 redistribution requirements for OCR model artifacts distributed by RapidOCR.
 It does not replace or modify the Apache License, Version 2.0.</p>
+<p><strong>All models registered in <code>rapidocr/default_models.yaml</code> are licensed under
+the Apache License, Version 2.0 (<code>Apache-2.0</code>), without exception.</strong></p>
 <h2 id="1-separate-licensed-works">1. Separate licensed works<a class="headerlink" href="#1-separate-licensed-works" title="Permanent link">&para;</a></h2>
 <p>RapidOCR contains two separately copyrighted categories of work:</p>
 <ol>
@@ -2229,21 +2231,36 @@ It does not replace or modify the Apache License, Version 2.0.</p>
 <p>Both categories are distributed under the Apache License, Version 2.0, but
 their copyright ownership and provenance remain separate.</p>
 <h2 id="2-scope-of-this-notice">2. Scope of this notice<a class="headerlink" href="#2-scope-of-this-notice" title="Permanent link">&para;</a></h2>
-<p>This notice applies to the model artifacts listed in Section 6. Other model
-artifacts available through RapidOCR may have different upstream versions or
-terms and must be reviewed against their own source records before being
-redistributed.</p>
-<p>This notice does not automatically cover third-party models, datasets, fonts,
-sample images, inference runtimes, or other assets that are not derived from
-official PaddleOCR models. Those works remain subject to their own applicable
-terms.</p>
+<p>This notice applies to every model registered in
+<code>rapidocr/default_models.yaml</code>. The registry is the definitive boundary of
+this notice: all model artifacts recorded there, across all model versions and
+all supported inference formats, are licensed under Apache-2.0. This includes,
+without limitation, the legacy <code>ch_ppocr_mobile_v2.0_cls</code> model, the PP-OCRv3,
+PP-OCRv4, PP-OCRv5, and PP-OCRv6 generations, and their detection,
+recognition, classification, and text-line orientation variants, in ONNX, MNN,
+Paddle, and PyTorch representations. The declaration is not limited to the
+default bundled artifacts listed in Section 6.</p>
+<p>The set of models covered by this notice is the set of models registered in
+<code>rapidocr/default_models.yaml</code>. A model becomes covered when it is registered
+there. Downstream redistributors should consult the source record of each
+entry to confirm its upstream origin, format, and cryptographic hash. Such
+verification identifies the artifact and does not narrow the license scope
+described here.</p>
+<p>The registry also records non-model resources, including recognition
+dictionaries (<code>dict_url</code>) and fonts (<code>fonts</code>). These resources are not model
+artifacts and are not covered by the Apache-2.0 declaration in this notice;
+they remain subject to their own applicable terms. Third-party models,
+datasets, sample images, inference runtimes, and other assets that are not
+derived from official PaddleOCR models are likewise not covered.</p>
 <h2 id="3-upstream-attribution-and-licensing-evidence">3. Upstream attribution and licensing evidence<a class="headerlink" href="#3-upstream-attribution-and-licensing-evidence" title="Permanent link">&para;</a></h2>
-<p>The models in Section 6 are released by, or derived from models released by,
-the PaddleOCR project. PaddleOCR is released under the Apache License, Version
-2.0. Official PaddlePaddle model cards identify the PP-OCRv6 model weights and
-ONNX representations as <code>Apache-2.0</code>. PaddleOCR's official model list
-identifies the legacy text angle classification model and its official
-distribution source.</p>
+<p>All models registered in <code>rapidocr/default_models.yaml</code> are released by, or
+derived from models released by, the PaddleOCR project, and are licensed under
+the Apache License, Version 2.0. PaddleOCR itself is released under
+Apache-2.0. Official PaddlePaddle model cards identify the PP-OCRv6 model
+weights and ONNX representations as <code>Apache-2.0</code>. PaddleOCR's official model
+lists identify the earlier generations, including the legacy text angle
+classification model and the PP-OCRv3, PP-OCRv4, and PP-OCRv5 models, and
+their official distribution sources.</p>
 <p>Upstream references:</p>
 <ul>
 <li>PaddleOCR project: <a href="https://github.com/PaddlePaddle/PaddleOCR">https://github.com/PaddlePaddle/PaddleOCR</a></li>
@@ -2254,38 +2271,56 @@ distribution source.</p>
 <li>Official PP-OCRv6 small recognition ONNX model card: <a href="https://huggingface.co/PaddlePaddle/PP-OCRv6_small_rec_onnx">https://huggingface.co/PaddlePaddle/PP-OCRv6_small_rec_onnx</a></li>
 <li>Official legacy text angle classification model list: <a href="https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/version2.x/ppocr/model_list.en.md">https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/version2.x/ppocr/model_list.en.md</a></li>
 </ul>
-<p>The legacy <code>ch_ppocr_mobile_v2.0_cls</code> model predates the official Hugging Face
-model hosting and is identified through PaddleOCR's official model list and
-model download service.</p>
+<p>Legacy models that predate official Hugging Face model hosting, including
+<code>ch_ppocr_mobile_v2.0_cls</code> and the PP-OCRv3 detection and recognition models,
+are identified through PaddleOCR's official model lists and model download
+service, and through the source records in <code>rapidocr/default_models.yaml</code>.</p>
 <h2 id="4-applicable-license">4. Applicable license<a class="headerlink" href="#4-applicable-license" title="Permanent link">&para;</a></h2>
-<p>The model artifacts in Section 6 are made available under the Apache License,
-Version 2.0 (<code>Apache-2.0</code>). The complete license text is available at
-<a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a>.</p>
+<p>Every model registered in <code>rapidocr/default_models.yaml</code> is made available
+under the Apache License, Version 2.0 (<code>Apache-2.0</code>), regardless of model
+version, model family, or inference format. This declaration applies to every
+entry in the registry without exception. The complete license text is
+available at <a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a>.</p>
 <p>Subject to the conditions of Apache-2.0, the license permits use,
 reproduction, modification, preparation of derivative works, public display,
 sublicensing, and distribution in source or object form. These permissions are
 not restricted to non-commercial use.</p>
 <p>The license applies only to rights that the relevant licensors are authorized
-to grant. No additional model-specific restriction has been identified for the
-PaddleOCR-derived artifacts covered by this notice.</p>
+to grant. No additional model-specific restriction has been identified for any
+model registered in <code>rapidocr/default_models.yaml</code>.</p>
 <h2 id="5-converted-model-artifacts">5. Converted model artifacts<a class="headerlink" href="#5-converted-model-artifacts" title="Permanent link">&para;</a></h2>
 <p>RapidOCR converts or repackages upstream PaddleOCR inference models for use
 with supported inference engines. These conversions are mechanical
 transformations of the model representation. Conversion does not transfer
 ownership of the upstream weights to RapidOCR and does not remove the upstream
 copyright or attribution.</p>
-<p>RapidOCR distributes the converted artifacts in Section 6 under the same
-Apache-2.0 terms that apply to the corresponding upstream PaddleOCR models. The
-conversion and packaging scripts, configuration, and RapidOCR-authored
-metadata are separately copyrighted by the RapidOCR Authors and licensed under
-Apache-2.0 as part of the RapidOCR source code.</p>
+<p>All models registered in <code>rapidocr/default_models.yaml</code>, including their
+converted and repackaged representations for every supported inference engine
+and format, are distributed under the same Apache-2.0 terms that apply to the
+corresponding upstream PaddleOCR models. The conversion and packaging scripts,
+configuration, and RapidOCR-authored metadata are separately copyrighted by
+the RapidOCR Authors and licensed under Apache-2.0 as part of the RapidOCR
+source code.</p>
 <p>A RapidOCR-converted artifact may not be byte-for-byte identical to an ONNX or
 other representation hosted by PaddlePaddle. Artifact identity must therefore
 be established using its source record and cryptographic hash rather than its
 filename alone.</p>
-<h2 id="6-bundled-model-artifacts">6. Bundled model artifacts<a class="headerlink" href="#6-bundled-model-artifacts" title="Permanent link">&para;</a></h2>
-<p>The following artifacts are covered by this notice and are distributed with
-RapidOCR's default ONNX Runtime configuration:</p>
+<h2 id="6-models-registered-in-default_modelsyaml">6. Models registered in default_models.yaml<a class="headerlink" href="#6-models-registered-in-default_modelsyaml" title="Permanent link">&para;</a></h2>
+<p>Every <code>model_dir</code> entry in <code>rapidocr/default_models.yaml</code> is covered by the
+Apache-2.0 declaration in Section 4. The versions recorded in the registry
+include:</p>
+<ul>
+<li>Legacy models: <code>ch_ppocr_mobile_v2.0_cls</code> (text angle classification) and
+  the PP-OCRv3 detection and recognition models.</li>
+<li>PP-OCRv4, PP-OCRv5, and PP-OCRv6 detection, recognition, classification,
+  and text-line orientation models, across mobile, server, tiny, small, and
+  medium variants and their language variants.</li>
+<li>The corresponding ONNX, MNN, Paddle (<code>.pdmodel</code>), and PyTorch (<code>.pth</code>)
+  representations of those models.</li>
+</ul>
+<p>The table below lists representative artifacts distributed with RapidOCR's
+default ONNX Runtime configuration. It is illustrative and does not limit the
+scope of this notice.</p>
 <table>
 <thead>
 <tr>
@@ -2300,25 +2335,26 @@ RapidOCR's default ONNX Runtime configuration:</p>
 <td><code>PP-OCRv6_det_small.onnx</code></td>
 <td><code>PP-OCRv6_small_det</code></td>
 <td><code>090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f</code></td>
-<td><a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx">ModelScope</a></td>
+<td><a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx">ModelScope</a></td>
 </tr>
 <tr>
 <td><code>PP-OCRv6_rec_small.onnx</code></td>
 <td><code>PP-OCRv6_small_rec</code></td>
 <td><code>6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884</code></td>
-<td><a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx">ModelScope</a></td>
+<td><a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx">ModelScope</a></td>
 </tr>
 <tr>
 <td><code>ch_ppocr_mobile_v2.0_cls_mobile.onnx</code></td>
 <td><code>ch_ppocr_mobile_v2.0_cls</code></td>
 <td><code>e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c</code></td>
-<td><a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/master/onnx/PP-OCRv4/cls/ch_ppocr_mobile_v2.0_cls_mobile.onnx">ModelScope</a></td>
+<td><a href="https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv4/cls/ch_ppocr_mobile_v2.0_cls_mobile.onnx">ModelScope</a></td>
 </tr>
 </tbody>
 </table>
-<p>The model registry in <code>rapidocr/default_models.yaml</code> is the authoritative
-release record for the source URL and SHA-256 value of each supported model
-artifact.</p>
+<p>The <code>dict_url</code> and <code>fonts</code> entries in the registry are resources, not models,
+and are excluded from this declaration. <code>rapidocr/default_models.yaml</code> is the
+authoritative release record for the source URL and SHA-256 value of every
+registered model artifact.</p>
 <h2 id="7-redistribution-requirements">7. Redistribution requirements<a class="headerlink" href="#7-redistribution-requirements" title="Permanent link">&para;</a></h2>
 <p>When redistributing a covered model artifact, or a modified or converted form
 of one, comply with Section 4 of Apache-2.0. In particular, you must:</p>
@@ -2333,8 +2369,9 @@ of one, comply with Section 4 of Apache-2.0. In particular, you must:</p>
    contents of that notice in a permitted form.</li>
 </ol>
 <p>At the time of publication, RapidOCR has not identified an additional
-model-specific <code>NOTICE</code> file for the artifacts listed in Section 6. If a future
-upstream release supplies one, its applicable contents must be retained.</p>
+model-specific <code>NOTICE</code> file for any model registered in
+<code>rapidocr/default_models.yaml</code>. If a future upstream release supplies one, its
+applicable contents must be retained.</p>
 <p>For converted files, an appropriate modification notice is:</p>
 <blockquote>
 <p>Converted from an official PaddleOCR model to the indicated inference format
@@ -2351,15 +2388,17 @@ or affiliation without separate permission.</p>
 <h2 id="9-disclaimer">9. Disclaimer<a class="headerlink" href="#9-disclaimer" title="Permanent link">&para;</a></h2>
 <p>Unless required by applicable law or agreed to in writing, the model artifacts
 are provided on an <strong>AS IS</strong> basis, without warranties or conditions of any
-kind. The warranty disclaimer and limitation of liability in Apache-2.0 apply.
-Model accuracy, fitness, security, and regulatory suitability remain the
+kind. The warranty disclaimer and limitation of liability in Apache-2.0 apply.</p>
+<p>Model accuracy, fitness, security, and regulatory suitability remain the
 responsibility of the user and downstream distributor. RapidOCR is not a
 medical device, and neither the model license nor this notice represents a
 certification or guarantee for medical, safety-critical, or regulated use.</p>
 <h2 id="10-release-maintenance">10. Release maintenance<a class="headerlink" href="#10-release-maintenance" title="Permanent link">&para;</a></h2>
-<p>When a RapidOCR release adds or changes a model artifact, maintainers should:</p>
+<p>When a RapidOCR release adds or changes a model artifact or model version,
+maintainers should:</p>
 <ol>
-<li>Verify the upstream model and its applicable license.</li>
+<li>Verify that the upstream model is licensed under Apache-2.0 before adding
+   it to <code>rapidocr/default_models.yaml</code>.</li>
 <li>Record the upstream source and immutable version or revision where
    available.</li>
 <li>Record the conversion tool, tool version, model format, and conversion
@@ -2367,8 +2406,8 @@ certification or guarantee for medical, safety-critical, or regulated use.</p>
 <li>Record and verify the artifact SHA-256 value.</li>
 <li>Preserve any applicable upstream copyright, attribution, and <code>NOTICE</code>
    material.</li>
-<li>Update this notice when the covered model families or applicable terms
-   change.</li>
+<li>Keep <code>rapidocr/default_models.yaml</code> and the version coverage list in
+   Section 6 in sync when model versions or applicable terms change.</li>
 </ol>
 
 <!-- Source file information -->
@@ -2394,7 +2433,7 @@ certification or guarantee for medical, safety-critical, or regulated use.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="October 9, 2026 12:57:52 CST">2026-10-09 12:57:52</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="November 11, 2026 21:52:32 CST">2026-11-11 21:52:32</span>
   </span>
 
     

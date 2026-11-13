@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Build a RapidOCR wheel with an explicit version and bundled default models.">
+        <meta name="description" content="RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.">
       
       
         <meta name="author" content="RapidAI">
@@ -29,7 +29,7 @@
     
     
       
-        <title>Build a Custom RapidOCR Wheel Version - RapidOCR Documentation</title>
+        <title>How to Build a rapidocr Wheel for a Specific Version - RapidOCR Documentation</title>
       
     
     
@@ -180,22 +180,22 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RapidOCR Documentation">
-<meta property="og:title" content="Build a Custom RapidOCR Wheel Version">
-<meta property="og:description" content="Build a RapidOCR wheel with an explicit version and bundled default models.">
+<meta property="og:title" content="How to Build a rapidocr Wheel for a Specific Version">
+<meta property="og:description" content="RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.">
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr/package/build-custom-version-rapidocr-whl/">
 <meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Build a Custom RapidOCR Wheel Version">
-<meta name="twitter:description" content="Build a RapidOCR wheel with an explicit version and bundled default models.">
+<meta name="twitter:title" content="How to Build a rapidocr Wheel for a Specific Version">
+<meta name="twitter:description" content="RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <link rel="alternate" type="text/plain" href="../../../../../llms.txt" title="RapidOCR llms.txt">
 <link rel="alternate" type="text/plain" href="../../../../../llms-full.txt" title="RapidOCR llms-full.txt">
 <link rel="alternate" type="application/json" href="../../../../../api/project.json" title="RapidOCR structured project data">
 
-<link rel="alternate" type="text/markdown" href="../../../../../install_usage/rapidocr/package/build-custom-version-rapidocr-whl.en.md" title="Build a Custom RapidOCR Wheel Version Markdown">
+<link rel="alternate" type="text/markdown" href="../../../../../install_usage/rapidocr/package/build-custom-version-rapidocr-whl.en.md" title="How to Build a rapidocr Wheel for a Specific Version Markdown">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "Build a RapidOCR wheel with an explicit version and bundled default models.", "headline": "Build a Custom RapidOCR Wheel Version", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "Build a Custom RapidOCR Wheel Version", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr/package/build-custom-version-rapidocr-whl/"}
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "RapidOCR is an open source OCR toolkit that supports offline deployment, targets the Python, C++, Java and C# ecosystems, and runs on the ONNX Runtime, OpenVINO, Paddle, PyTorch, MNN and TensorRT inference engines.", "headline": "How to Build a rapidocr Wheel for a Specific Version", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "How to Build a rapidocr Wheel for a Specific Version", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr/package/build-custom-version-rapidocr-whl/"}
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -319,7 +319,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Build a Custom RapidOCR Wheel Version
+              How to Build a rapidocr Wheel for a Specific Version
             
           </span>
         </div>
@@ -1231,36 +1231,45 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-install-build-dependencies" class="md-nav__link">
+  <a href="#2-install-the-build-tools-and-asset-preparation-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Install build dependencies
+      2. Install the build tools and asset preparation dependencies
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-prepare-bundled-model-assets" class="md-nav__link">
+  <a href="#3-prepare-the-default-model-assets" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Prepare bundled model assets
+      3. Prepare the default model assets
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-set-the-version-and-build" class="md-nav__link">
+  <a href="#4-specify-the-version-and-build-the-wheel" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Set the version and build
+      4. Specify the version and build the wheel
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-verify-the-wheel" class="md-nav__link">
+  <a href="#5-verify-the-wheel-version" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Verify the wheel
+      5. Verify the wheel version
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-verify-that-the-models-are-included-in-the-wheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Verify that the models are included in the wheel
     </span>
   </a>
   
@@ -2018,36 +2027,45 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-install-build-dependencies" class="md-nav__link">
+  <a href="#2-install-the-build-tools-and-asset-preparation-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Install build dependencies
+      2. Install the build tools and asset preparation dependencies
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-prepare-bundled-model-assets" class="md-nav__link">
+  <a href="#3-prepare-the-default-model-assets" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Prepare bundled model assets
+      3. Prepare the default model assets
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-set-the-version-and-build" class="md-nav__link">
+  <a href="#4-specify-the-version-and-build-the-wheel" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Set the version and build
+      4. Specify the version and build the wheel
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-verify-the-wheel" class="md-nav__link">
+  <a href="#5-verify-the-wheel-version" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Verify the wheel
+      5. Verify the wheel version
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-verify-that-the-models-are-included-in-the-wheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Verify that the models are included in the wheel
     </span>
   </a>
   
@@ -2123,38 +2141,62 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<p>RapidOCR uses <code>pyproject.toml</code> and <code>setuptools-scm</code> to build wheels. The build environment requires Python <code>&gt;=3.9</code>; the resulting wheel supports Python <code>&gt;=3.8</code>.</p>
+<!-- more -->
+
+<p>RapidOCR now uses <code>pyproject.toml</code> + <code>setuptools-scm</code> to build wheels. The build environment requires Python <code>&gt;=3.9</code>; the resulting wheel can be installed on Python <code>&gt;=3.8</code>.</p>
 <h3 id="1-enter-the-python-package-directory">1. Enter the Python package directory<a class="headerlink" href="#1-enter-the-python-package-directory" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/RapidAI/RapidOCR.git
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>RapidOCR/python
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/RapidAI/RapidOCR.git
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>RapidOCR/python
+</span></code></pre></div></td></tr></table></div>
+<h3 id="2-install-the-build-tools-and-asset-preparation-dependencies">2. Install the build tools and asset preparation dependencies<a class="headerlink" href="#2-install-the-build-tools-and-asset-preparation-dependencies" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>build<span class="w"> </span>setuptools<span class="w"> </span>wheel<span class="w"> </span>setuptools-scm<span class="w"> </span>PyYAML
+</span></code></pre></div></td></tr></table></div>
+<p>If you also need to run tests or prepare the default models, you can install the full dependencies:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span></code></pre></div></td></tr></table></div>
+<h3 id="3-prepare-the-default-model-assets">3. Prepare the default model assets<a class="headerlink" href="#3-prepare-the-default-model-assets" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>python<span class="w"> </span>tools/prepare_wheel_assets.py
+</span></code></pre></div></td></tr></table></div>
+<p>This step will:</p>
+<ul>
+<li>Derive the default Det / Cls / Rec models from <code>rapidocr/config.yaml</code></li>
+<li>Read the download URLs and SHA256 values from <code>rapidocr/default_models.yaml</code></li>
+<li>Download or verify the model files</li>
+<li>Generate <code>MANIFEST.in</code> to make sure these models are included in the wheel</li>
+</ul>
+<p>If you only want to check whether the models are ready:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>python<span class="w"> </span>tools/prepare_wheel_assets.py<span class="w"> </span>--check
+</span></code></pre></div></td></tr></table></div>
+<h3 id="4-specify-the-version-and-build-the-wheel">4. Specify the version and build the wheel<a class="headerlink" href="#4-specify-the-version-and-build-the-wheel" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nv">SETUPTOOLS_SCM_PRETEND_VERSION_FOR_RAPIDOCR</span><span class="o">=</span><span class="m">3</span>.1.0<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>build<span class="w"> </span>--wheel
+</span></code></pre></div></td></tr></table></div>
+<p>The build output is written to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>dist/
 </span></code></pre></div>
-<h3 id="2-install-build-dependencies">2. Install build dependencies<a class="headerlink" href="#2-install-build-dependencies" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>build<span class="w"> </span>setuptools<span class="w"> </span>wheel<span class="w"> </span>setuptools-scm<span class="w"> </span>PyYAML
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>dist/rapidocr-3.1.0-py3-none-any.whl
 </span></code></pre></div>
-<p>Install the complete requirements if you also need to run tests:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<h3 id="5-verify-the-wheel-version">5. Verify the wheel version<a class="headerlink" href="#5-verify-the-wheel-version" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>unzip<span class="w"> </span>-p<span class="w"> </span>dist/rapidocr-3.1.0-py3-none-any.whl<span class="w"> </span><span class="s2">"*/METADATA"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"^Version:"</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Expected output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Version: 3.1.0
 </span></code></pre></div>
-<h3 id="3-prepare-bundled-model-assets">3. Prepare bundled model assets<a class="headerlink" href="#3-prepare-bundled-model-assets" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>tools/prepare_wheel_assets.py
-</span></code></pre></div>
-<p>This command resolves the default Det, Cls and Rec models, verifies their SHA256 checksums and generates <code>MANIFEST.in</code>. To verify already prepared assets without downloading them:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>tools/prepare_wheel_assets.py<span class="w"> </span>--check
-</span></code></pre></div>
-<h3 id="4-set-the-version-and-build">4. Set the version and build<a class="headerlink" href="#4-set-the-version-and-build" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">SETUPTOOLS_SCM_PRETEND_VERSION_FOR_RAPIDOCR</span><span class="o">=</span><span class="m">3</span>.1.0<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>build<span class="w"> </span>--wheel
-</span></code></pre></div>
-<p>The wheel is written to <code>dist/</code>, for example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>dist/rapidocr-3.1.0-py3-none-any.whl
-</span></code></pre></div>
-<h3 id="5-verify-the-wheel">5. Verify the wheel<a class="headerlink" href="#5-verify-the-wheel" title="Permanent link">&para;</a></h3>
-<p>Check its version:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>unzip<span class="w"> </span>-p<span class="w"> </span>dist/rapidocr-3.1.0-py3-none-any.whl<span class="w"> </span><span class="s2">"*/METADATA"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"^Version:"</span>
-</span></code></pre></div>
-<p>Check that the default models are included:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>-l<span class="w"> </span>dist/rapidocr-3.1.0-py3-none-any.whl<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"rapidocr/models"</span>
-</span></code></pre></div>
-<p>Alternatively, build from a Git tag. When the current commit is exactly at <code>v3.1.0</code>, <code>setuptools-scm</code> derives version <code>3.1.0</code>; otherwise it generates a development version.</p>
+<h3 id="6-verify-that-the-models-are-included-in-the-wheel">6. Verify that the models are included in the wheel<a class="headerlink" href="#6-verify-that-the-models-are-included-in-the-wheel" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>python<span class="w"> </span>-m<span class="w"> </span>zipfile<span class="w"> </span>-l<span class="w"> </span>dist/rapidocr-3.1.0-py3-none-any.whl<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"rapidocr/models"</span>
+</span></code></pre></div></td></tr></table></div>
+<p>You should see the default model files.</p>
+<p>If you do not specify a version manually, you can also build from a Git tag:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>git<span class="w"> </span>tag<span class="w"> </span>v3.1.0
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>python<span class="w"> </span>tools/prepare_wheel_assets.py
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a>python<span class="w"> </span>-m<span class="w"> </span>build<span class="w"> </span>--wheel
+</span></code></pre></div></td></tr></table></div>
+<p>When the current commit is exactly on the <code>v3.1.0</code> tag, <code>setuptools-scm</code> derives version <code>3.1.0</code>. If the current commit is not on a tag, a development version is generated.</p>
 
 <!-- Source file information -->
 

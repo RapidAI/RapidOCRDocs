@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Install, start and access the local rapidocr_web OCR service.">
+        <meta name="description" content="Installation, startup, access and port configuration for the rapidocr_web local OCR Web service.">
       
       
         <meta name="author" content="RapidAI">
@@ -181,12 +181,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RapidOCR Documentation">
 <meta property="og:title" content="RapidOCR Web Installation and Usage">
-<meta property="og:description" content="Install, start and access the local rapidocr_web OCR service.">
+<meta property="og:description" content="Installation, startup, access and port configuration for the rapidocr_web local OCR Web service.">
 <meta property="og:url" content="https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_web/usage/">
 <meta property="og:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RapidOCR Web Installation and Usage">
-<meta name="twitter:description" content="Install, start and access the local rapidocr_web OCR service.">
+<meta name="twitter:description" content="Installation, startup, access and port configuration for the rapidocr_web local OCR Web service.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png">
 <link rel="alternate" type="text/plain" href="../../../../llms.txt" title="RapidOCR llms.txt">
 <link rel="alternate" type="text/plain" href="../../../../llms-full.txt" title="RapidOCR llms-full.txt">
@@ -195,7 +195,7 @@
 <link rel="alternate" type="text/markdown" href="../../../../install_usage/rapidocr_web/usage.en.md" title="RapidOCR Web Installation and Usage Markdown">
 
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "Install, start and access the local rapidocr_web OCR service.", "headline": "RapidOCR Web Installation and Usage", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR Web Installation and Usage", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_web/usage/"}
+{"@context": "https://schema.org", "@type": "TechArticle", "about": ["RapidOCR", "OCR", "ONNX Runtime", "OpenVINO", "PaddleOCR", "PP-OCRv4", "PP-OCRv5"], "description": "Installation, startup, access and port configuration for the rapidocr_web local OCR Web service.", "headline": "RapidOCR Web Installation and Usage", "image": "https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "RapidOCR Documentation", "url": "https://rapidai.github.io/RapidOCRDocs/main"}, "name": "RapidOCR Web Installation and Usage", "publisher": {"@type": "Organization", "name": "RapidAI", "url": "https://github.com/RapidAI"}, "url": "https://rapidai.github.io/RapidOCRDocs/main/en/install_usage/rapidocr_web/usage/"}
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -244,7 +244,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -1408,9 +1408,9 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Introduction
     </span>
   </a>
   
@@ -1426,11 +1426,26 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#start-the-service" class="md-nav__link">
     <span class="md-ellipsis">
       Start the service
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1987,9 +2002,9 @@ You're not viewing the latest version.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Introduction
     </span>
   </a>
   
@@ -2005,11 +2020,26 @@ You're not viewing the latest version.
 </li>
       
         <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#start-the-service" class="md-nav__link">
     <span class="md-ellipsis">
       Start the service
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2081,23 +2111,49 @@ You're not viewing the latest version.
 
 
 <!-- Page content -->
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Source repository: <a href="https://github.com/RapidAI/RapidOCRWeb">https://github.com/RapidAI/RapidOCRWeb</a></p>
-<p><code>rapidocr_web</code> wraps RapidOCR in a local browser interface. It supports clipboard input, drag-and-drop, file selection and one-click copying of recognized text. The interface is responsive on desktop and mobile devices.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr_web
-</span></code></pre></div>
-<h2 id="start-the-service">Start the service<a class="headerlink" href="#start-the-service" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rapidocr_web<span class="w"> </span>-ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>
-</span></code></pre></div>
-<p>Open <a href="http://localhost:9003/">http://localhost:9003/</a> in a browser.</p>
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_dark.png" width="60%" height="60%" class="no-radius">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_white.png" width="60%" height="60%" class="no-radius">
+    <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://github.com/RapidAI/RapidOCRWeb/releases/download/v1.0.0/rapidocr_web_logo_v2_white.png" class="no-radius">
+  </picture>
+
+  <br/>
+  <a href=""><img src="https://img.shields.io/badge/Python->=3.6-aff.svg"></a>
+  <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg"></a>
+  <a href="https://pepy.tech/project/rapidocr_web"><img src="https://static.pepy.tech/personalized-badge/rapidocr_web?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20rapidocr_web"></a>
+  <a href="https://pypi.org/project/rapidocr_web/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rapidocr_web"></a>
+  <a href="https://choosealicense.com/licenses/apache-2.0/"><img src="https://img.shields.io/badge/License-Apache%202-dfd.svg"></a>
+  <a href="https://semver.org/"><img alt="SemVer2.0" src="https://img.shields.io/badge/SemVer-2.0-brightgreen"></a>
+  <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+
+</div>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Source code: <a href="https://github.com/RapidAI/RapidOCRWeb">https://github.com/RapidAI/RapidOCRWeb</a></p>
+<p><code>rapidocr_web</code> is a Web-based OCR application built on the <code>rapidocr</code> library. It lets you quickly start an OCR service locally, supports clipboard, drag-and-drop and image file uploads for recognition, and provides one-click copying of the recognized text.</p>
+<p>The whole project uses a front-end/back-end separation design:</p>
 <ul>
-<li><code>-ip 0.0.0.0</code> allows access from other devices on the local network. Use <code>127.0.0.1</code> for local-only access.</li>
-<li><code>-p 9003</code> selects the port. Choose another port if it is already in use.</li>
+<li>Front end: HTML + CSS + JavaScript</li>
+<li>Back end: Flask</li>
+</ul>
+<p>The UI comes from Cursor and adapts to both mobile and desktop devices. Compared with the older version (v0.x), the current version (v1.x) is more modern.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rapidocr_web
+</span></code></pre></div></td></tr></table></div>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h3 id="start-the-service">Start the service<a class="headerlink" href="#start-the-service" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>rapidocr_web<span class="w"> </span>-ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-p<span class="w"> </span><span class="m">9003</span>
+</span></code></pre></div></td></tr></table></div>
+<p>After startup, open <a href="http://localhost:9003/">http://localhost:9003/</a> in a browser. It uses <code>http</code> by default, not <code>https</code>.</p>
+<p>Where:</p>
+<ul>
+<li><code>-ip 0.0.0.0</code> allows access from other devices on the local network; change it to <code>127.0.0.1</code> when using it on the local machine only.</li>
+<li><code>-p 9003</code> specifies the port. If the port is occupied, switch to another port and access the corresponding address.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The default service uses <code>http</code>, not <code>https</code>. For access from another device, replace <code>localhost</code> with the server's local-network IP address.</p>
+<p>If accessing from another device, replace <code>localhost</code> with the local-network IP of the device running the service.</p>
 </div>
 <div align="center">
     <img src="https://github.com/RapidAI/RapidOCRWeb/releases/download/v0.0.0/demo.gif" width="100%" height="100%">

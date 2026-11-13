@@ -1,73 +1,102 @@
 ---
-title: Build a Custom RapidOCR Wheel Version
-description: Build a RapidOCR wheel with an explicit version and bundled default models.
+title: How to Build a rapidocr Wheel for a Specific Version
 date:
   created: 2026-06-12
 authors:
   - SWHL
+slug: build-custom-version-rapidocr-whl
 comments: true
 hide:
   - toc
 ---
 
-RapidOCR uses `pyproject.toml` and `setuptools-scm` to build wheels. The build environment requires Python `>=3.9`; the resulting wheel supports Python `>=3.8`.
+<!-- more -->
+
+RapidOCR now uses `pyproject.toml` + `setuptools-scm` to build wheels. The build environment requires Python `>=3.9`; the resulting wheel can be installed on Python `>=3.8`.
 
 ### 1. Enter the Python package directory
 
-```bash
+```bash linenums="1"
 git clone https://github.com/RapidAI/RapidOCR.git
 cd RapidOCR/python
 ```
 
-### 2. Install build dependencies
+### 2. Install the build tools and asset preparation dependencies
 
-```bash
+```bash linenums="1"
 python -m pip install --upgrade pip
 python -m pip install build setuptools wheel setuptools-scm PyYAML
 ```
 
-Install the complete requirements if you also need to run tests:
+If you also need to run tests or prepare the default models, you can install the full dependencies:
 
-```bash
+```bash linenums="1"
 python -m pip install -r requirements.txt
 ```
 
-### 3. Prepare bundled model assets
+### 3. Prepare the default model assets
 
-```bash
+```bash linenums="1"
 python tools/prepare_wheel_assets.py
 ```
 
-This command resolves the default Det, Cls and Rec models, verifies their SHA256 checksums and generates `MANIFEST.in`. To verify already prepared assets without downloading them:
+This step will:
 
-```bash
+- Derive the default Det / Cls / Rec models from `rapidocr/config.yaml`
+- Read the download URLs and SHA256 values from `rapidocr/default_models.yaml`
+- Download or verify the model files
+- Generate `MANIFEST.in` to make sure these models are included in the wheel
+
+If you only want to check whether the models are ready:
+
+```bash linenums="1"
 python tools/prepare_wheel_assets.py --check
 ```
 
-### 4. Set the version and build
+### 4. Specify the version and build the wheel
 
-```bash
+```bash linenums="1"
 SETUPTOOLS_SCM_PRETEND_VERSION_FOR_RAPIDOCR=3.1.0 python -m build --wheel
 ```
 
-The wheel is written to `dist/`, for example:
+The build output is written to:
+
+```text
+dist/
+```
+
+For example:
 
 ```text
 dist/rapidocr-3.1.0-py3-none-any.whl
 ```
 
-### 5. Verify the wheel
+### 5. Verify the wheel version
 
-Check its version:
-
-```bash
+```bash linenums="1"
 unzip -p dist/rapidocr-3.1.0-py3-none-any.whl "*/METADATA" | grep "^Version:"
 ```
 
-Check that the default models are included:
+Expected output:
 
-```bash
+```text
+Version: 3.1.0
+```
+
+### 6. Verify that the models are included in the wheel
+
+```bash linenums="1"
 python -m zipfile -l dist/rapidocr-3.1.0-py3-none-any.whl | grep "rapidocr/models"
 ```
 
-Alternatively, build from a Git tag. When the current commit is exactly at `v3.1.0`, `setuptools-scm` derives version `3.1.0`; otherwise it generates a development version.
+You should see the default model files.
+
+If you do not specify a version manually, you can also build from a Git tag:
+
+```bash linenums="1"
+git tag v3.1.0
+python tools/prepare_wheel_assets.py
+python -m build --wheel
+```
+
+When the current commit is exactly on the `v3.1.0` tag, `setuptools-scm` derives version `3.1.0`. If the current commit is not on a tag, a development version is generated.

@@ -27,8 +27,9 @@ Join one of our QQ groups to download models and test programs.
 - Group 6: 910202308 (full; you can still try adding it)
 - Group 7: 953714814 (full; you can still try adding it)
 - Group 8: 1070419729 (full; you can still try adding it)
-- Group 9: 703875382
+- Group 9: 703875382 (full; you can still try adding it)
+- Group 10：426890891
 
 <div align="left">
-    <img src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-10-54-2df4ae34.png" width="25%" height="25%" align="center">
+    <img src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/bb/4c/bb4ccac2b7b57efc053975c1c4b9ef0e284429d7844ed553e995612bdb0091c0.jpg" width="25%" height="25%" align="center">
 </div>

@@ -27,8 +27,9 @@ hide:
 - 6 群：910202308 已满可尝试添加
 - 7 群：953714814 已满可尝试添加
 - 8 群: 1070419729 已满可尝试添加
-- 9 群：703875382
+- 9 群：703875382 已满可尝试添加
+- 10 群：426890891
 
 <div align="left">
-    <img src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/2026/2026-10-08_11-10-54-2df4ae34.png" width="25%" height="25%" align="center">
+    <img src="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs-Assets/main/images/bb/4c/bb4ccac2b7b57efc053975c1c4b9ef0e284429d7844ed553e995612bdb0091c0.jpg" width="25%" height="25%" align="center">
 </div>

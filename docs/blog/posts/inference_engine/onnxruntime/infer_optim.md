@@ -162,7 +162,7 @@ sess_options = rt.SessionOptions()
 sess_options.intra_op_num_threads = 2
 ```
 
-### [`graph_optimization_level`](https://github.com/microsoft/onnxruntime-openenclave/blob/openenclave-public/docs/ONNX_Runtime_Graph_Optimizations.md)
+### [`graph_optimization_level`](https://onnxruntime.ai/docs/performance/model-optimizations/graph-optimizations.html)
 
 运行图时，对图中算子的优化水平。默认是开启全部算子的优化。建议采用默认值即可。可选的枚举值有：`ORT_DISABLE_ALL | ORT_ENABLE_BASIC | ORT_ENABLE_EXTENDED | ORT_ENABLE_ALL`
 
@@ -175,5 +175,5 @@ sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL
 
 ## 参考资料
 
-- [ONNX Runtime Performance Tuning](https://github.com/microsoft/onnxruntime-openenclave/blob/openenclave-public/docs/ONNX_Runtime_Perf_Tuning.md)
+- [ONNX Runtime Performance Tuning](https://onnxruntime.ai/docs/performance/tune-performance/)
 - [Python API](https://onnxruntime.ai/docs/api/python/api_summary.html)

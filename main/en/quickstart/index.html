@@ -208,20 +208,64 @@
     })();
 </script>
 
+
+<script>
+    (function () {
+        var root = document.documentElement;
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function syncKapaTheme() {
+            var scheme = document.body && document.body.getAttribute("data-md-color-scheme");
+            var dark = scheme ? scheme === "slate" : darkQuery.matches;
+            root.setAttribute("data-theme", dark ? "dark" : "light");
+        }
+
+        syncKapaTheme();
+        document.addEventListener("DOMContentLoaded", function () {
+            syncKapaTheme();
+            if (document.body) {
+                new MutationObserver(syncKapaTheme).observe(document.body, {
+                    attributes: true,
+                    attributeFilter: ["data-md-color-scheme"]
+                });
+            }
+        });
+        if (darkQuery.addEventListener) {
+            darkQuery.addEventListener("change", syncKapaTheme);
+        } else if (darkQuery.addListener) {
+            darkQuery.addListener(syncKapaTheme);
+        }
+    })();
+</script>
+
 <script async src="https://widget.kapa.ai/kapa-widget.bundle.js"
     data-website-id="2ea6bf7f-a12b-4e5b-9d73-a6529fd66bd9"
     data-project-name="RapidOCR"
-    data-project-logo="https://raw.githubusercontent.com/RapidAI/RapidOCRDocs/refs/heads/main/docs/static/images/logov2.png"
-    data-button-text="Ask AI"
+    data-project-logo="../../static/images/logov2.png"
+    data-launcher-button-text="Ask AI"
     data-bot-protection-mechanism="hcaptcha"
     data-language="en"
     data-scale-factor="0.8"
     data-color-scheme="auto"
-    data-color-scheme-selector="[data-md-color-scheme='slate']"
+    data-color-scheme-selector="[data-theme='dark']"
+    data-font-family="'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif"
+    data-modal-border-radius="1rem"
     data-project-color="#2c2998"
     data-project-color-dark="#716fe3"
-    data-text-color="#1f2937"
-    data-text-color-dark="#f3f4f6">
+    data-surface-color="#ffffff"
+    data-surface-elevated-color="#f6f6f6"
+    data-surface-hover-color="#f1f3f5"
+    data-text-color="#212121"
+    data-text-muted-color="#666666"
+    data-border-color="#dee2e6"
+    data-anchor-color="#4682b4"
+    data-surface-color-dark="#1f1f1f"
+    data-surface-elevated-color-dark="#2a2a2a"
+    data-surface-hover-color-dark="#303030"
+    data-text-color-dark="#e4e4e7"
+    data-text-muted-color-dark="#a1a1a9"
+    data-border-color-dark="#3f3f45"
+    data-anchor-color-dark="#4169e1">
 </script>
 
 
@@ -2317,7 +2361,7 @@ You're not viewing the latest version.
     data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top"
     data-theme="https://cdn.jsdelivr.net/gh/RapidAI/RapidOCRDocs@main/docs/stylesheets/giscus-light.css"
     data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
-    </script>
+    </script>  
 
 <!-- Synchronize Giscus theme with palette -->
 <script>

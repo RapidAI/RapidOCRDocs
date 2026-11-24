@@ -11,6 +11,8 @@ RapidOCR 产品开源免费，并且将持续提供免费的技术支持。但�
 
 维护这样一个庞大的生态系统和为项目开发新功能所需的巨大努力，只有在我们的赞助者慷慨的财务支持下才得以持续
 
+如有赞助相关疑问，可通过邮箱联系：liekkaskono@163.com
+
 ### 赞助者有哪些权益？
 
 1. Github 仓库 [中英文 README](https://github.com/RapidAI/RapidOCR/tree/main#sponsors)、官方文档流量曝光

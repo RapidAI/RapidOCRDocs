@@ -11,7 +11,7 @@ RapidOCR is free and open source, and we intend to continue providing free techn
 
 Maintaining this ecosystem and developing new features is a substantial effort made possible by the generosity of our sponsors.
 
-For sponsorship-related questions, contact us by email: liekkaskono@163.com
+For sponsorship-related questions, contact us by email: [liekkaskono@163.com](mailto:liekkaskono@163.com)
 
 ### Sponsor benefits
 
